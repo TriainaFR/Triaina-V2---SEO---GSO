@@ -1,6 +1,8 @@
 import React from 'react';
 import TechnicalSection from '../components/TechnicalSection';
-import { Sparkles, Check, Search, LineChart, Plus, Minus } from 'lucide-react';
+import { Sparkles, Check, Search, LineChart, Plus, Minus, Cpu, Globe } from 'lucide-react';
+import { ScrambleText } from '../components/ScrambleText';
+import { SEO } from '../components/SEO';
 
 export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate }) => {
   
@@ -11,7 +13,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
 
   const FAQ_HOME_DATA = [
     {
-      question: "Qu'est-ce qu'un audit SEO ?",
+      question: "Qu'est-ce un audit SEO ?",
       answer: "Un audit SEO est un diagnostic complet de votre site web. Il analyse les problèmes techniques, on-page et de netlinking qui bloquent votre visibilité sur Google. C'est la première étape d'une stratégie SEO efficace."
     },
     {
@@ -41,6 +43,11 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
   return (
     <div className="relative min-h-screen flex flex-col overflow-x-hidden">
       
+      <SEO 
+        title="Agence SEO & GSO Paris"
+        description="Agence SEO & GSO à Paris spécialisée en référencement naturel et optimisation pour les IA (Generative Search Optimization). Consultant SEO expert."
+      />
+
       {/* ════════════════════ HERO SECTION ════════════════════ */}
       <div className="min-h-screen flex flex-col justify-center relative z-10 pt-20 px-4">
           <div className="max-w-7xl mx-auto w-full">
@@ -73,7 +80,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                     className="group relative px-8 py-5 bg-blue-600 text-white font-sans font-bold tracking-wider rounded-full overflow-hidden w-full md:w-auto shadow-xl shadow-blue-600/20 hover:bg-slate-900 hover:shadow-slate-900/30 transition-all duration-300"
                 >
                     <span className="relative z-10 flex items-center justify-center gap-3">
-                        → FAIRE UNE DEMANDE DE CONTACT
+                        → NOUS CONTACTER
                     </span>
                 </button>
             </div>
@@ -98,7 +105,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
              <div className="flex flex-col md:flex-row justify-between items-start mb-16">
                  <div className="max-w-3xl">
                     <h2 className="text-3xl md:text-5xl font-display font-bold text-slate-900 mb-6">
-                        Pourquoi choisir Triaina : <br/><span className="text-blue-600">Agence SEO & GSO & Média</span>
+                        Pourquoi choisir Triaina : <br/><span className="text-blue-600">Agence SEO, GSO, Média</span>
                     </h2>
                     <p className="text-slate-600 text-lg leading-relaxed">
                         <strong>Triaina</strong> est une <strong>agence SEO</strong> basée à Paris, spécialisée en référencement naturel et IA. Nous combinons l'excellence du SEO traditionnel avec l'expertise en référencement IA (GSO).
@@ -106,8 +113,10 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                  </div>
              </div>
 
-             <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-slate-50 border border-slate-200 p-8 rounded-2xl">
+             <div className="grid md:grid-cols-2 gap-8 items-center">
+                
+                {/* Liste des points forts */}
+                <div className="bg-slate-50 border border-slate-200 p-8 rounded-2xl h-full">
                     <ul className="space-y-6">
                         {[
                             { title: "Audit SEO complet", desc: "Diagnostic technique et on-page" },
@@ -127,14 +136,53 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                         ))}
                     </ul>
                 </div>
-                <div className="flex items-center justify-center p-8 bg-blue-600 rounded-2xl text-white text-center shadow-2xl shadow-blue-600/20">
-                    <div>
-                        <h3 className="text-2xl md:text-4xl font-display font-bold mb-4">OBJECTIF</h3>
-                        <p className="text-lg text-blue-100 leading-relaxed max-w-md mx-auto">
-                            Une visibilité maximale sur <span className="text-white font-bold border-b-2 border-white">Google ET les IA</span>.
-                        </p>
+
+                {/* --- BLOC OBJECTIF (REDESIGNÉ SOBRE & DYNAMIQUE) --- */}
+                <div className="relative overflow-hidden rounded-2xl bg-white p-10 text-center shadow-xl group border border-slate-100 h-full flex flex-col justify-center items-center">
+                    
+                    {/* Subtle Dynamic Background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white to-white opacity-100 transition-all duration-500 group-hover:from-blue-100/50"></div>
+                    <div className="absolute -top-24 -right-24 w-64 h-64 bg-blue-100/30 rounded-full blur-3xl animate-pulse"></div>
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600"></div>
+
+                    <div className="relative z-10 flex flex-col items-center w-full">
+                        {/* Empty Space where tag was */}
+                        <div className="mb-8"></div>
+
+                        {/* Title with Scramble Effect */}
+                        <h3 className="text-3xl md:text-5xl font-display font-black text-slate-900 mb-8 tracking-tight">
+                            <ScrambleText text="OBJECTIF" hover={true} className="text-blue-600" />
+                        </h3>
+
+                        {/* Core Message */}
+                        <div className="text-xl md:text-2xl text-slate-600 font-light leading-relaxed w-full">
+                            Visibilité sur
+                            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6">
+                                
+                                {/* Google Box */}
+                                <div className="flex items-center gap-3 px-6 py-4 bg-white border border-slate-200 rounded-xl shadow-lg shadow-slate-200/50 group/google hover:border-blue-300 transition-all">
+                                    <div className="bg-blue-50 p-2 rounded-full group-hover/google:scale-110 transition-transform">
+                                        <Globe size={20} className="text-blue-600" />
+                                    </div>
+                                    <span className="font-bold text-slate-900 tracking-wide">Google</span>
+                                </div>
+                                
+                                <span className="text-slate-400 font-mono text-xl">+</span>
+
+                                {/* AI Box */}
+                                <div className="flex items-center gap-3 px-6 py-4 bg-white border border-slate-200 rounded-xl shadow-lg shadow-slate-200/50 group/ia hover:border-purple-300 transition-all">
+                                    <div className="bg-purple-50 p-2 rounded-full group-hover/ia:scale-110 transition-transform">
+                                        <Cpu size={20} className="text-purple-600" />
+                                    </div>
+                                    <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600 tracking-wide">
+                                        IA Génératives
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
              </div>
           </div>
       </section>
@@ -166,7 +214,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
 
                 {/* Service 3 (Re-indexed) */}
                 <div 
-                    onClick={() => onNavigate('team')}
+                    onClick={() => onNavigate('contact')}
                     className="group bg-white p-8 rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer"
                 >
                     <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
@@ -177,7 +225,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                         Expert en <strong>référencement naturel</strong>. Accompagnement stratégique pour votre croissance organique et visibilité.
                     </p>
                     <span className="text-blue-600 font-bold text-xs uppercase tracking-wider flex items-center gap-2">
-                        → Contacter notre consultant
+                        → Nous contacter
                     </span>
                 </div>
             </div>
@@ -218,8 +266,8 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                   <div className="space-y-8">
                       <div>
                           <h3 className="text-xl font-bold text-white mb-2">Stratégie Média & Autorité</h3>
-                          <p className="text-slate-400 text-sm leading-relaxed">
-                              <strong>Triaina</strong> possède sa propre puissance médiatique. Via nos relations avec Le Figaro, Le Point et Elle, nous développons votre notoriété et votre crédibilité — des atouts majeurs pour convaincre <strong>Google</strong>.
+                          <p className="text-slate-400 text-sm leading-relaxed text-justify">
+                              Triaina dispose d'une puissance de frappe unique. Propriétaire de médias influents (dont <strong>Yonder</strong> et <strong>Les Hardis</strong>) et dotée de sa propre régie interne, nous vous offrons un accès direct et des tarifs privilégiés sur quasiment l'ensemble de la presse premium pour bâtir votre autorité et crédibilité aux yeux de <strong>Google</strong>.
                           </p>
                       </div>
                       <div>
@@ -281,7 +329,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                       onClick={() => onNavigate('contact')}
                       className="px-8 py-4 bg-blue-600 text-white font-bold uppercase tracking-widest rounded hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/30"
                   >
-                      → Faire une demande de contact
+                      → Nous contacter
                   </button>
               </div>
           </div>

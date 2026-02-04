@@ -23,10 +23,7 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const SOCIAL_LINKS = [
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/company/triaina' },
-    { name: 'Twitter / X', url: 'https://x.com/triaina_agency' },
-    { name: 'Instagram', url: 'https://instagram.com/triaina.agency' },
-    { name: 'Facebook', url: 'https://facebook.com/triaina.agency' } // Ajout pour audit, même si inactif
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/company/triaina' }
 ];
 
 export const EXPERTISE_DATA: Record<string, ExpertiseContent> = {
@@ -155,6 +152,21 @@ export const REFERENCES_DATA: ReferenceItem[] = [
     ],
     tags: ['Gastronomie', 'SEO Local', 'GSO'],
     image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
+    id: 'ref_skilink',
+    client: 'Skilink',
+    title: 'Verticalité SEO & Ski Sur-Mesure',
+    summary: 'Positionnement leader sur le marché concurrentiel du ski tout compris.',
+    challenge: 'Capter une audience premium face aux OTAs généralistes sur les requêtes de stations alpines de prestige.',
+    solution: 'Architecture en silos hermétiques par massif/station et stratégie de contenu "Expert" pour maximiser l\'autorité thématique aux yeux de Google et des IA.',
+    results: [
+        'Top 3 sur les stations cibles (Courchevel, Méribel)',
+        'Trafic qualifié en hausse de 40% saison N+1',
+        'Intégration dans les comparatifs générés par IA'
+    ],
+    tags: ['Travel', 'Luxe', 'Siloing'],
+    image: 'https://images.unsplash.com/photo-1551524559-8af4e66a3239?auto=format&fit=crop&q=80&w=1200'
   },
     {
     id: 'ref_groupe_hotelier',

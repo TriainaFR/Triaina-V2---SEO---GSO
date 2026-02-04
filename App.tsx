@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Page } from './types';
 import ParticleBackground from './components/ParticleBackground';
@@ -58,7 +57,7 @@ const App: React.FC = () => {
       case 'press':
         return <Press />;
       case 'team':
-        return <Team />;
+        return <Team onNavigate={handleNavigation} />;
       case 'faq':
         return <FAQ />;
       case 'contact':
@@ -114,10 +113,7 @@ const App: React.FC = () => {
           "closes": "19:00"
         },
         "sameAs": [
-          "https://www.linkedin.com/company/triaina",
-          "https://x.com/triaina_agency",
-          "https://instagram.com/triaina.agency",
-          "https://facebook.com/triaina.agency"
+          "https://www.linkedin.com/company/triaina"
         ],
         "knowsAbout": [
           "SEO",
@@ -141,7 +137,7 @@ const App: React.FC = () => {
         "@id": "https://www.triaina.fr/#website",
         "url": "https://www.triaina.fr/",
         "name": "Triaina | Agence SEO & GSO Paris",
-        "description": "Domination IA et Visibilité Absolue",
+        "description": "Domination IA et Visibilité Totale",
         "publisher": {
           "@id": "https://www.triaina.fr/#organization"
         },

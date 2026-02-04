@@ -284,7 +284,7 @@ export const Pillars: React.FC = () => {
 
               <div className="mt-16 flex flex-col sm:flex-row justify-center gap-6">
                   <a href="#contact" className="group px-8 py-4 bg-blue-600 text-white font-bold uppercase tracking-widest rounded hover:bg-slate-900 transition-all duration-300 shadow-xl shadow-blue-600/20 flex items-center justify-center gap-3">
-                      Lancer l'audit gratuit <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                      Lancer l'audit <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                   </a>
                   <a href="#team" className="px-8 py-4 bg-white text-slate-900 border border-slate-300 font-bold uppercase tracking-widest rounded hover:border-blue-600 hover:text-blue-600 transition-colors flex items-center justify-center">
                       Parler à un expert

@@ -1,25 +1,41 @@
-
 import React, { useEffect } from 'react';
 
 interface SEOProps {
-  schema: object;
+  title?: string;
+  description?: string;
+  schema?: object;
 }
 
-export const SEO: React.FC<SEOProps> = ({ schema }) => {
+export const SEO: React.FC<SEOProps> = ({ title, description, schema }) => {
   useEffect(() => {
-    // Create script element
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify(schema);
-    
-    // Append to head
-    document.head.appendChild(script);
+    // 1. Update Title
+    if (title) {
+      document.title = `${title} | Triaina`;
+    }
 
-    // Cleanup on unmount
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, [schema]);
+    // 2. Update Meta Description
+    if (description) {
+      let metaDescription = document.querySelector('meta[name="description"]');
+      if (!metaDescription) {
+        metaDescription = document.createElement('meta');
+        metaDescription.setAttribute('name', 'description');
+        document.head.appendChild(metaDescription);
+      }
+      metaDescription.setAttribute('content', description);
+    }
+
+    // 3. Inject JSON-LD Schema
+    if (schema) {
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(schema);
+      document.head.appendChild(script);
+
+      return () => {
+        document.head.removeChild(script);
+      };
+    }
+  }, [title, description, schema]);
 
   return null;
 };

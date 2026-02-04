@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { EXPERTISE_DATA } from '../constants';
 import { 
@@ -73,7 +72,11 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
 
       return (
         <div className="pt-32 pb-20 px-4 min-h-screen max-w-7xl mx-auto relative z-10">
-            <SEO schema={seoSchema} />
+            <SEO 
+                title="Expertise SEO : Agence Référencement Naturel"
+                description="Agence SEO experte en référencement naturel. Audit SEO, stratégie de mots-clés et optimisation technique pour dominer Google."
+                schema={seoSchema} 
+            />
             
             {/* HERO */}
             <div className="mb-24 animate-fade-in-up">
@@ -269,20 +272,20 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
             <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-12 text-center text-white shadow-2xl animate-fade-in-up" style={{animationDelay: '800ms'}}>
                 <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">Prêt à Dominer Google ?</h2>
                 <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto font-light">
-                    Triaina vous accompagne. Audit SEO gratuit, consultant expert, résultats mesurables.
+                    Triaina vous accompagne. Audit SEO, consultant expert, résultats mesurables.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                     <button 
                         onClick={() => onNavigate('contact')}
                         className="px-8 py-4 bg-white text-blue-900 font-bold uppercase tracking-widest rounded hover:bg-blue-50 transition-colors shadow-lg"
                     >
-                        → Demander un audit SEO gratuit
+                        → Nous contacter
                     </button>
                     <button 
-                        onClick={() => onNavigate('contact')}
+                        onClick={() => onNavigate('faq')}
                         className="px-8 py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest rounded hover:bg-white/10 transition-colors"
                     >
-                        Contact
+                        FAQ
                     </button>
                 </div>
             </div>
@@ -330,7 +333,11 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
 
       return (
         <div className="pt-32 pb-20 px-4 min-h-screen max-w-7xl mx-auto relative z-10">
-            <SEO schema={seaSchema} />
+            <SEO 
+                title="Expertise SEA : Agence Publicité & Acquisition"
+                description="Agence SEA experte en publicité. Gestion Google Ads, Social Ads et optimisation ROAS pour maximiser vos conversions."
+                schema={seaSchema} 
+            />
             
             {/* HERO */}
             <div className="mb-24 animate-fade-in-up">
@@ -540,20 +547,20 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
             <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-12 text-center text-white shadow-2xl animate-fade-in-up" style={{animationDelay: '800ms'}}>
                 <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">Prêt à Augmenter vos Ventes ?</h2>
                 <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto font-light">
-                    Triaina vous accompagne. Audit SEA gratuit, consultant expert, résultats immédiats.
+                    Triaina vous accompagne. Audit SEA, consultant expert, résultats immédiats.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                     <button 
                         onClick={() => onNavigate('contact')}
                         className="px-8 py-4 bg-white text-blue-900 font-bold uppercase tracking-widest rounded hover:bg-blue-50 transition-colors shadow-lg"
                     >
-                        → Demander un audit SEA gratuit
+                        → Nous contacter
                     </button>
                     <button 
-                        onClick={() => onNavigate('contact')}
+                        onClick={() => onNavigate('faq')}
                         className="px-8 py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest rounded hover:bg-white/10 transition-colors"
                     >
-                        Contact
+                        FAQ
                     </button>
                 </div>
             </div>
@@ -601,7 +608,11 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
 
       return (
         <div className="pt-32 pb-20 px-4 min-h-screen max-w-7xl mx-auto relative z-10">
-            <SEO schema={gsoSchema} />
+            <SEO 
+                title="Expertise GSO : Agence Référencement IA & ChatGPT"
+                description="Agence GSO leader en Generative Search Optimization. Optimisez votre visibilité sur ChatGPT, Gemini et Perplexity."
+                schema={gsoSchema} 
+            />
             
             {/* HERO */}
             <div className="mb-24 animate-fade-in-up">
@@ -785,20 +796,20 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
             <div className="bg-gradient-to-r from-purple-600 to-blue-800 rounded-2xl p-12 text-center text-white shadow-2xl animate-fade-in-up" style={{animationDelay: '800ms'}}>
                 <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">Prêt à Dominer les IA ?</h2>
                 <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto font-light">
-                    Triaina vous accompagne. Audit GSO gratuit, consultant expert, résultats mesurables.
+                    Triaina vous accompagne. Audit GSO, consultant expert, résultats mesurables.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                     <button 
                         onClick={() => onNavigate('contact')}
                         className="px-8 py-4 bg-white text-purple-900 font-bold uppercase tracking-widest rounded hover:bg-purple-50 transition-colors shadow-lg"
                     >
-                        → Demander un audit GSO gratuit
+                        → Nous contacter
                     </button>
                     <button 
-                        onClick={() => onNavigate('contact')}
+                        onClick={() => onNavigate('faq')}
                         className="px-8 py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest rounded hover:bg-white/10 transition-colors"
                     >
-                        Contact
+                        FAQ
                     </button>
                 </div>
             </div>
@@ -846,7 +857,11 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
 
       return (
         <div className="pt-32 pb-20 px-4 min-h-screen max-w-7xl mx-auto relative z-10">
-            <SEO schema={gsaSchema} />
+            <SEO 
+                title="Expertise GSA : Publicité IA & Generative Engine"
+                description="Agence GSA spécialisée en Generative Engine Advertising. Campagnes publicitaires sur Perplexity, SearchGPT et moteurs IA."
+                schema={gsaSchema} 
+            />
             
             {/* HERO */}
             <div className="mb-24 animate-fade-in-up">
@@ -1059,20 +1074,20 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
             <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-12 text-center text-white shadow-2xl animate-fade-in-up" style={{animationDelay: '800ms'}}>
                 <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">Prêt à Optimiser vos Campagnes ?</h2>
                 <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto font-light">
-                    Triaina vous accompagne. Audit GSA gratuit, consultant expert, résultats mesurables.
+                    Triaina vous accompagne. Audit GSA, consultant expert, résultats mesurables.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                     <button 
                         onClick={() => onNavigate('contact')}
                         className="px-8 py-4 bg-white text-blue-900 font-bold uppercase tracking-widest rounded hover:bg-blue-50 transition-colors shadow-lg"
                     >
-                        → Demander un audit GSA gratuit
+                        → Nous contacter
                     </button>
                     <button 
-                        onClick={() => onNavigate('contact')}
+                        onClick={() => onNavigate('faq')}
                         className="px-8 py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest rounded hover:bg-white/10 transition-colors"
                     >
-                        Contact
+                        FAQ
                     </button>
                 </div>
             </div>
@@ -1120,7 +1135,11 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
 
       return (
         <div className="pt-32 pb-20 px-4 min-h-screen max-w-7xl mx-auto relative z-10">
-            <SEO schema={mediaSchema} />
+            <SEO 
+                title="Expertise Média : Stratégie Netlinking & Digital PR"
+                description="Agence Média experte en autorité et netlinking. Boostez votre SEO et GSO grâce à notre réseau de médias propriétaires et premium."
+                schema={mediaSchema} 
+            />
             
             {/* HERO */}
             <div className="mb-24 animate-fade-in-up">
@@ -1338,13 +1357,13 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                         onClick={() => onNavigate('contact')}
                         className="px-8 py-4 bg-white text-blue-900 font-bold uppercase tracking-widest rounded hover:bg-blue-50 transition-colors shadow-lg"
                     >
-                        → Demander un audit média gratuit
+                        → Nous contacter
                     </button>
                     <button 
-                        onClick={() => onNavigate('contact')}
+                        onClick={() => onNavigate('faq')}
                         className="px-8 py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest rounded hover:bg-white/10 transition-colors"
                     >
-                        Contact
+                        FAQ
                     </button>
                 </div>
             </div>
@@ -1392,7 +1411,11 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
 
       return (
         <div className="pt-32 pb-20 px-4 min-h-screen max-w-7xl mx-auto relative z-10">
-            <SEO schema={contentSchema} />
+            <SEO 
+                title="Expertise Contenu : Rédaction Web SEO & IA"
+                description="Agence de rédaction web et contenu SEO/GSO. Articles de blog, pages web et contenu structuré pour plaire à Google et aux IA."
+                schema={contentSchema} 
+            />
             
             {/* HERO */}
             <div className="mb-24 animate-fade-in-up">
@@ -1633,13 +1656,13 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                         onClick={() => onNavigate('contact')}
                         className="px-8 py-4 bg-white text-blue-900 font-bold uppercase tracking-widest rounded hover:bg-blue-50 transition-colors shadow-lg"
                     >
-                        → Demander un audit contenu gratuit
+                        → Nous contacter
                     </button>
                     <button 
-                        onClick={() => onNavigate('contact')}
+                        onClick={() => onNavigate('faq')}
                         className="px-8 py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest rounded hover:bg-white/10 transition-colors"
                     >
-                        Contact
+                        FAQ
                     </button>
                 </div>
             </div>
@@ -1655,6 +1678,11 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
   return (
     <div className="pt-32 pb-20 px-4 min-h-screen max-w-7xl mx-auto relative z-10">
       
+      <SEO 
+          title={`${content.title}`} 
+          description={content.description} 
+      />
+
       {/* Header Section */}
       <div className="mb-20 animate-fade-in-up">
         <div className="flex items-center gap-3 mb-6">
@@ -1714,7 +1742,7 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                   onClick={() => onNavigate('contact')}
                   className="px-8 py-4 bg-blue-600 text-white font-bold uppercase tracking-widest rounded hover:bg-slate-900 transition-colors shadow-lg shadow-blue-600/20 flex items-center gap-2"
                >
-                   Demander un devis <ArrowRight size={16} />
+                   Nous contacter <ArrowRight size={16} />
                </button>
           </div>
 

@@ -5,7 +5,7 @@ import { SEO } from '../components/SEO';
 
 type Tab = 'history' | 'careers';
 
-export const Team: React.FC = () => {
+export const Team: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate }) => {
   const [activeTab, setActiveTab] = useState<Tab>('history');
   
   useEffect(() => {
@@ -70,7 +70,7 @@ export const Team: React.FC = () => {
                         À Propos de Triaina : Intelligence Collective & Innovation
                     </h3>
                     <p className="text-lg text-slate-700 leading-relaxed font-light">
-                        <strong>Triaina</strong> est une <strong>agence SEO</strong> et <strong>consultant en référencement naturel</strong> fondée en 2025. Nous combinons 25 années d'expertise en <strong>SEO</strong> avec l'innovation en <strong>Generative Search Optimization (GSO)</strong> pour vous offrir une stratégie de <strong>référencement</strong> complète et future-proof.
+                        <strong>Triaina</strong> est une <strong>agence SEO, GSO, Média</strong> fondée en 2025. Nous combinons 25 années d'expertise en <strong>SEO</strong> avec l'innovation en <strong>Generative Search Optimization (GSO)</strong> pour vous offrir une stratégie de <strong>référencement</strong> complète et future-proof.
                     </p>
                 </div>
              </div>
@@ -220,15 +220,15 @@ export const Team: React.FC = () => {
                     </h2>
                     <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
                         <strong>Triaina</strong> vous accompagne dans votre stratégie <strong>SEO</strong> et <strong>GSO</strong>. 
-                        Audit SEO gratuit, consultant expert, optimisation pour Google et les IA.
+                        Audit SEO, consultant expert, optimisation pour Google et les IA.
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="#contact" className="px-8 py-4 bg-blue-600 text-white font-bold uppercase tracking-widest rounded hover:bg-slate-900 transition-colors shadow-xl shadow-blue-600/20">
-                            → Demander un audit SEO gratuit
-                        </a>
-                        <a href="#contact" className="px-8 py-4 bg-white text-slate-900 border border-slate-300 font-bold uppercase tracking-widest rounded hover:border-blue-600 hover:text-blue-600 transition-colors">
-                            → Contacter notre consultant SEO
-                        </a>
+                        <button onClick={() => onNavigate('contact')} className="px-8 py-4 bg-blue-600 text-white font-bold uppercase tracking-widest rounded hover:bg-slate-900 transition-colors shadow-xl shadow-blue-600/20">
+                            → Demande de Contact
+                        </button>
+                        <button onClick={() => onNavigate('expertise-seo')} className="px-8 py-4 bg-white text-slate-900 border border-slate-300 font-bold uppercase tracking-widest rounded hover:border-blue-600 hover:text-blue-600 transition-colors">
+                            → Expertise SEO
+                        </button>
                     </div>
                 </div>
              </div>
@@ -275,11 +275,11 @@ export const Team: React.FC = () => {
     <div className="pt-32 pb-20 px-4 min-h-screen max-w-7xl mx-auto relative z-10 overflow-x-hidden">
       
       {/* Balises SEO spécifiques à cette vue */}
-      <SEO schema={teamSchema} />
-      <div className="hidden">
-        <title>Triaina : Agence SEO & GSO Spécialisée en Référencement IA</title>
-        <meta name="description" content="Triaina est une agence SEO et consultant en référencement naturel fondée en 2025. 25 années d'expertise SEO + innovation en GSO." />
-      </div>
+      <SEO 
+          title="Agence Triaina : L'Histoire d'une Agence SEO & GSO Pionnière"
+          description="Découvrez Triaina, agence née de 25 ans d'expertise SEO et d'innovation IA. Notre mission : définir les standards du GSO et de l'autorité média."
+          schema={teamSchema} 
+      />
 
       {/* Header */}
       <div className="mb-12 border-b border-slate-400 pb-8 animate-fade-in-up">
