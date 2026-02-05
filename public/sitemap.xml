@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Page d'accueil -->
@@ -8,7 +9,7 @@
     <priority>1.0</priority>
   </url>
   
-  <!-- Pages Agence -->
+  <!-- Pages Agence & Corporate -->
   <url>
     <loc>https://www.triaina.fr/agence</loc>
     <lastmod>2026-02-02</lastmod>
@@ -44,41 +45,48 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Expertises -->
+  <url>
+    <loc>https://www.triaina.fr/mentions-legales</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Pôles d'Expertise (Landing Pages SEO) -->
   <url>
     <loc>https://www.triaina.fr/expertise-seo</loc>
     <lastmod>2026-02-02</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.triaina.fr/expertise-sea</loc>
     <lastmod>2026-02-02</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.triaina.fr/expertise-gso</loc>
     <lastmod>2026-02-02</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.triaina.fr/expertise-gsa</loc>
     <lastmod>2026-02-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.triaina.fr/expertise-media</loc>
     <lastmod>2026-02-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.triaina.fr/expertise-contenu</loc>
     <lastmod>2026-02-02</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
 </urlset>

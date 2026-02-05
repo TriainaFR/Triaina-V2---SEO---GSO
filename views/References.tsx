@@ -1,9 +1,9 @@
 
-
 import React, { useState } from 'react';
 import { REFERENCES_DATA } from '../constants';
 import { ArrowUpRight } from 'lucide-react';
 import { ScrambleText } from '../components/ScrambleText';
+import { SEO } from '../components/SEO';
 
 export const References: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -20,6 +20,11 @@ export const References: React.FC = () => {
   return (
     <div className="pt-32 pb-20 px-4 min-h-screen max-w-7xl mx-auto relative z-10">
       
+      <SEO 
+        title="Références Clients & Cas Pratiques" 
+        description="Découvrez comment Triaina accompagne ses clients (Yonder, Best Restaurants, Hôtellerie...) vers la domination SEO et GSO. Études de cas et résultats."
+      />
+
       <div className="flex items-end justify-between mb-20 border-b border-slate-400 pb-8 animate-fade-in-up">
         <div>
             <h2 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-2">
@@ -98,7 +103,14 @@ export const References: React.FC = () => {
 
                         {/* Image Content - Hidden on Mobile */}
                         <div className="hidden md:block col-span-4 relative aspect-video border border-slate-300 overflow-hidden rounded shadow-sm">
-                             <img src={item.image} alt={item.client} className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-700 grayscale hover:grayscale-0" />
+                             <img 
+                                src={item.image} 
+                                alt={`Référence client ${item.client} - ${item.title}`} 
+                                loading="lazy" 
+                                width="600"
+                                height="400"
+                                className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-700 grayscale hover:grayscale-0" 
+                            />
                         </div>
                     </div>
                 </div>

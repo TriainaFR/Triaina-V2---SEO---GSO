@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Mail, Phone, ArrowUpRight, MapPin } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const Contact: React.FC = () => {
   const FOUNDERS = [
@@ -21,6 +22,11 @@ export const Contact: React.FC = () => {
   return (
     <div className="pt-32 pb-20 px-4 min-h-screen max-w-7xl mx-auto relative z-10 flex flex-col justify-center">
       
+      <SEO 
+        title="Contact Agence SEO Paris" 
+        description="Contactez l'agence Triaina pour vos besoins en SEO, GSO et stratégie Média. Bureaux situés au 50 Quai Louis Blériot, 75016 Paris."
+      />
+
       {/* Header */}
       <div className="mb-24 border-b border-slate-900/10 pb-8 animate-fade-in-up">
         <h2 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-2">

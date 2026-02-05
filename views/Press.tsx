@@ -3,11 +3,17 @@ import React from 'react';
 import { PRESS_DATA } from '../constants';
 import { ArrowUpRight, Calendar, Clock } from 'lucide-react';
 import { ScrambleText } from '../components/ScrambleText';
+import { SEO } from '../components/SEO';
 
 export const Press: React.FC = () => {
   return (
     <div className="pt-32 pb-20 px-4 min-h-screen max-w-7xl mx-auto relative z-10">
       
+      <SEO 
+        title="Espace Presse & Médias" 
+        description="Les actualités de l'agence Triaina. Revues de presse, tribunes expertes et communiqués sur le futur du référencement (SEO & IA)."
+      />
+
       {/* Header */}
       <div className="mb-20 border-b border-slate-400 pb-8 animate-fade-in-up">
         <h2 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-2">

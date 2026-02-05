@@ -16,6 +16,7 @@ const ParticleBackground: React.FC = () => {
     canvas.height = height;
 
     let time = 0;
+    let animationFrameId: number;
 
     // Gradient Mesh Logic
     const draw = () => {
@@ -50,7 +51,12 @@ const ParticleBackground: React.FC = () => {
         }
 
         time++;
-        requestAnimationFrame(draw);
+        
+        // OPTIMIZATION: Only loop on Desktop (> 768px)
+        // On Mobile, we draw once (immobilized) to save battery/CPU
+        if (width > 768) {
+            animationFrameId = requestAnimationFrame(draw);
+        }
     };
 
     draw();
@@ -60,10 +66,17 @@ const ParticleBackground: React.FC = () => {
       height = window.innerHeight;
       canvas.width = width;
       canvas.height = height;
+      // Redraw once on resize to fit new screen
+      cancelAnimationFrame(animationFrameId);
+      draw(); 
     };
 
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    
+    return () => {
+        window.removeEventListener('resize', handleResize);
+        cancelAnimationFrame(animationFrameId);
+    };
   }, []);
 
   return <canvas ref={canvasRef} className="fixed inset-0 z-0 w-full h-full pointer-events-none" />;

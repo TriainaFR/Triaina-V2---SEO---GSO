@@ -1,5 +1,38 @@
 
-import { FAQItem, ReferenceItem, ChatStep, PartnerItem, PressItem, JobOffer, TeamMember, HistoryItem, NavLink, ExpertiseContent } from './types';
+import { FAQItem, ReferenceItem, ChatStep, PartnerItem, PressItem, JobOffer, TeamMember, HistoryItem, NavLink, ExpertiseContent, Page } from './types';
+
+export const PAGE_TO_URL: Record<string, string> = {
+  'home': '/',
+  'team': '/agence',
+  'references': '/references',
+  'press': '/presse',
+  'contact': '/contact',
+  'faq': '/faq',
+  'legal': '/mentions-legales',
+  'expertise-seo': '/expertise-seo',
+  'expertise-sea': '/expertise-sea',
+  'expertise-gso': '/expertise-gso',
+  'expertise-gsa': '/expertise-gsa',
+  'expertise-media': '/expertise-media',
+  'expertise-content': '/expertise-contenu'
+};
+
+export const ROUTES: Record<string, Page> = {
+  '/': 'home',
+  '/agence': 'team',
+  '/references': 'references',
+  '/presse': 'press',
+  '/contact': 'contact',
+  '/faq': 'faq',
+  '/mentions-legales': 'legal',
+  '/expertise-seo': 'expertise-seo',
+  '/expertise-sea': 'expertise-sea',
+  '/expertise-gso': 'expertise-gso',
+  '/expertise-gsa': 'expertise-gsa',
+  '/expertise-media': 'expertise-media',
+  '/expertise-content': 'expertise-content',
+  '/expertise-contenu': 'expertise-content'
+};
 
 export const NAV_LINKS: NavLink[] = [
   { id: 'home', label: 'ACCUEIL' },

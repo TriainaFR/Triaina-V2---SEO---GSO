@@ -11,44 +11,10 @@ import { Press } from './views/Press';
 import { Team } from './views/Team';
 import { Expertise } from './views/Expertise';
 import { Legal } from './views/Legal';
+import { NotFound } from './views/NotFound'; // Import 404
 import { SEO } from './components/SEO';
-import { NAV_LINKS, SOCIAL_LINKS } from './constants';
+import { NAV_LINKS, SOCIAL_LINKS, PAGE_TO_URL, ROUTES } from './constants';
 import { Logo } from './components/Logo';
-
-// Mapping Routes (URL) <-> Pages (Internal ID)
-// Double mapping pour sécuriser l'accès (legacy & current)
-const ROUTES: Record<string, Page> = {
-  '/': 'home',
-  '/agence': 'team',
-  '/references': 'references',
-  '/presse': 'press',
-  '/contact': 'contact',
-  '/faq': 'faq',
-  '/mentions-legales': 'legal',
-  '/expertise-seo': 'expertise-seo',
-  '/expertise-sea': 'expertise-sea',
-  '/expertise-gso': 'expertise-gso',
-  '/expertise-gsa': 'expertise-gsa',
-  '/expertise-media': 'expertise-media',
-  '/expertise-content': 'expertise-content',
-  '/expertise-contenu': 'expertise-content' // Fallback pour compatibilité
-};
-
-const PAGE_TO_URL: Record<Page, string> = {
-  'home': '/',
-  'team': '/agence',
-  'references': '/references',
-  'press': '/presse',
-  'contact': '/contact',
-  'faq': '/faq',
-  'legal': '/mentions-legales',
-  'expertise-seo': '/expertise-seo',
-  'expertise-sea': '/expertise-sea',
-  'expertise-gso': '/expertise-gso',
-  'expertise-gsa': '/expertise-gsa',
-  'expertise-media': '/expertise-media',
-  'expertise-content': '/expertise-contenu'
-};
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -60,7 +26,9 @@ const App: React.FC = () => {
         const path = window.location.pathname;
         // Handle potential trailing slash or mismatches strictly
         const cleanPath = path === '/' ? '/' : path.replace(/\/$/, '');
-        const page = ROUTES[cleanPath] || 'home';
+        
+        // New Logic: If route not found, go to 404 Page instead of Home
+        const page = ROUTES[cleanPath] || '404';
         setCurrentPage(page);
       } catch (e) {
         console.warn('Location access error (sandbox):', e);
@@ -91,6 +59,10 @@ const App: React.FC = () => {
       }
       setCurrentPage(page);
       window.scrollTo(0, 0);
+    } else if (page === 'home') {
+        // Fallback for home explicitly
+        try { window.history.pushState({}, '', '/'); } catch(e) {}
+        setCurrentPage('home');
     }
   };
 
@@ -117,8 +89,11 @@ const App: React.FC = () => {
       case 'expertise-media':
       case 'expertise-content':
         return <Expertise id={currentPage} onNavigate={handleNavigation} />;
+      case '404':
+        return <NotFound onNavigate={handleNavigation} />;
       default:
-        return <Home onNavigate={handleNavigation} />;
+        // Default catch-all to 404 to avoid soft 404s
+        return <NotFound onNavigate={handleNavigation} />;
     }
   };
 
@@ -225,6 +200,7 @@ const App: React.FC = () => {
         {renderPage()}
       </main>
 
+      {/* Footer is visible on all pages except maybe explicit landing pages, keeping it everywhere for SEO */}
       <footer className="relative z-10 border-t border-slate-300 bg-slate-100/90 backdrop-blur-md pt-16 pb-8 mt-auto">
          <div className="max-w-7xl mx-auto px-4">
             
@@ -260,7 +236,7 @@ const App: React.FC = () => {
                         {NAV_LINKS.slice(0, 2).map(link => (
                             <li key={link.id}>
                                 <a 
-                                    href={PAGE_TO_URL[link.id as Page]}
+                                    href={PAGE_TO_URL[link.id]}
                                     onClick={(e) => {
                                         e.preventDefault();
                                         handleNavigation(link.id as Page);
@@ -293,7 +269,7 @@ const App: React.FC = () => {
                         {NAV_LINKS.slice(3).map(link => (
                             <li key={link.id}>
                                 <a 
-                                    href={PAGE_TO_URL[link.id as Page]}
+                                    href={PAGE_TO_URL[link.id]}
                                     onClick={(e) => {
                                         e.preventDefault();
                                         handleNavigation(link.id as Page);

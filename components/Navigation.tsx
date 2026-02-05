@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Page } from '../types';
-import { NAV_LINKS } from '../constants';
+import { NAV_LINKS, PAGE_TO_URL } from '../constants';
 import { Logo } from './Logo';
 import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -58,9 +58,14 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate 
         ring-1 ring-white/40 inset
       `}>
             
-            <div className="cursor-pointer" onClick={() => onNavigate('home')}>
+            <a 
+                href="/" 
+                className="cursor-pointer block" 
+                onClick={(e) => { e.preventDefault(); onNavigate('home'); }}
+                aria-label="Accueil Triaina"
+            >
               <Logo />
-            </div>
+            </a>
             
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center space-x-1">
@@ -71,37 +76,38 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate 
 
                 if (isContact) {
                      return (
-                        <button
+                        <a
                           key={link.id}
-                          onClick={() => onNavigate(link.id as Page)}
+                          href={PAGE_TO_URL[link.id]}
+                          onClick={(e) => { e.preventDefault(); onNavigate(link.id as Page); }}
                           className="ml-6 px-6 py-2.5 bg-slate-900 text-white rounded-full text-xs font-bold tracking-widest uppercase hover:bg-blue-600 transition-all duration-300 shadow-lg shadow-slate-900/20 hover:shadow-blue-600/30 hover:-translate-y-0.5"
                         >
                           {link.label}
-                        </button>
+                        </a>
                     );
                 }
 
-                return (
-                    <div 
-                        key={link.id} 
-                        className="relative"
-                        onMouseEnter={() => hasChildren && handleMouseEnter(link.id)}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        <button
-                            onClick={() => !hasChildren && onNavigate(link.id as Page)}
-                            className={`
-                                relative px-4 py-2 text-xs font-bold tracking-widest uppercase transition-all duration-300 rounded-full flex items-center gap-1
-                                ${hasChildren ? 'cursor-default' : 'cursor-pointer hover:bg-white/50'}
-                                ${isActive ? 'text-blue-600 bg-white/80 shadow-sm' : 'text-slate-600 hover:text-slate-900'}
-                            `}
+                // If it has children (Expertise), keep it as a wrapper/trigger (or link to first child if desired, but here trigger)
+                // If it's a simple link, make it an <a> tag
+                if (hasChildren) {
+                    return (
+                        <div 
+                            key={link.id} 
+                            className="relative"
+                            onMouseEnter={() => handleMouseEnter(link.id)}
+                            onMouseLeave={handleMouseLeave}
                         >
-                            {link.label}
-                            {hasChildren && <ChevronDown size={12} className={`transition-transform duration-300 ${dropdownOpen === link.id ? 'rotate-180' : ''}`} />}
-                        </button>
+                            <button
+                                className={`
+                                    relative px-4 py-2 text-xs font-bold tracking-widest uppercase transition-all duration-300 rounded-full flex items-center gap-1 cursor-default
+                                    ${isActive ? 'text-blue-600 bg-white/80 shadow-sm' : 'text-slate-600 hover:text-slate-900'}
+                                `}
+                            >
+                                {link.label}
+                                <ChevronDown size={12} className={`transition-transform duration-300 ${dropdownOpen === link.id ? 'rotate-180' : ''}`} />
+                            </button>
 
-                        {/* Dropdown Menu */}
-                        {hasChildren && (
+                            {/* Dropdown Menu */}
                             <div className={`
                                 absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 py-2
                                 bg-white/90 backdrop-blur-xl border border-white/60 shadow-xl rounded-xl
@@ -109,9 +115,11 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate 
                                 ${dropdownOpen === link.id ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}
                             `}>
                                 {link.children?.map(child => (
-                                    <button
+                                    <a
                                         key={child.id}
-                                        onClick={() => {
+                                        href={PAGE_TO_URL[child.id]}
+                                        onClick={(e) => {
+                                            e.preventDefault();
                                             onNavigate(child.id as Page);
                                             setDropdownOpen(null);
                                         }}
@@ -121,10 +129,26 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate 
                                         `}
                                     >
                                         {child.label}
-                                    </button>
+                                    </a>
                                 ))}
                             </div>
-                        )}
+                        </div>
+                    );
+                }
+
+                // Simple Links (Home, Team, References...)
+                return (
+                    <div key={link.id} className="relative">
+                        <a
+                            href={PAGE_TO_URL[link.id]}
+                            onClick={(e) => { e.preventDefault(); onNavigate(link.id as Page); }}
+                            className={`
+                                relative px-4 py-2 text-xs font-bold tracking-widest uppercase transition-all duration-300 rounded-full flex items-center gap-1 cursor-pointer hover:bg-white/50
+                                ${isActive ? 'text-blue-600 bg-white/80 shadow-sm' : 'text-slate-600 hover:text-slate-900'}
+                            `}
+                        >
+                            {link.label}
+                        </a>
                     </div>
                 );
               })}
@@ -146,50 +170,61 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate 
                 const hasChildren = link.children && link.children.length > 0;
                 const isOpen = dropdownOpen === link.id;
 
-                return (
-                    <div key={link.id} className="border-b border-slate-100 pb-4 last:border-0">
-                        <button
-                            onClick={() => {
-                                if (hasChildren) {
-                                    toggleDropdownMobile(link.id);
-                                } else {
-                                    onNavigate(link.id as Page);
-                                    setIsMobileOpen(false);
-                                }
-                            }}
-                            className={`w-full flex justify-between items-center text-2xl font-display font-bold text-left ${
-                                currentPage === link.id ? 'text-blue-600' : 'text-slate-900'
-                            }`}
-                        >
-                            {link.label}
-                            {hasChildren && (
+                if (hasChildren) {
+                    return (
+                        <div key={link.id} className="border-b border-slate-100 pb-4 last:border-0">
+                            <button
+                                onClick={() => toggleDropdownMobile(link.id)}
+                                className={`w-full flex justify-between items-center text-2xl font-display font-bold text-left ${
+                                    currentPage === link.id ? 'text-blue-600' : 'text-slate-900'
+                                }`}
+                            >
+                                {link.label}
                                 <span className="text-slate-400">
                                     {isOpen ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
                                 </span>
-                            )}
-                        </button>
+                            </button>
 
-                        {/* Mobile Submenu */}
-                        {hasChildren && (
+                            {/* Mobile Submenu */}
                             <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 mt-4 opacity-100' : 'max-h-0 opacity-0'}`}>
                                 <div className="flex flex-col space-y-3 pl-4 border-l-2 border-blue-100">
                                     {link.children?.map(child => (
-                                        <button
+                                        <a
                                             key={child.id}
-                                            onClick={() => {
+                                            href={PAGE_TO_URL[child.id]}
+                                            onClick={(e) => {
+                                                e.preventDefault();
                                                 onNavigate(child.id as Page);
                                                 setIsMobileOpen(false);
                                             }}
-                                            className={`text-lg font-mono text-left uppercase tracking-wide ${
+                                            className={`text-lg font-mono text-left uppercase tracking-wide block ${
                                                 currentPage === child.id ? 'text-blue-600 font-bold' : 'text-slate-500'
                                             }`}
                                         >
                                             {child.label}
-                                        </button>
+                                        </a>
                                     ))}
                                 </div>
                             </div>
-                        )}
+                        </div>
+                    );
+                }
+
+                return (
+                    <div key={link.id} className="border-b border-slate-100 pb-4 last:border-0">
+                        <a
+                            href={PAGE_TO_URL[link.id]}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                onNavigate(link.id as Page);
+                                setIsMobileOpen(false);
+                            }}
+                            className={`w-full block text-2xl font-display font-bold text-left ${
+                                currentPage === link.id ? 'text-blue-600' : 'text-slate-900'
+                            }`}
+                        >
+                            {link.label}
+                        </a>
                     </div>
                 );
             })}

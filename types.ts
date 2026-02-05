@@ -12,7 +12,8 @@ export type Page =
   | 'expertise-gso' 
   | 'expertise-gsa' 
   | 'expertise-media' 
-  | 'expertise-content';
+  | 'expertise-content'
+  | '404';
 
 export interface NavLink {
   id: string;
