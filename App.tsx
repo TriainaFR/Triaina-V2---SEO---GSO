@@ -13,29 +13,58 @@ import { SEO } from './components/SEO';
 import { NAV_LINKS, SOCIAL_LINKS } from './constants';
 import { Logo } from './components/Logo';
 
+// Mapping Routes (URL) <-> Pages (Internal ID)
+// Double mapping pour sécuriser l'accès (legacy & current)
+const ROUTES: Record<string, Page> = {
+  '/': 'home',
+  '/agence': 'team',
+  '/references': 'references',
+  '/presse': 'press',
+  '/contact': 'contact',
+  '/faq': 'faq',
+  '/expertise-seo': 'expertise-seo',
+  '/expertise-sea': 'expertise-sea',
+  '/expertise-gso': 'expertise-gso',
+  '/expertise-gsa': 'expertise-gsa',
+  '/expertise-media': 'expertise-media',
+  '/expertise-content': 'expertise-content',
+  '/expertise-contenu': 'expertise-content' // Fallback pour compatibilité
+};
+
+const PAGE_TO_URL: Record<Page, string> = {
+  'home': '/',
+  'team': '/agence',
+  'references': '/references',
+  'press': '/presse',
+  'contact': '/contact',
+  'faq': '/faq',
+  'expertise-seo': '/expertise-seo',
+  'expertise-sea': '/expertise-sea',
+  'expertise-gso': '/expertise-gso',
+  'expertise-gsa': '/expertise-gsa',
+  'expertise-media': '/expertise-media',
+  'expertise-content': '/expertise-contenu'
+};
+
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>('home');
 
-  // SEO Routing Logic: Sync URL Hash with Current Page
+  // SEO Routing Logic: Clean URLs (No Hash)
   useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '');
-      const validPages: Page[] = [
-          'home', 'team', 'references', 'press', 'contact', 'faq',
-          'expertise-seo', 'expertise-sea', 'expertise-gso', 'expertise-gsa', 'expertise-media', 'expertise-content'
-      ];
-      
-      if (validPages.includes(hash as Page)) {
-        setCurrentPage(hash as Page);
-      } else {
-        if (hash === '') setCurrentPage('home');
-      }
+    const handleLocationChange = () => {
+      const path = window.location.pathname;
+      // Handle potential trailing slash or mismatches strictly
+      const cleanPath = path === '/' ? '/' : path.replace(/\/$/, '');
+      const page = ROUTES[cleanPath] || 'home';
+      setCurrentPage(page);
     };
 
-    window.addEventListener('hashchange', handleHashChange);
-    handleHashChange();
+    // Initial Load
+    handleLocationChange();
 
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    // Listen to Back/Forward buttons
+    window.addEventListener('popstate', handleLocationChange);
+    return () => window.removeEventListener('popstate', handleLocationChange);
   }, []);
 
   useEffect(() => {
@@ -43,9 +72,12 @@ const App: React.FC = () => {
   }, [currentPage]);
 
   const handleNavigation = (page: Page) => {
-    setCurrentPage(page);
-    window.history.pushState(null, '', `#${page}`);
-    window.scrollTo(0, 0);
+    const url = PAGE_TO_URL[page];
+    if (url) {
+      window.history.pushState({}, '', url);
+      setCurrentPage(page);
+      window.scrollTo(0, 0);
+    }
   };
 
   const renderPage = () => {
@@ -156,7 +188,7 @@ const App: React.FC = () => {
             "@type": "ListItem",
             "position": 2,
             "name": "Offres Référencement IA",
-            "item": "https://www.triaina.fr/#team"
+            "item": "https://www.triaina.fr/agence"
           }
         ]
       }
@@ -211,22 +243,30 @@ const App: React.FC = () => {
                     <ul className="space-y-4">
                         {NAV_LINKS.slice(0, 2).map(link => (
                             <li key={link.id}>
-                                <button 
-                                    onClick={() => handleNavigation(link.id as Page)}
-                                    className="text-slate-600 hover:text-blue-600 font-mono text-xs uppercase tracking-wider transition-colors"
+                                <a 
+                                    href={PAGE_TO_URL[link.id as Page]}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        handleNavigation(link.id as Page);
+                                    }}
+                                    className="text-slate-600 hover:text-blue-600 font-mono text-xs uppercase tracking-wider transition-colors inline-block"
                                 >
                                     {link.label}
-                                </button>
+                                </a>
                             </li>
                         ))}
                         {/* Ajout manuel pour Expertise dans le footer */}
                          <li>
-                            <button 
-                                onClick={() => handleNavigation('expertise-seo')}
-                                className="text-slate-600 hover:text-blue-600 font-mono text-xs uppercase tracking-wider transition-colors"
+                            <a 
+                                href={PAGE_TO_URL['expertise-seo']}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    handleNavigation('expertise-seo');
+                                }}
+                                className="text-slate-600 hover:text-blue-600 font-mono text-xs uppercase tracking-wider transition-colors inline-block"
                             >
                                 EXPERTISE
-                            </button>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -236,12 +276,16 @@ const App: React.FC = () => {
                     <ul className="space-y-4">
                         {NAV_LINKS.slice(3).map(link => (
                             <li key={link.id}>
-                                <button 
-                                    onClick={() => handleNavigation(link.id as Page)}
-                                    className="text-slate-600 hover:text-blue-600 font-mono text-xs uppercase tracking-wider transition-colors"
+                                <a 
+                                    href={PAGE_TO_URL[link.id as Page]}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        handleNavigation(link.id as Page);
+                                    }}
+                                    className="text-slate-600 hover:text-blue-600 font-mono text-xs uppercase tracking-wider transition-colors inline-block"
                                 >
                                     {link.label}
-                                </button>
+                                </a>
                             </li>
                         ))}
                     </ul>

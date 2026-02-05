@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { EXPERTISE_DATA } from '../constants';
 import { 
   CheckCircle2, ArrowRight, Zap, Database, Search, Target, Users, BookOpen,
-  BarChart3, Globe, ShieldCheck, MousePointerClick, Layers, Cpu, Trophy, TrendingUp,
+  BarChart3, Globe, Layers, Cpu, Trophy, TrendingUp,
   Smartphone, ShoppingBag, Award, Bot, BrainCircuit, Sparkles, MessageSquare, Share2,
-  FileText, PenTool, Edit3
+  FileText, MousePointerClick
 } from 'lucide-react';
 import { ScrambleText } from '../components/ScrambleText';
 import { SEO } from '../components/SEO';
@@ -53,8 +53,8 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
             "@type": "BreadcrumbList",
             "itemListElement": [
                 { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr/" },
-                { "@type": "ListItem", "position": 2, "name": "Nos Expertises", "item": "https://www.triaina.fr/#expertise" },
-                { "@type": "ListItem", "position": 3, "name": "Expertise SEO", "item": "https://www.triaina.fr/#expertise-seo" }
+                { "@type": "ListItem", "position": 2, "name": "Nos Expertises", "item": "https://www.triaina.fr/expertise-seo" },
+                { "@type": "ListItem", "position": 3, "name": "Expertise SEO", "item": "https://www.triaina.fr/expertise-seo" }
             ]
             },
             {
@@ -314,8 +314,8 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
             "@type": "BreadcrumbList",
             "itemListElement": [
                 { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr/" },
-                { "@type": "ListItem", "position": 2, "name": "Nos Expertises", "item": "https://www.triaina.fr/#expertise" },
-                { "@type": "ListItem", "position": 3, "name": "Expertise SEA", "item": "https://www.triaina.fr/#expertise-sea" }
+                { "@type": "ListItem", "position": 2, "name": "Nos Expertises", "item": "https://www.triaina.fr/expertise-sea" },
+                { "@type": "ListItem", "position": 3, "name": "Expertise SEA", "item": "https://www.triaina.fr/expertise-sea" }
             ]
             },
             {
@@ -589,8 +589,8 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
             "@type": "BreadcrumbList",
             "itemListElement": [
                 { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr/" },
-                { "@type": "ListItem", "position": 2, "name": "Nos Expertises", "item": "https://www.triaina.fr/#expertise" },
-                { "@type": "ListItem", "position": 3, "name": "Expertise GSO", "item": "https://www.triaina.fr/#expertise-gso" }
+                { "@type": "ListItem", "position": 2, "name": "Nos Expertises", "item": "https://www.triaina.fr/expertise-gso" },
+                { "@type": "ListItem", "position": 3, "name": "Expertise GSO", "item": "https://www.triaina.fr/expertise-gso" }
             ]
             },
             {
@@ -838,8 +838,8 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
             "@type": "BreadcrumbList",
             "itemListElement": [
                 { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr/" },
-                { "@type": "ListItem", "position": 2, "name": "Nos Expertises", "item": "https://www.triaina.fr/#expertise" },
-                { "@type": "ListItem", "position": 3, "name": "Expertise GSA", "item": "https://www.triaina.fr/#expertise-gsa" }
+                { "@type": "ListItem", "position": 2, "name": "Nos Expertises", "item": "https://www.triaina.fr/expertise-gsa" },
+                { "@type": "ListItem", "position": 3, "name": "Expertise GSA", "item": "https://www.triaina.fr/expertise-gsa" }
             ]
             },
             {
@@ -1116,8 +1116,8 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
             "@type": "BreadcrumbList",
             "itemListElement": [
                 { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr/" },
-                { "@type": "ListItem", "position": 2, "name": "Nos Expertises", "item": "https://www.triaina.fr/#expertise" },
-                { "@type": "ListItem", "position": 3, "name": "Expertise Média", "item": "https://www.triaina.fr/#expertise-media" }
+                { "@type": "ListItem", "position": 2, "name": "Nos Expertises", "item": "https://www.triaina.fr/expertise-media" },
+                { "@type": "ListItem", "position": 3, "name": "Expertise Média", "item": "https://www.triaina.fr/expertise-media" }
             ]
             },
             {
@@ -1392,8 +1392,8 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
             "@type": "BreadcrumbList",
             "itemListElement": [
                 { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr/" },
-                { "@type": "ListItem", "position": 2, "name": "Nos Expertises", "item": "https://www.triaina.fr/#expertise" },
-                { "@type": "ListItem", "position": 3, "name": "Expertise Contenu", "item": "https://www.triaina.fr/#expertise-content" }
+                { "@type": "ListItem", "position": 2, "name": "Nos Expertises", "item": "https://www.triaina.fr/expertise-contenu" },
+                { "@type": "ListItem", "position": 3, "name": "Expertise Contenu", "item": "https://www.triaina.fr/expertise-contenu" }
             ]
             },
             {

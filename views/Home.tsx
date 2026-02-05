@@ -13,7 +13,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
 
   const FAQ_HOME_DATA = [
     {
-      question: "Qu'est-ce un audit SEO ?",
+      question: "Qu'est ce qu'un audit SEO ?",
       answer: "Un audit SEO est un diagnostic complet de votre site web. Il analyse les problèmes techniques, on-page et de netlinking qui bloquent votre visibilité sur Google. C'est la première étape d'une stratégie SEO efficace."
     },
     {
