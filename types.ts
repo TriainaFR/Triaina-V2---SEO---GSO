@@ -6,6 +6,7 @@ export type Page =
   | 'contact' 
   | 'press' 
   | 'team' 
+  | 'legal'
   | 'expertise-seo' 
   | 'expertise-sea' 
   | 'expertise-gso' 

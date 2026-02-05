@@ -9,6 +9,7 @@ import { Contact } from './views/Contact';
 import { Press } from './views/Press';
 import { Team } from './views/Team';
 import { Expertise } from './views/Expertise';
+import { Legal } from './views/Legal';
 import { SEO } from './components/SEO';
 import { NAV_LINKS, SOCIAL_LINKS } from './constants';
 import { Logo } from './components/Logo';
@@ -22,6 +23,7 @@ const ROUTES: Record<string, Page> = {
   '/presse': 'press',
   '/contact': 'contact',
   '/faq': 'faq',
+  '/mentions-legales': 'legal',
   '/expertise-seo': 'expertise-seo',
   '/expertise-sea': 'expertise-sea',
   '/expertise-gso': 'expertise-gso',
@@ -38,6 +40,7 @@ const PAGE_TO_URL: Record<Page, string> = {
   'press': '/presse',
   'contact': '/contact',
   'faq': '/faq',
+  'legal': '/mentions-legales',
   'expertise-seo': '/expertise-seo',
   'expertise-sea': '/expertise-sea',
   'expertise-gso': '/expertise-gso',
@@ -94,6 +97,8 @@ const App: React.FC = () => {
         return <FAQ />;
       case 'contact':
         return <Contact />;
+      case 'legal':
+        return <Legal />;
       case 'expertise-seo':
       case 'expertise-sea':
       case 'expertise-gso':
@@ -299,7 +304,16 @@ const App: React.FC = () => {
                 </div>
                 
                 <div className="flex gap-6">
-                    <a href="#" className="text-[10px] text-slate-400 hover:text-blue-600 uppercase tracking-wider font-mono">Mentions Légales</a>
+                    <a 
+                        href="/mentions-legales"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            handleNavigation('legal');
+                        }}
+                        className="text-[10px] text-slate-400 hover:text-blue-600 uppercase tracking-wider font-mono cursor-pointer"
+                    >
+                        Mentions Légales
+                    </a>
                     <a href="#" className="text-[10px] text-slate-400 hover:text-blue-600 uppercase tracking-wider font-mono">Plan du Site</a>
                     <a href="#" className="text-[10px] text-slate-400 hover:text-blue-600 uppercase tracking-wider font-mono">Politique de Confidentialité</a>
                 </div>
