@@ -1,4 +1,5 @@
 
+
 import React, { useState } from 'react';
 import { REFERENCES_DATA } from '../constants';
 import { ArrowUpRight } from 'lucide-react';
@@ -88,9 +89,11 @@ export const References: React.FC = () => {
                                     </li>
                                 ))}
                              </ul>
-                             <p className="mt-4 text-xs text-slate-500 font-light italic border-t border-slate-100 pt-2">
-                                {item.solution}
-                             </p>
+                             {item.solution && (
+                                <p className="mt-4 text-xs text-slate-500 font-light italic border-t border-slate-100 pt-2">
+                                    {item.solution}
+                                </p>
+                             )}
                         </div>
 
                         {/* Image Content - Hidden on Mobile */}

@@ -114,7 +114,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
     title: 'Leadership Média SEO & GSO',
     summary: 'Transformation structurelle pour dominer le marché des LLM et du SEO Travel.',
     challenge: 'S\'imposer comme la référence absolue du voyage de luxe face aux nouveaux comportements de recherche assistée par IA.',
-    solution: 'Optimisation complète de l\'architecture média pour le référencement hybride (Google + LLM). Structuration des données pour devenir une source d\'autorité incontournable.',
+    solution: '',
     results: [
         'Leader thématique sur les moteurs IA', 
         'Hausse significative du trafic SEO qualifié',
@@ -129,7 +129,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
     title: 'Audit & Stratégie SEO',
     summary: 'Audit technique approfondi et roadmap de performance.',
     challenge: 'Identifier les freins techniques limitant la visibilité organique et préparer le site aux standards Core Web Vitals.',
-    solution: 'Audit exhaustif (Technique, Sémantique, Netlinking) et implémentation d\'une stratégie de correction priorisée pour maximiser l\'indexation.',
+    solution: '',
     results: [
         'Audit Technique & Sémantique Complet', 
         'Correction de la dette technique',
@@ -144,7 +144,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
     title: 'Référencement Gastronomique Hybride',
     summary: 'Double optimisation SEO & GSO pour le guide leader.',
     challenge: 'Maintenir et accroître les parts de marché face à la concurrence des agrégateurs et des recommandations directes par IA.',
-    solution: 'Déploiement d\'une stratégie GSO pour intégrer les établissements dans les recommandations ChatGPT/Gemini, couplée à un renforcement SEO local.',
+    solution: '',
     results: [
         'Positionnement Top 3 Google', 
         'Intégration dans les recommandations IA',
@@ -156,17 +156,16 @@ export const REFERENCES_DATA: ReferenceItem[] = [
   {
     id: 'ref_skilink',
     client: 'Skilink',
-    title: 'Verticalité SEO & Ski Sur-Mesure',
-    summary: 'Positionnement leader sur le marché concurrentiel du ski tout compris.',
-    challenge: 'Capter une audience premium face aux OTAs généralistes sur les requêtes de stations alpines de prestige.',
-    solution: 'Architecture en silos hermétiques par massif/station et stratégie de contenu "Expert" pour maximiser l\'autorité thématique aux yeux de Google et des IA.',
+    title: 'SaaS B2B - Automatisation ESN',
+    summary: 'Optimisation GSO pour une solution SaaS d\'automatisation commerciale dédiée aux ESN & Cabinets de Conseil.',
+    challenge: 'Faire émerger ce SaaS de niche comme l\'outil incontournable auprès des IA pour les requêtes B2B complexes des dirigeants d\'ESN (ex: "Meilleurs outils automatisation ESN").',
+    solution: '',
     results: [
-        'Top 3 sur les stations cibles (Courchevel, Méribel)',
-        'Trafic qualifié en hausse de 40% saison N+1',
-        'Intégration dans les comparatifs générés par IA'
+        'Captation de trafic décisionnel B2B',
+        'Accélération du volume de démos qualifiées'
     ],
-    tags: ['Travel', 'Luxe', 'Siloing'],
-    image: 'https://images.unsplash.com/photo-1551524559-8af4e66a3239?auto=format&fit=crop&q=80&w=1200'
+    tags: ['SaaS B2B', 'Tech', 'GSO'],
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200'
   },
     {
     id: 'ref_groupe_hotelier',
@@ -174,7 +173,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
     title: 'Architecture SEO Internationale',
     summary: 'Optimisation technique pour une clientèle mondiale exigente.',
     challenge: 'Assurer une visibilité parfaite sur les marchés US et Asiatiques pour des hôtels parisiens iconiques.',
-    solution: 'Refonte de l\'infrastructure Hreflang et optimisation de la vitesse (CWV) pour les standards mobiles internationaux.',
+    solution: '',
     results: [
         '0% à 70% de citation IA en 3 mois', 
         'Google : Position 40 → 10 sur les thématiques identifiées',

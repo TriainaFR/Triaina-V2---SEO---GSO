@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Page } from './types';
 import ParticleBackground from './components/ParticleBackground';
@@ -55,11 +56,16 @@ const App: React.FC = () => {
   // SEO Routing Logic: Clean URLs (No Hash)
   useEffect(() => {
     const handleLocationChange = () => {
-      const path = window.location.pathname;
-      // Handle potential trailing slash or mismatches strictly
-      const cleanPath = path === '/' ? '/' : path.replace(/\/$/, '');
-      const page = ROUTES[cleanPath] || 'home';
-      setCurrentPage(page);
+      try {
+        const path = window.location.pathname;
+        // Handle potential trailing slash or mismatches strictly
+        const cleanPath = path === '/' ? '/' : path.replace(/\/$/, '');
+        const page = ROUTES[cleanPath] || 'home';
+        setCurrentPage(page);
+      } catch (e) {
+        console.warn('Location access error (sandbox):', e);
+        setCurrentPage('home');
+      }
     };
 
     // Initial Load
@@ -77,7 +83,12 @@ const App: React.FC = () => {
   const handleNavigation = (page: Page) => {
     const url = PAGE_TO_URL[page];
     if (url) {
-      window.history.pushState({}, '', url);
+      try {
+        window.history.pushState({}, '', url);
+      } catch (e) {
+        // Prevent SecurityError in sandboxed environments (e.g. AI Studio preview)
+        console.warn('Navigation state update failed:', e);
+      }
       setCurrentPage(page);
       window.scrollTo(0, 0);
     }
