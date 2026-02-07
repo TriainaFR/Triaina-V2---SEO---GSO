@@ -4,6 +4,7 @@ import TechnicalSection from '../components/TechnicalSection';
 import { Sparkles, Check, Search, LineChart, Plus, Minus, Cpu, Globe } from 'lucide-react';
 import { ScrambleText } from '../components/ScrambleText';
 import { SEO } from '../components/SEO';
+import { PAGE_TO_URL } from '../constants';
 
 export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate }) => {
   
@@ -35,6 +36,20 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
     }
   ];
 
+  // Schema FAQ spécifique pour la Home (Rich Snippets)
+  const homeFaqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": FAQ_HOME_DATA.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  };
+
   const [openFaq, setOpenFaq] = React.useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
@@ -47,6 +62,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
       <SEO 
         title="Agence SEO & GSO Paris"
         description="Agence SEO & GSO à Paris spécialisée en référencement naturel et optimisation pour les IA (Generative Search Optimization). Consultant SEO expert."
+        schema={homeFaqSchema}
       />
 
       {/* ════════════════════ HERO HEADER ════════════════════ */}
@@ -76,14 +92,15 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
 
             {/* Action Bar */}
             <div className="flex flex-col md:flex-row gap-6 animate-fade-in-up" style={{ animationDelay: '300ms' }}>
-                <button 
-                    onClick={() => onNavigate('contact')}
-                    className="group relative px-8 py-5 bg-blue-600 text-white font-sans font-bold tracking-wider rounded-full overflow-hidden w-full md:w-auto shadow-xl shadow-blue-600/20 hover:bg-slate-900 hover:shadow-slate-900/30 transition-all duration-300"
+                <a 
+                    href={PAGE_TO_URL['contact']}
+                    onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                    className="group relative px-8 py-5 bg-blue-600 text-white font-sans font-bold tracking-wider rounded-full overflow-hidden w-full md:w-auto shadow-xl shadow-blue-600/20 hover:bg-slate-900 hover:shadow-slate-900/30 transition-all duration-300 inline-flex items-center justify-center"
                 >
                     <span className="relative z-10 flex items-center justify-center gap-3">
                         → NOUS CONTACTER
                     </span>
-                </button>
+                </a>
             </div>
           </div>
       </header>
@@ -198,9 +215,10 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
 
               <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                   {/* Service 1 */}
-                  <div 
-                      onClick={() => onNavigate('contact')}
-                      className="group bg-white p-8 rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer"
+                  <a 
+                      href={PAGE_TO_URL['contact']}
+                      onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                      className="group bg-white p-8 rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer block"
                   >
                       <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                           <Search size={24} />
@@ -212,12 +230,13 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                       <span className="text-blue-600 font-bold text-xs uppercase tracking-wider flex items-center gap-2">
                           → En savoir plus sur l'audit SEO
                       </span>
-                  </div>
+                  </a>
 
                   {/* Service 3 (Re-indexed) */}
-                  <div 
-                      onClick={() => onNavigate('contact')}
-                      className="group bg-white p-8 rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer"
+                  <a 
+                      href={PAGE_TO_URL['contact']}
+                      onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                      className="group bg-white p-8 rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer block"
                   >
                       <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                           <LineChart size={24} />
@@ -229,7 +248,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                       <span className="text-blue-600 font-bold text-xs uppercase tracking-wider flex items-center gap-2">
                           → Nous contacter
                       </span>
-                  </div>
+                  </a>
               </div>
            </div>
         </section>
@@ -329,12 +348,13 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                 </p>
                 
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
-                    <button 
-                        onClick={() => onNavigate('contact')}
-                        className="px-8 py-4 bg-blue-600 text-white font-bold uppercase tracking-widest rounded hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/30"
+                    <a 
+                        href={PAGE_TO_URL['contact']}
+                        onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                        className="px-8 py-4 bg-blue-600 text-white font-bold uppercase tracking-widest rounded hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/30 inline-flex items-center justify-center"
                     >
                         → Nous contacter
-                    </button>
+                    </a>
                 </div>
             </div>
         </section>

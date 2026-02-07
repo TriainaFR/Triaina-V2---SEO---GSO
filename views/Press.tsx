@@ -6,19 +6,29 @@ import { ScrambleText } from '../components/ScrambleText';
 import { SEO } from '../components/SEO';
 
 export const Press: React.FC = () => {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr/" },
+      { "@type": "ListItem", "position": 2, "name": "Espace Presse", "item": "https://www.triaina.fr/presse" }
+    ]
+  };
+
   return (
     <div className="pt-32 pb-20 px-4 min-h-screen max-w-7xl mx-auto relative z-10">
       
       <SEO 
         title="Espace Presse & Médias" 
         description="Les actualités de l'agence Triaina. Revues de presse, tribunes expertes et communiqués sur le futur du référencement (SEO & IA)."
+        schema={breadcrumbSchema}
       />
 
       {/* Header */}
       <div className="mb-20 border-b border-slate-400 pb-8 animate-fade-in-up">
-        <h2 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-2">
+        <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-2">
             ESPACE <span className="text-blue-700">PRESSE</span>
-        </h2>
+        </h1>
         <p className="font-mono text-blue-700 text-xs tracking-widest uppercase">
             // Couverture Média & Publications
         </p>

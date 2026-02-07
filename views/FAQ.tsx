@@ -1,5 +1,4 @@
 
-
 import React, { useState } from 'react';
 import { FAQ_DATA } from '../constants';
 import { Plus, Minus, MapPin, Clock } from 'lucide-react';
@@ -12,18 +11,29 @@ export const FAQ: React.FC = () => {
     setOpenId(openId === id ? null : id);
   };
 
-  // Structured Data for FAQPage
+  // Structured Data using @graph to combine Breadcrumb and FAQPage
   const faqSchema = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": FAQ_DATA.map(item => ({
-      "@type": "Question",
-      "name": item.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": item.answer
-      }
-    }))
+    "@graph": [
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr/" },
+                { "@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://www.triaina.fr/faq" }
+            ]
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": FAQ_DATA.map(item => ({
+                "@type": "Question",
+                "name": item.question,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": item.answer
+                }
+            }))
+        }
+    ]
   };
 
   return (
@@ -32,9 +42,9 @@ export const FAQ: React.FC = () => {
       <SEO schema={faqSchema} />
 
       <div className="mb-20 text-center animate-fade-in-up">
-        <h2 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-4">
+        <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-4">
             FAQ <span className="text-blue-700">SYSTÈME</span>
-        </h2>
+        </h1>
         <div className="flex justify-center items-center gap-4 text-xs font-mono text-slate-500 uppercase">
             <span>// Base de Connaissance</span>
             <span className="w-px h-4 bg-slate-400"></span>

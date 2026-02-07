@@ -17,19 +17,29 @@ export const References: React.FC = () => {
     }
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr/" },
+      { "@type": "ListItem", "position": 2, "name": "Références", "item": "https://www.triaina.fr/references" }
+    ]
+  };
+
   return (
     <div className="pt-32 pb-20 px-4 min-h-screen max-w-7xl mx-auto relative z-10">
       
       <SEO 
         title="Références Clients & Cas Pratiques" 
         description="Découvrez comment Triaina accompagne ses clients (Yonder, Best Restaurants, Hôtellerie...) vers la domination SEO et GSO. Études de cas et résultats."
+        schema={breadcrumbSchema}
       />
 
       <div className="flex items-end justify-between mb-20 border-b border-slate-400 pb-8 animate-fade-in-up">
         <div>
-            <h2 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-2">
+            <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-2">
                 DOSSIERS <span className="text-blue-700">CLIENTS</span>
-            </h2>
+            </h1>
             <p className="font-mono text-blue-700 text-xs tracking-widest uppercase">
                 // Base de Performance
             </p>

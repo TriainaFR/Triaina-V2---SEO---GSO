@@ -19,19 +19,29 @@ export const Contact: React.FC = () => {
     }
   ];
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr/" },
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.triaina.fr/contact" }
+    ]
+  };
+
   return (
     <div className="pt-32 pb-20 px-4 min-h-screen max-w-7xl mx-auto relative z-10 flex flex-col justify-center">
       
       <SEO 
         title="Contact Agence SEO Paris" 
         description="Contactez l'agence Triaina pour vos besoins en SEO, GSO et stratégie Média. Bureaux situés au 50 Quai Louis Blériot, 75016 Paris."
+        schema={breadcrumbSchema}
       />
 
       {/* Header */}
       <div className="mb-24 border-b border-slate-900/10 pb-8 animate-fade-in-up">
-        <h2 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-2">
+        <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-2">
             CONTACT
-        </h2>
+        </h1>
         <p className="font-mono text-blue-700 text-xs tracking-widest uppercase">
             // Direction & Bureau Parisien
         </p>

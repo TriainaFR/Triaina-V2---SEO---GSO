@@ -72,14 +72,14 @@ const App: React.FC = () => {
         return <Home onNavigate={handleNavigation} />;
       case 'references':
         return <References />;
-      case 'press':
-        return <Press />;
-      case 'team':
-        return <Team onNavigate={handleNavigation} />;
       case 'faq':
         return <FAQ />;
       case 'contact':
         return <Contact />;
+      case 'press':
+        return <Press />;
+      case 'team':
+        return <Team onNavigate={handleNavigation} />;
       case 'legal':
         return <Legal />;
       case 'expertise-seo':
@@ -92,12 +92,12 @@ const App: React.FC = () => {
       case '404':
         return <NotFound onNavigate={handleNavigation} />;
       default:
-        // Default catch-all to 404 to avoid soft 404s
         return <NotFound onNavigate={handleNavigation} />;
     }
   };
 
   // Ultra-Rich Schema for GSO & Local SEO
+  // Note: BreadcrumbList removed to allow specific pages to define their own path context without conflict.
   const globalSchema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -111,6 +111,7 @@ const App: React.FC = () => {
         "image": "https://www.triaina.fr/logo.png",
         "description": "Agence marketing française experte en référencement SEO Google, optimisation pour les IA (GSO) et autorité Média.",
         "priceRange": "$$",
+        "hasMap": "https://maps.google.com/?q=50+Quai+Louis+Blériot+75016+Paris",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "50 quai Louis Bleriot",
@@ -136,7 +137,8 @@ const App: React.FC = () => {
           "closes": "19:00"
         },
         "sameAs": [
-          "https://www.linkedin.com/company/triaina"
+          "https://www.linkedin.com/company/triaina",
+          "https://www.instagram.com/triaina_agency"
         ],
         "knowsAbout": [
           "SEO",
@@ -165,23 +167,6 @@ const App: React.FC = () => {
           "@id": "https://www.triaina.fr/#organization"
         },
         "inLanguage": "fr-FR"
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Accueil",
-            "item": "https://www.triaina.fr/"
-          },
-           {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Offres Référencement IA",
-            "item": "https://www.triaina.fr/agence"
-          }
-        ]
       }
     ]
   };
@@ -301,8 +286,6 @@ const App: React.FC = () => {
                     >
                         Mentions Légales
                     </a>
-                    <a href="#" className="text-[10px] text-slate-400 hover:text-blue-600 uppercase tracking-wider font-mono">Plan du Site</a>
-                    <a href="#" className="text-[10px] text-slate-400 hover:text-blue-600 uppercase tracking-wider font-mono">Politique de Confidentialité</a>
                 </div>
             </div>
          </div>

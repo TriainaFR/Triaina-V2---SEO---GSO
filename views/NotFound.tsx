@@ -3,6 +3,7 @@ import React from 'react';
 import { AlertTriangle, Home, ArrowLeft } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { ScrambleText } from '../components/ScrambleText';
+import { PAGE_TO_URL } from '../constants';
 
 export const NotFound: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate }) => {
   return (
@@ -33,13 +34,14 @@ export const NotFound: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigat
       </p>
 
       <div className="flex flex-col sm:flex-row gap-4">
-        <button 
-            onClick={() => onNavigate('home')}
-            className="group px-8 py-4 bg-blue-600 text-white font-bold uppercase tracking-widest rounded hover:bg-slate-900 transition-all duration-300 shadow-xl shadow-blue-600/20 flex items-center gap-3"
+        <a 
+            href={PAGE_TO_URL['home']}
+            onClick={(e) => { e.preventDefault(); onNavigate('home'); }}
+            className="group px-8 py-4 bg-blue-600 text-white font-bold uppercase tracking-widest rounded hover:bg-slate-900 transition-all duration-300 shadow-xl shadow-blue-600/20 flex items-center gap-3 justify-center"
         >
             <Home size={18} />
             Retour Accueil
-        </button>
+        </a>
       </div>
 
     </div>

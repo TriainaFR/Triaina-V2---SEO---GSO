@@ -1,12 +1,23 @@
+
 import React from 'react';
 import { SEO } from '../components/SEO';
 
 export const Legal: React.FC = () => {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr/" },
+      { "@type": "ListItem", "position": 2, "name": "Mentions Légales", "item": "https://www.triaina.fr/mentions-legales" }
+    ]
+  };
+
   return (
     <div className="pt-32 pb-20 px-4 min-h-screen max-w-4xl mx-auto relative z-10">
       <SEO 
         title="Mentions Légales" 
         description="Mentions légales de la société TRIAINA, agence SEO & GSO." 
+        schema={breadcrumbSchema}
       />
 
       <div className="mb-12 border-b border-slate-400 pb-8 animate-fade-in-up">

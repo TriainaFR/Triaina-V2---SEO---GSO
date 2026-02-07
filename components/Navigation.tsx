@@ -81,6 +81,7 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate 
                           href={PAGE_TO_URL[link.id]}
                           onClick={(e) => { e.preventDefault(); onNavigate(link.id as Page); }}
                           className="ml-6 px-6 py-2.5 bg-slate-900 text-white rounded-full text-xs font-bold tracking-widest uppercase hover:bg-blue-600 transition-all duration-300 shadow-lg shadow-slate-900/20 hover:shadow-blue-600/30 hover:-translate-y-0.5"
+                          aria-label={link.label}
                         >
                           {link.label}
                         </a>
@@ -98,6 +99,8 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate 
                             onMouseLeave={handleMouseLeave}
                         >
                             <button
+                                aria-expanded={dropdownOpen === link.id}
+                                aria-haspopup="true"
                                 className={`
                                     relative px-4 py-2 text-xs font-bold tracking-widest uppercase transition-all duration-300 rounded-full flex items-center gap-1 cursor-default
                                     ${isActive ? 'text-blue-600 bg-white/80 shadow-sm' : 'text-slate-600 hover:text-slate-900'}
@@ -156,7 +159,12 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate 
 
             {/* Mobile Toggle */}
             <div className="lg:hidden">
-              <button onClick={() => setIsMobileOpen(!isMobileOpen)} className="p-2 text-slate-900 hover:bg-white/50 rounded-full transition-colors">
+              <button 
+                onClick={() => setIsMobileOpen(!isMobileOpen)} 
+                className="p-2 text-slate-900 hover:bg-white/50 rounded-full transition-colors"
+                aria-label={isMobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
+                aria-expanded={isMobileOpen}
+              >
                 {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
             </div>
@@ -175,6 +183,7 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate 
                         <div key={link.id} className="border-b border-slate-100 pb-4 last:border-0">
                             <button
                                 onClick={() => toggleDropdownMobile(link.id)}
+                                aria-expanded={isOpen}
                                 className={`w-full flex justify-between items-center text-2xl font-display font-bold text-left ${
                                     currentPage === link.id ? 'text-blue-600' : 'text-slate-900'
                                 }`}

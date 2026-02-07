@@ -1,5 +1,6 @@
+
 import React, { useEffect } from 'react';
-import { EXPERTISE_DATA } from '../constants';
+import { EXPERTISE_DATA, PAGE_TO_URL } from '../constants';
 import { 
   CheckCircle2, ArrowRight, Zap, Database, Search, Target, Users, BookOpen,
   BarChart3, Globe, Layers, Cpu, Trophy, TrendingUp,
@@ -253,17 +254,18 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                         { title: "E-réputation", desc: "Maîtrise de votre image de marque dans les SERP." },
                         { title: "Consulting SEO", desc: "Accompagnement ponctuel ou annuel." }
                     ].map((svc, i) => (
-                        <div 
+                        <a 
                             key={i} 
-                            onClick={() => onNavigate('contact')}
-                            className="bg-white p-6 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all cursor-pointer group"
+                            href={PAGE_TO_URL['contact']}
+                            onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                            className="bg-white p-6 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all cursor-pointer group block"
                         >
                             <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors flex items-center justify-between">
                                 {svc.title}
                                 <ArrowRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-2 group-hover:translate-x-0" />
                             </h3>
                             <p className="text-slate-500 text-xs leading-relaxed">{svc.desc}</p>
-                        </div>
+                        </a>
                     ))}
                 </div>
             </div>
@@ -275,18 +277,20 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                     Triaina vous accompagne. Audit SEO, consultant expert, résultats mesurables.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
-                    <button 
-                        onClick={() => onNavigate('contact')}
-                        className="px-8 py-4 bg-white text-blue-900 font-bold uppercase tracking-widest rounded hover:bg-blue-50 transition-colors shadow-lg"
+                    <a 
+                        href={PAGE_TO_URL['contact']}
+                        onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                        className="px-8 py-4 bg-white text-blue-900 font-bold uppercase tracking-widest rounded hover:bg-blue-50 transition-colors shadow-lg inline-flex items-center justify-center"
                     >
                         → Nous contacter
-                    </button>
-                    <button 
-                        onClick={() => onNavigate('faq')}
-                        className="px-8 py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest rounded hover:bg-white/10 transition-colors"
+                    </a>
+                    <a 
+                        href={PAGE_TO_URL['faq']}
+                        onClick={(e) => { e.preventDefault(); onNavigate('faq'); }}
+                        className="px-8 py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest rounded hover:bg-white/10 transition-colors inline-flex items-center justify-center"
                     >
                         FAQ
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -516,17 +520,18 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                         { title: "App Store Ads", desc: "Acquisition mobile." },
                         { title: "Audit SEA", desc: "Analyse de compte gratuite." }
                     ].map((svc, i) => (
-                        <div 
+                        <a 
                             key={i} 
-                            onClick={() => onNavigate('contact')}
-                            className="bg-white p-6 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all cursor-pointer group"
+                            href={PAGE_TO_URL['contact']}
+                            onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                            className="bg-white p-6 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all cursor-pointer group block"
                         >
                             <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors flex items-center justify-between">
                                 {svc.title}
                                 <ArrowRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-2 group-hover:translate-x-0" />
                             </h3>
                             <p className="text-slate-500 text-xs leading-relaxed">{svc.desc}</p>
-                        </div>
+                        </a>
                     ))}
                 </div>
             </div>
@@ -550,18 +555,20 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                     Triaina vous accompagne. Audit SEA, consultant expert, résultats immédiats.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
-                    <button 
-                        onClick={() => onNavigate('contact')}
-                        className="px-8 py-4 bg-white text-blue-900 font-bold uppercase tracking-widest rounded hover:bg-blue-50 transition-colors shadow-lg"
+                    <a 
+                        href={PAGE_TO_URL['contact']}
+                        onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                        className="px-8 py-4 bg-white text-blue-900 font-bold uppercase tracking-widest rounded hover:bg-blue-50 transition-colors shadow-lg inline-flex items-center justify-center"
                     >
                         → Nous contacter
-                    </button>
-                    <button 
-                        onClick={() => onNavigate('faq')}
-                        className="px-8 py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest rounded hover:bg-white/10 transition-colors"
+                    </a>
+                    <a 
+                        href={PAGE_TO_URL['faq']}
+                        onClick={(e) => { e.preventDefault(); onNavigate('faq'); }}
+                        className="px-8 py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest rounded hover:bg-white/10 transition-colors inline-flex items-center justify-center"
                     >
                         FAQ
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -777,17 +784,18 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                         { title: "Suivi & Reporting", desc: "Mesure via LLM Ranking." },
                         { title: "Formation GSO", desc: "Montée en compétence équipes." }
                     ].map((svc, i) => (
-                        <div 
+                        <a 
                             key={i} 
-                            onClick={() => onNavigate('contact')}
-                            className="bg-white p-6 rounded-lg border border-slate-200 hover:border-purple-500 hover:shadow-lg transition-all cursor-pointer group"
+                            href={PAGE_TO_URL['contact']}
+                            onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                            className="bg-white p-6 rounded-lg border border-slate-200 hover:border-purple-500 hover:shadow-lg transition-all cursor-pointer group block"
                         >
                             <h3 className="font-bold text-slate-900 mb-2 group-hover:text-purple-600 transition-colors flex items-center justify-between">
                                 {svc.title}
                                 <ArrowRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-2 group-hover:translate-x-0" />
                             </h3>
                             <p className="text-slate-500 text-xs leading-relaxed">{svc.desc}</p>
-                        </div>
+                        </a>
                     ))}
                 </div>
             </div>
@@ -799,18 +807,20 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                     Triaina vous accompagne. Audit GSO, consultant expert, résultats mesurables.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
-                    <button 
-                        onClick={() => onNavigate('contact')}
-                        className="px-8 py-4 bg-white text-purple-900 font-bold uppercase tracking-widest rounded hover:bg-purple-50 transition-colors shadow-lg"
+                    <a 
+                        href={PAGE_TO_URL['contact']}
+                        onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                        className="px-8 py-4 bg-white text-purple-900 font-bold uppercase tracking-widest rounded hover:bg-purple-50 transition-colors shadow-lg inline-flex items-center justify-center"
                     >
                         → Nous contacter
-                    </button>
-                    <button 
-                        onClick={() => onNavigate('faq')}
-                        className="px-8 py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest rounded hover:bg-white/10 transition-colors"
+                    </a>
+                    <a 
+                        href={PAGE_TO_URL['faq']}
+                        onClick={(e) => { e.preventDefault(); onNavigate('faq'); }}
+                        className="px-8 py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest rounded hover:bg-white/10 transition-colors inline-flex items-center justify-center"
                     >
                         FAQ
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -1038,17 +1048,18 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                         { title: "Suivi & Reporting", desc: "Mesure ROI publicitaire." },
                         { title: "Consulting Expert", desc: "Accompagnement dédié." }
                     ].map((svc, i) => (
-                        <div 
+                        <a 
                             key={i} 
-                            onClick={() => onNavigate('contact')}
-                            className="bg-white p-6 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all cursor-pointer group"
+                            href={PAGE_TO_URL['contact']}
+                            onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                            className="bg-white p-6 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all cursor-pointer group block"
                         >
                             <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors flex items-center justify-between">
                                 {svc.title}
                                 <ArrowRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-2 group-hover:translate-x-0" />
                             </h3>
                             <p className="text-slate-500 text-xs leading-relaxed">{svc.desc}</p>
-                        </div>
+                        </a>
                     ))}
                 </div>
             </div>
@@ -1077,18 +1088,20 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                     Triaina vous accompagne. Audit GSA, consultant expert, résultats mesurables.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
-                    <button 
-                        onClick={() => onNavigate('contact')}
-                        className="px-8 py-4 bg-white text-blue-900 font-bold uppercase tracking-widest rounded hover:bg-blue-50 transition-colors shadow-lg"
+                    <a 
+                        href={PAGE_TO_URL['contact']}
+                        onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                        className="px-8 py-4 bg-white text-blue-900 font-bold uppercase tracking-widest rounded hover:bg-blue-50 transition-colors shadow-lg inline-flex items-center justify-center"
                     >
                         → Nous contacter
-                    </button>
-                    <button 
-                        onClick={() => onNavigate('faq')}
-                        className="px-8 py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest rounded hover:bg-white/10 transition-colors"
+                    </a>
+                    <a 
+                        href={PAGE_TO_URL['faq']}
+                        onClick={(e) => { e.preventDefault(); onNavigate('faq'); }}
+                        className="px-8 py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest rounded hover:bg-white/10 transition-colors inline-flex items-center justify-center"
                     >
                         FAQ
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -1306,17 +1319,18 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                         { title: "Suivi & Reporting", desc: "Mesure impact autorité." },
                         { title: "Consulting Expert", desc: "Accompagnement dédié." }
                     ].map((svc, i) => (
-                        <div 
+                        <a 
                             key={i} 
-                            onClick={() => onNavigate('contact')}
-                            className="bg-white p-6 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all cursor-pointer group"
+                            href={PAGE_TO_URL['contact']}
+                            onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                            className="bg-white p-6 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all cursor-pointer group block"
                         >
                             <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors flex items-center justify-between">
                                 {svc.title}
                                 <ArrowRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-2 group-hover:translate-x-0" />
                             </h3>
                             <p className="text-slate-500 text-xs leading-relaxed">{svc.desc}</p>
-                        </div>
+                        </a>
                     ))}
                 </div>
             </div>
@@ -1353,18 +1367,20 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                     Triaina vous accompagne dans votre stratégie média. Audit gratuit, consultant expert, résultats mesurables.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
-                    <button 
-                        onClick={() => onNavigate('contact')}
-                        className="px-8 py-4 bg-white text-blue-900 font-bold uppercase tracking-widest rounded hover:bg-blue-50 transition-colors shadow-lg"
+                    <a 
+                        href={PAGE_TO_URL['contact']}
+                        onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                        className="px-8 py-4 bg-white text-blue-900 font-bold uppercase tracking-widest rounded hover:bg-blue-50 transition-colors shadow-lg inline-flex items-center justify-center"
                     >
                         → Nous contacter
-                    </button>
-                    <button 
-                        onClick={() => onNavigate('faq')}
-                        className="px-8 py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest rounded hover:bg-white/10 transition-colors"
+                    </a>
+                    <a 
+                        href={PAGE_TO_URL['faq']}
+                        onClick={(e) => { e.preventDefault(); onNavigate('faq'); }}
+                        className="px-8 py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest rounded hover:bg-white/10 transition-colors inline-flex items-center justify-center"
                     >
                         FAQ
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -1610,17 +1626,18 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                         { title: "Contenu Structuré", desc: "FAQ, résumés pour les IA." },
                         { title: "Audit Contenu", desc: "Analyse et opportunités." }
                     ].map((svc, i) => (
-                        <div 
+                        <a 
                             key={i} 
-                            onClick={() => onNavigate('contact')}
-                            className="bg-white p-6 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all cursor-pointer group"
+                            href={PAGE_TO_URL['contact']}
+                            onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                            className="bg-white p-6 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all cursor-pointer group block"
                         >
                             <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors flex items-center justify-between">
                                 {svc.title}
                                 <ArrowRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-2 group-hover:translate-x-0" />
                             </h3>
                             <p className="text-slate-500 text-xs leading-relaxed">{svc.desc}</p>
-                        </div>
+                        </a>
                     ))}
                 </div>
             </div>
@@ -1652,18 +1669,20 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                     Triaina vous accompagne dans votre stratégie contenu. Audit gratuit, consultant expert, résultats mesurables.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
-                    <button 
-                        onClick={() => onNavigate('contact')}
-                        className="px-8 py-4 bg-white text-blue-900 font-bold uppercase tracking-widest rounded hover:bg-blue-50 transition-colors shadow-lg"
+                    <a 
+                        href={PAGE_TO_URL['contact']}
+                        onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                        className="px-8 py-4 bg-white text-blue-900 font-bold uppercase tracking-widest rounded hover:bg-blue-50 transition-colors shadow-lg inline-flex items-center justify-center"
                     >
                         → Nous contacter
-                    </button>
-                    <button 
-                        onClick={() => onNavigate('faq')}
-                        className="px-8 py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest rounded hover:bg-white/10 transition-colors"
+                    </a>
+                    <a 
+                        href={PAGE_TO_URL['faq']}
+                        onClick={(e) => { e.preventDefault(); onNavigate('faq'); }}
+                        className="px-8 py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest rounded hover:bg-white/10 transition-colors inline-flex items-center justify-center"
                     >
                         FAQ
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -1738,12 +1757,13 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
           </div>
 
           <div className="flex gap-4">
-               <button 
-                  onClick={() => onNavigate('contact')}
+               <a 
+                  href={PAGE_TO_URL['contact']}
+                  onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
                   className="px-8 py-4 bg-blue-600 text-white font-bold uppercase tracking-widest rounded hover:bg-slate-900 transition-colors shadow-lg shadow-blue-600/20 flex items-center gap-2"
                >
                    Nous contacter <ArrowRight size={16} />
-               </button>
+               </a>
           </div>
 
       </div>

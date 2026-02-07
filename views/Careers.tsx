@@ -12,9 +12,9 @@ export const Careers: React.FC = () => {
       
       {/* Header */}
       <div className="mb-20 border-b border-slate-400 pb-8 animate-fade-in-up">
-        <h2 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-2">
+        <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-2">
             REJOINDRE <span className="text-blue-700">L'UNITÉ</span>
-        </h2>
+        </h1>
         <p className="font-mono text-blue-700 text-xs tracking-widest uppercase">
             // Missions Ouvertes
         </p>
