@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { CAREERS_DATA } from '../constants';
 import { Briefcase, MapPin, DollarSign, ArrowRight, CheckCircle2 } from 'lucide-react';
-import { ScrambleText } from '../components/ScrambleText';
 
 export const Careers: React.FC = () => {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
@@ -64,7 +63,7 @@ export const Careers: React.FC = () => {
                                 </span>
                             </div>
                             <h3 className="text-2xl font-display font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
-                                <ScrambleText text={job.title} delay={300} hover={true} />
+                                {job.title}
                             </h3>
                         </div>
 

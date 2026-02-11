@@ -5,55 +5,57 @@ interface SEOProps {
   title?: string;
   description?: string;
   schema?: object;
-  image?: string; // Ajout support image spécifique
-  type?: string;  // website ou article
-  noIndex?: boolean; // NOUVEAU : Pour gérer les pages 404 ou privées
+  image?: string;
+  type?: string;
+  noIndex?: boolean;
 }
 
 export const SEO: React.FC<SEOProps> = ({ 
     title, 
     description, 
     schema, 
-    image = "https://www.triaina.fr/og-image.jpg", // Image par défaut
+    image = "https://www.triaina.fr/og-image.jpg",
     type = "website",
     noIndex = false 
 }) => {
   useEffect(() => {
-    // 1. Update Standard Meta Tags
+    // 1. Title Management
     if (title) {
       document.title = `${title} | Triaina`;
     }
 
-    const updateMeta = (name: string, content: string, attribute: string = 'name') => {
-        let element = document.querySelector(`meta[${attribute}="${name}"]`);
+    // Helper to update or create meta tags
+    const updateMeta = (selector: string, content: string) => {
+        let element = document.querySelector(selector);
         if (!element) {
+            // If tag doesn't exist (shouldn't happen with index.html properly set), create it
             element = document.createElement('meta');
-            element.setAttribute(attribute, name);
+            // Parse selector to set attributes (basic parsing)
+            if (selector.includes('name=')) element.setAttribute('name', selector.split('name="')[1].split('"')[0]);
+            if (selector.includes('property=')) element.setAttribute('property', selector.split('property="')[1].split('"')[0]);
             document.head.appendChild(element);
         }
         element.setAttribute('content', content);
     };
 
-    if (description) {
-        updateMeta('description', description);
-    }
+    // 2. Standard Meta Tags (Google uses 'name')
+    if (description) updateMeta('meta[name="description"]', description);
 
-    // 2. Update Open Graph (Social Media)
-    if (title) updateMeta('og:title', title, 'property');
-    if (description) updateMeta('og:description', description, 'property');
-    if (image) updateMeta('og:image', image, 'property');
-    updateMeta('og:type', type, 'property');
+    // 3. Open Graph (Facebook/Linkedin uses 'property')
+    if (title) updateMeta('meta[property="og:title"]', title);
+    if (description) updateMeta('meta[property="og:description"]', description);
+    if (image) updateMeta('meta[property="og:image"]', image);
+    updateMeta('meta[property="og:type"]', type);
     
-    // Update URL canonique pour OG aussi
     const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
-    updateMeta('og:url', cleanUrl, 'property');
+    updateMeta('meta[property="og:url"]', cleanUrl);
 
-    // 3. Update Twitter Card
-    if (title) updateMeta('twitter:title', title);
-    if (description) updateMeta('twitter:description', description);
-    if (image) updateMeta('twitter:image', image);
+    // 4. Twitter Cards (Twitter uses 'name')
+    if (title) updateMeta('meta[name="twitter:title"]', title);
+    if (description) updateMeta('meta[name="twitter:description"]', description);
+    if (image) updateMeta('meta[name="twitter:image"]', image);
 
-    // 4. Update Canonical URL (SEO Technique)
+    // 5. Canonical Link
     let linkCanonical = document.querySelector('link[rel="canonical"]');
     if (!linkCanonical) {
         linkCanonical = document.createElement('link');
@@ -62,7 +64,7 @@ export const SEO: React.FC<SEOProps> = ({
     }
     linkCanonical.setAttribute('href', cleanUrl);
 
-    // 5. Manage Robots (NoIndex for 404)
+    // 6. Robots Tag (NoIndex handling)
     let metaRobots = document.querySelector('meta[name="robots"]');
     if (noIndex) {
         if (!metaRobots) {
@@ -72,35 +74,30 @@ export const SEO: React.FC<SEOProps> = ({
         }
         metaRobots.setAttribute('content', 'noindex, nofollow');
     } else {
-        // If explicitly set to index or default, we ensure we don't block
-        // However, usually we just remove the noindex tag if it exists dynamically
-        if (metaRobots && metaRobots.getAttribute('content') === 'noindex, nofollow') {
-            metaRobots.remove();
+        // Restore default if it was set to noindex previously
+        if (metaRobots) {
+             metaRobots.setAttribute('content', 'index, follow');
         }
     }
 
-    // 6. Inject JSON-LD Schema
+    // 7. JSON-LD Schema Injection (Critical for Google)
     if (schema) {
-      const existingScripts = document.querySelectorAll('script[type="application/ld+json"]');
-      existingScripts.forEach(s => {
-          if (s.textContent?.includes(JSON.stringify(schema).substring(0, 20))) {
-              s.remove();
-          }
-      });
+      // Remove any existing dynamic schema to prevent duplicates
+      const existingScripts = document.querySelectorAll('script[data-generated="seo"]');
+      existingScripts.forEach(s => s.remove());
 
       const script = document.createElement('script');
       script.type = 'application/ld+json';
+      script.setAttribute('data-generated', 'seo'); // Mark for cleanup
       script.text = JSON.stringify(schema);
       document.head.appendChild(script);
-
-      return () => {
-        try {
-            document.head.removeChild(script);
-        } catch (e) {
-            // Ignore if already removed
-        }
-      };
     }
+
+    // Cleanup function not strictly necessary for meta tags as they are overwritten,
+    // but useful for schema if component unmounts.
+    return () => {
+        // Optional: Clean specific schema scripts on unmount if needed
+    };
   }, [title, description, schema, image, type, noIndex]);
 
   return null;

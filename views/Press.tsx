@@ -2,7 +2,6 @@
 import React from 'react';
 import { PRESS_DATA } from '../constants';
 import { ArrowUpRight, Calendar, Clock } from 'lucide-react';
-import { ScrambleText } from '../components/ScrambleText';
 import { SEO } from '../components/SEO';
 
 export const Press: React.FC = () => {
@@ -80,7 +79,7 @@ export const Press: React.FC = () => {
                         </div>
 
                         <h3 className="text-xl font-display font-bold text-slate-900 mb-6 leading-tight group-hover:text-blue-700 transition-colors">
-                            <ScrambleText text={article.title} delay={300} hover={true} />
+                            {article.title}
                         </h3>
 
                         <div className="mt-auto flex items-center gap-2 text-xs font-bold text-blue-600 uppercase tracking-wider group-hover:gap-4 transition-all">

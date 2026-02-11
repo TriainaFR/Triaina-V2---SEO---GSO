@@ -209,7 +209,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
     solution: '',
     results: [
         '0% à 70% de citation IA en 3 mois', 
-        'Google : Position 40 → 10 sur les thématiques identifiées',
+        'Top 3 Google et cité parmi 8 sites sur la 1ère page via nos médias partenaires',
         'Travaux en cours (→ Août 2026) : Maximisation continue des positions & citations'
     ],
     tags: ['Hotels', 'Technical SEO', 'International'],

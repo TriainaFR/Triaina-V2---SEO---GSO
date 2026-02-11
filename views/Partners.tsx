@@ -2,7 +2,6 @@
 import React from 'react';
 import { PARTNERS_DATA } from '../constants';
 import { ExternalLink, Globe } from 'lucide-react';
-import { ScrambleText } from '../components/ScrambleText';
 
 export const Partners: React.FC = () => {
   return (
@@ -63,7 +62,7 @@ export const Partners: React.FC = () => {
                     </div>
 
                     <h3 className="text-2xl font-display font-bold text-slate-900 mb-4 group-hover:text-blue-800 transition-colors">
-                        <ScrambleText text={partner.name} delay={200} hover={true} />
+                        {partner.name}
                     </h3>
 
                     <p className="text-slate-600 text-sm leading-relaxed font-mono">

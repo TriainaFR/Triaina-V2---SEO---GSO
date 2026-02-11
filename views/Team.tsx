@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { HISTORY_DATA, AMBITION_TEXT, PAGE_TO_URL, CAREERS_DATA } from '../constants';
 import { Briefcase, Clock, CheckCircle2, Zap, Layout, Terminal, MapPin, DollarSign, ArrowRight } from 'lucide-react';
 import { SEO } from '../components/SEO';
-import { ScrambleText } from '../components/ScrambleText';
 
 type Tab = 'history' | 'careers';
 
@@ -311,7 +310,7 @@ export const Team: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                                         </span>
                                     </div>
                                     <h3 className="text-2xl font-display font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
-                                        <ScrambleText text={job.title} delay={300} hover={true} />
+                                        {job.title}
                                     </h3>
                                 </div>
 

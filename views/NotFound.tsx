@@ -2,7 +2,6 @@
 import React from 'react';
 import { AlertTriangle, Home, ArrowLeft } from 'lucide-react';
 import { SEO } from '../components/SEO';
-import { ScrambleText } from '../components/ScrambleText';
 import { PAGE_TO_URL } from '../constants';
 
 export const NotFound: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate }) => {
@@ -25,7 +24,7 @@ export const NotFound: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigat
       </h1>
 
       <h2 className="text-2xl md:text-4xl font-display font-bold text-slate-900 mb-6">
-        <ScrambleText text="SIGNAL PERDU" delay={100} />
+        SIGNAL PERDU
       </h2>
 
       <p className="text-slate-600 font-mono text-sm md:text-base max-w-md mx-auto mb-12 leading-relaxed">

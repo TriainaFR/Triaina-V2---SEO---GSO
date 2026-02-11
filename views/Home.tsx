@@ -2,7 +2,6 @@
 import React from 'react';
 import TechnicalSection from '../components/TechnicalSection';
 import { Sparkles, Check, Search, LineChart, Plus, Minus, Cpu, Globe } from 'lucide-react';
-import { ScrambleText } from '../components/ScrambleText';
 import { SEO } from '../components/SEO';
 import { PAGE_TO_URL } from '../constants';
 
@@ -76,7 +75,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                 </div>
             </div>
 
-            {/* Massive Typography - Updated to SEO & GSO */}
+            {/* Massive Typography - H1 Plain Text for SEO */}
             <h1 className="font-display font-black text-slate-900 leading-[1.1] tracking-tighter mb-8 animate-fade-in-up w-full max-w-5xl" style={{ animationDelay: '100ms' }}>
                 <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-700">
                     AGENCE SEO
@@ -156,7 +155,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                       </ul>
                   </div>
 
-                  {/* --- BLOC OBJECTIF (REDESIGNÉ SOBRE & DYNAMIQUE) --- */}
+                  {/* --- BLOC OBJECTIF --- */}
                   <div className="relative overflow-hidden rounded-2xl bg-white p-10 text-center shadow-xl group border border-slate-100 h-full flex flex-col justify-center items-center">
                       
                       {/* Subtle Dynamic Background */}
@@ -165,12 +164,11 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                       <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600"></div>
 
                       <div className="relative z-10 flex flex-col items-center w-full">
-                          {/* Empty Space where tag was */}
                           <div className="mb-8"></div>
 
-                          {/* Title with Scramble Effect */}
-                          <h3 className="text-3xl md:text-5xl font-display font-black text-slate-900 mb-8 tracking-tight">
-                              <ScrambleText text="OBJECTIF" hover={true} className="text-blue-600" />
+                          {/* REMOVED SCRAMBLE TEXT FOR SEO - Plain Text H3 */}
+                          <h3 className="text-3xl md:text-5xl font-display font-black text-slate-900 mb-8 tracking-tight text-blue-600">
+                              OBJECTIF
                           </h3>
 
                           {/* Core Message */}
