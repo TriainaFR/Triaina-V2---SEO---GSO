@@ -71,7 +71,7 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
       };
 
       return (
-        <div className="pt-32 pb-20 px-4 min-h-screen max-w-7xl mx-auto relative z-10">
+        <div className="pt-24 md:pt-32 pb-12 px-4 md:px-6 min-h-screen max-w-7xl mx-auto relative z-10">
             <SEO 
                 title="Expertise SEO : Agence Référencement Naturel"
                 description="Agence SEO experte en référencement naturel. Audit SEO, stratégie de mots-clés et optimisation technique pour dominer Google."
@@ -79,29 +79,30 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
             />
             
             {/* HERO */}
-            <div className="mb-24 animate-fade-in-up">
+            <div className="mb-16 md:mb-24 animate-fade-in-up">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100/50 border border-blue-200 text-blue-700 text-xs font-mono tracking-widest uppercase mb-6">
                     <Database size={12} />
                     Expertise & Performance
                 </div>
-                <h1 className="text-5xl md:text-7xl font-display font-black text-slate-900 mb-6 leading-[1.1]">
+                {/* Mobile H1 ajusté pour ne pas déborder : text-3xl */}
+                <h1 className="text-3xl sm:text-5xl md:text-7xl font-display font-black text-slate-900 mb-6 leading-tight md:leading-[1.1]">
                     EXPERTISE SEO : <br/>
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">
                         AGENCE RÉFÉRENCEMENT
                     </span>
                 </h1>
-                <p className="max-w-3xl text-xl text-slate-600 leading-relaxed font-light border-l-4 border-blue-600 pl-6">
+                <p className="max-w-3xl text-lg md:text-xl text-slate-600 leading-relaxed font-light border-l-4 border-blue-600 pl-4 md:pl-6">
                     <strong>Triaina</strong> est une <strong>agence SEO</strong> engagée à vos côtés. 
                     Nous optimisons votre visibilité sur Google avec une <strong>stratégie de référencement naturel</strong> complète et mesurable.
                 </p>
             </div>
 
             {/* INTRO */}
-            <div className="mb-24 bg-white p-8 md:p-12 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 animate-fade-in-up" style={{animationDelay: '100ms'}}>
+            <div className="mb-16 md:mb-24 bg-white p-6 md:p-12 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 animate-fade-in-up" style={{animationDelay: '100ms'}}>
                 <h2 className="text-2xl md:text-4xl font-display font-bold text-slate-900 mb-6">
                     L'Expertise SEO qui Fait Décoller votre Trafic
                 </h2>
-                <div className="text-slate-600 text-lg leading-relaxed space-y-6 font-light">
+                <div className="text-slate-600 text-base md:text-lg leading-relaxed space-y-6 font-light">
                     <p>
                         Confiez votre <strong>stratégie de référencement naturel</strong> à une <strong>agence SEO</strong> expérimentée. Notre équipe vous accompagne pour positionner votre site en tête des premiers résultats sur Google.
                     </p>
@@ -112,19 +113,19 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
             </div>
 
             {/* WHAT IS SEO */}
-            <div className="grid md:grid-cols-2 gap-12 mb-24 animate-fade-in-up" style={{animationDelay: '200ms'}}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-16 md:mb-24 animate-fade-in-up" style={{animationDelay: '200ms'}}>
                 <div>
-                    <h2 className="text-3xl font-display font-bold text-slate-900 mb-6">
+                    <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-900 mb-6">
                         Qu'est-ce qu'une Agence SEO ?
                     </h2>
-                    <p className="text-slate-600 mb-6 leading-relaxed">
+                    <p className="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
                         Une <strong>agence SEO</strong> (Search Engine Optimization) est spécialisée en <strong>référencement naturel</strong>. Son objectif : améliorer votre visibilité sur les moteurs de recherche comme Google.
                     </p>
-                    <p className="text-slate-600 mb-6 leading-relaxed">
+                    <p className="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
                         Un <strong>consultant SEO</strong> indépendant offre une expertise spécialisée mais des ressources limitées. Une <strong>agence SEO</strong> comme Triaina combine expertise, équipe complète et outils puissants.
                     </p>
                 </div>
-                <div className="bg-slate-50 p-8 rounded-xl border border-slate-200">
+                <div className="bg-slate-50 p-6 md:p-8 rounded-xl border border-slate-200">
                     <h3 className="font-bold text-slate-900 mb-4 uppercase tracking-wider text-sm">Ce que nous optimisons</h3>
                     <ul className="space-y-3">
                         {[
@@ -137,53 +138,53 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                         ].map((item, i) => (
                             <li key={i} className="flex items-start gap-3 text-sm text-slate-700 font-mono">
                                 <CheckCircle2 size={16} className="text-blue-600 mt-0.5 flex-shrink-0" />
-                                {item}
+                                <span className="flex-1">{item}</span>
                             </li>
                         ))}
                     </ul>
                 </div>
             </div>
 
-            {/* WHY CHOOSE US */}
-            <div className="mb-24 animate-fade-in-up" style={{animationDelay: '300ms'}}>
-                <h2 className="text-3xl font-display font-bold text-slate-900 mb-12 text-center">Pourquoi Choisir une Agence SEO ?</h2>
-                <div className="grid md:grid-cols-3 gap-6">
+            {/* WHY CHOOSE US - Explicit 1 column on mobile */}
+            <div className="mb-16 md:mb-24 animate-fade-in-up" style={{animationDelay: '300ms'}}>
+                <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-900 mb-12 text-center">Pourquoi Choisir une Agence SEO ?</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {[
                         { title: "Un ROI Imbattable", icon: TrendingUp, desc: "Le SEO génère un trafic organique durable. C'est un levier d'acquisition puissant avec un retour sur investissement supérieur à la publicité payante sur le long terme." },
                         { title: "Maximiser votre Visibilité", icon: Target, desc: "Plus de 60 % des clics se font sur les 3 premiers résultats. Dominez votre marché et capturez le trafic de vos concurrents en étant visible." },
                         { title: "Augmenter vos Conversions", icon: MousePointerClick, desc: "En optimisant l'UX et la pertinence, le SEO transforme vos visiteurs en clients. Un site rapide et clair convertit mieux." }
                     ].map((card, i) => (
-                        <div key={i} className="bg-white p-8 rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all duration-300 group">
+                        <div key={i} className="bg-white p-6 md:p-8 rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all duration-300 group">
                             <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                                 <card.icon size={24} />
                             </div>
-                            <h3 className="font-bold text-xl text-slate-900 mb-3">{card.title}</h3>
+                            <h3 className="font-bold text-lg md:text-xl text-slate-900 mb-3">{card.title}</h3>
                             <p className="text-slate-600 text-sm leading-relaxed">{card.desc}</p>
                         </div>
                     ))}
                 </div>
             </div>
 
-            {/* 4 PILLARS */}
-            <div className="mb-24 bg-slate-900 text-white p-10 md:p-16 rounded-3xl relative overflow-hidden animate-fade-in-up" style={{animationDelay: '400ms'}}>
-                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+            {/* 4 PILLARS - Adjusted gaps for mobile */}
+            <div className="mb-16 md:mb-24 bg-slate-900 text-white p-6 md:p-16 rounded-3xl relative overflow-hidden animate-fade-in-up" style={{animationDelay: '400ms'}}>
+                <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
                 <div className="relative z-10">
-                    <h2 className="text-3xl md:text-5xl font-display font-bold mb-12">Les 4 Piliers du SEO</h2>
-                    <div className="grid md:grid-cols-2 gap-12">
+                    <h2 className="text-2xl md:text-5xl font-display font-bold mb-8 md:mb-12">Les 4 Piliers du SEO</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                         {[
                             { title: "Pilier 1 : SEO Technique", icon: Cpu, desc: "Vitesse, Mobile, SSL, Structure URL. Nous rendons votre site lisible et rapide pour Google." },
                             { title: "Pilier 2 : Contenu & Mots-clés", icon: BookOpen, desc: "Réponse aux intentions de recherche. Création de contenus experts qui attirent du trafic qualifié." },
                             { title: "Pilier 3 : Netlinking & Autorité", icon: Globe, desc: "Stratégie de backlinks haute qualité. Nous construisons votre crédibilité aux yeux des moteurs." },
                             { title: "Pilier 4 : UX & Engagement", icon: Layers, desc: "Navigation fluide, temps de session. L'expérience utilisateur est un facteur clé de classement." }
                         ].map((pillar, i) => (
-                            <div key={i} className="flex gap-6">
-                                <div className="mt-1">
+                            <div key={i} className="flex gap-4 md:gap-6">
+                                <div className="mt-1 flex-shrink-0">
                                     <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400 border border-blue-500/30">
                                         <pillar.icon size={20} />
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold mb-2">{pillar.title}</h3>
+                                    <h3 className="text-lg md:text-xl font-bold mb-2">{pillar.title}</h3>
                                     <p className="text-slate-400 text-sm leading-relaxed font-light">{pillar.desc}</p>
                                 </div>
                             </div>
@@ -192,9 +193,9 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                 </div>
             </div>
 
-            {/* METHODOLOGY - 5 STEPS */}
-            <div className="mb-24 animate-fade-in-up" style={{animationDelay: '500ms'}}>
-                <h2 className="text-3xl font-display font-bold text-slate-900 mb-12">Notre Méthodologie : 5 Étapes</h2>
+            {/* METHODOLOGY */}
+            <div className="mb-16 md:mb-24 animate-fade-in-up" style={{animationDelay: '500ms'}}>
+                <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-900 mb-12">Notre Méthodologie : 5 Étapes</h2>
                 <div className="space-y-4">
                     {[
                         { step: "01", title: "Analyse des Besoins", desc: "Objectifs business, analyse marché et concurrence." },
@@ -203,7 +204,7 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                         { step: "04", title: "Mise en Place", desc: "Optimisations techniques, rédaction, déploiement netlinking." },
                         { step: "05", title: "Reporting & Itération", desc: "Suivi des KPI, ajustements continus face aux algos." }
                     ].map((item, i) => (
-                        <div key={i} className="flex items-center gap-6 p-6 border border-slate-200 rounded-lg hover:border-blue-400 hover:shadow-md transition-all bg-white group">
+                        <div key={i} className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-6 border border-slate-200 rounded-lg hover:border-blue-400 hover:shadow-md transition-all bg-white group">
                             <span className="text-4xl font-display font-bold text-slate-200 group-hover:text-blue-600 transition-colors">{item.step}</span>
                             <div>
                                 <h3 className="font-bold text-lg text-slate-900">{item.title}</h3>
@@ -214,11 +215,11 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                 </div>
             </div>
 
-            {/* EXPERTISE & TOOLS */}
-            <div className="mb-24 grid md:grid-cols-2 gap-12 items-center animate-fade-in-up" style={{animationDelay: '600ms'}}>
-                <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200">
-                     <h3 className="text-2xl font-display font-bold text-slate-900 mb-6">Outils & IA</h3>
-                     <p className="text-slate-600 mb-6 leading-relaxed">
+            {/* EXPERTISE & TOOLS - Stacked on Mobile */}
+            <div className="mb-16 md:mb-24 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center animate-fade-in-up" style={{animationDelay: '600ms'}}>
+                <div className="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-200">
+                     <h3 className="text-xl md:text-2xl font-display font-bold text-slate-900 mb-6">Outils & IA</h3>
+                     <p className="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
                         Nous combinons les meilleurs outils du marché (Semrush, Ahrefs, Screaming Frog) avec nos solutions propriétaires de prédiction et d'analyse IA.
                      </p>
                      <div className="flex flex-wrap gap-2">
@@ -230,8 +231,8 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                      </div>
                 </div>
                 <div>
-                     <h3 className="text-2xl font-display font-bold text-slate-900 mb-4">Une Équipe Experte</h3>
-                     <p className="text-slate-600 mb-6 leading-relaxed">
+                     <h3 className="text-xl md:text-2xl font-display font-bold text-slate-900 mb-4">Une Équipe Experte</h3>
+                     <p className="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
                         Nos consultants ne sont pas de simples exécutants. Ils sont stratèges, data-analysts et experts en sémantique. Ils anticipent les mises à jour (Core Updates) et intègrent le GSO (Generative Search Optimization) pour vous garder en tête.
                      </p>
                      <div className="flex items-center gap-4 text-blue-700 font-bold text-sm">
@@ -241,10 +242,10 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                 </div>
             </div>
 
-            {/* SERVICES GRID */}
-            <div className="mb-24 animate-fade-in-up" style={{animationDelay: '700ms'}}>
-                <h2 className="text-3xl font-display font-bold text-slate-900 mb-12">Nos Services SEO</h2>
-                <div className="grid md:grid-cols-3 gap-6">
+            {/* SERVICES GRID - 1 col mobile */}
+            <div className="mb-16 md:mb-24 animate-fade-in-up" style={{animationDelay: '700ms'}}>
+                <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-900 mb-12">Nos Services SEO</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {[
                         { title: "Audit SEO", desc: "Le diagnostic complet pour fixer le cap." },
                         { title: "Refonte de Site", desc: "Migration sécurisée sans perte de trafic." },
@@ -270,9 +271,9 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
             </div>
 
             {/* CTA */}
-            <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-12 text-center text-white shadow-2xl animate-fade-in-up" style={{animationDelay: '800ms'}}>
-                <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">Prêt à Dominer Google ?</h2>
-                <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto font-light">
+            <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 md:p-12 text-center text-white shadow-2xl animate-fade-in-up" style={{animationDelay: '800ms'}}>
+                <h2 className="text-2xl md:text-5xl font-display font-bold mb-6">Prêt à Dominer Google ?</h2>
+                <p className="text-blue-100 text-base md:text-lg mb-8 max-w-2xl mx-auto font-light">
                     Triaina vous accompagne. Audit SEO, consultant expert, résultats mesurables.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -302,7 +303,7 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
   // ════════════════════════════════════════════════════════════════════════
 
   return (
-    <div className="pt-32 pb-20 px-4 min-h-screen max-w-7xl mx-auto relative z-10">
+    <div className="pt-24 md:pt-32 pb-12 px-4 md:px-6 min-h-screen max-w-7xl mx-auto relative z-10">
       
       <SEO 
           title={`${content.title}`} 
@@ -310,7 +311,7 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
       />
 
       {/* Header Section */}
-      <div className="mb-20 animate-fade-in-up">
+      <div className="mb-16 md:mb-20 animate-fade-in-up">
         <div className="flex items-center gap-3 mb-6">
             <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 border border-blue-100 shadow-sm">
                 <Icon size={24} />
@@ -321,29 +322,29 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
             </div>
         </div>
 
-        {/* Removed ScrambleText from H1 for SEO Visibility */}
-        <h1 className="text-5xl md:text-7xl font-display font-black text-slate-900 mb-4 leading-tight">
+        {/* Font size adjustment for Mobile */}
+        <h1 className="text-3xl sm:text-5xl md:text-7xl font-display font-black text-slate-900 mb-4 leading-tight">
             {content.title.replace('Expertise ', '')}
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400 text-3xl md:text-5xl mt-2">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400 text-2xl md:text-5xl mt-2">
                 {content.subtitle}
             </span>
         </h1>
         
-        <p className="max-w-3xl text-xl text-slate-600 leading-relaxed font-light mt-8 border-l-4 border-blue-600 pl-6">
+        <p className="max-w-3xl text-lg md:text-xl text-slate-600 leading-relaxed font-light mt-8 border-l-4 border-blue-600 pl-4 md:pl-6">
             {content.description}
         </p>
       </div>
 
-      {/* Details Grid */}
-      <div className="grid md:grid-cols-2 gap-8 mb-20 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
+      {/* Details Grid - Explicit 1 column mobile */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-16 md:mb-20 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
          {content.details.map((detail, index) => (
-             <div key={index} className="group bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-400 hover:shadow-lg transition-all duration-300">
+             <div key={index} className="group bg-white p-6 md:p-8 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-400 hover:shadow-lg transition-all duration-300">
                  <div className="flex items-start gap-4">
-                     <div className="mt-1 bg-blue-100 p-1.5 rounded-full text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                     <div className="mt-1 bg-blue-100 p-1.5 rounded-full text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors flex-shrink-0">
                          <CheckCircle2 size={18} />
                      </div>
                      <div>
-                         <h3 className="text-xl font-bold text-slate-900 mb-2">{detail.title}</h3>
+                         <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-2">{detail.title}</h3>
                          <p className="text-slate-600 leading-relaxed text-sm">
                              {detail.desc}
                          </p>
@@ -354,7 +355,7 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
       </div>
 
       {/* Bottom Actions & Tags */}
-      <div className="flex flex-col md:flex-row justify-between items-center gap-8 border-t border-slate-300 pt-12 animate-fade-in-up" style={{ animationDelay: '300ms' }}>
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 border-t border-slate-300 pt-12 animate-fade-in-up" style={{ animationDelay: '300ms' }}>
           
           <div className="flex flex-wrap gap-2">
               {content.tags.map((tag, i) => (

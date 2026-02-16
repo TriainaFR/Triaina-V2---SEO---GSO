@@ -56,6 +56,7 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate 
         border border-white/60
         shadow-[0_8px_32px_0_rgba(31,38,135,0.07)]
         ring-1 ring-white/40 inset
+        ${isMobileOpen ? 'opacity-0 pointer-events-none lg:opacity-100 lg:pointer-events-auto' : 'opacity-100'}
       `}>
             
             <a 
@@ -172,8 +173,18 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate 
 
       {/* Mobile Menu Overlay */}
       {isMobileOpen && (
-        <div className="fixed inset-0 bg-white/95 backdrop-blur-xl z-40 pt-32 px-6 lg:hidden animate-fade-in-up overflow-y-auto">
-            <div className="flex flex-col space-y-6 pb-20">
+        <div className="fixed inset-0 bg-white/95 backdrop-blur-2xl z-50 pt-20 px-6 lg:hidden animate-fade-in-up overflow-y-auto">
+            
+            {/* BOUTON FERMER EXPLICITE DANS LE MENU */}
+            <button 
+                onClick={() => setIsMobileOpen(false)}
+                className="absolute top-8 right-8 p-3 bg-white border border-slate-200 rounded-full text-slate-900 hover:bg-slate-100 transition-colors shadow-sm z-50"
+                aria-label="Fermer le menu"
+            >
+                <X size={24} />
+            </button>
+
+            <div className="flex flex-col space-y-6 pb-20 mt-12">
             {NAV_LINKS.map((link) => {
                 const hasChildren = link.children && link.children.length > 0;
                 const isOpen = dropdownOpen === link.id;
