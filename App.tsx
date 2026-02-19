@@ -12,6 +12,7 @@ import { Team } from './views/Team';
 import { Expertise } from './views/Expertise';
 import { Legal } from './views/Legal';
 import { NotFound } from './views/NotFound'; // Import 404
+import { SeoParis } from './views/SeoParis'; // Import SeoParis
 import { SEO } from './components/SEO';
 import { NAV_LINKS, SOCIAL_LINKS, PAGE_TO_URL, ROUTES } from './constants';
 import { Logo } from './components/Logo';
@@ -63,36 +64,6 @@ const App: React.FC = () => {
         // Fallback for home explicitly
         try { window.history.pushState({}, '', '/'); } catch(e) {}
         setCurrentPage('home');
-    }
-  };
-
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'home':
-        return <Home onNavigate={handleNavigation} />;
-      case 'references':
-        return <References />;
-      case 'faq':
-        return <FAQ />;
-      case 'contact':
-        return <Contact />;
-      case 'press':
-        return <Press />;
-      case 'team':
-        return <Team onNavigate={handleNavigation} />;
-      case 'legal':
-        return <Legal />;
-      case 'expertise-seo':
-      case 'expertise-sea':
-      case 'expertise-gso':
-      case 'expertise-gsa':
-      case 'expertise-media':
-      case 'expertise-content':
-        return <Expertise id={currentPage} onNavigate={handleNavigation} />;
-      case '404':
-        return <NotFound onNavigate={handleNavigation} />;
-      default:
-        return <NotFound onNavigate={handleNavigation} />;
     }
   };
 
@@ -171,6 +142,43 @@ const App: React.FC = () => {
     ]
   };
 
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'home':
+        return <Home onNavigate={handleNavigation} />;
+      case 'references':
+        return <References />;
+      case 'faq':
+        return <FAQ />;
+      case 'contact':
+        return <Contact />;
+      case 'press':
+        return <Press />;
+      case 'team':
+        return <Team onNavigate={handleNavigation} />;
+      case 'legal':
+        return <Legal />;
+      case 'expertise-seo':
+      case 'expertise-sea':
+      case 'expertise-gso':
+      case 'expertise-gsa':
+      case 'expertise-media':
+      case 'expertise-content':
+        return <Expertise id={currentPage} onNavigate={handleNavigation} />;
+      case 'seo-paris':
+        return <SeoParis onNavigate={handleNavigation} />;
+      case '404':
+        return <NotFound onNavigate={handleNavigation} />;
+      default:
+        return <Home onNavigate={handleNavigation} />;
+    }
+  };
+
+  // Find the Expertise group to expand it in the footer
+  const expertiseGroup = NAV_LINKS.find(link => link.id === 'expertise');
+  // Find the SEO Landing group
+  const seoGroup = NAV_LINKS.find(link => link.id === 'seo-landing');
+
   return (
     <div className="min-h-screen bg-transparent text-slate-900 selection:bg-blue-200 selection:text-blue-900 overflow-x-hidden font-sans">
       <SEO schema={globalSchema} />
@@ -190,15 +198,15 @@ const App: React.FC = () => {
          <div className="max-w-7xl mx-auto px-4">
             
             <div className="grid md:grid-cols-4 gap-12 mb-16">
-                <div className="col-span-1 md:col-span-2">
+                
+                {/* 1. Brand & Social */}
+                <div className="col-span-1 md:col-span-1 lg:col-span-1">
                     <div className="mb-6 cursor-pointer" onClick={() => handleNavigation('home')}>
                         <Logo />
                     </div>
-                    <p className="text-slate-500 text-sm font-mono leading-relaxed max-w-sm mb-6">
+                    <p className="text-slate-500 text-xs font-mono leading-relaxed max-w-sm mb-6">
                         Agence spécialisée en architecture SEO, domination GSO et autorité Média. 
-                        Nous construisons les protocoles de visibilité pour l'ère de l'Intelligence Artificielle.
                     </p>
-                    {/* Social Links for SEO Score */}
                     <div className="flex gap-4">
                         {SOCIAL_LINKS.map((social) => (
                             <a 
@@ -209,16 +217,17 @@ const App: React.FC = () => {
                                 className="text-slate-400 hover:text-blue-600 transition-colors"
                                 aria-label={`Suivre Triaina sur ${social.name}`}
                             >
-                                <span className="text-xs font-bold uppercase tracking-widest">{social.name}</span>
+                                <span className="text-[10px] font-bold uppercase tracking-widest">{social.name}</span>
                             </a>
                         ))}
                     </div>
                 </div>
 
+                {/* 2. Agence Links */}
                 <div className="col-span-1">
-                    <h4 className="font-display font-bold text-slate-900 mb-6 uppercase tracking-widest text-sm">Navigation</h4>
-                    <ul className="space-y-4">
-                        {NAV_LINKS.slice(0, 2).map(link => (
+                    <h4 className="font-display font-bold text-slate-900 mb-6 uppercase tracking-widest text-sm">Agence</h4>
+                    <ul className="space-y-3">
+                        {NAV_LINKS.filter(link => link.id !== 'expertise' && link.id !== 'contact' && link.id !== 'seo-landing').map(link => (
                             <li key={link.id}>
                                 <a 
                                     href={PAGE_TO_URL[link.id]}
@@ -232,47 +241,80 @@ const App: React.FC = () => {
                                 </a>
                             </li>
                         ))}
-                        {/* Ajout manuel pour Expertise dans le footer */}
+                        {/* Static links if needed */}
                          <li>
                             <a 
-                                href={PAGE_TO_URL['expertise-seo']}
+                                href={PAGE_TO_URL['contact']}
                                 onClick={(e) => {
                                     e.preventDefault();
-                                    handleNavigation('expertise-seo');
+                                    handleNavigation('contact');
                                 }}
-                                className="text-slate-600 hover:text-blue-600 font-mono text-xs uppercase tracking-wider transition-colors inline-block"
+                                className="text-slate-600 hover:text-blue-600 font-mono text-xs uppercase tracking-wider transition-colors inline-block font-bold"
                             >
-                                EXPERTISE
+                                CONTACT
                             </a>
                         </li>
                     </ul>
                 </div>
 
+                {/* 3. Expertises & Localisation (Expanded) - CRITICAL FOR SEO LINKING */}
                 <div className="col-span-1">
-                    <h4 className="font-display font-bold text-slate-900 mb-6 uppercase tracking-widest text-sm">Ressources</h4>
-                    <ul className="space-y-4">
-                        {NAV_LINKS.slice(3).map(link => (
-                            <li key={link.id}>
+                    <h4 className="font-display font-bold text-slate-900 mb-6 uppercase tracking-widest text-sm text-blue-700">Expertises</h4>
+                    <ul className="space-y-3 mb-6">
+                        {expertiseGroup?.children?.map(subLink => (
+                             <li key={subLink.id}>
                                 <a 
-                                    href={PAGE_TO_URL[link.id]}
+                                    href={PAGE_TO_URL[subLink.id]}
                                     onClick={(e) => {
                                         e.preventDefault();
-                                        handleNavigation(link.id as Page);
+                                        handleNavigation(subLink.id as Page);
                                     }}
                                     className="text-slate-600 hover:text-blue-600 font-mono text-xs uppercase tracking-wider transition-colors inline-block"
                                 >
-                                    {link.label}
+                                    {subLink.label}
                                 </a>
                             </li>
                         ))}
                     </ul>
+
+                    {/* SEO LOCALE / LANDING PAGES */}
+                    <h4 className="font-display font-bold text-slate-900 mb-4 uppercase tracking-widest text-sm">Localisation</h4>
+                    <ul className="space-y-3">
+                        {seoGroup?.children?.map(subLink => (
+                             <li key={subLink.id}>
+                                <a 
+                                    href={PAGE_TO_URL[subLink.id]}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        handleNavigation(subLink.id as Page);
+                                    }}
+                                    className="text-slate-600 hover:text-blue-600 font-mono text-xs uppercase tracking-wider transition-colors inline-block font-bold"
+                                >
+                                    {subLink.label}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                {/* 4. Contact/Infos */}
+                <div className="col-span-1">
+                    <h4 className="font-display font-bold text-slate-900 mb-6 uppercase tracking-widest text-sm">Infos</h4>
+                    <address className="not-italic text-slate-600 text-xs font-mono leading-relaxed mb-4">
+                        50 Quai Louis Blériot<br/>
+                        75016 Paris<br/>
+                        France
+                    </address>
+                    <a href="mailto:lucas@triaina.fr" className="text-slate-600 hover:text-blue-600 text-xs font-mono block mb-2">
+                        lucas@triaina.fr
+                    </a>
                 </div>
             </div>
 
             <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                 <div className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
-                    <p className="text-slate-500 font-mono text-[10px]">© {new Date().getFullYear()} Triaina Global Systems. All rights reserved.</p>
+                    <p className="text-slate-500 font-mono text-[10px]">© {new Date().getFullYear()} Triaina Global Systems.</p>
                 </div>
                 
                 <div className="flex gap-6">
@@ -286,13 +328,12 @@ const App: React.FC = () => {
                     >
                         Mentions Légales
                     </a>
-                    {/* LIEN SITEMAP AJOUTÉ ICI */}
                     <a 
                         href="/sitemap.xml"
                         target="_blank"
                         className="text-[10px] text-slate-400 hover:text-blue-600 uppercase tracking-wider font-mono cursor-pointer"
                     >
-                        Sitemap.xml
+                        Sitemap
                     </a>
                 </div>
             </div>

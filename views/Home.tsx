@@ -1,7 +1,7 @@
 
 import React from 'react';
 import TechnicalSection from '../components/TechnicalSection';
-import { Sparkles, Check, Search, LineChart, Plus, Minus, Cpu, Globe } from 'lucide-react';
+import { Sparkles, Check, Search, LineChart, Plus, Minus, Cpu, Globe, ArrowRight } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { PAGE_TO_URL } from '../constants';
 
@@ -14,7 +14,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
 
   const FAQ_HOME_DATA = [
     {
-      question: "Qu'est ce qu'un audit SEO ?",
+      question: "Qu'est ce un audit SEO ?",
       answer: "Un audit SEO est un diagnostic complet de votre site web. Il analyse les problèmes techniques, on-page et de netlinking qui bloquent votre visibilité sur Google. C'est la première étape d'une stratégie SEO efficace."
     },
     {
@@ -207,8 +207,8 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
               <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                   {/* Service 1 */}
                   <a 
-                      href={PAGE_TO_URL['contact']}
-                      onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                      href={PAGE_TO_URL['expertise-seo']}
+                      onClick={(e) => { e.preventDefault(); onNavigate('expertise-seo'); }}
                       className="group bg-white p-8 rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer block"
                   >
                       <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
@@ -349,6 +349,58 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                 </div>
             </div>
         </section>
+
+        {/* ════════════ MAILLAGE INTERNE & SITEMAP HTML (NEW) ════════════ */}
+        <section className="py-16 bg-white border-t border-slate-200">
+            <div className="max-w-7xl mx-auto px-6">
+                <div className="flex items-center gap-2 mb-8">
+                    <div className="w-1 h-6 bg-blue-600"></div>
+                    <h3 className="text-sm font-mono font-bold text-slate-900 uppercase tracking-widest">Exploration Rapide & Maillage</h3>
+                </div>
+                
+                <nav className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-8">
+                    <div>
+                        <h4 className="font-bold text-slate-900 mb-4 text-sm uppercase">Agence</h4>
+                        <ul className="space-y-2">
+                            <li><a href={PAGE_TO_URL['team']} onClick={(e) => {e.preventDefault(); onNavigate('team')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block">Qui sommes-nous ?</a></li>
+                            <li><a href={PAGE_TO_URL['references']} onClick={(e) => {e.preventDefault(); onNavigate('references')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block">Nos Références</a></li>
+                            <li><a href={PAGE_TO_URL['press']} onClick={(e) => {e.preventDefault(); onNavigate('press')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block">Espace Presse</a></li>
+                            <li><a href={PAGE_TO_URL['team']} onClick={(e) => {e.preventDefault(); onNavigate('team')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block">Carrières & Recrutement</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 className="font-bold text-slate-900 mb-4 text-sm uppercase">Expertises SEO</h4>
+                        <ul className="space-y-2">
+                            <li><a href={PAGE_TO_URL['expertise-seo']} onClick={(e) => {e.preventDefault(); onNavigate('expertise-seo')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block font-bold">Expertise SEO (Google)</a></li>
+                            <li><a href={PAGE_TO_URL['expertise-gso']} onClick={(e) => {e.preventDefault(); onNavigate('expertise-gso')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block font-bold text-blue-600">Expertise GSO (IA)</a></li>
+                            <li><a href={PAGE_TO_URL['expertise-sea']} onClick={(e) => {e.preventDefault(); onNavigate('expertise-sea')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block">Expertise SEA (Ads)</a></li>
+                            <li><a href={PAGE_TO_URL['seo-paris']} onClick={(e) => {e.preventDefault(); onNavigate('seo-paris')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block font-bold">Agence SEO Paris</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 className="font-bold text-slate-900 mb-4 text-sm uppercase">Expertises Média</h4>
+                        <ul className="space-y-2">
+                            <li><a href={PAGE_TO_URL['expertise-media']} onClick={(e) => {e.preventDefault(); onNavigate('expertise-media')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block">Expertise Média & RP</a></li>
+                            <li><a href={PAGE_TO_URL['expertise-content']} onClick={(e) => {e.preventDefault(); onNavigate('expertise-content')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block">Stratégie de Contenu</a></li>
+                            <li><a href={PAGE_TO_URL['expertise-gsa']} onClick={(e) => {e.preventDefault(); onNavigate('expertise-gsa')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block">Publicité IA (GSA)</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 className="font-bold text-slate-900 mb-4 text-sm uppercase">Support & Légal</h4>
+                        <ul className="space-y-2">
+                            <li><a href={PAGE_TO_URL['contact']} onClick={(e) => {e.preventDefault(); onNavigate('contact')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block">Contact Agence</a></li>
+                            <li><a href={PAGE_TO_URL['faq']} onClick={(e) => {e.preventDefault(); onNavigate('faq')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block">Foire Aux Questions</a></li>
+                            <li><a href={PAGE_TO_URL['legal']} onClick={(e) => {e.preventDefault(); onNavigate('legal')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block">Mentions Légales</a></li>
+                            <li><a href="/sitemap.xml" target="_blank" className="text-slate-500 hover:text-blue-600 text-sm transition-colors block">Sitemap XML</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </section>
+
       </main>
 
       {/* Footer Strip */}

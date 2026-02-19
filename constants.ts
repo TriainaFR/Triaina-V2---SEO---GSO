@@ -14,7 +14,8 @@ export const PAGE_TO_URL: Record<string, string> = {
   'expertise-gso': '/expertise-gso',
   'expertise-gsa': '/expertise-gsa',
   'expertise-media': '/expertise-media',
-  'expertise-content': '/expertise-contenu'
+  'expertise-content': '/expertise-contenu',
+  'seo-paris': '/agence-seo-paris'
 };
 
 export const ROUTES: Record<string, Page> = {
@@ -31,7 +32,8 @@ export const ROUTES: Record<string, Page> = {
   '/expertise-gsa': 'expertise-gsa',
   '/expertise-media': 'expertise-media',
   '/expertise-content': 'expertise-content',
-  '/expertise-contenu': 'expertise-content'
+  '/expertise-contenu': 'expertise-content',
+  '/agence-seo-paris': 'seo-paris'
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -47,6 +49,13 @@ export const NAV_LINKS: NavLink[] = [
         { id: 'expertise-gsa', label: 'Expertise GSA' },
         { id: 'expertise-media', label: 'Expertise Média' },
         { id: 'expertise-content', label: 'Expertise Contenu' }
+    ]
+  },
+  {
+    id: 'seo-landing',
+    label: 'POUR LE SEO ;)',
+    children: [
+        { id: 'seo-paris', label: 'Agence SEO Paris' }
     ]
   },
   { id: 'references', label: 'RÉFÉRENCES' },

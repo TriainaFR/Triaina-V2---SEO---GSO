@@ -13,6 +13,7 @@ export type Page =
   | 'expertise-gsa' 
   | 'expertise-media' 
   | 'expertise-content'
+  | 'seo-paris'
   | '404';
 
 export interface NavLink {
