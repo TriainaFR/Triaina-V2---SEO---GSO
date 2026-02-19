@@ -53,7 +53,7 @@ export const NAV_LINKS: NavLink[] = [
   },
   {
     id: 'seo-landing',
-    label: 'POUR LE SEO ;)',
+    label: 'POUR LE SEO',
     children: [
         { id: 'seo-paris', label: 'Agence SEO Paris' }
     ]
