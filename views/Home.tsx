@@ -64,17 +64,10 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
         schema={homeFaqSchema}
       />
 
-      {/* ════════════════════ HERO HEADER ════════════════════ */}
-      <header className="min-h-screen flex flex-col justify-center relative z-10 pt-20 px-4">
+      {/* ════════════ HERO HEADER ════════════ */}
+      <header className="min-h-screen flex flex-col justify-center relative z-10 pt-32 pb-12 px-4 md:pt-20">
           <div className="max-w-7xl mx-auto w-full">
-            {/* Top Tag */}
-            <div className="flex items-center gap-4 mb-8 animate-fade-in-up">
-                <div className="px-3 py-1 border border-blue-600/20 rounded-full bg-blue-50/50 backdrop-blur-md flex items-center gap-2">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></span>
-                    <span className="text-[10px] font-mono text-blue-700 uppercase tracking-widest">Agence SEO Paris</span>
-                </div>
-            </div>
-
+            
             {/* Massive Typography - H1 Plain Text for SEO */}
             <h1 className="font-display font-black text-slate-900 leading-[1.1] tracking-tighter mb-8 animate-fade-in-up w-full max-w-5xl" style={{ animationDelay: '100ms' }}>
                 <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-700">
@@ -117,7 +110,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
       </div>
 
       <main>
-        {/* ════════════════════ PROPOSITION DE VALEUR ════════════════════ */}
+        {/* ════════════ PROPOSITION DE VALEUR ════════════ */}
         <section className="py-24 bg-white/80 backdrop-blur-sm relative border-b border-slate-200">
             <div className="max-w-7xl mx-auto px-6">
                <div className="flex flex-col md:flex-row justify-between items-start mb-16">
@@ -204,7 +197,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
             </div>
         </section>
 
-        {/* ════════════════════ SERVICES GRID ════════════════════ */}
+        {/* ════════════ SERVICES GRID ════════════ */}
         <section className="py-24 bg-slate-50/80 backdrop-blur-sm border-b border-slate-200">
            <div className="max-w-7xl mx-auto px-6">
               <h2 className="text-3xl md:text-5xl font-display font-bold text-slate-900 mb-12 text-center">
@@ -251,12 +244,12 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
            </div>
         </section>
 
-        {/* ════════════════════ METHODOLOGIE (Protocole) ════════════════════ */}
+        {/* ════════════ METHODOLOGIE (Protocole) ════════════ */}
         <section>
           <TechnicalSection />
         </section>
 
-        {/* ════════════════════ EXPERTISE SECTION ════════════════════ */}
+        {/* ════════════ EXPERTISE SECTION ════════════ */}
         <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
@@ -302,7 +295,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
             </div>
         </section>
 
-        {/* ════════════════════ FAQ SECTION (Home Specific) ════════════════════ */}
+        {/* ════════════ FAQ SECTION (Home Specific) ════════════ */}
         <section className="py-24 bg-white/90 backdrop-blur-sm">
             <div className="max-w-4xl mx-auto px-6">
                 <h2 className="text-3xl md:text-5xl font-display font-bold text-slate-900 mb-12 text-center">
@@ -335,7 +328,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
             </div>
         </section>
 
-        {/* ════════════════════ CTA FINAL ════════════════════ */}
+        {/* ════════════ CTA FINAL ════════════ */}
         <section className="py-24 bg-slate-50 border-t border-slate-200">
             <div className="max-w-5xl mx-auto px-6 text-center">
                 <h2 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-6">

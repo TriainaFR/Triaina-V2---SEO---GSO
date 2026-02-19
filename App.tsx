@@ -286,6 +286,14 @@ const App: React.FC = () => {
                     >
                         Mentions Légales
                     </a>
+                    {/* LIEN SITEMAP AJOUTÉ ICI */}
+                    <a 
+                        href="/sitemap.xml"
+                        target="_blank"
+                        className="text-[10px] text-slate-400 hover:text-blue-600 uppercase tracking-wider font-mono cursor-pointer"
+                    >
+                        Sitemap.xml
+                    </a>
                 </div>
             </div>
          </div>
