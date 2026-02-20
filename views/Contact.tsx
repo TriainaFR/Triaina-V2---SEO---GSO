@@ -1,6 +1,6 @@
 
 import React, { useRef, useState } from 'react';
-import { Mail, Phone, ArrowUpRight, MapPin, Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
+import { Mail, ArrowUpRight, MapPin, Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import emailjs from '@emailjs/browser';
 
@@ -29,21 +29,6 @@ export const Contact: React.FC = () => {
     }
   };
 
-  const FOUNDERS = [
-    {
-      name: "Lucas Lecoq",
-      role: "Co-Fondateur",
-      phone: "+33 6 14 91 62 95",
-      email: "lucas@triaina.fr",
-    },
-    {
-      name: "Swann Bertaud",
-      role: "Co-Fondateur",
-      phone: "+33 6 86 61 63 11",
-      email: "swann@triaina.fr",
-    }
-  ];
-
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -68,7 +53,7 @@ export const Contact: React.FC = () => {
             CONTACT
         </h1>
         <p className="font-mono text-blue-700 text-xs tracking-widest uppercase">
-            // Direction & Bureau Parisien
+            // Bureau Parisien
         </p>
       </div>
 
@@ -180,30 +165,6 @@ export const Contact: React.FC = () => {
         {/* Informations (Colonne Droite) */}
         <div className="lg:col-span-5 space-y-12 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
             
-            {/* Founders */}
-            <div>
-                <h3 className="text-xl font-display font-bold text-slate-900 mb-6 uppercase tracking-wider">Direction</h3>
-                <div className="space-y-6">
-                    {FOUNDERS.map((founder, i) => (
-                        <div key={i} className="bg-white p-6 rounded-xl border border-slate-200 hover:border-blue-400 transition-colors group">
-                            <h4 className="font-bold text-lg text-slate-900 group-hover:text-blue-600 transition-colors">{founder.name}</h4>
-                            <p className="text-slate-500 font-mono text-xs uppercase mb-4">{founder.role}</p>
-                            
-                            <div className="space-y-2">
-                                <a href={`tel:${founder.phone.replace(/\s/g, '')}`} className="flex items-center gap-3 text-slate-600 hover:text-blue-600 transition-colors">
-                                    <Phone size={16} />
-                                    <span className="font-mono text-sm">{founder.phone}</span>
-                                </a>
-                                <a href={`mailto:${founder.email}`} className="flex items-center gap-3 text-slate-600 hover:text-blue-600 transition-colors">
-                                    <Mail size={16} />
-                                    <span className="font-mono text-sm">{founder.email}</span>
-                                </a>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
             {/* Address */}
             <div className="bg-slate-900 text-white p-8 rounded-xl relative overflow-hidden">
                 <div className="relative z-10">
@@ -212,7 +173,7 @@ export const Contact: React.FC = () => {
                         Bureaux
                     </h3>
                     <address className="not-italic text-slate-300 leading-relaxed font-light">
-                        <strong>Triaina Agency</strong><br/>
+                        <strong>Triaina</strong><br/>
                         50 Quai Louis Blériot<br/>
                         75016 Paris<br/>
                         France
