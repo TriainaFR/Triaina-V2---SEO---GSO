@@ -5,7 +5,7 @@ import {
   CheckCircle2, ArrowRight, Zap, Database, Search, Target, Users, BookOpen,
   BarChart3, Globe, Layers, Cpu, Trophy, TrendingUp,
   Smartphone, ShoppingBag, Award, Bot, Brain, Sparkles, MessageSquare, Share2,
-  FileText, MousePointerClick, HelpCircle, Plus, Minus, Monitor, Video, PieChart, Layout
+  FileText, MousePointerClick, HelpCircle, Plus, Minus, Monitor, Video, PieChart, Layout, AlertCircle
 } from 'lucide-react';
 import { SEO } from '../components/SEO';
 
@@ -37,6 +37,12 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
   const [openSeaFaq, setOpenSeaFaq] = useState<number | null>(null);
   const toggleSeaFaq = (index: number) => {
     setOpenSeaFaq(openSeaFaq === index ? null : index);
+  };
+
+  // État pour la FAQ Content
+  const [openContentFaq, setOpenContentFaq] = useState<number | null>(null);
+  const toggleContentFaq = (index: number) => {
+    setOpenContentFaq(openContentFaq === index ? null : index);
   };
 
   useEffect(() => {
@@ -342,8 +348,6 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                     "postalCode": "75016",
                     "addressCountry": "FR"
                 },
-                "telephone": "+33 6 14 91 62 95",
-                "email": "lucas@triaina.fr",
                 "sameAs": [
                     "https://www.linkedin.com/company/triaina",
                     "https://twitter.com/triaina",
@@ -363,7 +367,6 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                     "postalCode": "75016",
                     "addressCountry": "FR"
                 },
-                "telephone": "+33 6 14 91 62 95",
                 "url": "https://www.triaina.fr/expertise-sea",
                 "priceRange": "€€€",
                 "areaServed": ["Paris", "Île-de-France", "France"],
@@ -518,7 +521,7 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                         { title: "Gestion Google Shopping", icon: ShoppingBag, desc: "Pour les e-commerce, nous gérons vos campagnes Google Shopping pour augmenter vos ventes en ligne. Nous optimisons vos flux de produits, vos enchères et vos annonces pour maximiser votre chiffre d'affaires." },
                         { title: "Gestion Bing Ads", icon: Globe, desc: "Bing Ads est souvent oublié, mais représente 20-30% du trafic payant. Nous gérons vos campagnes Bing pour capturer cette audience supplémentaire à bas coût." },
                         { title: "Gestion YouTube Ads", icon: Video, desc: "Nous créons et gérons vos campagnes YouTube Ads pour augmenter votre visibilité vidéo. Nous testons différents formats (skippable, non-skippable, bumper ads) pour trouver ce qui fonctionne le mieux." },
-                        { title: "Optimisation des landing pages", icon: Layout, desc: "Une bonne annonce sans une bonne landing page ne convertit pas. Nous optimisons vos landing pages en synergie avec notre <a href='/expertise-contenu' class='text-blue-600 font-bold hover:underline'>Expertise Contenu</a> pour augmenter votre taux de conversion et réduire votre coût par acquisition." }
+                        { title: "Optimisation des landing pages", icon: Layout, desc: "Une bonne annonce sans une bonne landing page ne convertit pas. Nous optimisons vos landing pages en synergie avec notre <a href='/expertise-contenu' class='text-blue-600 font-bold hover:underline'>Expertise Automatisation de Contenu</a> pour augmenter votre taux de conversion et réduire votre coût par acquisition." }
                     ].map((service, i) => (
                         <div key={i} className="bg-white p-8 rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all duration-300">
                             <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 mb-6">
@@ -703,8 +706,6 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                     "postalCode": "75016",
                     "addressCountry": "FR"
                 },
-                "telephone": "06 14 91 62 95",
-                "email": "lucas@triaina.fr",
                 "sameAs": [
                     "https://www.linkedin.com/company/triaina",
                     "https://twitter.com/triaina",
@@ -724,7 +725,6 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                     "postalCode": "75016",
                     "addressCountry": "FR"
                 },
-                "telephone": "06 14 91 62 95",
                 "url": "https://www.triaina.fr/expertise-gso",
                 "priceRange": "€€€",
                 "areaServed": ["Paris", "Île-de-France", "France"],
@@ -1098,6 +1098,338 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                     ))}
                 </div>
              </div>
+
+        </div>
+      );
+  }
+
+  // ════════════════════════════════════════════════════════════════════════
+  // SPECIAL LAYOUT: EXPERTISE CONTENT (NOUVEAU)
+  // ════════════════════════════════════════════════════════════════════════
+  if (id === 'expertise-content') {
+      const contentFaqItems = [
+          { q: "Q1 : Le contenu généré est-il de qualité ?", a: "R : Oui, notre logiciel génère du contenu de qualité professionnelle. Chaque article est optimisé selon les meilleures pratiques SEO et GSO. Vous pouvez publier directement sans relecture." },
+          { q: "Q2 : Le contenu est-il unique ?", a: "R : Oui, chaque article généré est unique. Notre logiciel crée du contenu original basé sur les sujets identifiés et votre secteur d'activité." },
+          { q: "Q3 : Comment fonctionne l'optimisation GSO ?", a: "R : Notre logiciel analyse les critères de sélection des moteurs IA (ChatGPT, Perplexity, Claude) et génère du contenu qui répond à ces critères. Résultat : votre contenu est cité par les IA." },
+          { q: "Q4 : Puis-je personnaliser le contenu généré ?", a: "R : Oui, vous pouvez personnaliser le tone, la longueur, la structure et les éléments inclus. Le logiciel s'adapte à vos préférences." },
+          { q: "Q5 : Le contenu généré est-il SEO-friendly ?", a: "R : Oui, 100% du contenu généré est optimisé SEO. Chaque article inclut : mots-clés intégrés, structure H1/H2/H3, balises HTML, données structurées, E-E-A-T renforcé." },
+          { q: "Q6 : Combien de temps pour voir les résultats ?", a: "R : Les premiers résultats apparaissent en 4-6 semaines. Les résultats significatifs (trafic multiplié par 3-5x) se mesurent à 3-6 mois." },
+          { q: "Q7 : Puis-je utiliser le logiciel pour tous les secteurs ?", a: "R : Oui, le logiciel fonctionne pour tous les secteurs : e-commerce, services, B2B, SaaS, immobilier, santé, etc." }
+      ];
+
+      const contentSchema = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "name": "Triaina",
+                "url": "https://www.triaina.fr",
+                "logo": "https://www.triaina.fr/logo.png",
+                "description": "Agence SEO spécialisée en référencement naturel, GSO et automatisation de contenu",
+                "sameAs": [
+                    "https://www.linkedin.com/company/triaina",
+                    "https://twitter.com/triaina",
+                    "https://www.facebook.com/triaina"
+                ]
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "Triaina - Logiciel d'Automatisation de Contenu SEO",
+                "description": "Logiciel propriétaire d'automatisation de contenu qui scanne automatiquement l'actualité et génère du contenu optimisé SEO et GSO",
+                "url": "https://www.triaina.fr/automatisation-contenu",
+                "image": "https://www.triaina.fr/images/automatisation-contenu.jpg",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web-based",
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "ratingCount": "48"
+                }
+            },
+            {
+                "@type": "Service",
+                "name": "Automatisation de Contenu - Logiciel de Rédaction SEO",
+                "description": "Service d'automatisation de contenu qui scanne automatiquement l'actualité et génère du contenu optimisé SEO et GSO",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "Triaina"
+                },
+                "areaServed": {
+                    "@type": "Country",
+                    "name": "France"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr/" },
+                    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.triaina.fr/services" },
+                    { "@type": "ListItem", "position": 3, "name": "Automatisation de Contenu", "item": "https://www.triaina.fr/automatisation-contenu" }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": contentFaqItems.map(item => ({
+                    "@type": "Question",
+                    "name": item.q,
+                    "acceptedAnswer": { "@type": "Answer", "text": item.a }
+                }))
+            },
+            {
+                "@type": "WebPage",
+                "name": "Automatisation de Contenu | Logiciel Rédaction SEO & GSO",
+                "description": "Logiciel d'automatisation de contenu SEO. Scanne automatiquement l'actualité. Génère du contenu optimisé pour Google et ChatGPT.",
+                "url": "https://www.triaina.fr/automatisation-contenu",
+                "image": "https://www.triaina.fr/images/automatisation-contenu.jpg",
+                "datePublished": "2026-02-23",
+                "dateModified": "2026-02-23",
+                "author": {
+                    "@type": "Organization",
+                    "name": "Triaina"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Triaina",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://www.triaina.fr/logo.png"
+                    }
+                }
+            },
+            {
+                "@type": "HowTo",
+                "name": "Comment utiliser le logiciel d'automatisation de contenu",
+                "description": "Guide étape par étape pour utiliser notre logiciel d'automatisation de contenu SEO",
+                "step": [
+                    {
+                        "@type": "HowToStep",
+                        "name": "Le logiciel scanne automatiquement",
+                        "text": "Notre logiciel scanne automatiquement l'actualité, les tendances et les opportunités de contenu dans votre secteur"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "Le logiciel génère le contenu",
+                        "text": "Notre logiciel génère automatiquement du contenu optimisé SEO et GSO basé sur les sujets identifiés"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "Vous publiez directement",
+                        "text": "Récupez le texte, le code HTML et les balises IA, puis publiez directement sur votre site"
+                    }
+                ]
+            }
+        ]
+      };
+
+      return (
+        <div className="pt-24 md:pt-32 pb-12 px-4 md:px-6 min-h-screen max-w-7xl mx-auto relative z-10 w-full overflow-hidden font-sans">
+            <SEO 
+                title="Automatisation de Contenu | Logiciel Rédaction SEO & GSO | Triaina"
+                description="Logiciel d'automatisation de contenu SEO. Générateur de contenu optimisé pour Google et ChatGPT. Scanne automatiquement l'actualité. Créez 100+ articles en quelques minutes. 5-7€ par article."
+                keywords="automatisation contenu, logiciel rédaction seo, générateur contenu seo, content automation, seo automation, rédaction automatisée, contenu optimisé seo, balises html seo, schema.org, ia contenu, chatgpt content, perplexity optimization, generateur article seo, scanner actualite"
+                schema={contentSchema}
+                image="https://www.triaina.fr/images/automatisation-contenu.jpg"
+            />
+
+            {/* Header Section */}
+            <div className="mb-16 md:mb-20 animate-fade-in-up w-full">
+                <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 border border-blue-100 shadow-sm flex-shrink-0">
+                        <Icon size={24} />
+                    </div>
+                    <div className="h-px flex-grow bg-slate-200"></div>
+                    <div className="text-xs font-mono font-bold text-blue-600 uppercase tracking-widest border border-blue-200 px-3 py-1 rounded bg-blue-50 whitespace-nowrap overflow-hidden text-ellipsis max-w-[50%]">
+                        Pôle Expert
+                    </div>
+                </div>
+
+                <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-black text-slate-900 mb-4 leading-tight break-words hyphens-auto w-full">
+                    Automatisation de Contenu
+                    <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400 text-xl sm:text-2xl md:text-5xl mt-2 break-words hyphens-auto">
+                        Logiciel de Rédaction SEO & GSO
+                    </span>
+                </h1>
+                
+                <div className="max-w-4xl text-lg md:text-xl text-slate-600 leading-relaxed font-light mt-8 border-l-4 border-blue-600 pl-4 md:pl-6 break-words space-y-4">
+                    <p>Bienvenue sur la page <strong>Expertise Automatisation de Contenu</strong> de Triaina. Nous avons développé un <strong>logiciel propriétaire de rédaction automatisée</strong> qui révolutionne la création de contenu optimisé SEO et GSO.</p>
+                    <p>L'<strong>automatisation de contenu</strong> est la clé pour créer du contenu à grande échelle sans sacrifier la qualité. Avec notre <strong>logiciel d'automatisation</strong>, vous pouvez générer des articles optimisés pour Google et les moteurs IA (ChatGPT, Perplexity, Claude) en quelques minutes.</p>
+                    <p>Notre logiciel <strong>scanne automatiquement l'actualité et les tendances</strong> de votre secteur, identifie les opportunités de contenu, et génère des articles prêts à publier. Pas besoin de rechercher les mots-clés ou de trouver les sujets : le logiciel s'en occupe.</p>
+                    <p><strong>Résultat : vous créez 10x plus de contenu en moins de temps, avec une qualité constante et une optimisation SEO/GSO garantie.</strong></p>
+                </div>
+            </div>
+
+            {/* Problem & Solution Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 md:mb-20 animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+                <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                    <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                        <span className="text-red-500">⚠</span> Le Problème
+                    </h2>
+                    <h3 className="text-lg font-bold text-slate-800 mb-3">Créer du Contenu SEO Prend du Temps</h3>
+                    <ul className="space-y-3 text-slate-600 mb-6">
+                        <li className="flex items-start gap-2"><span className="text-red-500 mt-1">❌</span> <span><strong>Recherche :</strong> Identifier les bons sujets, analyser la concurrence</span></li>
+                        <li className="flex items-start gap-2"><span className="text-red-500 mt-1">❌</span> <span><strong>Rédaction :</strong> Écrire 1 500-2 000 mots pertinents</span></li>
+                        <li className="flex items-start gap-2"><span className="text-red-500 mt-1">❌</span> <span><strong>Optimisation :</strong> Intégrer mots-clés, balises Hn, HTML sémantique</span></li>
+                        <li className="flex items-start gap-2"><span className="text-red-500 mt-1">❌</span> <span><strong>Technique :</strong> Schema.org, JSON-LD, balises IA</span></li>
+                    </ul>
+                    <p className="font-bold text-slate-900 border-t border-slate-200 pt-4">Temps total : 4-6 heures par article.</p>
+                </div>
+
+                <div className="bg-blue-50 p-8 rounded-2xl border border-blue-200">
+                    <h2 className="text-2xl font-bold text-blue-900 mb-6 flex items-center gap-2">
+                        <span className="text-blue-600">✓</span> La Solution
+                    </h2>
+                    <h3 className="text-lg font-bold text-blue-800 mb-3">Logiciel d'Automatisation de Contenu</h3>
+                    <ul className="space-y-3 text-blue-800 mb-6">
+                        <li className="flex items-start gap-2"><span className="text-blue-600 mt-1">✅</span> <span><strong>Scan Automatique :</strong> Actualités, tendances, concurrents</span></li>
+                        <li className="flex items-start gap-2"><span className="text-blue-600 mt-1">✅</span> <span><strong>Génération Complète :</strong> Texte, HTML, Balises IA</span></li>
+                        <li className="flex items-start gap-2"><span className="text-blue-600 mt-1">✅</span> <span><strong>Optimisation Totale :</strong> SEO & GSO (ChatGPT, Claude...)</span></li>
+                        <li className="flex items-start gap-2"><span className="text-blue-600 mt-1">✅</span> <span><strong>Prêt à Publier :</strong> Copier-coller en 1 clic</span></li>
+                    </ul>
+                    <p className="font-bold text-blue-900 border-t border-blue-200 pt-4">Temps total : 5-10 minutes.</p>
+                </div>
+            </div>
+
+            {/* Features Grid */}
+            <h2 className="text-3xl font-bold text-slate-900 mb-8 animate-fade-in-up" style={{ animationDelay: '150ms' }}>Fonctionnalités Principales</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16 md:mb-20 animate-fade-in-up w-full" style={{ animationDelay: '200ms' }}>
+                 {[
+                    { title: "Scanner d'Actualité", desc: "Scanne automatiquement l'actualité de votre secteur, les tendances Google Trends et les réseaux sociaux pour identifier les meilleurs sujets." },
+                    { title: "Générateur SEO", desc: "Crée des articles long-form (1500+ mots) optimisés avec structure Hn, mots-clés et paragraphes engageants." },
+                    { title: "Code HTML Propre", desc: "Génère un code HTML sémantique valide (article, section, aside) avec attributs alt et liens internes." },
+                    { title: "Données Structurées", desc: "Intègre automatiquement Schema.org (Article, FAQPage), JSON-LD et Open Graph pour une visibilité maximale." },
+                    { title: "Optimisation GSO", desc: "Adapte le contenu pour les IA : réponses directes pour Perplexity, structure claire pour ChatGPT, nuance pour Claude." },
+                    { title: "Balises IA", desc: "Ajoute les balises spécifiques pour maximiser les citations dans les réponses générées par les LLMs." }
+                 ].map((detail, index) => (
+                     <div key={index} className="group bg-white p-6 md:p-8 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-400 hover:shadow-lg transition-all duration-300">
+                         <div className="flex items-start gap-4">
+                             <div className="mt-1 bg-blue-100 p-1.5 rounded-full text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors flex-shrink-0">
+                                 <CheckCircle2 size={18} />
+                             </div>
+                             <div className="min-w-0 flex-1">
+                                 <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-2 break-words">{detail.title}</h3>
+                                 <p className="text-slate-600 leading-relaxed text-sm break-words">
+                                     {detail.desc}
+                                 </p>
+                             </div>
+                         </div>
+                     </div>
+                 ))}
+            </div>
+
+            {/* Comparison Table */}
+            <div className="mb-16 md:mb-20 animate-fade-in-up" style={{ animationDelay: '250ms' }}>
+                <h2 className="text-3xl font-bold text-slate-900 mb-8">Comparaison : Manuel vs Automatisé</h2>
+                <div className="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
+                    <table className="w-full text-left border-collapse bg-white">
+                        <thead>
+                            <tr>
+                                <th className="p-4 border-b-2 border-slate-200 text-slate-500 font-mono text-xs uppercase tracking-wider bg-slate-50">Aspect</th>
+                                <th className="p-4 border-b-2 border-slate-200 text-slate-900 font-bold text-lg bg-slate-50">Manuel</th>
+                                <th className="p-4 border-b-2 border-blue-600 text-blue-600 font-bold text-lg bg-blue-50">Automatisé</th>
+                            </tr>
+                        </thead>
+                        <tbody className="text-sm">
+                            {[
+                                { aspect: "Temps par article", manual: "4-6 heures", auto: "5-10 minutes" },
+                                { aspect: "Articles par semaine", manual: "1-2", auto: "50-100" },
+                                { aspect: "Coût par article", manual: "100-180€", auto: "5-7€" },
+                                { aspect: "Qualité", manual: "Variable", auto: "Constante" },
+                                { aspect: "Optimisation SEO", manual: "Manuelle", auto: "Automatique" },
+                                { aspect: "Optimisation GSO", manual: "Rare", auto: "Systématique" },
+                                { aspect: "Code HTML", manual: "Parfois incorrect", auto: "Toujours correct" },
+                                { aspect: "Balises IA", manual: "Manquantes", auto: "Complètes" },
+                                { aspect: "Scalabilité", manual: "Limitée", auto: "Illimitée" },
+                            ].map((row, i) => (
+                                <tr key={i} className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+                                    <td className="p-4 font-medium text-slate-700"><strong>{row.aspect}</strong></td>
+                                    <td className="p-4 text-slate-500">{row.manual}</td>
+                                    <td className="p-4 text-blue-700 font-bold bg-blue-50/30">{row.auto}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            {/* Results Section */}
+            <div className="mb-16 md:mb-20 animate-fade-in-up" style={{ animationDelay: '300ms' }}>
+                <h2 className="text-3xl font-bold text-slate-900 mb-8">Résultats Attendus</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="bg-slate-900 text-white p-8 rounded-2xl relative overflow-hidden">
+                        <div className="absolute top-0 right-0 p-4 opacity-10"><BarChart3 size={100} /></div>
+                        <h3 className="text-xl font-bold mb-4 relative z-10">Trafic Organique</h3>
+                        <div className="text-4xl font-black text-blue-400 mb-2 relative z-10">x4 à x8</div>
+                        <p className="text-slate-400 text-sm relative z-10">Augmentation en 12 mois</p>
+                        <div className="mt-6 pt-6 border-t border-slate-800 relative z-10">
+                            <p className="text-sm text-slate-300">Passage de 5k à 40k clics/mois grâce à la publication massive (500-1000 articles/an).</p>
+                        </div>
+                    </div>
+                    <div className="bg-slate-900 text-white p-8 rounded-2xl relative overflow-hidden">
+                        <div className="absolute top-0 right-0 p-4 opacity-10"><Trophy size={100} /></div>
+                        <h3 className="text-xl font-bold mb-4 relative z-10">Rankings</h3>
+                        <div className="text-4xl font-black text-blue-400 mb-2 relative z-10">Top 10</div>
+                        <p className="text-slate-400 text-sm relative z-10">Position moyenne cible</p>
+                        <div className="mt-6 pt-6 border-t border-slate-800 relative z-10">
+                            <p className="text-sm text-slate-300">Multiplication par 10-20 du nombre de mots-clés positionnés en première page.</p>
+                        </div>
+                    </div>
+                    <div className="bg-slate-900 text-white p-8 rounded-2xl relative overflow-hidden">
+                        <div className="absolute top-0 right-0 p-4 opacity-10"><Bot size={100} /></div>
+                        <h3 className="text-xl font-bold mb-4 relative z-10">Citations IA</h3>
+                        <div className="text-4xl font-black text-blue-400 mb-2 relative z-10">+200</div>
+                        <p className="text-slate-400 text-sm relative z-10">Mentions mensuelles</p>
+                        <div className="mt-6 pt-6 border-t border-slate-800 relative z-10">
+                            <p className="text-sm text-slate-300">Visibilité croissante sur ChatGPT, Perplexity et Claude grâce aux balises IA.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* FAQ Section */}
+            <div className="mb-16 md:mb-20 animate-fade-in-up" style={{ animationDelay: '350ms' }}>
+                <h2 className="text-3xl font-bold text-slate-900 mb-8">Questions Fréquentes</h2>
+                <div className="space-y-4">
+                    {contentFaqItems.map((item, index) => (
+                        <div key={index} className="border border-slate-200 rounded-xl overflow-hidden bg-white hover:border-blue-300 transition-colors">
+                            <button 
+                                onClick={() => toggleContentFaq(index)}
+                                className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
+                            >
+                                <span className="font-bold text-slate-900 pr-8">{item.q}</span>
+                                {openContentFaq === index ? <Minus size={20} className="text-blue-600 flex-shrink-0" /> : <Plus size={20} className="text-slate-400 flex-shrink-0" />}
+                            </button>
+                            <div 
+                                className={`overflow-hidden transition-all duration-300 ease-in-out ${openContentFaq === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                            >
+                                <div className="p-6 pt-0 text-slate-600 border-t border-slate-100 bg-slate-50/50">
+                                    {item.a}
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Bottom Actions & Tags */}
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 border-t border-slate-300 pt-12 animate-fade-in-up w-full" style={{ animationDelay: '400ms' }}>
+                <div className="flex flex-wrap gap-2">
+                    {["Copywriting", "Stratégie", "Content", "NLP", "Automatisation", "IA"].map((tag, i) => (
+                        <span key={i} className="px-3 py-1 bg-slate-100 text-slate-600 rounded text-xs font-mono uppercase tracking-wide break-all">
+                            #{tag}
+                        </span>
+                    ))}
+                </div>
+
+                <div className="flex gap-4 w-full md:w-auto">
+                     <a 
+                        href={PAGE_TO_URL['contact']}
+                        onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                        className="px-8 py-4 bg-blue-600 text-white font-bold uppercase tracking-widest rounded hover:bg-slate-900 transition-colors shadow-lg shadow-blue-600/20 flex items-center justify-center gap-2 w-full md:w-auto"
+                     >
+                         Prendre Rendez-Vous <ArrowRight size={16} />
+                     </a>
+                </div>
+            </div>
 
         </div>
       );

@@ -1,74 +1,231 @@
 
-import React from 'react';
-import TechnicalSection from '../components/TechnicalSection';
-import { Sparkles, Check, Search, LineChart, Plus, Minus, Cpu, Globe, ArrowRight } from 'lucide-react';
+import React, { useEffect } from 'react';
 import { SEO } from '../components/SEO';
 import { PAGE_TO_URL } from '../constants';
+import { ArrowRight, Check, Globe, Cpu, Zap, Search } from 'lucide-react';
 
 export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate }) => {
-  
-  const MARQUEE_ITEMS = [
-    "AGENCE SEO", "CONSULTANT SEO", "AUDIT SEO", "RÉFÉRENCEMENT NATUREL", 
-    "STRATÉGIE SEO", "VISIBILITÉ IA", "OPTIMISATION GOOGLE", "CROISSANCE ORGANIQUE"
-  ];
-
-  const FAQ_HOME_DATA = [
-    {
-      question: "Qu'est ce un audit SEO ?",
-      answer: "Un audit SEO est un diagnostic complet de votre site web. Il analyse les problèmes techniques, on-page et de netlinking qui bloquent votre visibilité sur Google. C'est la première étape d'une stratégie SEO efficace."
-    },
-    {
-      question: "Quel est le rôle d'un consultant SEO ?",
-      answer: "Un consultant SEO analyse votre site, définit une stratégie de référencement naturel et vous accompagne dans l'amélioration de votre visibilité sur Google."
-    },
-    {
-      question: "Pourquoi faire appel à une agence SEO ?",
-      answer: "Une agence SEO possède l'expertise, les outils et l'expérience pour optimiser votre présence sur Google. Résultat : trafic organique durable et croissance."
-    },
-    {
-      question: "Quelle est la différence entre SEO et SEO IA ?",
-      answer: "Le SEO traditionnel optimise pour Google Search. Le SEO IA optimise aussi pour les IA génératives. Triaina maîtrise les deux approches."
-    },
-    {
-      question: "Combien de temps pour voir les résultats d'une stratégie SEO ?",
-      answer: "Le SEO est un investissement long terme. Généralement, les premiers résultats apparaissent après 3-6 mois. Une stratégie SEO bien exécutée génère du trafic durable pendant des années."
-    }
-  ];
-
-  // Schema FAQ spécifique pour la Home (Rich Snippets)
-  const homeFaqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": FAQ_HOME_DATA.map(item => ({
-      "@type": "Question",
-      "name": item.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": item.answer
-      }
-    }))
-  };
-
-  const [openFaq, setOpenFaq] = React.useState<number | null>(null);
-
-  const toggleFaq = (index: number) => {
-    setOpenFaq(openFaq === index ? null : index);
-  };
 
   return (
-    <div className="relative min-h-screen flex flex-col overflow-x-hidden">
+    <div className="relative min-h-screen flex flex-col overflow-x-hidden font-sans text-slate-900">
       
-      <SEO 
-        title="Agence SEO & GSO Paris"
-        description="Agence SEO & GSO à Paris spécialisée en référencement naturel et optimisation pour les IA (Generative Search Optimization). Consultant SEO expert."
-        schema={homeFaqSchema}
-      />
+      {/* EXACT SEO/GSO HTML INJECTION */}
+      {useEffect(() => {
+        const exactHtml = `
+    <title>Agence SEO & GSO | Référencement Naturel & Optimisation IA | Triaina</title>
+    <meta name="description" content="Agence SEO spécialisée en référencement naturel et GSO. Consultant SEO expert. Audit SEO, optimisation IA (ChatGPT, Perplexity), expertise média. Pré-audit gratuit.">
+    <meta name="keywords" content="agence seo, référencement naturel, gso, generative search optimization, consultant seo, audit seo, expertise media, relations presse, seo automation, content automation, ia seo, chatgpt optimization">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Agence SEO & GSO | Référencement Naturel & Optimisation IA | Triaina">
+    <meta property="og:description" content="Agence SEO spécialisée en référencement naturel et GSO. Consultant SEO expert. Audit SEO, optimisation IA, expertise média. Pré-audit gratuit.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.triaina.fr/">
+    <meta property="og:image" content="https://www.triaina.fr/og-image.jpg">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Triaina">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Agence SEO & GSO | Référencement Naturel & Optimisation IA">
+    <meta name="twitter:description" content="Agence SEO spécialisée en référencement naturel et GSO. Consultant SEO expert. Audit SEO, optimisation IA, expertise média.">
+    <meta name="twitter:image" content="https://www.triaina.fr/twitter-image.jpg">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.triaina.fr/">
+    
+    <!-- Geo Tags (optionnel, peut être retiré si trop généraliste) -->
+    <meta name="geo.region" content="FR">
+    <meta name="geo.placename" content="France">
+    
+    <!-- Additional Meta -->
+    <meta name="language" content="French">
+    <meta name="author" content="Triaina">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Structured Data - Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Triaina",
+        "url": "https://www.triaina.fr",
+        "logo": "https://www.triaina.fr/logo.png",
+        "description": "Agence SEO spécialisée en référencement naturel et Generative Search Optimization (GSO)",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "FR"
+        },
+        "telephone": "[Votre téléphone]",
+        "email": "[Votre email]",
+        "sameAs": [
+            "https://www.linkedin.com/company/triaina",
+            "https://twitter.com/triaina",
+            "https://www.facebook.com/triaina"
+        ],
+        "areaServed": {
+            "@type": "Country",
+            "name": "France"
+        }
+    }
+    </script>
+    
+    <!-- Structured Data - LocalBusiness -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Triaina - Agence SEO & GSO",
+        "image": "https://www.triaina.fr/og-image.jpg",
+        "description": "Agence SEO spécialisée en référencement naturel et Generative Search Optimization",
+        "telephone": "[Votre téléphone]",
+        "url": "https://www.triaina.fr/",
+        "priceRange": "€€€",
+        "areaServed": {
+            "@type": "Country",
+            "name": "France"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "52"
+        }
+    }
+    </script>
+    
+    <!-- Structured Data - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Accueil",
+                "item": "https://www.triaina.fr/"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Structured Data - WebSite (Search Action) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://www.triaina.fr",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://www.triaina.fr/search?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <!-- Structured Data - Services -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Triaina - Agence SEO & GSO",
+        "description": "Agence SEO spécialisée en référencement naturel et Generative Search Optimization",
+        "provider": {
+            "@type": "Organization",
+            "name": "Triaina"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "France"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Services SEO, GSO & Média",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Expertise SEO - Référencement Naturel"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Expertise GSO - Generative Search Optimization"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Expertise Média - Amplification et Relations Presse"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Automatisation de Contenu SEO"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+    
+    <!-- Structured Data - Article (Homepage) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Agence SEO & GSO | Référencement Naturel & Optimisation IA",
+        "description": "Agence SEO spécialisée en référencement naturel et GSO. Consultant SEO expert. Audit SEO, optimisation IA, expertise média.",
+        "url": "https://www.triaina.fr/",
+        "image": "https://www.triaina.fr/og-image.jpg",
+        "datePublished": "2019-01-01",
+        "dateModified": "2026-02-23",
+        "author": {
+            "@type": "Organization",
+            "name": "Triaina"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Triaina",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.triaina.fr/logo.png"
+            }
+        }
+    }
+    </script>
+        `;
+        const fragment = document.createRange().createContextualFragment(exactHtml);
+        const elements: Node[] = [];
+        fragment.childNodes.forEach(node => {
+            elements.push(node.cloneNode(true));
+        });
+        
+        elements.forEach(node => {
+            document.head.appendChild(node);
+        });
+
+        return () => {
+            elements.forEach(node => {
+                if (node.parentNode) {
+                    node.parentNode.removeChild(node);
+                }
+            });
+        };
+      }, [])}
 
       {/* ════════════ HERO HEADER ════════════ */}
       <header className="min-h-screen flex flex-col justify-center relative z-10 pt-32 pb-12 px-4 md:pt-20">
           <div className="max-w-7xl mx-auto w-full">
-            
-            {/* Massive Typography - H1 Plain Text for SEO */}
             <h1 className="font-display font-black text-slate-900 leading-[1.1] tracking-tighter mb-8 animate-fade-in-up w-full max-w-5xl" style={{ animationDelay: '100ms' }}>
                 <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-700">
                     AGENCE SEO
@@ -79,337 +236,241 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
             </h1>
 
             <p className="text-lg md:text-xl text-slate-600 max-w-3xl font-light leading-relaxed mb-10 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-                <strong>Triaina</strong> est une <strong>agence SEO</strong> spécialisée en <strong>référencement naturel</strong> et GSO (Generative Search Optimization). Nous optimisons votre visibilité sur Google et les IA.
+                Référencement Naturel & Optimisation IA
             </p>
 
-            {/* Action Bar */}
-            <div className="flex flex-col md:flex-row gap-6 animate-fade-in-up" style={{ animationDelay: '300ms' }}>
-                <a 
-                    href={PAGE_TO_URL['contact']}
-                    onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
-                    className="group relative px-8 py-5 bg-blue-600 text-white font-sans font-bold tracking-wider rounded-full overflow-hidden w-full md:w-auto shadow-xl shadow-blue-600/20 hover:bg-slate-900 hover:shadow-slate-900/30 transition-all duration-300 inline-flex items-center justify-center"
-                >
-                    <span className="relative z-10 flex items-center justify-center gap-3">
-                        → NOUS CONTACTER
-                    </span>
-                </a>
+            <div className="animate-pulse absolute bottom-10 left-1/2 transform -translate-x-1/2">
+                <span className="text-slate-400 text-sm tracking-widest uppercase">Scrollez pour découvrir</span>
             </div>
           </div>
       </header>
 
-      {/* --- MARQUEE SECTION --- */}
-      <div className="bg-slate-900 py-4 transform -rotate-1 relative z-20 border-y-4 border-white overflow-hidden shadow-2xl shadow-slate-900/10" aria-hidden="true">
-         <div className="flex whitespace-nowrap animate-marquee">
-            {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, i) => (
-                <div key={i} className="flex items-center gap-8 mx-4">
-                    <span className="text-2xl font-display font-bold text-white">{item}</span>
-                    <Sparkles size={16} className="text-blue-400" />
-                </div>
-            ))}
-         </div>
-      </div>
-
-      <main>
-        {/* ════════════ PROPOSITION DE VALEUR ════════════ */}
-        <section className="py-24 bg-white/80 backdrop-blur-sm relative border-b border-slate-200">
-            <div className="max-w-7xl mx-auto px-6">
-               <div className="flex flex-col md:flex-row justify-between items-start mb-16">
-                   <div className="max-w-3xl">
-                      <h2 className="text-3xl md:text-5xl font-display font-bold text-slate-900 mb-6">
-                          Pourquoi choisir Triaina : <br/><span className="text-blue-600">Agence SEO, GSO, Média</span>
-                      </h2>
-                      <p className="text-slate-600 text-lg leading-relaxed">
-                          <strong>Triaina</strong> est une <strong>agence SEO</strong> basée à Paris, spécialisée en référencement naturel et IA. Nous combinons l'excellence du SEO traditionnel avec l'expertise en référencement IA (GSO).
-                      </p>
-                   </div>
-               </div>
-
-               <div className="grid md:grid-cols-2 gap-8 items-center">
-                  
-                  {/* Liste des points forts */}
-                  <div className="bg-slate-50 border border-slate-200 p-8 rounded-2xl h-full">
-                      <ul className="space-y-6">
-                          {[
-                              { title: "Audit SEO complet", desc: "Diagnostic technique et on-page" },
-                              { title: "Stratégie de référencement naturel", desc: "Croissance organique durable" },
-                              { title: "Consultant SEO expert", desc: "Accompagnement stratégique" },
-                              { title: "Optimisation GSO (IA)", desc: "Visibilité sur Google ET les IA génératives" }
-                          ].map((item, i) => (
-                              <li key={i} className="flex items-start gap-4">
-                                  <div className="mt-1 bg-blue-100 p-1 rounded-full text-blue-600">
-                                      <Check size={16} strokeWidth={3} />
-                                  </div>
-                                  <div>
-                                      <h4 className="font-bold text-slate-900">{item.title}</h4>
-                                      <p className="text-slate-500 text-sm font-mono">→ {item.desc}</p>
-                                  </div>
-                              </li>
-                          ))}
-                      </ul>
-                  </div>
-
-                  {/* --- BLOC OBJECTIF --- */}
-                  <div className="relative overflow-hidden rounded-2xl bg-white p-10 text-center shadow-xl group border border-slate-100 h-full flex flex-col justify-center items-center">
-                      
-                      {/* Subtle Dynamic Background */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white to-white opacity-100 transition-all duration-500 group-hover:from-blue-100/50"></div>
-                      <div className="absolute -top-24 -right-24 w-64 h-64 bg-blue-100/30 rounded-full blur-3xl animate-pulse"></div>
-                      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600"></div>
-
-                      <div className="relative z-10 flex flex-col items-center w-full">
-                          <div className="mb-8"></div>
-
-                          {/* REMOVED SCRAMBLE TEXT FOR SEO - Plain Text H3 */}
-                          <h3 className="text-3xl md:text-5xl font-display font-black text-slate-900 mb-8 tracking-tight text-blue-600">
-                              OBJECTIF
-                          </h3>
-
-                          {/* Core Message */}
-                          <div className="text-xl md:text-2xl text-slate-600 font-light leading-relaxed w-full">
-                              Visibilité sur
-                              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6">
-                                  
-                                  {/* Google Box */}
-                                  <div className="flex items-center gap-3 px-6 py-4 bg-white border border-slate-200 rounded-xl shadow-lg shadow-slate-200/50 group/google hover:border-blue-300 transition-all">
-                                      <div className="bg-blue-50 p-2 rounded-full group-hover/google:scale-110 transition-transform">
-                                          <Globe size={20} className="text-blue-600" />
-                                      </div>
-                                      <span className="font-bold text-slate-900 tracking-wide">Google</span>
-                                  </div>
-                                  
-                                  <span className="text-slate-400 font-mono text-xl">+</span>
-
-                                  {/* AI Box */}
-                                  <div className="flex items-center gap-3 px-6 py-4 bg-white border border-slate-200 rounded-xl shadow-lg shadow-slate-200/50 group/ia hover:border-purple-300 transition-all">
-                                      <div className="bg-purple-50 p-2 rounded-full group-hover/ia:scale-110 transition-transform">
-                                          <Cpu size={20} className="text-purple-600" />
-                                      </div>
-                                      <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600 tracking-wide">
-                                          IA Génératives
-                                      </span>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-
-               </div>
-            </div>
-        </section>
-
-        {/* ════════════ SERVICES GRID ════════════ */}
-        <section className="py-24 bg-slate-50/80 backdrop-blur-sm border-b border-slate-200">
-           <div className="max-w-7xl mx-auto px-6">
-              <h2 className="text-3xl md:text-5xl font-display font-bold text-slate-900 mb-12 text-center">
-                  Services d'Agence SEO : <span className="text-blue-600">Audit, Stratégie, Optimisation</span>
-              </h2>
-
-              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                  {/* Service 1 */}
-                  <a 
-                      href={PAGE_TO_URL['expertise-seo']}
-                      onClick={(e) => { e.preventDefault(); onNavigate('expertise-seo'); }}
-                      className="group bg-white p-8 rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer block"
-                  >
-                      <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                          <Search size={24} />
-                      </div>
-                      <h3 className="text-xl font-bold text-slate-900 mb-3">Audit SEO Complet</h3>
-                      <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                          Diagnostic technique, on-page et netlinking. Identifiez les blocages qui empêchent votre visibilité sur <strong>Google</strong>.
-                      </p>
-                      <span className="text-blue-600 font-bold text-xs uppercase tracking-wider flex items-center gap-2">
-                          → En savoir plus sur l'audit SEO
-                      </span>
-                  </a>
-
-                  {/* Service 3 (Re-indexed) */}
-                  <a 
-                      href={PAGE_TO_URL['contact']}
-                      onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
-                      className="group bg-white p-8 rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer block"
-                  >
-                      <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                          <LineChart size={24} />
-                      </div>
-                      <h3 className="text-xl font-bold text-slate-900 mb-3">Consultant SEO Spécialisé</h3>
-                      <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                          Expert en <strong>référencement naturel</strong>. Accompagnement stratégique pour votre croissance organique et visibilité.
-                      </p>
-                      <span className="text-blue-600 font-bold text-xs uppercase tracking-wider flex items-center gap-2">
-                          → Nous contacter
-                      </span>
-                  </a>
-              </div>
-           </div>
-        </section>
-
-        {/* ════════════ METHODOLOGIE (Protocole) ════════════ */}
-        <section>
-          <TechnicalSection />
-        </section>
-
-        {/* ════════════ EXPERTISE SECTION ════════════ */}
-        <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
-            {/* Background decoration */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-            
-            <div className="max-w-7xl mx-auto px-6 relative z-10">
-                <div className="mb-16">
-                    <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">
-                      Pourquoi Triaina est votre agence SEO de référence
-                    </h2>
-                    <div className="w-24 h-1 bg-blue-600"></div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-12">
-                    <div className="space-y-8">
-                        <article>
-                            <h3 className="text-xl font-bold text-white mb-2">SEO Technique Ultra-Performant</h3>
-                            <p className="text-slate-400 text-sm leading-relaxed">
-                                L'<strong>Agence Triaina</strong> ne se contente pas des normes. Nous rendons votre site ultra-rapide, parfaitement structuré et indexable par Google. Résultat : une <strong>indexation SEO optimale</strong> et une expérience utilisateur fluide.
-                            </p>
-                        </article>
-                        <article>
-                            <h3 className="text-xl font-bold text-white mb-2">Consultant SEO & GSO</h3>
-                            <p className="text-slate-400 text-sm leading-relaxed">
-                                Notre équipe maîtrise le <strong>SEO traditionnel ET l'optimisation pour les IA (GSO)</strong>. Nous vous accompagnons dans une stratégie hybride pour dominer Google et être visible sur les IA génératives.
-                            </p>
-                        </article>
-                    </div>
-                    <div className="space-y-8">
-                        <article>
-                            <h3 className="text-xl font-bold text-white mb-2">Stratégie Média & Autorité</h3>
-                            <p className="text-slate-400 text-sm leading-relaxed text-justify">
-                                Triaina dispose d'une puissance de frappe unique. Propriétaire de médias influents (dont <strong>Yonder</strong> et <strong>Les Hardis</strong>) et dotée de sa propre régie interne, nous vous offrons un accès direct et des tarifs privilégiés sur quasiment l'ensemble de la presse premium pour bâtir votre autorité et crédibilité aux yeux de <strong>Google</strong>.
-                            </p>
-                        </article>
-                        <article>
-                            <h3 className="text-xl font-bold text-white mb-2">Agence SEO Pérenne & Sécurisée</h3>
-                            <p className="text-slate-400 text-sm leading-relaxed">
-                                Nous bâtissons pour le long terme. Nos protocoles respectent scrupuleusement les règles de Google pour assurer une croissance stable et durable.
-                            </p>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        {/* ════════════ FAQ SECTION (Home Specific) ════════════ */}
-        <section className="py-24 bg-white/90 backdrop-blur-sm">
-            <div className="max-w-4xl mx-auto px-6">
-                <h2 className="text-3xl md:text-5xl font-display font-bold text-slate-900 mb-12 text-center">
-                    Questions fréquentes : <span className="text-blue-600">SEO, Audit et GSO</span>
-                </h2>
-                
-                <div className="space-y-4">
-                    {FAQ_HOME_DATA.map((item, index) => {
-                        const isOpen = openFaq === index;
-                        return (
-                            <div key={index} className="border border-slate-200 rounded-lg overflow-hidden transition-all duration-300 hover:border-blue-300">
-                                <button 
-                                    onClick={() => toggleFaq(index)}
-                                    className={`w-full p-6 text-left flex justify-between items-center bg-slate-50 hover:bg-white transition-colors ${isOpen ? 'bg-white' : ''}`}
-                                >
-                                    <h3 className="text-lg font-bold text-slate-900 pr-8">{item.question}</h3>
-                                    <div className="text-blue-600">
-                                        {isOpen ? <Minus size={20} /> : <Plus size={20} />}
-                                    </div>
-                                </button>
-                                <div className={`transition-[max-height,opacity] duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-                                    <div className="p-6 pt-2 text-slate-600 leading-relaxed border-t border-slate-100 text-sm">
-                                        {item.answer}
-                                    </div>
-                                </div>
-                            </div>
-                        );
-                    })}
-                </div>
-            </div>
-        </section>
-
-        {/* ════════════ CTA FINAL ════════════ */}
-        <section className="py-24 bg-slate-50 border-t border-slate-200">
-            <div className="max-w-5xl mx-auto px-6 text-center">
-                <h2 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-6">
-                    Prêt à dominer <span className="text-blue-600">Google & les IA</span> ?
-                </h2>
-                <p className="text-xl text-slate-600 mb-12 max-w-2xl mx-auto">
-                    <strong>Triaina</strong> est votre <strong>agence SEO</strong> de référence. Nous combinons expertise en <strong>référencement naturel</strong> et optimisation pour les IA génératives (GSO).
+      <main className="relative z-20 bg-white">
+        
+        {/* INTRODUCTION */}
+        <section className="py-24 px-6 max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-slate-900">Introduction</h2>
+            <div className="prose prose-lg text-slate-600 leading-relaxed">
+                <p className="mb-6">
+                    Bienvenue chez Triaina, votre agence SEO spécialisée en référencement naturel et Generative Search Optimization. Nous aidons les entreprises à dominer les résultats de recherche Google et les moteurs de recherche IA (ChatGPT, Perplexity, Claude).
                 </p>
+                <p className="mb-6">
+                    Le référencement naturel (SEO) est l'investissement le plus rentable pour votre visibilité en ligne. Contrairement aux campagnes publicitaires payantes, le SEO génère du trafic qualifié 24h/24, 7j/7, sans coût par clic. Une bonne stratégie SEO peut multiplier votre trafic organique par 2 à 3 en 6 mois.
+                </p>
+                <p className="mb-6">
+                    Chez Triaina, nous combinons le SEO traditionnel avec le GSO (Generative Search Optimization) pour vous assurer une visibilité maximale sur tous les canaux de recherche : Google Search, ChatGPT, Perplexity, Claude et Google AI Overview.
+                </p>
+                <p>
+                    Nous travaillons avec des entreprises de tous les secteurs : e-commerce, services, B2B, immobilier, santé, etc. Notre approche est personnalisée, basée sur les données, et orientée vers les résultats mesurables.
+                </p>
+            </div>
+        </section>
+
+        {/* NOS SERVICES - BENTO GRID */}
+        <section className="py-24 bg-slate-50 px-6 relative overflow-hidden">
+            {/* Background elements */}
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-100/50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
+
+            <div className="max-w-7xl mx-auto relative z-10">
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl md:text-5xl font-display font-black mb-6 text-slate-900">Nos Services</h2>
+                    <p className="text-xl text-slate-600 max-w-2xl mx-auto font-light">Une approche hybride pour dominer tous les canaux de recherche : Google, IA et Médias.</p>
+                </div>
                 
-                <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+                    {/* Expertise SEO - Large card */}
+                    <div className="md:col-span-8 bg-slate-900 p-8 md:p-12 rounded-3xl text-white relative overflow-hidden group hover:shadow-2xl hover:shadow-blue-900/20 transition-all duration-500">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl group-hover:bg-blue-500/30 transition-colors duration-500"></div>
+                        <div className="relative z-10 h-full flex flex-col justify-between">
+                            <div>
+                                <div className="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center text-blue-400 mb-8 border border-blue-500/30 group-hover:scale-110 transition-transform duration-500">
+                                    <Search size={28} />
+                                </div>
+                                <h3 className="text-3xl font-display font-bold mb-4">Expertise SEO : Dominez Google Search</h3>
+                                <p className="text-slate-300 mb-6 leading-relaxed text-lg max-w-2xl">
+                                    Le SEO (Search Engine Optimization) est la discipline qui vous permet de ranker naturellement sur Google. Nous créons une stratégie SEO complète pour votre entreprise : audit SEO détaillé, optimisation on-page, création de contenu optimisé, netlinking stratégique et suivi mensuel.
+                                </p>
+                                <p className="text-slate-400 mb-8 leading-relaxed max-w-2xl">
+                                    Nos clients voient en moyenne une augmentation de 200-400% de leur trafic organique. Découvrez comment notre consultant SEO peut transformer votre visibilité en ligne.
+                                </p>
+                            </div>
+                            <a href={PAGE_TO_URL['expertise-seo']} onClick={(e) => {e.preventDefault(); onNavigate('expertise-seo')}} className="inline-flex items-center gap-2 text-white font-bold hover:text-blue-400 transition-colors w-fit group/link">
+                                Explorez notre Expertise SEO <ArrowRight size={18} className="group-hover/link:translate-x-1 transition-transform" />
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* Expertise GSO - Tall card */}
+                    <div className="md:col-span-4 bg-gradient-to-br from-purple-600 to-indigo-700 p-8 md:p-10 rounded-3xl text-white relative overflow-hidden group hover:shadow-2xl hover:shadow-purple-900/20 transition-all duration-500">
+                        <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+                        <div className="relative z-10 h-full flex flex-col">
+                            <div className="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center text-white mb-8 backdrop-blur-sm border border-white/20 group-hover:rotate-12 transition-transform duration-500">
+                                <Cpu size={28} />
+                            </div>
+                            <h3 className="text-2xl font-display font-bold mb-4">Expertise GSO : Dominez les Moteurs IA</h3>
+                            <p className="text-purple-100 mb-6 leading-relaxed flex-grow">
+                                Le GSO (Generative Search Optimization) est la nouvelle frontière du référencement. Avec l'émergence des moteurs de recherche IA, votre contenu doit être visible dans les réponses générées par ChatGPT, Perplexity, Claude et Google AI Overview.
+                            </p>
+                            <a href={PAGE_TO_URL['expertise-gso']} onClick={(e) => {e.preventDefault(); onNavigate('expertise-gso')}} className="inline-flex items-center gap-2 text-white font-bold hover:text-purple-200 transition-colors w-fit group/link mt-auto">
+                                Explorez l'Expertise GSO <ArrowRight size={18} className="group-hover/link:translate-x-1 transition-transform" />
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* Expertise Média - Normal card */}
+                    <div className="md:col-span-5 bg-white p-8 md:p-10 rounded-3xl border border-slate-200 hover:border-orange-300 hover:shadow-2xl hover:shadow-orange-900/5 transition-all duration-500 group">
+                        <div className="w-14 h-14 bg-orange-50 rounded-xl flex items-center justify-center text-orange-500 mb-8 border border-orange-100 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-500">
+                            <Globe size={28} />
+                        </div>
+                        <h3 className="text-2xl font-display font-bold mb-4 text-slate-900">Expertise Média : Amplifiez Votre Visibilité</h3>
+                        <p className="text-slate-600 mb-8 leading-relaxed">
+                            L'expertise média complète votre stratégie SEO en amplifiant votre présence sur les canaux numériques. Nous créons une stratégie média intégrée qui combine contenu, relations presse, partenariats et amplification pour maximiser votre visibilité.
+                        </p>
+                        <a href={PAGE_TO_URL['expertise-media']} onClick={(e) => {e.preventDefault(); onNavigate('expertise-media')}} className="inline-flex items-center gap-2 text-orange-600 font-bold hover:text-orange-700 transition-colors w-fit group/link">
+                            Explorez l'Expertise Média <ArrowRight size={18} className="group-hover/link:translate-x-1 transition-transform" />
+                        </a>
+                    </div>
+
+                    {/* Automatisation - Large card */}
+                    <div className="md:col-span-7 bg-gradient-to-br from-emerald-50 to-teal-50 p-8 md:p-10 rounded-3xl border border-emerald-100 hover:border-emerald-300 hover:shadow-2xl hover:shadow-emerald-900/5 transition-all duration-500 group relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-200/30 rounded-full blur-3xl group-hover:bg-emerald-300/40 transition-colors duration-500"></div>
+                        <div className="relative z-10">
+                            <div className="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 mb-8 border border-emerald-200 group-hover:scale-110 transition-transform duration-500">
+                                <Zap size={28} />
+                            </div>
+                            <h3 className="text-2xl font-display font-bold mb-4 text-slate-900">Automatisation de Contenu : Créez à l'Échelle</h3>
+                            <p className="text-slate-600 mb-6 leading-relaxed">
+                                Nous avons développé un logiciel propriétaire d'automatisation de contenu qui révolutionne la façon de créer du contenu optimisé SEO et GSO. Notre outil génère automatiquement du contenu de qualité, structuré et prêt à publier.
+                            </p>
+                            
+                            <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                                <ul className="space-y-2 text-sm text-slate-700 font-medium">
+                                    <li className="flex items-center gap-2"><Check size={16} className="text-emerald-500" /> Contenu long-form (1500+ mots)</li>
+                                    <li className="flex items-center gap-2"><Check size={16} className="text-emerald-500" /> Code HTML sémantique</li>
+                                    <li className="flex items-center gap-2"><Check size={16} className="text-emerald-500" /> Données structurées (schema.org)</li>
+                                </ul>
+                                <ul className="space-y-2 text-sm text-slate-700 font-medium">
+                                    <li className="flex items-center gap-2"><Check size={16} className="text-emerald-500" /> Optimisation GSO (ChatGPT)</li>
+                                    <li className="flex items-center gap-2"><Check size={16} className="text-emerald-500" /> Balises IA pour citations</li>
+                                </ul>
+                            </div>
+
+                            <a href={PAGE_TO_URL['expertise-content']} onClick={(e) => {e.preventDefault(); onNavigate('expertise-content')}} className="inline-flex items-center gap-2 text-emerald-600 font-bold hover:text-emerald-700 transition-colors w-fit group/link">
+                                Découvrez notre Logiciel <ArrowRight size={18} className="group-hover/link:translate-x-1 transition-transform" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* POURQUOI CHOISIR TRIAINA */}
+        <section className="py-24 px-6 max-w-7xl mx-auto">
+            <h2 className="text-4xl font-display font-bold mb-16 text-center text-slate-900">Pourquoi Choisir Triaina ?</h2>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="p-6 border-l-4 border-blue-600 bg-slate-50">
+                    <h3 className="font-bold text-xl mb-3 text-slate-900">Expertise en Référencement Naturel</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                        Nous sommes spécialisés en SEO et GSO. Notre consultant SEO maîtrise les derniers algorithmes Google et les stratégies d'optimisation pour les moteurs IA. Nous créons des stratégies personnalisées basées sur vos objectifs.
+                    </p>
+                </div>
+
+                <div className="p-6 border-l-4 border-purple-600 bg-slate-50">
+                    <h3 className="font-bold text-xl mb-3 text-slate-900">Approche Hybride SEO + GSO + Média</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                        Nous ne nous contentons pas du SEO traditionnel. Nous combinons SEO, GSO et expertise média pour maximiser votre visibilité sur tous les canaux : Google Search, ChatGPT, Perplexity, Claude, médias et réseaux sociaux.
+                    </p>
+                </div>
+
+                <div className="p-6 border-l-4 border-green-600 bg-slate-50">
+                    <h3 className="font-bold text-xl mb-3 text-slate-900">Résultats Mesurables</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                        Nous trackons chaque métrique importante : positions sur vos mots-clés cibles, trafic organique, conversions, ROI. Vous recevez des rapports mensuels détaillés avec recommandations d'optimisation.
+                    </p>
+                </div>
+
+                <div className="p-6 border-l-4 border-orange-600 bg-slate-50">
+                    <h3 className="font-bold text-xl mb-3 text-slate-900">Transparence & Communication</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                        Nous préférons une communication directe et transparente avec nos clients. Pas de jargon compliqué, juste des résultats concrets et mesurables.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        {/* DEMANDER UNE PRE-AUDIT */}
+        <section className="py-24 bg-slate-900 text-white px-6 text-center">
+            <div className="max-w-3xl mx-auto">
+                <h2 className="text-4xl font-display font-bold mb-6">Demander une Pré-Audit Gratuit</h2>
+                <p className="text-xl text-slate-300 mb-10 font-light">
+                    Vous voulez savoir comment améliorer votre visibilité en ligne ? Nous offrons une pré-audit gratuit pour évaluer votre situation actuelle.
+                </p>
+                <a 
+                    href={PAGE_TO_URL['contact']}
+                    onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                    className="inline-block px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition-colors shadow-lg shadow-blue-600/30"
+                >
+                    Demander la pré-audit gratuite
+                </a>
+            </div>
+        </section>
+
+        {/* EXPLOREZ NOS SERVICES (LINKS) */}
+        <section className="py-16 bg-white border-t border-slate-200 px-6">
+            <div className="max-w-6xl mx-auto text-center">
+                <h2 className="text-2xl font-bold mb-8 text-slate-900">Explorez Nos Services</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <a 
-                        href={PAGE_TO_URL['contact']}
-                        onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
-                        className="px-8 py-4 bg-blue-600 text-white font-bold uppercase tracking-widest rounded hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/30 inline-flex items-center justify-center"
+                        href={PAGE_TO_URL['expertise-seo']} 
+                        onClick={(e) => {e.preventDefault(); onNavigate('expertise-seo')}} 
+                        className="group flex flex-col items-center justify-center p-6 bg-white border border-slate-200 rounded-xl hover:border-blue-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
                     >
-                        → Nous contacter
+                        <span className="font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">Expertise SEO</span>
+                        <span className="text-xs text-slate-500">Stratégie SEO complète et audit SEO</span>
+                    </a>
+
+                    <a 
+                        href={PAGE_TO_URL['expertise-gso']} 
+                        onClick={(e) => {e.preventDefault(); onNavigate('expertise-gso')}} 
+                        className="group flex flex-col items-center justify-center p-6 bg-white border border-slate-200 rounded-xl hover:border-purple-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                    >
+                        <span className="font-bold text-slate-900 group-hover:text-purple-600 transition-colors mb-2">Expertise GSO</span>
+                        <span className="text-xs text-slate-500">Optimisation pour ChatGPT, Perplexity et Claude</span>
+                    </a>
+
+                    <a 
+                        href={PAGE_TO_URL['expertise-media']} 
+                        onClick={(e) => {e.preventDefault(); onNavigate('expertise-media')}} 
+                        className="group flex flex-col items-center justify-center p-6 bg-white border border-slate-200 rounded-xl hover:border-orange-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                    >
+                        <span className="font-bold text-slate-900 group-hover:text-orange-600 transition-colors mb-2">Expertise Média</span>
+                        <span className="text-xs text-slate-500">Amplification et relations médias</span>
+                    </a>
+
+                    <a 
+                        href={PAGE_TO_URL['expertise-content']} 
+                        onClick={(e) => {e.preventDefault(); onNavigate('expertise-content')}} 
+                        className="group flex flex-col items-center justify-center p-6 bg-white border border-slate-200 rounded-xl hover:border-green-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 lg:col-span-2"
+                    >
+                        <span className="font-bold text-slate-900 group-hover:text-green-600 transition-colors mb-2">Automatisation de Contenu</span>
+                        <span className="text-xs text-slate-500">Logiciel de création de contenu SEO</span>
+                    </a>
+
+                    <a 
+                        href={PAGE_TO_URL['contact']} 
+                        onClick={(e) => {e.preventDefault(); onNavigate('contact')}} 
+                        className="group flex flex-col items-center justify-center p-6 bg-slate-900 border border-slate-900 rounded-xl hover:bg-slate-800 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                    >
+                        <span className="font-bold text-white mb-2">Nous Contacter</span>
+                        <span className="text-xs text-slate-400">Demander une pré-audit</span>
                     </a>
                 </div>
             </div>
         </section>
 
-        {/* ════════════ MAILLAGE INTERNE & SITEMAP HTML (NEW) ════════════ */}
-        <section className="py-16 bg-white border-t border-slate-200">
-            <div className="max-w-7xl mx-auto px-6">
-                <div className="flex items-center gap-2 mb-8">
-                    <div className="w-1 h-6 bg-blue-600"></div>
-                    <h3 className="text-sm font-mono font-bold text-slate-900 uppercase tracking-widest">Exploration Rapide & Maillage</h3>
-                </div>
-                
-                <nav className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-8">
-                    <div>
-                        <h4 className="font-bold text-slate-900 mb-4 text-sm uppercase">Agence</h4>
-                        <ul className="space-y-2">
-                            <li><a href={PAGE_TO_URL['team']} onClick={(e) => {e.preventDefault(); onNavigate('team')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block">Qui sommes-nous ?</a></li>
-                            <li><a href={PAGE_TO_URL['references']} onClick={(e) => {e.preventDefault(); onNavigate('references')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block">Nos Références</a></li>
-                            <li><a href={PAGE_TO_URL['press']} onClick={(e) => {e.preventDefault(); onNavigate('press')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block">Espace Presse</a></li>
-                            <li><a href={PAGE_TO_URL['team']} onClick={(e) => {e.preventDefault(); onNavigate('team')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block">Carrières & Recrutement</a></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4 className="font-bold text-slate-900 mb-4 text-sm uppercase">Expertises SEO</h4>
-                        <ul className="space-y-2">
-                            <li><a href={PAGE_TO_URL['expertise-seo']} onClick={(e) => {e.preventDefault(); onNavigate('expertise-seo')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block font-bold">Expertise SEO (Google)</a></li>
-                            <li><a href={PAGE_TO_URL['expertise-gso']} onClick={(e) => {e.preventDefault(); onNavigate('expertise-gso')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block font-bold text-blue-600">Expertise GSO (IA)</a></li>
-                            <li><a href={PAGE_TO_URL['expertise-sea']} onClick={(e) => {e.preventDefault(); onNavigate('expertise-sea')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block">Expertise SEA (Ads)</a></li>
-                            <li><a href={PAGE_TO_URL['seo-paris']} onClick={(e) => {e.preventDefault(); onNavigate('seo-paris')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block font-bold">Agence SEO Paris</a></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4 className="font-bold text-slate-900 mb-4 text-sm uppercase">Expertises Média</h4>
-                        <ul className="space-y-2">
-                            <li><a href={PAGE_TO_URL['expertise-media']} onClick={(e) => {e.preventDefault(); onNavigate('expertise-media')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block">Expertise Média & RP</a></li>
-                            <li><a href={PAGE_TO_URL['expertise-content']} onClick={(e) => {e.preventDefault(); onNavigate('expertise-content')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block">Stratégie de Contenu</a></li>
-                            <li><a href={PAGE_TO_URL['expertise-gsa']} onClick={(e) => {e.preventDefault(); onNavigate('expertise-gsa')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block">Publicité IA (GSA)</a></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4 className="font-bold text-slate-900 mb-4 text-sm uppercase">Support & Légal</h4>
-                        <ul className="space-y-2">
-                            <li><a href={PAGE_TO_URL['contact']} onClick={(e) => {e.preventDefault(); onNavigate('contact')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block">Contact Agence</a></li>
-                            <li><a href={PAGE_TO_URL['faq']} onClick={(e) => {e.preventDefault(); onNavigate('faq')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block">Foire Aux Questions</a></li>
-                            <li><a href={PAGE_TO_URL['legal']} onClick={(e) => {e.preventDefault(); onNavigate('legal')}} className="text-slate-500 hover:text-blue-600 text-sm transition-colors block">Mentions Légales</a></li>
-                            <li><a href="/sitemap.xml" target="_blank" className="text-slate-500 hover:text-blue-600 text-sm transition-colors block">Sitemap XML</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </section>
-
       </main>
-
-      {/* Footer Strip */}
-      <footer className="bg-slate-900 text-white py-4 text-center border-t border-slate-800 relative z-20">
-        <p className="font-mono text-[10px] md:text-xs tracking-[0.3em] uppercase text-slate-400">
-            50 Quai Louis Blériot, 75016 Paris — Agence SEO & GSO
-        </p>
-      </footer>
-
     </div>
   );
 };

@@ -99,8 +99,6 @@ const App: React.FC = () => {
             "@type": "Country",
             "name": "France"
         },
-        "telephone": "+33614916295",
-        "email": "lucas@triaina.fr",
         "openingHoursSpecification": {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -305,9 +303,6 @@ const App: React.FC = () => {
                         75016 Paris<br/>
                         France
                     </address>
-                    <a href="mailto:lucas@triaina.fr" className="text-slate-600 hover:text-blue-600 text-xs font-mono block mb-2">
-                        lucas@triaina.fr
-                    </a>
                 </div>
             </div>
 

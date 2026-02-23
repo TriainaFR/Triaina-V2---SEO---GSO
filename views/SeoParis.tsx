@@ -31,8 +31,6 @@ export const SeoParis: React.FC<SeoParisProps> = ({ onNavigate }) => {
                 "postalCode": "75016",
                 "addressCountry": "FR"
             },
-            "telephone": "+33 6 14 91 62 95",
-            "email": "lucas@triaina.fr",
             "sameAs": [
                 "https://www.linkedin.com/company/triaina",
                 "https://twitter.com/triaina",
@@ -52,7 +50,6 @@ export const SeoParis: React.FC<SeoParisProps> = ({ onNavigate }) => {
                 "postalCode": "75016",
                 "addressCountry": "FR"
             },
-            "telephone": "+33 6 14 91 62 95",
             "url": "https://www.triaina.fr/agence-seo-paris",
             "priceRange": "€€€",
             "areaServed": ["Paris", "Île-de-France", "France"],

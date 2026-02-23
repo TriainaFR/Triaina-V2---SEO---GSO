@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 interface SEOProps {
   title?: string;
   description?: string;
+  keywords?: string;
   schema?: object;
   image?: string;
   type?: string;
@@ -13,6 +14,7 @@ interface SEOProps {
 export const SEO: React.FC<SEOProps> = ({ 
     title, 
     description, 
+    keywords,
     schema, 
     image = "https://www.triaina.fr/og-image.jpg",
     type = "website",
@@ -40,6 +42,7 @@ export const SEO: React.FC<SEOProps> = ({
 
     // 2. Standard Meta Tags (Google uses 'name')
     if (description) updateMeta('meta[name="description"]', description);
+    if (keywords) updateMeta('meta[name="keywords"]', keywords);
 
     // 3. Open Graph (Facebook/Linkedin uses 'property')
     if (title) updateMeta('meta[property="og:title"]', title);

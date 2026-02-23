@@ -48,7 +48,7 @@ export const NAV_LINKS: NavLink[] = [
         { id: 'expertise-gso', label: 'Expertise GSO' },
         { id: 'expertise-gsa', label: 'Expertise GSA' },
         { id: 'expertise-media', label: 'Expertise Média' },
-        { id: 'expertise-content', label: 'Expertise Contenu' }
+        { id: 'expertise-content', label: 'Expertise Automatisation de Contenu' }
     ]
   },
   {
@@ -136,7 +136,7 @@ export const EXPERTISE_DATA: Record<string, ExpertiseContent> = {
   },
   'expertise-content': {
     id: 'expertise-content',
-    title: 'Expertise Contenu',
+    title: 'Expertise Automatisation de Contenu',
     subtitle: 'Stratégie Éditoriale Hybride',
     description: "Le contenu est le carburant des moteurs de recherche et des IA. Nous produisons une stratégie éditoriale dense, experte et structurée pour satisfaire l'intention de recherche humaine et la compréhension machine.",
     details: [
