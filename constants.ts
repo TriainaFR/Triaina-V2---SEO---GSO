@@ -15,7 +15,8 @@ export const PAGE_TO_URL: Record<string, string> = {
   'expertise-gsa': '/expertise-gsa',
   'expertise-media': '/expertise-media',
   'expertise-content': '/expertise-contenu',
-  'seo-paris': '/agence-seo-paris'
+  'seo-paris': '/agence-seo-paris',
+  'recrutement': '/recrutement'
 };
 
 export const ROUTES: Record<string, Page> = {
@@ -33,7 +34,8 @@ export const ROUTES: Record<string, Page> = {
   '/expertise-media': 'expertise-media',
   '/expertise-content': 'expertise-content',
   '/expertise-contenu': 'expertise-content',
-  '/agence-seo-paris': 'seo-paris'
+  '/agence-seo-paris': 'seo-paris',
+  '/recrutement': 'recrutement'
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -288,22 +290,22 @@ export const HISTORY_DATA: HistoryItem[] = [
   {
     year: '2000 - 2023',
     title: 'L\'Ère des Pionniers en Référencement Naturel',
-    description: "L'aventure Triaina trouve ses racines en 2000, lorsque nos associés fondent leur toute première agence SEO. En l'espace de quatre ans, ils développent l'entreprise jusqu'à atteindre plus de 40 collaborateurs, avant de la céder à un acteur majeur du secteur. Ce succès marque le début d'un parcours entrepreneurial intense : au fil des années, ils créent puis revendent plusieurs agences SEO à de grands groupes, jusqu'à la cession de leur dernière structure en 2023. Résultat : 23 années d'expertise en référencement naturel, audit SEO, stratégie de référencement et consultant SEO."
+    description: "L'aventure Triaina trouve ses racines en 2000, lorsque nos associés fondent leur première agence SEO. En quatre ans, ils développent l'entreprise jusqu'à 40 collaborateurs, avant de la céder à un acteur majeur du secteur. Ce succès marque le début d'un parcours entrepreneurial intense : au fil des années, ils créent puis revendent plusieurs agences SEO à de grands groupes, jusqu'à la cession de leur dernière structure en 2023. Résultat : 23 années d'expertise en référencement naturel, audit SEO complet, stratégie de référencement et conseil SEO expert."
   },
   {
     year: '2014',
     title: 'La Puissance Média - Autorité & Contenu Premium',
-    description: "En 2014, animés par la volonté d'allier expertise digitale et contenus premium, nos associés lancent un groupe média dédié aux univers du voyage, du lifestyle, de la gastronomie et du luxe. Année après année, ce média gagne en audience, en influence et en crédibilité. Aujourd'hui, c'est un atout majeur pour construire l'autorité de nos clients et leur visibilité auprès des IA génératives."
+    description: "En 2014, nos associés lancent un groupe média dédié aux univers du voyage, du lifestyle, de la gastronomie et du luxe. Année après année, ce média gagne en audience, en influence et en crédibilité. Aujourd'hui, c'est un atout majeur pour construire l'autorité de nos clients et leur visibilité auprès des IA génératives."
   },
   {
     year: '2022 - 2024',
     title: 'Le Tournant de l\'IA - Naissance du GSO',
-    description: "L'écosystème digital connaît un tournant majeur en novembre 2022 lorsque OpenAI dévoile ChatGPT, rapidement suivi par d'autres modèles de langage (Gemini, Perplexity, Claude...). Les usages évoluent, les recherches se déplacent, et Google commence à perdre du terrain en termes de volume de requêtes quotidiennes. Face à cette transformation profonde du référencement naturel, nos associés choisissent, dès 2024, de prendre le virage de l'IA appliquée au SEO, en s'appuyant sur la puissance éditoriale et technologique de leur média. C'est la naissance du GSO (Generative Search Optimization) : l'évolution naturelle du SEO traditionnel."
+    description: "En novembre 2022, OpenAI dévoile ChatGPT, rapidement suivi par d'autres modèles de langage (Gemini, Perplexity, Claude). Les usages évoluent, les recherches se déplacent, et Google commence à perdre du terrain en termes de volume de requêtes quotidiennes. Face à cette transformation du référencement naturel, nos associés choisissent, dès 2024, de prendre le virage de l'IA appliquée au SEO, en s'appuyant sur la puissance éditoriale et technologique de leur média. C'est la naissance du GSO (Generative Search Optimization) : l'évolution naturelle du SEO traditionnel."
   },
   {
     year: '2025',
     title: 'La Genèse de Triaina - Agence SEO & GSO',
-    description: "C'est dans cette dynamique qu'en début 2025, notre association voit le jour et que nous créons Triaina, la première agence spécialisée en SEO & GSO, intégrant une division média. Triaina est née de la conviction que le référencement naturel et l'optimisation pour les IA génératives doivent aller de pair."
+    description: "En début 2025, notre association voit le jour et nous créons Triaina, la première agence spécialisée en SEO & GSO, intégrant une division média. Triaina est née de la conviction que le référencement naturel et l'optimisation pour les IA génératives doivent aller de pair."
   }
 ];
 

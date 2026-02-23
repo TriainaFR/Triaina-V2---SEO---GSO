@@ -14,6 +14,7 @@ export type Page =
   | 'expertise-media' 
   | 'expertise-content'
   | 'seo-paris'
+  | 'recrutement'
   | '404';
 
 export interface NavLink {

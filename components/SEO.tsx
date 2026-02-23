@@ -9,6 +9,8 @@ interface SEOProps {
   image?: string;
   type?: string;
   noIndex?: boolean;
+  ogTitle?: string;
+  ogDescription?: string;
 }
 
 export const SEO: React.FC<SEOProps> = ({ 
@@ -18,7 +20,9 @@ export const SEO: React.FC<SEOProps> = ({
     schema, 
     image = "https://www.triaina.fr/og-image.jpg",
     type = "website",
-    noIndex = false 
+    noIndex = false,
+    ogTitle,
+    ogDescription
 }) => {
   useEffect(() => {
     // 1. Title Management
@@ -45,8 +49,8 @@ export const SEO: React.FC<SEOProps> = ({
     if (keywords) updateMeta('meta[name="keywords"]', keywords);
 
     // 3. Open Graph (Facebook/Linkedin uses 'property')
-    if (title) updateMeta('meta[property="og:title"]', title);
-    if (description) updateMeta('meta[property="og:description"]', description);
+    updateMeta('meta[property="og:title"]', ogTitle || title || '');
+    updateMeta('meta[property="og:description"]', ogDescription || description || '');
     if (image) updateMeta('meta[property="og:image"]', image);
     updateMeta('meta[property="og:type"]', type);
     
