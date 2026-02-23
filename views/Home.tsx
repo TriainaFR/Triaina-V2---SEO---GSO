@@ -403,16 +403,16 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
         {/* DEMANDER UNE PRE-AUDIT */}
         <section className="py-24 bg-slate-900 text-white px-6 text-center">
             <div className="max-w-3xl mx-auto">
-                <h2 className="text-4xl font-display font-bold mb-6">Demander une Pré-Audit Gratuit</h2>
+                <h2 className="text-4xl font-display font-bold mb-6">Demander un Pré-Audit Gratuit</h2>
                 <p className="text-xl text-slate-300 mb-10 font-light">
-                    Vous voulez savoir comment améliorer votre visibilité en ligne ? Nous offrons une pré-audit gratuit pour évaluer votre situation actuelle.
+                    Vous voulez savoir comment améliorer votre visibilité en ligne ? Nous offrons un pré-audit gratuit pour évaluer votre situation actuelle.
                 </p>
                 <a 
                     href={PAGE_TO_URL['contact']}
                     onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
                     className="inline-block px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition-colors shadow-lg shadow-blue-600/30"
                 >
-                    Demander la pré-audit gratuite
+                    Demander le pré-audit gratuit
                 </a>
             </div>
         </section>
@@ -464,7 +464,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                         className="group flex flex-col items-center justify-center p-6 bg-slate-900 border border-slate-900 rounded-xl hover:bg-slate-800 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
                     >
                         <span className="font-bold text-white mb-2">Nous Contacter</span>
-                        <span className="text-xs text-slate-400">Demander une pré-audit</span>
+                        <span className="text-xs text-slate-400">Demander un pré-audit</span>
                     </a>
                 </div>
             </div>
