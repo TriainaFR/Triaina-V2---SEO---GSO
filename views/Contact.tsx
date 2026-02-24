@@ -176,8 +176,7 @@ export const Contact: React.FC = () => {
                         <strong>Triaina</strong><br/>
                         50 Quai Louis Blériot<br/>
                         75016 Paris<br/>
-                        France<br/>
-                        <a href="tel:+33614916295" className="text-blue-400 hover:text-white transition-colors mt-2 inline-block font-bold">+33 6 14 91 62 95</a>
+                        France
                     </address>
                     
                     <a 

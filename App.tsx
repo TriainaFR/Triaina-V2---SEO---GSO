@@ -304,8 +304,7 @@ const App: React.FC = () => {
                     <address className="not-italic text-slate-600 text-xs font-mono leading-relaxed mb-4">
                         50 Quai Louis Blériot<br/>
                         75016 Paris<br/>
-                        France<br/>
-                        <a href="tel:+33614916295" className="hover:text-blue-600 transition-colors mt-2 block">+33 6 14 91 62 95</a>
+                        France
                     </address>
                 </div>
             </div>
