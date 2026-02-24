@@ -11,6 +11,8 @@ interface SEOProps {
   noIndex?: boolean;
   ogTitle?: string;
   ogDescription?: string;
+  twitterCard?: string;
+  canonicalUrl?: string;
 }
 
 export const SEO: React.FC<SEOProps> = ({ 
@@ -22,7 +24,9 @@ export const SEO: React.FC<SEOProps> = ({
     type = "website",
     noIndex = false,
     ogTitle,
-    ogDescription
+    ogDescription,
+    twitterCard = "summary_large_image",
+    canonicalUrl
 }) => {
   useEffect(() => {
     // 1. Title Management
@@ -55,9 +59,10 @@ export const SEO: React.FC<SEOProps> = ({
     updateMeta('meta[property="og:type"]', type);
     
     const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
-    updateMeta('meta[property="og:url"]', cleanUrl);
+    updateMeta('meta[property="og:url"]', canonicalUrl || cleanUrl);
 
     // 4. Twitter Cards (Twitter uses 'name')
+    updateMeta('meta[name="twitter:card"]', twitterCard);
     if (title) updateMeta('meta[name="twitter:title"]', title);
     if (description) updateMeta('meta[name="twitter:description"]', description);
     if (image) updateMeta('meta[name="twitter:image"]', image);
@@ -69,7 +74,7 @@ export const SEO: React.FC<SEOProps> = ({
         linkCanonical.setAttribute('rel', 'canonical');
         document.head.appendChild(linkCanonical);
     }
-    linkCanonical.setAttribute('href', cleanUrl);
+    linkCanonical.setAttribute('href', canonicalUrl || cleanUrl);
 
     // 6. Robots Tag (NoIndex handling)
     let metaRobots = document.querySelector('meta[name="robots"]');

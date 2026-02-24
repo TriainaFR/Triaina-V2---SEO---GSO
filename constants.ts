@@ -16,7 +16,8 @@ export const PAGE_TO_URL: Record<string, string> = {
   'expertise-media': '/expertise-media',
   'expertise-content': '/expertise-contenu',
   'seo-paris': '/agence-seo-paris',
-  'recrutement': '/recrutement'
+  'recrutement': '/recrutement',
+  'agence-referencement-ia': '/agence-referencement-ia'
 };
 
 export const ROUTES: Record<string, Page> = {
@@ -35,7 +36,8 @@ export const ROUTES: Record<string, Page> = {
   '/expertise-content': 'expertise-content',
   '/expertise-contenu': 'expertise-content',
   '/agence-seo-paris': 'seo-paris',
-  '/recrutement': 'recrutement'
+  '/recrutement': 'recrutement',
+  '/agence-referencement-ia': 'agence-referencement-ia'
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -57,7 +59,8 @@ export const NAV_LINKS: NavLink[] = [
     id: 'seo-landing',
     label: 'POUR LE SEO',
     children: [
-        { id: 'seo-paris', label: 'Agence SEO Paris' }
+        { id: 'seo-paris', label: 'Agence SEO Paris' },
+        { id: 'agence-referencement-ia', label: 'Agence Référencement IA' }
     ]
   },
   { id: 'references', label: 'RÉFÉRENCES' },

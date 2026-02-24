@@ -14,6 +14,7 @@ import { Expertise } from './views/Expertise';
 import { Legal } from './views/Legal';
 import { NotFound } from './views/NotFound'; // Import 404
 import { SeoParis } from './views/SeoParis'; // Import SeoParis
+import { AgenceReferencementIA } from './views/AgenceReferencementIA'; // Import AgenceReferencementIA
 import { SEO } from './components/SEO';
 import { NAV_LINKS, SOCIAL_LINKS, PAGE_TO_URL, ROUTES } from './constants';
 import { Logo } from './components/Logo';
@@ -168,6 +169,8 @@ const App: React.FC = () => {
         return <Expertise id={currentPage} onNavigate={handleNavigation} />;
       case 'seo-paris':
         return <SeoParis onNavigate={handleNavigation} />;
+      case 'agence-referencement-ia':
+        return <AgenceReferencementIA onNavigate={handleNavigation} />;
       case '404':
         return <NotFound onNavigate={handleNavigation} />;
       default:
