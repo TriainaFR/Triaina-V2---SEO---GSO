@@ -39,7 +39,7 @@ export const Legal: React.FC = () => {
             <h2 className="text-xl font-display font-bold text-slate-900 mb-4">1. Édition du site</h2>
             <p className="mb-4">Le présent site est édité par la société TRIAINA, Société par Actions Simplifiée (SAS) au capital social de 1 000,00 euros.</p>
             <ul className="list-none space-y-2 text-sm font-mono bg-slate-50 p-6 rounded-lg border border-slate-100">
-                <li><strong>Siège social :</strong> 60 RUE FRANCOIS IER, 75008 PARIS</li>
+                <li><strong>Siège social :</strong> 50 Quai Louis Blériot, 75016 Paris</li>
                 <li><strong>Immatriculation :</strong> Inscrite au RCS de Paris sous le numéro 999 402 654</li>
                 <li><strong>SIRET :</strong> 999 402 654 00019</li>
                 <li><strong>Numéro de TVA Intracommunautaire :</strong> FR54999402654</li>

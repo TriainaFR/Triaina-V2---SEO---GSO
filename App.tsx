@@ -9,6 +9,7 @@ import { FAQ } from './views/FAQ';
 import { Contact } from './views/Contact';
 import { Press } from './views/Press';
 import { Team } from './views/Team';
+import { Careers } from './views/Careers'; // Import Careers
 import { Expertise } from './views/Expertise';
 import { Legal } from './views/Legal';
 import { NotFound } from './views/NotFound'; // Import 404
@@ -155,7 +156,7 @@ const App: React.FC = () => {
       case 'team':
         return <Team onNavigate={handleNavigation} initialTab="history" />;
       case 'recrutement':
-        return <Team onNavigate={handleNavigation} initialTab="careers" />;
+        return <Careers />;
       case 'legal':
         return <Legal />;
       case 'expertise-seo':
@@ -303,7 +304,8 @@ const App: React.FC = () => {
                     <address className="not-italic text-slate-600 text-xs font-mono leading-relaxed mb-4">
                         50 Quai Louis Blériot<br/>
                         75016 Paris<br/>
-                        France
+                        France<br/>
+                        <a href="tel:+33614916295" className="hover:text-blue-600 transition-colors mt-2 block">+33 6 14 91 62 95</a>
                     </address>
                 </div>
             </div>
