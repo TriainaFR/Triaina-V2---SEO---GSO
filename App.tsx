@@ -15,6 +15,7 @@ import { Legal } from './views/Legal';
 import { NotFound } from './views/NotFound'; // Import 404
 import { SeoParis } from './views/SeoParis'; // Import SeoParis
 import { AgenceReferencementIA } from './views/AgenceReferencementIA'; // Import AgenceReferencementIA
+import { AgenceReferencementIAParis } from './views/AgenceReferencementIAParis'; // Import AgenceReferencementIAParis
 import { SEO } from './components/SEO';
 import { NAV_LINKS, SOCIAL_LINKS, PAGE_TO_URL, ROUTES } from './constants';
 import { Logo } from './components/Logo';
@@ -171,6 +172,8 @@ const App: React.FC = () => {
         return <SeoParis onNavigate={handleNavigation} />;
       case 'agence-referencement-ia':
         return <AgenceReferencementIA onNavigate={handleNavigation} />;
+      case 'agence-referencement-ia-paris':
+        return <AgenceReferencementIAParis onNavigate={handleNavigation} />;
       case '404':
         return <NotFound onNavigate={handleNavigation} />;
       default:
