@@ -4,7 +4,7 @@ export type Page =
   | 'references' 
   | 'faq' 
   | 'contact' 
-  | 'press' 
+  | 'blog' 
   | 'team' 
   | 'legal'
   | 'expertise-seo' 
@@ -15,6 +15,11 @@ export type Page =
   | 'expertise-content'
   | 'seo-paris'
   | 'recrutement'
+  | 'agence-referencement-ia'
+  | 'agence-referencement-ia-paris'
+  | 'referencement-ia-guide'
+  | 'comment-ranker-chatgpt'
+  | 'seo-vs-referencement-ia'
   | '404';
 
 export interface NavLink {
@@ -58,7 +63,7 @@ export interface PartnerItem {
   description: string;
 }
 
-export interface PressItem {
+export interface BlogItem {
   id: string;
   source: string;
   logo: string;

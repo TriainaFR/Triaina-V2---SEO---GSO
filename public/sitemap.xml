@@ -24,10 +24,32 @@
   </url>
   
   <url>
-    <loc>https://www.triaina.fr/presse</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://www.triaina.fr/blog</loc>
+    <lastmod>2026-03-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://www.triaina.fr/blog/referencement-ia-guide-complet</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.triaina.fr/blog/ranker-chatgpt-2025</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.triaina.fr/blog/seo-vs-referencement-ia</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>

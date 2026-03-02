@@ -1,11 +1,11 @@
 
-import { FAQItem, ReferenceItem, ChatStep, PartnerItem, PressItem, JobOffer, TeamMember, HistoryItem, NavLink, ExpertiseContent, Page } from './types';
+import { FAQItem, ReferenceItem, ChatStep, PartnerItem, BlogItem, JobOffer, TeamMember, HistoryItem, NavLink, ExpertiseContent, Page } from './types';
 
 export const PAGE_TO_URL: Record<string, string> = {
   'home': '/',
   'team': '/agence',
   'references': '/references',
-  'press': '/presse',
+  'blog': '/blog',
   'contact': '/contact',
   'faq': '/faq',
   'legal': '/mentions-legales',
@@ -18,14 +18,17 @@ export const PAGE_TO_URL: Record<string, string> = {
   'seo-paris': '/agence-seo-paris',
   'recrutement': '/recrutement',
   'agence-referencement-ia': '/agence-referencement-ia',
-  'agence-referencement-ia-paris': '/agence-referencement-ia-paris'
+  'agence-referencement-ia-paris': '/agence-referencement-ia-paris',
+  'referencement-ia-guide': '/blog/referencement-ia-guide-complet',
+  'comment-ranker-chatgpt': '/blog/ranker-chatgpt-2025',
+  'seo-vs-referencement-ia': '/blog/seo-vs-referencement-ia'
 };
 
 export const ROUTES: Record<string, Page> = {
   '/': 'home',
   '/agence': 'team',
   '/references': 'references',
-  '/presse': 'press',
+  '/blog': 'blog',
   '/contact': 'contact',
   '/faq': 'faq',
   '/mentions-legales': 'legal',
@@ -39,7 +42,10 @@ export const ROUTES: Record<string, Page> = {
   '/agence-seo-paris': 'seo-paris',
   '/recrutement': 'recrutement',
   '/agence-referencement-ia': 'agence-referencement-ia',
-  '/agence-referencement-ia-paris': 'agence-referencement-ia-paris'
+  '/agence-referencement-ia-paris': 'agence-referencement-ia-paris',
+  '/blog/referencement-ia-guide-complet': 'referencement-ia-guide',
+  '/blog/ranker-chatgpt-2025': 'comment-ranker-chatgpt',
+  '/blog/seo-vs-referencement-ia': 'seo-vs-referencement-ia'
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -67,7 +73,7 @@ export const NAV_LINKS: NavLink[] = [
     ]
   },
   { id: 'references', label: 'RÉFÉRENCES' },
-  { id: 'press', label: 'PRESSE' },
+  { id: 'blog', label: 'BLOG' },
   { id: 'contact', label: 'CONTACT' },
   { id: 'faq', label: 'FAQ' },
 ];
@@ -261,7 +267,41 @@ export const PARTNERS_DATA: PartnerItem[] = [
   }
 ];
 
-export const PRESS_DATA: PressItem[] = [];
+export const BLOG_DATA: BlogItem[] = [
+  {
+    id: 'seo-vs-referencement-ia',
+    source: 'Guide Comparatif',
+    logo: '',
+    date: '02 MARS 2026',
+    title: 'SEO vs Référencement IA : Quelles différences en 2025 ?',
+    excerpt: 'Guide complet sur les différences entre SEO et Référencement IA en 2025. Comprenez les avantages et comment combiner les deux.',
+    url: '/blog/seo-vs-referencement-ia',
+    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'comment-ranker-chatgpt',
+    source: 'Guide Stratégique',
+    logo: '',
+    date: '02 MARS 2026',
+    title: 'Comment ranker sur ChatGPT en 2025 ? Guide complet',
+    excerpt: 'Guide complet pour ranker sur ChatGPT en 2025 : critères de ranking, stratégie de contenu, netlinking et outils.',
+    url: '/blog/ranker-chatgpt-2025',
+    image: 'https://images.unsplash.com/photo-1676299081847-824916de030a?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'referencement-ia-guide',
+    source: 'Guide Triaina',
+    logo: '',
+    date: '02 MARS 2026',
+    title: 'Référencement IA : Guide Complet 2025 (ChatGPT, Gemini, Perplexity)',
+    excerpt: 'Le référencement IA est devenu incontournable en 2025. Découvrez comment optimiser votre visibilité sur ChatGPT, Gemini et Perplexity dans ce guide complet.',
+    url: '/blog/referencement-ia-guide-complet',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  }
+];
 
 export const CAREERS_DATA: JobOffer[] = [];
 
