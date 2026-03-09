@@ -21,7 +21,9 @@ export const PAGE_TO_URL: Record<string, string> = {
   'agence-referencement-ia-paris': '/agence-referencement-ia-paris',
   'referencement-ia-guide': '/blog/referencement-ia-guide-complet',
   'comment-ranker-chatgpt': '/blog/ranker-chatgpt-2025',
-  'seo-vs-referencement-ia': '/blog/seo-vs-referencement-ia'
+  'seo-vs-referencement-ia': '/blog/seo-vs-referencement-ia',
+  'gso-2025-guide-complet': '/blog/gso-2025-guide-complet',
+  'audit-seo-guide': '/blog/audit-seo-guide-complet'
 };
 
 export const ROUTES: Record<string, Page> = {
@@ -45,7 +47,9 @@ export const ROUTES: Record<string, Page> = {
   '/agence-referencement-ia-paris': 'agence-referencement-ia-paris',
   '/blog/referencement-ia-guide-complet': 'referencement-ia-guide',
   '/blog/ranker-chatgpt-2025': 'comment-ranker-chatgpt',
-  '/blog/seo-vs-referencement-ia': 'seo-vs-referencement-ia'
+  '/blog/seo-vs-referencement-ia': 'seo-vs-referencement-ia',
+  '/blog/gso-2025-guide-complet': 'gso-2025-guide-complet',
+  '/blog/audit-seo-guide-complet': 'audit-seo-guide'
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -299,6 +303,28 @@ export const BLOG_DATA: BlogItem[] = [
     excerpt: 'Le référencement IA est devenu incontournable en 2025. Découvrez comment optimiser votre visibilité sur ChatGPT, Gemini et Perplexity dans ce guide complet.',
     url: '/blog/referencement-ia-guide-complet',
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'gso-2025-guide-complet',
+    source: 'Guide GSO',
+    logo: '',
+    date: '09 MARS 2026',
+    title: 'GSO 2025 : Guide Complet de Generative Search Optimization',
+    excerpt: 'Découvrez ce qu\'est le GSO (Generative Search Optimization) et comment l\'implémenter pour dominer à la fois Google et les IA génératives en 2025.',
+    url: '/blog/gso-2025-guide-complet',
+    image: 'https://picsum.photos/seed/generative-ai-search/1200/675',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'audit-seo-guide',
+    source: 'Guide SEO',
+    logo: '',
+    date: '09 MARS 2026',
+    title: 'Audit SEO : Guide Complet Étape par Étape',
+    excerpt: 'Un audit SEO est l\'analyse complète et approfondie de votre site web. Découvrez comment réaliser un audit SEO en 2025.',
+    url: '/blog/audit-seo-guide-complet',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
   }
 ];

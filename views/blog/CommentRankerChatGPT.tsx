@@ -146,7 +146,7 @@ export const CommentRankerChatGPT: React.FC = () => {
         canonicalUrl="https://www.triaina.fr/blog/ranker-chatgpt-2025"
       />
 
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Back Button */}
         <a href="/blog" className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group">
           <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
@@ -154,7 +154,7 @@ export const CommentRankerChatGPT: React.FC = () => {
         </a>
 
         {/* Header */}
-        <header className="mb-12 text-center max-w-3xl mx-auto">
+        <header className="mb-12 text-center max-w-5xl mx-auto">
           <div className="flex items-center justify-center gap-4 text-xs font-mono text-blue-600 mb-6 uppercase tracking-widest">
             <span className="bg-green-50 text-green-700 px-3 py-1 rounded-full font-bold">Guide Stratégique</span>
             <span className="flex items-center gap-1"><Calendar size={12} /> 02 MARS 2026</span>
@@ -201,7 +201,7 @@ export const CommentRankerChatGPT: React.FC = () => {
             </aside>
 
             {/* Main Content */}
-            <article className="lg:col-span-9 prose prose-lg prose-slate max-w-none font-sans prose-headings:font-display prose-headings:font-bold prose-a:text-green-600">
+            <article className="lg:col-span-9 prose prose-lg xl:prose-xl prose-slate max-w-none font-sans prose-headings:font-display prose-headings:font-bold prose-a:text-green-600">
             
             <section id="tldr" className="bg-slate-50 p-8 rounded-2xl border-l-4 border-green-500 mb-12 not-prose">
                 <h3 className="text-green-800 font-bold text-lg mb-2 flex items-center gap-2">

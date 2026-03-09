@@ -148,7 +148,7 @@ export const SeoVsReferencementIA: React.FC = () => {
         canonicalUrl="https://www.triaina.fr/blog/seo-vs-referencement-ia"
       />
 
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Back Button */}
         <a href="/blog" className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group">
           <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
@@ -156,7 +156,7 @@ export const SeoVsReferencementIA: React.FC = () => {
         </a>
 
         {/* Header */}
-        <header className="mb-12 text-center max-w-3xl mx-auto">
+        <header className="mb-12 text-center max-w-5xl mx-auto">
           <div className="flex items-center justify-center gap-4 text-xs font-mono text-blue-600 mb-6 uppercase tracking-widest">
             <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">Guide Comparatif</span>
             <span className="flex items-center gap-1"><Calendar size={12} /> 02 MARS 2026</span>
@@ -202,7 +202,7 @@ export const SeoVsReferencementIA: React.FC = () => {
             </aside>
 
             {/* Main Content */}
-            <article className="lg:col-span-9 prose prose-lg prose-slate max-w-none font-sans prose-headings:font-display prose-headings:font-bold prose-a:text-blue-600">
+            <article className="lg:col-span-9 prose prose-lg xl:prose-xl prose-slate max-w-none font-sans prose-headings:font-display prose-headings:font-bold prose-a:text-blue-600">
             
             <section id="introduction">
                 <p>En 2025, deux termes dominent le paysage du marketing digital : <strong>SEO (Search Engine Optimization)</strong> et <strong>Référencement IA</strong>. Beaucoup de gens pensent que ce sont la même chose. C'est une erreur courante. Bien que ces deux concepts soient étroitement liés et complémentaires, ils ont des différences importantes que vous devez comprendre pour construire une stratégie efficace.</p>

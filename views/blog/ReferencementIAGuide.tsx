@@ -145,7 +145,7 @@ export const ReferencementIAGuide: React.FC = () => {
         canonicalUrl="https://www.triaina.fr/blog/referencement-ia-guide-complet"
       />
 
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Back Button */}
         <a href="/blog" className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group">
           <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
@@ -153,7 +153,7 @@ export const ReferencementIAGuide: React.FC = () => {
         </a>
 
         {/* Header */}
-        <header className="mb-12 text-center max-w-3xl mx-auto">
+        <header className="mb-12 text-center max-w-5xl mx-auto">
           <div className="flex items-center justify-center gap-4 text-xs font-mono text-blue-600 mb-6 uppercase tracking-widest">
             <span className="bg-blue-50 px-3 py-1 rounded-full font-bold">Guide Expert</span>
             <span className="flex items-center gap-1"><Calendar size={12} /> 02 MARS 2026</span>
@@ -200,7 +200,7 @@ export const ReferencementIAGuide: React.FC = () => {
             </aside>
 
             {/* Main Content */}
-            <article className="lg:col-span-9 prose prose-lg prose-slate max-w-none font-sans prose-headings:font-display prose-headings:font-bold prose-a:text-blue-600">
+            <article className="lg:col-span-9 prose prose-lg xl:prose-xl prose-slate max-w-none font-sans prose-headings:font-display prose-headings:font-bold prose-a:text-blue-600">
             
             <section id="introduction">
                 <p>Le <strong>référencement IA</strong> est devenu incontournable en 2025. Alors que les IA génératives comme ChatGPT, Gemini et Perplexity transforment la façon dont les utilisateurs cherchent de l'information, les entreprises doivent adapter leur stratégie de visibilité. Le SEO traditionnel ne suffit plus : il faut optimiser pour les IA génératives.</p>

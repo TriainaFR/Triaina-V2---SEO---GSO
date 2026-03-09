@@ -19,6 +19,8 @@ import { AgenceReferencementIAParis } from './views/AgenceReferencementIAParis';
 import { ReferencementIAGuide } from './views/blog/ReferencementIAGuide'; // Import ReferencementIAGuide
 import { CommentRankerChatGPT } from './views/blog/CommentRankerChatGPT'; // Import CommentRankerChatGPT
 import { SeoVsReferencementIA } from './views/blog/SeoVsReferencementIA'; // Import SeoVsReferencementIA
+import { Gso2025GuideComplet } from './views/blog/Gso2025GuideComplet'; // Import Gso2025GuideComplet
+import { AuditSeoGuide } from './views/blog/AuditSeoGuide'; // Import AuditSeoGuide
 import { SEO } from './components/SEO';
 import { NAV_LINKS, SOCIAL_LINKS, PAGE_TO_URL, ROUTES } from './constants';
 import { Logo } from './components/Logo';
@@ -183,6 +185,10 @@ const App: React.FC = () => {
         return <CommentRankerChatGPT />;
       case 'seo-vs-referencement-ia':
         return <SeoVsReferencementIA />;
+      case 'gso-2025-guide-complet':
+        return <Gso2025GuideComplet />;
+      case 'audit-seo-guide':
+        return <AuditSeoGuide />;
       case '404':
         return <NotFound onNavigate={handleNavigation} />;
       default:
