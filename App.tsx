@@ -11,6 +11,7 @@ import { Blog } from './views/Blog';
 import { Team } from './views/Team';
 import { Careers } from './views/Careers'; // Import Careers
 import { Expertise } from './views/Expertise';
+import { ExpertiseMedia } from './views/ExpertiseMedia';
 import { Legal } from './views/Legal';
 import { NotFound } from './views/NotFound'; // Import 404
 import { SeoParis } from './views/SeoParis'; // Import SeoParis
@@ -170,9 +171,10 @@ const App: React.FC = () => {
       case 'expertise-sea':
       case 'expertise-gso':
       case 'expertise-gsa':
-      case 'expertise-media':
       case 'expertise-content':
         return <Expertise id={currentPage} onNavigate={handleNavigation} />;
+      case 'expertise-media':
+        return <ExpertiseMedia onNavigate={handleNavigation} />;
       case 'seo-paris':
         return <SeoParis onNavigate={handleNavigation} />;
       case 'agence-referencement-ia':
