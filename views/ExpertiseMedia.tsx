@@ -13,109 +13,106 @@ interface ExpertiseMediaProps {
 export const ExpertiseMedia: React.FC<ExpertiseMediaProps> = ({ onNavigate }) => {
   const [openFaq, setOpenFaq] = React.useState<number | null>(null);
 
-  const mediaSchema = [
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
-        { "@type": "ListItem", "position": 2, "name": "Expertise", "item": "https://www.triaina.fr/expertise" },
-        { "@type": "ListItem", "position": 3, "name": "Expertise Média", "item": "https://www.triaina.fr/expertise-media" }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Expertise Média : L'Avantage Compétitif de Triaina en SEO & GSO",
-      "description": "Expertise média Triaina : propriétaires de médias, nous générons des backlinks naturels, construisons l'E-E-A-T et créons une présence médiatique pour dominer le SEO et le GSO.",
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://www.triaina.fr/images/expertise-media-og.jpg",
-        "width": 1200,
-        "height": 630
+  const mediaSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
+          { "@type": "ListItem", "position": 2, "name": "Expertise", "item": "https://www.triaina.fr/expertise" },
+          { "@type": "ListItem", "position": 3, "name": "Expertise Média", "item": "https://www.triaina.fr/expertise-media" }
+        ]
       },
-      "author": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "url": "https://www.triaina.fr",
-        "logo": { "@type": "ImageObject", "url": "https://www.triaina.fr/logo.png", "width": 250, "height": 60 }
+      {
+        "@type": "Article",
+        "headline": "Expertise Média : L'Avantage Compétitif de Triaina en SEO & GSO",
+        "description": "Expertise média Triaina : propriétaires de médias, nous générons des backlinks naturels, construisons l'E-E-A-T et créons une présence médiatique pour dominer le SEO et le GSO.",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://www.triaina.fr/images/expertise-media-og.jpg",
+          "width": 1200,
+          "height": 630
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "Triaina",
+          "url": "https://www.triaina.fr",
+          "logo": { "@type": "ImageObject", "url": "https://www.triaina.fr/logo.png", "width": 250, "height": 60 }
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Triaina",
+          "logo": { "@type": "ImageObject", "url": "https://www.triaina.fr/logo.png", "width": 250, "height": 60 }
+        },
+        "datePublished": "2025-03-14",
+        "dateModified": "2025-03-14",
+        "wordCount": 2200,
+        "mainEntity": {
+          "@type": "Service",
+          "name": "Expertise Média : SEO & GSO",
+          "description": "Services SEO et GSO spécialisés pour médias avec netlinking naturel et construction d'E-E-A-T"
+        }
       },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "logo": { "@type": "ImageObject", "url": "https://www.triaina.fr/logo.png", "width": 250, "height": 60 }
-      },
-      "datePublished": "2025-03-14",
-      "dateModified": "2025-03-14",
-      "wordCount": 2200,
-      "mainEntity": {
+      {
         "@type": "Service",
         "name": "Expertise Média : SEO & GSO",
-        "description": "Services SEO et GSO spécialisés pour médias avec netlinking naturel et construction d'E-E-A-T"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Expertise Média : SEO & GSO",
-      "description": "Propriétaires de médias, nous générons des backlinks naturels, construisons l'E-E-A-T et créons une présence médiatique pour dominer le SEO et le GSO.",
-      "provider": {
+        "description": "Propriétaires de médias, nous générons des backlinks naturels, construisons l'E-E-A-T et créons une présence médiatique pour dominer le SEO et le GSO.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Triaina",
+          "url": "https://www.triaina.fr",
+          "logo": "https://www.triaina.fr/logo.png",
+          "sameAs": ["https://www.linkedin.com/company/triaina", "https://twitter.com/triaina"]
+        },
+        "areaServed": { "@type": "Country", "name": "FR" },
+        "serviceType": "SEO & GSO avec Expertise Média",
+        "offers": [
+          { "@type": "Offer", "name": "Audit Média", "description": "Audit SEO, GSO et stratégie médiatique complet", "price": "3000", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://www.triaina.fr/expertise-media#audit-media" },
+          { "@type": "Offer", "name": "Stratégie Média (3 mois)", "description": "Stratégie + publication d'articles + netlinking", "price": "4000", "priceCurrency": "EUR", "priceValidUntil": "2025-12-31", "availability": "https://schema.org/InStock", "url": "https://www.triaina.fr/expertise-media#strategie-media" },
+          { "@type": "Offer", "name": "Accompagnement Média (6-12 mois)", "description": "Accompagnement long terme avec netlinking intensif", "price": "3000", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://www.triaina.fr/expertise-media#accompagnement-media" }
+        ],
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "47", "bestRating": "5", "worstRating": "1" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Combien de backlinks pouvez-vous générer ?", "acceptedAnswer": { "@type": "Answer", "text": "Nous pouvons générer 30-60 backlinks/mois depuis nos médias, selon votre package. Ces backlinks sont naturels et de haute qualité, provenant de vrais articles dans des médias réels avec une autorité établie." } },
+          { "@type": "Question", "name": "Combien de temps pour voir les résultats ?", "acceptedAnswer": { "@type": "Answer", "text": "Les premiers résultats (améliorations techniques) apparaissent en 2-4 semaines. Les résultats significatifs (trafic, rankings) prennent 3-6 mois selon votre situation initiale et votre secteur." } },
+          { "@type": "Question", "name": "Quel est le ROI ?", "acceptedAnswer": { "@type": "Answer", "text": "Le ROI est excellent. En moyenne, nos clients voient une augmentation de 200-400% du trafic organique en 6 mois, avec certains clients atteignant +600%." } },
+          { "@type": "Question", "name": "Pouvez-vous garantir des résultats ?", "acceptedAnswer": { "@type": "Answer", "text": "Non, nous ne garantissons pas de résultats spécifiques. Mais nous visons des objectifs mesurables basés sur votre situation actuelle et nous avons un track record solide avec plus de 50 clients satisfaits." } },
+          { "@type": "Question", "name": "Comment fonctionne le netlinking depuis vos médias ?", "acceptedAnswer": { "@type": "Answer", "text": "Nous publions des articles dans nos médias qui mentionnent vos clients de manière naturelle et pertinente. Ces articles génèrent des backlinks vers vos sites, construisant ainsi votre autorité de domaine." } },
+          { "@type": "Question", "name": "Les backlinks sont-ils naturels ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, absolument. Ils viennent de vrais articles dans des médias réels avec une autorité établie. Google et les IA génératives les reconnaissent comme naturels et pertinents." } },
+          { "@type": "Question", "name": "Pouvez-vous aider avec la présence médiatique ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, c'est notre spécialité. Nous créons une présence médiatique pour vos clients en les mentionnant dans nos médias et en créant des partenariats avec d'autres médias et éditeurs." } },
+          { "@type": "Question", "name": "Combien de temps dure un accompagnement ?", "acceptedAnswer": { "@type": "Answer", "text": "Nous recommandons un accompagnement de 6-12 mois minimum pour voir des résultats significatifs. Après cela, vous pouvez continuer en mode maintenance ou arrêter." } },
+          { "@type": "Question", "name": "Pouvez-vous former notre équipe ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, nous offrons une formation complète à votre équipe SEO/GSO. Notre objectif est votre autonomie progressive et votre capacité à gérer le SEO/GSO en interne." } },
+          { "@type": "Question", "name": "Quels sont les risques ?", "acceptedAnswer": { "@type": "Answer", "text": "Aucun risque si vous suivez les bonnes pratiques. Nous respectons toujours les guidelines de Google et les bonnes pratiques SEO/GSO. Pas de techniques black hat." } }
+        ]
+      },
+      {
         "@type": "Organization",
         "name": "Triaina",
         "url": "https://www.triaina.fr",
         "logo": "https://www.triaina.fr/logo.png",
-        "sameAs": ["https://www.linkedin.com/company/triaina", "https://twitter.com/triaina"]
+        "description": "Agence SEO et GSO propriétaire de médias. Expertise média unique pour dominer Google et les IA génératives.",
+        "foundingDate": "2020",
+        "contactPoint": { "@type": "ContactPoint", "contactType": "Customer Service", "telephone": "+33-XXX-XXX-XXX", "email": "contact@triaina.fr" },
+        "sameAs": ["https://www.linkedin.com/company/triaina", "https://twitter.com/triaina", "https://www.facebook.com/triaina"],
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "47" }
       },
-      "areaServed": { "@type": "Country", "name": "FR" },
-      "serviceType": "SEO & GSO avec Expertise Média",
-      "offers": [
-        { "@type": "Offer", "name": "Audit Média", "description": "Audit SEO, GSO et stratégie médiatique complet", "price": "3000", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://www.triaina.fr/expertise-media#audit-media" },
-        { "@type": "Offer", "name": "Stratégie Média (3 mois)", "description": "Stratégie + publication d'articles + netlinking", "price": "4000", "priceCurrency": "EUR", "priceValidUntil": "2025-12-31", "availability": "https://schema.org/InStock", "url": "https://www.triaina.fr/expertise-media#strategie-media" },
-        { "@type": "Offer", "name": "Accompagnement Média (6-12 mois)", "description": "Accompagnement long terme avec netlinking intensif", "price": "3000", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://www.triaina.fr/expertise-media#accompagnement-media" }
-      ],
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "47", "bestRating": "5", "worstRating": "1" }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "Combien de backlinks pouvez-vous générer ?", "acceptedAnswer": { "@type": "Answer", "text": "Nous pouvons générer 30-60 backlinks/mois depuis nos médias, selon votre package. Ces backlinks sont naturels et de haute qualité, provenant de vrais articles dans des médias réels avec une autorité établie." } },
-        { "@type": "Question", "name": "Combien de temps pour voir les résultats ?", "acceptedAnswer": { "@type": "Answer", "text": "Les premiers résultats (améliorations techniques) apparaissent en 2-4 semaines. Les résultats significatifs (trafic, rankings) prennent 3-6 mois selon votre situation initiale et votre secteur." } },
-        { "@type": "Question", "name": "Quel est le ROI ?", "acceptedAnswer": { "@type": "Answer", "text": "Le ROI est excellent. En moyenne, nos clients voient une augmentation de 200-400% du trafic organique en 6 mois, avec certains clients atteignant +600%." } },
-        { "@type": "Question", "name": "Pouvez-vous garantir des résultats ?", "acceptedAnswer": { "@type": "Answer", "text": "Non, nous ne garantissons pas de résultats spécifiques. Mais nous visons des objectifs mesurables basés sur votre situation actuelle et nous avons un track record solide avec plus de 50 clients satisfaits." } },
-        { "@type": "Question", "name": "Comment fonctionne le netlinking depuis vos médias ?", "acceptedAnswer": { "@type": "Answer", "text": "Nous publions des articles dans nos médias qui mentionnent vos clients de manière naturelle et pertinente. Ces articles génèrent des backlinks vers vos sites, construisant ainsi votre autorité de domaine." } },
-        { "@type": "Question", "name": "Les backlinks sont-ils naturels ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, absolument. Ils viennent de vrais articles dans des médias réels avec une autorité établie. Google et les IA génératives les reconnaissent comme naturels et pertinents." } },
-        { "@type": "Question", "name": "Pouvez-vous aider avec la présence médiatique ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, c'est notre spécialité. Nous créons une présence médiatique pour vos clients en les mentionnant dans nos médias et en créant des partenariats avec d'autres médias et éditeurs." } },
-        { "@type": "Question", "name": "Combien de temps dure un accompagnement ?", "acceptedAnswer": { "@type": "Answer", "text": "Nous recommandons un accompagnement de 6-12 mois minimum pour voir des résultats significatifs. Après cela, vous pouvez continuer en mode maintenance ou arrêter." } },
-        { "@type": "Question", "name": "Pouvez-vous former notre équipe ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, nous offrons une formation complète à votre équipe SEO/GSO. Notre objectif est votre autonomie progressive et votre capacité à gérer le SEO/GSO en interne." } },
-        { "@type": "Question", "name": "Quels sont les risques ?", "acceptedAnswer": { "@type": "Answer", "text": "Aucun risque si vous suivez les bonnes pratiques. Nous respectons toujours les guidelines de Google et les bonnes pratiques SEO/GSO. Pas de techniques black hat." } }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Triaina",
-      "url": "https://www.triaina.fr",
-      "logo": "https://www.triaina.fr/logo.png",
-      "description": "Agence SEO et GSO propriétaire de médias. Expertise média unique pour dominer Google et les IA génératives.",
-      "foundingDate": "2020",
-      "contactPoint": { "@type": "ContactPoint", "contactType": "Customer Service", "telephone": "+33-XXX-XXX-XXX", "email": "contact@triaina.fr" },
-      "sameAs": ["https://www.linkedin.com/company/triaina", "https://twitter.com/triaina", "https://www.facebook.com/triaina"],
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "47" }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Triaina",
-      "image": "https://www.triaina.fr/logo.png",
-      "description": "Agence SEO et GSO propriétaire de médias",
-      "url": "https://www.triaina.fr",
-      "telephone": "+33-XXX-XXX-XXX",
-      "email": "contact@triaina.fr",
-      "address": { "@type": "PostalAddress", "streetAddress": "XXX rue XXX", "addressLocality": "Paris", "addressRegion": "Île-de-France", "postalCode": "75000", "addressCountry": "FR" },
-      "areaServed": { "@type": "Country", "name": "FR" }
-    }
-  ];
+      {
+        "@type": "LocalBusiness",
+        "name": "Triaina",
+        "image": "https://www.triaina.fr/logo.png",
+        "description": "Agence SEO et GSO propriétaire de médias",
+        "url": "https://www.triaina.fr",
+        "telephone": "+33-XXX-XXX-XXX",
+        "email": "contact@triaina.fr",
+        "address": { "@type": "PostalAddress", "streetAddress": "XXX rue XXX", "addressLocality": "Paris", "addressRegion": "Île-de-France", "postalCode": "75000", "addressCountry": "FR" },
+        "areaServed": { "@type": "Country", "name": "FR" }
+      }
+    ]
+  };
 
   const faqs = [
     { q: "Combien de backlinks pouvez-vous générer ?", a: "Nous pouvons générer 30-60 backlinks/mois depuis nos médias, selon votre package. Ces backlinks sont naturels et de haute qualité, provenant de vrais articles dans des médias réels avec une autorité établie." },
