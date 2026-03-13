@@ -18,6 +18,7 @@ export const ExpertiseMedia: React.FC<ExpertiseMediaProps> = ({ onNavigate }) =>
     "@graph": [
       {
         "@type": "BreadcrumbList",
+        "@id": "https://www.triaina.fr/expertise-media#breadcrumb",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
           { "@type": "ListItem", "position": 2, "name": "Expertise", "item": "https://www.triaina.fr/expertise" },
@@ -26,6 +27,8 @@ export const ExpertiseMedia: React.FC<ExpertiseMediaProps> = ({ onNavigate }) =>
       },
       {
         "@type": "Article",
+        "@id": "https://www.triaina.fr/expertise-media#article",
+        "isPartOf": { "@id": "https://www.triaina.fr/expertise-media" },
         "headline": "Expertise Média : L'Avantage Compétitif de Triaina en SEO & GSO",
         "description": "Expertise média Triaina : propriétaires de médias, nous générons des backlinks naturels, construisons l'E-E-A-T et créons une présence médiatique pour dominer le SEO et le GSO.",
         "image": {
@@ -36,46 +39,48 @@ export const ExpertiseMedia: React.FC<ExpertiseMediaProps> = ({ onNavigate }) =>
         },
         "author": {
           "@type": "Organization",
+          "@id": "https://www.triaina.fr/#organization",
           "name": "Triaina",
           "url": "https://www.triaina.fr",
           "logo": { "@type": "ImageObject", "url": "https://www.triaina.fr/logo.png", "width": 250, "height": 60 }
         },
         "publisher": {
-          "@type": "Organization",
-          "name": "Triaina",
-          "logo": { "@type": "ImageObject", "url": "https://www.triaina.fr/logo.png", "width": 250, "height": 60 }
+          "@id": "https://www.triaina.fr/#organization"
         },
         "datePublished": "2025-03-14",
         "dateModified": "2025-03-14",
         "wordCount": 2200,
-        "mainEntity": {
-          "@type": "Service",
-          "name": "Expertise Média : SEO & GSO",
-          "description": "Services SEO et GSO spécialisés pour médias avec netlinking naturel et construction d'E-E-A-T"
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://www.triaina.fr/expertise-media"
         }
       },
       {
         "@type": "Service",
+        "@id": "https://www.triaina.fr/expertise-media#service",
         "name": "Expertise Média : SEO & GSO",
         "description": "Propriétaires de médias, nous générons des backlinks naturels, construisons l'E-E-A-T et créons une présence médiatique pour dominer le SEO et le GSO.",
         "provider": {
-          "@type": "Organization",
-          "name": "Triaina",
-          "url": "https://www.triaina.fr",
-          "logo": "https://www.triaina.fr/logo.png",
-          "sameAs": ["https://www.linkedin.com/company/triaina", "https://twitter.com/triaina"]
+          "@id": "https://www.triaina.fr/#organization"
         },
         "areaServed": { "@type": "Country", "name": "FR" },
         "serviceType": "SEO & GSO avec Expertise Média",
-        "offers": [
-          { "@type": "Offer", "name": "Audit Média", "description": "Audit SEO, GSO et stratégie médiatique complet", "price": "3000", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://www.triaina.fr/expertise-media#audit-media" },
-          { "@type": "Offer", "name": "Stratégie Média (3 mois)", "description": "Stratégie + publication d'articles + netlinking", "price": "4000", "priceCurrency": "EUR", "priceValidUntil": "2025-12-31", "availability": "https://schema.org/InStock", "url": "https://www.triaina.fr/expertise-media#strategie-media" },
-          { "@type": "Offer", "name": "Accompagnement Média (6-12 mois)", "description": "Accompagnement long terme avec netlinking intensif", "price": "3000", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://www.triaina.fr/expertise-media#accompagnement-media" }
-        ],
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "EUR",
+          "lowPrice": "3000",
+          "offerCount": 3,
+          "offers": [
+            { "@type": "Offer", "name": "Audit Média", "description": "Audit SEO, GSO et stratégie médiatique complet", "price": "3000", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://www.triaina.fr/expertise-media#audit-media" },
+            { "@type": "Offer", "name": "Stratégie Média (3 mois)", "description": "Stratégie + publication d'articles + netlinking", "price": "4000", "priceCurrency": "EUR", "priceValidUntil": "2025-12-31", "availability": "https://schema.org/InStock", "url": "https://www.triaina.fr/expertise-media#strategie-media" },
+            { "@type": "Offer", "name": "Accompagnement Média (6-12 mois)", "description": "Accompagnement long terme avec netlinking intensif", "price": "3000", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://www.triaina.fr/expertise-media#accompagnement-media" }
+          ]
+        },
         "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "47", "bestRating": "5", "worstRating": "1" }
       },
       {
         "@type": "FAQPage",
+        "@id": "https://www.triaina.fr/expertise-media#faq",
         "mainEntity": [
           { "@type": "Question", "name": "Combien de backlinks pouvez-vous générer ?", "acceptedAnswer": { "@type": "Answer", "text": "Nous pouvons générer 30-60 backlinks/mois depuis nos médias, selon votre package. Ces backlinks sont naturels et de haute qualité, provenant de vrais articles dans des médias réels avec une autorité établie." } },
           { "@type": "Question", "name": "Combien de temps pour voir les résultats ?", "acceptedAnswer": { "@type": "Answer", "text": "Les premiers résultats (améliorations techniques) apparaissent en 2-4 semaines. Les résultats significatifs (trafic, rankings) prennent 3-6 mois selon votre situation initiale et votre secteur." } },
@@ -91,6 +96,7 @@ export const ExpertiseMedia: React.FC<ExpertiseMediaProps> = ({ onNavigate }) =>
       },
       {
         "@type": "Organization",
+        "@id": "https://www.triaina.fr/#organization",
         "name": "Triaina",
         "url": "https://www.triaina.fr",
         "logo": "https://www.triaina.fr/logo.png",
@@ -102,6 +108,7 @@ export const ExpertiseMedia: React.FC<ExpertiseMediaProps> = ({ onNavigate }) =>
       },
       {
         "@type": "LocalBusiness",
+        "@id": "https://www.triaina.fr/#localbusiness",
         "name": "Triaina",
         "image": "https://www.triaina.fr/logo.png",
         "description": "Agence SEO et GSO propriétaire de médias",
