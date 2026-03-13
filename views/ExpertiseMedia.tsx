@@ -45,6 +45,7 @@ export const ExpertiseMedia: React.FC<ExpertiseMediaProps> = ({ onNavigate }) =>
           "logo": { "@type": "ImageObject", "url": "https://www.triaina.fr/logo.png", "width": 250, "height": 60 }
         },
         "publisher": {
+          "@type": "Organization",
           "@id": "https://www.triaina.fr/#organization"
         },
         "datePublished": "2025-03-14",
@@ -56,15 +57,15 @@ export const ExpertiseMedia: React.FC<ExpertiseMediaProps> = ({ onNavigate }) =>
         }
       },
       {
-        "@type": "Service",
-        "@id": "https://www.triaina.fr/expertise-media#service",
+        "@type": "Product",
+        "@id": "https://www.triaina.fr/expertise-media#product",
         "name": "Expertise Média : SEO & GSO",
         "description": "Propriétaires de médias, nous générons des backlinks naturels, construisons l'E-E-A-T et créons une présence médiatique pour dominer le SEO et le GSO.",
-        "provider": {
-          "@id": "https://www.triaina.fr/#organization"
+        "image": "https://www.triaina.fr/images/expertise-media-og.jpg",
+        "brand": {
+          "@type": "Brand",
+          "name": "Triaina"
         },
-        "areaServed": { "@type": "Country", "name": "FR" },
-        "serviceType": "SEO & GSO avec Expertise Média",
         "offers": {
           "@type": "AggregateOffer",
           "priceCurrency": "EUR",
