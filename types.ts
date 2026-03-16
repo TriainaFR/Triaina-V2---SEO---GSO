@@ -22,6 +22,7 @@ export type Page =
   | 'seo-vs-referencement-ia'
   | 'gso-2025-guide-complet'
   | 'audit-seo-guide'
+  | 'eeat-seo-guide'
   | '404';
 
 export interface NavLink {

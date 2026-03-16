@@ -23,7 +23,8 @@ export const PAGE_TO_URL: Record<string, string> = {
   'comment-ranker-chatgpt': '/blog/ranker-chatgpt-2025',
   'seo-vs-referencement-ia': '/blog/seo-vs-referencement-ia',
   'gso-2025-guide-complet': '/blog/gso-2025-guide-complet',
-  'audit-seo-guide': '/blog/audit-seo-guide-complet'
+  'audit-seo-guide': '/blog/audit-seo-guide-complet',
+  'eeat-seo-guide': '/blog/eeat-seo-guide-complet'
 };
 
 export const ROUTES: Record<string, Page> = {
@@ -49,7 +50,8 @@ export const ROUTES: Record<string, Page> = {
   '/blog/ranker-chatgpt-2025': 'comment-ranker-chatgpt',
   '/blog/seo-vs-referencement-ia': 'seo-vs-referencement-ia',
   '/blog/gso-2025-guide-complet': 'gso-2025-guide-complet',
-  '/blog/audit-seo-guide-complet': 'audit-seo-guide'
+  '/blog/audit-seo-guide-complet': 'audit-seo-guide',
+  '/blog/eeat-seo-guide-complet': 'eeat-seo-guide'
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -325,6 +327,17 @@ export const BLOG_DATA: BlogItem[] = [
     excerpt: 'Un audit SEO est l\'analyse complète et approfondie de votre site web. Découvrez comment réaliser un audit SEO en 2025.',
     url: '/blog/audit-seo-guide-complet',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'eeat-seo-guide',
+    source: 'Guide SEO',
+    logo: '',
+    date: '16 MARS 2026',
+    title: 'E-E-A-T SEO : Guide Complet pour Dominer Google en 2025',
+    excerpt: 'En 2025, Google classe les marques, les experts, les autorités. Découvrez comment construire et optimiser votre E-E-A-T pour dominer les résultats de recherche.',
+    url: '/blog/eeat-seo-guide-complet',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
   }
 ];

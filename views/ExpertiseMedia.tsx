@@ -70,12 +70,12 @@ export const ExpertiseMedia: React.FC<ExpertiseMediaProps> = ({ onNavigate }) =>
           "@type": "AggregateOffer",
           "priceCurrency": "EUR",
           "lowPrice": "3000",
-          "highPrice": "12000",
+          "highPrice": "36000",
           "offerCount": 3,
           "offers": [
             { "@type": "Offer", "name": "Audit Média", "description": "Audit SEO, GSO et stratégie médiatique complet", "price": "3000", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://www.triaina.fr/expertise-media#audit-media" },
             { "@type": "Offer", "name": "Stratégie Média (3 mois)", "description": "Stratégie + publication d'articles + netlinking", "price": "12000", "priceCurrency": "EUR", "priceValidUntil": "2025-12-31", "availability": "https://schema.org/InStock", "url": "https://www.triaina.fr/expertise-media#strategie-media" },
-            { "@type": "Offer", "name": "Accompagnement Média (6-12 mois)", "description": "Accompagnement long terme avec netlinking intensif", "price": "3000", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://www.triaina.fr/expertise-media#accompagnement-media" }
+            { "@type": "Offer", "name": "Accompagnement Média (6-12 mois)", "description": "Accompagnement long terme avec netlinking intensif", "price": "36000", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://www.triaina.fr/expertise-media#accompagnement-media" }
           ]
         },
         "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "47", "bestRating": "5", "worstRating": "1" }
@@ -517,6 +517,7 @@ export const ExpertiseMedia: React.FC<ExpertiseMediaProps> = ({ onNavigate }) =>
               title: "Package Accompagnement Média (6-12 mois)",
               duration: "6-12 mois",
               price: "À partir de 3 000€/mois",
+              subprice: "(jusqu'à 36 000€ total)",
               features: ["Audit complet", "Stratégie SEO/GSO/Média", "Publication d'articles dans nos médias (10-20 articles)", "Génération de 40-60 backlinks/mois", "Création de mentions de marque", "Partenariats avec d'autres médias", "Optimisation on-page et GSO", "Monitoring et reporting", "Optimisations continues"]
             }
           ].map((pkg, i) => (
