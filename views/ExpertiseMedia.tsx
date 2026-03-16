@@ -70,10 +70,11 @@ export const ExpertiseMedia: React.FC<ExpertiseMediaProps> = ({ onNavigate }) =>
           "@type": "AggregateOffer",
           "priceCurrency": "EUR",
           "lowPrice": "3000",
+          "highPrice": "12000",
           "offerCount": 3,
           "offers": [
             { "@type": "Offer", "name": "Audit Média", "description": "Audit SEO, GSO et stratégie médiatique complet", "price": "3000", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://www.triaina.fr/expertise-media#audit-media" },
-            { "@type": "Offer", "name": "Stratégie Média (3 mois)", "description": "Stratégie + publication d'articles + netlinking", "price": "4000", "priceCurrency": "EUR", "priceValidUntil": "2025-12-31", "availability": "https://schema.org/InStock", "url": "https://www.triaina.fr/expertise-media#strategie-media" },
+            { "@type": "Offer", "name": "Stratégie Média (3 mois)", "description": "Stratégie + publication d'articles + netlinking", "price": "12000", "priceCurrency": "EUR", "priceValidUntil": "2025-12-31", "availability": "https://schema.org/InStock", "url": "https://www.triaina.fr/expertise-media#strategie-media" },
             { "@type": "Offer", "name": "Accompagnement Média (6-12 mois)", "description": "Accompagnement long terme avec netlinking intensif", "price": "3000", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://www.triaina.fr/expertise-media#accompagnement-media" }
           ]
         },
