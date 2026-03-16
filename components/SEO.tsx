@@ -13,6 +13,9 @@ interface SEOProps {
   ogDescription?: string;
   twitterCard?: string;
   canonicalUrl?: string;
+  exactTitle?: boolean;
+  twitterImage?: string;
+  twitterDescription?: string;
 }
 
 export const SEO: React.FC<SEOProps> = ({ 
@@ -26,12 +29,15 @@ export const SEO: React.FC<SEOProps> = ({
     ogTitle,
     ogDescription,
     twitterCard = "summary_large_image",
-    canonicalUrl
+    canonicalUrl,
+    exactTitle = false,
+    twitterImage,
+    twitterDescription
 }) => {
   useEffect(() => {
     // 1. Title Management
     if (title) {
-      document.title = `${title} | Triaina`;
+      document.title = exactTitle ? title : `${title} | Triaina`;
     }
 
     // Helper to update or create meta tags
@@ -64,8 +70,8 @@ export const SEO: React.FC<SEOProps> = ({
     // 4. Twitter Cards (Twitter uses 'name')
     updateMeta('meta[name="twitter:card"]', twitterCard);
     if (title) updateMeta('meta[name="twitter:title"]', title);
-    if (description) updateMeta('meta[name="twitter:description"]', description);
-    if (image) updateMeta('meta[name="twitter:image"]', image);
+    if (twitterDescription || description) updateMeta('meta[name="twitter:description"]', twitterDescription || description || '');
+    if (twitterImage || image) updateMeta('meta[name="twitter:image"]', twitterImage || image || '');
 
     // 5. Canonical Link
     let linkCanonical = document.querySelector('link[rel="canonical"]');

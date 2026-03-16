@@ -23,6 +23,7 @@ export type Page =
   | 'gso-2025-guide-complet'
   | 'audit-seo-guide'
   | 'eeat-seo-guide'
+  | 'backlinks-seo-guide'
   | '404';
 
 export interface NavLink {

@@ -24,7 +24,9 @@ export const PAGE_TO_URL: Record<string, string> = {
   'seo-vs-referencement-ia': '/blog/seo-vs-referencement-ia',
   'gso-2025-guide-complet': '/blog/gso-2025-guide-complet',
   'audit-seo-guide': '/blog/audit-seo-guide-complet',
-  'eeat-seo-guide': '/blog/eeat-seo-guide-complet'
+  'eeat-seo-guide': '/blog/eeat-seo-guide-complet',
+  'backlinks-seo-guide': '/blog/backlinks-seo-guide',
+  'referencement-ia-paris-guide-local': '/blog/referencement-ia-paris-guide-local'
 };
 
 export const ROUTES: Record<string, Page> = {
@@ -51,7 +53,9 @@ export const ROUTES: Record<string, Page> = {
   '/blog/seo-vs-referencement-ia': 'seo-vs-referencement-ia',
   '/blog/gso-2025-guide-complet': 'gso-2025-guide-complet',
   '/blog/audit-seo-guide-complet': 'audit-seo-guide',
-  '/blog/eeat-seo-guide-complet': 'eeat-seo-guide'
+  '/blog/eeat-seo-guide-complet': 'eeat-seo-guide',
+  '/blog/backlinks-seo-guide': 'backlinks-seo-guide',
+  '/blog/referencement-ia-paris-guide-local': 'referencement-ia-paris-guide-local'
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -338,6 +342,28 @@ export const BLOG_DATA: BlogItem[] = [
     excerpt: 'En 2025, Google classe les marques, les experts, les autorités. Découvrez comment construire et optimiser votre E-E-A-T pour dominer les résultats de recherche.',
     url: '/blog/eeat-seo-guide-complet',
     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'backlinks-seo-guide',
+    source: 'Guide SEO',
+    logo: '',
+    date: '16 MARS 2026',
+    title: 'Backlinks SEO : Guide Complet pour Dominer Google en 2025',
+    excerpt: 'En 2025, les backlinks restent l\'un des facteurs de classement les plus importants de Google. Découvrez comment générer des liens de qualité sans risque.',
+    url: '/blog/backlinks-seo-guide',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'referencement-ia-paris-guide-local',
+    source: 'Guide Local',
+    logo: '',
+    date: '16 MARS 2026',
+    title: 'Référencement IA Paris : Guide Local pour Dominer ChatGPT & Gemini en 2025',
+    excerpt: 'Guide référencement IA Paris 2025 : GSO pour ChatGPT, Gemini, Perplexity. Stratégie locale, cas clients, données propriétaires. +200-300% de citations IA.',
+    url: '/blog/referencement-ia-paris-guide-local',
+    image: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
   }
 ];

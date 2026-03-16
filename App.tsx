@@ -23,6 +23,8 @@ import { SeoVsReferencementIA } from './views/blog/SeoVsReferencementIA'; // Imp
 import { Gso2025GuideComplet } from './views/blog/Gso2025GuideComplet'; // Import Gso2025GuideComplet
 import { AuditSeoGuide } from './views/blog/AuditSeoGuide'; // Import AuditSeoGuide
 import { EeatSeoGuide } from './views/blog/EeatSeoGuide'; // Import EeatSeoGuide
+import { BacklinksSeoGuide } from './views/blog/BacklinksSeoGuide'; // Import BacklinksSeoGuide
+import { ReferencementIAParisGuide } from './views/blog/ReferencementIAParisGuide'; // Import ReferencementIAParisGuide
 import { SEO } from './components/SEO';
 import { NAV_LINKS, SOCIAL_LINKS, PAGE_TO_URL, ROUTES } from './constants';
 import { Logo } from './components/Logo';
@@ -194,6 +196,10 @@ const App: React.FC = () => {
         return <AuditSeoGuide />;
       case 'eeat-seo-guide':
         return <EeatSeoGuide />;
+      case 'backlinks-seo-guide':
+        return <BacklinksSeoGuide />;
+      case 'referencement-ia-paris-guide-local':
+        return <ReferencementIAParisGuide />;
       case '404':
         return <NotFound onNavigate={handleNavigation} />;
       default:
