@@ -40,8 +40,8 @@ export const EeatSeoGuide: React.FC = () => {
     ];
 
     const links = [
-      addLink('alternate', 'https://www.triaina.fr/blog/e-e-a-t-seo-guide', 'fr'),
-      addLink('alternate', 'https://www.triaina.fr/blog/e-e-a-t-seo-guide', 'x-default')
+      addLink('alternate', 'https://www.triaina.fr/blog/eeat-seo-guide-complet', 'fr'),
+      addLink('alternate', 'https://www.triaina.fr/blog/eeat-seo-guide-complet', 'x-default')
     ];
 
     return () => {
@@ -70,7 +70,7 @@ export const EeatSeoGuide: React.FC = () => {
               "@type": "ListItem",
               "position": 3,
               "name": "E-E-A-T SEO : Guide Complet",
-              "item": "https://www.triaina.fr/blog/e-e-a-t-seo-guide"
+              "item": "https://www.triaina.fr/blog/eeat-seo-guide-complet"
           }
       ]
   };
@@ -229,7 +229,7 @@ export const EeatSeoGuide: React.FC = () => {
         image="https://www.triaina.fr/images/e-e-a-t-seo-og.jpg"
         type="article"
         twitterCard="summary_large_image"
-        canonicalUrl="https://www.triaina.fr/blog/e-e-a-t-seo-guide"
+        canonicalUrl="https://www.triaina.fr/blog/eeat-seo-guide-complet"
       />
 
       <div className="max-w-7xl mx-auto">
