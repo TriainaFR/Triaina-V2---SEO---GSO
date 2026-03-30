@@ -42,6 +42,7 @@ export const Blog: React.FC<BlogProps> = ({ onNavigate }) => {
         title="Blog SEO & GSO | Actualités Triaina" 
         description="Le blog de l'agence Triaina. Découvrez nos derniers articles, guides et analyses sur le référencement naturel (SEO) et l'optimisation pour les IA (GSO)."
         schema={breadcrumbSchema}
+        canonicalUrl="https://www.triaina.fr/blog"
       />
 
       {/* Header */}

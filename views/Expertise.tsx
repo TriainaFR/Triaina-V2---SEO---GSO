@@ -94,6 +94,7 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                 title="Expertise SEO : Agence Référencement Naturel"
                 description="Agence SEO experte en référencement naturel. Audit SEO, stratégie de mots-clés et optimisation technique pour dominer Google."
                 schema={seoSchema} 
+                canonicalUrl={"https://www.triaina.fr" + PAGE_TO_URL[id]}
             />
             
             {/* HERO */}
@@ -478,6 +479,7 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                 description="Agence SEA à Paris. Gestion Google Ads, Bing Ads, Facebook Ads. Augmentez votre ROI. Consultation gratuite. Triaina."
                 schema={seaSchema}
                 image="https://www.triaina.fr/images/expertise-sea.jpg"
+                canonicalUrl={"https://www.triaina.fr" + PAGE_TO_URL[id]}
             />
 
             {/* 1. HERO */}
@@ -787,6 +789,7 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                 description="Agence GSO spécialisée en Generative Search Optimization. Dominez ChatGPT, Perplexity, Claude. Audit gratuit. Triaina."
                 schema={combinedGsoSchema}
                 image="https://www.triaina.fr/images/gso-expertise.jpg"
+                canonicalUrl={"https://www.triaina.fr" + PAGE_TO_URL[id]}
             />
             
             {/* 1. HERO HEADER */}
@@ -1136,7 +1139,7 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                 "@type": "SoftwareApplication",
                 "name": "Triaina - Logiciel d'Automatisation de Contenu SEO",
                 "description": "Logiciel propriétaire d'automatisation de contenu qui scanne automatiquement l'actualité et génère du contenu optimisé SEO et GSO",
-                "url": "https://www.triaina.fr/automatisation-contenu",
+                "url": "https://www.triaina.fr/expertise-contenu",
                 "image": "https://www.triaina.fr/images/automatisation-contenu.jpg",
                 "applicationCategory": "BusinessApplication",
                 "operatingSystem": "Web-based",
@@ -1150,6 +1153,7 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                 "@type": "Service",
                 "name": "Automatisation de Contenu - Logiciel de Rédaction SEO",
                 "description": "Service d'automatisation de contenu qui scanne automatiquement l'actualité et génère du contenu optimisé SEO et GSO",
+                "url": "https://www.triaina.fr/expertise-contenu",
                 "provider": {
                     "@type": "Organization",
                     "name": "Triaina"
@@ -1163,8 +1167,8 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                 "@type": "BreadcrumbList",
                 "itemListElement": [
                     { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr/" },
-                    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.triaina.fr/services" },
-                    { "@type": "ListItem", "position": 3, "name": "Automatisation de Contenu", "item": "https://www.triaina.fr/automatisation-contenu" }
+                    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.triaina.fr/agence" },
+                    { "@type": "ListItem", "position": 3, "name": "Automatisation de Contenu", "item": "https://www.triaina.fr/expertise-contenu" }
                 ]
             },
             {
@@ -1179,7 +1183,7 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                 "@type": "WebPage",
                 "name": "Automatisation de Contenu | Logiciel Rédaction SEO & GSO",
                 "description": "Logiciel d'automatisation de contenu SEO. Scanne automatiquement l'actualité. Génère du contenu optimisé pour Google et ChatGPT.",
-                "url": "https://www.triaina.fr/automatisation-contenu",
+                "url": "https://www.triaina.fr/expertise-contenu",
                 "image": "https://www.triaina.fr/images/automatisation-contenu.jpg",
                 "datePublished": "2026-02-23",
                 "dateModified": "2026-02-23",
@@ -1229,6 +1233,7 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                 keywords="automatisation contenu, logiciel rédaction seo, générateur contenu seo, content automation, seo automation, rédaction automatisée, contenu optimisé seo, balises html seo, schema.org, ia contenu, chatgpt content, perplexity optimization, generateur article seo, scanner actualite"
                 schema={contentSchema}
                 image="https://www.triaina.fr/images/automatisation-contenu.jpg"
+                canonicalUrl={"https://www.triaina.fr" + PAGE_TO_URL[id]}
             />
 
             {/* Header Section */}
@@ -1445,6 +1450,7 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
       <SEO 
           title={`${content.title}`} 
           description={content.description} 
+          canonicalUrl={"https://www.triaina.fr" + PAGE_TO_URL[id]}
       />
 
       {/* Header Section */}

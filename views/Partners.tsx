@@ -2,10 +2,16 @@
 import React from 'react';
 import { PARTNERS_DATA } from '../constants';
 import { ExternalLink, Globe } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const Partners: React.FC = () => {
   return (
     <div className="pt-32 pb-20 px-4 min-h-screen max-w-7xl mx-auto relative z-10">
+      <SEO 
+        title="Partenaires & Réseau Stratégique | Triaina"
+        description="Découvrez l'écosystème média et les partenaires stratégiques de l'agence Triaina."
+        canonicalUrl="https://www.triaina.fr/partenaires"
+      />
       
       {/* Header */}
       <div className="mb-20 border-b border-slate-400 pb-8 animate-fade-in-up">

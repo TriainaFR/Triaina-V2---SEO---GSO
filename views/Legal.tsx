@@ -18,6 +18,7 @@ export const Legal: React.FC = () => {
         title="Mentions Légales" 
         description="Mentions légales de la société TRIAINA, agence SEO & GSO." 
         schema={breadcrumbSchema}
+        canonicalUrl="https://www.triaina.fr/mentions-legales"
       />
 
       <div className="mb-12 border-b border-slate-400 pb-8 animate-fade-in-up">

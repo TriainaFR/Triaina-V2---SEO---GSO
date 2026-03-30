@@ -142,6 +142,7 @@ export const ExpertiseMedia: React.FC<ExpertiseMediaProps> = ({ onNavigate }) =>
         title="Expertise Média : L'Avantage Compétitif de Triaina en SEO & GSO"
         description="Expertise média Triaina : propriétaires de médias, nous générons des backlinks naturels, construisons l'E-E-A-T et créons une présence médiatique. +200-600% de trafic en 6 mois."
         schema={mediaSchema}
+        canonicalUrl="https://www.triaina.fr/expertise-media"
       />
 
       {/* HERO */}

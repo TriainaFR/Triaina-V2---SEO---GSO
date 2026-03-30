@@ -110,12 +110,13 @@ export const Pillars: React.FC = () => {
     <div className="min-h-screen w-full bg-slate-50 relative z-10 font-sans selection:bg-blue-200 selection:text-blue-900">
       
       {/* Balises SEO & Meta (Invisible) */}
-      <SEO schema={pillarsSchema} />
-      <div className="hidden">
-        <title>Nos 3 Piliers : Architecture SEO, Autorité & Optimisation IA | Triaina</title>
-        <meta name="description" content="Découvrez les 3 piliers de Triaina : architecture SEO, autorité média (Yonder, Les Hardis) et optimisation pour les IA génératives. Exemples pour hôtels, banques, assurances, vins." />
-        <meta name="keywords" content="architecture seo, autorité domaine, seo ia, gso, référencement naturel, agence seo, yonder, les hardis" />
-      </div>
+      <SEO 
+        schema={pillarsSchema} 
+        title="Nos 3 Piliers : Architecture SEO, Autorité & Optimisation IA | Triaina"
+        description="Découvrez les 3 piliers de Triaina : architecture SEO, autorité média (Yonder, Les Hardis) et optimisation pour les IA génératives. Exemples pour hôtels, banques, assurances, vins."
+        keywords="architecture seo, autorité domaine, seo ia, gso, référencement naturel, agence seo, yonder, les hardis"
+        canonicalUrl="https://www.triaina.fr/piliers"
+      />
 
       {/* ════════════ HERO SECTION ════════════ */}
       <div className="relative pt-32 pb-20 px-6 overflow-hidden">

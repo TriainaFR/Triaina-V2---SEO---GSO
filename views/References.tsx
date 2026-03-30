@@ -33,6 +33,7 @@ export const References: React.FC = () => {
         title="Références Clients & Cas Pratiques" 
         description="Découvrez comment Triaina accompagne ses clients (Yonder, Best Restaurants, Hôtellerie...) vers la domination SEO et GSO. Études de cas et résultats."
         schema={breadcrumbSchema}
+        canonicalUrl="https://www.triaina.fr/references"
       />
 
       <div className="flex items-end justify-between mb-20 border-b border-slate-400 pb-8 animate-fade-in-up">

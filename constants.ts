@@ -44,6 +44,8 @@ export const ROUTES: Record<string, Page> = {
   '/expertise-media': 'expertise-media',
   '/expertise-content': 'expertise-content',
   '/expertise-contenu': 'expertise-content',
+  '/automatisation-contenu': 'expertise-content',
+  '/services': 'team',
   '/agence-seo-paris': 'seo-paris',
   '/recrutement': 'recrutement',
   '/agence-referencement-ia': 'agence-referencement-ia',

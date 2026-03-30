@@ -77,6 +77,7 @@ export const Team: React.FC<{ onNavigate: (p: any) => void, initialTab?: Tab }> 
           ogTitle="Triaina - Agence SEO & GSO | Référencement Naturel & IA"
           ogDescription="Agence SEO & GSO : 25 ans d'expertise en référencement naturel et optimisation pour IA génératives (ChatGPT, Gemini)."
           schema={teamSchema} 
+          canonicalUrl="https://www.triaina.fr/agence"
       />
 
       {/* Header */}

@@ -45,6 +45,7 @@ export const Contact: React.FC = () => {
         title="Contact Agence SEO Paris" 
         description="Contactez l'agence Triaina pour vos besoins en SEO, GSO et stratégie Média. Bureaux situés au 50 Quai Louis Blériot, 75016 Paris."
         schema={breadcrumbSchema}
+        canonicalUrl="https://www.triaina.fr/contact"
       />
 
       {/* Header */}

@@ -193,6 +193,7 @@ export const SeoParis: React.FC<SeoParisProps> = ({ onNavigate }) => {
             description="Agence SEO à Paris. Stratégie SEO sur mesure, audit 3000€. À partir de 1000€/mois. Experts en référencement naturel et GSO. Triaina."
             schema={seoSchema}
             image="https://www.triaina.fr/images/agence-seo-paris.jpg"
+            canonicalUrl="https://www.triaina.fr/agence-seo-paris"
         />
         
         {/* HERO */}

@@ -39,7 +39,12 @@ export const FAQ: React.FC = () => {
   return (
     <div className="pt-32 pb-20 px-4 min-h-screen max-w-4xl mx-auto relative z-10">
       
-      <SEO schema={faqSchema} />
+      <SEO 
+        schema={faqSchema} 
+        title="FAQ - Agence SEO & GSO Triaina"
+        description="Questions fréquentes sur le SEO, le GSO et l'accompagnement par l'agence Triaina."
+        canonicalUrl="https://www.triaina.fr/faq"
+      />
 
       <div className="mb-20 text-center animate-fade-in-up">
         <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-4">

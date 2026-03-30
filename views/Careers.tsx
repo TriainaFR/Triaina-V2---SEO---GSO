@@ -23,6 +23,7 @@ export const Careers: React.FC = () => {
           description="Rejoignez Triaina, l'agence pionnière du GSO. Offres d'emploi SEO, développeur IA, rédacteur web et consultant marketing à Paris."
           keywords="recrutement seo, emploi gso, carrière marketing digital, offre emploi paris"
           schema={careersSchema} 
+          canonicalUrl="https://www.triaina.fr/carrieres"
       />
 
       <div className="space-y-6 animate-fade-in-up w-full">
