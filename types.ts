@@ -24,6 +24,8 @@ export type Page =
   | 'audit-seo-guide'
   | 'eeat-seo-guide'
   | 'backlinks-seo-guide'
+  | 'tendances-seo-gso-2025'
+  | 'seo-technique-vs-contenu'
   | '404';
 
 export interface NavLink {

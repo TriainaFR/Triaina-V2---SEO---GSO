@@ -26,7 +26,9 @@ export const PAGE_TO_URL: Record<string, string> = {
   'audit-seo-guide': '/blog/audit-seo-guide-complet',
   'eeat-seo-guide': '/blog/eeat-seo-guide-complet',
   'backlinks-seo-guide': '/blog/backlinks-seo-guide',
-  'referencement-ia-paris-guide-local': '/blog/referencement-ia-paris-guide-local'
+  'referencement-ia-paris-guide-local': '/blog/referencement-ia-paris-guide-local',
+  'tendances-seo-gso-2025': '/blog/tendances-seo-gso-2025',
+  'seo-technique-vs-contenu': '/blog/seo-technique-vs-seo-contenu'
 };
 
 export const ROUTES: Record<string, Page> = {
@@ -58,7 +60,9 @@ export const ROUTES: Record<string, Page> = {
   '/blog/eeat-seo-guide-complet': 'eeat-seo-guide',
   '/blog/e-e-a-t-seo-guide': 'eeat-seo-guide',
   '/blog/backlinks-seo-guide': 'backlinks-seo-guide',
-  '/blog/referencement-ia-paris-guide-local': 'referencement-ia-paris-guide-local'
+  '/blog/referencement-ia-paris-guide-local': 'referencement-ia-paris-guide-local',
+  '/blog/tendances-seo-gso-2025': 'tendances-seo-gso-2025',
+  '/blog/seo-technique-vs-seo-contenu': 'seo-technique-vs-contenu'
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -368,6 +372,28 @@ export const BLOG_DATA: BlogItem[] = [
     url: '/blog/referencement-ia-paris-guide-local',
     image: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
+  },
+  {
+    id: 'tendances-seo-gso-2025',
+    source: 'Guide Stratégique',
+    logo: '',
+    date: '18 MARS 2025',
+    title: 'Tendances SEO & GSO 2025 : Guide Complet des Changements qui Dominent',
+    excerpt: 'Découvrez les 10 tendances SEO & GSO qui dominent le référencement en 2025 : E-E-A-T, citations IA, contenu long-form et données propriétaires.',
+    url: '/blog/tendances-seo-gso-2025',
+    image: 'https://picsum.photos/seed/seo-trends-2025/1200/675',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'seo-technique-vs-contenu',
+    source: 'Triaina Insights',
+    logo: '',
+    date: '17 MARS 2025',
+    title: 'SEO Technique vs SEO Contenu : Lequel Choisir en 2025 ?',
+    excerpt: 'Analyse comparative complète : SEO technique vs SEO contenu. Impact réel, 3 cas clients, stratégie complète. Découvrez comment combiner les deux pour +250% de trafic.',
+    url: '/blog/seo-technique-vs-seo-contenu',
+    image: 'https://picsum.photos/seed/seo-tech-content/1200/675',
+    tag: 'ANALYSE'
   }
 ];
 

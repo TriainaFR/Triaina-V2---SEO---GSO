@@ -25,6 +25,8 @@ import { AuditSeoGuide } from './views/blog/AuditSeoGuide'; // Import AuditSeoGu
 import { EeatSeoGuide } from './views/blog/EeatSeoGuide'; // Import EeatSeoGuide
 import { BacklinksSeoGuide } from './views/blog/BacklinksSeoGuide'; // Import BacklinksSeoGuide
 import { ReferencementIAParisGuide } from './views/blog/ReferencementIAParisGuide'; // Import ReferencementIAParisGuide
+import { TendancesSeoGso2025 } from './views/blog/TendancesSeoGso2025'; // Import TendancesSeoGso2025
+import { SeoTechniqueVsContenu } from './views/blog/SeoTechniqueVsContenu'; // Import SeoTechniqueVsContenu
 import { SEO } from './components/SEO';
 import { NAV_LINKS, SOCIAL_LINKS, PAGE_TO_URL, ROUTES } from './constants';
 import { Logo } from './components/Logo';
@@ -200,6 +202,10 @@ const App: React.FC = () => {
         return <BacklinksSeoGuide />;
       case 'referencement-ia-paris-guide-local':
         return <ReferencementIAParisGuide />;
+      case 'tendances-seo-gso-2025':
+        return <TendancesSeoGso2025 />;
+      case 'seo-technique-vs-contenu':
+        return <SeoTechniqueVsContenu />;
       case '404':
         return <NotFound onNavigate={handleNavigation} />;
       default:
