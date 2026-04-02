@@ -58,7 +58,6 @@ export const ROUTES: Record<string, Page> = {
   '/blog/gso-2025-guide-complet': 'gso-2025-guide-complet',
   '/blog/audit-seo-guide-complet': 'audit-seo-guide',
   '/blog/eeat-seo-guide-complet': 'eeat-seo-guide',
-  '/blog/e-e-a-t-seo-guide': 'eeat-seo-guide',
   '/blog/backlinks-seo-guide': 'backlinks-seo-guide',
   '/blog/referencement-ia-paris-guide-local': 'referencement-ia-paris-guide-local',
   '/blog/tendances-seo-gso-2025': 'tendances-seo-gso-2025',
