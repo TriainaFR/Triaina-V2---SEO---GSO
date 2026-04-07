@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { SEO } from '../components/SEO';
 import { PAGE_TO_URL } from '../constants';
 import { ArrowRight, Check, Globe, Cpu, Zap, Search } from 'lucide-react';
+import { motion } from 'motion/react';
 
 export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate }) => {
 
@@ -245,10 +246,16 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
           </div>
       </header>
 
-      <main className="relative z-20 bg-white">
+      <main className="relative z-20 bg-transparent">
         
         {/* INTRODUCTION */}
-        <section className="py-24 px-6 max-w-4xl mx-auto">
+        <motion.section 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="py-24 px-6 max-w-4xl mx-auto bg-white/95 rounded-3xl my-12 shadow-sm"
+        >
             <h2 className="text-3xl font-bold mb-8 text-slate-900">Introduction</h2>
             <div className="prose prose-lg text-slate-600 leading-relaxed">
                 <p className="mb-6">
@@ -264,14 +271,16 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                     Nous travaillons avec des entreprises de tous les secteurs : e-commerce, services, B2B, immobilier, santé, etc. Notre approche est personnalisée, basée sur les données, et orientée vers les résultats mesurables.
                 </p>
             </div>
-        </section>
+        </motion.section>
 
         {/* NOS SERVICES - BENTO GRID */}
-        <section className="py-24 bg-slate-50 px-6 relative overflow-hidden">
-            {/* Background elements */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-100/50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
-
+        <motion.section 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="py-24 bg-transparent px-6 relative overflow-hidden"
+        >
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-display font-black mb-6 text-slate-900">Nos Services</h2>
@@ -363,10 +372,16 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
 
         {/* POURQUOI CHOISIR TRIAINA */}
-        <section className="py-24 px-6 max-w-7xl mx-auto">
+        <motion.section 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="py-24 px-6 max-w-7xl mx-auto bg-white/95 rounded-3xl my-12 shadow-sm"
+        >
             <h2 className="text-4xl font-display font-bold mb-16 text-center text-slate-900">Pourquoi Choisir Triaina ?</h2>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -398,10 +413,16 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                     </p>
                 </div>
             </div>
-        </section>
+        </motion.section>
 
         {/* DEMANDER UNE PRE-AUDIT */}
-        <section className="py-24 bg-slate-900 text-white px-6 text-center">
+        <motion.section 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="py-24 bg-slate-900/95 text-white px-6 text-center"
+        >
             <div className="max-w-3xl mx-auto">
                 <h2 className="text-4xl font-display font-bold mb-6">Demander un Pré-Audit Gratuit</h2>
                 <p className="text-xl text-slate-300 mb-10 font-light">
@@ -415,10 +436,16 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                     Demander le pré-audit gratuit
                 </a>
             </div>
-        </section>
+        </motion.section>
 
         {/* EXPLOREZ NOS SERVICES (LINKS) */}
-        <section className="py-16 bg-white border-t border-slate-200 px-6">
+        <motion.section 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="py-16 bg-white/95 border-t border-slate-200/50 px-6"
+        >
             <div className="max-w-6xl mx-auto text-center">
                 <h2 className="text-2xl font-bold mb-8 text-slate-900">Explorez Nos Services</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -468,7 +495,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                     </a>
                 </div>
             </div>
-        </section>
+        </motion.section>
 
       </main>
     </div>

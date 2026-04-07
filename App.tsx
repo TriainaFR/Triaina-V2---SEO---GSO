@@ -233,7 +233,7 @@ const App: React.FC = () => {
       </main>
 
       {/* Footer is visible on all pages except maybe explicit landing pages, keeping it everywhere for SEO */}
-      <footer className="relative z-10 border-t border-slate-300 bg-slate-100/90 backdrop-blur-md pt-16 pb-8 mt-auto">
+      <footer className="relative z-10 border-t border-slate-300 bg-slate-100/95 pt-16 pb-8 mt-auto">
          <div className="max-w-7xl mx-auto px-4">
             
             <div className="grid md:grid-cols-4 gap-12 mb-16">

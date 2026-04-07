@@ -253,6 +253,19 @@ export const REFERENCES_DATA: ReferenceItem[] = [
     ],
     tags: ['Hotels', 'Technical SEO', 'International'],
     image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
+    id: 'ref_bernard_magrez',
+    client: 'Bernard Magrez',
+    title: 'Bernard Magrez',
+    summary: 'Chantier GSO en cours.',
+    challenge: 'Chantier GSO en cours.',
+    solution: '',
+    results: [
+        'Chantier GSO en cours.'
+    ],
+    tags: ['GSO', 'En cours'],
+    image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&q=80&w=1200'
   }
 ];
 
