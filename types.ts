@@ -20,12 +20,14 @@ export type Page =
   | 'referencement-ia-guide'
   | 'comment-ranker-chatgpt'
   | 'seo-vs-referencement-ia'
-  | 'gso-2025-guide-complet'
+  | 'gso-2026-guide-complet'
   | 'audit-seo-guide'
   | 'eeat-seo-guide'
   | 'backlinks-seo-guide'
-  | 'tendances-seo-gso-2025'
+  | 'referencement-ia-paris-guide-local'
+  | 'tendances-seo-gso-2026'
   | 'seo-technique-vs-contenu'
+  | 'gso-definition-2026'
   | '404';
 
 export interface NavLink {

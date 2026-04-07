@@ -22,8 +22,8 @@ export const CommentRankerChatGPT: React.FC = () => {
         {
             "@type": "ListItem",
             "position": 3,
-            "name": "Comment ranker sur ChatGPT en 2025",
-            "item": "https://www.triaina.fr/blog/ranker-chatgpt-2025"
+            "name": "Comment ranker sur ChatGPT en 2026",
+            "item": "https://www.triaina.fr/blog/ranker-chatgpt-2026"
         }
     ]
   };
@@ -31,9 +31,9 @@ export const CommentRankerChatGPT: React.FC = () => {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Comment ranker sur ChatGPT en 2025 ? Guide complet",
+    "headline": "Comment ranker sur ChatGPT en 2026 ? Guide complet",
     "description": "Guide complet pour ranker sur ChatGPT : fonctionnement, critères de ranking, optimisation on-page, stratégie contenu, netlinking, outils, cas clients et FAQ.",
-    "image": "https://www.triaina.fr/images/ranker-chatgpt-2025.jpg",
+    "image": "https://www.triaina.fr/images/ranker-chatgpt-2026.jpg",
     "author": {
         "@type": "Organization",
         "name": "Triaina"
@@ -134,16 +134,16 @@ export const CommentRankerChatGPT: React.FC = () => {
   return (
     <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
       <SEO 
-        title="Comment ranker sur ChatGPT en 2025 ? Guide complet" 
-        description="Guide complet : comment ranker sur ChatGPT en 2025. Critères de ranking, optimisation on-page, stratégie contenu, netlinking, outils, cas clients et FAQ."
-        keywords="ranker sur ChatGPT, comment ranker ChatGPT, optimisation ChatGPT, référencement ChatGPT, guide ChatGPT 2025"
+        title="Comment ranker sur ChatGPT en 2026 ? Guide complet" 
+        description="Guide complet : comment ranker sur ChatGPT en 2026. Critères de ranking, optimisation on-page, stratégie contenu, netlinking, outils, cas clients et FAQ."
+        keywords="ranker sur ChatGPT, comment ranker ChatGPT, optimisation ChatGPT, référencement ChatGPT, guide ChatGPT 2026"
         schema={[breadcrumbSchema, articleSchema, faqSchema]}
-        ogTitle="Comment ranker sur ChatGPT en 2025 ? Guide complet"
+        ogTitle="Comment ranker sur ChatGPT en 2026 ? Guide complet"
         ogDescription="Guide complet pour ranker sur ChatGPT : critères, optimisation, stratégie, netlinking, outils et cas clients."
-        image="https://www.triaina.fr/images/ranker-chatgpt-2025.jpg"
+        image="https://www.triaina.fr/images/ranker-chatgpt-2026.jpg"
         type="article"
         twitterCard="summary_large_image"
-        canonicalUrl="https://www.triaina.fr/blog/ranker-chatgpt-2025"
+        canonicalUrl="https://www.triaina.fr/blog/ranker-chatgpt-2026"
       />
 
       <div className="max-w-7xl mx-auto">
@@ -161,7 +161,7 @@ export const CommentRankerChatGPT: React.FC = () => {
             <span className="flex items-center gap-1"><Clock size={12} /> 15 MIN</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-8 leading-tight">
-            Comment ranker sur <br/><span className="text-green-600">ChatGPT en 2025 ?</span>
+            Comment ranker sur <br/><span className="text-green-600">ChatGPT en 2026 ?</span>
           </h1>
           <p className="text-xl text-slate-600 leading-relaxed">
             Guide complet
@@ -214,8 +214,8 @@ export const CommentRankerChatGPT: React.FC = () => {
 
             <section id="introduction">
                 <p>ChatGPT est devenu le moteur de recherche préféré de millions de personnes. Avec plus de 200 millions d'utilisateurs actifs, être recommandé par ChatGPT peut générer un trafic qualifié significatif.</p>
-                <p>Mais comment faire en sorte que ChatGPT recommande votre site ? Comment <strong>"ranker" sur ChatGPT</strong> ? C'est la question que se posent les entreprises en 2025.</p>
-                <p>Ce guide complet vous explique comment ranker sur ChatGPT en 2025. Vous découvrirez comment fonctionne ChatGPT, les critères de ranking, les stratégies d'optimisation, et comment mettre en place une stratégie efficace.</p>
+                <p>Mais comment faire en sorte que ChatGPT recommande votre site ? Comment <strong>"ranker" sur ChatGPT</strong> ? C'est la question que se posent les entreprises en 2026.</p>
+                <p>Ce guide complet vous explique comment ranker sur ChatGPT en 2026. Vous découvrirez comment fonctionne ChatGPT, les critères de ranking, les stratégies d'optimisation, et comment mettre en place une stratégie efficace.</p>
             </section>
 
             <div className="my-12 h-px bg-slate-200 w-full"></div>
@@ -796,7 +796,7 @@ export const CommentRankerChatGPT: React.FC = () => {
             <section id="conclusion" className="my-16 bg-green-600 rounded-3xl p-8 md:p-12 text-center text-white not-prose">
                 <h2 className="text-white text-3xl md:text-4xl mb-6 font-display font-bold">Conclusion</h2>
                 <p className="text-green-100 text-lg mb-6 max-w-3xl mx-auto">
-                    <strong>Ranker sur ChatGPT</strong> en 2025 requiert une stratégie spécifique basée sur l'autorité du domaine, la fraîcheur du contenu, l'E-E-A-T, la pertinence thématique et la qualité du contenu.
+                    <strong>Ranker sur ChatGPT</strong> en 2026 requiert une stratégie spécifique basée sur l'autorité du domaine, la fraîcheur du contenu, l'E-E-A-T, la pertinence thématique et la qualité du contenu.
                 </p>
                 <p className="text-green-100 text-lg mb-8 max-w-3xl mx-auto">
                     Les résultats sont visibles en 6-8 semaines pour les premières citations, et 3-6 mois pour un trafic significatif.

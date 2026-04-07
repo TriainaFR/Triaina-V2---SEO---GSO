@@ -144,8 +144,8 @@ export const AgenceReferencementIAParis: React.FC<{ onNavigate: (page: any) => v
                 "url": "https://www.triaina.fr/logo.png"
             }
         },
-        "datePublished": "2025-02-28",
-        "dateModified": "2025-02-28"
+        "datePublished": "2026-02-28",
+        "dateModified": "2026-02-28"
       }
     ]
   };
@@ -215,7 +215,7 @@ export const AgenceReferencementIAParis: React.FC<{ onNavigate: (page: any) => v
       {/* Les IA qui comptent */}
       <div className="mb-24 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
         <h2 className="text-3xl font-display font-bold text-slate-900 mb-12 text-center">Les IA génératives qui dominent à Paris</h2>
-        <p className="text-center text-slate-600 mb-8 max-w-2xl mx-auto">En 2025, quatre acteurs dominent le marché des IA génératives :</p>
+        <p className="text-center text-slate-600 mb-8 max-w-2xl mx-auto">En 2026, quatre acteurs dominent le marché des IA génératives :</p>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {

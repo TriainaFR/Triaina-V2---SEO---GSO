@@ -22,7 +22,7 @@ export const ReferencementIAGuide: React.FC = () => {
         {
             "@type": "ListItem",
             "position": 3,
-            "name": "Référencement IA : Guide Complet 2025",
+            "name": "Référencement IA : Guide Complet 2026",
             "item": "https://www.triaina.fr/blog/referencement-ia-guide-complet"
         }
     ]
@@ -31,8 +31,8 @@ export const ReferencementIAGuide: React.FC = () => {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Référencement IA : Guide Complet 2025 (ChatGPT, Gemini, Perplexity)",
-    "description": "Guide complet du référencement IA 2025 : optimisation ChatGPT, Gemini, Perplexity, stratégie 5 étapes, outils, cas clients.",
+    "headline": "Référencement IA : Guide Complet 2026 (ChatGPT, Gemini, Perplexity)",
+    "description": "Guide complet du référencement IA 2026 : optimisation ChatGPT, Gemini, Perplexity, stratégie 5 étapes, outils, cas clients.",
     "image": "https://www.triaina.fr/images/referencement-ia-guide-complet.jpg",
     "author": {
         "@type": "Organization",
@@ -56,7 +56,7 @@ export const ReferencementIAGuide: React.FC = () => {
     "datePublished": "2026-03-02",
     "dateModified": "2026-03-02",
     "wordCount": 2400,
-    "articleBody": "Le référencement IA est devenu incontournable en 2025..."
+    "articleBody": "Le référencement IA est devenu incontournable en 2026..."
   };
 
   const faqSchema = {
@@ -133,11 +133,11 @@ export const ReferencementIAGuide: React.FC = () => {
   return (
     <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
       <SEO 
-        title="Référencement IA : Guide Complet 2025 (ChatGPT, Gemini, Perplexity)" 
-        description="Guide complet du référencement IA 2025 : optimisation ChatGPT, Gemini, Perplexity. Stratégie 5 étapes, outils, cas clients, FAQ. Tout ce que vous devez savoir."
-        keywords="référencement IA, GSO, optimisation ChatGPT, optimisation Gemini, optimisation Perplexity, guide référencement IA 2025"
+        title="Référencement IA : Guide Complet 2026 (ChatGPT, Gemini, Perplexity)" 
+        description="Guide complet du référencement IA 2026 : optimisation ChatGPT, Gemini, Perplexity. Stratégie 5 étapes, outils, cas clients, FAQ. Tout ce que vous devez savoir."
+        keywords="référencement IA, GSO, optimisation ChatGPT, optimisation Gemini, optimisation Perplexity, guide référencement IA 2026"
         schema={[breadcrumbSchema, articleSchema, faqSchema]}
-        ogTitle="Référencement IA : Guide Complet 2025 (ChatGPT, Gemini, Perplexity)"
+        ogTitle="Référencement IA : Guide Complet 2026 (ChatGPT, Gemini, Perplexity)"
         ogDescription="Guide complet du référencement IA : stratégie, outils, cas clients. Optimisez votre présence auprès des IA génératives."
         image="https://www.triaina.fr/images/referencement-ia-guide-complet.jpg"
         type="article"
@@ -160,7 +160,7 @@ export const ReferencementIAGuide: React.FC = () => {
             <span className="flex items-center gap-1"><Clock size={12} /> 20 MIN</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-8 leading-tight">
-            Référencement IA : <br/><span className="text-blue-700">Guide Complet 2025</span>
+            Référencement IA : <br/><span className="text-blue-700">Guide Complet 2026</span>
           </h1>
           <p className="text-xl text-slate-600 leading-relaxed">
             (ChatGPT, Gemini, Perplexity)
@@ -203,8 +203,8 @@ export const ReferencementIAGuide: React.FC = () => {
             <article className="lg:col-span-9 prose prose-lg xl:prose-xl prose-slate max-w-none font-sans prose-headings:font-display prose-headings:font-bold prose-a:text-blue-600">
             
             <section id="introduction">
-                <p>Le <strong>référencement IA</strong> est devenu incontournable en 2025. Alors que les IA génératives comme ChatGPT, Gemini et Perplexity transforment la façon dont les utilisateurs cherchent de l'information, les entreprises doivent adapter leur stratégie de visibilité. Le SEO traditionnel ne suffit plus : il faut optimiser pour les IA génératives.</p>
-                <p>Ce guide complet vous explique tout ce que vous devez savoir sur le <strong>référencement IA</strong> en 2025. Vous découvrirez comment fonctionnent les IA génératives, pourquoi le référencement IA est crucial, comment optimiser pour ChatGPT, Gemini et Perplexity, et comment mettre en place une stratégie efficace.</p>
+                <p>Le <strong>référencement IA</strong> est devenu incontournable en 2026. Alors que les IA génératives comme ChatGPT, Gemini et Perplexity transforment la façon dont les utilisateurs cherchent de l'information, les entreprises doivent adapter leur stratégie de visibilité. Le SEO traditionnel ne suffit plus : il faut optimiser pour les IA génératives.</p>
+                <p>Ce guide complet vous explique tout ce que vous devez savoir sur le <strong>référencement IA</strong> en 2026. Vous découvrirez comment fonctionnent les IA génératives, pourquoi le référencement IA est crucial, comment optimiser pour ChatGPT, Gemini et Perplexity, et comment mettre en place une stratégie efficace.</p>
                 <p>Que vous soyez entrepreneur, responsable marketing ou spécialiste SEO, ce guide vous donnera les outils pour dominer le paysage du référencement IA.</p>
             </section>
 
@@ -228,7 +228,7 @@ export const ReferencementIAGuide: React.FC = () => {
                     </ul>
                 </div>
 
-                <h3>Les IA génératives qui dominent en 2025</h3>
+                <h3>Les IA génératives qui dominent en 2026</h3>
                 
                 <div className="grid md:grid-cols-2 gap-6 not-prose my-8">
                     <div className="p-6 rounded-2xl border bg-green-50 border-green-200">
@@ -267,7 +267,7 @@ export const ReferencementIAGuide: React.FC = () => {
             </section>
 
             <section id="pourquoi" className="my-20">
-                <h2 className="text-3xl md:text-4xl mb-12 text-center font-display font-bold">Pourquoi le Référencement IA est Crucial en 2025</h2>
+                <h2 className="text-3xl md:text-4xl mb-12 text-center font-display font-bold">Pourquoi le Référencement IA est Crucial en 2026</h2>
                 
                 <div className="grid md:grid-cols-12 gap-6 not-prose">
                     {/* Card 1 - Main Stat */}
@@ -678,7 +678,7 @@ export const ReferencementIAGuide: React.FC = () => {
             <section id="conclusion" className="my-16 bg-blue-600 rounded-3xl p-8 md:p-12 text-center text-white not-prose">
                 <h2 className="text-white text-3xl md:text-4xl mb-6 font-display font-bold">Conclusion</h2>
                 <p className="text-blue-100 text-lg mb-6 max-w-3xl mx-auto">
-                    Le <strong>référencement IA</strong> est l'opportunité de 2025. Les entreprises qui agissent maintenant obtiendront un avantage compétitif durable face à celles qui attendront.
+                    Le <strong>référencement IA</strong> est l'opportunité de 2026. Les entreprises qui agissent maintenant obtiendront un avantage compétitif durable face à celles qui attendront.
                 </p>
                 <p className="text-blue-100 text-lg mb-8 max-w-3xl mx-auto">
                     Ce guide vous a montré comment fonctionne le référencement IA, pourquoi c'est crucial, comment optimiser pour ChatGPT, Gemini et Perplexity, et comment mettre en place une stratégie efficace.

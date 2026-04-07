@@ -31,7 +31,7 @@ export const ReferencementIAParisGuide: React.FC = () => {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Référencement IA Paris : Guide Local pour Dominer ChatGPT & Gemini en 2025",
+    "headline": "Référencement IA Paris : Guide Local pour Dominer ChatGPT & Gemini en 2026",
     "description": "Guide complet référencement IA pour Paris : GSO, ChatGPT, Gemini, Perplexity. Stratégie locale, 3 cas clients réels, données propriétaires, citations IA.",
     "image": {
         "@type": "ImageObject",
@@ -63,7 +63,7 @@ export const ReferencementIAParisGuide: React.FC = () => {
     "datePublished": "2026-03-16",
     "dateModified": "2026-03-16",
     "wordCount": 2200,
-    "articleBody": "En 2025, le référencement IA n'est plus optionnel pour les entreprises à Paris. ChatGPT, Gemini et Perplexity génèrent des réponses directement. Les utilisateurs ne cliquent plus sur Google. Pour les entreprises parisiennes, c'est crucial de dominer les IA génératives."
+    "articleBody": "En 2026, le référencement IA n'est plus optionnel pour les entreprises à Paris. ChatGPT, Gemini et Perplexity génèrent des réponses directement. Les utilisateurs ne cliquent plus sur Google. Pour les entreprises parisiennes, c'est crucial de dominer les IA génératives."
   };
 
   const localBusinessSchema = {
@@ -203,8 +203,8 @@ export const ReferencementIAParisGuide: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-50 pt-32 pb-24">
       <SEO 
-        title="Référencement IA Paris : Guide Local pour Dominer ChatGPT & Gemini en 2025"
-        description="Guide référencement IA Paris 2025 : GSO pour ChatGPT, Gemini, Perplexity. Stratégie locale, cas clients, données propriétaires. +200-300% de citations IA."
+        title="Référencement IA Paris : Guide Local pour Dominer ChatGPT & Gemini en 2026"
+        description="Guide référencement IA Paris 2026 : GSO pour ChatGPT, Gemini, Perplexity. Stratégie locale, cas clients, données propriétaires. +200-300% de citations IA."
         keywords="référencement IA Paris, GSO Paris, ChatGPT Paris, Gemini Paris, Perplexity Paris, optimisation IA, citations IA, guide local"
         schema={combinedSchema}
         image="https://www.triaina.fr/images/referencement-ia-paris-og.jpg"
@@ -231,10 +231,10 @@ export const ReferencementIAParisGuide: React.FC = () => {
             <span className="flex items-center gap-1.5 bg-white/60 px-3 py-1.5 rounded-full border border-slate-200"><Clock size={14} /> 15 MIN</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-8 leading-tight tracking-tight">
-            Référencement IA Paris : <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-600">Guide Local pour Dominer ChatGPT & Gemini en 2025</span>
+            Référencement IA Paris : <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-600">Guide Local pour Dominer ChatGPT & Gemini en 2026</span>
           </h1>
           <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-medium">
-            En 2025, le <strong>référencement IA</strong> n'est plus optionnel pour les entreprises à Paris. <strong>ChatGPT, Gemini et Perplexity</strong> génèrent des réponses directement dans l'interface. Les utilisateurs ne cliquent plus sur les résultats Google. Ils lisent la réponse de l'IA et s'en vont. Pour les entreprises parisiennes, c'est catastrophique. Vous perdez du trafic vers vos sites. Vous perdez des clients potentiels.
+            En 2026, le <strong>référencement IA</strong> n'est plus optionnel pour les entreprises à Paris. <strong>ChatGPT, Gemini et Perplexity</strong> génèrent des réponses directement dans l'interface. Les utilisateurs ne cliquent plus sur les résultats Google. Ils lisent la réponse de l'IA et s'en vont. Pour les entreprises parisiennes, c'est catastrophique. Vous perdez du trafic vers vos sites. Vous perdez des clients potentiels.
           </p>
         </header>
 

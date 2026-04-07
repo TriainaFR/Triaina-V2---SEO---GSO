@@ -28,7 +28,7 @@ export const Team: React.FC<{ onNavigate: (p: any) => void, initialTab?: Tab }> 
         "url": "https://www.triaina.fr",
         "logo": "https://www.triaina.fr/logo.png",
         "description": "Agence SEO & GSO spécialisée en référencement naturel et optimisation pour IA génératives",
-        "foundingDate": "2025",
+        "foundingDate": "2026",
         "sameAs": [
             "https://www.linkedin.com/company/triaina",
             "https://twitter.com/triaina"
@@ -119,7 +119,7 @@ export const Team: React.FC<{ onNavigate: (p: any) => void, initialTab?: Tab }> 
                         À Propos de Triaina : Agence SEO & GSO Spécialisée en Référencement IA
                     </h3>
                     <p className="text-lg text-slate-700 leading-relaxed font-light">
-                        Triaina est une <strong>agence SEO et GSO</strong> (Generative Search Optimization) fondée en 2025. Nous combinons <strong>25 années d'expertise en référencement naturel</strong> avec l'innovation en optimisation pour les IA génératives, pour vous offrir une stratégie de référencement complète et future-proof.
+                        Triaina est une <strong>agence SEO et GSO</strong> (Generative Search Optimization) fondée en 2026. Nous combinons <strong>25 années d'expertise en référencement naturel</strong> avec l'innovation en optimisation pour les IA génératives, pour vous offrir une stratégie de référencement complète et future-proof.
                     </p>
                 </div>
              </div>
@@ -167,7 +167,7 @@ export const Team: React.FC<{ onNavigate: (p: any) => void, initialTab?: Tab }> 
                 })}
              </div>
 
-             {/* ════════════ VISION 2025+ ════════════ */}
+             {/* ════════════ VISION 2026+ ════════════ */}
              <div className="mb-32">
                 <div className="bg-gradient-to-br from-slate-900 to-blue-950 text-white p-10 md:p-16 rounded-2xl relative overflow-hidden shadow-2xl">
                      {/* Decoration */}
@@ -177,7 +177,7 @@ export const Team: React.FC<{ onNavigate: (p: any) => void, initialTab?: Tab }> 
                         <div className="flex flex-col md:flex-row gap-12 items-center">
                             <div className="md:w-1/2">
                                 <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">
-                                    Notre Vision 2025+ : <br/><span className="text-blue-400">Croissance dans l'Ère IA</span>
+                                    Notre Vision 2026+ : <br/><span className="text-blue-400">Croissance dans l'Ère IA</span>
                                 </h2>
                                 <div className="p-6 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm mb-8">
                                     <h3 className="text-sm font-mono uppercase tracking-widest text-blue-300 mb-4">Notre Ambition</h3>

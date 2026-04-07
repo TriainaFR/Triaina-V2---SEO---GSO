@@ -62,6 +62,10 @@ const ParticleBackground: React.FC = () => {
     draw();
 
     const handleResize = () => {
+      // Ignore vertical-only resizes (like mobile browser URL bar hiding/showing on scroll)
+      // This prevents the canvas from redrawing and blocking the main thread during scroll
+      if (window.innerWidth === width) return; 
+      
       width = window.innerWidth;
       height = window.innerHeight;
       canvas.width = width;

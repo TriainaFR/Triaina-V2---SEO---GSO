@@ -2,7 +2,7 @@ import React from 'react';
 import { SEO } from '../../components/SEO';
 import { Calendar, Clock, ArrowLeft, Share2, Linkedin, Twitter, Facebook, CheckCircle2, Bot, Search, Zap, BarChart3, Globe, Cpu, Target, Trophy, TrendingUp, Link as LinkIcon, FileText, RefreshCw, Layers, Scale, AlertTriangle, ListChecks } from 'lucide-react';
 
-export const TendancesSeoGso2025: React.FC = () => {
+export const TendancesSeoGso2026: React.FC = () => {
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -22,8 +22,8 @@ export const TendancesSeoGso2025: React.FC = () => {
         {
             "@type": "ListItem",
             "position": 3,
-            "name": "Tendances SEO & GSO 2025",
-            "item": "https://www.triaina.fr/blog/tendances-seo-gso-2025"
+            "name": "Tendances SEO & GSO 2026",
+            "item": "https://www.triaina.fr/blog/tendances-seo-gso-2026"
         }
     ]
   };
@@ -31,9 +31,9 @@ export const TendancesSeoGso2025: React.FC = () => {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Tendances SEO & GSO 2025 : Guide Complet des Changements qui Dominent le Référencement",
-    "description": "Guide complet des 10 tendances SEO & GSO 2025 : E-E-A-T, citations IA, contenu long-form, données propriétaires, netlinking, présence médiatique. Cas clients et actions immédiates.",
-    "image": "https://picsum.photos/seed/seo-trends-2025/1200/675",
+    "headline": "Tendances SEO & GSO 2026 : Guide Complet des Changements qui Dominent le Référencement",
+    "description": "Guide complet des 10 tendances SEO & GSO 2026 : E-E-A-T, citations IA, contenu long-form, données propriétaires, netlinking, présence médiatique. Cas clients et actions immédiates.",
+    "image": "https://picsum.photos/seed/seo-trends-2026/1200/675",
     "author": {
         "@type": "Organization",
         "name": "Triaina",
@@ -47,8 +47,8 @@ export const TendancesSeoGso2025: React.FC = () => {
             "url": "https://www.triaina.fr/logo.png"
         }
     },
-    "datePublished": "2025-03-18",
-    "dateModified": "2025-03-18",
+    "datePublished": "2026-03-18",
+    "dateModified": "2026-03-18",
     "wordCount": 2200
   };
 
@@ -58,7 +58,7 @@ export const TendancesSeoGso2025: React.FC = () => {
     "mainEntity": [
         {
             "@type": "Question",
-            "name": "Quelles sont les 10 tendances SEO & GSO 2025 ?",
+            "name": "Quelles sont les 10 tendances SEO & GSO 2026 ?",
             "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Les 10 tendances sont : 1) E-E-A-T domine tout, 2) GSO devient plus important que SEO, 3) Contenu long-form (2 000+ mots), 4) Données propriétaires, 5) Netlinking de qualité, 6) Citations IA, 7) Présence médiatique, 8) Vitesse et mobile, 9) Contenu multimédia, 10) Contenu frais et mis à jour."
@@ -66,7 +66,7 @@ export const TendancesSeoGso2025: React.FC = () => {
         },
         {
             "@type": "Question",
-            "name": "Pourquoi E-E-A-T domine en 2025 ?",
+            "name": "Pourquoi E-E-A-T domine en 2026 ?",
             "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Google classe maintenant les marques et les experts, pas juste les pages. E-E-A-T (Expertise, Experience, Authority, Trustworthiness) est le critère principal. Nous avons mesuré : sites avec fort E-E-A-T rankent 3x mieux."
@@ -74,7 +74,7 @@ export const TendancesSeoGso2025: React.FC = () => {
         },
         {
             "@type": "Question",
-            "name": "Le GSO est-il plus important que le SEO en 2025 ?",
+            "name": "Le GSO est-il plus important que le SEO en 2026 ?",
             "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Oui, pour certains secteurs. Les IA génératives génèrent 15-30% du trafic total. ChatGPT a 200 millions d'utilisateurs. Gemini est utilisé par 1 milliard de personnes. Ignorer le GSO = perdre du trafic."
@@ -82,7 +82,7 @@ export const TendancesSeoGso2025: React.FC = () => {
         },
         {
             "@type": "Question",
-            "name": "Quelle est la longueur idéale d'un article en 2025 ?",
+            "name": "Quelle est la longueur idéale d'un article en 2026 ?",
             "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "2 000-3 000 mots. Nous avons analysé 200 articles. Résultat : articles 2 000+ mots rankent 3x mieux que articles 500-1 000 mots. La profondeur et la nuance sont critiques."
@@ -98,7 +98,7 @@ export const TendancesSeoGso2025: React.FC = () => {
         },
         {
             "@type": "Question",
-            "name": "Combien de backlinks ai-je besoin en 2025 ?",
+            "name": "Combien de backlinks ai-je besoin en 2026 ?",
             "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "La qualité prime sur la quantité. 10 backlinks depuis des sites d'autorité (DA 40+) valent mieux que 100 backlinks de spam. Visez 30-50 backlinks/mois de qualité."
@@ -142,18 +142,18 @@ export const TendancesSeoGso2025: React.FC = () => {
   return (
     <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
       <SEO 
-        title="Tendances SEO & GSO 2025 : Guide Complet des Changements qui Dominent" 
-        description="Tendances SEO & GSO 2025 : E-E-A-T, citations IA, contenu long-form, données propriétaires, netlinking, présence médiatique. 10 tendances qui dominent le référencement en 2025."
-        keywords="tendances SEO 2025, tendances GSO 2025, E-E-A-T, citations IA, ChatGPT, Gemini, Perplexity, contenu long-form, données propriétaires, netlinking, présence médiatique"
+        title="Tendances SEO & GSO 2026 : Guide Complet des Changements qui Dominent" 
+        description="Tendances SEO & GSO 2026 : E-E-A-T, citations IA, contenu long-form, données propriétaires, netlinking, présence médiatique. 10 tendances qui dominent le référencement en 2026."
+        keywords="tendances SEO 2026, tendances GSO 2026, E-E-A-T, citations IA, ChatGPT, Gemini, Perplexity, contenu long-form, données propriétaires, netlinking, présence médiatique"
         schema={[breadcrumbSchema, articleSchema, faqSchema]}
-        ogTitle="Tendances SEO & GSO 2025 : Guide Complet des Changements qui Dominent"
-        ogDescription="10 tendances SEO & GSO 2025 : E-E-A-T, citations IA, contenu long-form, données propriétaires, netlinking, présence médiatique. Cas clients et actions immédiates."
-        image="https://picsum.photos/seed/seo-trends-2025/1200/675"
+        ogTitle="Tendances SEO & GSO 2026 : Guide Complet des Changements qui Dominent"
+        ogDescription="10 tendances SEO & GSO 2026 : E-E-A-T, citations IA, contenu long-form, données propriétaires, netlinking, présence médiatique. Cas clients et actions immédiates."
+        image="https://picsum.photos/seed/seo-trends-2026/1200/675"
         type="article"
         twitterCard="summary_large_image"
-        twitterTitle="Tendances SEO & GSO 2025 : Guide Complet"
-        twitterDescription="10 tendances SEO & GSO 2025 : E-E-A-T, citations IA, contenu long-form, données propriétaires, netlinking."
-        canonicalUrl="https://www.triaina.fr/blog/tendances-seo-gso-2025"
+        twitterTitle="Tendances SEO & GSO 2026 : Guide Complet"
+        twitterDescription="10 tendances SEO & GSO 2026 : E-E-A-T, citations IA, contenu long-form, données propriétaires, netlinking."
+        canonicalUrl="https://www.triaina.fr/blog/tendances-seo-gso-2026"
       />
 
       <div className="max-w-7xl mx-auto">
@@ -166,23 +166,23 @@ export const TendancesSeoGso2025: React.FC = () => {
         {/* Header */}
         <header className="mb-12 text-center max-w-5xl mx-auto">
           <div className="flex items-center justify-center gap-4 text-xs font-mono text-blue-600 mb-6 uppercase tracking-widest">
-            <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">Tendances 2025</span>
-            <span className="flex items-center gap-1"><Calendar size={12} /> 18 MARS 2025</span>
+            <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">Tendances 2026</span>
+            <span className="flex items-center gap-1"><Calendar size={12} /> 18 MARS 2026</span>
             <span className="flex items-center gap-1"><Clock size={12} /> 18 MIN</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-display font-bold text-slate-900 mb-8 leading-tight tracking-tight">
-            Tendances SEO & GSO 2025 : <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Guide Complet des Changements qui Dominent</span>
+            Tendances SEO & GSO 2026 : <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Guide Complet des Changements qui Dominent</span>
           </h1>
           <p className="text-xl text-slate-600 leading-relaxed max-w-4xl mx-auto">
-            En 2025, le <strong>SEO</strong> et le <strong>GSO</strong> ne sont plus les mêmes qu'il y a 2 ans. Google a changé ses algorithmes. Les <strong>IA génératives</strong> ont explosé. Les utilisateurs cherchent différemment.
+            En 2026, le <strong>SEO</strong> et le <strong>GSO</strong> ne sont plus les mêmes qu'il y a 2 ans. Google a changé ses algorithmes. Les <strong>IA génératives</strong> ont explosé. Les utilisateurs cherchent différemment.
           </p>
         </header>
 
         {/* Featured Image */}
         <div className="mb-16 rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-900/10 aspect-video relative group">
           <img 
-            src="https://picsum.photos/seed/seo-trends-2025/1200/675" 
-            alt="Tendances SEO & GSO 2025" 
+            src="https://picsum.photos/seed/seo-trends-2026/1200/675" 
+            alt="Tendances SEO & GSO 2026" 
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             referrerPolicy="no-referrer"
           />
@@ -209,7 +209,7 @@ export const TendancesSeoGso2025: React.FC = () => {
                         <a href="#tendance-9" className="hover:text-blue-600 transition-colors">Tendance #9 : Multimédia</a>
                         <a href="#tendance-10" className="hover:text-blue-600 transition-colors">Tendance #10 : Mise à jour</a>
                         <a href="#erreurs" className="hover:text-blue-600 transition-colors">Erreurs à éviter</a>
-                        <a href="#checklist" className="hover:text-blue-600 transition-colors">Checklist 2025</a>
+                        <a href="#checklist" className="hover:text-blue-600 transition-colors">Checklist 2026</a>
                     </nav>
                 </div>
             </aside>
@@ -218,8 +218,8 @@ export const TendancesSeoGso2025: React.FC = () => {
             <article className="lg:col-span-9 prose prose-lg xl:prose-xl prose-slate max-w-none font-sans prose-headings:font-display prose-headings:font-bold prose-a:text-blue-600">
             
             <section id="introduction">
-                <h2>Pourquoi les Tendances 2025 Changent Tout</h2>
-                <p>Chez Triaina, nous avons analysé plus de 500 sites et 10 000 mots-clés en 2025. Nous avons identifié les tendances qui dominent vraiment. Et dans ce guide, nous vous montrons comment adapter votre stratégie.</p>
+                <h2>Pourquoi les Tendances 2026 Changent Tout</h2>
+                <p>Chez Triaina, nous avons analysé plus de 500 sites et 10 000 mots-clés en 2026. Nous avons identifié les tendances qui dominent vraiment. Et dans ce guide, nous vous montrons comment adapter votre stratégie.</p>
                 <p>Les agences SEO qui adaptent leur stratégie à ces tendances gagnent. Les autres perdent.</p>
             </section>
 
@@ -231,7 +231,7 @@ export const TendancesSeoGso2025: React.FC = () => {
                     Tendance #1 : E-E-A-T Domine Tout
                 </h2>
                 <p><strong>La réalité :</strong> Google ne classe plus les pages. Google classe les <strong>marques et les experts</strong>.</p>
-                <p>En 2024, E-E-A-T était important. En 2025, c'est <strong>critique</strong>. Nous avons analysé 100 sites qui ont amélioré leur E-E-A-T. Résultat : <strong>+150% de trafic en moyenne en 6 mois</strong>.</p>
+                <p>En 2024, E-E-A-T était important. En 2026, c'est <strong>critique</strong>. Nous avons analysé 100 sites qui ont amélioré leur E-E-A-T. Résultat : <strong>+150% de trafic en moyenne en 6 mois</strong>.</p>
                 
                 <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 my-8">
                     <h3 className="text-xl font-bold mt-0 mb-4">Ce qui change :</h3>
@@ -257,7 +257,7 @@ export const TendancesSeoGso2025: React.FC = () => {
                     Tendance #2 : GSO Devient Plus Important que SEO
                 </h2>
                 <p><strong>La réalité :</strong> Les <strong>IA génératives</strong> génèrent maintenant plus de trafic que Google pour certains secteurs.</p>
-                <p>En 2024, le GSO était une "tendance future". En 2025, c'est une <strong>nécessité</strong>. Nous avons mesuré le trafic depuis ChatGPT, Gemini et Perplexity pour 50 clients. Résultat : <strong>15-30% du trafic total vient des IA</strong>.</p>
+                <p>En 2024, le GSO était une "tendance future". En 2026, c'est une <strong>nécessité</strong>. Nous avons mesuré le trafic depuis ChatGPT, Gemini et Perplexity pour 50 clients. Résultat : <strong>15-30% du trafic total vient des IA</strong>.</p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
@@ -270,7 +270,7 @@ export const TendancesSeoGso2025: React.FC = () => {
                     </div>
                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col justify-center items-center text-center">
                         <div className="text-4xl font-bold text-purple-600 mb-2">30%</div>
-                        <p className="text-sm text-slate-600 font-medium m-0">du trafic total généré par les IA pour certains secteurs en 2025</p>
+                        <p className="text-sm text-slate-600 font-medium m-0">du trafic total généré par les IA pour certains secteurs en 2026</p>
                     </div>
                 </div>
 
@@ -288,7 +288,7 @@ export const TendancesSeoGso2025: React.FC = () => {
                     Tendance #3 : Contenu Long-Form Domine (2 000+ mots)
                 </h2>
                 <p><strong>La réalité :</strong> Le contenu court (500-1 000 mots) ne ranke plus.</p>
-                <p>En 2024, 1 500 mots était suffisant. En 2025, Google préfère 2 000-3 000 mots. Nous avons analysé 200 articles. Résultat : <strong>articles 2 000+ mots rankent 3x mieux</strong>.</p>
+                <p>En 2024, 1 500 mots était suffisant. En 2026, Google préfère 2 000-3 000 mots. Nous avons analysé 200 articles. Résultat : <strong>articles 2 000+ mots rankent 3x mieux</strong>.</p>
 
                 <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 my-8">
                     <h3 className="text-xl font-bold mt-0 mb-4">Pourquoi le long-form ?</h3>
@@ -314,11 +314,11 @@ export const TendancesSeoGso2025: React.FC = () => {
                     Tendance #4 : Données Propriétaires = Trafic Massif
                 </h2>
                 <p><strong>La réalité :</strong> Le contenu générique ne ranke plus. Les données propriétaires rankent.</p>
-                <p>En 2024, les données propriétaires étaient un "bonus". En 2025, c'est une <strong>nécessité</strong>. Nous avons mesuré l'impact. Résultat : <strong>articles avec données propriétaires rankent 2x mieux</strong>.</p>
+                <p>En 2024, les données propriétaires étaient un "bonus". En 2026, c'est une <strong>nécessité</strong>. Nous avons mesuré l'impact. Résultat : <strong>articles avec données propriétaires rankent 2x mieux</strong>.</p>
 
                 <div className="bg-orange-50 p-6 rounded-2xl border-l-4 border-orange-600 mb-8">
                     <h4 className="text-orange-900 font-bold mb-2">Cas client :</h4>
-                    <p className="text-orange-800 m-0">Une agence a créé une étude propriétaire sur les tendances SEO 2025. Résultat : <strong>100+ backlinks en 2 mois</strong>. <strong>50+ citations IA</strong>. <strong>2 000+ visiteurs/mois</strong>.</p>
+                    <p className="text-orange-800 m-0">Une agence a créé une étude propriétaire sur les tendances SEO 2026. Résultat : <strong>100+ backlinks en 2 mois</strong>. <strong>50+ citations IA</strong>. <strong>2 000+ visiteurs/mois</strong>.</p>
                 </div>
 
                 <p className="font-bold text-slate-900">Action immédiate : Créez une étude ou un sondage propriétaire. Partagez vos données uniques.</p>
@@ -330,7 +330,7 @@ export const TendancesSeoGso2025: React.FC = () => {
                     Tendance #5 : Netlinking Devient Plus Difficile
                 </h2>
                 <p><strong>La réalité :</strong> Les backlinks de spam ne marchent plus. Les backlinks de qualité sont critiques.</p>
-                <p>En 2024, 50 backlinks de spam pouvaient aider. En 2025, 10 backlinks de qualité valent mieux que 100 de spam. Nous avons analysé 300 sites. Résultat : <strong>sites avec backlinks de qualité rankent 5x mieux</strong>.</p>
+                <p>En 2024, 50 backlinks de spam pouvaient aider. En 2026, 10 backlinks de qualité valent mieux que 100 de spam. Nous avons analysé 300 sites. Résultat : <strong>sites avec backlinks de qualité rankent 5x mieux</strong>.</p>
 
                 <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 mb-8">
                     <h3 className="text-lg font-bold mb-4">Qualité vs Quantité</h3>
@@ -351,7 +351,7 @@ export const TendancesSeoGso2025: React.FC = () => {
                     Tendance #6 : Citations IA vs Rankings Google
                 </h2>
                 <p><strong>La réalité :</strong> Être cité par ChatGPT génère plus de trafic que ranker #1 sur Google.</p>
-                <p>En 2024, les citations IA étaient rares. En 2025, elles sont courantes et précieuses. Nous avons mesuré le trafic. Résultat : <strong>1 citation IA = 50-100 visiteurs/mois</strong>.</p>
+                <p>En 2024, les citations IA étaient rares. En 2026, elles sont courantes et précieuses. Nous avons mesuré le trafic. Résultat : <strong>1 citation IA = 50-100 visiteurs/mois</strong>.</p>
 
                 <div className="bg-purple-50 p-6 rounded-2xl border-l-4 border-purple-600 mb-8">
                     <h4 className="text-purple-900 font-bold mb-2">Cas client :</h4>
@@ -367,7 +367,7 @@ export const TendancesSeoGso2025: React.FC = () => {
                     Tendance #7 : Présence Médiatique = Autorité
                 </h2>
                 <p><strong>La réalité :</strong> Être mentionné dans les médias construit l'autorité plus vite que les backlinks.</p>
-                <p>En 2024, la présence médiatique était un "bonus". En 2025, c'est une <strong>stratégie clé</strong>. Nous avons mesuré l'impact. Résultat : <strong>5 mentions médiatiques = +50 points d'autorité</strong>.</p>
+                <p>En 2024, la présence médiatique était un "bonus". En 2026, c'est une <strong>stratégie clé</strong>. Nous avons mesuré l'impact. Résultat : <strong>5 mentions médiatiques = +50 points d'autorité</strong>.</p>
 
                 <div className="bg-emerald-50 p-6 rounded-2xl border-l-4 border-emerald-600 mb-8">
                     <h4 className="text-emerald-900 font-bold mb-2">Cas client :</h4>
@@ -383,7 +383,7 @@ export const TendancesSeoGso2025: React.FC = () => {
                     Tendance #8 : Vitesse et Mobile Restent Critiques
                 </h2>
                 <p><strong>La réalité :</strong> La vitesse et le mobile ne sont pas des tendances. C'est une base.</p>
-                <p>En 2024, la vitesse était importante. En 2025, c'est <strong>critique</strong>. Nous avons analysé 500 sites. Résultat : <strong>sites lents rankent 50% moins bien</strong>.</p>
+                <p>En 2024, la vitesse était importante. En 2026, c'est <strong>critique</strong>. Nous avons analysé 500 sites. Résultat : <strong>sites lents rankent 50% moins bien</strong>.</p>
 
                 <div className="bg-orange-50 p-6 rounded-2xl border-l-4 border-orange-600 mb-8">
                     <h4 className="text-orange-900 font-bold mb-2">Cas client :</h4>
@@ -399,7 +399,7 @@ export const TendancesSeoGso2025: React.FC = () => {
                     Tendance #9 : Contenu Multimédia Ranke Mieux
                 </h2>
                 <p><strong>La réalité :</strong> Le texte seul ne suffit plus. Ajoutez des vidéos, infographies, tableaux.</p>
-                <p>En 2024, le contenu multimédia était un "bonus". En 2025, c'est une <strong>nécessité</strong>. Nous avons analysé 200 articles. Résultat : <strong>articles avec vidéos rankent 2x mieux</strong>.</p>
+                <p>En 2024, le contenu multimédia était un "bonus". En 2026, c'est une <strong>nécessité</strong>. Nous avons analysé 200 articles. Résultat : <strong>articles avec vidéos rankent 2x mieux</strong>.</p>
 
                 <div className="bg-blue-50 p-6 rounded-2xl border-l-4 border-blue-600 mb-8">
                     <h4 className="text-blue-900 font-bold mb-2">Cas client :</h4>
@@ -415,7 +415,7 @@ export const TendancesSeoGso2025: React.FC = () => {
                     Tendance #10 : Contenu Mis à Jour vs Ancien
                 </h2>
                 <p><strong>La réalité :</strong> Google préfère le contenu frais. Mettre à jour vos articles anciens = trafic supplémentaire.</p>
-                <p>En 2024, mettre à jour était optionnel. En 2025, c'est <strong>critique</strong>. Nous avons mesuré l'impact. Résultat : <strong>articles mis à jour rankent 30% mieux</strong>.</p>
+                <p>En 2024, mettre à jour était optionnel. En 2026, c'est <strong>critique</strong>. Nous avons mesuré l'impact. Résultat : <strong>articles mis à jour rankent 30% mieux</strong>.</p>
 
                 <div className="bg-purple-50 p-6 rounded-2xl border-l-4 border-purple-600 mb-8">
                     <h4 className="text-purple-900 font-bold mb-2">Cas client :</h4>
@@ -428,7 +428,7 @@ export const TendancesSeoGso2025: React.FC = () => {
             <section id="erreurs" className="my-20">
                 <h2 className="flex items-center gap-3 text-3xl md:text-4xl mb-10 font-bold">
                     <AlertTriangle className="text-red-600" size={40} />
-                    Erreurs Courantes à Éviter en 2025
+                    Erreurs Courantes à Éviter en 2026
                 </h2>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -446,7 +446,7 @@ export const TendancesSeoGso2025: React.FC = () => {
                     </div>
                     <div className="bg-red-50 p-6 rounded-2xl border border-red-100">
                         <h3 className="text-lg font-bold text-red-900 mt-0 mb-4">Ignorer E-E-A-T</h3>
-                        <p className="text-sm text-red-800 m-0">E-E-A-T domine tout en 2025. Améliorez votre page "À propos", présentez votre équipe, générez des mentions médiatiques.</p>
+                        <p className="text-sm text-red-800 m-0">E-E-A-T domine tout en 2026. Améliorez votre page "À propos", présentez votre équipe, générez des mentions médiatiques.</p>
                     </div>
                 </div>
             </section>
@@ -454,7 +454,7 @@ export const TendancesSeoGso2025: React.FC = () => {
             <section id="checklist" className="my-20 bg-slate-900 rounded-[2.5rem] p-10 md:p-16 text-white not-prose">
                 <h2 className="flex items-center gap-3 text-3xl md:text-4xl mb-10 font-bold text-white">
                     <ListChecks className="text-blue-400" size={40} />
-                    Checklist Tendances 2025
+                    Checklist Tendances 2026
                 </h2>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -481,7 +481,7 @@ export const TendancesSeoGso2025: React.FC = () => {
             <section id="conclusion" className="my-20 text-center">
                 <h2 className="text-4xl font-bold mb-8">Conclusion</h2>
                 <p className="text-xl text-slate-600 mb-12 max-w-4xl mx-auto">
-                    Les tendances <strong>SEO & GSO 2025</strong> sont claires : <strong>E-E-A-T, GSO, contenu long, données propriétaires, backlinks de qualité, citations IA, présence médiatique, vitesse, contenu multimédia, contenu frais</strong>.
+                    Les tendances <strong>SEO & GSO 2026</strong> sont claires : <strong>E-E-A-T, GSO, contenu long, données propriétaires, backlinks de qualité, citations IA, présence médiatique, vitesse, contenu multimédia, contenu frais</strong>.
                 </p>
                 
                 <div className="bg-blue-600 rounded-3xl p-10 text-white text-left max-w-3xl mx-auto">

@@ -78,8 +78,8 @@ export const EeatSeoGuide: React.FC = () => {
   const articleSchema = {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "E-E-A-T SEO : Guide Complet pour Dominer Google en 2025",
-      "description": "Guide complet E-E-A-T SEO 2025 : définition, 4 piliers (expertise, expérience, autorité, fiabilité), stratégie complète, cas clients, checklist et résultats mesurables.",
+      "headline": "E-E-A-T SEO : Guide Complet pour Dominer Google en 2026",
+      "description": "Guide complet E-E-A-T SEO 2026 : définition, 4 piliers (expertise, expérience, autorité, fiabilité), stratégie complète, cas clients, checklist et résultats mesurables.",
       "image": {
           "@type": "ImageObject",
           "url": "https://www.triaina.fr/images/e-e-a-t-seo-og.jpg",
@@ -107,10 +107,10 @@ export const EeatSeoGuide: React.FC = () => {
               "height": 60
           }
       },
-      "datePublished": "2025-03-16",
-      "dateModified": "2025-03-16",
+      "datePublished": "2026-03-16",
+      "dateModified": "2026-03-16",
       "wordCount": 2200,
-      "articleBody": "En 2025, Google ne se contente plus de classer les pages web. Il classe les marques, les experts, les autorités. C'est le concept d'E-E-A-T qui domine tout. E-E-A-T signifie Expertise, Experience, Authority, Trustworthiness. C'est le critère le plus important de Google pour classer les sites."
+      "articleBody": "En 2026, Google ne se contente plus de classer les pages web. Il classe les marques, les experts, les autorités. C'est le concept d'E-E-A-T qui domine tout. E-E-A-T signifie Expertise, Experience, Authority, Trustworthiness. C'est le critère le plus important de Google pour classer les sites."
   };
 
   const faqSchema = {
@@ -220,11 +220,11 @@ export const EeatSeoGuide: React.FC = () => {
   return (
     <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
       <SEO 
-        title="E-E-A-T SEO : Guide Complet pour Dominer Google en 2025" 
-        description="Guide complet E-E-A-T SEO 2025 : définition, 4 piliers (expertise, expérience, autorité, fiabilité), stratégie, cas clients, checklist. Dominez Google et les IA génératives."
-        keywords="E-E-A-T, E-E-A-T SEO, expertise, expérience, autorité, fiabilité, Google E-E-A-T, E-E-A-T 2025, guide E-E-A-T"
+        title="E-E-A-T SEO : Guide Complet pour Dominer Google en 2026" 
+        description="Guide complet E-E-A-T SEO 2026 : définition, 4 piliers (expertise, expérience, autorité, fiabilité), stratégie, cas clients, checklist. Dominez Google et les IA génératives."
+        keywords="E-E-A-T, E-E-A-T SEO, expertise, expérience, autorité, fiabilité, Google E-E-A-T, E-E-A-T 2026, guide E-E-A-T"
         schema={[breadcrumbSchema, articleSchema, faqSchema, organizationSchema]}
-        ogTitle="E-E-A-T SEO : Guide Complet pour Dominer Google en 2025"
+        ogTitle="E-E-A-T SEO : Guide Complet pour Dominer Google en 2026"
         ogDescription="Guide complet E-E-A-T : définition, 4 piliers, stratégie, cas clients, checklist. Dominez Google et les IA génératives."
         image="https://www.triaina.fr/images/e-e-a-t-seo-og.jpg"
         type="article"
@@ -247,7 +247,7 @@ export const EeatSeoGuide: React.FC = () => {
             <span className="flex items-center gap-1"><Clock size={12} /> 5 MIN</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-8 leading-tight tracking-tight">
-            E-E-A-T SEO : <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Guide Complet pour Dominer Google en 2025</span>
+            E-E-A-T SEO : <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Guide Complet pour Dominer Google en 2026</span>
           </h1>
         </header>
 
@@ -283,9 +283,9 @@ export const EeatSeoGuide: React.FC = () => {
             
             <section id="introduction" className="mb-16">
                 <div className="bg-blue-50 border-l-4 border-blue-600 p-6 md:p-8 rounded-r-2xl text-lg text-slate-700 leading-relaxed shadow-sm">
-                    <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mt-0 mb-4">Introduction : Pourquoi E-E-A-T Change Tout en 2025</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mt-0 mb-4">Introduction : Pourquoi E-E-A-T Change Tout en 2026</h2>
                     <p className="mb-4">
-                        En 2025, Google ne se contente plus de classer les pages web. Il classe les <strong className="text-blue-900">marques</strong>, les <strong className="text-blue-900">experts</strong>, les <strong className="text-blue-900">autorités</strong>. C'est le concept d'<strong className="text-blue-900">E-E-A-T</strong> qui domine tout.
+                        En 2026, Google ne se contente plus de classer les pages web. Il classe les <strong className="text-blue-900">marques</strong>, les <strong className="text-blue-900">experts</strong>, les <strong className="text-blue-900">autorités</strong>. C'est le concept d'<strong className="text-blue-900">E-E-A-T</strong> qui domine tout.
                     </p>
                     <p className="mb-4">
                         E-E-A-T signifie <strong>Expertise, Experience, Authority, Trustworthiness</strong> (Expertise, Expérience, Autorité, Fiabilité). C'est le critère le plus important de Google pour classer les sites.

@@ -20,13 +20,14 @@ import { AgenceReferencementIAParis } from './views/AgenceReferencementIAParis';
 import { ReferencementIAGuide } from './views/blog/ReferencementIAGuide'; // Import ReferencementIAGuide
 import { CommentRankerChatGPT } from './views/blog/CommentRankerChatGPT'; // Import CommentRankerChatGPT
 import { SeoVsReferencementIA } from './views/blog/SeoVsReferencementIA'; // Import SeoVsReferencementIA
-import { Gso2025GuideComplet } from './views/blog/Gso2025GuideComplet'; // Import Gso2025GuideComplet
+import { Gso2026GuideComplet } from './views/blog/Gso2026GuideComplet'; // Import Gso2026GuideComplet
 import { AuditSeoGuide } from './views/blog/AuditSeoGuide'; // Import AuditSeoGuide
 import { EeatSeoGuide } from './views/blog/EeatSeoGuide'; // Import EeatSeoGuide
 import { BacklinksSeoGuide } from './views/blog/BacklinksSeoGuide'; // Import BacklinksSeoGuide
 import { ReferencementIAParisGuide } from './views/blog/ReferencementIAParisGuide'; // Import ReferencementIAParisGuide
-import { TendancesSeoGso2025 } from './views/blog/TendancesSeoGso2025'; // Import TendancesSeoGso2025
+import { TendancesSeoGso2026 } from './views/blog/TendancesSeoGso2026'; // Import TendancesSeoGso2026
 import { SeoTechniqueVsContenu } from './views/blog/SeoTechniqueVsContenu'; // Import SeoTechniqueVsContenu
+import { GsoDefinition2026 } from './views/blog/GsoDefinition2026'; // Import GsoDefinition2026
 import { SEO } from './components/SEO';
 import { NAV_LINKS, SOCIAL_LINKS, PAGE_TO_URL, ROUTES } from './constants';
 import { Logo } from './components/Logo';
@@ -192,8 +193,8 @@ const App: React.FC = () => {
         return <CommentRankerChatGPT />;
       case 'seo-vs-referencement-ia':
         return <SeoVsReferencementIA />;
-      case 'gso-2025-guide-complet':
-        return <Gso2025GuideComplet />;
+      case 'gso-2026-guide-complet':
+        return <Gso2026GuideComplet />;
       case 'audit-seo-guide':
         return <AuditSeoGuide />;
       case 'eeat-seo-guide':
@@ -202,10 +203,12 @@ const App: React.FC = () => {
         return <BacklinksSeoGuide />;
       case 'referencement-ia-paris-guide-local':
         return <ReferencementIAParisGuide />;
-      case 'tendances-seo-gso-2025':
-        return <TendancesSeoGso2025 />;
+      case 'tendances-seo-gso-2026':
+        return <TendancesSeoGso2026 />;
       case 'seo-technique-vs-contenu':
         return <SeoTechniqueVsContenu />;
+      case 'gso-definition-2026':
+        return <GsoDefinition2026 />;
       case '404':
         return <NotFound onNavigate={handleNavigation} />;
       default:

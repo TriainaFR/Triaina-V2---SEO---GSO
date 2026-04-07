@@ -48,8 +48,8 @@ export const ExpertiseMedia: React.FC<ExpertiseMediaProps> = ({ onNavigate }) =>
           "@type": "Organization",
           "@id": "https://www.triaina.fr/#organization"
         },
-        "datePublished": "2025-03-14",
-        "dateModified": "2025-03-14",
+        "datePublished": "2026-03-14",
+        "dateModified": "2026-03-14",
         "wordCount": 2200,
         "mainEntityOfPage": {
           "@type": "WebPage",
@@ -74,7 +74,7 @@ export const ExpertiseMedia: React.FC<ExpertiseMediaProps> = ({ onNavigate }) =>
           "offerCount": 3,
           "offers": [
             { "@type": "Offer", "name": "Audit Média", "description": "Audit SEO, GSO et stratégie médiatique complet", "price": "3000", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://www.triaina.fr/expertise-media#audit-media" },
-            { "@type": "Offer", "name": "Stratégie Média (3 mois)", "description": "Stratégie + publication d'articles + netlinking", "price": "12000", "priceCurrency": "EUR", "priceValidUntil": "2025-12-31", "availability": "https://schema.org/InStock", "url": "https://www.triaina.fr/expertise-media#strategie-media" },
+            { "@type": "Offer", "name": "Stratégie Média (3 mois)", "description": "Stratégie + publication d'articles + netlinking", "price": "12000", "priceCurrency": "EUR", "priceValidUntil": "2026-12-31", "availability": "https://schema.org/InStock", "url": "https://www.triaina.fr/expertise-media#strategie-media" },
             { "@type": "Offer", "name": "Accompagnement Média (6-12 mois)", "description": "Accompagnement long terme avec netlinking intensif", "price": "36000", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://www.triaina.fr/expertise-media#accompagnement-media" }
           ]
         },
@@ -174,7 +174,7 @@ export const ExpertiseMedia: React.FC<ExpertiseMediaProps> = ({ onNavigate }) =>
         </h2>
         <div className="text-slate-600 text-base md:text-lg leading-relaxed space-y-6 font-light break-words">
           <p>
-            En 2025, le <strong>SEO</strong> et le <strong>GSO</strong> ne sont plus seulement une question de technique et de contenu. C'est une question d'<strong>autorité</strong>, de <strong>confiance</strong> et de <strong>présence médiatique</strong>.
+            En 2026, le <strong>SEO</strong> et le <strong>GSO</strong> ne sont plus seulement une question de technique et de contenu. C'est une question d'<strong>autorité</strong>, de <strong>confiance</strong> et de <strong>présence médiatique</strong>.
           </p>
           <p>
             Google et les <strong>IA génératives</strong> (ChatGPT, Gemini, Perplexity) favorisent les sites avec une forte autorité de marque. Mais comment construire cette autorité rapidement ?

@@ -32,7 +32,7 @@ async function generateImage() {
 
     if (imageBase64) {
       const buffer = Buffer.from(imageBase64, 'base64');
-      const filePath = path.join(process.cwd(), 'public', 'images', 'gso-2025.png');
+      const filePath = path.join(process.cwd(), 'public', 'images', 'gso-2026.png');
       fs.writeFileSync(filePath, buffer);
       console.log('Image saved successfully to', filePath);
     } else {

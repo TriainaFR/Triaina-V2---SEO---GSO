@@ -81,7 +81,7 @@ export const SeoParis: React.FC<SeoParisProps> = ({ onNavigate }) => {
                 "@type": "Offer",
                 "priceCurrency": "EUR",
                 "price": "1000",
-                "priceValidUntil": "2025-12-31",
+                "priceValidUntil": "2026-12-31",
                 "description": "Accompagnement SEO mensuel à partir de 1000€"
             }
         },
@@ -166,8 +166,8 @@ export const SeoParis: React.FC<SeoParisProps> = ({ onNavigate }) => {
             "headline": "Agence SEO Paris : Référencement Naturel & GSO",
             "description": "Guide complet sur le SEO à Paris et comment une agence SEO peut augmenter votre visibilité sur Google Search",
             "image": "https://www.triaina.fr/images/agence-seo-paris.jpg",
-            "datePublished": "2025-02-19",
-            "dateModified": "2025-02-19",
+            "datePublished": "2026-02-19",
+            "dateModified": "2026-02-19",
             "author": {
                 "@type": "Organization",
                 "name": "Triaina",

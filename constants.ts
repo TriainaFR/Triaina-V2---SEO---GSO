@@ -20,15 +20,16 @@ export const PAGE_TO_URL: Record<string, string> = {
   'agence-referencement-ia': '/agence-referencement-ia',
   'agence-referencement-ia-paris': '/agence-referencement-ia-paris',
   'referencement-ia-guide': '/blog/referencement-ia-guide-complet',
-  'comment-ranker-chatgpt': '/blog/ranker-chatgpt-2025',
+  'comment-ranker-chatgpt': '/blog/ranker-chatgpt-2026',
   'seo-vs-referencement-ia': '/blog/seo-vs-referencement-ia',
-  'gso-2025-guide-complet': '/blog/gso-2025-guide-complet',
+  'gso-2026-guide-complet': '/blog/gso-2026-guide-complet',
   'audit-seo-guide': '/blog/audit-seo-guide-complet',
   'eeat-seo-guide': '/blog/eeat-seo-guide-complet',
   'backlinks-seo-guide': '/blog/backlinks-seo-guide',
   'referencement-ia-paris-guide-local': '/blog/referencement-ia-paris-guide-local',
-  'tendances-seo-gso-2025': '/blog/tendances-seo-gso-2025',
-  'seo-technique-vs-contenu': '/blog/seo-technique-vs-seo-contenu'
+  'tendances-seo-gso-2026': '/blog/tendances-seo-gso-2026',
+  'seo-technique-vs-contenu': '/blog/seo-technique-vs-seo-contenu',
+  'gso-definition-2026': '/blog/gso-definition-2026'
 };
 
 export const ROUTES: Record<string, Page> = {
@@ -53,15 +54,16 @@ export const ROUTES: Record<string, Page> = {
   '/agence-referencement-ia': 'agence-referencement-ia',
   '/agence-referencement-ia-paris': 'agence-referencement-ia-paris',
   '/blog/referencement-ia-guide-complet': 'referencement-ia-guide',
-  '/blog/ranker-chatgpt-2025': 'comment-ranker-chatgpt',
+  '/blog/ranker-chatgpt-2026': 'comment-ranker-chatgpt',
   '/blog/seo-vs-referencement-ia': 'seo-vs-referencement-ia',
-  '/blog/gso-2025-guide-complet': 'gso-2025-guide-complet',
+  '/blog/gso-2026-guide-complet': 'gso-2026-guide-complet',
   '/blog/audit-seo-guide-complet': 'audit-seo-guide',
   '/blog/eeat-seo-guide-complet': 'eeat-seo-guide',
   '/blog/backlinks-seo-guide': 'backlinks-seo-guide',
   '/blog/referencement-ia-paris-guide-local': 'referencement-ia-paris-guide-local',
-  '/blog/tendances-seo-gso-2025': 'tendances-seo-gso-2025',
-  '/blog/seo-technique-vs-seo-contenu': 'seo-technique-vs-contenu'
+  '/blog/tendances-seo-gso-2026': 'tendances-seo-gso-2026',
+  '/blog/seo-technique-vs-seo-contenu': 'seo-technique-vs-contenu',
+  '/blog/gso-definition-2026': 'gso-definition-2026'
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -302,8 +304,8 @@ export const BLOG_DATA: BlogItem[] = [
     source: 'Guide Comparatif',
     logo: '',
     date: '02 MARS 2026',
-    title: 'SEO vs Référencement IA : Quelles différences en 2025 ?',
-    excerpt: 'Guide complet sur les différences entre SEO et Référencement IA en 2025. Comprenez les avantages et comment combiner les deux.',
+    title: 'SEO vs Référencement IA : Quelles différences en 2026 ?',
+    excerpt: 'Guide complet sur les différences entre SEO et Référencement IA en 2026. Comprenez les avantages et comment combiner les deux.',
     url: '/blog/seo-vs-referencement-ia',
     image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
@@ -313,9 +315,9 @@ export const BLOG_DATA: BlogItem[] = [
     source: 'Guide Stratégique',
     logo: '',
     date: '02 MARS 2026',
-    title: 'Comment ranker sur ChatGPT en 2025 ? Guide complet',
-    excerpt: 'Guide complet pour ranker sur ChatGPT en 2025 : critères de ranking, stratégie de contenu, netlinking et outils.',
-    url: '/blog/ranker-chatgpt-2025',
+    title: 'Comment ranker sur ChatGPT en 2026 ? Guide complet',
+    excerpt: 'Guide complet pour ranker sur ChatGPT en 2026 : critères de ranking, stratégie de contenu, netlinking et outils.',
+    url: '/blog/ranker-chatgpt-2026',
     image: 'https://images.unsplash.com/photo-1676299081847-824916de030a?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
   },
@@ -324,20 +326,20 @@ export const BLOG_DATA: BlogItem[] = [
     source: 'Guide Triaina',
     logo: '',
     date: '02 MARS 2026',
-    title: 'Référencement IA : Guide Complet 2025 (ChatGPT, Gemini, Perplexity)',
-    excerpt: 'Le référencement IA est devenu incontournable en 2025. Découvrez comment optimiser votre visibilité sur ChatGPT, Gemini et Perplexity dans ce guide complet.',
+    title: 'Référencement IA : Guide Complet 2026 (ChatGPT, Gemini, Perplexity)',
+    excerpt: 'Le référencement IA est devenu incontournable en 2026. Découvrez comment optimiser votre visibilité sur ChatGPT, Gemini et Perplexity dans ce guide complet.',
     url: '/blog/referencement-ia-guide-complet',
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
   },
   {
-    id: 'gso-2025-guide-complet',
+    id: 'gso-2026-guide-complet',
     source: 'Guide GSO',
     logo: '',
     date: '09 MARS 2026',
-    title: 'GSO 2025 : Guide Complet de Generative Search Optimization',
-    excerpt: 'Découvrez ce qu\'est le GSO (Generative Search Optimization) et comment l\'implémenter pour dominer à la fois Google et les IA génératives en 2025.',
-    url: '/blog/gso-2025-guide-complet',
+    title: 'GSO 2026 : Guide Complet de Generative Search Optimization',
+    excerpt: 'Découvrez ce qu\'est le GSO (Generative Search Optimization) et comment l\'implémenter pour dominer à la fois Google et les IA génératives en 2026.',
+    url: '/blog/gso-2026-guide-complet',
     image: 'https://picsum.photos/seed/generative-ai-search/1200/675',
     tag: 'GUIDE'
   },
@@ -347,7 +349,7 @@ export const BLOG_DATA: BlogItem[] = [
     logo: '',
     date: '09 MARS 2026',
     title: 'Audit SEO : Guide Complet Étape par Étape',
-    excerpt: 'Un audit SEO est l\'analyse complète et approfondie de votre site web. Découvrez comment réaliser un audit SEO en 2025.',
+    excerpt: 'Un audit SEO est l\'analyse complète et approfondie de votre site web. Découvrez comment réaliser un audit SEO en 2026.',
     url: '/blog/audit-seo-guide-complet',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
@@ -357,8 +359,8 @@ export const BLOG_DATA: BlogItem[] = [
     source: 'Guide SEO',
     logo: '',
     date: '16 MARS 2026',
-    title: 'E-E-A-T SEO : Guide Complet pour Dominer Google en 2025',
-    excerpt: 'En 2025, Google classe les marques, les experts, les autorités. Découvrez comment construire et optimiser votre E-E-A-T pour dominer les résultats de recherche.',
+    title: 'E-E-A-T SEO : Guide Complet pour Dominer Google en 2026',
+    excerpt: 'En 2026, Google classe les marques, les experts, les autorités. Découvrez comment construire et optimiser votre E-E-A-T pour dominer les résultats de recherche.',
     url: '/blog/eeat-seo-guide-complet',
     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
@@ -368,8 +370,8 @@ export const BLOG_DATA: BlogItem[] = [
     source: 'Guide SEO',
     logo: '',
     date: '16 MARS 2026',
-    title: 'Backlinks SEO : Guide Complet pour Dominer Google en 2025',
-    excerpt: 'En 2025, les backlinks restent l\'un des facteurs de classement les plus importants de Google. Découvrez comment générer des liens de qualité sans risque.',
+    title: 'Backlinks SEO : Guide Complet pour Dominer Google en 2026',
+    excerpt: 'En 2026, les backlinks restent l\'un des facteurs de classement les plus importants de Google. Découvrez comment générer des liens de qualité sans risque.',
     url: '/blog/backlinks-seo-guide',
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
@@ -379,33 +381,44 @@ export const BLOG_DATA: BlogItem[] = [
     source: 'Guide Local',
     logo: '',
     date: '16 MARS 2026',
-    title: 'Référencement IA Paris : Guide Local pour Dominer ChatGPT & Gemini en 2025',
-    excerpt: 'Guide référencement IA Paris 2025 : GSO pour ChatGPT, Gemini, Perplexity. Stratégie locale, cas clients, données propriétaires. +200-300% de citations IA.',
+    title: 'Référencement IA Paris : Guide Local pour Dominer ChatGPT & Gemini en 2026',
+    excerpt: 'Guide référencement IA Paris 2026 : GSO pour ChatGPT, Gemini, Perplexity. Stratégie locale, cas clients, données propriétaires. +200-300% de citations IA.',
     url: '/blog/referencement-ia-paris-guide-local',
     image: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
   },
   {
-    id: 'tendances-seo-gso-2025',
+    id: 'tendances-seo-gso-2026',
     source: 'Guide Stratégique',
     logo: '',
-    date: '18 MARS 2025',
-    title: 'Tendances SEO & GSO 2025 : Guide Complet des Changements qui Dominent',
-    excerpt: 'Découvrez les 10 tendances SEO & GSO qui dominent le référencement en 2025 : E-E-A-T, citations IA, contenu long-form et données propriétaires.',
-    url: '/blog/tendances-seo-gso-2025',
-    image: 'https://picsum.photos/seed/seo-trends-2025/1200/675',
+    date: '18 MARS 2026',
+    title: 'Tendances SEO & GSO 2026 : Guide Complet des Changements qui Dominent',
+    excerpt: 'Découvrez les 10 tendances SEO & GSO qui dominent le référencement en 2026 : E-E-A-T, citations IA, contenu long-form et données propriétaires.',
+    url: '/blog/tendances-seo-gso-2026',
+    image: 'https://picsum.photos/seed/seo-trends-2026/1200/675',
     tag: 'GUIDE'
   },
   {
     id: 'seo-technique-vs-contenu',
     source: 'Triaina Insights',
     logo: '',
-    date: '17 MARS 2025',
-    title: 'SEO Technique vs SEO Contenu : Lequel Choisir en 2025 ?',
+    date: '17 MARS 2026',
+    title: 'SEO Technique vs SEO Contenu : Lequel Choisir en 2026 ?',
     excerpt: 'Analyse comparative complète : SEO technique vs SEO contenu. Impact réel, 3 cas clients, stratégie complète. Découvrez comment combiner les deux pour +250% de trafic.',
     url: '/blog/seo-technique-vs-seo-contenu',
     image: 'https://picsum.photos/seed/seo-tech-content/1200/675',
     tag: 'ANALYSE'
+  },
+  {
+    id: 'gso-definition-2026',
+    source: 'Guide GSO',
+    logo: '',
+    date: '18 MARS 2026',
+    title: 'GSO Définition 2026 : Guide Complet de la Generative Search Optimization',
+    excerpt: 'GSO définition 2026 : qu\'est-ce que la Generative Search Optimization ? Guide complet avec 3 cas clients réels, données propriétaires, 4 piliers, checklist et actions immédiates.',
+    url: '/blog/gso-definition-2026',
+    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
   }
 ];
 
@@ -455,9 +468,9 @@ export const HISTORY_DATA: HistoryItem[] = [
     description: "En novembre 2022, OpenAI dévoile ChatGPT, rapidement suivi par d'autres modèles de langage (Gemini, Perplexity, Claude). Les usages évoluent, les recherches se déplacent, et Google commence à perdre du terrain en termes de volume de requêtes quotidiennes. Face à cette transformation du référencement naturel, nos associés choisissent, dès 2024, de prendre le virage de l'IA appliquée au SEO, en s'appuyant sur la puissance éditoriale et technologique de leur média. C'est la naissance du GSO (Generative Search Optimization) : l'évolution naturelle du SEO traditionnel."
   },
   {
-    year: '2025',
+    year: '2026',
     title: 'La Genèse de Triaina - Agence SEO & GSO',
-    description: "En début 2025, notre association voit le jour et nous créons Triaina, la première agence spécialisée en SEO & GSO, intégrant une division média. Triaina est née de la conviction que le référencement naturel et l'optimisation pour les IA génératives doivent aller de pair."
+    description: "En début 2026, notre association voit le jour et nous créons Triaina, la première agence spécialisée en SEO & GSO, intégrant une division média. Triaina est née de la conviction que le référencement naturel et l'optimisation pour les IA génératives doivent aller de pair."
   }
 ];
 

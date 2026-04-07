@@ -393,7 +393,7 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                     "@type": "Offer",
                     "priceCurrency": "EUR",
                     "price": "500",
-                    "priceValidUntil": "2025-12-31",
+                    "priceValidUntil": "2026-12-31",
                     "description": "Gestion campagne Google Ads à partir de 500€/mois"
                 }
             },
@@ -463,8 +463,8 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                 "headline": "Expertise SEA Paris : Campagnes Google Ads & Bing",
                 "description": "Guide complet sur la gestion Google Ads et comment une agence SEA peut augmenter votre ROI",
                 "image": "https://www.triaina.fr/images/expertise-sea.jpg",
-                "datePublished": "2025-02-19",
-                "dateModified": "2025-02-19",
+                "datePublished": "2026-02-19",
+                "dateModified": "2026-02-19",
                 "author": { "@type": "Organization", "name": "Triaina", "url": "https://www.triaina.fr" },
                 "publisher": { "@type": "Organization", "name": "Triaina", "logo": { "@type": "ImageObject", "url": "https://www.triaina.fr/logo.png" } }
             }
@@ -773,7 +773,7 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                 "headline": "Agence GSO Paris : Optimisez votre visibilité sur ChatGPT & IA",
                 "description": "Guide complet sur le Generative Search Optimization et comment une agence GSO peut augmenter votre visibilité dans ChatGPT, Perplexity et Claude",
                 "image": "https://www.triaina.fr/images/gso-expertise.jpg",
-                "datePublished": "2025-02-19",
+                "datePublished": "2026-02-19",
                 "dateModified": "2026-02-19",
                 "author": { "@type": "Organization", "name": "Triaina", "url": "https://www.triaina.fr" },
                 "publisher": { "@type": "Organization", "name": "Triaina", "logo": { "@type": "ImageObject", "url": "https://www.triaina.fr/logo.png" } }

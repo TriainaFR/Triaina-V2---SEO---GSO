@@ -8,7 +8,7 @@ import { motion } from 'motion/react';
 export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate }) => {
 
   return (
-    <div className="relative min-h-screen flex flex-col overflow-x-hidden font-sans text-slate-900">
+    <div className="relative flex flex-col font-sans text-slate-900">
       
       {/* EXACT SEO/GSO HTML INJECTION */}
       {useEffect(() => {
@@ -225,7 +225,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
       }, [])}
 
       {/* ════════════ HERO HEADER ════════════ */}
-      <header className="min-h-screen flex flex-col justify-center relative z-10 pt-32 pb-12 px-4 md:pt-20">
+      <header className="min-h-[100svh] flex flex-col justify-center relative z-10 pt-32 pb-12 px-4 md:pt-20">
           <div className="max-w-7xl mx-auto w-full">
             <h1 className="font-display font-black text-slate-900 leading-[1.1] tracking-tighter mb-8 animate-fade-in-up w-full max-w-5xl" style={{ animationDelay: '100ms' }}>
                 <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-700">

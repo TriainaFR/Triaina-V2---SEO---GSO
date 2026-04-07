@@ -207,7 +207,7 @@ export const AuditSeoGuide: React.FC = () => {
                         Mais qu'est-ce qu'un audit SEO exactement ? Comment le réaliser ? Quels outils utiliser ? Et surtout, comment interpréter les résultats pour améliorer votre visibilité ?
                     </p>
                     <p className="font-medium text-blue-800 m-0">
-                        Ce guide complet vous explique tout ce que vous devez savoir sur l'audit SEO en 2025.
+                        Ce guide complet vous explique tout ce que vous devez savoir sur l'audit SEO en 2026.
                     </p>
                 </div>
             </section>

@@ -2,7 +2,7 @@ import React from 'react';
 import { SEO } from '../../components/SEO';
 import { Calendar, Clock, ArrowLeft, Share2, Linkedin, Twitter, Facebook, CheckCircle2, Bot, Search, Zap, BarChart3, Globe, Cpu, Target, Trophy, TrendingUp, Link as LinkIcon, FileText, RefreshCw, Layers, Scale } from 'lucide-react';
 
-export const Gso2025GuideComplet: React.FC = () => {
+export const Gso2026GuideComplet: React.FC = () => {
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -22,8 +22,8 @@ export const Gso2025GuideComplet: React.FC = () => {
         {
             "@type": "ListItem",
             "position": 3,
-            "name": "GSO 2025 : Guide Complet de Generative Search Optimization",
-            "item": "https://www.triaina.fr/blog/gso-2025-guide-complet"
+            "name": "GSO 2026 : Guide Complet de Generative Search Optimization",
+            "item": "https://www.triaina.fr/blog/gso-2026-guide-complet"
         }
     ]
   };
@@ -31,8 +31,8 @@ export const Gso2025GuideComplet: React.FC = () => {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "GSO 2025 : Guide Complet de Generative Search Optimization",
-    "description": "Guide complet GSO 2025 : définition, fonctionnement, critères de ranking, stratégie, outils, cas clients et FAQ pour dominer Google et les IA génératives.",
+    "headline": "GSO 2026 : Guide Complet de Generative Search Optimization",
+    "description": "Guide complet GSO 2026 : définition, fonctionnement, critères de ranking, stratégie, outils, cas clients et FAQ pour dominer Google et les IA génératives.",
     "image": "https://picsum.photos/seed/generative-ai-search/1200/675",
     "author": {
         "@type": "Organization",
@@ -49,7 +49,7 @@ export const Gso2025GuideComplet: React.FC = () => {
     "datePublished": "2026-03-09",
     "dateModified": "2026-03-09",
     "wordCount": 2200,
-    "articleBody": "En 2025, le paysage du marketing digital change radicalement. Google n'est plus le seul moteur de recherche..."
+    "articleBody": "En 2026, le paysage du marketing digital change radicalement. Google n'est plus le seul moteur de recherche..."
   };
 
   const faqSchema = {
@@ -134,18 +134,18 @@ export const Gso2025GuideComplet: React.FC = () => {
   return (
     <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
       <SEO 
-        title="GSO 2025 : Guide Complet de Generative Search Optimization" 
-        description="Guide complet GSO 2025 : définition, fonctionnement, critères de ranking, stratégie, outils, cas clients et FAQ. Dominez Google et les IA génératives."
-        keywords="GSO, Generative Search Optimization, optimisation IA, GSO 2025, guide GSO"
+        title="GSO 2026 : Guide Complet de Generative Search Optimization" 
+        description="Guide complet GSO 2026 : définition, fonctionnement, critères de ranking, stratégie, outils, cas clients et FAQ. Dominez Google et les IA génératives."
+        keywords="GSO, Generative Search Optimization, optimisation IA, GSO 2026, guide GSO"
         schema={[breadcrumbSchema, articleSchema, faqSchema]}
-        ogTitle="GSO 2025 : Guide Complet de Generative Search Optimization"
-        ogDescription="Guide complet GSO 2025 : définition, fonctionnement, critères, stratégie, outils, cas clients et FAQ."
+        ogTitle="GSO 2026 : Guide Complet de Generative Search Optimization"
+        ogDescription="Guide complet GSO 2026 : définition, fonctionnement, critères, stratégie, outils, cas clients et FAQ."
         image="https://picsum.photos/seed/generative-ai-search/1200/675"
         type="article"
         twitterCard="summary_large_image"
-        twitterTitle="GSO 2025 : Guide Complet de Generative Search Optimization"
-        twitterDescription="Guide complet GSO 2025 : définition, fonctionnement, critères, stratégie, outils et cas clients."
-        canonicalUrl="https://www.triaina.fr/blog/gso-2025-guide-complet"
+        twitterTitle="GSO 2026 : Guide Complet de Generative Search Optimization"
+        twitterDescription="Guide complet GSO 2026 : définition, fonctionnement, critères, stratégie, outils et cas clients."
+        canonicalUrl="https://www.triaina.fr/blog/gso-2026-guide-complet"
       />
 
       <div className="max-w-7xl mx-auto">
@@ -163,7 +163,7 @@ export const Gso2025GuideComplet: React.FC = () => {
             <span className="flex items-center gap-1"><Clock size={12} /> 15 MIN</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-display font-bold text-slate-900 mb-8 leading-tight tracking-tight">
-            GSO 2025 : <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Guide Complet de Generative Search Optimization</span>
+            GSO 2026 : <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Guide Complet de Generative Search Optimization</span>
           </h1>
         </header>
 
@@ -171,7 +171,7 @@ export const Gso2025GuideComplet: React.FC = () => {
         <div className="mb-16 rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-900/10 aspect-video relative group">
           <img 
             src="https://picsum.photos/seed/generative-ai-search/1200/675" 
-            alt="GSO 2025" 
+            alt="GSO 2026" 
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/20 to-transparent"></div>
@@ -193,7 +193,7 @@ export const Gso2025GuideComplet: React.FC = () => {
                         <a href="#strategie" className="hover:text-blue-600 transition-colors">Stratégie GSO complète</a>
                         <a href="#outils" className="hover:text-blue-600 transition-colors">Outils GSO essentiels</a>
                         <a href="#cas-clients" className="hover:text-blue-600 transition-colors">Cas clients GSO</a>
-                        <a href="#faq" className="hover:text-blue-600 transition-colors">FAQ : GSO 2025</a>
+                        <a href="#faq" className="hover:text-blue-600 transition-colors">FAQ : GSO 2026</a>
                     </nav>
                 </div>
             </aside>
@@ -202,9 +202,9 @@ export const Gso2025GuideComplet: React.FC = () => {
             <article className="lg:col-span-9 prose prose-lg xl:prose-xl prose-slate max-w-none font-sans prose-headings:font-display prose-headings:font-bold prose-a:text-blue-600">
             
             <section id="introduction" className="text-xl text-slate-600 leading-relaxed">
-                <p>En 2025, le paysage du marketing digital change radicalement. Google n'est plus le seul moteur de recherche. Les IA génératives comme ChatGPT, Gemini et Perplexity deviennent des sources d'information majeures pour des millions d'utilisateurs.</p>
+                <p>En 2026, le paysage du marketing digital change radicalement. Google n'est plus le seul moteur de recherche. Les IA génératives comme ChatGPT, Gemini et Perplexity deviennent des sources d'information majeures pour des millions d'utilisateurs.</p>
                 <p>Face à cette transformation, une nouvelle approche émerge : le <strong>GSO</strong> (Generative Search Optimization). Mais qu'est-ce que le GSO exactement ? Comment fonctionne-t-il ? Et surtout, comment l'implémenter pour dominer à la fois Google et les IA génératives ?</p>
-                <p>Ce guide complet vous explique tout ce que vous devez savoir sur le GSO en 2025.</p>
+                <p>Ce guide complet vous explique tout ce que vous devez savoir sur le GSO en 2026.</p>
             </section>
 
             <div className="my-12 h-px bg-slate-200 w-full"></div>
@@ -229,7 +229,7 @@ export const Gso2025GuideComplet: React.FC = () => {
             </section>
 
             <section id="pourquoi-le-gso" className="my-20">
-                <h2 className="text-3xl md:text-4xl mb-10 font-bold">Pourquoi le GSO est important en 2025</h2>
+                <h2 className="text-3xl md:text-4xl mb-10 font-bold">Pourquoi le GSO est important en 2026</h2>
                 <p className="text-lg mb-8"><strong>Les chiffres parlent d'eux-mêmes</strong> :</p>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 not-prose mb-8">
                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-center">
@@ -249,7 +249,7 @@ export const Gso2025GuideComplet: React.FC = () => {
                         <div className="text-sm text-slate-600 font-medium">Des entreprises investissent en GSO</div>
                     </div>
                 </div>
-                <p className="text-xl font-medium text-slate-800 text-center">Le GSO n'est plus optionnel. C'est une nécessité stratégique pour rester visible en 2025.</p>
+                <p className="text-xl font-medium text-slate-800 text-center">Le GSO n'est plus optionnel. C'est une nécessité stratégique pour rester visible en 2026.</p>
             </section>
 
             <section id="comment-ca-marche" className="my-16">
@@ -694,7 +694,7 @@ export const Gso2025GuideComplet: React.FC = () => {
             </section>
 
             <section id="faq" className="my-16">
-                <h2 className="text-3xl mb-8">FAQ : GSO 2025</h2>
+                <h2 className="text-3xl mb-8">FAQ : GSO 2026</h2>
                 <div className="space-y-4 not-prose">
                     {[
                         { q: "Quelle est la différence entre GSO et SEO ?", a: "Le SEO optimise votre site pour Google. Le GSO optimise votre site pour Google ET les IA génératives. GSO = SEO + optimisation IA." },
@@ -725,7 +725,7 @@ export const Gso2025GuideComplet: React.FC = () => {
                 <div className="relative z-10">
                     <h2 className="text-white text-4xl md:text-5xl mb-8 font-display font-bold tracking-tight">Conclusion</h2>
                     <p className="text-blue-100 text-xl md:text-2xl mb-12 max-w-4xl mx-auto font-light leading-relaxed">
-                        Le <strong>GSO</strong> est la stratégie incontournable de 2025. Elle combine SEO traditionnel et optimisation IA en une seule approche cohérente.
+                        Le <strong>GSO</strong> est la stratégie incontournable de 2026. Elle combine SEO traditionnel et optimisation IA en une seule approche cohérente.
                     </p>
                     <p className="text-white text-lg mb-6 max-w-7xl mx-auto text-left">Les résultats sont clairs :</p>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-7xl mx-auto mb-12">
