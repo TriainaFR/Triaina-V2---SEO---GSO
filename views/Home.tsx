@@ -225,7 +225,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
       }, [])}
 
       {/* ════════════ HERO HEADER ════════════ */}
-      <header className="min-h-[100svh] flex flex-col justify-center relative z-10 pt-32 pb-12 px-4 md:pt-20">
+      <header className="min-h-[85vh] flex flex-col justify-center relative z-10 pt-32 pb-12 px-4 md:pt-20">
           <div className="max-w-7xl mx-auto w-full">
             <h1 className="font-display font-black text-slate-900 leading-[1.1] tracking-tighter mb-8 animate-fade-in-up w-full max-w-5xl" style={{ animationDelay: '100ms' }}>
                 <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-700">
@@ -279,7 +279,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="py-24 bg-transparent px-6 relative overflow-hidden"
+            className="py-24 bg-transparent px-6 relative overflow-hidden my-12"
         >
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="text-center mb-16">
@@ -289,47 +289,47 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
                     {/* Expertise SEO - Large card */}
-                    <div className="md:col-span-8 bg-slate-900 p-8 md:p-12 rounded-3xl text-white relative overflow-hidden group hover:shadow-2xl hover:shadow-blue-900/20 transition-all duration-500">
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl group-hover:bg-blue-500/30 transition-colors duration-500"></div>
+                    <div className="md:col-span-8 bg-white/60 backdrop-blur-md border border-slate-200 p-8 md:p-12 rounded-3xl text-slate-900 relative overflow-hidden group hover:bg-white/80 hover:border-slate-300 transition-all duration-500">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-100/50 rounded-full blur-3xl group-hover:bg-blue-200/50 transition-colors duration-500"></div>
                         <div className="relative z-10 h-full flex flex-col justify-between">
                             <div>
-                                <div className="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center text-blue-400 mb-8 border border-blue-500/30 group-hover:scale-110 transition-transform duration-500">
+                                <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-8 border border-blue-200 group-hover:scale-110 transition-transform duration-500">
                                     <Search size={28} />
                                 </div>
                                 <h3 className="text-3xl font-display font-bold mb-4">Expertise SEO : Dominez Google Search</h3>
-                                <p className="text-slate-300 mb-6 leading-relaxed text-lg max-w-2xl">
+                                <p className="text-slate-600 mb-6 leading-relaxed text-lg max-w-2xl">
                                     Le SEO (Search Engine Optimization) est la discipline qui vous permet de ranker naturellement sur Google. Nous créons une stratégie SEO complète pour votre entreprise : audit SEO détaillé, optimisation on-page, création de contenu optimisé, netlinking stratégique et suivi mensuel.
                                 </p>
-                                <p className="text-slate-400 mb-8 leading-relaxed max-w-2xl">
+                                <p className="text-slate-500 mb-8 leading-relaxed max-w-2xl">
                                     Nos clients voient en moyenne une augmentation de 200-400% de leur trafic organique. Découvrez comment notre consultant SEO peut transformer votre visibilité en ligne.
                                 </p>
                             </div>
-                            <a href={PAGE_TO_URL['expertise-seo']} onClick={(e) => {e.preventDefault(); onNavigate('expertise-seo')}} className="inline-flex items-center gap-2 text-white font-bold hover:text-blue-400 transition-colors w-fit group/link">
+                            <a href={PAGE_TO_URL['expertise-seo']} onClick={(e) => {e.preventDefault(); onNavigate('expertise-seo')}} className="inline-flex items-center gap-2 text-blue-600 font-bold hover:text-blue-700 transition-colors w-fit group/link mt-4">
                                 Explorez notre Expertise SEO <ArrowRight size={18} className="group-hover/link:translate-x-1 transition-transform" />
                             </a>
                         </div>
                     </div>
 
                     {/* Expertise GSO - Tall card */}
-                    <div className="md:col-span-4 bg-gradient-to-br from-purple-600 to-indigo-700 p-8 md:p-10 rounded-3xl text-white relative overflow-hidden group hover:shadow-2xl hover:shadow-purple-900/20 transition-all duration-500">
-                        <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+                    <div className="md:col-span-4 bg-gradient-to-br from-purple-50/80 to-indigo-50/80 backdrop-blur-md border border-purple-200 p-8 md:p-10 rounded-3xl text-slate-900 relative overflow-hidden group hover:border-purple-300 transition-all duration-500">
+                        <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-purple-200/50 rounded-full blur-3xl group-hover:bg-purple-300/50 transition-colors duration-500"></div>
                         <div className="relative z-10 h-full flex flex-col">
-                            <div className="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center text-white mb-8 backdrop-blur-sm border border-white/20 group-hover:rotate-12 transition-transform duration-500">
+                            <div className="w-14 h-14 bg-white/50 rounded-xl flex items-center justify-center text-purple-600 mb-8 backdrop-blur-sm border border-purple-200 group-hover:rotate-12 transition-transform duration-500">
                                 <Cpu size={28} />
                             </div>
                             <h3 className="text-2xl font-display font-bold mb-4">Expertise GSO : Dominez les Moteurs IA</h3>
-                            <p className="text-purple-100 mb-6 leading-relaxed flex-grow">
+                            <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
                                 Le GSO (Generative Search Optimization) est la nouvelle frontière du référencement. Avec l'émergence des moteurs de recherche IA, votre contenu doit être visible dans les réponses générées par ChatGPT, Perplexity, Claude et Google AI Overview.
                             </p>
-                            <a href={PAGE_TO_URL['expertise-gso']} onClick={(e) => {e.preventDefault(); onNavigate('expertise-gso')}} className="inline-flex items-center gap-2 text-white font-bold hover:text-purple-200 transition-colors w-fit group/link mt-auto">
+                            <a href={PAGE_TO_URL['expertise-gso']} onClick={(e) => {e.preventDefault(); onNavigate('expertise-gso')}} className="inline-flex items-center gap-2 text-purple-700 font-bold hover:text-purple-800 transition-colors w-fit group/link mt-auto">
                                 Explorez l'Expertise GSO <ArrowRight size={18} className="group-hover/link:translate-x-1 transition-transform" />
                             </a>
                         </div>
                     </div>
 
                     {/* Expertise Média - Normal card */}
-                    <div className="md:col-span-5 bg-white p-8 md:p-10 rounded-3xl border border-slate-200 hover:border-orange-300 hover:shadow-2xl hover:shadow-orange-900/5 transition-all duration-500 group">
-                        <div className="w-14 h-14 bg-orange-50 rounded-xl flex items-center justify-center text-orange-500 mb-8 border border-orange-100 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-500">
+                    <div className="md:col-span-5 bg-white/60 backdrop-blur-md p-8 md:p-10 rounded-3xl border border-slate-200 hover:bg-white/80 hover:border-orange-300 transition-all duration-500 group">
+                        <div className="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 mb-8 border border-orange-200 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-500">
                             <Globe size={28} />
                         </div>
                         <h3 className="text-2xl font-display font-bold mb-4 text-slate-900">Expertise Média : Amplifiez Votre Visibilité</h3>
@@ -342,8 +342,8 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                     </div>
 
                     {/* Automatisation - Large card */}
-                    <div className="md:col-span-7 bg-gradient-to-br from-emerald-50 to-teal-50 p-8 md:p-10 rounded-3xl border border-emerald-100 hover:border-emerald-300 hover:shadow-2xl hover:shadow-emerald-900/5 transition-all duration-500 group relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-200/30 rounded-full blur-3xl group-hover:bg-emerald-300/40 transition-colors duration-500"></div>
+                    <div className="md:col-span-7 bg-gradient-to-br from-emerald-50/80 to-teal-50/80 backdrop-blur-md p-8 md:p-10 rounded-3xl border border-emerald-200 hover:border-emerald-300 transition-all duration-500 group relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-200/30 rounded-full blur-3xl group-hover:bg-emerald-300/30 transition-colors duration-500"></div>
                         <div className="relative z-10">
                             <div className="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 mb-8 border border-emerald-200 group-hover:scale-110 transition-transform duration-500">
                                 <Zap size={28} />
@@ -355,13 +355,13 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                             
                             <div className="grid sm:grid-cols-2 gap-4 mb-8">
                                 <ul className="space-y-2 text-sm text-slate-700 font-medium">
-                                    <li className="flex items-center gap-2"><Check size={16} className="text-emerald-500" /> Contenu long-form (1500+ mots)</li>
-                                    <li className="flex items-center gap-2"><Check size={16} className="text-emerald-500" /> Code HTML sémantique</li>
-                                    <li className="flex items-center gap-2"><Check size={16} className="text-emerald-500" /> Données structurées (schema.org)</li>
+                                    <li className="flex items-center gap-2"><Check size={16} className="text-emerald-600" /> Contenu long-form (1500+ mots)</li>
+                                    <li className="flex items-center gap-2"><Check size={16} className="text-emerald-600" /> Code HTML sémantique</li>
+                                    <li className="flex items-center gap-2"><Check size={16} className="text-emerald-600" /> Données structurées (schema.org)</li>
                                 </ul>
                                 <ul className="space-y-2 text-sm text-slate-700 font-medium">
-                                    <li className="flex items-center gap-2"><Check size={16} className="text-emerald-500" /> Optimisation GSO (ChatGPT)</li>
-                                    <li className="flex items-center gap-2"><Check size={16} className="text-emerald-500" /> Balises IA pour citations</li>
+                                    <li className="flex items-center gap-2"><Check size={16} className="text-emerald-600" /> Optimisation GSO (ChatGPT)</li>
+                                    <li className="flex items-center gap-2"><Check size={16} className="text-emerald-600" /> Balises IA pour citations</li>
                                 </ul>
                             </div>
 
