@@ -174,7 +174,7 @@ export const ExpertiseMedia: React.FC<ExpertiseMediaProps> = ({ onNavigate }) =>
         </h2>
         <div className="text-slate-600 text-base md:text-lg leading-relaxed space-y-6 font-light break-words">
           <p>
-            En 2026, le <strong>SEO</strong> et le <strong>GSO</strong> ne sont plus seulement une question de technique et de contenu. C'est une question d'<strong>autorité</strong>, de <strong>confiance</strong> et de <strong>présence médiatique</strong>.
+            En 2025, le <strong>SEO</strong> et le <strong>GSO</strong> ne sont plus seulement une question de technique et de contenu. C'est une question d'<strong>autorité</strong>, de <strong>confiance</strong> et de <strong>présence médiatique</strong>.
           </p>
           <p>
             Google et les <strong>IA génératives</strong> (ChatGPT, Gemini, Perplexity) favorisent les sites avec une forte autorité de marque. Mais comment construire cette autorité rapidement ?

@@ -182,7 +182,7 @@ export const AgenceReferencementIAParis: React.FC<{ onNavigate: (page: any) => v
       {/* Introduction & Context */}
       <div className="grid md:grid-cols-12 gap-12 mb-24 animate-fade-in-up" style={{ animationDelay: '100ms' }}>
         <div className="md:col-span-7">
-          <h2 className="text-2xl font-display font-bold text-slate-900 mb-6">Le contexte du Référencement IA à Paris en 2026</h2>
+          <h2 className="text-2xl font-display font-bold text-slate-900 mb-6">Le contexte du Référencement IA à Paris en 2025</h2>
           <p className="text-slate-700 mb-6 leading-relaxed">
             Chez Triaina, nous comprenons les enjeux spécifiques du marché parisien. Avec 25 ans d'expertise en référencement naturel et une spécialisation pionnière en optimisation pour IA génératives, nous accompagnons les entreprises parisiennes à capter les opportunités de ce nouvel écosystème. Le référencement IA n'est pas une tendance passagère : c'est la prochaine frontière du marketing digital à Paris.
           </p>
@@ -215,7 +215,7 @@ export const AgenceReferencementIAParis: React.FC<{ onNavigate: (page: any) => v
       {/* Les IA qui comptent */}
       <div className="mb-24 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
         <h2 className="text-3xl font-display font-bold text-slate-900 mb-12 text-center">Les IA génératives qui dominent à Paris</h2>
-        <p className="text-center text-slate-600 mb-8 max-w-2xl mx-auto">En 2026, quatre acteurs dominent le marché des IA génératives :</p>
+        <p className="text-center text-slate-600 mb-8 max-w-2xl mx-auto">En 2025, quatre acteurs dominent le marché des IA génératives :</p>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
@@ -527,7 +527,7 @@ export const AgenceReferencementIAParis: React.FC<{ onNavigate: (page: any) => v
         <div className="relative z-10">
           <h2 className="text-3xl font-display font-bold mb-4">Prêt à Transformer votre Visibilité à Paris ?</h2>
           <p className="text-lg text-blue-200 mb-8 max-w-2xl mx-auto">
-            Le référencement IA est l'opportunité de 2026 pour les entreprises parisiennes. Les entreprises qui agissent maintenant obtiendront un avantage compétitif durable face à celles qui attendront.
+            Le référencement IA est l'opportunité de 2025 pour les entreprises parisiennes. Les entreprises qui agissent maintenant obtiendront un avantage compétitif durable face à celles qui attendront.
           </p>
           <p className="text-lg text-blue-200 mb-8 max-w-2xl mx-auto">
             Triaina vous accompagne dans votre stratégie de référencement IA à Paris. Audit complet, stratégie personnalisée, optimisation du contenu, amplification média.

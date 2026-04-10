@@ -807,7 +807,7 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                 </h1>
                 
                 <p className="max-w-4xl mx-auto md:mx-0 text-xl md:text-2xl text-slate-600 leading-relaxed font-light border-l-4 border-blue-600 pl-6">
-                    En 2026, ignorer le GSO, c'est perdre 30-40% de votre trafic potentiel. Dominez les réponses génératives.
+                    En 2025, ignorer le GSO, c'est perdre 30-40% de votre trafic potentiel. Dominez les réponses génératives.
                 </p>
             </div>
 

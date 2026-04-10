@@ -555,7 +555,7 @@ export const AgenceReferencementIA: React.FC<{ onNavigate: (page: any) => void }
         <div className="relative z-10">
           <h2 className="text-3xl font-display font-bold mb-4">Prêt à Transformer votre Visibilité ?</h2>
           <p className="text-lg text-blue-200 mb-8 max-w-2xl mx-auto">
-            Le référencement IA est l'opportunité de 2026. Les entreprises qui agissent maintenant obtiendront un avantage compétitif durable.
+            Le référencement IA est l'opportunité de 2025. Les entreprises qui agissent maintenant obtiendront un avantage compétitif durable.
           </p>
           <p className="text-lg text-blue-200 mb-8 max-w-2xl mx-auto">
             Triaina vous accompagne dans votre stratégie de référencement IA. Audit complet, stratégie personnalisée, optimisation du contenu, amplification média.

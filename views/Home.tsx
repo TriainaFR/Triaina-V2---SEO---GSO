@@ -52,8 +52,8 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
       </div>
 
       {/* ════════════ HERO HEADER ════════════ */}
-      <header className="flex-1 flex flex-col justify-center items-center relative z-10 px-4 py-12 md:py-20">
-          <div className="max-w-7xl mx-auto w-full flex flex-col items-center text-center">
+      <header className="flex-1 flex flex-col justify-center items-start relative z-10 px-4 md:px-8 lg:px-12 py-12 md:py-20 mt-16">
+          <div className="w-full flex flex-col items-start text-left">
             <h1 className="font-display font-black text-slate-900 leading-[1.1] tracking-tighter mb-6 animate-fade-in-up w-full max-w-5xl" style={{ animationDelay: '100ms' }}>
                 <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-700">
                     AGENCE SEO
@@ -69,8 +69,8 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
 
             {/* CLIENTS MARQUEE */}
             <div className="w-full opacity-0 animate-fade-in-up" style={{ animationDelay: '300ms' }}>
-                <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Ils nous font confiance</p>
-                <div className="relative flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+                <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6 text-left">Ils nous font confiance</p>
+                <div className="relative flex overflow-hidden [mask-image:linear-gradient(to_right,black_0%,black_90%,transparent)]">
                     <motion.div 
                         className="flex whitespace-nowrap gap-16 items-center pr-16"
                         animate={{ x: ["0%", "-50%"] }}

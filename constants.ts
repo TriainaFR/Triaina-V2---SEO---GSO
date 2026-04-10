@@ -83,7 +83,7 @@ export const NAV_LINKS: NavLink[] = [
   },
   {
     id: 'seo-landing',
-    label: 'POUR LE SEO',
+    label: 'SEO/IA',
     children: [
         { id: 'seo-paris', label: 'Agence SEO Paris' },
         { id: 'agence-referencement-ia', label: 'Agence Référencement IA' },
@@ -251,7 +251,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
     results: [
         '0% à 70% de citation IA en 3 mois', 
         'Top 3 Google et cité parmi 8 sites sur la 1ère page via nos médias partenaires',
-        'Travaux en cours (→ Août 2026) : Maximisation continue des positions & citations'
+        'Travaux en cours (→ Août 2025) : Maximisation continue des positions & citations'
     ],
     tags: ['Hotels', 'Technical SEO', 'International'],
     image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1200'
@@ -468,9 +468,9 @@ export const HISTORY_DATA: HistoryItem[] = [
     description: "En novembre 2022, OpenAI dévoile ChatGPT, rapidement suivi par d'autres modèles de langage (Gemini, Perplexity, Claude). Les usages évoluent, les recherches se déplacent, et Google commence à perdre du terrain en termes de volume de requêtes quotidiennes. Face à cette transformation du référencement naturel, nos associés choisissent, dès 2024, de prendre le virage de l'IA appliquée au SEO, en s'appuyant sur la puissance éditoriale et technologique de leur média. C'est la naissance du GSO (Generative Search Optimization) : l'évolution naturelle du SEO traditionnel."
   },
   {
-    year: '2026',
+    year: '2025',
     title: 'La Genèse de Triaina - Agence SEO & GSO',
-    description: "En début 2026, notre association voit le jour et nous créons Triaina, la première agence spécialisée en SEO & GSO, intégrant une division média. Triaina est née de la conviction que le référencement naturel et l'optimisation pour les IA génératives doivent aller de pair."
+    description: "En début 2025, notre association voit le jour et nous créons Triaina, la première agence spécialisée en SEO & GSO, intégrant une division média. Triaina est née de la conviction que le référencement naturel et l'optimisation pour les IA génératives doivent aller de pair."
   }
 ];
 
