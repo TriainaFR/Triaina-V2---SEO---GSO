@@ -29,7 +29,8 @@ export const PAGE_TO_URL: Record<string, string> = {
   'referencement-ia-paris-guide-local': '/blog/referencement-ia-paris-guide-local',
   'tendances-seo-gso-2026': '/blog/tendances-seo-gso-2026',
   'seo-technique-vs-contenu': '/blog/seo-technique-vs-seo-contenu',
-  'gso-definition-2026': '/blog/gso-definition-2026'
+  'gso-definition-2026': '/blog/gso-definition-2026',
+  'citations-ia-generatives': '/blog/citations-ia-generatives'
 };
 
 export const ROUTES: Record<string, Page> = {
@@ -63,7 +64,8 @@ export const ROUTES: Record<string, Page> = {
   '/blog/referencement-ia-paris-guide-local': 'referencement-ia-paris-guide-local',
   '/blog/tendances-seo-gso-2026': 'tendances-seo-gso-2026',
   '/blog/seo-technique-vs-seo-contenu': 'seo-technique-vs-contenu',
-  '/blog/gso-definition-2026': 'gso-definition-2026'
+  '/blog/gso-definition-2026': 'gso-definition-2026',
+  '/blog/citations-ia-generatives': 'citations-ia-generatives'
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -391,7 +393,7 @@ export const BLOG_DATA: BlogItem[] = [
     id: 'tendances-seo-gso-2026',
     source: 'Guide Stratégique',
     logo: '',
-    date: '18 MARS 2026',
+    date: '01 AVRIL 2026',
     title: 'Tendances SEO & GSO 2026 : Guide Complet des Changements qui Dominent',
     excerpt: 'Découvrez les 10 tendances SEO & GSO qui dominent le référencement en 2026 : E-E-A-T, citations IA, contenu long-form et données propriétaires.',
     url: '/blog/tendances-seo-gso-2026',
@@ -402,7 +404,7 @@ export const BLOG_DATA: BlogItem[] = [
     id: 'seo-technique-vs-contenu',
     source: 'Triaina Insights',
     logo: '',
-    date: '17 MARS 2026',
+    date: '01 AVRIL 2026',
     title: 'SEO Technique vs SEO Contenu : Lequel Choisir en 2026 ?',
     excerpt: 'Analyse comparative complète : SEO technique vs SEO contenu. Impact réel, 3 cas clients, stratégie complète. Découvrez comment combiner les deux pour +250% de trafic.',
     url: '/blog/seo-technique-vs-seo-contenu',
@@ -413,11 +415,22 @@ export const BLOG_DATA: BlogItem[] = [
     id: 'gso-definition-2026',
     source: 'Guide GSO',
     logo: '',
-    date: '18 MARS 2026',
+    date: '07 AVRIL 2026',
     title: 'GSO Définition 2026 : Guide Complet de la Generative Search Optimization',
     excerpt: 'GSO définition 2026 : qu\'est-ce que la Generative Search Optimization ? Guide complet avec 3 cas clients réels, données propriétaires, 4 piliers, checklist et actions immédiates.',
     url: '/blog/gso-definition-2026',
     image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'citations-ia-generatives',
+    source: 'Guide IA',
+    logo: '',
+    date: '11 AVRIL 2026',
+    title: 'Citations IA Génératives : Guide Complet pour Dominer ChatGPT, Gemini et Perplexity en 2026',
+    excerpt: 'Citations IA génératives 2026 : qu\'est-ce que c\'est ? Guide complet avec 3 cas clients réels, données propriétaires, 4 piliers, checklist et actions immédiates.',
+    url: '/blog/citations-ia-generatives',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
   }
 ];

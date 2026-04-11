@@ -28,6 +28,7 @@ import { ReferencementIAParisGuide } from './views/blog/ReferencementIAParisGuid
 import { TendancesSeoGso2026 } from './views/blog/TendancesSeoGso2026'; // Import TendancesSeoGso2026
 import { SeoTechniqueVsContenu } from './views/blog/SeoTechniqueVsContenu'; // Import SeoTechniqueVsContenu
 import { GsoDefinition2026 } from './views/blog/GsoDefinition2026'; // Import GsoDefinition2026
+import { CitationsIAGeneratives } from './views/blog/CitationsIAGeneratives'; // Import CitationsIAGeneratives
 import { SEO } from './components/SEO';
 import { NAV_LINKS, SOCIAL_LINKS, PAGE_TO_URL, ROUTES } from './constants';
 import { Logo } from './components/Logo';
@@ -209,6 +210,8 @@ const App: React.FC = () => {
         return <SeoTechniqueVsContenu />;
       case 'gso-definition-2026':
         return <GsoDefinition2026 />;
+      case 'citations-ia-generatives':
+        return <CitationsIAGeneratives />;
       case '404':
         return <NotFound onNavigate={handleNavigation} />;
       default:

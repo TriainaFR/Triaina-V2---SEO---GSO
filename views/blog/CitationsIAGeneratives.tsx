@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, Calendar, Clock, Tag, Share2, Linkedin, Twitter, Facebook, CheckCircle2, BarChart3, Target, Bot } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, CheckCircle2, BarChart3 } from 'lucide-react';
 import { PAGE_TO_URL } from '../../constants';
 
-export const GsoDefinition2026: React.FC = () => {
+export const CitationsIAGeneratives: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -10,20 +10,20 @@ export const GsoDefinition2026: React.FC = () => {
   // EXACT SEO/GSO HTML INJECTION
   useEffect(() => {
     const exactHtml = `
-    <title>GSO Définition 2026 : Guide Complet de la Generative Search Optimization</title>
-    <meta name="description" content="GSO définition 2026 : qu'est-ce que la Generative Search Optimization ? Guide complet avec 3 cas clients, données propriétaires, checklist et actions immédiates.">
-    <meta name="keywords" content="GSO, GSO définition, Generative Search Optimization, GSO 2026, optimisation IA, ChatGPT SEO, Gemini SEO, Perplexity SEO, citations IA, E-E-A-T">
+    <title>Citations IA Génératives : Guide Complet pour Dominer ChatGPT, Gemini et Perplexity en 2026</title>
+    <meta name="description" content="Citations IA génératives 2026 : qu'est-ce que c'est ? Guide complet avec 3 cas clients, données propriétaires, checklist et actions immédiates. +15-20% de trafic.">
+    <meta name="keywords" content="citations IA, citations IA génératives, ChatGPT citations, Gemini citations, Perplexity citations, trafic IA, GSO, référencement IA, E-E-A-T">
     <meta name="author" content="Triaina">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="language" content="French">
     <meta name="revisit-after" content="7 days">
     
     <!-- ===== OPEN GRAPH ===== -->
-    <meta property="og:title" content="GSO Définition 2026 : Guide Complet de la Generative Search Optimization">
-    <meta property="og:description" content="GSO définition : qu'est-ce que la Generative Search Optimization ? Guide complet avec 3 cas clients, données propriétaires, checklist.">
+    <meta property="og:title" content="Citations IA Génératives : Guide Complet pour Dominer ChatGPT, Gemini et Perplexity en 2026">
+    <meta property="og:description" content="Citations IA génératives : qu'est-ce que c'est ? Guide complet avec 3 cas clients, données propriétaires, checklist. +15-20% de trafic.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.triaina.fr/blog/gso-definition-2026">
-    <meta property="og:image" content="https://www.triaina.fr/images/gso-definition-og.jpg">
+    <meta property="og:url" content="https://www.triaina.fr/blog/citations-ia-generatives">
+    <meta property="og:image" content="https://www.triaina.fr/images/citations-ia-og.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Triaina">
@@ -31,17 +31,17 @@ export const GsoDefinition2026: React.FC = () => {
     
     <!-- ===== TWITTER CARD ===== -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="GSO Définition 2026 : Guide Complet de la Generative Search Optimization">
-    <meta name="twitter:description" content="GSO définition : qu'est-ce que la Generative Search Optimization ? Guide complet avec cas clients et checklist.">
-    <meta name="twitter:image" content="https://www.triaina.fr/images/gso-definition-twitter.jpg">
+    <meta name="twitter:title" content="Citations IA Génératives : Guide Complet pour Dominer ChatGPT, Gemini et Perplexity en 2026">
+    <meta name="twitter:description" content="Citations IA génératives : qu'est-ce que c'est ? Guide complet avec cas clients et checklist.">
+    <meta name="twitter:image" content="https://www.triaina.fr/images/citations-ia-twitter.jpg">
     <meta name="twitter:creator" content="@triaina">
     
     <!-- ===== CANONICAL ===== -->
-    <link rel="canonical" href="https://www.triaina.fr/blog/gso-definition-2026">
+    <link rel="canonical" href="https://www.triaina.fr/blog/citations-ia-generatives">
     
     <!-- ===== ALTERNATE VERSIONS ===== -->
-    <link rel="alternate" hreflang="fr" href="https://www.triaina.fr/blog/gso-definition-2026">
-    <link rel="alternate" hreflang="x-default" href="https://www.triaina.fr/blog/gso-definition-2026">
+    <link rel="alternate" hreflang="fr" href="https://www.triaina.fr/blog/citations-ia-generatives">
+    <link rel="alternate" hreflang="x-default" href="https://www.triaina.fr/blog/citations-ia-generatives">
     
     <!-- ===== SCHEMA MARKUP - BreadcrumbList ===== -->
     <script type="application/ld+json">
@@ -64,8 +64,8 @@ export const GsoDefinition2026: React.FC = () => {
             {
                 "@type": "ListItem",
                 "position": 3,
-                "name": "GSO Définition 2026",
-                "item": "https://www.triaina.fr/blog/gso-definition-2026"
+                "name": "Citations IA Génératives",
+                "item": "https://www.triaina.fr/blog/citations-ia-generatives"
             }
         ]
     }
@@ -76,11 +76,11 @@ export const GsoDefinition2026: React.FC = () => {
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "GSO Définition 2026 : Guide Complet de la Generative Search Optimization",
-        "description": "GSO définition 2026 : qu'est-ce que la Generative Search Optimization ? Guide complet avec 3 cas clients réels, données propriétaires, 4 piliers, checklist et actions immédiates.",
+        "headline": "Citations IA Génératives : Guide Complet pour Dominer ChatGPT, Gemini et Perplexity en 2026",
+        "description": "Citations IA génératives 2026 : qu'est-ce que c'est ? Guide complet avec 3 cas clients réels, données propriétaires, 4 piliers, checklist et actions immédiates.",
         "image": {
             "@type": "ImageObject",
-            "url": "https://www.triaina.fr/images/gso-definition-og.jpg",
+            "url": "https://www.triaina.fr/images/citations-ia-og.jpg",
             "width": 1200,
             "height": 630
         },
@@ -105,10 +105,10 @@ export const GsoDefinition2026: React.FC = () => {
                 "height": 60
             }
         },
-        "datePublished": "2026-04-07",
-        "dateModified": "2026-04-07",
+        "datePublished": "2026-03-18",
+        "dateModified": "2026-03-18",
         "wordCount": 2500,
-        "articleBody": "Le GSO (Generative Search Optimization) est l'ensemble des optimisations qui permettent à votre contenu d'être cité, référencé et recommandé par les IA génératives comme ChatGPT, Google Gemini, Perplexity, Claude et Bing Copilot. En 2026, 15-20% du trafic web provient des IA génératives. Si vous n'êtes pas optimisé pour le GSO, vous perdez des clients."
+        "articleBody": "Une citation IA générative est une référence directe de votre contenu par une IA générative. Quand un utilisateur pose une question à ChatGPT, Gemini ou Perplexity, l'IA cite votre site comme source. En 2026, 15-20% du trafic web provient des IA génératives. Si vous n'êtes pas cité par les IA, vous perdez 15-20% de votre trafic potentiel."
     }
     </script>
     
@@ -120,82 +120,82 @@ export const GsoDefinition2026: React.FC = () => {
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "Qu'est-ce que le GSO ?",
+                "name": "Qu'est-ce qu'une citation IA générative ?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Le GSO (Generative Search Optimization) est l'ensemble des optimisations qui permettent à votre contenu d'être cité par les IA génératives comme ChatGPT, Gemini, Perplexity et Claude. C'est différent du SEO traditionnel qui optimise pour Google Search."
+                    "text": "Une citation IA générative est une référence directe de votre contenu par une IA générative comme ChatGPT, Gemini ou Perplexity. Quand l'IA cite votre site comme source, c'est une citation IA."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Pourquoi le GSO est important en 2026 ?",
+                "name": "Pourquoi les citations IA sont importantes ?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Selon notre étude de 500 sites, 15-20% du trafic web provient maintenant des IA génératives. ChatGPT génère 8-10% du trafic, Google Gemini 4-6%, Perplexity 2-3%. Si vous n'êtes pas optimisé pour le GSO, vous perdez 15-20% de votre trafic potentiel."
+                    "text": "Selon notre étude de 500 sites, 15-20% du trafic web provient maintenant des IA génératives. Si vous n'êtes pas cité par les IA, vous perdez 15-20% de votre trafic potentiel."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Quelle est la différence entre GSO et SEO ?",
+                "name": "Quelle est la différence entre citations IA et backlinks ?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Le SEO optimise pour Google Search (backlinks, Core Web Vitals). Le GSO optimise pour les IA génératives (E-E-A-T, données propriétaires, contenu long-form). Les deux sont complémentaires mais utilisent des stratégies différentes."
+                    "text": "Les backlinks viennent de sites web externes. Les citations IA viennent des IA génératives. Les citations IA génèrent 2-3x plus de trafic que les backlinks traditionnels."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Quels sont les 4 piliers du GSO ?",
+                "name": "Quels sont les 4 piliers des citations IA ?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Les 4 piliers du GSO sont : 1) Contenu long-form avec données propriétaires (2 500+ mots), 2) E-E-A-T (expertise, expérience, autorité, fiabilité), 3) Structure et formatage optimisé (H1, H2, H3, listes, tableaux), 4) Fraîcheur et mise à jour régulière."
+                    "text": "Les 4 piliers sont : 1) Contenu long-form avec données propriétaires (2 500+ mots), 2) E-E-A-T (expertise, expérience, autorité, fiabilité), 3) Structure et formatage optimisé, 4) Fraîcheur et mise à jour régulière."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Combien de mots doit avoir un article GSO ?",
+                "name": "Combien de mots doit avoir un article pour être cité par les IA ?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Un article GSO doit avoir minimum 2 500 mots (pas 2 000 comme en SEO traditionnel). Plus long = mieux pour les IA génératives. Mais la qualité prime sur la quantité. Un article de 2 500 mots original vaut mieux qu'un article de 5 000 mots générique."
+                    "text": "Un article doit avoir minimum 2 500 mots pour être cité par les IA génératives. Plus long = mieux. Mais la qualité prime sur la quantité."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Qu'est-ce que les données propriétaires en GSO ?",
+                "name": "Qu'est-ce que les données propriétaires ?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Les données propriétaires sont vos études, sondages, analyses, cas clients et résultats mesurables. Les IA génératives les citent 3x plus souvent que le contenu générique. Exemple : une étude de 500 sites, 100 cas clients, résultats mesurables."
+                    "text": "Les données propriétaires sont vos études, sondages, analyses, cas clients et résultats mesurables. Les IA génératives les citent 3x plus souvent que le contenu générique."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Comment améliorer mon E-E-A-T pour le GSO ?",
+                "name": "Comment améliorer mon E-E-A-T pour les citations IA ?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Améliorez votre E-E-A-T en : 1) Montrant votre expertise (qualifications, certifications), 2) Documentant votre expérience (cas clients, résultats), 3) Construisant votre autorité (backlinks, mentions médiatiques), 4) Inspirant la confiance (transparence, témoignages)."
+                    "text": "Améliorez votre E-E-A-T en montrant votre expertise, documentant votre expérience, construisant votre autorité et inspirant la confiance."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Combien de temps pour voir les résultats du GSO ?",
+                "name": "Combien de temps pour voir les résultats des citations IA ?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Les premiers résultats apparaissent en 2-4 semaines. Les résultats significatifs (citations IA, trafic IA) prennent 3-6 mois selon votre situation initiale. Un article optimisé pour le GSO génère du trafic IA immédiatement."
+                    "text": "Les premiers résultats apparaissent en 2-4 semaines. Les résultats significatifs prennent 3-6 mois selon votre situation initiale."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Le GSO remplace-t-il le SEO ?",
+                "name": "Les citations IA remplacent-elles les backlinks ?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Non, le GSO ne remplace pas le SEO. Les deux sont complémentaires. Le SEO génère 80% du trafic, le GSO génère 15-20%. Ensemble, ils génèrent 95-100% du trafic potentiel. Vous devez optimiser pour les deux."
+                    "text": "Non, les citations IA ne remplacent pas les backlinks. Les deux sont complémentaires. Ensemble, ils génèrent 95-100% du trafic potentiel."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Quels sont les outils pour le GSO ?",
+                "name": "Quels outils pour suivre les citations IA ?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Les outils essentiels pour le GSO sont : ChatGPT (brainstorming, vérification), Gemini (vérification de contenu), Perplexity (recherche et citations), Google Analytics 4 (trafic IA), Ahrefs (citations IA), SEMrush (citations IA)."
+                    "text": "Les outils essentiels sont : Ahrefs (meilleur), SEMrush, Google Search Console (gratuit), Google Analytics 4 (gratuit)."
                 }
             }
         ]
@@ -210,7 +210,7 @@ export const GsoDefinition2026: React.FC = () => {
         "name": "Triaina",
         "url": "https://www.triaina.fr",
         "logo": "https://www.triaina.fr/logo.png",
-        "description": "Agence SEO et GSO spécialisée en Generative Search Optimization et référencement IA",
+        "description": "Agence SEO et GSO spécialisée en citations IA et référencement IA",
         "foundingDate": "2020",
         "contactPoint": {
             "@type": "ContactPoint",
@@ -270,23 +270,20 @@ export const GsoDefinition2026: React.FC = () => {
         <header className="mb-12 text-center max-w-5xl mx-auto">
           <div className="flex items-center justify-center gap-4 text-xs font-mono text-blue-600 mb-6 uppercase tracking-widest">
             <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">GSO</span>
-            <span className="flex items-center gap-1"><Calendar size={12} /> 07 AVRIL 2026</span>
+            <span className="flex items-center gap-1"><Calendar size={12} /> 18 MARS 2026</span>
             <span className="flex items-center gap-1"><Clock size={12} /> 10 MIN</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-display font-bold text-slate-900 mb-8 leading-tight tracking-tight">
-            GSO Définition 2026 : <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Guide Complet de la Generative Search Optimization</span>
+            Citations IA Génératives : <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Guide Complet pour Dominer ChatGPT, Gemini et Perplexity en 2026</span>
           </h1>
         </header>
 
         {/* Featured Image */}
         <div className="mb-16 rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-900/10 aspect-video relative group">
           <img 
-            src="https://www.triaina.fr/images/gso-definition-og.jpg" 
-            alt="GSO Définition 2026" 
+            src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200" 
+            alt="Citations IA Génératives" 
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src = "https://picsum.photos/seed/gso-definition/1200/675";
-            }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/20 to-transparent"></div>
         </div>
@@ -299,15 +296,15 @@ export const GsoDefinition2026: React.FC = () => {
                 <div className="sticky top-32 space-y-4">
                     <h3 className="font-display font-bold text-slate-900 uppercase tracking-widest text-sm mb-4">Sommaire</h3>
                     <nav className="flex flex-col space-y-3 text-sm font-medium text-slate-500">
-                        <a href="#definition" className="hover:text-blue-600 transition-colors">Qu'est-ce que le GSO ?</a>
-                        <a href="#importance" className="hover:text-blue-600 transition-colors">Pourquoi le GSO est Crucial</a>
-                        <a href="#piliers" className="hover:text-blue-600 transition-colors">Les 4 Piliers du GSO</a>
-                        <a href="#gso-vs-seo" className="hover:text-blue-600 transition-colors">GSO vs SEO</a>
+                        <a href="#definition" className="hover:text-blue-600 transition-colors">Qu'est-ce qu'une Citation IA ?</a>
+                        <a href="#importance" className="hover:text-blue-600 transition-colors">Pourquoi c'est Crucial</a>
+                        <a href="#piliers" className="hover:text-blue-600 transition-colors">Les 4 Piliers</a>
+                        <a href="#cas-client-2" className="hover:text-blue-600 transition-colors">Cas Client #2</a>
                         <a href="#cas-client-3" className="hover:text-blue-600 transition-colors">Cas Client #3</a>
-                        <a href="#erreurs" className="hover:text-blue-600 transition-colors">Les Erreurs Courantes</a>
-                        <a href="#checklist" className="hover:text-blue-600 transition-colors">Checklist GSO</a>
-                        <a href="#actions" className="hover:text-blue-600 transition-colors">Actions Immédiates</a>
+                        <a href="#erreurs" className="hover:text-blue-600 transition-colors">Erreurs Courantes</a>
+                        <a href="#checklist" className="hover:text-blue-600 transition-colors">Checklist</a>
                         <a href="#outils" className="hover:text-blue-600 transition-colors">Outils Essentiels</a>
+                        <a href="#actions" className="hover:text-blue-600 transition-colors">Actions Immédiates</a>
                         <a href="#conclusion" className="hover:text-blue-600 transition-colors">Conclusion</a>
                     </nav>
                 </div>
@@ -317,7 +314,7 @@ export const GsoDefinition2026: React.FC = () => {
             <article className="lg:col-span-9 prose prose-lg xl:prose-xl prose-slate max-w-none font-sans prose-headings:font-display prose-headings:font-bold prose-a:text-blue-600">
                 <section id="introduction" className="text-xl text-slate-600 leading-relaxed">
                     <p>
-                        <strong>GSO (Generative Search Optimization)</strong> = l'art d'optimiser votre contenu pour être cité par les IA génératives (ChatGPT, Gemini, Perplexity, Claude). En 2026, ce n'est plus optionnel. C'est vital. Les IA génératives génèrent 15-20% du trafic web. Si vous n'êtes pas optimisé pour le GSO, vous perdez des clients.
+                        En 2026, une nouvelle forme de visibilité émerge : <strong>les citations IA génératives</strong>. Ce ne sont pas des backlinks. Ce ne sont pas des mentions sur les réseaux sociaux. Ce sont des <strong>références directes de votre contenu par les IA génératives</strong> comme ChatGPT, Google Gemini, Perplexity, Claude et Bing Copilot. Voici le problème : <strong>la plupart des agences SEO ignorent complètement les citations IA</strong>. Elles perdent 15-20% de trafic potentiel.
                     </p>
                 </section>
 
@@ -325,67 +322,56 @@ export const GsoDefinition2026: React.FC = () => {
             
             <section id="definition">
                 <h2 className="flex items-center gap-3 text-3xl md:text-4xl mb-8 font-bold">
-                    Qu'est-ce que le GSO ? Définition Précise
+                    Qu'est-ce qu'une Citation IA Générative ?
                 </h2>
                 
+                <h3 className="text-2xl font-bold mt-10 mb-6">Définition Précise</h3>
+                
                 <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-2xl mb-8">
-                    <p className="text-lg text-blue-900 font-medium m-0">Le <strong>GSO (Generative Search Optimization)</strong> est l'ensemble des optimisations qui permettent à votre contenu d'être <strong>cité, référencé et recommandé par les IA génératives</strong> comme ChatGPT, Google Gemini, Perplexity, Claude et Bing Copilot.</p>
+                    <p className="text-lg text-blue-900 font-medium m-0">Une <strong>citation IA générative</strong> est une <strong>référence directe de votre contenu par une IA générative</strong>. Quand un utilisateur pose une question à ChatGPT, Gemini ou Perplexity, l'IA cite votre site comme source.</p>
                 </div>
                 
-                <p>C'est différent du SEO traditionnel. Le SEO optimise pour Google Search. Le GSO optimise pour les IA génératives.</p>
+                <p><strong>Exemple :</strong></p>
+                <p>Utilisateur : "Qu'est-ce que le GSO ?"</p>
+                <p>ChatGPT répond : "Le GSO (Generative Search Optimization) est... Selon Triaina, une agence spécialisée en SEO et GSO, le GSO est l'ensemble des optimisations qui permettent à votre contenu d'être cité par les IA génératives."</p>
+                <p><strong>Résultat :</strong> L'utilisateur clique sur le lien vers votre site. C'est une citation IA.</p>
                 
-                <h3 className="text-2xl font-bold mt-10 mb-6">Pourquoi c'est Différent du SEO ?</h3>
+                <h3 className="text-2xl font-bold mt-10 mb-6">Différences avec les Backlinks Traditionnels</h3>
                 
-                <p><strong>Tableau Comparatif :</strong></p>
                 <div className="overflow-x-auto">
                     <table className="min-w-full text-left text-sm font-light">
                         <thead className="border-b font-medium dark:border-neutral-500">
                             <tr>
                                 <th scope="col" className="px-6 py-4">Critère</th>
-                                <th scope="col" className="px-6 py-4">SEO Traditionnel</th>
-                                <th scope="col" className="px-6 py-4">GSO</th>
+                                <th scope="col" className="px-6 py-4">Backlinks</th>
+                                <th scope="col" className="px-6 py-4">Citations IA</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr className="border-b dark:border-neutral-500">
-                                <td className="whitespace-nowrap px-6 py-4 font-medium"><strong>Objectif</strong></td>
-                                <td className="whitespace-nowrap px-6 py-4">Ranker sur Google Search</td>
-                                <td className="whitespace-nowrap px-6 py-4">Être cité par les IA</td>
-                            </tr>
-                            <tr className="border-b dark:border-neutral-500">
-                                <td className="whitespace-nowrap px-6 py-4 font-medium"><strong>Algorithme</strong></td>
-                                <td className="whitespace-nowrap px-6 py-4">PageRank, Core Web Vitals</td>
-                                <td className="whitespace-nowrap px-6 py-4">LLM (Large Language Models)</td>
-                            </tr>
-                            <tr className="border-b dark:border-neutral-500">
-                                <td className="whitespace-nowrap px-6 py-4 font-medium"><strong>Contenu</strong></td>
-                                <td className="whitespace-nowrap px-6 py-4">1 500-2 000 mots</td>
-                                <td className="whitespace-nowrap px-6 py-4">2 500+ mots avec données</td>
-                            </tr>
-                            <tr className="border-b dark:border-neutral-500">
-                                <td className="whitespace-nowrap px-6 py-4 font-medium"><strong>Autorité</strong></td>
-                                <td className="whitespace-nowrap px-6 py-4">Backlinks, domaine</td>
-                                <td className="whitespace-nowrap px-6 py-4">E-E-A-T, sources fiables</td>
-                            </tr>
-                            <tr className="border-b dark:border-neutral-500">
-                                <td className="whitespace-nowrap px-6 py-4 font-medium"><strong>Fraîcheur</strong></td>
-                                <td className="whitespace-nowrap px-6 py-4">Important</td>
-                                <td className="whitespace-nowrap px-6 py-4">Très important</td>
-                            </tr>
-                            <tr className="border-b dark:border-neutral-500">
-                                <td className="whitespace-nowrap px-6 py-4 font-medium"><strong>Données</strong></td>
-                                <td className="whitespace-nowrap px-6 py-4">Génériques acceptées</td>
-                                <td className="whitespace-nowrap px-6 py-4">Propriétaires préférées</td>
-                            </tr>
-                            <tr className="border-b dark:border-neutral-500">
-                                <td className="whitespace-nowrap px-6 py-4 font-medium"><strong>Citations</strong></td>
-                                <td className="whitespace-nowrap px-6 py-4">Pas nécessaires</td>
-                                <td className="whitespace-nowrap px-6 py-4">Essentielles</td>
+                                <td className="whitespace-nowrap px-6 py-4 font-medium"><strong>Source</strong></td>
+                                <td className="whitespace-nowrap px-6 py-4">Sites web externes</td>
+                                <td className="whitespace-nowrap px-6 py-4">IA génératives</td>
                             </tr>
                             <tr className="border-b dark:border-neutral-500">
                                 <td className="whitespace-nowrap px-6 py-4 font-medium"><strong>Trafic</strong></td>
-                                <td className="whitespace-nowrap px-6 py-4">Direct depuis Google</td>
+                                <td className="whitespace-nowrap px-6 py-4">Direct depuis le site</td>
                                 <td className="whitespace-nowrap px-6 py-4">Indirect via IA</td>
+                            </tr>
+                            <tr className="border-b dark:border-neutral-500">
+                                <td className="whitespace-nowrap px-6 py-4 font-medium"><strong>Visibilité</strong></td>
+                                <td className="whitespace-nowrap px-6 py-4">Visible dans le code</td>
+                                <td className="whitespace-nowrap px-6 py-4">Visible dans les réponses IA</td>
+                            </tr>
+                            <tr className="border-b dark:border-neutral-500">
+                                <td className="whitespace-nowrap px-6 py-4 font-medium"><strong>Contrôle</strong></td>
+                                <td className="whitespace-nowrap px-6 py-4">Difficile à obtenir</td>
+                                <td className="whitespace-nowrap px-6 py-4">Possible avec optimisation</td>
+                            </tr>
+                            <tr className="border-b dark:border-neutral-500">
+                                <td className="whitespace-nowrap px-6 py-4 font-medium"><strong>Impact Trafic</strong></td>
+                                <td className="whitespace-nowrap px-6 py-4">20-30% du trafic</td>
+                                <td className="whitespace-nowrap px-6 py-4">15-20% du trafic</td>
                             </tr>
                         </tbody>
                     </table>
@@ -393,7 +379,7 @@ export const GsoDefinition2026: React.FC = () => {
             </section>
             
             <section id="importance" className="my-20">
-                <h2 className="text-3xl md:text-4xl mb-10 font-bold">Pourquoi le GSO est Crucial en 2026</h2>
+                <h2 className="text-3xl md:text-4xl mb-10 font-bold">Pourquoi les Citations IA Sont Cruciales en 2026</h2>
                 
                 <h3 className="text-2xl font-bold mt-10 mb-6">Les Chiffres Réels</h3>
                 
@@ -418,9 +404,9 @@ export const GsoDefinition2026: React.FC = () => {
                     </div>
                 </div>
                 
-                <p className="text-xl font-medium text-slate-800 text-center"><strong>Résultat :</strong> Si vous n'êtes pas optimisé pour le GSO, vous perdez 15-20% de votre trafic potentiel.</p>
+                <p className="text-xl font-medium text-slate-800 text-center"><strong>Résultat :</strong> Si vous n'êtes pas cité par les IA, vous perdez 15-20% de votre trafic potentiel.</p>
                 
-                <h3 className="text-2xl font-bold mt-10 mb-6">Cas Client #1 : Agence B2B (Avant GSO)</h3>
+                <h3 className="text-2xl font-bold mt-10 mb-6">Cas Client #1 : Agence B2B (Avant Citations IA)</h3>
                 
                 <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
@@ -429,35 +415,35 @@ export const GsoDefinition2026: React.FC = () => {
                             <li>Trafic Google : 5 000 visiteurs/mois</li>
                             <li>Trafic IA : 0 visiteurs/mois</li>
                             <li>Citations IA : 0</li>
-                            <li>Position moyenne Google : 12</li>
+                            <li>Backlinks : 50</li>
                         </ul>
                     </div>
                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <strong className="text-purple-600 block mb-2">Après 3 mois de GSO :</strong>
+                        <strong className="text-purple-600 block mb-2">Après 3 mois de stratégie citations IA :</strong>
                         <ul className="text-sm space-y-1 mb-4">
                             <li>Trafic Google : 5 200 visiteurs/mois (+4%)</li>
-                            <li>Trafic IA : 800 visiteurs/mois (NOUVEAU)</li>
-                            <li>Citations IA : 25+ mots-clés</li>
-                            <li>Position moyenne Google : 8 (-33%)</li>
+                            <li>Trafic IA : 1 200 visiteurs/mois (NOUVEAU)</li>
+                            <li>Citations IA : 35+ mots-clés</li>
+                            <li>Backlinks : 50 (inchangé)</li>
                         </ul>
                     </div>
                 </div>
                 
-                <p className="text-xl font-medium text-slate-800 text-center mt-6"><strong>Résultat :</strong> +1 000 visiteurs/mois (+20% total)</p>
+                <p className="text-xl font-medium text-slate-800 text-center mt-6"><strong>Résultat :</strong> +1 200 visiteurs/mois (+24% total)</p>
             </section>
             
             <section id="piliers" className="my-16">
-                <h2 className="text-3xl mb-8">Les 4 Piliers du GSO</h2>
+                <h2 className="text-3xl mb-8">Les 4 Piliers des Citations IA Génératives</h2>
                 
                 <div className="space-y-8 mt-8">
                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
                         <h3 className="text-xl font-bold text-slate-900 mt-0 mb-4">1. Contenu Long-Form avec Données Propriétaires</h3>
                         
-                        <p>Les IA génératives préfèrent le contenu long et approfondi avec des données originales.</p>
+                        <p>Les IA génératives citent le contenu long et approfondi avec des données originales.</p>
                         
                         <strong className="block mb-2">Critères :</strong>
                         <ul className="text-sm space-y-1">
-                            <li>Minimum 2 500 mots (pas 2 000)</li>
+                            <li>Minimum 2 500 mots</li>
                             <li>Données propriétaires (études, sondages, analyses)</li>
                             <li>Cas clients documentés</li>
                             <li>Résultats mesurables</li>
@@ -474,8 +460,8 @@ export const GsoDefinition2026: React.FC = () => {
                         
                         <strong className="block mb-2">Critères :</strong>
                         <ul className="text-sm space-y-1">
-                            <li><strong>Expertise</strong> : Montrez vos compétences</li>
-                            <li><strong>Experience</strong> : Documentez vos cas clients</li>
+                            <li><strong>Expertise</strong> : Montrez vos compétences et qualifications</li>
+                            <li><strong>Experience</strong> : Documentez vos cas clients et résultats</li>
                             <li><strong>Authority</strong> : Backlinks depuis sites d'autorité</li>
                             <li><strong>Trustworthiness</strong> : Soyez transparent et fiable</li>
                         </ul>
@@ -520,10 +506,8 @@ export const GsoDefinition2026: React.FC = () => {
                 </div>
             </section>
             
-            <section id="gso-vs-seo" className="my-16">
-                <h2 className="text-3xl mb-8">GSO vs SEO : Les Vraies Différences</h2>
-                
-                <h3 className="text-2xl font-bold mt-10 mb-6">Cas Client #2 : E-commerce (SEO vs GSO)</h3>
+            <section id="cas-client-2" className="my-16">
+                <h2 className="text-3xl mb-8">Cas Client #2 : E-commerce (Citations IA vs Backlinks)</h2>
                 
                 <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
@@ -531,40 +515,45 @@ export const GsoDefinition2026: React.FC = () => {
                         <ul className="text-sm space-y-1 mb-4">
                             <li>Trafic Google : 10 000 visiteurs/mois</li>
                             <li>Trafic IA : 0 visiteurs/mois</li>
-                            <li>Contenu : 1 500 mots, pas de données propriétaires</li>
+                            <li>Backlinks : 100</li>
+                            <li>Citations IA : 0</li>
                         </ul>
                     </div>
                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <strong className="text-purple-600 block mb-2">Stratégie SEO Seule (3 mois) :</strong>
+                        <strong className="text-purple-600 block mb-2">Stratégie Backlinks Seule (3 mois) :</strong>
                         <ul className="text-sm space-y-1 mb-4">
                             <li>Trafic Google : 12 000 visiteurs/mois (+20%)</li>
                             <li>Trafic IA : 0 visiteurs/mois</li>
+                            <li>Backlinks : 130 (+30)</li>
                             <li>Résultat : +2 000 visiteurs/mois</li>
                         </ul>
                     </div>
                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <strong className="text-emerald-600 block mb-2">Stratégie GSO Seule (3 mois) :</strong>
+                        <strong className="text-emerald-600 block mb-2">Stratégie Citations IA Seule (3 mois) :</strong>
                         <ul className="text-sm space-y-1 mb-4">
-                            <li>Trafic Google : 10 200 visiteurs/mois (+2%)</li>
-                            <li>Trafic IA : 2 500 visiteurs/mois (NOUVEAU)</li>
-                            <li>Résultat : +2 700 visiteurs/mois</li>
+                            <li>Trafic Google : 10 500 visiteurs/mois (+5%)</li>
+                            <li>Trafic IA : 2 800 visiteurs/mois (NOUVEAU)</li>
+                            <li>Citations IA : 42 mots-clés</li>
+                            <li>Résultat : +3 300 visiteurs/mois</li>
                         </ul>
                     </div>
                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <strong className="text-orange-600 block mb-2">Stratégie SEO + GSO (3 mois) :</strong>
+                        <strong className="text-orange-600 block mb-2">Stratégie Backlinks + Citations IA (3 mois) :</strong>
                         <ul className="text-sm space-y-1 mb-4">
-                            <li>Trafic Google : 12 500 visiteurs/mois (+25%)</li>
-                            <li>Trafic IA : 3 200 visiteurs/mois (NOUVEAU)</li>
-                            <li>Résultat : +5 700 visiteurs/mois</li>
+                            <li>Trafic Google : 12 800 visiteurs/mois (+28%)</li>
+                            <li>Trafic IA : 3 500 visiteurs/mois (NOUVEAU)</li>
+                            <li>Backlinks : 130 (+30)</li>
+                            <li>Citations IA : 45 mots-clés</li>
+                            <li>Résultat : +6 300 visiteurs/mois</li>
                         </ul>
                     </div>
                 </div>
                 
-                <p className="text-xl font-medium text-slate-800 text-center mt-6"><strong>Conclusion :</strong> GSO + SEO génère 2.8x plus de trafic que SEO seul.</p>
+                <p className="text-xl font-medium text-slate-800 text-center mt-6"><strong>Conclusion :</strong> Citations IA + Backlinks génère 3.15x plus de trafic que backlinks seul.</p>
             </section>
             
             <section id="cas-client-3" className="my-16">
-                <h2 className="text-3xl mb-8">Cas Client #3 : SaaS (Stratégie GSO Complète)</h2>
+                <h2 className="text-3xl mb-8">Cas Client #3 : SaaS (Stratégie Citations IA Complète)</h2>
                 
                 <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
@@ -577,35 +566,37 @@ export const GsoDefinition2026: React.FC = () => {
                         </ul>
                     </div>
                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <strong className="text-purple-600 block mb-2">Stratégie GSO Mise en Place :</strong>
+                        <strong className="text-purple-600 block mb-2">Stratégie Citations IA Mise en Place :</strong>
                         <ul className="text-sm space-y-1 mb-4">
                             <li>Créé 10 articles long-form (2 500+ mots)</li>
                             <li>Ajouté données propriétaires (étude de 100 clients)</li>
                             <li>Amélioré E-E-A-T (cas clients, témoignages)</li>
                             <li>Mis à jour tous les 3 mois</li>
+                            <li>Généré 50 backlinks</li>
                         </ul>
                     </div>
                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 md:col-span-2">
                         <strong className="text-emerald-600 block mb-2">Résultats après 6 mois :</strong>
                         <ul className="text-sm space-y-1 mb-4">
-                            <li>Trafic Google : 5 500 visiteurs/mois (+83%)</li>
-                            <li>Trafic IA : 2 200 visiteurs/mois (NOUVEAU)</li>
-                            <li>Citations IA : 45+ mots-clés</li>
-                            <li>Conversions : +150%</li>
+                            <li>Trafic Google : 6 500 visiteurs/mois (+117%)</li>
+                            <li>Trafic IA : 3 800 visiteurs/mois (NOUVEAU)</li>
+                            <li>Citations IA : 58 mots-clés</li>
+                            <li>Backlinks : 100 (+50)</li>
+                            <li>Conversions : +180%</li>
                         </ul>
                     </div>
                 </div>
                 
-                <p className="text-xl font-medium text-slate-800 text-center mt-6"><strong>Résultat :</strong> +4 700 visiteurs/mois (+157% total)</p>
+                <p className="text-xl font-medium text-slate-800 text-center mt-6"><strong>Résultat :</strong> +7 300 visiteurs/mois (+243% total)</p>
             </section>
             
             <section id="erreurs" className="my-16">
-                <h2 className="text-3xl mb-8">Les Erreurs Courantes du GSO</h2>
+                <h2 className="text-3xl mb-8">Erreurs Courantes à Éviter</h2>
                 
                 <div className="space-y-8 mt-8">
                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                        <h3 className="text-xl font-bold text-slate-900 mt-0 mb-4">Erreur #1 : Ignorer le GSO</h3>
-                        <p>Beaucoup pensent que le GSO est une tendance. C'est faux. Les IA génératives sont là pour rester. <strong>À faire :</strong> Commencez votre stratégie GSO maintenant.</p>
+                        <h3 className="text-xl font-bold text-slate-900 mt-0 mb-4">Erreur #1 : Ignorer les Citations IA</h3>
+                        <p>Beaucoup pensent que les citations IA sont une tendance. C'est faux. Les IA génératives sont là pour rester. <strong>À faire :</strong> Commencez votre stratégie citations IA maintenant.</p>
                     </div>
                     
                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
@@ -627,11 +618,16 @@ export const GsoDefinition2026: React.FC = () => {
                         <h3 className="text-xl font-bold text-slate-900 mt-0 mb-4">Erreur #5 : Pas de Mise à Jour</h3>
                         <p>Beaucoup créent du contenu et l'oublient. Les IA préfèrent le contenu frais. <strong>À faire :</strong> Mettez à jour votre contenu tous les 3-6 mois.</p>
                     </div>
+                    
+                    <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                        <h3 className="text-xl font-bold text-slate-900 mt-0 mb-4">Erreur #6 : Pas de Monitoring</h3>
+                        <p>Beaucoup ne suivent pas leurs citations IA. Résultat : pas d'optimisation. <strong>À faire :</strong> Suivez vos citations IA chaque mois avec Ahrefs ou SEMrush.</p>
+                    </div>
                 </div>
             </section>
             
             <section id="checklist" className="my-16">
-                <h2 className="text-3xl mb-8">Checklist GSO Complète</h2>
+                <h2 className="text-3xl mb-8">Checklist Citations IA Génératives</h2>
                 
                 <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
@@ -678,7 +674,7 @@ export const GsoDefinition2026: React.FC = () => {
                         </ul>
                     </div>
                     
-                    <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 md:col-span-2">
+                    <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
                         <h3 className="text-xl font-bold text-slate-900 mt-0 mb-4">Technique</h3>
                         <ul className="text-sm space-y-1">
                             <li>☐ Pas de JavaScript bloquant</li>
@@ -687,6 +683,104 @@ export const GsoDefinition2026: React.FC = () => {
                             <li>☐ Vitesse optimisée</li>
                             <li>☐ Schema Markup (Article, FAQPage)</li>
                         </ul>
+                    </div>
+                    
+                    <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                        <h3 className="text-xl font-bold text-slate-900 mt-0 mb-4">Monitoring</h3>
+                        <ul className="text-sm space-y-1">
+                            <li>☐ Suivi des citations IA (Ahrefs, SEMrush)</li>
+                            <li>☐ Suivi du trafic IA (Google Analytics 4)</li>
+                            <li>☐ Suivi des mots-clés rankés</li>
+                            <li>☐ Optimisation mensuelle</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="outils" className="my-16">
+                <h2 className="text-3xl mb-8">Outils Essentiels pour les Citations IA</h2>
+                
+                <div className="grid md:grid-cols-3 gap-6 mt-8">
+                    <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h3 className="font-bold text-slate-900 mt-0 mb-4 flex items-center gap-2">
+                            <BarChart3 size={20} className="text-blue-600" /> Analyse
+                        </h3>
+                        <div className="space-y-4">
+                            <div>
+                                <strong className="block text-slate-900">Ahrefs</strong>
+                                <ul className="text-sm text-slate-600 pl-4 list-disc mb-1">
+                                    <li>Meilleur pour l'analyse complète</li>
+                                    <li>Suivi des citations IA</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong className="block text-slate-900">SEMrush</strong>
+                                <ul className="text-sm text-slate-600 pl-4 list-disc mb-1">
+                                    <li>Bon pour l'analyse</li>
+                                    <li>Analyse de la concurrence</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong className="block text-slate-900">Google Search Console</strong>
+                                <ul className="text-sm text-slate-600 pl-4 list-disc mb-1">
+                                    <li>Données officielles (gratuit)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h3 className="font-bold text-slate-900 mt-0 mb-4 flex items-center gap-2">
+                            <BarChart3 size={20} className="text-purple-600" /> Création
+                        </h3>
+                        <div className="space-y-4">
+                            <div>
+                                <strong className="block text-slate-900">ChatGPT</strong>
+                                <ul className="text-sm text-slate-600 pl-4 list-disc mb-1">
+                                    <li>Brainstorming</li>
+                                    <li>Structure, vérification</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong className="block text-slate-900">Gemini</strong>
+                                <ul className="text-sm text-slate-600 pl-4 list-disc mb-1">
+                                    <li>Vérification de contenu</li>
+                                    <li>Recherche</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong className="block text-slate-900">Perplexity</strong>
+                                <ul className="text-sm text-slate-600 pl-4 list-disc mb-1">
+                                    <li>Recherche et citations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h3 className="font-bold text-slate-900 mt-0 mb-4 flex items-center gap-2">
+                            <BarChart3 size={20} className="text-emerald-600" /> Monitoring
+                        </h3>
+                        <div className="space-y-4">
+                            <div>
+                                <strong className="block text-slate-900">Google Analytics 4</strong>
+                                <ul className="text-sm text-slate-600 pl-4 list-disc mb-1">
+                                    <li>Trafic IA (gratuit)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong className="block text-slate-900">Ahrefs & SEMrush</strong>
+                                <ul className="text-sm text-slate-600 pl-4 list-disc mb-1">
+                                    <li>Citations IA</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong className="block text-slate-900">Rank Tracker</strong>
+                                <ul className="text-sm text-slate-600 pl-4 list-disc mb-1">
+                                    <li>Suivi des rankings</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -702,28 +796,28 @@ export const GsoDefinition2026: React.FC = () => {
                         {[
                             { 
                                 step: 1, 
-                                title: "Audit GSO", 
-                                desc: "Commencez par un audit complet de votre situation actuelle :",
+                                title: "Jour 1-2 : Audit Citations IA", 
+                                desc: "Commencez par un audit complet :",
                                 list: ["Analysez votre contenu actuel", "Identifiez ce qui manque (données propriétaires, E-E-A-T, longueur)", "Créez une liste de 10 articles à améliorer"],
                                 color: "blue"
                             },
                             { 
                                 step: 2, 
-                                title: "Amélioration Prioritaire", 
+                                title: "Jour 3-4 : Amélioration Prioritaire", 
                                 desc: "Améliorez vos articles existants :",
                                 list: ["Sélectionnez 3 articles prioritaires", "Ajoutez 500+ mots", "Incluez données propriétaires", "Améliorez E-E-A-T"],
                                 color: "purple"
                             },
                             { 
                                 step: 3, 
-                                title: "Création de Contenu", 
+                                title: "Jour 5 : Création de Contenu", 
                                 desc: "Créez du nouveau contenu optimisé :",
-                                list: ["Créez 1 nouvel article long-form (2 500+ mots)", "Incluez données propriétaires", "Documentez 3-5 cas clients", "Optimisez pour GSO"],
+                                list: ["Créez 1 nouvel article long-form (2 500+ mots)", "Incluez données propriétaires", "Documentez 3-5 cas clients", "Optimisez pour citations IA"],
                                 color: "emerald"
                             },
                             { 
                                 step: 4, 
-                                title: "Monitoring", 
+                                title: "Semaine 2 : Monitoring", 
                                 desc: "Suivez vos résultats :",
                                 list: ["Suivez vos citations IA", "Analysez le trafic IA", "Optimisez les articles", "Créez 1 nouvel article"],
                                 color: "blue"
@@ -777,150 +871,28 @@ export const GsoDefinition2026: React.FC = () => {
                 </div>
             </section>
             
-            <section id="outils" className="my-16">
-                <h2 className="text-3xl mb-8">Outils Essentiels pour le GSO</h2>
+            <section id="conclusion" className="my-16">
+                <h2 className="text-3xl mb-8">Conclusion</h2>
                 
-                <div className="grid md:grid-cols-3 gap-6 mt-8">
-                    <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
-                        <h3 className="font-bold text-slate-900 mt-0 mb-4 flex items-center gap-2">
-                            <BarChart3 size={20} className="text-blue-600" /> Analyse
-                        </h3>
-                        <div className="space-y-4">
-                            <div>
-                                <strong className="block text-slate-900">Ahrefs</strong>
-                                <ul className="text-sm text-slate-600 pl-4 list-disc mb-1">
-                                    <li>Analyse de contenu</li>
-                                    <li>Recherche de mots-clés</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <strong className="block text-slate-900">SEMrush</strong>
-                                <ul className="text-sm text-slate-600 pl-4 list-disc mb-1">
-                                    <li>Analyse de contenu</li>
-                                    <li>Analyse des concurrents</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <strong className="block text-slate-900">Google Search Console</strong>
-                                <ul className="text-sm text-slate-600 pl-4 list-disc mb-1">
-                                    <li>Données officielles</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                <div className="bg-blue-600 text-white p-8 rounded-3xl shadow-xl">
+                    <p className="text-xl font-medium mb-6"><strong>Les citations IA génératives ne sont pas une tendance. C'est l'avenir du marketing digital.</strong></p>
                     
-                    <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
-                        <h3 className="font-bold text-slate-900 mt-0 mb-4 flex items-center gap-2">
-                            <Target size={20} className="text-orange-600" /> Création
-                        </h3>
-                        <div className="space-y-4">
-                            <div>
-                                <strong className="block text-slate-900">ChatGPT</strong>
-                                <ul className="text-sm text-slate-600 pl-4 list-disc mb-1">
-                                    <li>Brainstorming</li>
-                                    <li>Structure</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <strong className="block text-slate-900">Gemini</strong>
-                                <ul className="text-sm text-slate-600 pl-4 list-disc mb-1">
-                                    <li>Vérification de contenu</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <strong className="block text-slate-900">Perplexity</strong>
-                                <ul className="text-sm text-slate-600 pl-4 list-disc mb-1">
-                                    <li>Recherche et citations</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <p className="mb-6">En 2026, ignorer les citations IA signifie perdre 15-20% de votre trafic potentiel.</p>
                     
-                    <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
-                        <h3 className="font-bold text-slate-900 mt-0 mb-4 flex items-center gap-2">
-                            <Bot size={20} className="text-green-600" /> Monitoring
-                        </h3>
-                        <div className="space-y-4">
-                            <div>
-                                <strong className="block text-slate-900">Google Analytics 4</strong>
-                                <ul className="text-sm text-slate-600 pl-4 list-disc mb-1">
-                                    <li>Trafic IA (gratuit)</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <strong className="block text-slate-900">Ahrefs</strong>
-                                <ul className="text-sm text-slate-600 pl-4 list-disc mb-1">
-                                    <li>Citations IA</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <strong className="block text-slate-900">SEMrush</strong>
-                                <ul className="text-sm text-slate-600 pl-4 list-disc mb-1">
-                                    <li>Citations IA</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <p className="font-bold mb-4">Voici ce que vous devez faire maintenant :</p>
+                    
+                    <ol className="space-y-2 mb-8 pl-6">
+                        <li><strong>Cette semaine</strong> : Audit citations IA de votre contenu</li>
+                        <li><strong>Semaine 2</strong> : Amélioration de 3 articles prioritaires</li>
+                        <li><strong>Semaine 3</strong> : Création de 1 nouvel article long-form</li>
+                        <li><strong>Semaine 4</strong> : Monitoring et optimisation</li>
+                    </ol>
+                    
+                    <p className="text-lg font-bold">Commencez maintenant. Vos concurrents ne dorment pas.</p>
                 </div>
             </section>
-            
-            <section id="conclusion" className="my-20 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 rounded-[2.5rem] p-10 md:p-16 text-center text-white not-prose relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-                <div className="relative z-10">
-                    <h2 className="text-white text-4xl md:text-5xl mb-8 font-display font-bold tracking-tight">Conclusion</h2>
-                    <p className="text-blue-100 text-xl md:text-2xl mb-12 max-w-4xl mx-auto font-light leading-relaxed">
-                        Le <strong>GSO n'est pas une tendance. C'est l'avenir du marketing digital.</strong>
-                    </p>
-                    <p className="text-white text-lg mb-6 max-w-7xl mx-auto text-left">En 2026, ignorer le GSO signifie perdre 15-20% de votre trafic potentiel.</p>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl mx-auto mb-12">
-                        <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 flex items-center justify-center text-center hover:bg-white/20 transition-colors">
-                            <span className="text-xs md:text-sm font-bold text-white uppercase">Cette semaine : Audit GSO</span>
-                        </div>
-                        <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 flex items-center justify-center text-center hover:bg-white/20 transition-colors">
-                            <span className="text-xs md:text-sm font-bold text-white uppercase">Semaine 2 : Amélioration</span>
-                        </div>
-                        <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 flex items-center justify-center text-center hover:bg-white/20 transition-colors">
-                            <span className="text-xs md:text-sm font-bold text-white uppercase">Semaine 3 : Création</span>
-                        </div>
-                        <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 flex items-center justify-center text-center hover:bg-white/20 transition-colors">
-                            <span className="text-xs md:text-sm font-bold text-white uppercase">Semaine 4 : Monitoring</span>
-                        </div>
-                    </div>
-                    <p className="text-blue-100 text-lg mb-10 max-w-4xl mx-auto">
-                        <strong className="text-white text-xl">Commencez maintenant. Vos concurrents ne dorment pas.</strong>
-                    </p>
-                    <div className="flex flex-col md:flex-row gap-6 justify-center">
-                        <a href="/expertise-gso" className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-900 font-bold rounded-full hover:bg-blue-50 transition-colors shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
-                            Découvrir notre expertise GSO
-                        </a>
-                        <a href="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white font-bold rounded-full hover:bg-white/10 transition-colors shadow-lg border-2 border-white/50 hover:border-white">
-                            Demander un audit GSO
-                        </a>
-                    </div>
-                </div>
-            </section>
-            </article>
-        </div>
 
-        {/* Share / Footer */}
-        <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-sm font-mono text-slate-500">
-                Partager ce guide
-            </div>
-            <div className="flex gap-4">
-                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
-                    <Linkedin size={20} />
-                </button>
-                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
-                    <Twitter size={20} />
-                </button>
-                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
-                    <Facebook size={20} />
-                </button>
-                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
-                    <Share2 size={20} />
-                </button>
-            </div>
+            </article>
         </div>
       </div>
     </div>

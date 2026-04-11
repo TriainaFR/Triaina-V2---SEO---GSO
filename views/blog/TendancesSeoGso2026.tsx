@@ -47,8 +47,8 @@ export const TendancesSeoGso2026: React.FC = () => {
             "url": "https://www.triaina.fr/logo.png"
         }
     },
-    "datePublished": "2026-03-18",
-    "dateModified": "2026-03-18",
+    "datePublished": "2026-04-01",
+    "dateModified": "2026-04-01",
     "wordCount": 2200
   };
 
@@ -167,7 +167,7 @@ export const TendancesSeoGso2026: React.FC = () => {
         <header className="mb-12 text-center max-w-5xl mx-auto">
           <div className="flex items-center justify-center gap-4 text-xs font-mono text-blue-600 mb-6 uppercase tracking-widest">
             <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">Tendances 2026</span>
-            <span className="flex items-center gap-1"><Calendar size={12} /> 18 MARS 2026</span>
+            <span className="flex items-center gap-1"><Calendar size={12} /> 01 AVRIL 2026</span>
             <span className="flex items-center gap-1"><Clock size={12} /> 18 MIN</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-display font-bold text-slate-900 mb-8 leading-tight tracking-tight">
