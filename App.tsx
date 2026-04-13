@@ -30,6 +30,7 @@ import { SeoTechniqueVsContenu } from './views/blog/SeoTechniqueVsContenu'; // I
 import { GsoDefinition2026 } from './views/blog/GsoDefinition2026'; // Import GsoDefinition2026
 import { CitationsIAGeneratives } from './views/blog/CitationsIAGeneratives'; // Import CitationsIAGeneratives
 import { SEO } from './components/SEO';
+import { CustomCursor } from './components/CustomCursor';
 import { NAV_LINKS, SOCIAL_LINKS, PAGE_TO_URL, ROUTES } from './constants';
 import { Logo } from './components/Logo';
 
@@ -227,6 +228,7 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-transparent text-slate-900 selection:bg-blue-200 selection:text-blue-900 overflow-x-hidden font-sans">
       <SEO schema={globalSchema} />
+      <CustomCursor />
 
       <div className="fixed inset-0 z-0">
          <ParticleBackground />

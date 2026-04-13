@@ -7,42 +7,8 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
   const { scrollYProgress } = useScroll();
   const scaleY = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
-  const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = React.useState(false);
-
-  useEffect(() => {
-    const updateMousePosition = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener('mousemove', updateMousePosition);
-    return () => window.removeEventListener('mousemove', updateMousePosition);
-  }, []);
-
-  useEffect(() => {
-    const handleMouseOver = (e: MouseEvent) => {
-      if ((e.target as HTMLElement).closest('a') || (e.target as HTMLElement).closest('button')) {
-        setIsHovering(true);
-      } else {
-        setIsHovering(false);
-      }
-    };
-    window.addEventListener('mouseover', handleMouseOver);
-    return () => window.removeEventListener('mouseover', handleMouseOver);
-  }, []);
-
   return (
-    <div className="relative flex flex-col flex-1 font-sans text-slate-900 cursor-none md:cursor-auto min-h-[calc(100vh-80px)]">
-      {/* CUSTOM CURSOR */}
-      <motion.div 
-        className="fixed top-0 left-0 w-8 h-8 rounded-full border-2 border-white pointer-events-none z-[100] mix-blend-difference hidden md:block"
-        animate={{
-          x: mousePosition.x - 16,
-          y: mousePosition.y - 16,
-          scale: isHovering ? 1.5 : 1,
-          backgroundColor: isHovering ? 'rgba(255, 255, 255, 1)' : 'transparent'
-        }}
-        transition={{ type: 'spring', stiffness: 500, damping: 28, mass: 0.5 }}
-      />
+    <div className="relative flex flex-col flex-1 font-sans text-slate-900 min-h-[calc(100vh-80px)]">
 
       {/* INDICATEUR DE PROGRESSION */}
       <div className="fixed top-0 right-0 w-1.5 h-full bg-slate-200/20 z-50 mix-blend-difference">
