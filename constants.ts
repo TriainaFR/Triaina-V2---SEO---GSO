@@ -185,19 +185,17 @@ export const EXPERTISE_DATA: Record<string, ExpertiseContent> = {
 
 export const REFERENCES_DATA: ReferenceItem[] = [
   {
-    id: 'ref_yonder',
-    client: 'Yonder',
-    title: 'Leadership Média SEO & GSO',
-    summary: 'Transformation structurelle pour dominer le marché des LLM et du SEO Travel.',
-    challenge: 'S\'imposer comme la référence absolue du voyage de luxe face aux nouveaux comportements de recherche assistée par IA.',
+    id: 'ref_bernard_magrez',
+    client: 'Bernard Magrez',
+    title: 'Bernard Magrez',
+    summary: 'Chantier GSO en cours.',
+    challenge: 'Chantier GSO en cours.',
     solution: '',
     results: [
-        'Leader thématique sur les moteurs IA', 
-        'Hausse significative du trafic SEO qualifié',
-        'Source privilégiée pour les réponses génératives'
+        'Chantier GSO en cours.'
     ],
-    tags: ['Média', 'GSO Leadership', 'Travel'],
-    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=1200'
+    tags: ['GSO', 'En cours'],
+    image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&q=80&w=1200'
   },
   {
     id: 'ref_leshardis',
@@ -215,6 +213,35 @@ export const REFERENCES_DATA: ReferenceItem[] = [
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200'
   },
   {
+    id: 'ref_skilink',
+    client: 'Skilink',
+    title: 'SaaS B2B - Automatisation ESN',
+    summary: 'Optimisation GSO pour une solution SaaS d\'automatisation commerciale dédiée aux ESN & Cabinets de Conseil.',
+    challenge: 'Faire émerger ce SaaS de niche comme l\'outil incontournable auprès des IA pour les requêtes B2B complexes des dirigeants d\'ESN (ex: "Meilleurs outils automatisation ESN").',
+    solution: '',
+    results: [
+        'Captation de trafic décisionnel B2B',
+        'Accélération du volume de démos qualifiées'
+    ],
+    tags: ['SaaS B2B', 'Tech', 'GSO'],
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
+    id: 'ref_yonder',
+    client: 'Yonder',
+    title: 'Leadership Média SEO & GSO',
+    summary: 'Transformation structurelle pour dominer le marché des LLM et du SEO Travel.',
+    challenge: 'S\'imposer comme la référence absolue du voyage de luxe face aux nouveaux comportements de recherche assistée par IA.',
+    solution: '',
+    results: [
+        'Leader thématique sur les moteurs IA', 
+        'Hausse significative du trafic SEO qualifié',
+        'Source privilégiée pour les réponses génératives'
+    ],
+    tags: ['Média', 'GSO Leadership', 'Travel'],
+    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
     id: 'ref_bestrestaurants',
     client: 'Best Restaurants Paris',
     title: 'Référencement Gastronomique Hybride',
@@ -230,20 +257,6 @@ export const REFERENCES_DATA: ReferenceItem[] = [
     image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1200'
   },
   {
-    id: 'ref_skilink',
-    client: 'Skilink',
-    title: 'SaaS B2B - Automatisation ESN',
-    summary: 'Optimisation GSO pour une solution SaaS d\'automatisation commerciale dédiée aux ESN & Cabinets de Conseil.',
-    challenge: 'Faire émerger ce SaaS de niche comme l\'outil incontournable auprès des IA pour les requêtes B2B complexes des dirigeants d\'ESN (ex: "Meilleurs outils automatisation ESN").',
-    solution: '',
-    results: [
-        'Captation de trafic décisionnel B2B',
-        'Accélération du volume de démos qualifiées'
-    ],
-    tags: ['SaaS B2B', 'Tech', 'GSO'],
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200'
-  },
-    {
     id: 'ref_groupe_hotelier',
     client: 'Groupe Hôtelier',
     title: 'Architecture SEO Internationale',
@@ -257,19 +270,6 @@ export const REFERENCES_DATA: ReferenceItem[] = [
     ],
     tags: ['Hotels', 'Technical SEO', 'International'],
     image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1200'
-  },
-  {
-    id: 'ref_bernard_magrez',
-    client: 'Bernard Magrez',
-    title: 'Bernard Magrez',
-    summary: 'Chantier GSO en cours.',
-    challenge: 'Chantier GSO en cours.',
-    solution: '',
-    results: [
-        'Chantier GSO en cours.'
-    ],
-    tags: ['GSO', 'En cours'],
-    image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&q=80&w=1200'
   }
 ];
 
