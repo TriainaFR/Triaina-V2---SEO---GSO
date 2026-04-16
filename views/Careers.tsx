@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { CAREERS_DATA, PAGE_TO_URL } from '../constants';
-import { Briefcase, MapPin, DollarSign, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Briefcase, MapPin, DollarSign, ArrowRight, ArrowLeft, CheckCircle2 } from 'lucide-react';
 import { SEO } from '../components/SEO';
 
-export const Careers: React.FC = () => {
+interface CareersProps {
+  onNavigate?: (p: any) => void;
+}
+
+export const Careers: React.FC<CareersProps> = ({ onNavigate }) => {
   const [hoveredJobId, setHoveredJobId] = useState<string | null>(null);
 
   const careersSchema = {
@@ -28,6 +32,18 @@ export const Careers: React.FC = () => {
 
       <div className="space-y-6 animate-fade-in-up w-full">
          
+         <button 
+             onClick={(e) => {
+                 e.preventDefault();
+                 if (onNavigate) onNavigate('team');
+                 else window.location.href = '/agence';
+             }}
+             className="inline-flex items-center gap-2 text-sm font-bold font-mono text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-widest mb-4 group"
+         >
+             <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+             Retour à l'Agence & Histoire
+         </button>
+
          {/* Header Section */}
          <div className="mb-12 text-center md:text-left border-b border-slate-400 pb-8">
             <h1 className="text-3xl md:text-5xl font-display font-bold text-slate-900 mb-2">

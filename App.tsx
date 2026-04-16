@@ -172,7 +172,7 @@ const App: React.FC = () => {
       case 'team':
         return <Team onNavigate={handleNavigation} initialTab="history" />;
       case 'recrutement':
-        return <Careers />;
+        return <Careers onNavigate={handleNavigation} />;
       case 'legal':
         return <Legal />;
       case 'expertise-seo':
