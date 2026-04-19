@@ -6,6 +6,87 @@ async function startServer() {
   const app = express();
   const PORT = process.env.PORT || 3000;
 
+  // 1. GSO: Link headers for Agent Discovery (RFC 8288)
+  app.use((req, res, next) => {
+    if (req.path === '/' || req.path === '/index.html') {
+      res.setHeader('Link', '</.well-known/api-catalog>; rel="api-catalog", </.well-known/mcp/server-card.json>; rel="mcp-server-card"');
+    }
+    next();
+  });
+
+  // 2. GSO: API Catalog (RFC 9727)
+  app.get('/.well-known/api-catalog', (req, res) => {
+    res.setHeader('Content-Type', 'application/linkset+json');
+    res.send(JSON.stringify({
+      linkset: [
+        {
+          anchor: "https://www.triaina.fr/api",
+          "service-desc": [{ href: "https://www.triaina.fr/openapi.yaml", type: "application/yaml" }],
+          "service-doc": [{ href: "https://www.triaina.fr/docs", type: "text/html" }],
+          status: [{ href: "https://www.triaina.fr/api/health", type: "application/json" }]
+        }
+      ]
+    }, null, 2));
+  });
+
+  // 3. GSO: OAuth/OIDC Discovery Metadata (RFC 8414)
+  app.get('/.well-known/oauth-authorization-server', (req, res) => {
+    res.json({
+      issuer: "https://www.triaina.fr",
+      authorization_endpoint: "https://www.triaina.fr/oauth/authorize",
+      token_endpoint: "https://www.triaina.fr/oauth/token",
+      jwks_uri: "https://www.triaina.fr/oauth/jwks",
+      grant_types_supported: ["authorization_code", "client_credentials"],
+      response_types_supported: ["code"]
+    });
+  });
+
+  // 4. GSO: OAuth Protected Resource Metadata (RFC 9728)
+  app.get('/.well-known/oauth-protected-resource', (req, res) => {
+    res.json({
+      resource: "https://www.triaina.fr/api",
+      authorization_servers: ["https://www.triaina.fr"],
+      scopes_supported: ["read", "write", "gso_access"]
+    });
+  });
+
+  // 5. GSO: MCP Server Card
+  app.get('/.well-known/mcp/server-card.json', (req, res) => {
+    res.json({
+      $schema: "https://mcp.schema.example.com/server-card",
+      serverInfo: {
+        name: "triaina-mcp-server",
+        version: "1.0.0",
+        description: "Serveur MCP pour l'agence Triaina SEO / GSO"
+      },
+      transport: {
+        type: "sse",
+        endpoint: "https://www.triaina.fr/mcp/sse"
+      },
+      capabilities: {
+        tools: true,
+        resources: true,
+        prompts: true
+      }
+    });
+  });
+
+  // 6. GSO: Agent Skills Index
+  app.get('/.well-known/agent-skills/index.json', (req, res) => {
+    res.json({
+      $schema: "https://agentskills.io/schema/v0.2.0/index.schema.json",
+      skills: [
+        {
+          name: "audit-seo-gso",
+          type: "api",
+          description: "Lance un audit rapide de visibilité",
+          url: "https://www.triaina.fr/api/skills/audit",
+          sha256: "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    });
+  });
+
   // Middleware that checks if Accept header contains text/markdown
   app.use((req, res, next) => {
     const accept = req.headers.accept || '';
