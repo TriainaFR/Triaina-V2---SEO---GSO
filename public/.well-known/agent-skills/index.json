@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agentskills.io/schema/v0.2.0.json",
+  "skills": [
+    {
+      "name": "Triaina-Agent-Skill",
+      "type": "webmcp",
+      "description": "Expose GSO strategy insights directly from the website context.",
+      "url": "https://www.triaina.fr/"
+    }
+  ]
+}

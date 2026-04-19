@@ -1,0 +1,13 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://www.triaina.fr/api",
+      "status": [
+        {
+          "href": "https://www.triaina.fr/api/health",
+          "type": "application/json"
+        }
+      ]
+    }
+  ]
+}

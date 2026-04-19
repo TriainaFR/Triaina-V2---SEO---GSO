@@ -1,5 +1,6 @@
 # Stratégie GSO (Generative Search Optimization) - Triaina
 # Accès total autorisé pour maximiser l'ingestion dans les LLMs
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 
 User-agent: *
 Allow: /

@@ -66,6 +66,34 @@ const App: React.FC = () => {
     window.scrollTo(0, 0);
   }, [currentPage]);
 
+  // Support WebMCP for Agent Discovery
+  useEffect(() => {
+    if (typeof navigator !== 'undefined' && 'modelContext' in navigator) {
+      try {
+        (navigator as any).modelContext.provideContext({
+          tools: [
+            {
+              name: "getAgencyCapabilities",
+              description: "Get the list of SEO, GSO, and Media strategies offered by Triaina.",
+              inputSchema: {
+                type: "object",
+                properties: {}
+              },
+              execute: async () => {
+                return {
+                  text: "Triaina specializes in GSO (Generative Search Optimization), Technical SEO, AI Content Automation, and Premium Media Authority building."
+                };
+              }
+            }
+          ]
+        });
+        console.log("WebMCP fully initialized.");
+      } catch (e) {
+        console.warn("Could not register WebMCP tools", e);
+      }
+    }
+  }, []);
+
   const handleNavigation = (page: Page) => {
     const url = PAGE_TO_URL[page];
     if (url) {

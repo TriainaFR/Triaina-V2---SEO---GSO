@@ -1,0 +1,13 @@
+{
+  "serverInfo": {
+    "name": "Triaina-MCP",
+    "version": "1.0.0"
+  },
+  "transport": {
+    "type": "sse",
+    "endpoint": "https://www.triaina.fr/mcp/sse"
+  },
+  "capabilities": {
+    "tools": true
+  }
+}
