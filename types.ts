@@ -28,6 +28,8 @@ export type Page =
   | 'tendances-seo-gso-2026'
   | 'seo-technique-vs-contenu'
   | 'gso-definition-2026'
+  | 'citations-ia-generatives'
+  | 'audit-seo-paris-2026'
   | '404';
 
 export interface NavLink {

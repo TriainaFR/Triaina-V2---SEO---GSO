@@ -15,6 +15,7 @@ interface SEOProps {
   canonicalUrl?: string;
   exactTitle?: boolean;
   twitterImage?: string;
+  twitterTitle?: string;
   twitterDescription?: string;
 }
 
@@ -32,6 +33,7 @@ export const SEO: React.FC<SEOProps> = ({
     canonicalUrl,
     exactTitle = false,
     twitterImage,
+    twitterTitle,
     twitterDescription
 }) => {
   useEffect(() => {
@@ -69,7 +71,7 @@ export const SEO: React.FC<SEOProps> = ({
 
     // 4. Twitter Cards (Twitter uses 'name')
     updateMeta('meta[name="twitter:card"]', twitterCard);
-    if (title) updateMeta('meta[name="twitter:title"]', title);
+    if (twitterTitle || title) updateMeta('meta[name="twitter:title"]', twitterTitle || title || '');
     if (twitterDescription || description) updateMeta('meta[name="twitter:description"]', twitterDescription || description || '');
     if (twitterImage || image) updateMeta('meta[name="twitter:image"]', twitterImage || image || '');
 

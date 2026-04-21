@@ -17,10 +17,10 @@ export const ScrambleText: React.FC<ScrambleTextProps> = ({ text, className = ""
   const animate = () => {
     let iteration = 0;
     const interval = setInterval(() => {
-      setDisplayText(prev => 
+      setDisplayText(_prev => 
         text
           .split("")
-          .map((letter, index) => {
+          .map((_letter, index) => {
             if (index < iteration) {
               return text[index];
             }

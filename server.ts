@@ -15,7 +15,7 @@ async function startServer() {
   });
 
   // 2. GSO: API Catalog (RFC 9727)
-  app.get('/.well-known/api-catalog', (req, res) => {
+  app.get('/.well-known/api-catalog', (_req, res) => {
     res.setHeader('Content-Type', 'application/linkset+json');
     res.send(JSON.stringify({
       linkset: [
@@ -30,7 +30,7 @@ async function startServer() {
   });
 
   // 3. GSO: OAuth/OIDC Discovery Metadata (RFC 8414)
-  app.get('/.well-known/oauth-authorization-server', (req, res) => {
+  app.get('/.well-known/oauth-authorization-server', (_req, res) => {
     res.json({
       issuer: "https://www.triaina.fr",
       authorization_endpoint: "https://www.triaina.fr/oauth/authorize",
@@ -42,7 +42,7 @@ async function startServer() {
   });
 
   // 4. GSO: OAuth Protected Resource Metadata (RFC 9728)
-  app.get('/.well-known/oauth-protected-resource', (req, res) => {
+  app.get('/.well-known/oauth-protected-resource', (_req, res) => {
     res.json({
       resource: "https://www.triaina.fr/api",
       authorization_servers: ["https://www.triaina.fr"],
@@ -51,7 +51,7 @@ async function startServer() {
   });
 
   // 5. GSO: MCP Server Card
-  app.get('/.well-known/mcp/server-card.json', (req, res) => {
+  app.get('/.well-known/mcp/server-card.json', (_req, res) => {
     res.json({
       $schema: "https://mcp.schema.example.com/server-card",
       serverInfo: {
@@ -72,7 +72,7 @@ async function startServer() {
   });
 
   // 6. GSO: Agent Skills Index
-  app.get('/.well-known/agent-skills/index.json', (req, res) => {
+  app.get('/.well-known/agent-skills/index.json', (_req, res) => {
     res.json({
       $schema: "https://agentskills.io/schema/v0.2.0/index.schema.json",
       skills: [
@@ -136,7 +136,7 @@ async function startServer() {
     // Production serving
     const distPath = path.join(process.cwd(), 'dist');
     app.use(express.static(distPath));
-    app.get('*all', (req, res) => {
+    app.get('*all', (_req, res) => {
       res.sendFile(path.join(distPath, 'index.html'));
     });
   }

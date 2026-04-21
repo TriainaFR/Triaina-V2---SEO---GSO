@@ -30,7 +30,8 @@ export const PAGE_TO_URL: Record<string, string> = {
   'tendances-seo-gso-2026': '/blog/tendances-seo-gso-2026',
   'seo-technique-vs-contenu': '/blog/seo-technique-vs-seo-contenu',
   'gso-definition-2026': '/blog/gso-definition-2026',
-  'citations-ia-generatives': '/blog/citations-ia-generatives'
+  'citations-ia-generatives': '/blog/citations-ia-generatives',
+  'audit-seo-paris-2026': '/blog/audit-seo-paris-2026'
 };
 
 export const ROUTES: Record<string, Page> = {
@@ -65,7 +66,8 @@ export const ROUTES: Record<string, Page> = {
   '/blog/tendances-seo-gso-2026': 'tendances-seo-gso-2026',
   '/blog/seo-technique-vs-seo-contenu': 'seo-technique-vs-contenu',
   '/blog/gso-definition-2026': 'gso-definition-2026',
-  '/blog/citations-ia-generatives': 'citations-ia-generatives'
+  '/blog/citations-ia-generatives': 'citations-ia-generatives',
+  '/blog/audit-seo-paris-2026': 'audit-seo-paris-2026'
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -431,6 +433,17 @@ export const BLOG_DATA: BlogItem[] = [
     excerpt: 'Citations IA génératives 2026 : qu\'est-ce que c\'est ? Guide complet avec 3 cas clients réels, données propriétaires, 4 piliers, checklist et actions immédiates.',
     url: '/blog/citations-ia-generatives',
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'audit-seo-paris-2026',
+    source: 'Guide Local',
+    logo: '',
+    date: '20 AVRIL 2026',
+    title: 'Audit SEO Paris 2026 : Guide Complet + Checklist + Cas Clients',
+    excerpt: 'Audit SEO Paris 2026 : guide complet, 4 piliers, 3 cas clients réels, checklist détaillée, outils. Améliorez votre ranking à Paris. +200-300% de trafic.',
+    url: '/blog/audit-seo-paris-2026',
+    image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
   }
 ];

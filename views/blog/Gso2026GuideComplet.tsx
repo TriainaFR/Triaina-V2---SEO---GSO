@@ -484,13 +484,13 @@ export const Gso2026GuideComplet: React.FC = () => {
                                 blue: "bg-blue-50 border-blue-200 text-blue-700",
                                 purple: "bg-purple-50 border-purple-200 text-purple-700",
                                 emerald: "bg-emerald-50 border-emerald-200 text-emerald-700"
-                            }[item.color];
+                            }[item.color as 'blue' | 'purple' | 'emerald'] || "bg-blue-50 border-blue-200 text-blue-700";
                             
                             const iconColorClasses = {
                                 blue: "bg-blue-600 shadow-blue-200",
                                 purple: "bg-purple-600 shadow-purple-200",
                                 emerald: "bg-emerald-600 shadow-emerald-200"
-                            }[item.color];
+                            }[item.color as 'blue' | 'purple' | 'emerald'] || "bg-blue-600 shadow-blue-200";
 
                             return (
                                 <div key={item.step} className={`flex flex-col md:flex-row items-center gap-8 ${isEven ? 'md:flex-row-reverse' : ''}`}>

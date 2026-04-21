@@ -23,10 +23,12 @@ async function generateImage() {
     });
 
     let imageBase64 = null;
-    for (const part of response.candidates[0].content.parts) {
-      if (part.inlineData) {
-        imageBase64 = part.inlineData.data;
-        break;
+    if (response?.candidates?.[0]?.content?.parts) {
+      for (const part of response.candidates[0].content.parts) {
+        if (part.inlineData) {
+          imageBase64 = part.inlineData.data;
+          break;
+        }
       }
     }
 
