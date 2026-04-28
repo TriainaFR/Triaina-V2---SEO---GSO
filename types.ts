@@ -30,6 +30,7 @@ export type Page =
   | 'gso-definition-2026'
   | 'citations-ia-generatives'
   | 'audit-seo-paris-2026'
+  | 'seo-gso-geo-aeo-differences-2026'
   | '404';
 
 export interface NavLink {

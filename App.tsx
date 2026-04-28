@@ -29,7 +29,8 @@ import { TendancesSeoGso2026 } from './views/blog/TendancesSeoGso2026'; // Impor
 import { SeoTechniqueVsContenu } from './views/blog/SeoTechniqueVsContenu'; // Import SeoTechniqueVsContenu
 import { GsoDefinition2026 } from './views/blog/GsoDefinition2026'; // Import GsoDefinition2026
 import { CitationsIAGeneratives } from './views/blog/CitationsIAGeneratives'; // Import CitationsIAGeneratives
-import { AuditSeoParis2026 } from './views/blog/AuditSeoParis2026'; // Import AuditSeoParis2026
+import { AuditSeoParis2026 } from './views/blog/AuditSeoParis2026';
+import { SeoGsoGeoAeo2026 } from './views/blog/SeoGsoGeoAeo2026';
 import { SEO } from './components/SEO';
 import { CustomCursor } from './components/CustomCursor';
 import { NAV_LINKS, SOCIAL_LINKS, PAGE_TO_URL, ROUTES } from './constants';
@@ -244,6 +245,8 @@ const App: React.FC = () => {
         return <CitationsIAGeneratives />;
       case 'audit-seo-paris-2026':
         return <AuditSeoParis2026 />;
+      case 'seo-gso-geo-aeo-differences-2026':
+        return <SeoGsoGeoAeo2026 />;
       case '404':
         return <NotFound onNavigate={handleNavigation} />;
       default:

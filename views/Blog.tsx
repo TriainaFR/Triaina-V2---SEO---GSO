@@ -72,6 +72,7 @@ export const Blog: React.FC<BlogProps> = ({ onNavigate }) => {
                             src={article.image} 
                             alt={article.title} 
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            referrerPolicy="no-referrer"
                         />
                         <div className="absolute inset-0 bg-blue-900/20 group-hover:bg-transparent transition-colors duration-300"></div>
                         

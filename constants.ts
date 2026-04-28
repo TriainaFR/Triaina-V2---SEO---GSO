@@ -31,7 +31,8 @@ export const PAGE_TO_URL: Record<string, string> = {
   'seo-technique-vs-contenu': '/blog/seo-technique-vs-seo-contenu',
   'gso-definition-2026': '/blog/gso-definition-2026',
   'citations-ia-generatives': '/blog/citations-ia-generatives',
-  'audit-seo-paris-2026': '/blog/audit-seo-paris-2026'
+  'audit-seo-paris-2026': '/blog/audit-seo-paris-2026',
+  'seo-gso-geo-aeo-differences-2026': '/blog/seo-gso-geo-aeo-differences-2026'
 };
 
 export const ROUTES: Record<string, Page> = {
@@ -67,7 +68,8 @@ export const ROUTES: Record<string, Page> = {
   '/blog/seo-technique-vs-seo-contenu': 'seo-technique-vs-contenu',
   '/blog/gso-definition-2026': 'gso-definition-2026',
   '/blog/citations-ia-generatives': 'citations-ia-generatives',
-  '/blog/audit-seo-paris-2026': 'audit-seo-paris-2026'
+  '/blog/audit-seo-paris-2026': 'audit-seo-paris-2026',
+  '/blog/seo-gso-geo-aeo-differences-2026': 'seo-gso-geo-aeo-differences-2026'
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -444,6 +446,17 @@ export const BLOG_DATA: BlogItem[] = [
     excerpt: 'Audit SEO Paris 2026 : guide complet, 4 piliers, 3 cas clients réels, checklist détaillée, outils. Améliorez votre ranking à Paris. +200-300% de trafic.',
     url: '/blog/audit-seo-paris-2026',
     image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'seo-gso-geo-aeo-differences-2026',
+    source: 'Guide Stratégique',
+    logo: '',
+    date: '28 AVRIL 2026',
+    title: 'SEO, GSO, GEO, AEO : quelles différences en 2026 ?',
+    excerpt: 'Comprendre les différences entre SEO, GSO (Generative Search Optimization), GEO (Generative Engine Optimization) et AEO (Answer Engine Optimization) en 2026.',
+    url: '/blog/seo-gso-geo-aeo-differences-2026',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
   }
 ];
