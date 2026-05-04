@@ -32,7 +32,9 @@ export const PAGE_TO_URL: Record<string, string> = {
   'gso-definition-2026': '/blog/gso-definition-2026',
   'citations-ia-generatives': '/blog/citations-ia-generatives',
   'audit-seo-paris-2026': '/blog/audit-seo-paris-2026',
-  'seo-gso-geo-aeo-differences-2026': '/blog/seo-gso-geo-aeo-differences-2026'
+  'seo-gso-geo-aeo-differences-2026': '/blog/seo-gso-geo-aeo-differences-2026',
+  'optimiser-site-llm-2026-guide': '/blog/optimiser-site-llm-2026-guide-complet',
+  'etre-cite-par-chatgpt': '/blog/etre-cite-par-chatgpt'
 };
 
 export const ROUTES: Record<string, Page> = {
@@ -69,7 +71,9 @@ export const ROUTES: Record<string, Page> = {
   '/blog/gso-definition-2026': 'gso-definition-2026',
   '/blog/citations-ia-generatives': 'citations-ia-generatives',
   '/blog/audit-seo-paris-2026': 'audit-seo-paris-2026',
-  '/blog/seo-gso-geo-aeo-differences-2026': 'seo-gso-geo-aeo-differences-2026'
+  '/blog/seo-gso-geo-aeo-differences-2026': 'seo-gso-geo-aeo-differences-2026',
+  '/blog/optimiser-site-llm-2026-guide-complet': 'optimiser-site-llm-2026-guide',
+  '/blog/etre-cite-par-chatgpt': 'etre-cite-par-chatgpt'
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -457,6 +461,28 @@ export const BLOG_DATA: BlogItem[] = [
     excerpt: 'Comprendre les différences entre SEO, GSO (Generative Search Optimization), GEO (Generative Engine Optimization) et AEO (Answer Engine Optimization) en 2026.',
     url: '/blog/seo-gso-geo-aeo-differences-2026',
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'optimiser-site-llm-2026-guide',
+    source: 'Guide IA',
+    logo: '',
+    date: '29 AVRIL 2026',
+    title: 'Comment optimiser son site pour les LLM en 2026 : le guide complet',
+    excerpt: 'Les LLM deviennent des canaux de découverte majeurs en 2026. Découvrez les 6 piliers pour optimiser votre site (GEO) et être cité par les IA.',
+    url: '/blog/optimiser-site-llm-2026-guide-complet',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'etre-cite-par-chatgpt',
+    source: 'Guide IA',
+    logo: '',
+    date: '4 MAI 2026',
+    title: 'Comment être cité par ChatGPT ? Le guide complet 2026',
+    excerpt: 'Référencement ChatGPT : découvrez les 7 facteurs clés pour être cité par ChatGPT en 2026, mesurer votre taux de citation IA et optimiser votre site pour les LLM.',
+    url: '/blog/etre-cite-par-chatgpt',
+    image: 'https://images.unsplash.com/photo-1674027444485-cec3da58eef4?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
   }
 ];

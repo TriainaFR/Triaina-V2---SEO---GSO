@@ -31,6 +31,8 @@ export type Page =
   | 'citations-ia-generatives'
   | 'audit-seo-paris-2026'
   | 'seo-gso-geo-aeo-differences-2026'
+  | 'optimiser-site-llm-2026-guide'
+  | 'etre-cite-par-chatgpt'
   | '404';
 
 export interface NavLink {
