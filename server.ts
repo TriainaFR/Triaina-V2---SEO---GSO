@@ -6,6 +6,18 @@ async function startServer() {
   const app = express();
   const PORT = process.env.PORT || 3000;
 
+  // Add CORS specific for well-known endpoints to allow agent discovery tools
+  app.use('/.well-known', (req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    if (req.method === 'OPTIONS') {
+      res.sendStatus(200);
+      return;
+    }
+    next();
+  });
+
   // 1. GSO: Link headers for Agent Discovery (RFC 8288)
   app.use((req, res, next) => {
     if (req.path === '/' || req.path === '/index.html') {
