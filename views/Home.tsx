@@ -61,7 +61,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                         animate={{ x: ["0%", "-50%"] }}
                         transition={{ repeat: Infinity, ease: "linear", duration: 40 }}
                     >
-                        {["YONDER", "LES HARDIS", "BEST RESTAURANTS PARIS", "SKILINK", "BERNARD MAGREZ", "HÔTEL NOLINSKI", "YONDER", "LES HARDIS", "BEST RESTAURANTS PARIS", "SKILINK", "BERNARD MAGREZ", "HÔTEL NOLINSKI", "YONDER", "LES HARDIS", "BEST RESTAURANTS PARIS", "SKILINK", "BERNARD MAGREZ", "HÔTEL NOLINSKI"].map((client, i) => (
+                        {["YONDER", "LES HARDIS", "TALIS EDUCATION GROUP", "SKILINK", "BERNARD MAGREZ", "HÔTEL NOLINSKI", "YONDER", "LES HARDIS", "TALIS EDUCATION GROUP", "SKILINK", "BERNARD MAGREZ", "HÔTEL NOLINSKI", "YONDER", "LES HARDIS", "TALIS EDUCATION GROUP", "SKILINK", "BERNARD MAGREZ", "HÔTEL NOLINSKI"].map((client, i) => (
                             <span key={i} className="text-2xl md:text-4xl font-display font-black text-slate-900/10 tracking-widest uppercase">
                                 {client}
                             </span>

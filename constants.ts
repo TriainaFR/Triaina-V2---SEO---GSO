@@ -221,6 +221,19 @@ export const REFERENCES_DATA: ReferenceItem[] = [
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200'
   },
   {
+    id: 'ref_talis_education_group',
+    client: 'Talis Education Group',
+    title: 'Stratégie GEO/GSO',
+    summary: 'Chantier GEO/GSO en cours.',
+    challenge: 'Mettre en place une stratégie GEO/GSO globale pour le groupe d\'éducation.',
+    solution: '',
+    results: [
+        'Chantier GEO/GSO en cours'
+    ],
+    tags: ['GEO/GSO', 'En cours', 'Education'],
+    image: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
     id: 'ref_skilink',
     client: 'Skilink',
     title: 'SaaS B2B - Automatisation ESN',
