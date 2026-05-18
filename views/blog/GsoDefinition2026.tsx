@@ -281,12 +281,9 @@ export const GsoDefinition2026: React.FC = () => {
         {/* Featured Image */}
         <div className="mb-16 rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-900/10 aspect-video relative group">
           <img 
-            src="https://www.triaina.fr/images/gso-definition-og.jpg" 
+            src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1200" 
             alt="GSO Définition 2026" 
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src = "https://picsum.photos/seed/gso-definition/1200/675";
-            }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/20 to-transparent"></div>
         </div>

@@ -240,7 +240,7 @@ export const GeoDefinition2026: React.FC = () => {
             alt="Qu'est-ce que le GEO ?" 
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             onError={(e) => {
-              (e.target as HTMLImageElement).src = "https://picsum.photos/seed/geo-definition/1200/675";
+              (e.target as HTMLImageElement).src = "https://picsum.photos/seed/geo-definition-2026/1200/675";
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/20 to-transparent"></div>

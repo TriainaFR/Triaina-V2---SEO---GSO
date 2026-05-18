@@ -34,6 +34,7 @@ export type Page =
   | 'optimiser-site-llm-guide-seo-complet-2026'
   | 'etre-cite-par-chatgpt'
   | 'geo-definition-2026'
+  | 'google-ai-overview-france'
   | '404';
 
 export interface NavLink {

@@ -181,7 +181,7 @@ export const SeoTechniqueVsContenu: React.FC = () => {
         {/* Featured Image */}
         <div className="mb-16 rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-900/10 aspect-video relative group">
           <img 
-            src="https://picsum.photos/seed/seo-tech-content/1200/675" 
+            src="https://picsum.photos/seed/seo-technique-vs-contenu/1200/675" 
             alt="SEO Technique vs SEO Contenu" 
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             referrerPolicy="no-referrer"

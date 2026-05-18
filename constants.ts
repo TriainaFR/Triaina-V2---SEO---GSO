@@ -35,7 +35,8 @@ export const PAGE_TO_URL: Record<string, string> = {
   'audit-seo-paris-2026': '/blog/audit-seo-paris-2026',
   'seo-gso-geo-aeo-differences-2026': '/blog/seo-gso-geo-aeo-differences-2026',
   'optimiser-site-llm-guide-seo-complet-2026': '/blog/optimiser-site-llm-guide-seo-complet-2026',
-  'etre-cite-par-chatgpt': '/blog/etre-cite-par-chatgpt'
+  'etre-cite-par-chatgpt': '/blog/etre-cite-par-chatgpt',
+  'google-ai-overview-france': '/blog/google-ai-overview-france'
 };
 
 export const ROUTES: Record<string, Page> = {
@@ -75,7 +76,8 @@ export const ROUTES: Record<string, Page> = {
   '/blog/audit-seo-paris-2026': 'audit-seo-paris-2026',
   '/blog/seo-gso-geo-aeo-differences-2026': 'seo-gso-geo-aeo-differences-2026',
   '/blog/optimiser-site-llm-guide-seo-complet-2026': 'optimiser-site-llm-guide-seo-complet-2026',
-  '/blog/etre-cite-par-chatgpt': 'etre-cite-par-chatgpt'
+  '/blog/etre-cite-par-chatgpt': 'etre-cite-par-chatgpt',
+  '/blog/google-ai-overview-france': 'google-ai-overview-france'
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -393,7 +395,7 @@ export const BLOG_DATA: BlogItem[] = [
     title: 'GSO 2026 : Guide Complet de Generative Search Optimization',
     excerpt: 'Découvrez ce qu\'est le GSO (Generative Search Optimization) et comment l\'implémenter pour dominer à la fois Google et les IA génératives en 2026.',
     url: '/blog/gso-2026-guide-complet',
-    image: 'https://picsum.photos/seed/generative-ai-search/1200/675',
+    image: 'https://picsum.photos/seed/gso-2026-guide-complet/1200/675',
     tag: 'GUIDE'
   },
   {
@@ -448,7 +450,7 @@ export const BLOG_DATA: BlogItem[] = [
     title: 'Tendances SEO & GSO 2026 : Guide Complet des Changements qui Dominent',
     excerpt: 'Découvrez les 10 tendances SEO & GSO qui dominent le référencement en 2026 : E-E-A-T, citations IA, contenu long-form et données propriétaires.',
     url: '/blog/tendances-seo-gso-2026',
-    image: 'https://picsum.photos/seed/seo-trends-2026/1200/675',
+    image: 'https://picsum.photos/seed/tendances-seo-gso-2026/1200/675',
     tag: 'GUIDE'
   },
   {
@@ -459,7 +461,7 @@ export const BLOG_DATA: BlogItem[] = [
     title: 'SEO Technique vs SEO Contenu : Lequel Choisir en 2026 ?',
     excerpt: 'Analyse comparative complète : SEO technique vs SEO contenu. Impact réel, 3 cas clients, stratégie complète. Découvrez comment combiner les deux pour +250% de trafic.',
     url: '/blog/seo-technique-vs-seo-contenu',
-    image: 'https://picsum.photos/seed/seo-tech-content/1200/675',
+    image: 'https://picsum.photos/seed/seo-technique-vs-contenu/1200/675',
     tag: 'ANALYSE'
   },
   {
@@ -538,6 +540,17 @@ export const BLOG_DATA: BlogItem[] = [
     url: '/blog/optimiser-site-llm-guide-seo-complet-2026',
     image: '/images/llm-seo-guide.jpg',
     tag: 'GUIDE'
+  },
+  {
+    id: 'google-ai-overview-france',
+    source: 'Actualité IA',
+    logo: '',
+    date: '18 MAI 2026',
+    title: 'Google AI Overview France : comment s\'y préparer dès maintenant ?',
+    excerpt: 'Google AI Overview n\'est pas encore disponible en France. Découvrez pourquoi, quand ça changera, et les 7 actions pour préparer votre site.',
+    url: '/blog/google-ai-overview-france',
+    image: '/images/google-ai-overview-france.jpg',
+    tag: 'ACTU'
   }
 ];
 

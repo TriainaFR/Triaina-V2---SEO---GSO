@@ -170,7 +170,7 @@ export const Gso2026GuideComplet: React.FC = () => {
         {/* Featured Image */}
         <div className="mb-16 rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-900/10 aspect-video relative group">
           <img 
-            src="https://picsum.photos/seed/generative-ai-search/1200/675" 
+            src="https://picsum.photos/seed/gso-2026-guide-complet/1200/675" 
             alt="GSO 2026" 
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />

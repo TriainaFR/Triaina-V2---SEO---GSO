@@ -252,7 +252,7 @@ export const OptimiserLlmSeoGuide2026: React.FC = () => {
             alt="Comment optimiser son site pour les LLM ?" 
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             onError={(e) => {
-              (e.target as HTMLImageElement).src = "https://picsum.photos/seed/llm-seo-guide/1200/675";
+              (e.target as HTMLImageElement).src = "https://picsum.photos/seed/optimiser-site-llm-guide-seo-complet-2026/1200/675";
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/20 to-transparent"></div>

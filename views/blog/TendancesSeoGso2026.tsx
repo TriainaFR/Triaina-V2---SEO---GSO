@@ -181,7 +181,7 @@ export const TendancesSeoGso2026: React.FC = () => {
         {/* Featured Image */}
         <div className="mb-16 rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-900/10 aspect-video relative group">
           <img 
-            src="https://picsum.photos/seed/seo-trends-2026/1200/675" 
+            src="https://picsum.photos/seed/tendances-seo-gso-2026/1200/675" 
             alt="Tendances SEO & GSO 2026" 
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             referrerPolicy="no-referrer"

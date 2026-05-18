@@ -34,6 +34,7 @@ import { AuditSeoParis2026 } from './views/blog/AuditSeoParis2026';
 import { SeoGsoGeoAeo2026 } from './views/blog/SeoGsoGeoAeo2026';
 import { OptimiserLlmSeoGuide2026 } from './views/blog/OptimiserLlmSeoGuide2026';
 import { EtreCiteParChatGpt } from './views/blog/EtreCiteParChatGpt';
+import { GoogleAiOverviewFrance } from './views/blog/GoogleAiOverviewFrance';
 import { SEO } from './components/SEO';
 import { CustomCursor } from './components/CustomCursor';
 import { NAV_LINKS, SOCIAL_LINKS, PAGE_TO_URL, ROUTES } from './constants';
@@ -256,6 +257,8 @@ const App: React.FC = () => {
         return <OptimiserLlmSeoGuide2026 />;
       case 'etre-cite-par-chatgpt':
         return <EtreCiteParChatGpt />;
+      case 'google-ai-overview-france':
+        return <GoogleAiOverviewFrance />;
       case '404':
         return <NotFound onNavigate={handleNavigation} />;
       default:

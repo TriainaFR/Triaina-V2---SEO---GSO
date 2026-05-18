@@ -73,6 +73,9 @@ export const Blog: React.FC<BlogProps> = ({ onNavigate }) => {
                             alt={article.title} 
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             referrerPolicy="no-referrer"
+                            onError={(e) => {
+                                (e.target as HTMLImageElement).src = `https://picsum.photos/seed/${article.id}/1200/675`;
+                            }}
                         />
                         <div className="absolute inset-0 bg-blue-900/20 group-hover:bg-transparent transition-colors duration-300"></div>
                         
