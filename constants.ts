@@ -34,9 +34,8 @@ export const PAGE_TO_URL: Record<string, string> = {
   'citations-ia-generatives': '/blog/citations-ia-generatives',
   'audit-seo-paris-2026': '/blog/audit-seo-paris-2026',
   'seo-gso-geo-aeo-differences-2026': '/blog/seo-gso-geo-aeo-differences-2026',
-  'optimiser-site-llm-2026-guide': '/blog/optimiser-site-llm-2026-guide-complet',
-  'etre-cite-par-chatgpt': '/blog/etre-cite-par-chatgpt',
-  'geo-definition-2026': '/blog/geo-definition-2026'
+  'optimiser-site-llm-guide-seo-complet-2026': '/blog/optimiser-site-llm-guide-seo-complet-2026',
+  'etre-cite-par-chatgpt': '/blog/etre-cite-par-chatgpt'
 };
 
 export const ROUTES: Record<string, Page> = {
@@ -75,9 +74,8 @@ export const ROUTES: Record<string, Page> = {
   '/blog/citations-ia-generatives': 'citations-ia-generatives',
   '/blog/audit-seo-paris-2026': 'audit-seo-paris-2026',
   '/blog/seo-gso-geo-aeo-differences-2026': 'seo-gso-geo-aeo-differences-2026',
-  '/blog/optimiser-site-llm-2026-guide-complet': 'optimiser-site-llm-2026-guide',
-  '/blog/etre-cite-par-chatgpt': 'etre-cite-par-chatgpt',
-  '/blog/geo-definition-2026': 'geo-definition-2026'
+  '/blog/optimiser-site-llm-guide-seo-complet-2026': 'optimiser-site-llm-guide-seo-complet-2026',
+  '/blog/etre-cite-par-chatgpt': 'etre-cite-par-chatgpt'
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -238,6 +236,20 @@ export const REFERENCES_DATA: ReferenceItem[] = [
     image: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1200'
   },
   {
+    id: 'ref_lazuli_travel_bureau',
+    client: 'Lazuli Travel Bureau',
+    title: 'Gestion Campagne SEA',
+    summary: 'Optimisation et gestion des campagnes SEA.',
+    challenge: 'Améliorer la rentabilité et le volume des conversions via le canal SEA.',
+    solution: '',
+    results: [
+        'Optimisation des coûts d\'acquisition',
+        'Augmentation des conversions ciblées'
+    ],
+    tags: ['SEA', 'Travel'],
+    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
     id: 'ref_skilink',
     client: 'Skilink',
     title: 'SaaS B2B - Automatisation ESN',
@@ -265,6 +277,20 @@ export const REFERENCES_DATA: ReferenceItem[] = [
     ],
     tags: ['Média', 'GSO Leadership', 'Travel'],
     image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
+    id: 'ref_lazuli_nil',
+    client: 'Lazuli Nil',
+    title: 'Gestion Campagne SEA',
+    summary: 'Gestion stratégique des campagnes SEA pour les croisières sur le Nil.',
+    challenge: 'Maximiser la visibilité sur des requêtes très concurrentielles liées aux croisières de luxe.',
+    solution: '',
+    results: [
+        'Hausse du ROAS',
+        'Ciblage d\'audience qualifiée'
+    ],
+    tags: ['SEA', 'Luxe', 'Travel'],
+    image: 'https://images.unsplash.com/photo-1534008897995-27a23e859048?auto=format&fit=crop&q=80&w=1200'
   },
   {
     id: 'ref_bestrestaurants',
@@ -503,13 +529,13 @@ export const BLOG_DATA: BlogItem[] = [
     tag: 'GUIDE'
   },
   {
-    id: 'optimiser-site-llm-2026-guide',
+    id: 'optimiser-site-llm-guide-seo-complet-2026',
     source: 'Guide IA',
     logo: '',
     date: '18 MAI 2026',
     title: 'Comment optimiser son site pour les LLM ? Guide SEO complet 2026',
     excerpt: 'Le trafic issu des LLMs a été multiplié par 26 en l\'espace de 12 mois. Ce guide détaille les mécanismes pour analyser et optimiser son site.',
-    url: '/blog/optimiser-site-llm-2026-guide-complet',
+    url: '/blog/optimiser-site-llm-guide-seo-complet-2026',
     image: '/images/llm-seo-guide.jpg',
     tag: 'GUIDE'
   }

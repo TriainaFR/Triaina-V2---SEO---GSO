@@ -31,7 +31,7 @@ export type Page =
   | 'citations-ia-generatives'
   | 'audit-seo-paris-2026'
   | 'seo-gso-geo-aeo-differences-2026'
-  | 'optimiser-site-llm-2026-guide'
+  | 'optimiser-site-llm-guide-seo-complet-2026'
   | 'etre-cite-par-chatgpt'
   | 'geo-definition-2026'
   | '404';

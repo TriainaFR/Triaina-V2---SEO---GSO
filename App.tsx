@@ -32,7 +32,7 @@ import { GeoDefinition2026 } from './views/blog/GeoDefinition2026';
 import { CitationsIAGeneratives } from './views/blog/CitationsIAGeneratives'; // Import CitationsIAGeneratives
 import { AuditSeoParis2026 } from './views/blog/AuditSeoParis2026';
 import { SeoGsoGeoAeo2026 } from './views/blog/SeoGsoGeoAeo2026';
-import { OptimiserSiteLlm2026Guide } from './views/blog/OptimiserSiteLlm2026Guide';
+import { OptimiserLlmSeoGuide2026 } from './views/blog/OptimiserLlmSeoGuide2026';
 import { EtreCiteParChatGpt } from './views/blog/EtreCiteParChatGpt';
 import { SEO } from './components/SEO';
 import { CustomCursor } from './components/CustomCursor';
@@ -252,8 +252,8 @@ const App: React.FC = () => {
         return <AuditSeoParis2026 />;
       case 'seo-gso-geo-aeo-differences-2026':
         return <SeoGsoGeoAeo2026 />;
-      case 'optimiser-site-llm-2026-guide':
-        return <OptimiserSiteLlm2026Guide />;
+      case 'optimiser-site-llm-guide-seo-complet-2026':
+        return <OptimiserLlmSeoGuide2026 />;
       case 'etre-cite-par-chatgpt':
         return <EtreCiteParChatGpt />;
       case '404':
