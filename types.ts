@@ -33,6 +33,7 @@ export type Page =
   | 'seo-gso-geo-aeo-differences-2026'
   | 'optimiser-site-llm-2026-guide'
   | 'etre-cite-par-chatgpt'
+  | 'geo-definition-2026'
   | '404';
 
 export interface NavLink {
