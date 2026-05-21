@@ -83,6 +83,37 @@ async function startServer() {
     });
   });
 
+  // GSO: A2A Agent Card (Discovery)
+  app.get('/.well-known/agent-card.json', (_req, res) => {
+    res.json({
+      name: "Triaina",
+      version: "1.0.0",
+      description: "Agence spécialisée en SEO (Search Engine Optimization) et GSO (Generative Search Optimization).",
+      supportedInterfaces: [
+        {
+          url: "https://www.triaina.fr",
+          transport: "HTTP"
+        }
+      ],
+      capabilities: [
+        "SEO Audit",
+        "GSO Analysis"
+      ],
+      skills: [
+        {
+          id: "seo-audit",
+          name: "SEO Audit",
+          description: "Auditing websites for technical, content, and link profile quality according to Google best practices."
+        },
+        {
+          id: "gso-optimization",
+          name: "Generative Search Optimization",
+          description: "Optimizing online presence and mentions to rank within AI-generated responses."
+        }
+      ]
+    });
+  });
+
   // 6. GSO: Agent Skills Index
   app.get('/.well-known/agent-skills/index.json', (_req, res) => {
     res.json({
