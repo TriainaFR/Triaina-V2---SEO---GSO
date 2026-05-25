@@ -35,6 +35,8 @@ export type Page =
   | 'etre-cite-par-chatgpt'
   | 'geo-definition-2026'
   | 'google-ai-overview-france'
+  | 'strategie-contenu-ia-first'
+  | 'agence-seo-vs-agence-gso'
   | '404';
 
 export interface NavLink {

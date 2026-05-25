@@ -36,7 +36,9 @@ export const PAGE_TO_URL: Record<string, string> = {
   'seo-gso-geo-aeo-differences-2026': '/blog/seo-gso-geo-aeo-differences-2026',
   'optimiser-site-llm-guide-seo-complet-2026': '/blog/optimiser-site-llm-guide-seo-complet-2026',
   'etre-cite-par-chatgpt': '/blog/etre-cite-par-chatgpt',
-  'google-ai-overview-france': '/blog/google-ai-overview-france'
+  'google-ai-overview-france': '/blog/google-ai-overview-france',
+  'strategie-contenu-ia-first': '/blog/strategie-contenu-ia-first',
+  'agence-seo-vs-agence-gso': '/blog/agence-seo-vs-agence-gso'
 };
 
 export const ROUTES: Record<string, Page> = {
@@ -77,7 +79,9 @@ export const ROUTES: Record<string, Page> = {
   '/blog/seo-gso-geo-aeo-differences-2026': 'seo-gso-geo-aeo-differences-2026',
   '/blog/optimiser-site-llm-guide-seo-complet-2026': 'optimiser-site-llm-guide-seo-complet-2026',
   '/blog/etre-cite-par-chatgpt': 'etre-cite-par-chatgpt',
-  '/blog/google-ai-overview-france': 'google-ai-overview-france'
+  '/blog/google-ai-overview-france': 'google-ai-overview-france',
+  '/blog/strategie-contenu-ia-first': 'strategie-contenu-ia-first',
+  '/blog/agence-seo-vs-agence-gso': 'agence-seo-vs-agence-gso'
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -199,7 +203,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
   {
     id: 'ref_bernard_magrez',
     client: 'Bernard Magrez',
-    title: 'Bernard Magrez',
+    title: 'Chantier GEO/GSO',
     summary: 'Chantier GSO en cours.',
     challenge: 'Chantier GSO en cours.',
     solution: '',
@@ -212,7 +216,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
   {
     id: 'ref_leshardis',
     client: 'Les Hardis',
-    title: 'Audit & Stratégie SEO',
+    title: 'Stratégie SEO & GEO',
     summary: 'Audit technique approfondi et roadmap de performance.',
     challenge: 'Identifier les freins techniques limitant la visibilité organique et préparer le site aux standards Core Web Vitals.',
     solution: '',
@@ -254,7 +258,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
   {
     id: 'ref_skilink',
     client: 'Skilink',
-    title: 'SaaS B2B - Automatisation ESN',
+    title: 'Gestion GEO',
     summary: 'Optimisation GSO pour une solution SaaS d\'automatisation commerciale dédiée aux ESN & Cabinets de Conseil.',
     challenge: 'Faire émerger ce SaaS de niche comme l\'outil incontournable auprès des IA pour les requêtes B2B complexes des dirigeants d\'ESN (ex: "Meilleurs outils automatisation ESN").',
     solution: '',
@@ -268,7 +272,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
   {
     id: 'ref_yonder',
     client: 'Yonder',
-    title: 'Leadership Média SEO & GSO',
+    title: 'Stratégie SEO & GEO',
     summary: 'Transformation structurelle pour dominer le marché des LLM et du SEO Travel.',
     challenge: 'S\'imposer comme la référence absolue du voyage de luxe face aux nouveaux comportements de recherche assistée par IA.',
     solution: '',
@@ -297,7 +301,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
   {
     id: 'ref_bestrestaurants',
     client: 'Best Restaurants Paris',
-    title: 'Référencement Gastronomique Hybride',
+    title: 'Stratégie SEO & GEO',
     summary: 'Double optimisation SEO & GSO pour le guide leader.',
     challenge: 'Maintenir et accroître les parts de marché face à la concurrence des agrégateurs et des recommandations directes par IA.',
     solution: '',
@@ -551,6 +555,28 @@ export const BLOG_DATA: BlogItem[] = [
     url: '/blog/google-ai-overview-france',
     image: '/images/google-ai-overview-france.jpg',
     tag: 'ACTU'
+  },
+  {
+    id: 'strategie-contenu-ia-first',
+    source: 'Guide IA',
+    logo: '',
+    date: '25 MAI 2026',
+    title: 'Stratégie de contenu IA-first : le guide complet 2026',
+    excerpt: 'Comment concevoir l\'architecture de votre contenu pour que les assistants IA (ChatGPT, Perplexity, Google AI Overview) puissent extraire, comprendre et citer vos pages.',
+    url: '/blog/strategie-contenu-ia-first',
+    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'agence-seo-vs-agence-gso',
+    source: 'Comparatif',
+    logo: '',
+    date: '25 MAI 2026',
+    title: 'Agence SEO vs agence GSO : comment choisir en 2026 ?',
+    excerpt: 'Le SEO optimise votre positionnement, le GSO optimise votre citation par les IA. Découvrez les différences et la stratégie (pure ou hybride) à adopter pour votre marque.',
+    url: '/blog/agence-seo-vs-agence-gso',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
   }
 ];
 

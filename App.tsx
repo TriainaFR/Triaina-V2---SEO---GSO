@@ -35,6 +35,8 @@ import { SeoGsoGeoAeo2026 } from './views/blog/SeoGsoGeoAeo2026';
 import { OptimiserLlmSeoGuide2026 } from './views/blog/OptimiserLlmSeoGuide2026';
 import { EtreCiteParChatGpt } from './views/blog/EtreCiteParChatGpt';
 import { GoogleAiOverviewFrance } from './views/blog/GoogleAiOverviewFrance';
+import { StrategieContenuIaFirst } from './views/blog/StrategieContenuIaFirst';
+import { AgenceSeoVsGso2026 } from './views/blog/AgenceSeoVsGso2026';
 import { SEO } from './components/SEO';
 import { CustomCursor } from './components/CustomCursor';
 import { NAV_LINKS, SOCIAL_LINKS, PAGE_TO_URL, ROUTES } from './constants';
@@ -259,6 +261,10 @@ const App: React.FC = () => {
         return <EtreCiteParChatGpt />;
       case 'google-ai-overview-france':
         return <GoogleAiOverviewFrance />;
+      case 'strategie-contenu-ia-first':
+        return <StrategieContenuIaFirst />;
+      case 'agence-seo-vs-agence-gso':
+        return <AgenceSeoVsGso2026 />;
       case '404':
         return <NotFound onNavigate={handleNavigation} />;
       default:
