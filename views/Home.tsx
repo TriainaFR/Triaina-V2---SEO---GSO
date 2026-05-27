@@ -36,7 +36,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                     </p>
                 </div>
 
-                <div className="pb-2 xl:pb-8">
+                <div className="pb-2 xl:pb-8 flex flex-col items-start xl:items-end gap-4">
                     <motion.button
                         onClick={() => onNavigate('team')}
                         whileHover={{ scale: 1.02 }}
@@ -49,6 +49,9 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
                         </span>
                     </motion.button>
+                    <button onClick={() => onNavigate('agence-referencement-ia')} className="text-sm font-semibold text-slate-500 hover:text-blue-600 uppercase tracking-wider transition-colors">
+                        Découvrir notre Agence de Référencement IA →
+                    </button>
                 </div>
             </div>
 

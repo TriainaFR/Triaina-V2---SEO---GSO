@@ -78,6 +78,7 @@ export const ROUTES: Record<string, Page> = {
   '/blog/audit-seo-paris-2026': 'audit-seo-paris-2026',
   '/blog/seo-gso-geo-aeo-differences-2026': 'seo-gso-geo-aeo-differences-2026',
   '/blog/optimiser-site-llm-guide-seo-complet-2026': 'optimiser-site-llm-guide-seo-complet-2026',
+  '/blog/optimiser-site-llm-2026-guide-complet': 'optimiser-site-llm-guide-seo-complet-2026',
   '/blog/etre-cite-par-chatgpt': 'etre-cite-par-chatgpt',
   '/blog/google-ai-overview-france': 'google-ai-overview-france',
   '/blog/strategie-contenu-ia-first': 'strategie-contenu-ia-first',

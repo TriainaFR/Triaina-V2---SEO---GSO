@@ -11,19 +11,19 @@ export const EtreCiteParChatGpt: React.FC = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Accueil",
-        "item": "https://triaina.fr"
+        "item": "https://www.triaina.fr"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Blog",
-        "item": "https://triaina.fr/blog"
+        "item": "https://www.triaina.fr/blog"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Comment être cité par ChatGPT ? Le guide complet 2026",
-        "item": "https://triaina.fr/blog/etre-cite-par-chatgpt"
+        "item": "https://www.triaina.fr/blog/etre-cite-par-chatgpt"
       }
     ]
   };
@@ -39,19 +39,19 @@ export const EtreCiteParChatGpt: React.FC = () => {
     "author": {
       "@type": "Organization",
       "name": "Triaina",
-      "url": "https://triaina.fr"
+      "url": "https://www.triaina.fr"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Triaina",
-      "url": "https://triaina.fr",
+      "url": "https://www.triaina.fr",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://triaina.fr/logo.png"
+        "url": "https://www.triaina.fr/logo.png"
       }
     },
     "inLanguage": "fr",
-    "mainEntityOfPage": "https://triaina.fr/blog/etre-cite-par-chatgpt"
+    "mainEntityOfPage": "https://www.triaina.fr/blog/etre-cite-par-chatgpt"
   };
 
   const faqSchema = {
@@ -482,7 +482,7 @@ export const EtreCiteParChatGpt: React.FC = () => {
         image="https://images.unsplash.com/photo-1674027444485-cec3da58eef4?auto=format&fit=crop&q=80&w=1200"
         type="article"
         twitterCard="summary_large_image"
-        canonicalUrl="https://triaina.fr/blog/etre-cite-par-chatgpt"
+        canonicalUrl="https://www.triaina.fr/blog/etre-cite-par-chatgpt"
       />
 
       <div className="max-w-7xl mx-auto">

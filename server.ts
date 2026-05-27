@@ -6,6 +6,21 @@ async function startServer() {
   const app = express();
   const PORT = process.env.PORT || 3000;
 
+  // Redirect old slug via 301
+  app.use('/blog/optimiser-site-llm-2026-guide-complet', (req, res) => {
+    res.redirect(301, 'https://www.triaina.fr/blog/optimiser-site-llm-guide-seo-complet-2026');
+  });
+
+  // Enforce www for SEO
+  app.use((req, res, next) => {
+    const host = req.headers.host || '';
+    // Look for exact 'triaina.fr' and not 'www.triaina.fr' nor localhost or other domains
+    if (host.match(/^triaina\.fr(:\d+)?$/)) {
+      return res.redirect(301, `https://www.triaina.fr${req.originalUrl}`);
+    }
+    next();
+  });
+
   // Add CORS specific for well-known endpoints to allow agent discovery tools
   app.use('/.well-known', (req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
