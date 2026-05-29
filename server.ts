@@ -1,6 +1,8 @@
 import express from 'express';
 import { createServer as createViteServer } from 'vite';
 import path from 'path';
+import fs from 'fs';
+import { BLOG_DATA, EXPERTISE_DATA, ROUTES } from './constants';
 
 async function startServer() {
   const app = express();
@@ -191,11 +193,86 @@ async function startServer() {
     });
     app.use(vite.middlewares);
   } else {
-    // Production serving
+    // Production serving with dynamic SEO injection
     const distPath = path.join(process.cwd(), 'dist');
-    app.use(express.static(distPath));
-    app.get('*all', (_req, res) => {
-      res.sendFile(path.join(distPath, 'index.html'));
+    app.use(express.static(distPath, { index: false }));
+    app.get('*all', async (req, res) => {
+      try {
+        let html = await fs.promises.readFile(path.join(distPath, 'index.html'), 'utf-8');
+        
+        const cleanPath = req.path === '/' ? '/' : req.path.replace(/\/$/, '');
+        const routeId = ROUTES[cleanPath];
+        
+        if (routeId) {
+            let title = '';
+            let description = '';
+            let extraSchema = '';
+            
+            const blogPost = BLOG_DATA.find(b => b.url === cleanPath || b.id === routeId);
+            if (blogPost) {
+                title = `${blogPost.title} | Triaina`;
+                description = blogPost.excerpt;
+                extraSchema = JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "Article",
+                    "headline": blogPost.title,
+                    "description": blogPost.excerpt,
+                    "image": blogPost.image,
+                    "datePublished": blogPost.date,
+                    "author": { "@type": "Organization", "name": "Triaina", "url": "https://www.triaina.fr" },
+                    "publisher": { "@type": "Organization", "name": "Triaina", "url": "https://www.triaina.fr", "logo": { "@type": "ImageObject", "url": "https://www.triaina.fr/logo.svg" } },
+                    "mainEntityOfPage": `https://www.triaina.fr${cleanPath}`
+                });
+            } else {
+                // Not a blog post, check expertise
+                const exp = EXPERTISE_DATA[routeId];
+                if (exp) {
+                    title = `${exp.title} | Triaina`;
+                    description = exp.description;
+                    extraSchema = JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Service",
+                        "serviceType": exp.title,
+                        "provider": { "@type": "Organization", "name": "Triaina", "@id": "https://www.triaina.fr/#organization" },
+                        "description": exp.description,
+                        "url": `https://www.triaina.fr${cleanPath}`
+                    });
+                } else if (routeId === 'seo-paris') {
+                    title = "Agence SEO Paris | Expert Référencement Naturel | Triaina";
+                    description = "Experts en référencement naturel et optimisation GSO à Paris. Améliorez votre visibilité avec Triaina.";
+                    extraSchema = JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "LocalBusiness",
+                        "name": title,
+                        "description": description,
+                        "url": `https://www.triaina.fr${cleanPath}`
+                    });
+                } else if (routeId === 'agence-referencement-ia' || routeId === 'agence-referencement-ia-paris') {
+                    title = "Agence de Référencement IA & GSO | Triaina";
+                    description = "Soyez cité par ChatGPT, Claude, et Gemini. Expert en Generative Search Optimization (GSO).";
+                    extraSchema = JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "LocalBusiness",
+                        "name": title,
+                        "description": description,
+                        "url": `https://www.triaina.fr${cleanPath}`
+                    });
+                }
+            }
+            
+            if (title) html = html.replace(/<title>.*?<\/title>/si, `<title>${title}</title>`);
+            if (description) html = html.replace(/<meta name="description" content=".*?"\s*\/>/si, `<meta name="description" content="${description}" />`);
+            if (extraSchema) {
+                html = html.replace('</head>', `<script type="application/ld+json">\n${extraSchema}\n</script>\n</head>`);
+            }
+        }
+        
+        res.setHeader('Content-Type', 'text/html');
+        res.send(html);
+      } catch (err) {
+        console.error("Error reading index.html", err);
+        res.status(500).send("Internal Server Error");
+      }
     });
   }
 
