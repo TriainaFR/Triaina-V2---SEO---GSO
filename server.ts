@@ -6,6 +6,8 @@ import { BLOG_DATA, EXPERTISE_DATA, ROUTES } from './constants';
 
 async function startServer() {
   const app = express();
+  // Trust proxy is essential behind Railway/Cloudflare edge load balancers
+  app.set('trust proxy', 1);
   const PORT = process.env.PORT || 3000;
 
   // Redirect old slug via 301
@@ -276,7 +278,7 @@ async function startServer() {
     });
   }
 
-  app.listen(PORT, () => {
+  app.listen(PORT as number, '0.0.0.0', () => {
     console.log(`Server running on http://0.0.0.0:${PORT}`);
   });
 }
