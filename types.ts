@@ -37,6 +37,7 @@ export type Page =
   | 'google-ai-overview-france'
   | 'strategie-contenu-ia-first'
   | 'agence-seo-vs-agence-gso'
+  | 'schema-org-donnees-structurees-gso-2026'
   | '404';
 
 export interface NavLink {

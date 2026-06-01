@@ -37,6 +37,7 @@ import { EtreCiteParChatGpt } from './views/blog/EtreCiteParChatGpt';
 import { GoogleAiOverviewFrance } from './views/blog/GoogleAiOverviewFrance';
 import { StrategieContenuIaFirst } from './views/blog/StrategieContenuIaFirst';
 import { AgenceSeoVsGso2026 } from './views/blog/AgenceSeoVsGso2026';
+import { SchemaOrgGso2026 } from './views/blog/SchemaOrgGso2026';
 import { SEO } from './components/SEO';
 import { CustomCursor } from './components/CustomCursor';
 import { NAV_LINKS, SOCIAL_LINKS, PAGE_TO_URL, ROUTES } from './constants';
@@ -265,6 +266,8 @@ const App: React.FC = () => {
         return <StrategieContenuIaFirst />;
       case 'agence-seo-vs-agence-gso':
         return <AgenceSeoVsGso2026 />;
+      case 'schema-org-donnees-structurees-gso-2026':
+        return <SchemaOrgGso2026 />;
       case '404':
         return <NotFound onNavigate={handleNavigation} />;
       default:
