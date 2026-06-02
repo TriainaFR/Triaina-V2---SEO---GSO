@@ -1,61 +1,36 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { ArrowLeft, Clock, Share2, Calendar } from 'lucide-react';
 import { PAGE_TO_URL, BLOG_DATA } from '../../constants';
+import { SEO } from '../../components/SEO';
 
 export const SchemaOrgGso2026: React.FC = () => {
   const post = BLOG_DATA.find(p => p.id === 'schema-org-donnees-structurees-gso-2026');
 
-  // Ultra-Rich Schema for Blog Post
-  useEffect(() => {
-    if (document.querySelector('script[data-id="schema-donnees-structurees"]')) return;
-
-    const exactHtml = `
-    <script type="application/ld+json" data-id="schema-donnees-structurees">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Schema.org et données structurées pour le GSO : le guide complet 2026",
-        "image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=1200",
-        "author": {
-            "@type": "Person",
-            "name": "Alexandre",
-            "jobTitle": "CEO & Fondateur Triaina"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Triaina",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.triaina.fr/logo.svg"
-            }
-        },
-        "datePublished": "2026-06-01",
-        "dateModified": "2026-06-01",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.triaina.fr/blog/schema-org-donnees-structurees-gso"
-        }
+  const seoSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Données structurées JSON-LD pour le GSO : guide complet",
+    "image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=1200",
+    "author": {
+      "@type": "Person",
+      "name": "Alexandre",
+      "jobTitle": "CEO & Fondateur Triaina"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Triaina",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.triaina.fr/logo.svg"
+      }
+    },
+    "datePublished": "2026-06-01",
+    "dateModified": "2026-06-01",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.triaina.fr/blog/schema-org-donnees-structurees-gso"
     }
-    </script>
-    `;
-    const fragment = document.createRange().createContextualFragment(exactHtml);
-    const elements: Node[] = [];
-    fragment.childNodes.forEach(node => {
-        elements.push(node.cloneNode(true));
-    });
-    
-    elements.forEach(node => {
-        document.head.appendChild(node);
-    });
-
-    return () => {
-        elements.forEach(node => {
-            if (node.parentNode) {
-                node.parentNode.removeChild(node);
-            }
-        });
-    };
-  }, []);
+  };
 
   const htmlBody = `
 <blockquote><p><strong>TL;DR</strong></p><ul><li>Les <strong>données structurées</strong> (Schema.org en JSON-LD) sont le signal machine le plus direct pour aider les moteurs génératifs à comprendre, vérifier et citer votre contenu.</li><li>Pour le <strong>GSO</strong> (Generative Search Optimization), les types prioritaires sont : <code>Organization</code>, <code>Article</code>, <code>FAQPage</code>, <code>HowTo</code>, <code>Person</code> et <code>BreadcrumbList</code>.</li><li>Le <strong>JSON-LD</strong> est le format recommandé par Google - plus facile à maintenir que Microdata ou RDFa, et préféré par les crawlers IA.</li><li>Un schema mal rempli ou incohérent avec le contenu visible est pire qu'aucun schema : il génère de la méfiance côté moteurs.</li><li>Validez systématiquement avec <strong>Google Rich Results Test</strong> et <strong>Schema Markup Validator</strong> avant toute mise en production.</li></ul></blockquote><h2>Qu'est-ce que les données structurées et pourquoi elles comptent pour le GSO ?</h2><p>Les <strong>données structurées</strong> ne sont plus un simple bonus pour décrocher des rich snippets. En 2026, elles sont devenues un pilier du <strong>GSO</strong> - la <strong>generative search optimization</strong> - c'est-à-dire l'art d'être cité et recommandé par ChatGPT, Perplexity, Google AI Overviews ou Gemini.</p><p>Ce guide couvre tout : définitions, mécanismes d'extraction IA, types <strong>schema markup</strong> prioritaires, exemples JSON-LD prêts à copier-coller, erreurs critiques à éviter et méthodes de validation. Aucun prérequis particulier, mais une connaissance de base du HTML est utile.</p><p>Les <strong>données structurées</strong> sont un balisage ajouté au code HTML d'une page pour décrire explicitement son contenu aux machines. Plutôt que de laisser un moteur "deviner" ce qu'est une page, vous lui dites directement : "ceci est un article, écrit par cette personne, publié le 1er juin 2026, sur ce sujet."</p><p><strong>Schema.org</strong> est le vocabulaire standard partagé par Google, Bing, Yahoo et Yandex depuis 2011. Il définit des centaines de types (<code>Article</code>, <code>Product</code>, <code>Person</code>, <code>LocalBusiness</code>…) et leurs propriétés associées.</p><h3>JSON-LD vs Microdata vs RDFa : lequel choisir ?</h3><p>Trois formats coexistent pour implémenter Schema.org :</p><ul><li><strong>JSON-LD</strong> (JavaScript Object Notation for Linked Data) : bloc <code>&lt;script&gt;</code> séparé du HTML visible. <strong>Format recommandé par Google</strong>, le plus simple à maintenir et à déboguer.</li><li><strong>Microdata</strong> : attributs directement dans les balises HTML (<code>itemscope</code>, <code>itemprop</code>). Plus verbeux, couplé au DOM, difficile à modifier sans toucher au contenu.</li><li><strong>RDFa</strong> : attributs HTML similaires à Microdata, issu du W3C. Utilisé surtout dans des contextes académiques ou gouvernementaux.</li></ul><p><strong>En pratique : utilisez JSON-LD.</strong> Toujours. C'est le seul format que vous pouvez modifier sans risquer de casser le rendu visuel de la page.</p><h3>Pourquoi les LLMs et moteurs génératifs s'appuient dessus</h3><p>Les moteurs génératifs - ChatGPT (via Bing/SearchGPT), Perplexity, Google AI Overviews - crawlent le web et indexent des milliards de pages. Quand ils génèrent une réponse, ils sélectionnent des sources fiables et extractibles.</p><p>Les <strong>données structurées</strong> leur facilitent trois choses :</p><ul><li><strong>Identification de l'entité</strong> : qui a écrit ce contenu, quelle organisation le publie, est-ce une source vérifiable ?</li><li><strong>Extraction de faits précis</strong> : date de publication, auteur, questions/réponses, étapes d'un tutoriel - tout ce qui peut être cité directement dans une réponse IA.</li><li><strong>Résolution d'ambiguïté</strong> : via <code>sameAs</code> et <code>@id</code>, le moteur sait que "Triaina" et "triaina.fr" désignent la même entité.</li></ul><p>Les LLMs ne "parsent" pas le JSON-LD comme un moteur classique. Mais ils traitent le HTML rendu - et un JSON-LD dense en faits explicites contribue à la richesse sémantique de la page, ce qui augmente la probabilité d'extraction.</p><h2>Comment les moteurs génératifs (ChatGPT, Perplexity, Gemini) utilisent les données structurées</h2><p>Comprendre le mécanisme d'extraction, c'est comprendre pourquoi le schema markup change la donne pour le <strong>GSO</strong>.</p><h3>Mécanisme d'extraction et de citation</h3><p>Quand Perplexity ou Google AI Overviews génère une réponse à une requête, le pipeline ressemble à ceci :</p><ol><li><strong>Crawl et indexation</strong> : le contenu HTML (y compris les blocs JSON-LD) est ingéré.</li><li><strong>Scoring de pertinence et de fiabilité</strong> : la page est évaluée sur sa pertinence thématique, son autorité, sa fraîcheur et la clarté de ses entités.</li><li><strong>Extraction de passages</strong> : des fragments de texte (et parfois des données structurées) sont extraits pour construire la réponse.</li><li><strong>Attribution de source</strong> : la page est citée si elle est jugée suffisamment fiable et si son contenu correspond précisément à la requête.</li></ol><p>Les données structurées interviennent aux étapes 2 et 3 : elles renforcent le signal de fiabilité et facilitent l'extraction de passages précis.</p><h3>Lien direct entre structured data et probabilité de citation IA</h3><p>Soyons directs : <strong>le schema markup seul ne garantit pas d'être cité par une IA</strong>. Plusieurs études (dont une relayée par Ahrefs en 2025) montrent qu'il n'y a pas d'effet systématique et isolable du schema sur les citations LLM.</p><p>En revanche, le schema markup fait partie d'un ensemble de signaux qui, combinés, augmentent la probabilité de citation :</p><ul><li>Contenu de qualité + <strong>données structurées cohérentes</strong> = meilleure extractibilité</li><li><strong>Person schema</strong> + profils vérifiables = signal E-E-A-T fort</li><li><strong>FAQPage</strong> + questions/réponses explicites = format idéal pour les réponses IA</li><li><strong>Organization schema</strong> + <code>sameAs</code> = entité identifiable dans le knowledge graph</li></ul><p>La <strong>structured database</strong> que constituent vos pages balisées devient, en quelque sorte, une source de données que les IA peuvent interroger avec confiance.</p><h2>Les types Schema.org prioritaires pour le GSO en 2026</h2><p>Tous les types Schema.org ne se valent pas pour le GSO. Voici les 9 types à prioriser, avec leur cas d'usage et leur impact estimé sur la visibilité IA.</p>
@@ -85,6 +60,13 @@ export const SchemaOrgGso2026: React.FC = () => {
 
   return (
     <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
+      <SEO 
+        title="Données structurées JSON-LD pour le GSO : guide complet"
+        description="Maîtrisez les données structurées JSON-LD pour le GSO. Types prioritaires, exemples pratiques et erreurs à éviter pour les IA."
+        schema={seoSchema}
+        image="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=1200"
+        canonicalUrl="https://www.triaina.fr/blog/schema-org-donnees-structurees-gso"
+      />
       <div className="max-w-7xl mx-auto">
         {/* Back Button */}
         <a 

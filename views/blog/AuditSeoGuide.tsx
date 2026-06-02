@@ -35,8 +35,11 @@ export const AuditSeoGuide: React.FC = () => {
     "description": "Guide complet audit SEO : définition, processus étape par étape, outils, checklist et FAQ pour optimiser votre site et améliorer votre visibilité Google.",
     "image": "https://www.triaina.fr/images/audit-seo-guide.jpg",
     "author": {
-        "@type": "Organization",
-        "name": "Triaina"
+      "@type": "Person",
+      "name": "Alexandre",
+      "jobTitle": "CEO & Fondateur Triaina",
+      "url": "https://www.triaina.fr",
+      "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
     },
     "publisher": {
         "@type": "Organization",

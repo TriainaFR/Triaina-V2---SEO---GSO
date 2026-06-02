@@ -167,7 +167,7 @@ export const SeoParis: React.FC<SeoParisProps> = ({ onNavigate }) => {
             "description": "Guide complet sur le SEO à Paris et comment une agence SEO peut augmenter votre visibilité sur Google Search",
             "image": "https://www.triaina.fr/images/agence-seo-paris.jpg",
             "datePublished": "2026-02-19",
-            "dateModified": "2026-02-19",
+            "dateModified": "2026-06-02",
             "author": {
                 "@type": "Organization",
                 "name": "Triaina",
@@ -189,7 +189,7 @@ export const SeoParis: React.FC<SeoParisProps> = ({ onNavigate }) => {
     <div className="pt-24 md:pt-36 pb-12 px-4 md:px-6 min-h-screen max-w-7xl mx-auto relative z-10 w-full overflow-hidden font-sans">
         
         <SEO 
-            title="Agence SEO Paris : Référencement Naturel & GSO | Triaina"
+            title="Agence SEO Paris : Référencement Naturel & GSO"
             description="Agence SEO à Paris. Stratégie SEO sur mesure, audit 3000€. À partir de 1000€/mois. Experts en référencement naturel et GSO. Triaina."
             schema={seoSchema}
             image="https://www.triaina.fr/images/agence-seo-paris.jpg"
@@ -204,13 +204,13 @@ export const SeoParis: React.FC<SeoParisProps> = ({ onNavigate }) => {
             </div>
             
             <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-black text-slate-900 mb-6 leading-tight break-words hyphens-auto w-full">
-                Agence SEO Paris : <br/>
+                Agence SEO à Paris : <br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400 break-words">
-                    Référencement Naturel & GSO
+                    Référencement Naturel, GSO et Stratégie de Visibilité
                 </span>
             </h1>
             
-            <h2 className="text-2xl font-display font-bold text-slate-900 mb-6 mt-8">Introduction</h2>
+            <h2 className="text-2xl font-display font-bold text-slate-900 mb-6 mt-8">Pourquoi choisir une agence SEO à Paris ?</h2>
             
             <div className="max-w-4xl mx-auto md:mx-0 text-lg md:text-xl text-slate-600 leading-relaxed font-light border-l-4 border-blue-600 pl-4 md:pl-6 break-words space-y-4">
                 <p>
@@ -223,7 +223,7 @@ export const SeoParis: React.FC<SeoParisProps> = ({ onNavigate }) => {
                     Chez Triaina, nous combinons le <strong>SEO traditionnel</strong> avec le <strong>GSO (Generative Search Optimization)</strong> pour vous assurer une visibilité maximale sur tous les canaux de recherche : Google Search, ChatGPT, Perplexity, Claude et Google AI Overview.
                 </p>
                 <p>
-                    Nous travaillons avec des entreprises de tous les secteurs : e-commerce, services, B2B, santé, immobilier, etc. Notre approche est personnalisée, basée sur les données, et orientée vers les résultats mesurables.
+                    Nous travaillons avec des entreprises de tous les secteurs : e-commerce, services, B2B, santé, immobilier, etc. Notre approche est personnalisée, basée sur les données, et orientée vers les résultats mesurables, en phase avec les <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=fr" target="_blank" rel="noopener noreferrer" className="text-blue-600 font-medium hover:underline">recommandations officielles de Google Search Central</a>.
                 </p>
             </div>
         </div>

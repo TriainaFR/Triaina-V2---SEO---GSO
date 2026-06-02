@@ -39,7 +39,8 @@ export const PAGE_TO_URL: Record<string, string> = {
   'google-ai-overview-france': '/blog/google-ai-overview-france',
   'strategie-contenu-ia-first': '/blog/strategie-contenu-ia-first',
   'schema-org-donnees-structurees-gso-2026': '/blog/schema-org-donnees-structurees-gso',
-  'agence-seo-vs-agence-gso': '/blog/agence-seo-vs-agence-gso'
+  'agence-seo-vs-agence-gso': '/blog/agence-seo-vs-agence-gso',
+  'seo-local-paris-2026': '/blog/seo-local-paris-2026'
 };
 
 export const ROUTES: Record<string, Page> = {
@@ -84,7 +85,8 @@ export const ROUTES: Record<string, Page> = {
   '/blog/google-ai-overview-france': 'google-ai-overview-france',
   '/blog/strategie-contenu-ia-first': 'strategie-contenu-ia-first',
   '/blog/schema-org-donnees-structurees-gso': 'schema-org-donnees-structurees-gso-2026',
-  '/blog/agence-seo-vs-agence-gso': 'agence-seo-vs-agence-gso'
+  '/blog/agence-seo-vs-agence-gso': 'agence-seo-vs-agence-gso',
+  '/blog/seo-local-paris-2026': 'seo-local-paris-2026'
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -586,10 +588,21 @@ export const BLOG_DATA: BlogItem[] = [
     source: 'Guide Technique',
     logo: '',
     date: '01 JUIN 2026',
-    title: 'Schema.org et données structurées pour le GSO : le guide complet 2026',
+    title: 'Données structurées JSON-LD pour le GSO : guide complet',
     excerpt: 'Les données structurées JSON-LD sont le signal machine le plus direct pour aider les moteurs génératifs (ChatGPT, Gemini) à comprendre, vérifier et citer votre contenu.',
     url: '/blog/schema-org-donnees-structurees-gso',
     image: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'seo-local-paris-2026',
+    source: 'Guide Expert',
+    logo: '',
+    date: '01 JUIN 2026',
+    title: 'SEO Local Paris 2026 : Le Guide Définitif pour Dominer sa Zone',
+    excerpt: 'Pourquoi le SEO Local à Paris est si spécifique en 2026. L\'impact du GSO sur les résultats de proximité et la stratégie d\'autorité locale.',
+    url: '/blog/seo-local-paris-2026',
+    image: 'https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
   }
 ];

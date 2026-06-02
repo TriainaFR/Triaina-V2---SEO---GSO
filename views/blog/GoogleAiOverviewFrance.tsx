@@ -79,10 +79,12 @@ export const GoogleAiOverviewFrance: React.FC = () => {
       "headline": "Google AI Overview France : comment s'y préparer dès maintenant ?",
       "description": "Google AI Overview n'est pas encore disponible en France à cause des droits voisins. Guide complet pour comprendre le blocage et préparer votre site SEO dès maintenant.",
       "author": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "url": "https://www.triaina.fr"
-      },
+            "@type": "Person",
+            "name": "Alexandre",
+            "jobTitle": "CEO & Fondateur Triaina",
+            "url": "https://www.triaina.fr",
+            "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
+        },
       "publisher": {
         "@type": "Organization",
         "name": "Triaina",

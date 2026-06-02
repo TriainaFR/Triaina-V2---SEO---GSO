@@ -35,10 +35,12 @@ export const TendancesSeoGso2026: React.FC = () => {
     "description": "Guide complet des 10 tendances SEO & GSO 2026 : E-E-A-T, citations IA, contenu long-form, données propriétaires, netlinking, présence médiatique. Cas clients et actions immédiates.",
     "image": "https://picsum.photos/seed/seo-trends-2026/1200/675",
     "author": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "url": "https://www.triaina.fr"
-    },
+            "@type": "Person",
+            "name": "Alexandre",
+            "jobTitle": "CEO & Fondateur Triaina",
+            "url": "https://www.triaina.fr",
+            "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
+        },
     "publisher": {
         "@type": "Organization",
         "name": "Triaina",

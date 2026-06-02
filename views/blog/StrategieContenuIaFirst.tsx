@@ -85,9 +85,11 @@ export const StrategieContenuIaFirst: React.FC = () => {
             "height": 630
         },
         "author": {
-            "@type": "Organization",
-            "name": "Triaina",
-            "url": "https://www.triaina.fr"
+            "@type": "Person",
+            "name": "Alexandre",
+            "jobTitle": "CEO & Fondateur Triaina",
+            "url": "https://www.triaina.fr",
+            "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
         },
         "publisher": {
             "@type": "Organization",

@@ -35,10 +35,12 @@ export const SeoTechniqueVsContenu: React.FC = () => {
     "description": "Analyse comparative complète : SEO technique vs SEO contenu. Impact réel, 3 cas clients, stratégie complète. Découvrez comment combiner les deux pour +250% de trafic.",
     "image": "https://picsum.photos/seed/seo-tech-content/1200/675",
     "author": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "url": "https://www.triaina.fr"
-    },
+            "@type": "Person",
+            "name": "Alexandre",
+            "jobTitle": "CEO & Fondateur Triaina",
+            "url": "https://www.triaina.fr",
+            "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
+        },
     "publisher": {
         "@type": "Organization",
         "name": "Triaina",

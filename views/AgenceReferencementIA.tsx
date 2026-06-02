@@ -71,7 +71,7 @@ export const AgenceReferencementIA: React.FC<{ onNavigate: (page: any) => void }
         "author": { "@type": "Organization", "name": "Triaina" },
         "publisher": { "@type": "Organization", "name": "Triaina", "logo": { "@type": "ImageObject", "url": "https://www.triaina.fr/logo.png" } },
         "datePublished": "2026-02-26",
-        "dateModified": "2026-02-26"
+        "dateModified": "2026-06-02"
       }
     ]
   };
@@ -79,8 +79,8 @@ export const AgenceReferencementIA: React.FC<{ onNavigate: (page: any) => void }
   return (
     <div className="pt-32 pb-20 px-4 min-h-screen max-w-7xl mx-auto relative z-10 overflow-x-hidden font-sans">
       <SEO 
-        title="Agence Référencement IA : Services, Audit & Accompagnement"
-        description="Agence référencement IA : audit complet, accompagnement, optimisation ChatGPT & Gemini. Services à partir de 3500€ (audit) et 1000€/mois (accompagnement). Triaina."
+        title="Agence Référencement IA : Audit & Accompagnement"
+        description="Agence référencement IA spécialisée : audit complet (3 500€), accompagnement mensuel (1 000€/mois), optimisation ChatGPT, Gemini et Perplexity. Triaina."
         keywords="agence référencement IA, audit référencement IA, accompagnement référencement IA, services référencement IA, optimisation IA"
         ogTitle="Agence Référencement IA : Services, Audit & Accompagnement"
         ogDescription="Agence référencement IA spécialisée : audit, accompagnement, optimisation ChatGPT & Gemini. Tarifs transparents, résultats mesurables."
@@ -98,11 +98,11 @@ export const AgenceReferencementIA: React.FC<{ onNavigate: (page: any) => void }
         </div>
         <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-6 leading-tight">
           Agence Référencement IA : <br/>
-          <span className="text-blue-600">Services, Audit & Accompagnement</span>
+          <span className="text-blue-600">Devenez visible sur ChatGPT, Gemini et Perplexity</span>
         </h1>
         <div className="text-xl text-slate-600 max-w-3xl leading-relaxed font-light space-y-4">
             <p>
-                Le <strong>référencement IA</strong> transforme la visibilité en ligne des entreprises. Contrairement au SEO traditionnel, l'optimisation pour les IA génératives comme ChatGPT et Gemini requiert une expertise spécifique et une approche différente. Une <strong>agence référencement IA</strong> professionnelle vous aide à naviguer ce nouvel écosystème et à capter les opportunités que les IA génératives offrent.
+                Le <strong>référencement IA</strong> transforme la visibilité en ligne des entreprises. Contrairement au SEO traditionnel, l'optimisation pour les IA génératives comme <a href="https://openai.com/chatgpt/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">ChatGPT</a> et <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Gemini</a> requiert une expertise spécifique et une approche différente. Une <strong>agence référencement IA</strong> professionnelle vous aide à naviguer ce nouvel écosystème et à capter les opportunités que les IA génératives offrent.
             </p>
             <p>
                 Chez Triaina, nous proposons des services complets de <strong>référencement IA</strong> adaptés à votre budget et vos objectifs. Que vous cherchiez un audit complet, un accompagnement long terme, ou une stratégie hybride SEO + IA, nous avons la solution. Nos services sont conçus pour maximiser votre visibilité auprès de ChatGPT, Gemini, Perplexity et Claude.
@@ -555,7 +555,7 @@ export const AgenceReferencementIA: React.FC<{ onNavigate: (page: any) => void }
         <div className="relative z-10">
           <h2 className="text-3xl font-display font-bold mb-4">Prêt à Transformer votre Visibilité ?</h2>
           <p className="text-lg text-blue-200 mb-8 max-w-2xl mx-auto">
-            Le référencement IA est l'opportunité de 2025. Les entreprises qui agissent maintenant obtiendront un avantage compétitif durable.
+            Le référencement IA est l'opportunité de 2026. Les entreprises qui agissent maintenant obtiendront un avantage compétitif durable.
           </p>
           <p className="text-lg text-blue-200 mb-8 max-w-2xl mx-auto">
             Triaina vous accompagne dans votre stratégie de référencement IA. Audit complet, stratégie personnalisée, optimisation du contenu, amplification média.

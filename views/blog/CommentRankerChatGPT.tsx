@@ -35,8 +35,11 @@ export const CommentRankerChatGPT: React.FC = () => {
     "description": "Guide complet pour ranker sur ChatGPT : fonctionnement, critères de ranking, optimisation on-page, stratégie contenu, netlinking, outils, cas clients et FAQ.",
     "image": "https://www.triaina.fr/images/ranker-chatgpt-2026.jpg",
     "author": {
-        "@type": "Organization",
-        "name": "Triaina"
+      "@type": "Person",
+      "name": "Alexandre",
+      "jobTitle": "CEO & Fondateur Triaina",
+      "url": "https://www.triaina.fr",
+      "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
     },
     "publisher": {
         "@type": "Organization",

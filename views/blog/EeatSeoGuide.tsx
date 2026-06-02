@@ -87,16 +87,12 @@ export const EeatSeoGuide: React.FC = () => {
           "height": 630
       },
       "author": {
-          "@type": "Organization",
-          "name": "Triaina",
-          "url": "https://www.triaina.fr",
-          "logo": {
-              "@type": "ImageObject",
-              "url": "https://www.triaina.fr/logo.png",
-              "width": 250,
-              "height": 60
-          }
-      },
+            "@type": "Person",
+            "name": "Alexandre",
+            "jobTitle": "CEO & Fondateur Triaina",
+            "url": "https://www.triaina.fr",
+            "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
+        },
       "publisher": {
           "@type": "Organization",
           "name": "Triaina",

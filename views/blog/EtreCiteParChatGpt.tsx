@@ -5,114 +5,116 @@ import { Calendar, Clock, ArrowLeft, Search, Activity, Target, Layout, FileText,
 export const EtreCiteParChatGpt: React.FC = () => {
   const breadcrumbSchema = {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
+    "@graph": [
       {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Accueil",
-        "item": "https://www.triaina.fr"
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://www.triaina.fr"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://www.triaina.fr/blog"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Comment être cité par ChatGPT ? Le guide complet 2026",
+            "item": "https://www.triaina.fr/blog/etre-cite-par-chatgpt"
+          }
+        ]
       },
       {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Blog",
-        "item": "https://www.triaina.fr/blog"
+        "@type": "Article",
+        "headline": "Comment être cité par ChatGPT ? Le guide complet 2026",
+        "description": "Référencement ChatGPT : les 7 facteurs clés pour être cité en 2026, mesurer votre Share of Synthesis et optimiser votre site pour les LLM.",
+        "datePublished": "2026-05-04",
+        "dateModified": "2026-05-04",
+        "image": "https://images.unsplash.com/photo-1674027444485-cec3da58eef4?auto=format&fit=crop&q=80&w=1200",
+        "author": {
+          "@type": "Person",
+          "name": "Alexandre",
+          "jobTitle": "CEO & Fondateur Triaina",
+          "url": "https://www.triaina.fr",
+          "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Triaina",
+          "url": "https://www.triaina.fr",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.triaina.fr/logo.png"
+          }
+        },
+        "inLanguage": "fr",
+        "mainEntityOfPage": "https://www.triaina.fr/blog/etre-cite-par-chatgpt"
       },
       {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Comment être cité par ChatGPT ? Le guide complet 2026",
-        "item": "https://www.triaina.fr/blog/etre-cite-par-chatgpt"
-      }
-    ]
-  };
-
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Comment être cité par ChatGPT ? Le guide complet 2026",
-    "description": "Référencement ChatGPT : découvrez les 7 facteurs clés pour être cité par ChatGPT en 2026, mesurer votre taux de citation IA et optimiser votre site pour les LLM.",
-    "datePublished": "2026-05-04",
-    "dateModified": "2026-05-04",
-    "image": "https://images.unsplash.com/photo-1674027444485-cec3da58eef4?auto=format&fit=crop&q=80&w=1200",
-    "author": {
-      "@type": "Organization",
-      "name": "Triaina",
-      "url": "https://www.triaina.fr"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Triaina",
-      "url": "https://www.triaina.fr",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.triaina.fr/logo.png"
-      }
-    },
-    "inLanguage": "fr",
-    "mainEntityOfPage": "https://www.triaina.fr/blog/etre-cite-par-chatgpt"
-  };
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Comment être cité par ChatGPT ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Pour être cité par ChatGPT, il faut produire un contenu qui répond directement et précisément aux questions des utilisateurs (Content-Answer Fit), structurer ses pages avec des données Schema.org, renforcer l'autorité de son domaine via des backlinks de qualité, et optimiser la présence de sa marque comme entité reconnue sur le web."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "ChatGPT cite-t-il des sources en temps réel ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Oui, lorsque la recherche web est activée (ChatGPT Search), ChatGPT interroge le web en temps réel via son crawler OAI-SearchBot et peut citer des sources récentes. Sans cette option, il répond à partir de ses données d'entraînement, sans accès au web."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Qu'est-ce que le Share of Synthesis ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Le Share of Synthesis est le taux de citation IA : il mesure la fréquence à laquelle votre marque ou votre contenu apparaît dans les réponses générées par les LLM sur un ensemble de requêtes cibles. Il se calcule en divisant le nombre de prompts où vous êtes cité par le nombre total de prompts testés, multiplié par 100."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Le fichier llms.txt est-il indispensable pour le référencement ChatGPT ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Non, le fichier llms.txt n'est pas indispensable. Aucun acteur majeur ne le supporte officiellement comme signal de classement. Il reste utile comme exercice de structuration de l'information, mais les efforts doivent d'abord se concentrer sur la qualité du contenu, les données structurées et l'autorité du domaine."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Perplexity et ChatGPT fonctionnent-ils de la même façon pour les citations ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Non. Perplexity est conçu comme un moteur de recherche citation-first : il affiche systématiquement ses sources dans chaque réponse. ChatGPT ne cite des sources que lorsque la recherche web est activée. Gemini s'appuie prioritairement sur l'index Google, tandis que Claude a lancé sa propre recherche web début 2026."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quels outils permettent de mesurer sa visibilité dans ChatGPT ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Plusieurs outils spécialisés existent en 2026 : Meteoria, Qwairy, Peec.ia, Botrank.ai (français), Semrush AI Toolkit, Ahrefs Brand Radar, HubSpot AEO et Profound. Pour débuter gratuitement, le HubSpot AI Search Grader et des tests manuels dans une session privée suffisent."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Combien de temps faut-il pour apparaître dans les réponses de ChatGPT ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Il n'existe pas de délai garanti. Les résultats dépendent de votre autorité de domaine, de la qualité de votre contenu et de la fréquence de crawl. Un plan d'action structuré sur 30 jours permet de poser les bases ; les premiers effets mesurables sur le taux de citation apparaissent généralement entre 4 et 12 semaines."
-        }
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Comment être cité par ChatGPT ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pour être cité par ChatGPT, il faut produire un contenu qui répond directement et précisément aux questions des utilisateurs (Content-Answer Fit), structurer ses pages avec des données Schema.org, renforcer l'autorité de son domaine via des backlinks de qualité, et optimiser la présence de sa marque comme entité reconnue sur le web."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ChatGPT cite-t-il des sources en temps réel ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui, lorsque la recherche web est activée (ChatGPT Search), ChatGPT interroge le web en temps réel via son crawler OAI-SearchBot et peut citer des sources récentes. Sans cette option, il répond à partir de ses données d'entraînement, sans accès au web."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qu'est-ce que le Share of Synthesis ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le Share of Synthesis est le taux de citation IA : il mesure la fréquence à laquelle votre marque ou votre contenu apparaît dans les réponses générées par les LLM sur un ensemble de requêtes cibles. Il se calcule en divisant le nombre de prompts où vous êtes cité par le nombre total de prompts testés, multiplié par 100."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Le fichier llms.txt est-il indispensable pour le référencement ChatGPT ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non, le fichier llms.txt n'est pas indispensable. Aucun acteur majeur ne le supporte officiellement comme signal de classement. Il reste utile comme exercice de structuration de l'information, mais les efforts doivent d'abord se concentrer sur la qualité du contenu, les données structurées et l'autorité du domaine."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Perplexity et ChatGPT fonctionnent-ils de la même façon pour les citations ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. Perplexity est conçu comme un moteur de recherche citation-first : il affiche systématiquement ses sources dans chaque réponse. ChatGPT ne cite des sources que lorsque la recherche web est activée. Gemini s'appuie prioritairement sur l'index Google, tandis que Claude a lancé sa propre recherche web début 2026."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quels outils permettent de mesurer sa visibilité dans ChatGPT ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Plusieurs outils spécialisés existent en 2026 : Meteoria, Qwairy, Peec.ia, Botrank.ai (français), Semrush AI Toolkit, Ahrefs Brand Radar, HubSpot AEO et Profound. Pour débuter gratuitement, le HubSpot AI Search Grader et des tests manuels dans une session privée suffisent."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Combien de temps faut-il pour apparaître dans les réponses de ChatGPT ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Il n'existe pas de délai garanti. Les résultats dépendent de votre autorité de domaine, de la qualité de votre contenu et de la fréquence de crawl. Un plan d'action structuré sur 30 jours permet de poser les bases ; les premiers effets mesurables sur le taux de citation apparaissent généralement entre 4 et 12 semaines."
+            }
+          }
+        ]
       }
     ]
   };
@@ -132,7 +134,7 @@ export const EtreCiteParChatGpt: React.FC = () => {
     <p>"Aujourd'hui, 90 % des sites sont totalement invisibles dans ChatGPT. Ce n'est pas une intuition, c'est le résultat d'une étude à grande échelle." - Mikaël Priol, fondateur du groupe Internet Factory</p>
   </blockquote>
   <p>Dans ce contexte, <strong>être cité dans une réponse IA équivaut à occuper la première position sur Google</strong>, avec un impact potentiellement encore plus fort : l'utilisateur fait directement confiance à la réponse affichée, sans forcément chercher à vérifier les sources.</p>
-  <p>Le <strong>GEO (Generative Engine Optimization)</strong> est la discipline qui répond à cet enjeu. Ce n'est pas un remplacement du SEO : c'est sa suite logique. Les fondamentaux du référencement naturel restent valides, le GEO est une couche supplémentaire qui vient s'y ajouter.</p>
+  <p>Le <strong>GEO (Generative Engine Optimization)</strong> est la discipline qui répond à cet enjeu. Ce n'est pas un remplacement du SEO : c'est sa suite logique. Les fondamentaux du référencement naturel restent valides, le GEO est une couche supplémentaire qui vient s'y ajouter. Pour bien comprendre les différences, consultez notre <a href="/agence-seo-vs-agence-gso">comparatif SEO vs GSO</a>.</p>
 
   <h2 id="sources">2. Comment ChatGPT sélectionne ses sources : mémoire vs recherche web en temps réel</h2>
   <p>Comprendre comment ChatGPT choisit ses sources est la première étape pour optimiser votre visibilité. Il existe <strong>deux modes de fonctionnement radicalement différents</strong>, et donc deux surfaces d'optimisation distinctes.</p>
@@ -154,7 +156,7 @@ export const EtreCiteParChatGpt: React.FC = () => {
 
   <h3>Ce que cela signifie pour votre stratégie</h3>
   <ul>
-    <li><strong>Court terme :</strong> optimisez pour ChatGPT Search (web en temps réel) en soignant la qualité, la structure et la fraîcheur de vos contenus.</li>
+    <li><strong>Court terme :</strong> optimisez pour ChatGPT Search (web en temps réel) en soignant la qualité, la structure et la fraîcheur de vos contenus (<a href="/blog/schema-org-donnees-structurees-gso">voir notre guide sur Schema.org pour le GSO</a>).</li>
     <li><strong>Long terme :</strong> construisez une présence web solide pour figurer dans les données d'entraînement des futurs modèles.</li>
     <li>Vérifiez que votre <code>robots.txt</code> <strong>autorise explicitement</strong> les crawlers IA (OAI-SearchBot pour OpenAI, PerplexityBot pour Perplexity, etc.).</li>
   </ul>
@@ -400,7 +402,7 @@ export const EtreCiteParChatGpt: React.FC = () => {
   <ul>
     <li><strong>Audit de visibilité IA :</strong> testez 20 à 30 requêtes de votre secteur sur ChatGPT, Perplexity et Claude. Notez votre taux de citation de départ.</li>
     <li><strong>Vérifiez votre robots.txt :</strong> autorisez explicitement OAI-SearchBot, PerplexityBot, ClaudeBot, GoogleExtended. Ne bloquez pas accidentellement ces agents.</li>
-    <li><strong>Auditez votre contenu existant :</strong> identifiez les pages qui répondent directement à des questions (Content-Answer Fit) et celles qui sont trop vagues.</li>
+    <li><strong>Auditez votre contenu existant :</strong> identifiez les pages qui répondent directement à des questions (Content-Answer Fit) et celles qui sont trop vagues. Si besoin d'aide, découvrez nos services d'<a href="/agence-referencement-ia">accompagnement en référencement IA</a>.</li>
     <li><strong>Créez un segment "trafic IA" dans GA4 :</strong> ajoutez perplexity.ai, chatgpt.com et claude.ai comme sources à suivre.</li>
   </ul>
 
@@ -474,9 +476,9 @@ export const EtreCiteParChatGpt: React.FC = () => {
     <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
       <SEO 
         title="Comment être cité par ChatGPT ? Le guide complet 2026" 
-        description="Référencement ChatGPT : découvrez les 7 facteurs clés pour être cité par ChatGPT en 2026, mesurer votre taux de citation IA et optimiser votre site pour les LLM."
+        description="Référencement ChatGPT : les 7 facteurs clés pour être cité en 2026, mesurer votre Share of Synthesis et optimiser votre site pour les LLM."
         keywords="ChatGPT, SEO, GEO, IA, LLM, optimisation, Share of Synthesis, RAG, Perplexity, Claude, Gemini"
-        schema={[breadcrumbSchema, articleSchema, faqSchema]}
+        schema={breadcrumbSchema}
         ogTitle="Comment être cité par ChatGPT ? Le guide complet 2026"
         ogDescription="Découvrez les 7 facteurs clés pour être cité par ChatGPT et les LLM en 2026."
         image="https://images.unsplash.com/photo-1674027444485-cec3da58eef4?auto=format&fit=crop&q=80&w=1200"
@@ -500,7 +502,7 @@ export const EtreCiteParChatGpt: React.FC = () => {
             <span className="flex items-center gap-1"><Clock size={12} /> 12 MIN</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-display font-bold text-slate-900 mb-8 leading-tight tracking-tight">
-            Comment être cité par <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">ChatGPT en 2026 ?</span>
+            Comment être cité par ChatGPT <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">en 2026 : le guide complet</span>
           </h1>
         </header>
 

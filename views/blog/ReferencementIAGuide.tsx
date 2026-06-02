@@ -35,8 +35,11 @@ export const ReferencementIAGuide: React.FC = () => {
     "description": "Guide complet du référencement IA 2026 : optimisation ChatGPT, Gemini, Perplexity, stratégie 5 étapes, outils, cas clients.",
     "image": "https://www.triaina.fr/images/referencement-ia-guide-complet.jpg",
     "author": {
-        "@type": "Organization",
-        "name": "Triaina"
+      "@type": "Person",
+      "name": "Alexandre",
+      "jobTitle": "CEO & Fondateur Triaina",
+      "url": "https://www.triaina.fr",
+      "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
     },
     "publisher": {
         "@type": "Organization",

@@ -35,8 +35,11 @@ export const SeoGsoGeoAeo2026: React.FC = () => {
     "description": "Comprendre les différences entre SEO, GSO (Generative Search Optimization), GEO (Generative Engine Optimization) et AEO (Answer Engine Optimization) en 2026.",
     "image": "https://images.unsplash.com/photo-1620825937374-87fc7d62828ee?auto=format&fit=crop&q=80&w=1200",
     "author": {
-      "@type": "Organization",
-      "name": "Triaina"
+      "@type": "Person",
+      "name": "Alexandre",
+      "jobTitle": "CEO & Fondateur Triaina",
+      "url": "https://www.triaina.fr",
+      "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
     },
     "publisher": {
       "@type": "Organization",

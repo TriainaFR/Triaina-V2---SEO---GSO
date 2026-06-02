@@ -145,7 +145,7 @@ export const AgenceReferencementIAParis: React.FC<{ onNavigate: (page: any) => v
             }
         },
         "datePublished": "2026-02-28",
-        "dateModified": "2026-02-28"
+        "dateModified": "2026-06-02"
       }
     ]
   };
@@ -153,7 +153,7 @@ export const AgenceReferencementIAParis: React.FC<{ onNavigate: (page: any) => v
   return (
     <div className="pt-32 pb-20 px-4 min-h-screen max-w-7xl mx-auto relative z-10 overflow-x-hidden">
       <SEO 
-        title="Agence Référencement IA Paris : Optimisation ChatGPT & Gemini"
+        title="Agence Référencement IA Paris : ChatGPT & Gemini"
         description="Agence référencement IA à Paris spécialisée en optimisation ChatGPT et Gemini. 25 ans d'expertise, audit IA complet, stratégie GSO. Triaina Paris."
         keywords="agence référencement IA Paris, référencement IA Paris, agence IA Paris, optimisation ChatGPT Paris, optimisation Gemini Paris, GSO Paris"
         ogTitle="Agence Référencement IA Paris : Optimisation ChatGPT & Gemini"
@@ -171,18 +171,18 @@ export const AgenceReferencementIAParis: React.FC<{ onNavigate: (page: any) => v
           <span>Generative Search Optimization Paris</span>
         </div>
         <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-6 leading-tight">
-          Agence Référencement IA Paris : <br/>
-          <span className="text-blue-600">Optimisation ChatGPT & Gemini</span>
+          Agence Référencement IA à Paris : <br/>
+          <span className="text-blue-600">Optimisez votre Visibilité sur les IA Génératives</span>
         </h1>
         <p className="text-xl text-slate-600 max-w-3xl leading-relaxed font-light">
-          Le référencement IA transforme la façon dont les entreprises parisiennes se font découvrir en ligne. Alors que les IA génératives comme ChatGPT et Gemini gagnent rapidement du terrain, les entreprises à Paris doivent adapter leur stratégie de visibilité pour rester compétitives. Une agence référencement IA à Paris spécialisée vous aide à optimiser votre présence auprès de ces nouveaux moteurs de recherche alimentés par l'intelligence artificielle.
+          Le référencement IA transforme la façon dont les entreprises parisiennes se font découvrir en ligne. Alors que les IA génératives comme <a href="https://openai.com/chatgpt/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">ChatGPT</a> et <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Gemini</a> gagnent rapidement du terrain, les entreprises à Paris doivent adapter leur stratégie de visibilité pour rester compétitives. Une agence référencement IA à Paris spécialisée vous aide à optimiser votre présence auprès de ces nouveaux moteurs de recherche alimentés par l'intelligence artificielle.
         </p>
       </div>
 
       {/* Introduction & Context */}
       <div className="grid md:grid-cols-12 gap-12 mb-24 animate-fade-in-up" style={{ animationDelay: '100ms' }}>
         <div className="md:col-span-7">
-          <h2 className="text-2xl font-display font-bold text-slate-900 mb-6">Le contexte du Référencement IA à Paris en 2025</h2>
+          <h2 className="text-2xl font-display font-bold text-slate-900 mb-6">Le contexte du Référencement IA à Paris en 2026</h2>
           <p className="text-slate-700 mb-6 leading-relaxed">
             Chez Triaina, nous comprenons les enjeux spécifiques du marché parisien. Avec 25 ans d'expertise en référencement naturel et une spécialisation pionnière en optimisation pour IA génératives, nous accompagnons les entreprises parisiennes à capter les opportunités de ce nouvel écosystème. Le référencement IA n'est pas une tendance passagère : c'est la prochaine frontière du marketing digital à Paris.
           </p>
@@ -215,7 +215,7 @@ export const AgenceReferencementIAParis: React.FC<{ onNavigate: (page: any) => v
       {/* Les IA qui comptent */}
       <div className="mb-24 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
         <h2 className="text-3xl font-display font-bold text-slate-900 mb-12 text-center">Les IA génératives qui dominent à Paris</h2>
-        <p className="text-center text-slate-600 mb-8 max-w-2xl mx-auto">En 2025, quatre acteurs dominent le marché des IA génératives :</p>
+        <p className="text-center text-slate-600 mb-8 max-w-2xl mx-auto">En 2026, quatre acteurs dominent le marché des IA génératives :</p>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
@@ -527,7 +527,7 @@ export const AgenceReferencementIAParis: React.FC<{ onNavigate: (page: any) => v
         <div className="relative z-10">
           <h2 className="text-3xl font-display font-bold mb-4">Prêt à Transformer votre Visibilité à Paris ?</h2>
           <p className="text-lg text-blue-200 mb-8 max-w-2xl mx-auto">
-            Le référencement IA est l'opportunité de 2025 pour les entreprises parisiennes. Les entreprises qui agissent maintenant obtiendront un avantage compétitif durable face à celles qui attendront.
+            Le référencement IA est l'opportunité de 2026 pour les entreprises parisiennes. Les entreprises qui agissent maintenant obtiendront un avantage compétitif durable face à celles qui attendront.
           </p>
           <p className="text-lg text-blue-200 mb-8 max-w-2xl mx-auto">
             Triaina vous accompagne dans votre stratégie de référencement IA à Paris. Audit complet, stratégie personnalisée, optimisation du contenu, amplification média.

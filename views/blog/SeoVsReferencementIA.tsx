@@ -35,8 +35,11 @@ export const SeoVsReferencementIA: React.FC = () => {
     "description": "Guide complet comparant SEO et Référencement IA : définitions, tableau comparatif, avantages, cas clients et stratégie à choisir.",
     "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1200",
     "author": {
-        "@type": "Organization",
-        "name": "Triaina"
+      "@type": "Person",
+      "name": "Alexandre",
+      "jobTitle": "CEO & Fondateur Triaina",
+      "url": "https://www.triaina.fr",
+      "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
     },
     "publisher": {
         "@type": "Organization",

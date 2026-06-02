@@ -35,8 +35,11 @@ export const AuditSeoParis2026: React.FC = () => {
     "description": "Audit SEO Paris 2026 : guide complet, 4 piliers (technique, contenu, autorité, GSO), 3 cas clients réels, checklist détaillée, outils. Améliorez votre ranking à Paris.",
     "image": "https://www.triaina.fr/images/audit-seo-paris-og.jpg",
     "author": {
-      "@type": "Organization",
-      "name": "Triaina"
+      "@type": "Person",
+      "name": "Alexandre",
+      "jobTitle": "CEO & Fondateur Triaina",
+      "url": "https://www.triaina.fr",
+      "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
     },
     "publisher": {
       "@type": "Organization",

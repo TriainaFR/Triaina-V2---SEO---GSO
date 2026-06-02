@@ -35,8 +35,11 @@ export const Gso2026GuideComplet: React.FC = () => {
     "description": "Guide complet GSO 2026 : définition, fonctionnement, critères de ranking, stratégie, outils, cas clients et FAQ pour dominer Google et les IA génératives.",
     "image": "https://picsum.photos/seed/generative-ai-search/1200/675",
     "author": {
-        "@type": "Organization",
-        "name": "Triaina"
+      "@type": "Person",
+      "name": "Alexandre",
+      "jobTitle": "CEO & Fondateur Triaina",
+      "url": "https://www.triaina.fr",
+      "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
     },
     "publisher": {
         "@type": "Organization",
