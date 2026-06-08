@@ -32,7 +32,7 @@ export const EtreCiteParChatGpt: React.FC = () => {
       {
         "@type": "Article",
         "headline": "Comment être cité par ChatGPT ? Le guide complet 2026",
-        "description": "Référencement ChatGPT : les 7 facteurs clés pour être cité en 2026, mesurer votre Share of Synthesis et optimiser votre site pour les LLM.",
+        "description": "Référencement ChatGPT : les 7 facteurs clés pour être cité en 2026, mesurer votre Share of Voice et optimiser votre site pour les LLM.",
         "datePublished": "2026-05-04",
         "dateModified": "2026-05-04",
         "image": "https://images.unsplash.com/photo-1674027444485-cec3da58eef4?auto=format&fit=crop&q=80&w=1200",
@@ -76,10 +76,10 @@ export const EtreCiteParChatGpt: React.FC = () => {
           },
           {
             "@type": "Question",
-            "name": "Qu'est-ce que le Share of Synthesis ?",
+            "name": "Qu'est-ce que le Share of Voice ?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Le Share of Synthesis est le taux de citation IA : il mesure la fréquence à laquelle votre marque ou votre contenu apparaît dans les réponses générées par les LLM sur un ensemble de requêtes cibles. Il se calcule en divisant le nombre de prompts où vous êtes cité par le nombre total de prompts testés, multiplié par 100."
+              "text": "Le Share of Voice est le taux de citation IA : il mesure la fréquence à laquelle votre marque ou votre contenu apparaît dans les réponses générées par les LLM sur un ensemble de requêtes cibles. Il se calcule en divisant le nombre de prompts où vous êtes cité par le nombre total de prompts testés, multiplié par 100."
             }
           },
           {
@@ -119,7 +119,7 @@ export const EtreCiteParChatGpt: React.FC = () => {
     ]
   };
 
-  const htmlContent = `<p><strong>TL;DR :</strong> Pour être cité par ChatGPT, votre contenu doit répondre directement et précisément aux questions des utilisateurs (c'est le <strong>Content-Answer Fit</strong>, facteur numéro 1). Ajoutez des données structurées Schema.org, renforcez l'autorité de votre domaine, optimisez votre présence comme entité reconnue, et mesurez votre taux de citation IA (le <strong>Share of Synthesis</strong>). Le référencement ChatGPT, aussi appelé <strong>GEO (Generative Engine Optimization)</strong>, n'est pas un remplacement du SEO classique : c'est la couche suivante.</p>
+  const htmlContent = `<p><strong>TL;DR :</strong> Pour être cité par ChatGPT, votre contenu doit répondre directement et précisément aux questions des utilisateurs (c'est le <strong>Content-Answer Fit</strong>, facteur numéro 1). Ajoutez des données structurées Schema.org, renforcez l'autorité de votre domaine, optimisez votre présence comme entité reconnue, et mesurez votre taux de citation IA (le <strong>Share of Voice</strong>). Le référencement ChatGPT, aussi appelé <strong>GEO (Generative Engine Optimization)</strong>, n'est pas un remplacement du SEO classique : c'est la couche suivante.</p>
 
   <h2 id="enjeu">1. Pourquoi apparaître dans ChatGPT est devenu un enjeu SEO majeur en 2026</h2>
   <p>La recherche d'information a changé de terrain. Une part croissante des utilisateurs ne tape plus une requête sur Google : ils posent directement leur question à ChatGPT, Perplexity, Gemini ou Claude.</p>
@@ -316,8 +316,8 @@ export const EtreCiteParChatGpt: React.FC = () => {
   </ul>
   <p>Pour être visible sur les LLM, vous devez être indexé sur <strong>Google ET Bing</strong> - pas seulement Google.</p>
 
-  <h2 id="mesurer">5. Comment mesurer votre taux de citation IA (Share of Synthesis)</h2>
-  <p>Le <strong>Share of Synthesis</strong> est votre indicateur clé de visibilité IA. Il mesure la fréquence à laquelle votre marque ou votre contenu apparaît dans les réponses générées par les LLM sur un ensemble de requêtes cibles.</p>
+  <h2 id="mesurer">5. Comment mesurer votre taux de citation IA (Share of Voice)</h2>
+  <p>Le <strong>Share of Voice</strong> est votre indicateur clé de visibilité IA. Il mesure la fréquence à laquelle votre marque ou votre contenu apparaît dans les réponses générées par les LLM sur un ensemble de requêtes cibles.</p>
   
   <h3>Les 4 KPIs à suivre</h3>
   <ul>
@@ -444,8 +444,8 @@ export const EtreCiteParChatGpt: React.FC = () => {
   <h3>ChatGPT cite-t-il des sources en temps réel ?</h3>
   <p>Oui, lorsque la recherche web est activée (ChatGPT Search), ChatGPT interroge le web en temps réel via son crawler OAI-SearchBot et peut citer des sources récentes. Sans cette option, il répond à partir de ses données d'entraînement, sans accès au web. La majorité des utilisateurs ChatGPT Plus utilisent désormais la recherche web activée par défaut.</p>
 
-  <h3>Qu'est-ce que le Share of Synthesis ?</h3>
-  <p>Le Share of Synthesis est votre taux de citation IA. Il mesure la fréquence à laquelle votre marque ou votre contenu apparaît dans les réponses générées par les LLM sur un ensemble de requêtes cibles. Il se calcule ainsi : (nombre de prompts où vous êtes cité) / (nombre total de prompts testés) x 100. C'est l'équivalent du taux de clics en SEO, mais pour les moteurs génératifs.</p>
+  <h3>Qu'est-ce que le Share of Voice ?</h3>
+  <p>Le Share of Voice est votre taux de citation IA. Il mesure la fréquence à laquelle votre marque ou votre contenu apparaît dans les réponses générées par les LLM sur un ensemble de requêtes cibles. Il se calcule ainsi : (nombre de prompts où vous êtes cité) / (nombre total de prompts testés) x 100. C'est l'équivalent du taux de clics en SEO, mais pour les moteurs génératifs.</p>
 
   <h3>Le fichier llms.txt est-il indispensable pour le référencement ChatGPT ?</h3>
   <p>Non. Aucun acteur majeur ne le supporte officiellement comme signal de classement en 2026. John Mueller (Google) l'a comparé à la balise meta keywords. Il reste utile comme exercice de structuration (30 minutes de travail, coût nul), mais vos efforts doivent d'abord se concentrer sur la qualité du contenu, les données structurées et l'autorité du domaine.</p>
@@ -476,8 +476,8 @@ export const EtreCiteParChatGpt: React.FC = () => {
     <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
       <SEO 
         title="Comment être cité par ChatGPT ? Le guide complet 2026" 
-        description="Référencement ChatGPT : les 7 facteurs clés pour être cité en 2026, mesurer votre Share of Synthesis et optimiser votre site pour les LLM."
-        keywords="ChatGPT, SEO, GEO, IA, LLM, optimisation, Share of Synthesis, RAG, Perplexity, Claude, Gemini"
+        description="Référencement ChatGPT : les 7 facteurs clés pour être cité en 2026, mesurer votre Share of Voice et optimiser votre site pour les LLM."
+        keywords="ChatGPT, SEO, GEO, IA, LLM, optimisation, Share of Voice, RAG, Perplexity, Claude, Gemini"
         schema={breadcrumbSchema}
         ogTitle="Comment être cité par ChatGPT ? Le guide complet 2026"
         ogDescription="Découvrez les 7 facteurs clés pour être cité par ChatGPT et les LLM en 2026."

@@ -172,6 +172,27 @@
   </url>
 
   <url>
+    <loc>https://www.triaina.fr/blog/schema-org-donnees-structurees-gso</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.triaina.fr/blog/seo-local-paris-2026</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.triaina.fr/blog/prompt-engineering-seo</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://www.triaina.fr/faq</loc>
     <lastmod>2026-02-24</lastmod>
     <changefreq>weekly</changefreq>

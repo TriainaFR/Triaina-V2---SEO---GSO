@@ -39,6 +39,7 @@ import { GoogleAiOverviewFrance } from './views/blog/GoogleAiOverviewFrance';
 import { StrategieContenuIaFirst } from './views/blog/StrategieContenuIaFirst';
 import { AgenceSeoVsGso2026 } from './views/blog/AgenceSeoVsGso2026';
 import { SchemaOrgGso2026 } from './views/blog/SchemaOrgGso2026';
+import { PromptEngineeringSeo2026 } from './views/blog/PromptEngineeringSeo2026';
 import { SEO } from './components/SEO';
 import { CustomCursor } from './components/CustomCursor';
 import { NAV_LINKS, SOCIAL_LINKS, PAGE_TO_URL, ROUTES } from './constants';
@@ -271,6 +272,8 @@ const App: React.FC = () => {
         return <AgenceSeoVsGso2026 />;
       case 'schema-org-donnees-structurees-gso-2026':
         return <SchemaOrgGso2026 />;
+      case 'prompt-engineering-seo':
+        return <PromptEngineeringSeo2026 />;
       case '404':
         return <NotFound onNavigate={handleNavigation} />;
       default:

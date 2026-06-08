@@ -40,7 +40,8 @@ export const PAGE_TO_URL: Record<string, string> = {
   'strategie-contenu-ia-first': '/blog/strategie-contenu-ia-first',
   'schema-org-donnees-structurees-gso-2026': '/blog/schema-org-donnees-structurees-gso',
   'agence-seo-vs-agence-gso': '/blog/agence-seo-vs-agence-gso',
-  'seo-local-paris-2026': '/blog/seo-local-paris-2026'
+  'seo-local-paris-2026': '/blog/seo-local-paris-2026',
+  'prompt-engineering-seo': '/blog/prompt-engineering-seo'
 };
 
 export const ROUTES: Record<string, Page> = {
@@ -86,7 +87,8 @@ export const ROUTES: Record<string, Page> = {
   '/blog/strategie-contenu-ia-first': 'strategie-contenu-ia-first',
   '/blog/schema-org-donnees-structurees-gso': 'schema-org-donnees-structurees-gso-2026',
   '/blog/agence-seo-vs-agence-gso': 'agence-seo-vs-agence-gso',
-  '/blog/seo-local-paris-2026': 'seo-local-paris-2026'
+  '/blog/seo-local-paris-2026': 'seo-local-paris-2026',
+  '/blog/prompt-engineering-seo': 'prompt-engineering-seo'
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -217,6 +219,20 @@ export const REFERENCES_DATA: ReferenceItem[] = [
     ],
     tags: ['GSO', 'En cours'],
     image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
+    id: 'ref_tamtam_ai',
+    client: 'Tamtam AI',
+    title: 'Stratégie SEO & GEO',
+    summary: 'Accompagnement SEO et GEO pour acteur SaaS IA.',
+    challenge: 'Développer l\'acquisition organique et la visibilité sur les moteurs IA (ChatGPT, Perplexity, Gemini).',
+    solution: '',
+    results: [
+        'Élaboration d\'une stratégie GSO sur-mesure.',
+        'Augmentation de la part de voix (Share of Voice).'
+    ],
+    tags: ['SaaS', 'IA', 'GEO/GSO'],
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200'
   },
   {
     id: 'ref_leshardis',
@@ -603,6 +619,17 @@ export const BLOG_DATA: BlogItem[] = [
     excerpt: 'Pourquoi le SEO Local à Paris est si spécifique en 2026. L\'impact du GSO sur les résultats de proximité et la stratégie d\'autorité locale.',
     url: '/blog/seo-local-paris-2026',
     image: 'https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'prompt-engineering-seo',
+    source: 'Guide Pratique',
+    logo: '',
+    date: '08 JUIN 2026',
+    title: 'Prompt engineering pour le SEO : le guide complet 2026',
+    excerpt: 'Maîtrisez le prompt engineering pour le SEO en 2026 : anatomie d\'un prompt efficace, 7 cas d\'usage prêts à l\'emploi et lien GSO/GEO.',
+    url: '/blog/prompt-engineering-seo',
+    image: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
   }
 ];

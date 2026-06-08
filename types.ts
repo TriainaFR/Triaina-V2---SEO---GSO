@@ -39,6 +39,7 @@ export type Page =
   | 'agence-seo-vs-agence-gso'
   | 'schema-org-donnees-structurees-gso-2026'
   | 'seo-local-paris-2026'
+  | 'prompt-engineering-seo'
   | '404';
 
 export interface NavLink {
