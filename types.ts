@@ -42,6 +42,7 @@ export type Page =
   | 'prompt-engineering-seo'
   | 'perplexity-seo-2026'
   | 'meilleure-agence-gso-france-2026'
+  | '10-conseils-marque-visible-chatgpt-2026'
   | '404';
 
 export interface NavLink {

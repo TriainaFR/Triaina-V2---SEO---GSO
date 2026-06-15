@@ -43,7 +43,8 @@ export const PAGE_TO_URL: Record<string, string> = {
   'seo-local-paris-2026': '/blog/seo-local-paris-2026',
   'prompt-engineering-seo': '/blog/prompt-engineering-seo',
   'perplexity-seo-2026': '/blog/perplexity-seo',
-  'meilleure-agence-gso-france-2026': '/blog/meilleure-agence-gso-france-2026'
+  'meilleure-agence-gso-france-2026': '/blog/meilleure-agence-gso-france-2026',
+  '10-conseils-marque-visible-chatgpt-2026': '/blog/10-conseils-marque-visible-chatgpt'
 };
 
 export const ROUTES: Record<string, Page> = {
@@ -92,7 +93,8 @@ export const ROUTES: Record<string, Page> = {
   '/blog/seo-local-paris-2026': 'seo-local-paris-2026',
   '/blog/prompt-engineering-seo': 'prompt-engineering-seo',
   '/blog/perplexity-seo': 'perplexity-seo-2026',
-  '/blog/meilleure-agence-gso-france-2026': 'meilleure-agence-gso-france-2026'
+  '/blog/meilleure-agence-gso-france-2026': 'meilleure-agence-gso-france-2026',
+  '/blog/10-conseils-marque-visible-chatgpt': '10-conseils-marque-visible-chatgpt-2026'
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -671,6 +673,17 @@ export const BLOG_DATA: BlogItem[] = [
     url: '/blog/meilleure-agence-gso-france-2026',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
     tag: 'AGENCE'
+  },
+  {
+    id: '10-conseils-marque-visible-chatgpt-2026',
+    source: 'Guide Stratégique',
+    logo: '',
+    date: '15 JUIN 2026',
+    title: '10 conseils pour rendre votre marque visible dans ChatGPT en 2026',
+    excerpt: 'Les 10 leviers actionnables pour améliorer votre référencement ChatGPT : Bing, structuration de contenu, médias tiers et E-E-A-T.',
+    url: '/blog/10-conseils-marque-visible-chatgpt',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
   }
 ];
 

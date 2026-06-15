@@ -42,6 +42,7 @@ import { SchemaOrgGso2026 } from './views/blog/SchemaOrgGso2026';
 import { PromptEngineeringSeo2026 } from './views/blog/PromptEngineeringSeo2026';
 import { PerplexitySeo2026 } from './views/blog/PerplexitySeo2026';
 import { MeilleureAgenceGsoFrance2026 } from './views/blog/MeilleureAgenceGsoFrance2026';
+import { MarqueVisibleChatgpt2026 } from './views/blog/MarqueVisibleChatgpt2026';
 import { SEO } from './components/SEO';
 import { CustomCursor } from './components/CustomCursor';
 import { NAV_LINKS, SOCIAL_LINKS, PAGE_TO_URL, ROUTES } from './constants';
@@ -280,6 +281,8 @@ const App: React.FC = () => {
         return <PerplexitySeo2026 />;
       case 'meilleure-agence-gso-france-2026':
         return <MeilleureAgenceGsoFrance2026 />;
+      case '10-conseils-marque-visible-chatgpt-2026':
+        return <MarqueVisibleChatgpt2026 />;
       case '404':
         return <NotFound onNavigate={handleNavigation} />;
       default:
