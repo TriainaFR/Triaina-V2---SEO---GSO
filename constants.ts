@@ -41,7 +41,9 @@ export const PAGE_TO_URL: Record<string, string> = {
   'schema-org-donnees-structurees-gso-2026': '/blog/schema-org-donnees-structurees-gso',
   'agence-seo-vs-agence-gso': '/blog/agence-seo-vs-agence-gso',
   'seo-local-paris-2026': '/blog/seo-local-paris-2026',
-  'prompt-engineering-seo': '/blog/prompt-engineering-seo'
+  'prompt-engineering-seo': '/blog/prompt-engineering-seo',
+  'perplexity-seo-2026': '/blog/perplexity-seo',
+  'meilleure-agence-gso-france-2026': '/blog/meilleure-agence-gso-france-2026'
 };
 
 export const ROUTES: Record<string, Page> = {
@@ -88,7 +90,9 @@ export const ROUTES: Record<string, Page> = {
   '/blog/schema-org-donnees-structurees-gso': 'schema-org-donnees-structurees-gso-2026',
   '/blog/agence-seo-vs-agence-gso': 'agence-seo-vs-agence-gso',
   '/blog/seo-local-paris-2026': 'seo-local-paris-2026',
-  '/blog/prompt-engineering-seo': 'prompt-engineering-seo'
+  '/blog/prompt-engineering-seo': 'prompt-engineering-seo',
+  '/blog/perplexity-seo': 'perplexity-seo-2026',
+  '/blog/meilleure-agence-gso-france-2026': 'meilleure-agence-gso-france-2026'
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -645,6 +649,28 @@ export const BLOG_DATA: BlogItem[] = [
     url: '/blog/prompt-engineering-seo',
     image: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
+  },
+  {
+    id: 'perplexity-seo-2026',
+    source: 'Guide Stratégique',
+    logo: '',
+    date: '15 JUIN 2026',
+    title: 'Perplexity SEO : comment apparaître dans les réponses Perplexity en 2026',
+    excerpt: 'Le guide pour optimiser son site pour Perplexity AI : API Bing, PerplexityBot, extraction de contenu (chunking) et E-E-A-T.',
+    url: '/blog/perplexity-seo',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'meilleure-agence-gso-france-2026',
+    source: 'SEO & GSO',
+    logo: '',
+    date: '15 JUIN 2026',
+    title: 'Meilleure agence GSO France 2026 : top 5 comparatif',
+    excerpt: 'Comparatif des 5 meilleures agences GSO (Generative Search Optimization) en France en 2026 : critères de sélection, profils détaillés et guide pour choisir selon votre besoin.',
+    url: '/blog/meilleure-agence-gso-france-2026',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
+    tag: 'AGENCE'
   }
 ];
 
