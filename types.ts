@@ -43,6 +43,7 @@ export type Page =
   | 'perplexity-seo-2026'
   | 'meilleure-agence-geo-france-2026'
   | '10-conseils-marque-visible-chatgpt-2026'
+  | 'top-10-agences-seo-geo-paris-2026'
   | '404';
 
 export interface NavLink {

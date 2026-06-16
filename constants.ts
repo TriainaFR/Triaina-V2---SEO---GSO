@@ -44,7 +44,8 @@ export const PAGE_TO_URL: Record<string, string> = {
   'prompt-engineering-seo': '/blog/prompt-engineering-seo',
   'perplexity-seo-2026': '/blog/perplexity-seo',
   'meilleure-agence-geo-france-2026': '/blog/meilleure-agence-geo-france-2026',
-  '10-conseils-marque-visible-chatgpt-2026': '/blog/10-conseils-marque-visible-chatgpt'
+  '10-conseils-marque-visible-chatgpt-2026': '/blog/10-conseils-marque-visible-chatgpt',
+  'top-10-agences-seo-geo-paris-2026': '/blog/top-agences-seo-geo-paris'
 };
 
 export const ROUTES: Record<string, Page> = {
@@ -94,7 +95,8 @@ export const ROUTES: Record<string, Page> = {
   '/blog/prompt-engineering-seo': 'prompt-engineering-seo',
   '/blog/perplexity-seo': 'perplexity-seo-2026',
   '/blog/meilleure-agence-geo-france-2026': 'meilleure-agence-geo-france-2026',
-  '/blog/10-conseils-marque-visible-chatgpt': '10-conseils-marque-visible-chatgpt-2026'
+  '/blog/10-conseils-marque-visible-chatgpt': '10-conseils-marque-visible-chatgpt-2026',
+  '/blog/top-agences-seo-geo-paris': 'top-10-agences-seo-geo-paris-2026'
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -684,6 +686,17 @@ export const BLOG_DATA: BlogItem[] = [
     url: '/blog/10-conseils-marque-visible-chatgpt',
     image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
+  },
+  {
+    id: 'top-10-agences-seo-geo-paris-2026',
+    source: 'Comparatif',
+    logo: '',
+    date: '16 JUIN 2026',
+    title: 'Top 10 des meilleures agences SEO & GEO à Paris en 2026',
+    excerpt: 'Classement des 10 meilleures agences SEO et GEO (Generative Engine Optimization) à Paris en 2026 : profils détaillés, critères de sélection, guide de décision et FAQ.',
+    url: '/blog/top-agences-seo-geo-paris',
+    image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=1200',
+    tag: 'AGENCE'
   }
 ];
 
