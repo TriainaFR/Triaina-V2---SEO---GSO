@@ -43,7 +43,7 @@ export const PAGE_TO_URL: Record<string, string> = {
   'seo-local-paris-2026': '/blog/seo-local-paris-2026',
   'prompt-engineering-seo': '/blog/prompt-engineering-seo',
   'perplexity-seo-2026': '/blog/perplexity-seo',
-  'meilleure-agence-gso-france-2026': '/blog/meilleure-agence-gso-france-2026',
+  'meilleure-agence-geo-france-2026': '/blog/meilleure-agence-geo-france-2026',
   '10-conseils-marque-visible-chatgpt-2026': '/blog/10-conseils-marque-visible-chatgpt'
 };
 
@@ -93,7 +93,7 @@ export const ROUTES: Record<string, Page> = {
   '/blog/seo-local-paris-2026': 'seo-local-paris-2026',
   '/blog/prompt-engineering-seo': 'prompt-engineering-seo',
   '/blog/perplexity-seo': 'perplexity-seo-2026',
-  '/blog/meilleure-agence-gso-france-2026': 'meilleure-agence-gso-france-2026',
+  '/blog/meilleure-agence-geo-france-2026': 'meilleure-agence-geo-france-2026',
   '/blog/10-conseils-marque-visible-chatgpt': '10-conseils-marque-visible-chatgpt-2026'
 };
 
@@ -664,13 +664,13 @@ export const BLOG_DATA: BlogItem[] = [
     tag: 'GUIDE'
   },
   {
-    id: 'meilleure-agence-gso-france-2026',
-    source: 'SEO & GSO',
+    id: 'meilleure-agence-geo-france-2026',
+    source: 'SEO & GEO',
     logo: '',
     date: '15 JUIN 2026',
-    title: 'Meilleure agence GSO France 2026 : top 5 comparatif',
-    excerpt: 'Comparatif des 5 meilleures agences GSO (Generative Search Optimization) en France en 2026 : critères de sélection, profils détaillés et guide pour choisir selon votre besoin.',
-    url: '/blog/meilleure-agence-gso-france-2026',
+    title: 'Meilleure agence GEO France 2026 : top 5 comparatif',
+    excerpt: 'Comparatif des 5 meilleures agences GEO (Generative Engine Optimization) en France en 2026 : critères de sélection, profils détaillés et guide pour choisir selon votre besoin.',
+    url: '/blog/meilleure-agence-geo-france-2026',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
     tag: 'AGENCE'
   },

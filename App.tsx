@@ -41,7 +41,7 @@ import { AgenceSeoVsGso2026 } from './views/blog/AgenceSeoVsGso2026';
 import { SchemaOrgGso2026 } from './views/blog/SchemaOrgGso2026';
 import { PromptEngineeringSeo2026 } from './views/blog/PromptEngineeringSeo2026';
 import { PerplexitySeo2026 } from './views/blog/PerplexitySeo2026';
-import { MeilleureAgenceGsoFrance2026 } from './views/blog/MeilleureAgenceGsoFrance2026';
+import { MeilleureAgenceGeoFrance2026 } from './views/blog/MeilleureAgenceGeoFrance2026';
 import { MarqueVisibleChatgpt2026 } from './views/blog/MarqueVisibleChatgpt2026';
 import { SEO } from './components/SEO';
 import { CustomCursor } from './components/CustomCursor';
@@ -279,8 +279,8 @@ const App: React.FC = () => {
         return <PromptEngineeringSeo2026 />;
       case 'perplexity-seo-2026':
         return <PerplexitySeo2026 />;
-      case 'meilleure-agence-gso-france-2026':
-        return <MeilleureAgenceGsoFrance2026 />;
+      case 'meilleure-agence-geo-france-2026':
+        return <MeilleureAgenceGeoFrance2026 />;
       case '10-conseils-marque-visible-chatgpt-2026':
         return <MarqueVisibleChatgpt2026 />;
       case '404':

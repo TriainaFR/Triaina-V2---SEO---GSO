@@ -41,7 +41,7 @@ export type Page =
   | 'seo-local-paris-2026'
   | 'prompt-engineering-seo'
   | 'perplexity-seo-2026'
-  | 'meilleure-agence-gso-france-2026'
+  | 'meilleure-agence-geo-france-2026'
   | '10-conseils-marque-visible-chatgpt-2026'
   | '404';
 
