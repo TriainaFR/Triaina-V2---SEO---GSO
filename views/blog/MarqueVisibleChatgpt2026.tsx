@@ -370,31 +370,6 @@ export const MarqueVisibleChatgpt2026: React.FC = () => {
           <aside className="lg:w-1/3 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
             <div className="sticky top-32 space-y-8">
               
-              {/* Author Card */}
-              <div className="bg-slate-50 border border-slate-200 rounded-3xl p-8 flex flex-col items-center text-center">
-                <img 
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400" 
-                  alt="Alexandre, expert SEO & GSO" 
-                  className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-white shadow-lg"
-                />
-                <h3 className="text-xl font-bold font-sans text-slate-900">Alexandre</h3>
-                <p className="text-violet-600 font-mono text-sm mb-4">CEO & Fondateur Triaina</p>
-                <p className="text-slate-600 text-sm mb-6">
-                  Expert SEO & GSO chez Triaina. 10 ans d'expérience en référencement naturel et vulgarisation de l'IA générative.
-                </p>
-                <a 
-                  href="https://www.linkedin.com/in/alexandre-triaina" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-500 hover:text-violet-600 transition-colors inline-block"
-                >
-                  <span className="sr-only">LinkedIn</span>
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fillRule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clipRule="evenodd" />
-                  </svg>
-                </a>
-              </div>
-
               <div className="bg-slate-900 text-white rounded-3xl p-8">
                 <h3 className="text-xl font-bold mb-4 font-sans text-white">Besoin d'optimiser pour l'IA ?</h3>
                 <p className="text-slate-300 mb-6 text-sm">
