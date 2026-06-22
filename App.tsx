@@ -46,6 +46,9 @@ import { MarqueVisibleChatgpt2026 } from './views/blog/MarqueVisibleChatgpt2026'
 import { TopAgencesSeoGeoParis2026 } from './views/blog/TopAgencesSeoGeoParis2026';
 import { AgenceSeoLyon2026 } from './views/blog/AgenceSeoLyon2026';
 import { AgenceSeoBordeaux2026 } from './views/blog/AgenceSeoBordeaux2026';
+import { AgenceSeoLille2026 } from './views/blog/AgenceSeoLille2026';
+import { AgenceSeoMarseille2026 } from './views/blog/AgenceSeoMarseille2026';
+import { ReferencementGemini2026 } from './views/blog/ReferencementGemini2026';
 import { SEO } from './components/SEO';
 import { CustomCursor } from './components/CustomCursor';
 import { NAV_LINKS, SOCIAL_LINKS, PAGE_TO_URL, ROUTES } from './constants';
@@ -292,6 +295,12 @@ const App: React.FC = () => {
         return <AgenceSeoLyon2026 />;
       case 'agence-seo-bordeaux-2026':
         return <AgenceSeoBordeaux2026 />;
+      case 'agence-seo-lille-2026':
+        return <AgenceSeoLille2026 />;
+      case 'agence-seo-marseille-2026':
+        return <AgenceSeoMarseille2026 />;
+      case 'referencement-gemini-2026':
+        return <ReferencementGemini2026 />;
       case '404':
         return <NotFound onNavigate={handleNavigation} />;
       default:

@@ -47,7 +47,10 @@ export const PAGE_TO_URL: Record<string, string> = {
   '10-conseils-marque-visible-chatgpt-2026': '/blog/10-conseils-marque-visible-chatgpt',
   'top-10-agences-seo-geo-paris-2026': '/blog/top-agences-seo-geo-paris',
   'agence-seo-lyon-2026': '/blog/agence-seo-lyon',
-  'agence-seo-bordeaux-2026': '/blog/agence-seo-bordeaux'
+  'agence-seo-bordeaux-2026': '/blog/agence-seo-bordeaux',
+  'agence-seo-lille-2026': '/blog/agence-seo-lille',
+  'agence-seo-marseille-2026': '/blog/agence-seo-marseille',
+  'referencement-gemini-2026': '/blog/referencement-gemini-2026'
 };
 
 export const ROUTES: Record<string, Page> = {
@@ -100,7 +103,10 @@ export const ROUTES: Record<string, Page> = {
   '/blog/10-conseils-marque-visible-chatgpt': '10-conseils-marque-visible-chatgpt-2026',
   '/blog/top-agences-seo-geo-paris': 'top-10-agences-seo-geo-paris-2026',
   '/blog/agence-seo-lyon': 'agence-seo-lyon-2026',
-  '/blog/agence-seo-bordeaux': 'agence-seo-bordeaux-2026'
+  '/blog/agence-seo-bordeaux': 'agence-seo-bordeaux-2026',
+  '/blog/agence-seo-lille': 'agence-seo-lille-2026',
+  '/blog/agence-seo-marseille': 'agence-seo-marseille-2026',
+  '/blog/referencement-gemini-2026': 'referencement-gemini-2026'
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -723,6 +729,39 @@ export const BLOG_DATA: BlogItem[] = [
     url: '/blog/agence-seo-bordeaux',
     image: '/images/bordeaux-city.jpg',
     tag: 'AGENCE'
+  },
+  {
+    id: 'agence-seo-lille-2026',
+    source: 'SEO Local',
+    logo: '',
+    date: '22 JUIN 2026',
+    title: 'Agence SEO Lille : top 5 des agences SEO & GEO en 2026',
+    excerpt: 'Comparatif des 5 meilleures agences SEO à Lille en 2026, évaluées sur le SEO classique et la capacité GEO (optimisation pour ChatGPT, Perplexity, Gemini).',
+    url: '/blog/agence-seo-lille',
+    image: '/images/lille-city.jpg',
+    tag: 'AGENCE'
+  },
+  {
+    id: 'agence-seo-marseille-2026',
+    source: 'SEO Local',
+    logo: '',
+    date: '22 JUIN 2026',
+    title: 'Agence SEO Marseille : top 5 des agences SEO & GEO en 2026',
+    excerpt: 'Comparatif des 5 meilleures agences SEO à Marseille en 2026, évaluées sur le SEO classique et la capacité GEO (optimisation pour ChatGPT, Perplexity, Gemini).',
+    url: '/blog/agence-seo-marseille',
+    image: '/images/marseille-city.jpg',
+    tag: 'AGENCE'
+  },
+  {
+    id: 'referencement-gemini-2026',
+    source: 'SEO & GEO',
+    logo: '',
+    date: '22 JUIN 2026',
+    title: 'Référencement Gemini : comment apparaître dans Google Gemini en 2026',
+    excerpt: 'Découvrez comment optimiser votre site pour apparaître dans Google Gemini et les AI Overviews. Guide complet SEO et GEO pour 2026.',
+    url: '/blog/referencement-gemini-2026',
+    image: '/images/gemini-seo.jpg',
+    tag: 'GUIDE'
   }
 ];
 
@@ -830,6 +869,36 @@ export const FAQ_DATA: FAQItem[] = [
     id: 'q10',
     question: "Triaina est-elle vraiment une agence pionnière dans le GSO ?",
     answer: "Oui : nos associés créent des agences SEO depuis 2000, ont monté un groupe média en 2014, et ont pris le virage IA dès 2024. Triaina fait partie des premières agences SEO IA hybrides en France."
+  },
+  {
+    id: 'q11',
+    question: "Qu'est-ce que le GEO (Generative Engine Optimization) ou référencement IA ?",
+    answer: "Le GEO est l'optimisation de la visibilité d'une marque dans les réponses des IA génératives : ChatGPT, Perplexity, Gemini, Google AI Overview. Distinct du SEO classique qui cible Google Search. Le trafic issu des LLM a progressé de +527 % en un an. Le GEO repose sur 4 piliers : autorité de domaine, contenu structuré et extractible, E-E-A-T, citations tierces. Consultez notre <a href=\"/blog/geo-definition-2026\">définition complète du GEO</a>."
+  },
+  {
+    id: 'q12',
+    question: "Comment être référencé dans ChatGPT et les autres IA ?",
+    answer: "Être référencé dans ChatGPT et les IA génératives repose sur 4 leviers : (1) autorité SEO Google solide — les IA crawlent les mêmes sources que Google, (2) contenu structuré avec réponses directes et schema FAQ, (3) signaux E-E-A-T forts (auteur vérifié, sources primaires), (4) citations tierces dans des sources que les LLM consomment. Triaina accélère ce processus grâce à son groupe média propriétaire, qui génère des citations dans des sources directement indexées par les LLM. Découvrez notre <a href=\"/blog/etre-cite-par-chatgpt\">guide pour être cité par ChatGPT</a>."
+  },
+  {
+    id: 'q13',
+    question: "Combien coûte une agence SEO et GEO à Paris ?",
+    answer: "Les tarifs d'une agence SEO et GEO à Paris varient selon le périmètre. Un audit SEO + GEO complet coûte entre 1 500 € et 3 000 €. L'accompagnement mensuel démarre à partir de 500 €/mois pour les prestations SEO, et à partir de 500 €/mois pour une stratégie GEO intégrée. Les offres hybrides SEO + GEO de Triaina sont établies sur devis selon la taille du site, le secteur et les objectifs. Un audit gratuit de 30 minutes est proposé pour cadrer le budget avant tout engagement. <a href=\"/contact\">Demandez un audit gratuit</a>."
+  },
+  {
+    id: 'q14',
+    question: "Quelle différence entre SEO, GEO et GSO ?",
+    answer: "SEO (Search Engine Optimization) = optimisation pour les moteurs de recherche classiques comme Google (liens bleus). GEO (Generative Engine Optimization) = optimisation pour les moteurs IA génératifs : ChatGPT, Perplexity, Gemini. GSO (Generative Search Optimization) = approche propriétaire Triaina qui combine SEO + GEO + contrôle des sources via groupe média et régie. Les trois disciplines sont complémentaires : un bon SEO facilite le GEO, et le GSO amplifie les deux. En savoir plus sur <a href=\"/expertise-gso\">notre expertise GSO</a>."
+  },
+  {
+    id: 'q15',
+    question: "En combien de temps voit-on des résultats en SEO et en GEO ?",
+    answer: "En SEO, les premiers signaux (positions gagnées, trafic en hausse) apparaissent entre 2 et 4 mois. La consolidation dans le top 3 sur des mots-clés concurrentiels demande 6 à 12 mois — c'est lié à l'algorithme Transition Rank de Google, qui observe les pages sur ~90 jours avant de stabiliser leur position. En GEO, les premières citations IA peuvent apparaître sous 4 à 8 semaines si la stratégie de contenu et d'autorité est bien exécutée. Triaina mesure les citations IA dès le premier mois pour ajuster la stratégie en continu. Découvrez <a href=\"/agence-referencement-ia\">notre offre de référencement IA</a>."
+  },
+  {
+    id: 'q16',
+    question: "Comment mesurer sa visibilité dans les IA génératives ?",
+    answer: "Trois méthodes pour mesurer sa visibilité dans les IA : (1) test manuel en navigation privée — taper ses requêtes cibles dans ChatGPT, Perplexity et Gemini et vérifier si la marque est citée, (2) Google Search Console — le rapport « AI Overviews » (disponible depuis juin 2026) indique les impressions générées par les réponses IA de Google, (3) outils de tracking GEO tiers pour un suivi automatisé des citations. Triaina intègre le suivi des citations IA dans tous ses reportings mensuels clients. En savoir plus sur <a href=\"/expertise-gso\">notre expertise GSO</a>."
   }
 ];
 

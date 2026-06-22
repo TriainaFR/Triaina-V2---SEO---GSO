@@ -46,6 +46,9 @@ export type Page =
   | 'top-10-agences-seo-geo-paris-2026'
   | 'agence-seo-lyon-2026'
   | 'agence-seo-bordeaux-2026'
+  | 'agence-seo-lille-2026'
+  | 'agence-seo-marseille-2026'
+  | 'referencement-gemini-2026'
   | '404';
 
 export interface NavLink {

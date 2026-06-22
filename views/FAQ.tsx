@@ -84,9 +84,9 @@ export const FAQ: React.FC = () => {
                     <div 
                         className={`transition-[max-height,opacity] duration-500 ease-in-out overflow-hidden bg-white ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                     >
-                        <div className="p-6 pt-0 pl-16 pr-12 text-slate-600 font-mono text-sm leading-relaxed border-t border-blue-100 mt-2 pt-4 bg-gradient-to-b from-blue-50/20 to-white whitespace-pre-line">
+                        <div className="p-6 pt-0 pl-16 pr-12 text-slate-600 font-mono text-sm leading-relaxed border-t border-blue-100 mt-2 pt-4 bg-gradient-to-b from-blue-50/20 to-white whitespace-pre-line [&_a]:text-blue-600 hover:[&_a]:text-blue-800 [&_a]:underline">
                             <span className="text-blue-600 mr-2">{`>`}</span>
-                            {item.answer}
+                            <span dangerouslySetInnerHTML={{ __html: item.answer }} />
                         </div>
                     </div>
                 </div>
