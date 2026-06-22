@@ -44,6 +44,8 @@ export type Page =
   | 'meilleure-agence-geo-france-2026'
   | '10-conseils-marque-visible-chatgpt-2026'
   | 'top-10-agences-seo-geo-paris-2026'
+  | 'agence-seo-lyon-2026'
+  | 'agence-seo-bordeaux-2026'
   | '404';
 
 export interface NavLink {

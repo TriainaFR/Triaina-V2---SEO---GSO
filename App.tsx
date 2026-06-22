@@ -44,6 +44,8 @@ import { PerplexitySeo2026 } from './views/blog/PerplexitySeo2026';
 import { MeilleureAgenceGeoFrance2026 } from './views/blog/MeilleureAgenceGeoFrance2026';
 import { MarqueVisibleChatgpt2026 } from './views/blog/MarqueVisibleChatgpt2026';
 import { TopAgencesSeoGeoParis2026 } from './views/blog/TopAgencesSeoGeoParis2026';
+import { AgenceSeoLyon2026 } from './views/blog/AgenceSeoLyon2026';
+import { AgenceSeoBordeaux2026 } from './views/blog/AgenceSeoBordeaux2026';
 import { SEO } from './components/SEO';
 import { CustomCursor } from './components/CustomCursor';
 import { NAV_LINKS, SOCIAL_LINKS, PAGE_TO_URL, ROUTES } from './constants';
@@ -286,6 +288,10 @@ const App: React.FC = () => {
         return <MarqueVisibleChatgpt2026 />;
       case 'top-10-agences-seo-geo-paris-2026':
         return <TopAgencesSeoGeoParis2026 />;
+      case 'agence-seo-lyon-2026':
+        return <AgenceSeoLyon2026 />;
+      case 'agence-seo-bordeaux-2026':
+        return <AgenceSeoBordeaux2026 />;
       case '404':
         return <NotFound onNavigate={handleNavigation} />;
       default:

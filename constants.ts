@@ -45,7 +45,9 @@ export const PAGE_TO_URL: Record<string, string> = {
   'perplexity-seo-2026': '/blog/perplexity-seo',
   'meilleure-agence-geo-france-2026': '/blog/meilleure-agence-geo-france-2026',
   '10-conseils-marque-visible-chatgpt-2026': '/blog/10-conseils-marque-visible-chatgpt',
-  'top-10-agences-seo-geo-paris-2026': '/blog/top-agences-seo-geo-paris'
+  'top-10-agences-seo-geo-paris-2026': '/blog/top-agences-seo-geo-paris',
+  'agence-seo-lyon-2026': '/blog/agence-seo-lyon',
+  'agence-seo-bordeaux-2026': '/blog/agence-seo-bordeaux'
 };
 
 export const ROUTES: Record<string, Page> = {
@@ -96,7 +98,9 @@ export const ROUTES: Record<string, Page> = {
   '/blog/perplexity-seo': 'perplexity-seo-2026',
   '/blog/meilleure-agence-geo-france-2026': 'meilleure-agence-geo-france-2026',
   '/blog/10-conseils-marque-visible-chatgpt': '10-conseils-marque-visible-chatgpt-2026',
-  '/blog/top-agences-seo-geo-paris': 'top-10-agences-seo-geo-paris-2026'
+  '/blog/top-agences-seo-geo-paris': 'top-10-agences-seo-geo-paris-2026',
+  '/blog/agence-seo-lyon': 'agence-seo-lyon-2026',
+  '/blog/agence-seo-bordeaux': 'agence-seo-bordeaux-2026'
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -696,6 +700,28 @@ export const BLOG_DATA: BlogItem[] = [
     excerpt: 'Classement des 10 meilleures agences SEO et GEO (Generative Engine Optimization) à Paris en 2026 : profils détaillés, critères de sélection, guide de décision et FAQ.',
     url: '/blog/top-agences-seo-geo-paris',
     image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=1200',
+    tag: 'AGENCE'
+  },
+  {
+    id: 'agence-seo-lyon-2026',
+    source: 'Comparatif',
+    logo: '',
+    date: '22 JUIN 2026',
+    title: 'Agence SEO Lyon : top 5 SEO & GEO en 2026',
+    excerpt: 'Comparatif des 5 meilleures agences SEO à Lyon en 2026, évaluées sur le SEO classique et la capacité GEO (optimisation pour ChatGPT, Perplexity, Gemini).',
+    url: '/blog/agence-seo-lyon',
+    image: '/images/lyon-city.jpg',
+    tag: 'AGENCE'
+  },
+  {
+    id: 'agence-seo-bordeaux-2026',
+    source: 'Comparatif',
+    logo: '',
+    date: '22 JUIN 2026',
+    title: 'Agence SEO Bordeaux : top 5 SEO & GEO en 2026',
+    excerpt: 'Comparatif des 5 meilleures agences SEO à Bordeaux en 2026, évaluées sur le SEO classique et la capacité GEO (optimisation pour ChatGPT, Perplexity, Gemini).',
+    url: '/blog/agence-seo-bordeaux',
+    image: '/images/bordeaux-city.jpg',
     tag: 'AGENCE'
   }
 ];
