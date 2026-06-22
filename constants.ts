@@ -253,20 +253,6 @@ export const REFERENCES_DATA: ReferenceItem[] = [
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200'
   },
   {
-    id: 'ref_vapostore',
-    client: 'Vapostore',
-    title: 'Accompagnement SEO et GEO',
-    summary: 'Accompagnement SEO et GEO.',
-    challenge: 'Optimisation de la visibilité sur les moteurs de recherche et moteurs génératifs.',
-    solution: '',
-    results: [
-        'Stratégie de contenu SEO & GEO',
-        'Optimisation technique'
-    ],
-    tags: ['E-commerce', 'SEO', 'GEO'],
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1200'
-  },
-  {
     id: 'ref_leshardis',
     client: 'Les Hardis',
     title: 'Stratégie SEO & GEO',

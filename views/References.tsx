@@ -36,7 +36,7 @@ export const References: React.FC = () => {
         canonicalUrl="https://www.triaina.fr/references"
       />
 
-      <div className="flex items-end justify-between mb-20 border-b border-slate-400 pb-8 animate-fade-in-up">
+      <div className="flex items-end justify-between mb-8 border-b border-slate-400 pb-8 animate-fade-in-up">
         <div>
             <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-2">
                 DOSSIERS <span className="text-blue-700">CLIENTS</span>
@@ -49,6 +49,13 @@ export const References: React.FC = () => {
             TOTAL DOSSIERS: {REFERENCES_DATA.length}<br/>
             STATUT: PUBLIC
         </div>
+      </div>
+
+      <div className="bg-slate-100/50 border border-slate-200 p-4 rounded mb-12 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+        <p className="font-mono text-sm text-slate-600">
+            <span className="text-blue-700 font-bold mr-2">NOTE DE CONFIDENTIALITÉ :</span>
+            Seules nos références sans accord de confidentialité sont affichées publiquement. Nos use cases détaillés et nos données de suivi de performance sont présentés de vive voix lors de nos premiers rendez-vous.
+        </p>
       </div>
 
       <div className="flex flex-col border-t border-slate-400">
