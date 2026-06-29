@@ -50,6 +50,10 @@ export const PAGE_TO_URL: Record<string, string> = {
   'agence-seo-bordeaux-2026': '/blog/agence-seo-bordeaux',
   'agence-seo-lille-2026': '/blog/agence-seo-lille',
   'agence-seo-marseille-2026': '/blog/agence-seo-marseille',
+  'microsoft-copilot-seo-2026': '/blog/microsoft-copilot-seo',
+  'audit-geo-2026': '/blog/audit-geo',
+  'agence-netlinking-2026': '/blog/agence-netlinking',
+  'grok-seo-2026': '/blog/grok-seo',
   'referencement-gemini-2026': '/blog/referencement-gemini-2026'
 };
 
@@ -106,6 +110,10 @@ export const ROUTES: Record<string, Page> = {
   '/blog/agence-seo-bordeaux': 'agence-seo-bordeaux-2026',
   '/blog/agence-seo-lille': 'agence-seo-lille-2026',
   '/blog/agence-seo-marseille': 'agence-seo-marseille-2026',
+  '/blog/microsoft-copilot-seo': 'microsoft-copilot-seo-2026',
+  '/blog/audit-geo': 'audit-geo-2026',
+  '/blog/agence-netlinking': 'agence-netlinking-2026',
+  '/blog/grok-seo': 'grok-seo-2026',
   '/blog/referencement-gemini-2026': 'referencement-gemini-2026'
 };
 
@@ -739,6 +747,28 @@ export const BLOG_DATA: BlogItem[] = [
     tag: 'AGENCE'
   },
   {
+    id: 'microsoft-copilot-seo-2026',
+    source: 'SEO & GEO',
+    logo: '',
+    date: '29 JUIN 2026',
+    title: 'Microsoft Copilot SEO : être cité dans les réponses Copilot en 2026',
+    excerpt: 'Comment apparaître dans les réponses de Microsoft Copilot en 2026 ? Comprendre le fonctionnement de Bing Index + GPT-4o pour optimiser votre visibilité B2B.',
+    url: '/blog/microsoft-copilot-seo',
+    image: '/images/copilot-seo.jpg',
+    tag: 'GEO'
+  },
+  {
+    id: 'audit-geo-2026',
+    source: 'GEO',
+    logo: '',
+    date: '29 JUIN 2026',
+    title: 'Audit GEO : qu\'est-ce que c\'est et comment le réaliser en 2026 ?',
+    excerpt: 'Un audit GEO mesure votre taux de citation dans les IA génératives (ChatGPT, Perplexity, Gemini, Copilot). Découvrez notre méthode en 4 phases et 30 points de contrôle.',
+    url: '/blog/audit-geo',
+    image: '/images/audit-geo.jpg',
+    tag: 'GUIDE'
+  },
+  {
     id: 'referencement-gemini-2026',
     source: 'SEO & GEO',
     logo: '',
@@ -747,6 +777,28 @@ export const BLOG_DATA: BlogItem[] = [
     excerpt: 'Découvrez comment optimiser votre site pour apparaître dans Google Gemini et les AI Overviews. Guide complet SEO et GEO pour 2026.',
     url: '/blog/referencement-gemini-2026',
     image: '/images/gemini-seo.jpg',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'agence-netlinking-2026',
+    source: 'SEO & GEO',
+    logo: '',
+    date: '29 JUIN 2026',
+    title: 'Agence netlinking : comment choisir ses backlinks en 2026 ?',
+    excerpt: 'En 2026, un backlink sert à construire l\'autorité pour les LLMs (ChatGPT, Gemini). Guide pour choisir une agence de netlinking intégrant la dimension GEO.',
+    url: '/blog/agence-netlinking',
+    image: '/images/agence-netlinking.jpg',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'grok-seo-2026',
+    source: 'GEO',
+    logo: '',
+    date: '29 JUIN 2026',
+    title: 'Grok SEO : comment apparaître dans les réponses de Grok (xAI) en 2026',
+    excerpt: 'Grok lit deux flux en simultané : son index web et le firehose X. Découvrez comment optimiser pour xAI en actionnant ces deux leviers distincts.',
+    url: '/blog/grok-seo',
+    image: '/images/grok-seo.jpg',
     tag: 'GUIDE'
   }
 ];

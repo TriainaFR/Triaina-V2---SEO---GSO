@@ -48,6 +48,10 @@ import { AgenceSeoLyon2026 } from './views/blog/AgenceSeoLyon2026';
 import { AgenceSeoBordeaux2026 } from './views/blog/AgenceSeoBordeaux2026';
 import { AgenceSeoLille2026 } from './views/blog/AgenceSeoLille2026';
 import { AgenceSeoMarseille2026 } from './views/blog/AgenceSeoMarseille2026';
+import { MicrosoftCopilotSeo2026 } from './views/blog/MicrosoftCopilotSeo2026';
+import { AuditGeo2026 } from './views/blog/AuditGeo2026';
+import { AgenceNetlinking2026 } from './views/blog/AgenceNetlinking2026';
+import { GrokSeo2026 } from './views/blog/GrokSeo2026';
 import { ReferencementGemini2026 } from './views/blog/ReferencementGemini2026';
 import { SEO } from './components/SEO';
 import { CustomCursor } from './components/CustomCursor';
@@ -299,6 +303,14 @@ const App: React.FC = () => {
         return <AgenceSeoLille2026 />;
       case 'agence-seo-marseille-2026':
         return <AgenceSeoMarseille2026 />;
+      case 'microsoft-copilot-seo-2026':
+        return <MicrosoftCopilotSeo2026 />;
+      case 'audit-geo-2026':
+        return <AuditGeo2026 />;
+      case 'agence-netlinking-2026':
+        return <AgenceNetlinking2026 />;
+      case 'grok-seo-2026':
+        return <GrokSeo2026 />;
       case 'referencement-gemini-2026':
         return <ReferencementGemini2026 />;
       case '404':

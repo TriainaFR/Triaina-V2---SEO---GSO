@@ -48,6 +48,10 @@ export type Page =
   | 'agence-seo-bordeaux-2026'
   | 'agence-seo-lille-2026'
   | 'agence-seo-marseille-2026'
+  | 'microsoft-copilot-seo-2026'
+  | 'audit-geo-2026'
+  | 'agence-netlinking-2026'
+  | 'grok-seo-2026'
   | 'referencement-gemini-2026'
   | '404';
 
