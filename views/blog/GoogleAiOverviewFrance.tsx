@@ -1,649 +1,426 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, Calendar, Clock } from 'lucide-react';
-import { PAGE_TO_URL } from '../../constants';
+import { ArrowLeft, Clock, Calendar } from 'lucide-react';
+import { PAGE_TO_URL, BLOG_DATA } from '../../constants';
+import { SEO } from '../../components/SEO';
 
 export const GoogleAiOverviewFrance: React.FC = () => {
+  const post = BLOG_DATA.find(p => p.id === 'google-ai-overview-france');
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // EXACT SEO/GSO HTML INJECTION
-  useEffect(() => {
-    const exactHtml = `
-    <title>Google AI Overview France : comment s'y préparer dès maintenant ?</title>
-    <meta name="description" content="Google AI Overview n'est pas encore disponible en France (droits voisins). Découvrez pourquoi, quand ça changera, et 7 actions concrètes pour préparer votre site dès aujourd'hui.">
-    <meta name="keywords" content="Google AI Overview, Google SGE, IA générative France, SEO France, IA Overview SEO">
-    <meta name="author" content="Triaina">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="language" content="French">
-    <meta name="revisit-after" content="7 days">
-    
-    <!-- ===== OPEN GRAPH ===== -->
-    <meta property="og:title" content="Google AI Overview France : comment s'y préparer dès maintenant ?">
-    <meta property="og:description" content="Google AI Overview n'est pas encore disponible en France à cause des droits voisins. Guide complet pour préparer votre site SEO dès maintenant.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.triaina.fr/blog/google-ai-overview-france">
-    <meta property="og:image" content="https://www.triaina.fr/images/google-ai-overview-france.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="Triaina">
-    <meta property="og:locale" content="fr_FR">
-    
-    <!-- ===== TWITTER CARD ===== -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Google AI Overview France : comment s'y préparer dès maintenant ?">
-    <meta name="twitter:description" content="Google AI Overview n'est pas encore disponible en France à cause des droits voisins. Guide complet pour préparer votre site SEO dès maintenant.">
-    <meta name="twitter:image" content="https://www.triaina.fr/images/google-ai-overview-france.jpg">
-    <meta name="twitter:creator" content="@triaina">
-    
-    <!-- ===== CANONICAL ===== -->
-    <link rel="canonical" href="https://www.triaina.fr/blog/google-ai-overview-france">
-    
-    <!-- ===== ALTERNATE VERSIONS ===== -->
-    <link rel="alternate" hreflang="fr" href="https://www.triaina.fr/blog/google-ai-overview-france">
-    <link rel="alternate" hreflang="x-default" href="https://www.triaina.fr/blog/google-ai-overview-france">
-    
-    <!-- ===== SCHEMA MARKUP - BreadcrumbList ===== -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Accueil",
-                "item": "https://www.triaina.fr"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Blog",
-                "item": "https://www.triaina.fr/blog"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Google AI Overview France",
-                "item": "https://www.triaina.fr/blog/google-ai-overview-france"
-            }
-        ]
-    }
-    </script>
-    
-    <!-- ===== SCHEMA MARKUP - Article ===== -->
-    <script type="application/ld+json">
+  const seoSchema = [
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "Google AI Overview France : comment s'y préparer dès maintenant ?",
-      "description": "Google AI Overview n'est pas encore disponible en France à cause des droits voisins. Guide complet pour comprendre le blocage et préparer votre site SEO dès maintenant.",
+      "headline": "Google AI Overview en France : date de lancement, ce qui change et 7 actions à mener avant l'échéance",
+      "description": "Google a confirmé le lancement d'AI Overview en France d'ici le 23 septembre 2026. Découvrez les changements et l'impact SEO attendu.",
+      "image": "https://www.triaina.fr/images/google-ai-overview-france.jpg",
+      "datePublished": "2026-07-06",
+      "dateModified": "2026-07-06",
       "author": {
-            "@type": "Person",
-            "name": "Alexandre",
-            "jobTitle": "CEO & Fondateur Triaina",
-            "url": "https://www.triaina.fr",
-            "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
-        },
+        "@type": "Organization",
+        "name": "Triaina",
+        "url": "https://triaina.fr"
+      },
       "publisher": {
         "@type": "Organization",
         "name": "Triaina",
-        "url": "https://www.triaina.fr",
+        "url": "https://triaina.fr",
         "logo": {
           "@type": "ImageObject",
           "url": "https://www.triaina.fr/logo.png"
         }
       },
-      "datePublished": "2026-05-18",
-      "dateModified": "2026-05-18",
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://www.triaina.fr/blog/google-ai-overview-france"
       }
-    }
-    </script>
-    
-    <!-- ===== SCHEMA MARKUP - FAQPage ===== -->
-    <script type="application/ld+json">
+    },
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Google AI Overview est-il disponible en France ?",
+          "name": "Google AI Overview est-il déjà actif en France au 6 juillet 2026 ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Non. En mai 2026, Google AI Overview n'est toujours pas disponible en France. Le blocage est dû au conflit juridique autour des droits voisins et à l'amende de 250 M€ infligée à Google en mars 2024 par l'Autorité de la concurrence française. Aucune date officielle de lancement n'a été communiquée."
+            "text": "Non. À cette date, AI Overviews et AI Mode ne sont pas encore affichés sur google.fr. Le déploiement est annoncé entre l'été 2026 et le 23 septembre 2026, sans jour de lancement précis communiqué publiquement."
           }
         },
         {
           "@type": "Question",
-          "name": "Pourquoi l'AI Overview n'est-il pas disponible en France ?",
+          "name": "Pourquoi une échéance au 23 septembre 2026 précisément ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "La loi française de 2019 sur les droits voisins impose aux plateformes de rémunérer les éditeurs de presse pour la réutilisation de leurs contenus. Google a été condamné à 250 M€ d'amende en mars 2024 pour avoir utilisé des contenus de presse française pour entraîner Gemini sans accord préalable. Face à ce risque juridique, Google a suspendu le déploiement en France."
+            "text": "Cette date apparaît dans le courrier envoyé par Google aux éditeurs de presse français le 29 juin 2026, révélé par Ouest-France. Elle fonctionne comme une échéance plafond fixée par Google, pas comme un engagement de date-jour."
           }
         },
         {
           "@type": "Question",
-          "name": "Quand l'AI Overview sera-t-il disponible en France ?",
+          "name": "Les éditeurs de presse seront-ils payés pour les contenus repris par l'IA ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Aucune date officielle n'a été communiquée. Plusieurs scénarios sont possibles : un accord entre Google et la presse française au S1 2026, un lancement en mode dégradé (sans sources presse), ou une impasse juridique prolongée. Le renouvellement de l'accord APIG-Google en janvier 2025 et les discussions sur un mécanisme de double opt-out sont des signaux positifs."
+            "text": "Oui. Les quelque 450 éditeurs déjà couverts par un accord de droit voisin avec Google verront cette rémunération étendue aux contenus utilisés et consultés via AI Overviews et AI Mode."
           }
         },
         {
           "@type": "Question",
-          "name": "Comment apparaître dans Google AI Overview ?",
+          "name": "Un éditeur peut-il refuser d'apparaître dans AI Overviews ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Google indique officiellement qu'il n'existe pas d'optimisation spécifique requise : les bonnes pratiques SEO fondamentales s'appliquent. En pratique, les signaux qui favorisent l'inclusion sont : viser les featured snippets, structurer le contenu en blocs autonomes, renforcer les signaux E-E-A-T, cibler les requêtes informationnelles, maintenir le contenu à jour, et construire une autorité thématique solide."
+            "text": "Oui, Google a promis un mécanisme d'opt-out : chaque éditeur pourra choisir de ne pas voir ses contenus repris dans les fonctionnalités IA, séparément de son indexation classique."
           }
         },
         {
           "@type": "Question",
-          "name": "L'AI Overview est-il disponible en Belgique et en Suisse ?",
+          "name": "AI Overview va-t-il faire disparaître le trafic organique des sites français ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Oui. Google a officiellement lancé les AI Overviews en Belgique et en Suisse le 26 mars 2025, en même temps qu'en Allemagne, Italie, Espagne, Autriche, Pologne, Portugal et Irlande. Le français est supporté en Suisse. Ce déploiement prouve que le blocage français est purement réglementaire, pas technique."
+            "text": "Pas uniformément. Les données internationales montrent une baisse de clics marquée sur les requêtes informationnelles, mais un effet limité sur les requêtes transactionnelles e-commerce (3 à 4 % de déclenchement). Les sites cités comme source gagnent en visibilité, ceux qui ne le sont pas en perdent."
           }
         },
         {
           "@type": "Question",
-          "name": "Quel est l'impact de l'AI Overview sur le SEO ?",
+          "name": "Comment une entreprise peut-elle se préparer avant l'arrivée d'AI Overview en France ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Les études montrent une baisse de CTR de 34,5 % pour la position 1 organique quand un AI Overview est présent (Ahrefs). Mais les sites cités dans l'AI Overview voient leur CTR augmenter de 35 % à 80 % par rapport aux non-cités. L'enjeu est donc d'être sélectionné comme source, pas seulement de se positionner."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Comment tester l'AI Overview depuis la France ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Deux méthodes : (1) utiliser un VPN avec une adresse IP belge ou suisse et rechercher sur google.be ou google.ch ; (2) utiliser Google.com en anglais, où les AI Overviews sont disponibles. Des outils comme Météoria (meteoria.ai) ou PEEC-AI (peec.ai) permettent aussi de suivre la visibilité IA sur les marchés disponibles."
+            "text": "En auditant ses pages les plus exposées, en renforçant la signature et l'expertise de ses auteurs, en structurants son contenu pour l'extraction par les IA, et en surveillant sa présence dans les réponses générées, pas seulement ses positions classiques."
           }
         }
       ]
     }
-    </script>
-    `;
-    const fragment = document.createRange().createContextualFragment(exactHtml);
-    const elements: Node[] = [];
-    fragment.childNodes.forEach(node => {
-        elements.push(node.cloneNode(true));
-    });
-    
-    elements.forEach(node => {
-        document.head.appendChild(node);
-    });
-
-    return () => {
-        elements.forEach(node => {
-            if (node.parentNode) {
-                node.parentNode.removeChild(node);
-            }
-        });
-    };
-  }, []);
+  ];
 
   const htmlBody = `
-<aside>
-  <strong>TL;DR: L'essentiel en 30 secondes</strong>
-  <ul>
-    <li>🚫 <strong>Google AI Overview n'est pas disponible en France</strong> (mai 2026) à cause des droits voisins et d'une amende de 250 M€ infligée à Google en mars 2024.</li>
-    <li>🌍 <strong>Il est actif dans 200+ pays et 40+ langues</strong>, dont la Belgique et la Suisse depuis mars 2025: le français est donc techniquement supporté.</li>
-    <li>📉 <strong>Impact SEO réel</strong> : −34,5 % de CTR pour la position 1 sur les marchés où l'AIO est actif (Ahrefs). Mais les sites cités voient leur trafic augmenter.</li>
-    <li>📅 <strong>Aucune date officielle</strong> de lancement en France. Plusieurs scénarios existent pour 2026, dont un lancement en "mode dégradé" sans sources presse.</li>
-    <li>✅ <strong>La fenêtre d'opportunité est ouverte maintenant</strong> : les sites qui préparent leur contenu aujourd'hui seront en avance le jour J.</li>
+<p><em>Publié le 6 juillet 2026 - dernière mise à jour avec les informations connues à cette date.</em></p>
+
+<div class="bg-violet-50 p-6 md:p-8 rounded-3xl border border-violet-100 mb-10 shadow-sm relative overflow-hidden not-prose mt-8">
+  <div class="absolute top-0 left-0 w-1 h-full bg-violet-600"></div>
+  <h3 class="text-xl font-bold text-violet-900 mb-4 mt-0 flex items-center gap-2">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-violet-600"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+    TL;DR : ce qu'il faut retenir au 6 juillet 2026
+  </h3>
+  <ul class="text-violet-800 m-0 space-y-3 text-sm md:text-base list-disc pl-5">
+    <li><strong>La date n'est plus une supposition</strong> : Google a écrit aux éditeurs de presse français le 29 juin 2026 pour confirmer le lancement d'AI Overviews et d'AI Mode en France <strong>d'ici le 23 septembre 2026</strong>, avec un déploiement annoncé « cet été ».</li>
+    <li><strong>Le verrou juridique est levé.</strong> Le blocage n'a jamais été technique : la fonctionnalité tourne déjà en français en Belgique et en Suisse. Trois engagements ont débloqué le dossier : contrôle (opt-out) pour les éditeurs, transparence sur les impressions, et rémunération au titre du droit voisin étendue aux contenus repris dans le moteur IA.</li>
+    <li><strong>Aucune date-jour précise</strong> n'est communiquée à ce stade (6 juillet 2026) : le 23 septembre est une échéance plafond, pas un jour J.</li>
+    <li><strong>L'impact observé ailleurs est net</strong> : baisse des clics vers les sites quand un résumé IA s'affiche, mais gain de visibilité pour les sources citées.</li>
+    <li><strong>Le e-commerce transactionnel est pour l'instant moins exposé</strong> que les contenus informationnels (santé, finance, guides, B2B).</li>
   </ul>
-</aside>
+</div>
 
-<h2 id="qu-est-ce-que-google-ai-overview">Qu'est-ce que Google AI Overview ?</h2>
+<div class="p-6 bg-slate-50 border border-slate-200 rounded-2xl mb-12">
+  <h2 class="text-lg font-bold text-slate-900 mb-4 mt-0 border-none pb-0">Sommaire</h2>
+  <ul class="space-y-2 text-sm text-slate-600 list-none pl-0">
+    <li><a target="_blank" rel="noopener noreferrer" href="#date-lancement" class="hover:text-violet-600 transition-colors">Quand Google AI Overview sera-t-il lancé en France ?</a></li>
+    <li><a target="_blank" rel="noopener noreferrer" href="#pourquoi-retard" class="hover:text-violet-600 transition-colors">Pourquoi le lancement a-t-il pris deux ans de retard ?</a></li>
+    <li><a target="_blank" rel="noopener noreferrer" href="#ce-qui-change" class="hover:text-violet-600 transition-colors">Qu'est-ce qui change concrètement pour les sites et les internautes ?</a></li>
+    <li><a target="_blank" rel="noopener noreferrer" href="#impact-donnees" class="hover:text-violet-600 transition-colors">Quel impact sur le trafic organique ? Les chiffres observés ailleurs</a></li>
+    <li><a target="_blank" rel="noopener noreferrer" href="#scenarios" class="hover:text-violet-600 transition-colors">3 scénarios pour la rentrée 2026 : lequel est le plus probable ?</a></li>
+    <li><a target="_blank" rel="noopener noreferrer" href="#analyse-terrain" class="hover:text-violet-600 transition-colors">Notre lecture du dossier</a></li>
+    <li><a target="_blank" rel="noopener noreferrer" href="#actions" class="hover:text-violet-600 transition-colors">7 actions à mener avant le lancement</a></li>
+    <li><a target="_blank" rel="noopener noreferrer" href="#faq" class="hover:text-violet-600 transition-colors">Questions fréquentes</a></li>
+    <li><a target="_blank" rel="noopener noreferrer" href="#sources" class="hover:text-violet-600 transition-colors">Sources et pour aller plus loin</a></li>
+  </ul>
+</div>
 
-<p>Google AI Overview (anciennement Search Generative Experience) est un encadré généré par l'IA de Google: propulsé par Gemini: qui s'affiche en haut des résultats de recherche, <strong>avant les liens organiques classiques</strong>. Il synthétise des informations issues de plusieurs sources web pour répondre directement à la question de l'utilisateur.</p>
+<h2 id="date-lancement">Quand Google AI Overview sera-t-il lancé en France ?</h2>
+<p><strong>Entre fin juin et le 23 septembre 2026, avec une communication officielle de Google datée du 29 juin 2026.</strong> C'est le contenu d'un courrier envoyé par Google aux éditeurs de presse français ce lundi-là, révélé par <em>Ouest-France</em> puis confirmé par <em>Les Échos</em> et <em>Le Monde</em>. Le groupe américain y annonce le déploiement d'AI Overviews (Aperçus IA) et de son pendant conversationnel, AI Mode, dans le moteur de recherche utilisé en France.</p>
+<p>Il n'y a, à la date du 6 juillet 2026, <strong>aucune date-jour précise rendue publique</strong>. Le 23 septembre 2026 fonctionne comme une échéance plafond fixée par Google lui-même, pas comme une date de sortie confirmée. Le déploiement pourrait très bien intervenir avant, en plein été.</p>
+<p>Sébastien Missoffe, directeur général de Google France, avait déjà évoqué une arrivée imminente lors de l'événement « Think Consumer », le 16 juin 2026 - quelques jours avant que le calendrier ne soit formalisé par écrit.</p>
 
-<p>Contrairement au featured snippet, qui extrait un passage d'une seule page, l'AI Overview <strong>agrège en moyenne 5 à 6 sources différentes</strong> et produit une réponse originale avec des citations cliquables. C'est un changement de paradigme, pas une simple mise à jour.</p>
-
-<h3>Comment fonctionne l'AI Overview techniquement ?</h3>
-
-<p>Quand une requête déclenche un AI Overview, le système Gemini de Google :</p>
-
-<ol>
-  <li><strong>Analyse l'intention</strong> de la requête (informationnel, commercial, navigationnel)</li>
-  <li><strong>Décompose la question</strong> en sous-requêtes via une technique dite de "query fan-out"</li>
-  <li><strong>Extrait des passages pertinents</strong> depuis les pages indexées et éligibles</li>
-  <li><strong>Synthétise une réponse</strong> en citant les sources utilisées</li>
-</ol>
-
-<p>Pour être éligible, une page doit simplement être indexée et autorisée à afficher des snippets dans Google Search. <strong>Pas de prérequis technique supplémentaire.</strong></p>
-
-<h3>Quels types de requêtes déclenchent l'AI Overview ?</h3>
-
-<p>Les données disponibles sur les marchés actifs sont claires :</p>
-
+<h2 id="pourquoi-retard">Pourquoi le lancement a-t-il pris deux ans de retard ?</h2>
+<p><strong>Pas pour des raisons techniques ou linguistiques, mais réglementaires.</strong> AI Overviews fonctionne déjà en français en Belgique et en Suisse depuis plusieurs mois. Le blocage venait du régime français des droits voisins, issu de la loi de 2019 qui transpose une directive européenne : elle impose de rémunérer les éditeurs de presse quand leurs contenus sont réexploités.</p>
+<p>Deux sanctions ont marqué ce contentieux :</p>
 <ul>
-  <li><strong>99,9 % des requêtes déclenchant un AIO sont informationnelles</strong> (questions, guides, définitions)</li>
-  <li><strong>Santé</strong> : 91 % des requêtes déclenchent un AIO</li>
-  <li><strong>B2B Technologie</strong> : ~70 %</li>
-  <li><strong>E-commerce / transactionnel</strong> : seulement 4 %: Google préserve volontairement cet espace pour les annonceurs</li>
-  <li>Environ <strong>30 % des mots-clés desktop US</strong> (Ahrefs, septembre 2025) déclenchent un AIO</li>
+  <li><strong>Juillet 2021</strong> : une amende de 500 millions d'euros de l'Autorité de la concurrence pour non-respect des engagements pris envers les éditeurs.</li>
+  <li><strong>Mars 2024</strong> : une nouvelle amende, 250 millions d'euros cette fois, pour avoir entraîné les modèles d'IA de Google (Bard, devenu Gemini) sur des contenus de presse français sans en informer les éditeurs ni négocier de bonne foi une rémunération.</li>
+</ul>
+<p>Le courrier du 29 juin 2026 formalise la sortie de cette impasse, autour de trois engagements pris par Google envers les éditeurs :</p>
+<ul>
+  <li><strong>Contrôle (opt-out)</strong> : chaque éditeur pourra choisir de ne pas apparaître dans AI Overviews ou AI Mode.</li>
+  <li><strong>Transparence</strong> : des indicateurs distincts entre impressions issues du search classique et celles issues des fonctionnalités IA.</li>
+  <li><strong>Rémunération</strong> : les quelque 450 éditeurs déjà couverts par un accord de droit voisin classique toucheront aussi une compensation pour les contenus repris dans le moteur IA.</li>
 </ul>
 
-<p>Si votre site publie du contenu informatif: blog, guides, FAQ, ressources sectorielles: vous êtes directement concerné.</p>
+<h2 id="ce-qui-change">Qu'est-ce qui change concrètement pour les sites et les internautes ?</h2>
+<p><strong>Un résumé généré par Gemini s'affichera en tête de certaines pages de résultats, avant les liens organiques classiques.</strong> Les liens bleus restent, mais ils ne seront plus systématiquement le premier point de contact avec l'information.</p>
 
-<h2 id="google-ai-overview-france-pourquoi-ce-retard">Google AI Overview en France : pourquoi ce retard ?</h2>
+<h3>AI Overviews : le résumé au-dessus des liens</h3>
+<p>Concrètement, sur une requête informationnelle, Google affiche un bloc de synthèse rédigé par son IA Gemini, avec des liens cliquables vers les pages sources utilisées pour construire la réponse. Ce format existe déjà dans plus de 120 pays depuis deux ans, selon les chiffres cités par Google auprès des éditeurs français.</p>
 
-<p>La France est l'une des rares exceptions dans le déploiement mondial de l'AI Overview. Ce n'est pas un problème technique. C'est un blocage purement réglementaire.</p>
+<h3>AI Mode : la recherche conversationnelle</h3>
+<p>AI Mode arrivera au même moment. C'est une interface de recherche en langage naturel, accessible via un onglet dédié ou une URL spécifique, qui permet d'affiner une requête sous forme de dialogue, un peu à la manière de ChatGPT ou de Perplexity, mais construite à partir de l'index de recherche de Google et du modèle Gemini.</p>
+<p>Pour les propriétaires de sites, la conséquence pratique est la même dans les deux cas : être bien positionné dans les résultats classiques ne suffira plus à lui seul à générer du clic. Il faudra aussi être repris, cité, comme source dans la réponse générée par l'IA.</p>
 
-<h3>La loi sur les droits voisins, principal obstacle</h3>
+<h2 id="impact-donnees">Quel impact sur le trafic organique ? Les chiffres observés ailleurs</h2>
+<p><strong>Sur les marchés où AI Overviews tourne depuis un à deux ans (États-Unis en tête), la baisse de clics vers les sites est mesurable et documentée par plusieurs études indépendantes.</strong> La France n'a pas encore de données locales puisque la fonctionnalité n'y est pas active au 6 juillet 2026, mais ces chiffres donnent une base de travail sérieuse pour anticiper.</p>
 
-<p>En 2019, la France a transposé la directive européenne sur le droit d'auteur de façon particulièrement stricte, créant les <strong>droits voisins pour les éditeurs de presse</strong>. Cette loi impose aux plateformes numériques de rémunérer les médias pour toute réutilisation de leurs contenus: même de courts extraits.</p>
+<div class="overflow-x-auto my-8 not-prose">
+  <table class="min-w-full divide-y divide-gray-200 border border-gray-200 rounded-xl">
+    <thead class="bg-gray-50">
+      <tr>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider" colspan="2">Impact observé d'AI Overviews sur le trafic web à l'international</th>
+      </tr>
+      <tr>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-t border-gray-200">Indicateur</th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-t border-gray-200">Donnée observée</th>
+      </tr>
+    </thead>
+    <tbody class="bg-white divide-y divide-gray-200">
+      <tr>
+        <td class="px-6 py-4 text-sm text-gray-900 font-medium">Part des recherches (États-Unis) déclenchant un AI Overview</td>
+        <td class="px-6 py-4 text-sm text-gray-500">Environ 25,8 %, jusqu'à 39 % sur les requêtes informationnelles</td>
+      </tr>
+      <tr>
+        <td class="px-6 py-4 text-sm text-gray-900 font-medium">Baisse des clics sortants quand un AI Overview s'affiche</td>
+        <td class="px-6 py-4 text-sm text-gray-500">Jusqu'à -38 % (étude Indian School of Business / Carnegie Mellon)</td>
+      </tr>
+      <tr>
+        <td class="px-6 py-4 text-sm text-gray-900 font-medium">Taux de recherches sans aucun clic (zero-click) en présence d'un AI Overview</td>
+        <td class="px-6 py-4 text-sm text-gray-500">Jusqu'à 83 % sur certaines catégories de requêtes (Similarweb)</td>
+      </tr>
+      <tr>
+        <td class="px-6 py-4 text-sm text-gray-900 font-medium text-emerald-600">Gain de trafic pour les marques citées comme source</td>
+        <td class="px-6 py-4 text-sm text-gray-500">Jusqu'à +35 % par rapport aux concurrents non cités</td>
+      </tr>
+      <tr>
+        <td class="px-6 py-4 text-sm text-gray-900 font-medium">Requêtes transactionnelles e-commerce déclenchant un AI Overview</td>
+        <td class="px-6 py-4 text-sm text-gray-500">Seulement 3 à 4 % des cas</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-<p>En <strong>mars 2024, Google a été condamné à 250 millions d'euros d'amende</strong> par l'Autorité de la concurrence française pour avoir utilisé des contenus de presse française pour entraîner son IA Gemini sans accord préalable. Face à ce risque, Google a suspendu le déploiement de l'AI Overview en France.</p>
+<p>La lecture à en tirer n'est pas « le trafic organique va s'effondrer partout ». Les secteurs les plus exposés sont l'information généraliste, la santé, la finance, le voyage, l'éducation et le B2B SaaS - tout ce qui répond à une question plutôt qu'à un acte d'achat immédiat. Le e-commerce transactionnel reste, pour l'instant, relativement épargné : Google a intérêt à continuer d'envoyer du trafic vers les marchands.</p>
 
-<p>Le nœud du problème : les éditeurs français estiment que les accords existants couvrent l'affichage de simples snippets, pas l'utilisation de leurs contenus pour générer des résumés IA. Google refuse de payer une seconde fois pour que son IA synthétise ces articles.</p>
+<h2 id="scenarios">3 scénarios pour la rentrée 2026 : lequel est le plus probable ?</h2>
+<p><strong>Le scénario le plus probable au 6 juillet 2026 est un lancement progressif fin août ou début septembre, avant l'échéance du 23.</strong> Voici les trois hypothèses à surveiller.</p>
 
-<h3>L'AI Overview est déjà disponible en Belgique et en Suisse</h3>
+<div class="overflow-x-auto my-8 not-prose">
+  <table class="min-w-full divide-y divide-gray-200 border border-gray-200 rounded-xl">
+    <thead class="bg-gray-50">
+      <tr>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-700 uppercase tracking-wider" colspan="4">Scénarios de lancement d'AI Overview en France et probabilité estimée</th>
+      </tr>
+      <tr>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-t border-gray-200">Scénario</th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-t border-gray-200">Fenêtre</th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-t border-gray-200">Probabilité</th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-t border-gray-200">Ce qu'il implique</th>
+      </tr>
+    </thead>
+    <tbody class="bg-white divide-y divide-gray-200">
+      <tr>
+        <td class="px-6 py-4 text-sm text-gray-900 font-bold">Lancement anticipé</td>
+        <td class="px-6 py-4 text-sm text-gray-500">Juillet - fin août 2026</td>
+        <td class="px-6 py-4 text-sm font-medium text-amber-500">Modérée</td>
+        <td class="px-6 py-4 text-sm text-gray-500">Google veut couper court à l'incertitude et déploie dès la rentrée des vacances ; peu de délai pour ajuster son contenu, priorité à l'audit express.</td>
+      </tr>
+      <tr class="bg-violet-50">
+        <td class="px-6 py-4 text-sm text-violet-900 font-bold">Lancement progressif proche de l'échéance</td>
+        <td class="px-6 py-4 text-sm text-violet-700">Début à mi-septembre 2026, avant le 23</td>
+        <td class="px-6 py-4 text-sm font-bold text-violet-600">Élevée</td>
+        <td class="px-6 py-4 text-sm text-violet-800">Déploiement par vagues de requêtes ou de catégories, comme observé sur d'autres marchés au démarrage ; fenêtre de préparation la plus réaliste pour les sites.</td>
+      </tr>
+      <tr>
+        <td class="px-6 py-4 text-sm text-gray-900 font-bold">Nouveau report au-delà du 23 septembre</td>
+        <td class="px-6 py-4 text-sm text-gray-500">Après le 23 septembre 2026</td>
+        <td class="px-6 py-4 text-sm font-medium text-red-500">Faible</td>
+        <td class="px-6 py-4 text-sm text-gray-500">Un différend sur la mise en œuvre des engagements (opt-out, mesure des impressions) retarderait encore le calendrier ; scénario jugé peu probable après un engagement écrit de Google.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-<p><strong>Le 26 mars 2025</strong>, Google a officiellement lancé les AI Overviews dans neuf pays européens : Allemagne, Belgique, Irlande, Italie, Autriche, Pologne, Portugal, Espagne et Suisse. La France est restée seule sur le bord du quai.</p>
-
-<p>En Suisse, le français est supporté aux côtés de l'allemand, l'italien et l'anglais. Ce déploiement réussi en Belgique et en Suisse francophones prouve une chose essentielle : <strong>la langue française est parfaitement supportée par le système Gemini</strong>. Le blocage est 100 % stratégique et juridique.</p>
-
-<p>Résultat concret : pendant que nos voisins accumulent des données et affinent leurs stratégies GEO depuis mars 2025, les entreprises françaises ne peuvent ni tester ni mesurer ni optimiser leur présence dans cet écosystème.</p>
-
-<h3>Quand l'AI Overview arrivera-t-il en France ?</h3>
-
-<p><strong>Aucune date officielle n'a été communiquée.</strong> Plusieurs signaux positifs existent cependant :</p>
-
-<ul>
-  <li><strong>Janvier 2025</strong> : l'Alliance de la Presse d'Information Générale (APIG) et Google ont renouvelé leur accord-cadre sur les droits voisins, couvrant 295 publications représentant 79 % de la diffusion numérique française.</li>
-  <li><strong>Janvier 2026</strong> : Google a annoncé étudier un mécanisme de "double opt-out" permettant aux sites de désactiver les fonctionnalités d'IA générative tout en restant indexés. Ce mécanisme pourrait lever le principal obstacle réglementaire.</li>
-  <li><strong>Nick Fox</strong>, vice-président de Google Search, a déclaré explicitement : <em>"Nous espérons résoudre les incertitudes réglementaires en France qui ont rendu beaucoup plus difficile le lancement de fonctionnalités telles que les aperçus IA et le mode IA."</em></li>
-</ul>
-
-<p>Trois scénarios se dessinent pour 2026 :</p>
-
-<div class="overflow-x-auto"><table class="min-w-full text-left text-sm font-light">
-  <thead class="border-b font-medium dark:border-neutral-500">
-    <tr>
-      <th class="px-6 py-4">Scénario</th>
-      <th class="px-6 py-4">Description</th>
-      <th class="px-6 py-4">Impact pour les sites</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="border-b dark:border-neutral-500">
-      <td class="px-6 py-4">✅ Optimiste</td>
-      <td class="px-6 py-4">Accord Google / presse française au S1 2026: déploiement complet avec sources presse</td>
-      <td class="px-6 py-4">Tous les sites éligibles, y compris les médias</td>
-    </tr>
-    <tr class="border-b dark:border-neutral-500">
-      <td class="px-6 py-4">⚠️ Réaliste</td>
-      <td class="px-6 py-4">Lancement en mode dégradé (sans sources presse) pour débloquer le marché</td>
-      <td class="px-6 py-4">Sites non-presse avantagés, médias exclus</td>
-    </tr>
-    <tr class="border-b dark:border-neutral-500">
-      <td class="px-6 py-4">❌ Pessimiste</td>
-      <td class="px-6 py-4">Impasse juridique persistante: France en zone blanche indéfinie</td>
-      <td class="px-6 py-4">Retard compétitif croissant face aux marchés voisins</td>
-    </tr>
-  </tbody>
-</table></div>
-
-<p>Dans tous les cas, <strong>se préparer maintenant est la seule stratégie rationnelle</strong>.</p>
-
-<h2 id="impact-reel-ai-overview-seo">L'impact réel de l'AI Overview sur le SEO (données US)</h2>
-
-<p>La France n'a pas encore l'AI Overview, mais les données des marchés actifs sont disponibles: et elles méritent votre attention.</p>
-
-<h3>Baisse de CTR : ce que disent les études</h3>
-
-<p>Les chiffres sont convergents, même si les amplitudes varient selon les études :</p>
-
-<ul>
-  <li><strong>−34,5 %</strong> de CTR pour la position 1 organique quand un AI Overview est présent (Ahrefs, étude sur 300 000 mots-clés)</li>
-  <li><strong>−46,7 %</strong> de baisse relative mesurée sur 68 000 requêtes (Pew Research)</li>
-  <li><strong>58 % des recherches Google</strong> aboutissent à zéro clic (SparkToro)</li>
-  <li>AI Overviews + featured snippets occupent <strong>75,7 % de l'espace écran mobile</strong> et 67,1 % sur desktop</li>
-</ul>
-
-<p>La mauvaise nouvelle : si vous n'êtes pas cité, vous perdez du trafic. La bonne nouvelle : <strong>si vous êtes cité, votre CTR augmente de 35 % à 80 %</strong> par rapport aux concurrents non cités.</p>
-
-<h3>Les secteurs les plus exposés</h3>
-
-<p>Tous les secteurs ne sont pas logés à la même enseigne :</p>
-
-<ul>
-  <li><strong>Santé, éducation, finance</strong> (YMYL) : exposition maximale, 70 à 91 % des requêtes déclenchent un AIO</li>
-  <li><strong>B2B, SaaS, conseil</strong> : forte exposition sur les requêtes informationnelles</li>
-  <li><strong>E-commerce pur</strong> : faible exposition (4 % seulement): Google préserve les requêtes transactionnelles pour ses annonceurs</li>
-</ul>
-
-<h3>Une opportunité pour les sites sélectionnés</h3>
-
-<p>L'AI Overview n'est pas qu'une menace. C'est aussi une opportunité de visibilité inédite. <strong>97 % des AI Overviews citent au moins une source du top 20 organique</strong>, et 75 % citent des pages dans le top 12. Être en position 1 donne entre 17 % et 54 % de chances d'être inclus dans l'AIO.</p>
-
-<p>Et contrairement au featured snippet qui ne cite qu'une source, l'AI Overview en cite plusieurs: ce qui multiplie les chances d'apparaître.</p>
-
-<h2 id="criteres-selection-google-ai-overview">Les critères de sélection de Google pour l'AI Overview</h2>
-
-<h3>Ce que dit Google officiellement</h3>
-
-<p>Google est clair dans sa documentation officielle (developers.google.com/search/docs/appearance/ai-features) :</p>
-
-<blockquote>
-  <p><em>"There are no additional requirements to appear in AI Overviews or AI Mode, nor other special optimizations necessary."</em></p>
+<h2 id="analyse-terrain">Notre lecture du dossier</h2>
+<blockquote class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-xl my-8 italic text-slate-700">
+  « Ce qui change par rapport aux rumeurs qui circulaient depuis 2024, c'est qu'on a maintenant un engagement écrit de Google, daté et adressé aux éditeurs. Ça ne veut pas dire que tout est calé - le opt-out et la mesure des impressions restent à définir dans le détail - mais le rapport de force a changé de nature : on n'est plus dans l'attente d'une décision, on est dans la mise en œuvre d'un calendrier. Pour un site qui vit du trafic organique informationnel, la vraie urgence n'est pas le jour J, c'est le mois qui précède. »
 </blockquote>
 
-<p>En clair : <strong>les bonnes pratiques SEO fondamentales s'appliquent</strong>. Une page doit être indexée, autorisée à afficher des snippets, et respecter les politiques de Search. C'est tout.</p>
+<h2 id="actions">7 actions à mener avant le lancement</h2>
 
-<h3>Les signaux qui favorisent l'inclusion</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-10 not-prose">
+  <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative overflow-hidden group hover:border-violet-300 transition-colors">
+    <div class="absolute top-0 left-0 w-full h-1 bg-violet-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+    <div class="text-5xl font-black text-slate-200 mb-4 tracking-tighter">01</div>
+    <h3 class="text-xl font-bold text-slate-900 mb-4">Cartographier les pages exposées</h3>
+    <p class="text-slate-600 text-sm leading-relaxed">Listez vos pages qui répondent à des questions génériques (définitions, guides, comparatifs) : ce sont les premières candidates à un résumé IA au-dessus de vos résultats.</p>
+  </div>
 
-<p>Si Google ne prescrit pas d'optimisations spécifiques, les données empiriques sur les marchés actifs révèlent des corrélations fortes :</p>
+  <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative overflow-hidden group hover:border-violet-300 transition-colors">
+    <div class="absolute top-0 left-0 w-full h-1 bg-violet-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+    <div class="text-5xl font-black text-slate-200 mb-4 tracking-tighter">02</div>
+    <h3 class="text-xl font-bold text-slate-900 mb-4">Renforcer l'E-E-A-T sur vos contenus clés</h3>
+    <p class="text-slate-600 text-sm leading-relaxed">Signez vos articles avec un auteur identifiable, une bio vérifiable et des liens vers des sources fiables. Les modèles de langage favorisent les contenus dont l'expertise et l'auteur sont clairement établis.</p>
+  </div>
 
+  <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative overflow-hidden group hover:border-violet-300 transition-colors">
+    <div class="absolute top-0 left-0 w-full h-1 bg-violet-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+    <div class="text-5xl font-black text-slate-200 mb-4 tracking-tighter">03</div>
+    <h3 class="text-xl font-bold text-slate-900 mb-4">Adopter le front-loading informationnel</h3>
+    <p class="text-slate-600 text-sm leading-relaxed">Répondez à la question dès la première phrase de chaque section, puis développez. Ce principe, déjà connu pour les featured snippets, devient central pour être repris tel quel dans un résumé IA.</p>
+  </div>
+
+  <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative overflow-hidden group hover:border-violet-300 transition-colors">
+    <div class="absolute top-0 left-0 w-full h-1 bg-violet-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+    <div class="text-5xl font-black text-slate-200 mb-4 tracking-tighter">04</div>
+    <h3 class="text-xl font-bold text-slate-900 mb-4">Structurer le contenu pour le « chunking »</h3>
+    <p class="text-slate-600 text-sm leading-relaxed">Des titres H2/H3 explicites, des paragraphes courts traitant chacun une seule idée : les modèles découpent la page en segments, autant leur donner des segments propres à extraire.</p>
+  </div>
+
+  <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative overflow-hidden group hover:border-violet-300 transition-colors">
+    <div class="absolute top-0 left-0 w-full h-1 bg-violet-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+    <div class="text-5xl font-black text-slate-200 mb-4 tracking-tighter">05</div>
+    <h3 class="text-xl font-bold text-slate-900 mb-4">Baliser en Schema.org</h3>
+    <p class="text-slate-600 text-sm leading-relaxed">Article, FAQPage, HowTo, Product selon le contenu : un balisage structuré propre facilite l'identification de vos pages comme source fiable.</p>
+  </div>
+
+  <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative overflow-hidden group hover:border-violet-300 transition-colors">
+    <div class="absolute top-0 left-0 w-full h-1 bg-violet-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+    <div class="text-5xl font-black text-slate-200 mb-4 tracking-tighter">06</div>
+    <h3 class="text-xl font-bold text-slate-900 mb-4">Cibler la longue traîne conversationnelle</h3>
+    <p class="text-slate-600 text-sm leading-relaxed">Avec AI Mode, les requêtes ressemblent à des questions complètes plutôt qu'à des mots-clés. Traitez les problématiques en profondeur, pas seulement les termes génériques les plus recherchés.</p>
+  </div>
+  
+  <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative overflow-hidden group hover:border-violet-300 transition-colors md:col-span-2">
+    <div class="absolute top-0 left-0 w-full h-1 bg-violet-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+    <div class="text-5xl font-black text-slate-200 mb-4 tracking-tighter">07</div>
+    <h3 class="text-xl font-bold text-slate-900 mb-4">Suivre sa présence dans les réponses IA</h3>
+    <p class="text-slate-600 text-sm leading-relaxed">Au-delà des positions classiques, surveillez si vos pages sont citées dans AI Overviews, AI Mode, mais aussi ChatGPT ou Perplexity. Des outils de suivi GEO commencent à couvrir ce périmètre.</p>
+  </div>
+</div>
+
+<h2 id="faq">Questions fréquentes</h2>
+
+<h3>Google AI Overview est-il déjà actif en France au 6 juillet 2026 ?</h3>
+<p>Non. À cette date, AI Overviews et AI Mode ne sont pas encore affichés sur google.fr. Le déploiement est annoncé entre l'été 2026 et le 23 septembre 2026, sans jour de lancement précis communiqué publiquement.</p>
+
+<h3>Pourquoi une échéance au 23 septembre 2026 précisément ?</h3>
+<p>Cette date apparaît dans le courrier envoyé par Google aux éditeurs de presse français le 29 juin 2026, révélé par <em>Ouest-France</em>. Elle fonctionne comme une échéance plafond fixée par Google, pas comme un engagement de date-jour.</p>
+
+<h3>Les éditeurs de presse seront-ils payés pour les contenus repris par l'IA ?</h3>
+<p>Oui. Les quelque 450 éditeurs déjà couverts par un accord de droit voisin avec Google verront cette rémunération étendue aux contenus utilisés et consultés via AI Overviews et AI Mode.</p>
+
+<h3>Un éditeur peut-il refuser d'apparaître dans AI Overviews ?</h3>
+<p>Oui, Google a promis un mécanisme d'opt-out : chaque éditeur pourra choisir de ne pas voir ses contenus repris dans les fonctionnalités IA, séparément de son indexation classique.</p>
+
+<h3>AI Overview va-t-il faire disparaître le trafic organique des sites français ?</h3>
+<p>Pas uniformément. Les données internationales montrent une baisse de clics marquée sur les requêtes informationnelles, mais un effet limité sur les requêtes transactionnelles e-commerce (3 à 4 % de déclenchement). Les sites cités comme source gagnent en visibilité, ceux qui ne le sont pas en perdent.</p>
+
+<h3>Comment une entreprise peut-elle se préparer avant l'arrivée d'AI Overview en France ?</h3>
+<p>En auditant ses pages les plus exposées, en renforçant la signature et l'expertise de ses auteurs, en structurant son contenu pour l'extraction par les IA, et en surveillant sa présence dans les réponses générées, pas seulement ses positions classiques.</p>
+
+<h2 id="sources">Sources et pour aller plus loin</h2>
 <ul>
-  <li><strong>Position organique</strong> : 97 % des citations viennent du top 20: le SEO classique reste indispensable</li>
-  <li><strong>Featured snippets</strong> : apparaître en featured snippet augmente significativement les chances d'inclusion dans l'AIO</li>
-  <li><strong>Fraîcheur du contenu</strong> : les pages mises à jour dans les 3 derniers mois génèrent en moyenne 6 citations contre 3,6 pour les contenus anciens (+67 %) ; les pages mises à jour dans les 2 derniers mois gagnent 28 % de citations supplémentaires</li>
-  <li><strong>Signaux E-E-A-T</strong> : les pages avec des signaux E-E-A-T forts affichent 22 % de visibilité supplémentaire dans les résultats IA</li>
-  <li><strong>Structure du contenu</strong> : blocs autonomes, titres H2/H3 en forme de questions, listes, tableaux</li>
-  <li><strong>Schema FAQ</strong> : les pages avec un balisage FAQPage affichent des taux de citation significativement plus élevés</li>
+  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.ouest-france.fr/high-tech/google/info-ouest-france-recherches-sur-google-la-fonctionnalite-de-resumes-ai-overviews-sera-lancee-en-france-cet-ete-2026-4d41cfa0-73bd-11f1-a0e7-4fa27dc4c816">Ouest-France, « Recherches sur Google : Overviews... sera lancée en France cet été 2026 », 29 juin 2026</a></li>
+  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.lemonde.fr/pixels/article/2026/06/30/google-va-finalement-lancer-ses-fonctionnalites-ia-sur-son-moteur-de-recherche-en-france-cet-ete_6717014_4408996.html">Le Monde, « Google va finalement lancer ses fonctionnalités IA... en France "cet été" », 30 juin 2026</a></li>
+  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.lesechos.fr/tech-medias/hightech/google-va-finalement-lancer-sa-recherche-assistee-par-ia-en-france-2239773">Les Échos, « Google va finalement lancer sa recherche assistée par IA en France », 29 juin 2026</a></li>
+  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.abondance.com/20260630-2528492-google-ai-overviews-arrivee-france-ete.html">Abondance, « Les Google AI Overviews arrivent en France cet été », 30 juin 2026</a></li>
+  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.autoritedelaconcurrence.fr/fr/communiques-de-presse/droits-voisins-lautorite-prononce-une-sanction-de-250-millions-deuros">Autorité de la concurrence, communiqué sur la sanction de 250 millions d'euros contre Google, mars 2024</a></li>
+  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://blog.google/products-and-platforms/products/search/generative-ai-google-search-may-2024/">Google, blog officiel sur le fonctionnement d'AI Overviews</a></li>
 </ul>
+  `;
 
-<h2 id="actions-concretes-pour-se-preparer">7 actions concrètes pour se préparer dès maintenant</h2>
-
-<p>L'AI Overview n'est pas en France. Mais les fondamentaux qui permettent d'y apparaître, eux, s'optimisent dès aujourd'hui. Voici ce qu'on recommande concrètement.</p>
-
-<h3>1. Viser les featured snippets (corrélation directe avec l'AIO)</h3>
-
-<p>C'est le signal le plus fort. Si Google vous sélectionne pour un featured snippet, il considère déjà votre contenu comme la meilleure réponse extractible à une requête. Cette logique se transfère directement à l'AI Overview.</p>
-
-<p><strong>Comment faire :</strong></p>
-<ul>
-  <li>Identifier les requêtes informationnelles de votre secteur qui déclenchent déjà un featured snippet</li>
-  <li>Structurer vos réponses : définition courte en 40-60 mots, puis développement</li>
-  <li>Utiliser des listes numérotées pour les processus, des listes à puces pour les caractéristiques</li>
-</ul>
-
-<p>Consultez notre guide sur la <a href="/blog/geo-definition-2026">Generative Engine Optimization</a> pour aller plus loin sur cette logique.</p>
-
-<h3>2. Structurer le contenu en blocs autonomes extractibles</h3>
-
-<p>L'AI Overview ne lit pas votre page de haut en bas. Il extrait des passages spécifiques pour répondre à des sous-questions. Chaque section de votre contenu doit donc <strong>pouvoir se suffire à elle-même</strong>.</p>
-
-<p><strong>Concrètement :</strong></p>
-<ul>
-  <li>Un titre H2 ou H3 = une question ou un concept précis</li>
-  <li>La réponse directe dès le premier paragraphe de la section</li>
-  <li>Paragraphes courts (3-4 lignes maximum)</li>
-  <li>Tableaux comparatifs pour les données chiffrées</li>
-  <li>Pas de remplissage : chaque phrase doit apporter de l'information</li>
-</ul>
-
-<h3>3. Renforcer les signaux E-E-A-T</h3>
-
-<p>Expérience, Expertise, Autorité, Fiabilité. Ces quatre signaux sont devenus un filtre de facto pour l'inclusion dans les résultats IA. <strong>Les pages avec des signaux E-E-A-T forts affichent 22 % de visibilité supplémentaire dans les AIO.</strong></p>
-
-<p><strong>Actions prioritaires :</strong></p>
-<ul>
-  <li>Ajouter une biographie d'auteur avec nom, photo et liens vers des profils professionnels</li>
-  <li>Citer des sources primaires (études, données officielles) avec liens</li>
-  <li>Inclure des données originales ou des retours d'expérience terrain</li>
-  <li>Obtenir des mentions sur des sites tiers reconnus dans votre secteur</li>
-  <li>Mettre en place un balisage Schema <code>Article</code> et <code>Author</code></li>
-</ul>
-
-<p>Pour une <a href="/expertise-gso">stratégie GSO</a> complète intégrant ces signaux, notre équipe peut vous accompagner.</p>
-
-<h3>4. Cibler les requêtes informationnelles de votre secteur</h3>
-
-<p>99,9 % des requêtes déclenchant un AI Overview sont informationnelles. Si votre stratégie de contenu se concentre uniquement sur les requêtes transactionnelles, vous passez à côté de l'essentiel.</p>
-
-<p><strong>Méthode :</strong></p>
-<ul>
-  <li>Cartographier les questions que se posent vos clients avant d'acheter</li>
-  <li>Créer des contenus "piliers" sur les sujets informationnels de votre secteur</li>
-  <li>Cibler les requêtes en "comment", "pourquoi", "qu'est-ce que", "quelle différence entre"</li>
-  <li>Construire des clusters thématiques autour de ces sujets</li>
-</ul>
-
-<h3>5. Maintenir le contenu à jour (fraîcheur = +67 % de citations)</h3>
-
-<p>La fraîcheur est un critère de sélection majeur. <strong>85 % des citations dans les AI Overviews proviennent de contenus publiés dans les deux dernières années</strong>, et 44 % de 2025 uniquement. Les pages mises à jour dans les 2 derniers mois génèrent 28 % de citations supplémentaires.</p>
-
-<p><strong>Attention :</strong> Google distingue les mises à jour superficielles (changer une date) des mises à jour substantielles (nouvelles données, nouvelles sections, exemples actualisés). Seules ces dernières comptent.</p>
-
-<p><strong>Cadence recommandée :</strong> audit trimestriel de vos contenus les plus stratégiques, mise à jour avec de nouvelles statistiques ou exemples concrets.</p>
-
-<h3>6. Optimiser pour le mobile et les Core Web Vitals</h3>
-
-<p>AI Overviews et featured snippets occupent ensemble <strong>75,7 % de l'espace écran mobile</strong>. La performance technique de votre site reste un prérequis : une page lente ou mal optimisée pour mobile sera déprioritisée, même avec un excellent contenu.</p>
-
-<p><strong>Checklist technique :</strong></p>
-<ul>
-  <li>LCP (Largest Contentful Paint) &lt; 2,5 secondes</li>
-  <li>CLS (Cumulative Layout Shift) &lt; 0,1</li>
-  <li>INP (Interaction to Next Paint) &lt; 200 ms</li>
-  <li>Vérifier que <code>robots.txt</code> n'empêche pas Googlebot d'accéder à vos pages clés</li>
-  <li>S'assurer que les snippets ne sont pas bloqués par des balises <code>nosnippet</code></li>
-</ul>
-
-<p>Notre guide sur comment <a href="/blog/optimiser-site-llm-guide-seo-complet-2026">optimiser son site pour les LLM</a> couvre ces aspects techniques en détail.</p>
-
-<h3>7. Construire l'autorité thématique</h3>
-
-<p>L'AI Overview n'évalue pas seulement une page isolée. Il évalue l'autorité de votre domaine sur un sujet. <strong>Construire une autorité thématique solide</strong>: via un cluster de contenus cohérents sur votre secteur: est le levier le plus durable.</p>
-
-<p><strong>Actions :</strong></p>
-<ul>
-  <li>Créer des contenus interconnectés sur les sujets clés de votre secteur</li>
-  <li>Obtenir des mentions et citations sur des sources tierces reconnues</li>
-  <li>Développer une présence sur les plateformes citées par les IA (LinkedIn, forums sectoriels)</li>
-  <li>Publier des données originales ou des études qui génèrent des backlinks naturels</li>
-</ul>
-
-<p>Pour être <a href="/blog/etre-cite-par-chatgpt">cité par ChatGPT</a> et les autres LLM, la logique est similaire : autorité thématique + contenu structuré + fraîcheur.</p>
-
-<h2 id="comment-tester-ai-overview-france">Comment tester l'AI Overview depuis la France ?</h2>
-
-<p>L'AI Overview n'est pas disponible sur google.fr. Mais il existe des moyens de l'observer et de tester votre visibilité dès maintenant.</p>
-
-<h3>Méthode VPN (Belgique / Suisse)</h3>
-
-<p>La méthode la plus directe : utiliser un VPN avec une adresse IP belge ou suisse, puis rechercher sur <strong>google.be</strong> ou <strong>google.ch</strong>. Le français est supporté en Suisse (google.ch/search?hl=fr).</p>
-
-<p><strong>Limites :</strong> les résultats peuvent varier selon le compte Google utilisé, l'âge du compte et les paramètres de langue. En Europe, l'AI Overview nécessite d'être connecté à un compte Google et d'avoir plus de 18 ans.</p>
-
-<h3>Utiliser Google.com en anglais</h3>
-
-<p>Autre option : accéder à <strong>google.com</strong> avec la langue définie sur l'anglais. Les AI Overviews y sont actifs pour les requêtes en anglais. Utile pour comprendre le fonctionnement général et tester des requêtes transposables à votre secteur.</p>
-
-<h3>Outils de suivi : Météoria et PEEC-AI</h3>
-
-<p>Pour un suivi structuré de votre visibilité dans les moteurs IA: y compris avant le lancement de l'AI Overview en France: deux outils se distinguent :</p>
-
-<div class="overflow-x-auto"><table class="min-w-full text-left text-sm font-light">
-  <thead class="border-b font-medium dark:border-neutral-500">
-    <tr>
-      <th class="px-6 py-4">Critère</th>
-      <th class="px-6 py-4"><a href="https://meteoria.ai" rel="noopener noreferrer" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Météoria</a></th>
-      <th class="px-6 py-4"><a href="https://peec.ai" rel="noopener noreferrer" target="_blank" class="text-blue-600 hover:text-blue-800 underline">PEEC-AI</a></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="border-b dark:border-neutral-500">
-      <td class="px-6 py-4"><strong>Origine</strong></td>
-      <td class="px-6 py-4">🇫🇷 Outil français</td>
-      <td class="px-6 py-4">🌍 Outil international (Berlin)</td>
-    </tr>
-    <tr class="border-b dark:border-neutral-500">
-      <td class="px-6 py-4"><strong>LLM suivis</strong></td>
-      <td class="px-6 py-4">ChatGPT, Perplexity, Gemini, AI Overview, Copilot, AI Mode</td>
-      <td class="px-6 py-4">ChatGPT, Claude, DeepSeek, Perplexity, Gemini, AI Overview</td>
-    </tr>
-    <tr class="border-b dark:border-neutral-500">
-      <td class="px-6 py-4"><strong>Interface</strong></td>
-      <td class="px-6 py-4">Française, intuitive, SEO-first</td>
-      <td class="px-6 py-4">Anglaise, dashboard lisible</td>
-    </tr>
-    <tr class="border-b dark:border-neutral-500">
-      <td class="px-6 py-4"><strong>Conformité RGPD</strong></td>
-      <td class="px-6 py-4">✅ Oui (conçu pour le marché FR)</td>
-      <td class="px-6 py-4">⚠️ À vérifier selon usage</td>
-    </tr>
-    <tr class="border-b dark:border-neutral-500">
-      <td class="px-6 py-4"><strong>Module e-commerce</strong></td>
-      <td class="px-6 py-4">✅ Oui</td>
-      <td class="px-6 py-4">❌ Non</td>
-    </tr>
-    <tr class="border-b dark:border-neutral-500">
-      <td class="px-6 py-4"><strong>Tarif d'entrée</strong></td>
-      <td class="px-6 py-4">À partir de 75 €/mois</td>
-      <td class="px-6 py-4">À partir de 89 €/mois</td>
-    </tr>
-    <tr class="border-b dark:border-neutral-500">
-      <td class="px-6 py-4"><strong>Idéal pour</strong></td>
-      <td class="px-6 py-4">Équipes françaises, agences SEO/GEO, e-commerce</td>
-      <td class="px-6 py-4">Équipes internationales, monitoring multi-marchés</td>
-    </tr>
-  </tbody>
-</table></div>
-
-<p>Ces deux outils permettent de <strong>suivre votre visibilité IA sur les marchés où l'AI Overview est déjà actif</strong> (Belgique, Suisse, Allemagne…), via des tests VPN ou en ciblant directement ces marchés. Vous accumulez ainsi des données et des insights actionnables avant même le lancement en France.</p>
-
-<p>Pour une <a href="/agence-referencement-ia">agence de référencement IA</a> qui accompagne vos équipes sur ces sujets, Triaina propose un accompagnement structuré GEO + SEO.</p>
-
-<h2 id="checklist-preparation-ai-overview">Checklist de préparation AI Overview</h2>
-
-<p>Voici les actions prioritaires à cocher avant l'arrivée de l'AI Overview en France :</p>
-
-<ul class="list-none space-y-2">
-  <li class="flex items-start"><span class="mr-2 text-slate-400">☐</span> <strong>Audit de contenu</strong> : identifier les pages informationnelles à fort potentiel AIO</li>
-  <li class="flex items-start"><span class="mr-2 text-slate-400">☐</span> <strong>Featured snippets</strong> : cibler et optimiser pour les requêtes qui en déclenchent déjà</li>
-  <li class="flex items-start"><span class="mr-2 text-slate-400">☐</span> <strong>Structure des pages</strong> : H2/H3 en forme de questions, réponse directe en premier paragraphe</li>
-  <li class="flex items-start"><span class="mr-2 text-slate-400">☐</span> <strong>Balisage Schema</strong> : Article, Author, FAQPage sur les contenus clés</li>
-  <li class="flex items-start"><span class="mr-2 text-slate-400">☐</span> <strong>Signaux E-E-A-T</strong> : biographies d'auteurs, sources citées, données originales</li>
-  <li class="flex items-start"><span class="mr-2 text-slate-400">☐</span> <strong>Fraîcheur</strong> : calendrier de mise à jour trimestrielle des contenus stratégiques</li>
-  <li class="flex items-start"><span class="mr-2 text-slate-400">☐</span> <strong>Core Web Vitals</strong> : LCP, CLS, INP dans les seuils Google</li>
-  <li class="flex items-start"><span class="mr-2 text-slate-400">☐</span> <strong>robots.txt</strong> : vérifier que Googlebot accède bien à toutes les pages clés</li>
-  <li class="flex items-start"><span class="mr-2 text-slate-400">☐</span> <strong>Autorité thématique</strong> : cluster de contenus sur les sujets prioritaires</li>
-  <li class="flex items-start"><span class="mr-2 text-slate-400">☐</span> <strong>Suivi GEO</strong> : mettre en place un outil de monitoring (Météoria, PEEC-AI) sur les marchés disponibles</li>
-  <li class="flex items-start"><span class="mr-2 text-slate-400">☐</span> <strong>Test VPN</strong> : observer l'AI Overview sur google.ch (FR) pour vos requêtes cibles</li>
-</ul>
-
-<h2 id="faq-google-ai-overview-france">FAQ: Google AI Overview France</h2>
-
-<h3>Google AI Overview est-il disponible en France ?</h3>
-
-<p>Non. En mai 2026, Google AI Overview n'est toujours pas disponible en France. Le blocage est dû au conflit juridique autour des droits voisins et à l'amende de 250 M€ infligée à Google en mars 2024. Aucune date officielle de lancement n'a été communiquée.</p>
-
-<h3>Pourquoi l'AI Overview n'est-il pas disponible en France ?</h3>
-
-<p>La loi française de 2019 sur les droits voisins impose aux plateformes de rémunérer les éditeurs de presse pour la réutilisation de leurs contenus. Google a été condamné à 250 M€ d'amende en mars 2024 pour avoir utilisé des contenus de presse française pour entraîner Gemini sans accord préalable. Face à ce risque juridique, Google a suspendu le déploiement en France.</p>
-
-<h3>Quand l'AI Overview sera-t-il disponible en France ?</h3>
-
-<p>Aucune date officielle n'a été communiquée. Plusieurs scénarios sont possibles pour 2026 : un accord entre Google et la presse française, un lancement en mode dégradé (sans sources presse), ou une impasse juridique prolongée. Le renouvellement de l'accord APIG-Google en janvier 2025 et les discussions sur un mécanisme de double opt-out sont des signaux positifs: mais insuffisants pour confirmer une date.</p>
-
-<h3>Comment apparaître dans Google AI Overview ?</h3>
-
-<p>Google indique officiellement qu'il n'existe pas d'optimisation spécifique requise : les bonnes pratiques SEO fondamentales s'appliquent. En pratique, les signaux qui favorisent l'inclusion sont : viser les featured snippets, structurer le contenu en blocs autonomes, renforcer les signaux E-E-A-T, cibler les requêtes informationnelles, maintenir le contenu à jour, et construire une autorité thématique solide.</p>
-
-<h3>L'AI Overview est-il disponible en Belgique et en Suisse ?</h3>
-
-<p>Oui. Google a officiellement lancé les AI Overviews en Belgique et en Suisse le 26 mars 2025, en même temps qu'en Allemagne, Italie, Espagne, Autriche, Pologne, Portugal et Irlande. Le français est supporté en Suisse. Ce déploiement prouve que le blocage français est purement réglementaire, pas technique.</p>
-
-<h3>Quel est l'impact de l'AI Overview sur le SEO ?</h3>
-
-<p>Les études montrent une baisse de CTR de 34,5 % pour la position 1 organique quand un AI Overview est présent (Ahrefs). Mais les sites cités dans l'AI Overview voient leur CTR augmenter de 35 % à 80 % par rapport aux non-cités. L'enjeu est donc d'être sélectionné comme source, pas seulement de se positionner.</p>
-
-<h3>Comment tester l'AI Overview depuis la France ?</h3>
-
-<p>Deux méthodes principales : (1) utiliser un VPN avec une adresse IP belge ou suisse et rechercher sur google.be ou google.ch ; (2) utiliser Google.com en anglais, où les AI Overviews sont disponibles. Des outils comme Météoria (meteoria.ai) ou PEEC-AI (peec.ai) permettent aussi de suivre la visibilité IA sur les marchés disponibles sans VPN.</p>
-
-<h2 id="sources-utiles">Sources utiles</h2>
-
-<ul>
-  <li><a href="https://developers.google.com/search/docs/appearance/ai-features" rel="noopener noreferrer" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Google Search Central: AI Features and Your Website</a> (documentation officielle)</li>
-  <li><a href="https://blog.google/products-and-platforms/products/search/ai-overview-expansion-may-2025-update/" rel="noopener noreferrer" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Google Blog: AI Overviews disponibles dans 200+ pays (mai 2025)</a></li>
-  <li><a href="https://meteoria.ai" rel="noopener noreferrer" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Météoria: Outil GEO de suivi de visibilité IA (FR)</a></li>
-  <li><a href="https://peec.ai" rel="noopener noreferrer" target="_blank" class="text-blue-600 hover:text-blue-800 underline">PEEC-AI: Outil de monitoring GEO multi-LLM</a></li>
-  <li><a href="https://sparktoro.com/blog/we-analyzed-332-million-searches-heres-what-we-learned-about-zero-click-searches/" rel="noopener noreferrer" target="_blank" class="text-blue-600 hover:text-blue-800 underline">SparkToro: Étude sur les recherches sans clic (58 %)</a></li>
-</ul>
-`;
+  if (!post) return null;
 
   return (
-    <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
-      <div className="max-w-7xl mx-auto">
-        {/* Back Button */}
-        <a 
-          href={PAGE_TO_URL['blog']}
-          onClick={(e) => {
-              e.preventDefault();
-              window.history.pushState({}, '', PAGE_TO_URL['blog']);
-              window.dispatchEvent(new PopStateEvent('popstate'));
-          }}
-          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
-        >
-          <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
-          RETOUR AU BLOG
-        </a>
-
-        {/* Header */}
-        <header className="mb-12 text-center max-w-5xl mx-auto">
-          <div className="flex items-center justify-center gap-4 text-xs font-mono text-blue-600 mb-6 uppercase tracking-widest">
-            <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">GUIDE</span>
-            <span className="flex items-center gap-1"><Calendar size={12} /> 18 MAI 2026</span>
-            <span className="flex items-center gap-1"><Clock size={12} /> 10 MIN</span>
+    <>
+      <SEO 
+        title={`${post.title} | Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://www.triaina.fr${post.url}`}
+        type="article"
+        schema={seoSchema}
+        image={post.image}
+      />
+      <div className="pt-32 pb-24 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-6 animate-fade-in-up">
+            <a 
+              href={PAGE_TO_URL['blog']}
+              onClick={(e) => {
+                e.preventDefault();
+                window.history.pushState({}, '', PAGE_TO_URL['blog']);
+                window.dispatchEvent(new PopStateEvent('popstate'));
+              }}
+              className="inline-flex items-center text-slate-600 hover:text-violet-600 transition-colors font-mono text-sm tracking-wide"
+            >
+               <ArrowLeft size={16} className="mr-2" />
+              RETOUR AU BLOG
+            </a>
+            <div className="flex flex-wrap items-center gap-4 text-slate-500 font-mono text-xs tracking-wider">
+              <span className="flex items-center"><Calendar size={14} className="mr-2" />{post.date}</span>
+              <span className="text-slate-300">|</span>
+              <span className="flex items-center"><Clock size={14} className="mr-2" />8 min de lecture</span>
+              <span className="text-slate-300">|</span>
+              <span className="text-violet-600 border border-violet-200 bg-violet-50 px-2 py-1 rounded-full">{post.tag}</span>
+            </div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-slate-900 mb-8 leading-tight tracking-tight">
-            Google AI Overview <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">en France</span>
+
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-8 animate-fade-in-up md:w-4/5" style={{animationDelay: '0.1s'}}>
+            {post.title}
           </h1>
-        </header>
 
-        {/* Featured Image */}
-        <div className="mb-16 rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-900/10 aspect-video relative group">
-          <img 
-            src={'/images/google-ai-overview-france.jpg'}
-            alt="Google AI Overview en France" 
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src = "https://picsum.photos/seed/google-ai-overview-france/1200/675";
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/20 to-transparent"></div>
-        </div>
+          <p className="text-xl text-slate-600 leading-relaxed mb-12 animate-fade-in-up md:w-3/4" style={{animationDelay: '0.2s'}}>
+            {post.excerpt}
+          </p>
 
-        {/* Content Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            
-            {/* Sidebar / Table of Contents (Desktop) */}
-            <aside className="hidden lg:block lg:col-span-3">
-                <div className="sticky top-32 space-y-4">
-                    <h3 className="font-display font-bold text-slate-900 uppercase tracking-widest text-sm mb-4">Sommaire</h3>
-                    <nav className="flex flex-col space-y-3 text-sm font-medium text-slate-500">
-                        <a href="#qu-est-ce-que-google-ai-overview" className="hover:text-blue-600 transition-colors">Qu'est-ce que Google AI Overview ?</a>
-                        <a href="#google-ai-overview-france-pourquoi-ce-retard" className="hover:text-blue-600 transition-colors">Pourquoi ce retard en France ?</a>
-                        <a href="#impact-reel-ai-overview-seo" className="hover:text-blue-600 transition-colors">L'impact réel sur le SEO</a>
-                        <a href="#criteres-selection-google-ai-overview" className="hover:text-blue-600 transition-colors">Les critères de sélection</a>
-                        <a href="#actions-concretes-pour-se-preparer" className="hover:text-blue-600 transition-colors">7 actions concrètes</a>
-                        <a href="#comment-tester-ai-overview-france" className="hover:text-blue-600 transition-colors">Comment tester l'AI Overview</a>
-                        <a href="#checklist-preparation-ai-overview" className="hover:text-blue-600 transition-colors">Checklist de préparation</a>
-                        <a href="#faq-google-ai-overview-france" className="hover:text-blue-600 transition-colors">FAQ: Google AI Overview</a>
-                        <a href="#sources-utiles" className="hover:text-blue-600 transition-colors">Sources utiles</a>
-                    </nav>
-                </div>
-            </aside>
-
-            {/* Main Content */}
-            <article 
-                className="lg:col-span-9 prose prose-lg xl:prose-xl prose-slate max-w-none font-sans prose-headings:font-display prose-headings:font-bold prose-a:text-blue-600 prose-h1:hidden"
-                dangerouslySetInnerHTML={{ __html: htmlBody }} 
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-20 relative animate-fade-in-up group" style={{animationDelay: '0.3s'}}>
+            <img 
+              src={post.image} 
+              alt={post.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = "https://picsum.photos/seed/google-ai-overview-france/1200/675";
+              }}
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+          </div>
+
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
+            <article className="lg:w-2/3 prose prose-lg prose-slate max-w-none 
+                prose-headings:font-bold prose-headings:text-slate-900 
+                prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-2 prose-h2:border-b prose-h2:border-slate-200
+                prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
+                prose-p:text-slate-600 prose-p:leading-relaxed prose-p:mb-6
+                prose-a:text-violet-600 hover:prose-a:text-violet-700 prose-a:underline prose-a:font-medium
+                prose-li:text-slate-600 prose-li:marker:text-violet-500
+                prose-ul:space-y-2 prose-ol:space-y-2
+                animate-fade-in-up"
+                style={{animationDelay: '0.3s'}}
+                dangerouslySetInnerHTML={{ __html: htmlBody }}
+            />
+
+            <aside className="lg:w-1/3 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+              <div className="sticky top-32 space-y-8">
+                <div className="bg-slate-900 text-white rounded-3xl p-8 shadow-xl relative overflow-hidden">
+                  <div className="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 rounded-full bg-violet-600/20 blur-2xl"></div>
+                  <h3 className="text-xl font-bold mb-4 font-sans text-white relative z-10">Besoin d'optimiser pour l'IA ?</h3>
+                  <p className="text-slate-300 mb-6 text-sm relative z-10 leading-relaxed">
+                    Triaina accompagne les entreprises dans l'optimisation de leur visibilité sur Google et auprès des LLMs (Copilot, ChatGPT, Gemini, Perplexity).
+                  </p>
+                  <a 
+                    href={PAGE_TO_URL['contact']}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.history.pushState({}, '', PAGE_TO_URL['contact']);
+                      window.dispatchEvent(new PopStateEvent('popstate'));
+                    }}
+                    className="inline-flex items-center justify-center w-full bg-white text-black px-6 py-3 rounded-xl text-sm font-bold tracking-wide hover:bg-violet-50 transition-colors relative z-10"
+                  >
+                    PRENDRE RENDEZ-VOUS
+                  </a>
+                </div>
+              </div>
+            </aside>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };

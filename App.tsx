@@ -36,6 +36,9 @@ import { SeoGsoGeoAeo2026 } from './views/blog/SeoGsoGeoAeo2026';
 import { OptimiserLlmSeoGuide2026 } from './views/blog/OptimiserLlmSeoGuide2026';
 import { EtreCiteParChatGpt } from './views/blog/EtreCiteParChatGpt';
 import { GoogleAiOverviewFrance } from './views/blog/GoogleAiOverviewFrance';
+import { AgenceSeoAngers } from './views/blog/AgenceSeoAngers';
+import { AgenceSeoVannes } from './views/blog/AgenceSeoVannes';
+import { AgenceSeoAvignon } from './views/blog/AgenceSeoAvignon';
 import { StrategieContenuIaFirst } from './views/blog/StrategieContenuIaFirst';
 import { AgenceSeoVsGso2026 } from './views/blog/AgenceSeoVsGso2026';
 import { SchemaOrgGso2026 } from './views/blog/SchemaOrgGso2026';
@@ -52,6 +55,7 @@ import { MicrosoftCopilotSeo2026 } from './views/blog/MicrosoftCopilotSeo2026';
 import { AuditGeo2026 } from './views/blog/AuditGeo2026';
 import { AgenceNetlinking2026 } from './views/blog/AgenceNetlinking2026';
 import { GrokSeo2026 } from './views/blog/GrokSeo2026';
+import { AiOverviewEcommerce2026 } from './views/blog/AiOverviewEcommerce2026';
 import { ReferencementGemini2026 } from './views/blog/ReferencementGemini2026';
 import { SEO } from './components/SEO';
 import { CustomCursor } from './components/CustomCursor';
@@ -279,6 +283,12 @@ const App: React.FC = () => {
         return <EtreCiteParChatGpt />;
       case 'google-ai-overview-france':
         return <GoogleAiOverviewFrance />;
+      case 'agence-seo-angers-2026':
+        return <AgenceSeoAngers />;
+      case 'agence-seo-vannes-2026':
+        return <AgenceSeoVannes />;
+      case 'agence-seo-avignon-2026':
+        return <AgenceSeoAvignon />;
       case 'strategie-contenu-ia-first':
         return <StrategieContenuIaFirst />;
       case 'agence-seo-vs-agence-gso':
@@ -311,6 +321,8 @@ const App: React.FC = () => {
         return <AgenceNetlinking2026 />;
       case 'grok-seo-2026':
         return <GrokSeo2026 />;
+      case 'ai-overview-ecommerce-2026':
+        return <AiOverviewEcommerce2026 />;
       case 'referencement-gemini-2026':
         return <ReferencementGemini2026 />;
       case '404':

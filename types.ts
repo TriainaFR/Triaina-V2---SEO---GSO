@@ -52,7 +52,12 @@ export type Page =
   | 'audit-geo-2026'
   | 'agence-netlinking-2026'
   | 'grok-seo-2026'
+  | 'ai-overview-ecommerce-2026'
   | 'referencement-gemini-2026'
+  | 'google-ai-overview-france'
+  | 'agence-seo-angers-2026'
+  | 'agence-seo-vannes-2026'
+  | 'agence-seo-avignon-2026'
   | '404';
 
 export interface NavLink {

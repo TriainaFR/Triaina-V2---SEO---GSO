@@ -54,7 +54,11 @@ export const PAGE_TO_URL: Record<string, string> = {
   'audit-geo-2026': '/blog/audit-geo',
   'agence-netlinking-2026': '/blog/agence-netlinking',
   'grok-seo-2026': '/blog/grok-seo',
-  'referencement-gemini-2026': '/blog/referencement-gemini-2026'
+  'ai-overview-ecommerce-2026': '/blog/ai-overview-ecommerce-france-2026',
+  'referencement-gemini-2026': '/blog/referencement-gemini-2026',
+  'agence-seo-angers-2026': '/blog/agence-seo-angers-2026',
+  'agence-seo-vannes-2026': '/blog/agence-seo-vannes-2026',
+  'agence-seo-avignon-2026': '/blog/agence-seo-avignon-2026'
 };
 
 export const ROUTES: Record<string, Page> = {
@@ -97,6 +101,9 @@ export const ROUTES: Record<string, Page> = {
   '/blog/optimiser-site-llm-2026-guide-complet': 'optimiser-site-llm-guide-seo-complet-2026',
   '/blog/etre-cite-par-chatgpt': 'etre-cite-par-chatgpt',
   '/blog/google-ai-overview-france': 'google-ai-overview-france',
+  '/blog/agence-seo-angers-2026': 'agence-seo-angers-2026',
+  '/blog/agence-seo-vannes-2026': 'agence-seo-vannes-2026',
+  '/blog/agence-seo-avignon-2026': 'agence-seo-avignon-2026',
   '/blog/strategie-contenu-ia-first': 'strategie-contenu-ia-first',
   '/blog/schema-org-donnees-structurees-gso': 'schema-org-donnees-structurees-gso-2026',
   '/blog/agence-seo-vs-agence-gso': 'agence-seo-vs-agence-gso',
@@ -115,6 +122,7 @@ export const ROUTES: Record<string, Page> = {
   '/blog/audit-geo': 'audit-geo-2026',
   '/blog/agence-netlinking': 'agence-netlinking-2026',
   '/blog/grok-seo': 'grok-seo-2026',
+  '/blog/ai-overview-ecommerce-france-2026': 'ai-overview-ecommerce-2026',
   '/blog/referencement-gemini-2026': 'referencement-gemini-2026'
 };
 
@@ -406,6 +414,7 @@ export const PARTNERS_DATA: PartnerItem[] = [
 ];
 
 export const BLOG_DATA: BlogItem[] = [
+  
   {
     id: 'seo-vs-referencement-ia',
     source: 'Guide Comparatif',
@@ -593,17 +602,7 @@ export const BLOG_DATA: BlogItem[] = [
     image: '/images/llm-seo-guide.jpg',
     tag: 'GUIDE'
   },
-  {
-    id: 'google-ai-overview-france',
-    source: 'Actualité IA',
-    logo: '',
-    date: '18 MAI 2026',
-    title: 'Google AI Overview France : comment s\'y préparer dès maintenant ?',
-    excerpt: 'Google AI Overview n\'est pas encore disponible en France. Découvrez pourquoi, quand ça changera, et les 7 actions pour préparer votre site.',
-    url: '/blog/google-ai-overview-france',
-    image: '/images/google-ai-overview-france.jpg',
-    tag: 'ACTU'
-  },
+  
   {
     id: 'strategie-contenu-ia-first',
     source: 'Guide IA',
@@ -677,7 +676,7 @@ export const BLOG_DATA: BlogItem[] = [
     date: '15 JUIN 2026',
     title: 'Meilleure agence GEO France 2026 : top 5 comparatif',
     excerpt: 'Comparatif des 5 meilleures agences GEO (Generative Engine Optimization) en France en 2026 : critères de sélection, profils détaillés et guide pour choisir selon votre besoin.',
-    url: '/blog/meilleure-agence-geo-france-2026',
+    url: '/blog/meilleure-agence-gso-france-2026',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
     tag: 'AGENCE'
   },
@@ -801,7 +800,62 @@ export const BLOG_DATA: BlogItem[] = [
     url: '/blog/grok-seo',
     image: '/images/grok-seo.jpg',
     tag: 'GUIDE'
-  }
+  },
+  {
+    id: 'ai-overview-ecommerce-2026',
+    source: 'GEO',
+    logo: '',
+    date: '06 JUILLET 2026',
+    title: 'Google AI Overview et e-commerce : impact sur le trafic organique',
+    excerpt: 'Google a confirmé le lancement d\'AI Overview en France entre l\'été et le 23 septembre 2026. Découvrez l\'impact sur le SEO e-commerce et les actions à mener.',
+    url: '/blog/ai-overview-ecommerce-france-2026',
+    image: '/images/ai-overview-ecommerce.jpg',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'google-ai-overview-france',
+    source: 'Actualité IA',
+    logo: '',
+    date: '06 JUILLET 2026',
+    title: 'Google AI Overview en France : date de lancement, ce qui change et 7 actions à mener avant l\'échéance',
+    excerpt: 'Google a confirmé le lancement d\'AI Overview en France d\'ici le 23 septembre 2026. Découvrez les changements et l\'impact SEO attendu.',
+    url: '/blog/google-ai-overview-france',
+    image: '/images/llm-seo-guide.jpg',
+    tag: 'ACTU'
+  },
+  {
+    id: 'agence-seo-angers-2026',
+    source: 'Classement Agences',
+    logo: '',
+    date: '06 JUILLET 2026',
+    title: 'Agence SEO & GEO Angers : top 5 en 2026',
+    excerpt: 'Comparatif des 5 meilleures agences SEO et GEO à Angers en 2026. Découvrez comment choisir une agence capable de référencer votre site sur Google et les IA.',
+    url: '/blog/agence-seo-angers-2026',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200',
+    tag: 'CLASSEMENT'
+  },
+  {
+    id: 'agence-seo-vannes-2026',
+    source: 'Classement Agences',
+    logo: '',
+    date: '06 JUILLET 2026',
+    title: 'Agence SEO & GEO Vannes : top 5 en 2026',
+    excerpt: 'Comparatif des 5 meilleures agences SEO et GEO à Vannes en 2026. Découvrez comment choisir une agence capable de référencer votre site sur Google et les IA.',
+    url: '/blog/agence-seo-vannes-2026',
+    image: 'https://images.unsplash.com/photo-1610332832560-64decebbdce0?auto=format&fit=crop&q=80&w=1200',
+    tag: 'CLASSEMENT'
+  },
+  {
+    id: 'agence-seo-avignon-2026',
+    source: 'Classement Agences',
+    logo: '',
+    date: '06 JUILLET 2026',
+    title: 'Agence SEO & GEO Avignon : top 5 en 2026',
+    excerpt: 'Comparatif des 5 meilleures agences SEO et GEO à Avignon en 2026. Découvrez comment choisir une agence capable de référencer votre site sur Google et les IA.',
+    url: '/blog/agence-seo-avignon-2026',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/8/84/Pope_palace_Avignon_by_Rosier.jpg',
+    tag: 'CLASSEMENT'
+  },
 ];
 
 export const CAREERS_DATA: JobOffer[] = [];
