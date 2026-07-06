@@ -104,6 +104,7 @@ export const ROUTES: Record<string, Page> = {
   '/blog/prompt-engineering-seo': 'prompt-engineering-seo',
   '/blog/perplexity-seo': 'perplexity-seo-2026',
   '/blog/meilleure-agence-geo-france-2026': 'meilleure-agence-geo-france-2026',
+  '/blog/meilleure-agence-gso-france-2026': 'meilleure-agence-geo-france-2026',
   '/blog/10-conseils-marque-visible-chatgpt': '10-conseils-marque-visible-chatgpt-2026',
   '/blog/top-agences-seo-geo-paris': 'top-10-agences-seo-geo-paris-2026',
   '/blog/agence-seo-lyon': 'agence-seo-lyon-2026',
