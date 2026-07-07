@@ -4,482 +4,121 @@ import { Calendar, Clock, ArrowLeft, Search, Activity, Target, Layout, FileText,
 
 export const EtreCiteParChatGpt: React.FC = () => {
   const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Accueil",
-            "item": "https://www.triaina.fr"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Blog",
-            "item": "https://www.triaina.fr/blog"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Comment être cité par ChatGPT ? Le guide complet 2026",
-            "item": "https://www.triaina.fr/blog/etre-cite-par-chatgpt"
-          }
-        ]
-      },
-      {
-        "@type": "Article",
-        "headline": "Comment être cité par ChatGPT ? Le guide complet 2026",
-        "description": "Référencement ChatGPT : les 7 facteurs clés pour être cité en 2026, mesurer votre Share of Voice et optimiser votre site pour les LLM.",
-        "datePublished": "2026-05-04",
-        "dateModified": "2026-05-04",
-        "image": "https://images.unsplash.com/photo-1674027444485-cec3da58eef4?auto=format&fit=crop&q=80&w=1200",
-        "author": {
-          "@type": "Person",
-          "name": "Alexandre",
-          "jobTitle": "CEO & Fondateur Triaina",
-          "url": "https://www.triaina.fr",
-          "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://www.triaina.fr"
         },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Triaina",
-          "url": "https://www.triaina.fr",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.triaina.fr/logo.png"
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.triaina.fr/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Comment être cité par ChatGPT en 2026 : le guide complet",
+          "item": "https://www.triaina.fr/blog/etre-cite-par-chatgpt"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "Comment être cité par ChatGPT en 2026 : le guide complet",
+      "description": "Référencement ChatGPT : les 7 facteurs clés pour être cité en 2026, mesurer votre Share of Voice et optimiser votre site pour les LLM.",
+      "datePublished": "2026-05-04",
+      "dateModified": "2026-07-07",
+      "image": "https://images.unsplash.com/photo-1674027444485-cec3da58eef4?auto=format&fit=crop&q=80&w=1200",
+      "author": {
+        "@type": "Organization",
+        "name": "L'équipe Triaina",
+        "url": "https://www.linkedin.com/company/triaina"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Triaina",
+        "url": "https://www.triaina.fr",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.triaina.fr/logo.png"
+        }
+      },
+      "inLanguage": "fr",
+      "mainEntityOfPage": "https://www.triaina.fr/blog/etre-cite-par-chatgpt"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Comment être référencé sur ChatGPT ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En autorisant les robots d'OpenAI (OAI-SearchBot, GPTBot) dans le robots.txt, en structurant chaque page autour d'une réponse directe et vérifiable, en ajoutant du balisage Schema.org sur les pages stratégiques, et en construisant une autorité de domaine réelle via des domaines référents diversifiés. C'est la combinaison de l'accès technique et de la clarté du contenu qui fait la différence."
           }
         },
-        "inLanguage": "fr",
-        "mainEntityOfPage": "https://www.triaina.fr/blog/etre-cite-par-chatgpt"
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Comment être cité par ChatGPT ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Pour être cité par ChatGPT, il faut produire un contenu qui répond directement et précisément aux questions des utilisateurs (Content-Answer Fit), structurer ses pages avec des données Schema.org, renforcer l'autorité de son domaine via des backlinks de qualité, et optimiser la présence de sa marque comme entité reconnue sur le web."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "ChatGPT cite-t-il des sources en temps réel ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Oui, lorsque la recherche web est activée (ChatGPT Search), ChatGPT interroge le web en temps réel via son crawler OAI-SearchBot et peut citer des sources récentes. Sans cette option, il répond à partir de ses données d'entraînement, sans accès au web."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Qu'est-ce que le Share of Voice ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Le Share of Voice est le taux de citation IA : il mesure la fréquence à laquelle votre marque ou votre contenu apparaît dans les réponses générées par les LLM sur un ensemble de requêtes cibles. Il se calcule en divisant le nombre de prompts où vous êtes cité par le nombre total de prompts testés, multiplié par 100."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Le fichier llms.txt est-il indispensable pour le référencement ChatGPT ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Non, le fichier llms.txt n'est pas indispensable. Aucun acteur majeur ne le supporte officiellement comme signal de classement. Il reste utile comme exercice de structuration de l'information, mais les efforts doivent d'abord se concentrer sur la qualité du contenu, les données structurées et l'autorité du domaine."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Perplexity et ChatGPT fonctionnent-ils de la même façon pour les citations ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Non. Perplexity est conçu comme un moteur de recherche citation-first : il affiche systématiquement ses sources dans chaque réponse. ChatGPT ne cite des sources que lorsque la recherche web est activée. Gemini s'appuie prioritairement sur l'index Google, tandis que Claude a lancé sa propre recherche web début 2026."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Quels outils permettent de mesurer sa visibilité dans ChatGPT ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Plusieurs outils spécialisés existent en 2026 : Meteoria, Qwairy, Peec.ia, Botrank.ai (français), Semrush AI Toolkit, Ahrefs Brand Radar, HubSpot AEO et Profound. Pour débuter gratuitement, le HubSpot AI Search Grader et des tests manuels dans une session privée suffisent."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Combien de temps faut-il pour apparaître dans les réponses de ChatGPT ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Il n'existe pas de délai garanti. Les résultats dépendent de votre autorité de domaine, de la qualité de votre contenu et de la fréquence de crawl. Un plan d'action structuré sur 30 jours permet de poser les bases ; les premiers effets mesurables sur le taux de citation apparaissent généralement entre 4 et 12 semaines."
-            }
+        {
+          "@type": "Question",
+          "name": "Comment être cité par ChatGPT ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En travaillant en priorité le Content-Answer Fit : répondre à la question posée dès les premières lignes, de façon autonome et factuelle. Les facteurs secondaires (autorité de domaine, données structurées, avis clients, présence tierce) viennent ensuite renforcer ce socle - et selon SE Ranking, l'autorité de domaine reste statistiquement le facteur le plus déterminant."
           }
-        ]
-      }
-    ]
-  };
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il utiliser le fichier llms.txt pour être mieux référencé sur ChatGPT ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non, ou en tout cas pas en priorité. L'étude SE Ranking, menée sur 129 000 domaines et 216 524 pages, montre que la présence d'un fichier llms.txt n'a pratiquement aucun impact sur la probabilité de citation - sa suppression a même amélioré la précision du modèle prédictif utilisé dans l'étude."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il bloquer GPTBot pour protéger son contenu ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bloquer GPTBot empêche l'entraînement des modèles sur votre contenu, mais n'a pas d'impact direct sur votre présence dans les résultats de ChatGPT Search, qui dépend surtout d'OAI-SearchBot. Bloquer les deux revient à disparaître complètement des réponses de ChatGPT."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de temps faut-il pour apparaître dans les réponses de ChatGPT ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Les premiers effets sont souvent visibles en 2 à 4 semaines sur des requêtes peu concurrentielles, notamment après une réécriture des premiers paragraphes. Sur des sujets très disputés, comptez plutôt 2 à 3 mois, le temps que l'autorité de domaine et les mentions tierces se construisent."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le SEO classique sert-il encore à quelque chose ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, et c'est même un pré-requis : d'après Mikaël Priol, 90 % des sites restent totalement invisibles dans ChatGPT, souvent faute d'autorité de domaine suffisante. Le GEO s'ajoute au SEO, il ne le remplace pas."
+          }
+        }
+      ]
+    }
+  ]
+};
 
-  const htmlContent = `<p><strong>TL;DR :</strong> Pour être cité par ChatGPT, votre contenu doit répondre directement et précisément aux questions des utilisateurs (c'est le <strong>Content-Answer Fit</strong>, facteur numéro 1). Ajoutez des données structurées Schema.org, renforcez l'autorité de votre domaine, optimisez votre présence comme entité reconnue, et mesurez votre taux de citation IA (le <strong>Share of Voice</strong>). Le référencement ChatGPT, aussi appelé <strong>GEO (Generative Engine Optimization)</strong>, n'est pas un remplacement du SEO classique : c'est la couche suivante.</p>
-
-  <h2 id="enjeu">1. Pourquoi apparaître dans ChatGPT est devenu un enjeu SEO majeur en 2026</h2>
-  <p>La recherche d'information a changé de terrain. Une part croissante des utilisateurs ne tape plus une requête sur Google : ils posent directement leur question à ChatGPT, Perplexity, Gemini ou Claude.</p>
-  <p>Les chiffres parlent d'eux-mêmes :</p>
-  <ul>
-    <li>En décembre 2025, ChatGPT comptait <strong>plus de 800 millions d'utilisateurs</strong>, avec un objectif d'atteindre 1 milliard en 2026.</li>
-    <li><strong>52 % des utilisateurs</strong> se servent de ChatGPT spécifiquement pour des tâches de recherche.</li>
-    <li><strong>72 % des visiteurs arrivant via une IA sont de nouveaux visiteurs</strong>, contre 61 % via les canaux classiques.</li>
-    <li>Selon Gartner, <strong>61 % des recherches devraient démarrer sur des plateformes IA d'ici fin 2026</strong>.</li>
-  </ul>
-  <blockquote>
-    <p>"Aujourd'hui, 90 % des sites sont totalement invisibles dans ChatGPT. Ce n'est pas une intuition, c'est le résultat d'une étude à grande échelle." - Mikaël Priol, fondateur du groupe Internet Factory</p>
-  </blockquote>
-  <p>Dans ce contexte, <strong>être cité dans une réponse IA équivaut à occuper la première position sur Google</strong>, avec un impact potentiellement encore plus fort : l'utilisateur fait directement confiance à la réponse affichée, sans forcément chercher à vérifier les sources.</p>
-  <p>Le <strong>GEO (Generative Engine Optimization)</strong> est la discipline qui répond à cet enjeu. Ce n'est pas un remplacement du SEO : c'est sa suite logique. Les fondamentaux du référencement naturel restent valides, le GEO est une couche supplémentaire qui vient s'y ajouter. Pour bien comprendre les différences, consultez notre <a href="/agence-seo-vs-agence-gso">comparatif SEO vs GSO</a>.</p>
-
-  <h2 id="sources">2. Comment ChatGPT sélectionne ses sources : mémoire vs recherche web en temps réel</h2>
-  <p>Comprendre comment ChatGPT choisit ses sources est la première étape pour optimiser votre visibilité. Il existe <strong>deux modes de fonctionnement radicalement différents</strong>, et donc deux surfaces d'optimisation distinctes.</p>
-
-  <h3>Mode 1 : ChatGPT depuis sa mémoire (données d'entraînement)</h3>
-  <p>Sans activation de la recherche web, ChatGPT répond uniquement à partir de ses <strong>données d'entraînement</strong>. Il n'accède pas au web en temps réel. Ses réponses reflètent ce que le modèle a "appris" lors de son entraînement sur des milliards de pages web.</p>
-  <p>Dans ce mode, votre levier d'action est indirect : être suffisamment présent, cité et mentionné sur le web pour que votre marque ou votre contenu soit intégré dans les données d'entraînement des prochaines versions du modèle.</p>
-
-  <h3>Mode 2 : ChatGPT avec recherche web en temps réel (ChatGPT Search)</h3>
-  <p>Lorsque la recherche web est activée, ChatGPT utilise son crawler <strong>OAI-SearchBot</strong> pour interroger le web en temps réel. C'est ici que se joue la <strong>surface d'optimisation la plus exploitable à court terme</strong>.</p>
-  <p>Dans ce mode, ChatGPT fonctionne selon un principe de <strong>RAG (Retrieval-Augmented Generation)</strong> : il récupère des passages pertinents sur le web, les intègre dans son contexte, puis génère une réponse synthétisée. Le flux est le suivant :</p>
-  <ol>
-    <li>La question de l'utilisateur est transformée en vecteur de recherche.</li>
-    <li>Le système interroge des sources externes (web, documents) pour trouver les passages les plus pertinents.</li>
-    <li>Ces passages sont fusionnés avec la question pour créer un prompt enrichi.</li>
-    <li>Le modèle génère une réponse en s'appuyant sur ce contexte récupéré.</li>
-  </ol>
-  <p>Le RAG permet de réduire les hallucinations et de maintenir les réponses à jour sans avoir à réentraîner le modèle. <strong>C'est dans ce mode que votre contenu peut être cité comme source explicite.</strong></p>
-
-  <h3>Ce que cela signifie pour votre stratégie</h3>
-  <ul>
-    <li><strong>Court terme :</strong> optimisez pour ChatGPT Search (web en temps réel) en soignant la qualité, la structure et la fraîcheur de vos contenus (<a href="/blog/schema-org-donnees-structurees-gso">voir notre guide sur Schema.org pour le GSO</a>).</li>
-    <li><strong>Long terme :</strong> construisez une présence web solide pour figurer dans les données d'entraînement des futurs modèles.</li>
-    <li>Vérifiez que votre <code>robots.txt</code> <strong>autorise explicitement</strong> les crawlers IA (OAI-SearchBot pour OpenAI, PerplexityBot pour Perplexity, etc.).</li>
-  </ul>
-
-  <h2 id="facteurs">3. Les 7 facteurs clés pour être cité par ChatGPT</h2>
-  <p>Une étude de SE Ranking publiée début 2026 a analysé <strong>129 000 domaines uniques et 216 524 pages</strong> pour identifier les facteurs qui influencent réellement les citations ChatGPT. Voici ce qui compte vraiment.</p>
-
-  <h3>3.1 Le Content-Answer Fit : le facteur numéro 1 (55 % du facteur de citation)</h3>
-  <p>Le <strong>Content-Answer Fit</strong> est la capacité de votre contenu à répondre directement, précisément et de façon autonome à la question posée. C'est le facteur dominant dans la probabilité de citation.</p>
-  <p>Une IA citera plus facilement une phrase comme :</p>
-  <blockquote>
-    <p>"Triaina est une agence GEO basée en France, spécialisée en optimisation pour les moteurs génératifs depuis 2024."</p>
-  </blockquote>
-  <p>...qu'un texte vague comme "Nous sommes une équipe passionnée qui accompagne les entreprises dans leur transformation digitale."</p>
-  <p><strong>La première est une déclaration citable. La seconde est du storytelling sans valeur exploitable par une IA.</strong></p>
-  <p>Pour maximiser votre Content-Answer Fit :</p>
-  <ul>
-    <li>Répondez à la question dès la première phrase de chaque section (principe de la pyramide inversée).</li>
-    <li>Rédigez des paragraphes compréhensibles hors contexte de la page entière.</li>
-    <li>Remplacez les formulations vagues par des <strong>faits vérifiables et chiffrés</strong> : "le taux de conversion a augmenté de 23 % en 3 mois" est infiniment plus citable que "les résultats ont significativement progressé".</li>
-    <li>Intégrez des sections FAQ, des listes structurées et des titres sous forme de questions : ces formats sont corrélés à une probabilité de citation plus élevée.</li>
-    <li>Ajoutez des citations d'experts avec attribution claire : les IA privilégient les sources fiables et identifiables.</li>
-  </ul>
-  <p>Le concept de <strong>fact-density ratio</strong> est clé : plus votre contenu contient de faits vérifiables par unité de texte, plus il est "citable". Évitez le remplissage, chaque phrase doit apporter une information exploitable.</p>
-
-  <h3>3.2 L'autorité de domaine et les backlinks</h3>
-  <p>L'autorité reste un signal majeur. Selon l'étude SE Ranking 2026 :</p>
-  <ul>
-    <li><strong>Les sites comptant plus de 32 000 domaines référents ont 3,5 fois plus de chances d'être cités par ChatGPT</strong> que ceux comptant jusqu'à 200 domaines référents.</li>
-    <li>La position moyenne d'une URL dans les résultats Google est corrélée aux citations ChatGPT : les pages classées entre les positions 1 et 45 reçoivent en moyenne 5 citations, contre 3,1 pour celles classées entre 64 et 75.</li>
-  </ul>
-  <p>Dans une logique GEO, l'objectif n'est pas uniquement d'obtenir des liens. C'est d'obtenir des <strong>publications et des citations sur des pages qui ont elles-mêmes une forte probabilité d'être reprises par ChatGPT</strong> : médias spécialisés, sites institutionnels, forums de référence (Reddit, Quora).</p>
-  <p>Les sites activement mentionnés ou discutés sur des plateformes comme Quora et Reddit ont plus de chances d'être cités par ChatGPT. La présence cohérente de votre marque sur plusieurs canaux (blog, LinkedIn, presse sectorielle) renforce également votre crédibilité auprès des modèles.</p>
-
-  <h3>3.3 Les données structurées (JSON-LD, Schema.org)</h3>
-  <p>Les données structurées sont un levier technique puissant. Selon l'étude SE Ranking de janvier 2026 :</p>
-  <ul>
-    <li><strong>Environ 65 % des pages citées par ChatGPT intègrent des données structurées Schema.org.</strong></li>
-    <li>Les sites avec un schéma complet (Article, FAQ, HowTo en JSON-LD) voient une amélioration significative de leur couverture IA.</li>
-  </ul>
-  <p>Les types de schémas prioritaires pour le référencement ChatGPT :</p>
-  <ul>
-    <li><strong>Article</strong> : pour vos contenus éditoriaux (avec datePublished, dateModified, author).</li>
-    <li><strong>FAQPage</strong> : pour vos sections questions-réponses.</li>
-    <li><strong>Organization</strong> : pour décrire votre entité (avec la propriété <code>knowsAbout</code> pour valider vos compétences).</li>
-    <li><strong>HowTo</strong> : pour vos guides étape par étape.</li>
-    <li><strong>BreadcrumbList</strong> : pour clarifier la structure de votre site.</li>
-  </ul>
-  <p>Les données structurées ne garantissent pas d'être cité, mais elles aident les moteurs à interpréter le type de contenu et à l'associer aux bonnes entités.</p>
-
-  <h3>3.4 Le fichier llms.txt</h3>
-  <p>Le fichier <strong>llms.txt</strong> est un fichier texte placé à la racine de votre site, comparable à un robots.txt mais destiné aux agents IA. Son objectif : indiquer aux crawlers LLM quelles pages prioriser et comment comprendre votre activité.</p>
-  <p><strong>État en 2026 :</strong></p>
-  <ul>
-    <li>Anthropic (Claude) supporte officiellement le standard. OpenAI analyse le fichier sans support officiel annoncé.</li>
-    <li>John Mueller (Google) l'a comparé à la balise meta keywords, soulignant son impact limité actuel.</li>
-    <li>Aucune corrélation prouvée entre l'implémentation de llms.txt et une amélioration mesurable des citations IA n'a été établie à ce jour.</li>
-  </ul>
-  <p><strong>Notre recommandation :</strong> mettez-le en place si c'est rapide (environ 30 minutes), car le coût est nul et le potentiel futur réel. Mais ne l'érigez pas en priorité absolue. Concentrez vos efforts sur le contenu et les données structurées.</p>
-  <p>Structure minimale d'un fichier llms.txt efficace :</p>
-  <ul>
-    <li>Description concise de votre activité et positionnement.</li>
-    <li>Liens vers vos 5 à 10 pages les plus importantes (page d'accueil, services, articles piliers, FAQ).</li>
-    <li>Courte description de chaque lien pour guider l'IA.</li>
-  </ul>
-
-  <h3>3.5 L'optimisation des entités (E-E-A-T pour les LLM)</h3>
-  <p>Les LLM ne raisonnent pas en mots-clés : ils raisonnent en <strong>entités</strong>. Votre marque doit devenir une entité reconnue et bien définie dans l'écosystème informationnel du web.</p>
-  <p>Les signaux E-E-A-T (Expérience, Expertise, Autorité, Fiabilité) adaptés aux LLM :</p>
-  <ul>
-    <li><strong>Expérience :</strong> mentions de votre marque associées à des résultats concrets sur des sites tiers.</li>
-    <li><strong>Expertise :</strong> contenus signés par des auteurs identifiables avec une page auteur complète (Schema.org Person).</li>
-    <li><strong>Autorité :</strong> citations par des médias et sites de référence de votre secteur.</li>
-    <li><strong>Fiabilité :</strong> cohérence des informations sur votre marque à travers toutes les sources (NAP, descriptions, catégories).</li>
-  </ul>
-  <p>Utilisez la propriété <code>knowsAbout</code> dans votre schéma Organization pour valider officiellement vos compétences auprès des moteurs de réponse. Reliez vos articles à des concepts larges pour renforcer la cohérence sémantique globale de votre domaine.</p>
-  <p>Une information reprise par plusieurs sources indépendantes est plus facile à consolider dans une réponse générative. Un contenu isolé, non daté ou non attribué, sera moins retenu même s'il est pertinent.</p>
-
-  <h3>3.6 Les avis clients et la présence locale</h3>
-  <p>Pour les entreprises locales et les PME, deux leviers sont souvent sous-exploités :</p>
-  <p><strong>Les avis clients (Trustpilot, Google, etc.) :</strong></p>
-  <ul>
-    <li>Les avis constituent une source de mentions tierces vérifiables, que les LLM utilisent pour évaluer la réputation d'une marque.</li>
-    <li>Une marque activement recommandée sur des plateformes d'avis bénéficie d'un signal de confiance supplémentaire.</li>
-    <li>Proposez des avis d'experts ou des témoignages à des plateformes spécialisées dans votre secteur.</li>
-  </ul>
-  <p><strong>La présence locale (Bing Places, Google Business Profile) :</strong></p>
-  <ul>
-    <li>Bing Places alimente indirectement les citations locales utilisées par les IA, même lorsque la réponse n'affiche pas explicitement une fiche.</li>
-    <li>Assurez la cohérence stricte de vos informations NAP (Nom, Adresse, Téléphone) sur tous les annuaires.</li>
-    <li>Créez des pages dédiées par zone géographique ou service localisé.</li>
-    <li>Les annuaires locaux et sectoriels jouent un rôle clé dans les citations LLM-ready en 2026.</li>
-  </ul>
-
-  <h3>3.7 Le contenu multimodal</h3>
-  <p>Les LLM évoluent vers une compréhension multimodale. Vos images et vidéos peuvent devenir des sources de réponses IA :</p>
-  <ul>
-    <li><strong>Attributs alt descriptifs et factuels</strong> sur toutes vos images : décrivez précisément ce que l'image montre, avec des données chiffrées si pertinent.</li>
-    <li><strong>Légendes contextuelles riches</strong> : une infographie bien légendée peut devenir la source principale d'une réponse complexe générée par ChatGPT.</li>
-    <li><strong>Transcriptions de vidéos</strong> : rendez le contenu de vos vidéos accessible en texte pour les crawlers IA.</li>
-    <li><strong>Formats légers</strong> : la vitesse de chargement est critique - même les crawlers LLM les plus patients abandonnent après 2 secondes.</li>
-  </ul>
-
-  <h2 id="comparatif">4. ChatGPT vs Perplexity vs Claude vs Gemini : les mêmes règles ?</h2>
-  <p>Non, chaque plateforme a ses propres mécanismes de sélection de sources. Comprendre ces différences permet d'adapter votre stratégie.</p>
-  
-  <div class="overflow-x-auto my-8">
-    <table class="w-full text-left border-collapse border border-slate-200">
-      <thead>
-        <tr class="bg-slate-50">
-          <th class="border border-slate-200 px-4 py-2 font-bold">Plateforme</th>
-          <th class="border border-slate-200 px-4 py-2 font-bold">Source principale</th>
-          <th class="border border-slate-200 px-4 py-2 font-bold">Citations affichées</th>
-          <th class="border border-slate-200 px-4 py-2 font-bold">Moteur de recherche sous-jacent</th>
-          <th class="border border-slate-200 px-4 py-2 font-bold">Spécificité GEO</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="border border-slate-200 px-4 py-2"><strong>ChatGPT</strong></td>
-          <td class="border border-slate-200 px-4 py-2">Données d'entraînement + web (si activé)</td>
-          <td class="border border-slate-200 px-4 py-2">Uniquement avec recherche web activée</td>
-          <td class="border border-slate-200 px-4 py-2">OAI-SearchBot (propre)</td>
-          <td class="border border-slate-200 px-4 py-2">Mélange entraînement et recherche web temps réel. Leader en volume (84 % des clics IA en France).</td>
-        </tr>
-        <tr>
-          <td class="border border-slate-200 px-4 py-2"><strong>Perplexity</strong></td>
-          <td class="border border-slate-200 px-4 py-2">Web en temps réel (toujours)</td>
-          <td class="border border-slate-200 px-4 py-2">Systématiquement, dans chaque réponse</td>
-          <td class="border border-slate-200 px-4 py-2">Moteur Sonar + modèles tiers</td>
-          <td class="border border-slate-200 px-4 py-2">Citation-first par design. Cite beaucoup plus que ChatGPT. Idéal pour les requêtes informationnelles.</td>
-        </tr>
-        <tr>
-          <td class="border border-slate-200 px-4 py-2"><strong>Claude</strong></td>
-          <td class="border border-slate-200 px-4 py-2">Données d'entraînement + web (depuis mars 2026)</td>
-          <td class="border border-slate-200 px-4 py-2">Oui, avec recherche web activée</td>
-          <td class="border border-slate-200 px-4 py-2">Recherche web propre (lancée début 2026)</td>
-          <td class="border border-slate-200 px-4 py-2">En forte progression dans les usages professionnels. Mémoire de conversation très fiable sur les longs contextes.</td>
-        </tr>
-        <tr>
-          <td class="border border-slate-200 px-4 py-2"><strong>Gemini</strong></td>
-          <td class="border border-slate-200 px-4 py-2">Index Google + données Google Account (si autorisé)</td>
-          <td class="border border-slate-200 px-4 py-2">Oui, avec sources Google</td>
-          <td class="border border-slate-200 px-4 py-2">Index Google (natif)</td>
-          <td class="border border-slate-200 px-4 py-2">Favorise les sources déjà bien indexées sur Google. Être visible sur Google reste un prérequis fort.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <p><strong>Implications stratégiques :</strong></p>
-  <ul>
-    <li>Pour <strong>Perplexity</strong> : soignez particulièrement la structure de vos sources et leur accessibilité immédiate. Perplexity est conçu pour citer, il cherche des contenus factuels et vérifiables.</li>
-    <li>Pour <strong>Gemini</strong> : un bon SEO Google reste un prérequis. Gemini ne crawle pas de façon indépendante - il utilise ce qui est déjà dans l'index Google.</li>
-    <li>Pour <strong>Claude</strong> : misez sur la profondeur et la fiabilité de vos contenus. Claude maintient une meilleure précision sur les longs contextes.</li>
-    <li>Pour <strong>ChatGPT</strong> : optimisez à la fois pour le long terme (présence dans les données d'entraînement) et le court terme (ChatGPT Search).</li>
-  </ul>
-  <p>Pour être visible sur les LLM, vous devez être indexé sur <strong>Google ET Bing</strong> - pas seulement Google.</p>
-
-  <h2 id="mesurer">5. Comment mesurer votre taux de citation IA (Share of Voice)</h2>
-  <p>Le <strong>Share of Voice</strong> est votre indicateur clé de visibilité IA. Il mesure la fréquence à laquelle votre marque ou votre contenu apparaît dans les réponses générées par les LLM sur un ensemble de requêtes cibles.</p>
-  
-  <h3>Les 4 KPIs à suivre</h3>
-  <ul>
-    <li><strong>Taux de citation global :</strong> (nombre de prompts où votre marque est citée) / (nombre total de prompts du panier) x 100.</li>
-    <li><strong>Taux de citation par plateforme :</strong> calculé moteur par moteur. Perplexity cite structurellement plus que ChatGPT. Un écart important révèle où concentrer l'effort.</li>
-    <li><strong>Trafic IA :</strong> sessions GA4 avec referrer LLM (perplexity.ai, chatgpt.com) / sessions totales x 100. C'est la seule donnée first-party qui lie la visibilité IA à la performance réelle.</li>
-    <li><strong>Tonalité des mentions :</strong> êtes-vous cité positivement, neutralement ou négativement ? Une mention négative répétée dans 50 % des réponses est un problème critique.</li>
-  </ul>
-
-  <h3>Méthode manuelle (gratuite)</h3>
-  <ol>
-    <li>Listez 10 à 15 questions que vos clients idéaux poseraient à une IA avant d'acheter dans votre secteur.</li>
-    <li>Posez ces questions, à l'identique, dans ChatGPT, Perplexity, Claude, Gemini et Google AI Overviews.</li>
-    <li>Faites-le chaque semaine, le même jour, dans une <strong>session privée ou déconnectée</strong> pour éviter les biais de personnalisation.</li>
-    <li>Notez : présence (oui/non), position dans la réponse, tonalité, concurrents co-cités, sources mobilisées.</li>
-    <li>Consignez tout dans un Google Sheet et suivez l'évolution sur 4 à 8 semaines.</li>
-  </ol>
-
-  <h3>Outils spécialisés pour automatiser le suivi</h3>
-  <div class="overflow-x-auto my-8">
-    <table class="w-full text-left border-collapse border border-slate-200">
-      <thead>
-        <tr class="bg-slate-50">
-          <th class="border border-slate-200 px-4 py-2 font-bold">Outil</th>
-          <th class="border border-slate-200 px-4 py-2 font-bold">Plateformes couvertes</th>
-          <th class="border border-slate-200 px-4 py-2 font-bold">Prix indicatif</th>
-          <th class="border border-slate-200 px-4 py-2 font-bold">Idéal pour</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="border border-slate-200 px-4 py-2"><strong>Meteoria</strong></td>
-          <td class="border border-slate-200 px-4 py-2">ChatGPT, Gemini, Perplexity</td>
-          <td class="border border-slate-200 px-4 py-2">Freemium (10 prompts gratuits)</td>
-          <td class="border border-slate-200 px-4 py-2">PME, démarrage</td>
-        </tr>
-        <tr>
-          <td class="border border-slate-200 px-4 py-2"><strong>Botrank.ai</strong></td>
-          <td class="border border-slate-200 px-4 py-2">ChatGPT, Perplexity, Gemini, Mistral, AI Overviews</td>
-          <td class="border border-slate-200 px-4 py-2">À partir de 75 €/mois</td>
-          <td class="border border-slate-200 px-4 py-2">Marché français, audit GEO intégré</td>
-        </tr>
-        <tr>
-          <td class="border border-slate-200 px-4 py-2"><strong>Qwairy</strong></td>
-          <td class="border border-slate-200 px-4 py-2">ChatGPT, Gemini, Perplexity, Claude, AI Overviews</td>
-          <td class="border border-slate-200 px-4 py-2">À partir de 59 €/mois</td>
-          <td class="border border-slate-200 px-4 py-2">PME, analyse à grande échelle</td>
-        </tr>
-        <tr>
-          <td class="border border-slate-200 px-4 py-2"><strong>Peec.ia</strong></td>
-          <td class="border border-slate-200 px-4 py-2">ChatGPT, Perplexity, Claude, Google SGE</td>
-          <td class="border border-slate-200 px-4 py-2">À partir de 149 €/mois</td>
-          <td class="border border-slate-200 px-4 py-2">Marché français, SaaS</td>
-        </tr>
-        <tr>
-          <td class="border border-slate-200 px-4 py-2"><strong>Semrush AI Toolkit</strong></td>
-          <td class="border border-slate-200 px-4 py-2">ChatGPT, Gemini, Perplexity, Claude, Deepseek</td>
-          <td class="border border-slate-200 px-4 py-2">À partir de 99 $/mois</td>
-          <td class="border border-slate-200 px-4 py-2">Grandes équipes, reporting</td>
-        </tr>
-        <tr>
-          <td class="border border-slate-200 px-4 py-2"><strong>HubSpot AI Search Grader</strong></td>
-          <td class="border border-slate-200 px-4 py-2">ChatGPT, Gemini, Perplexity</td>
-          <td class="border border-slate-200 px-4 py-2">Gratuit</td>
-          <td class="border border-slate-200 px-4 py-2">Premier audit, point d'entrée</td>
-        </tr>
-        <tr>
-          <td class="border border-slate-200 px-4 py-2"><strong>Ahrefs Brand Radar</strong></td>
-          <td class="border border-slate-200 px-4 py-2">ChatGPT, Perplexity, AI Overviews Google</td>
-          <td class="border border-slate-200 px-4 py-2">Inclus dans Ahrefs</td>
-          <td class="border border-slate-200 px-4 py-2">Équipes SEO existantes</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <p><strong>Important :</strong> les réponses des LLM varient à chaque appel. Lisez les tendances sur la durée, pas les snapshots ponctuels. Il n'existe pas de "position" fixe comme en SEO classique : on mesure une <strong>probabilité d'apparition</strong> sur un ensemble de prompts.</p>
-
-  <h2 id="plan">6. Plan d'action : optimiser son site pour être cité par ChatGPT en 30 jours</h2>
-  <p>Voici un plan d'action structuré, du plus impactant au plus secondaire.</p>
-
-  <h3>Semaine 1 : Audit et fondations</h3>
-  <ul>
-    <li><strong>Audit de visibilité IA :</strong> testez 20 à 30 requêtes de votre secteur sur ChatGPT, Perplexity et Claude. Notez votre taux de citation de départ.</li>
-    <li><strong>Vérifiez votre robots.txt :</strong> autorisez explicitement OAI-SearchBot, PerplexityBot, ClaudeBot, GoogleExtended. Ne bloquez pas accidentellement ces agents.</li>
-    <li><strong>Auditez votre contenu existant :</strong> identifiez les pages qui répondent directement à des questions (Content-Answer Fit) et celles qui sont trop vagues. Si besoin d'aide, découvrez nos services d'<a href="/agence-referencement-ia">accompagnement en référencement IA</a>.</li>
-    <li><strong>Créez un segment "trafic IA" dans GA4 :</strong> ajoutez perplexity.ai, chatgpt.com et claude.ai comme sources à suivre.</li>
-  </ul>
-
-  <h3>Semaine 2 : Contenu et structure</h3>
-  <ul>
-    <li><strong>Réécrivez vos 5 pages les plus importantes</strong> en appliquant le principe Answer First : la réponse directe dès la première phrase.</li>
-    <li><strong>Ajoutez des données chiffrées et des sources vérifiables</strong> à chaque section clé. Augmentez votre fact-density ratio.</li>
-    <li><strong>Créez ou enrichissez vos sections FAQ</strong> avec des questions en langage naturel correspondant aux requêtes réelles posées aux IA.</li>
-    <li><strong>Structurez vos titres en questions</strong> (H2, H3) : "Comment...", "Pourquoi...", "Quelle est la différence entre..."</li>
-  </ul>
-
-  <h3>Semaine 3 : Données structurées et entités</h3>
-  <ul>
-    <li><strong>Implémentez JSON-LD</strong> sur toutes vos pages clés : Article, FAQPage, Organization, BreadcrumbList.</li>
-    <li><strong>Créez ou complétez votre page "À propos"</strong> avec un schéma Organization complet incluant <code>knowsAbout</code>, <code>foundingDate</code>, <code>areaServed</code>.</li>
-    <li><strong>Créez des pages auteur</strong> avec schéma Person pour chaque contributeur régulier.</li>
-    <li><strong>Créez votre fichier llms.txt</strong> : listez vos 5 à 10 pages les plus représentatives avec une courte description de chacune.</li>
-    <li><strong>Vérifiez la cohérence de vos informations NAP</strong> sur tous les annuaires et plateformes.</li>
-  </ul>
-
-  <h3>Semaine 4 : Autorité externe et mesure</h3>
-  <ul>
-    <li><strong>Identifiez les 3 sources les plus citées par les IA dans votre niche</strong> et trouvez un moyen d'y être mentionné (interview, guest post, commentaire expert).</li>
-    <li><strong>Activez ou complétez votre Bing Places</strong> et votre Google Business Profile avec des informations cohérentes.</li>
-    <li><strong>Sollicitez des avis clients</strong> sur Trustpilot, Google et les plateformes sectorielles pertinentes.</li>
-    <li><strong>Mesurez votre nouveau taux de citation</strong> avec la même méthodologie qu'en semaine 1 et comparez.</li>
-    <li><strong>Mettez en place un suivi hebdomadaire</strong> avec un outil dédié ou votre Google Sheet.</li>
-  </ul>
-
-  <blockquote>
-    <p><strong>Rappel :</strong> 95 % des citations ChatGPT proviennent de contenu mis à jour dans les 10 derniers mois. La fraîcheur est un critère critique. Planifiez des mises à jour régulières de vos contenus piliers.</p>
-  </blockquote>
-
-  <h2 id="faq">7. FAQ : vos questions sur le référencement ChatGPT</h2>
-  
-  <h3>Comment être cité par ChatGPT ?</h3>
-  <p>Pour être cité par ChatGPT, produisez un contenu qui répond directement et précisément aux questions des utilisateurs (Content-Answer Fit), structurez vos pages avec des données Schema.org, renforcez l'autorité de votre domaine via des backlinks de qualité, et optimisez la présence de votre marque comme entité reconnue sur le web. Autorisez également les crawlers IA dans votre robots.txt.</p>
-
-  <h3>ChatGPT cite-t-il des sources en temps réel ?</h3>
-  <p>Oui, lorsque la recherche web est activée (ChatGPT Search), ChatGPT interroge le web en temps réel via son crawler OAI-SearchBot et peut citer des sources récentes. Sans cette option, il répond à partir de ses données d'entraînement, sans accès au web. La majorité des utilisateurs ChatGPT Plus utilisent désormais la recherche web activée par défaut.</p>
-
-  <h3>Qu'est-ce que le Share of Voice ?</h3>
-  <p>Le Share of Voice est votre taux de citation IA. Il mesure la fréquence à laquelle votre marque ou votre contenu apparaît dans les réponses générées par les LLM sur un ensemble de requêtes cibles. Il se calcule ainsi : (nombre de prompts où vous êtes cité) / (nombre total de prompts testés) x 100. C'est l'équivalent du taux de clics en SEO, mais pour les moteurs génératifs.</p>
-
-  <h3>Le fichier llms.txt est-il indispensable pour le référencement ChatGPT ?</h3>
-  <p>Non. Aucun acteur majeur ne le supporte officiellement comme signal de classement en 2026. John Mueller (Google) l'a comparé à la balise meta keywords. Il reste utile comme exercice de structuration (30 minutes de travail, coût nul), mais vos efforts doivent d'abord se concentrer sur la qualité du contenu, les données structurées et l'autorité du domaine.</p>
-
-  <h3>Perplexity et ChatGPT fonctionnent-ils de la même façon pour les citations ?</h3>
-  <p>Non. Perplexity est conçu comme un moteur de recherche citation-first : il affiche systématiquement ses sources dans chaque réponse. ChatGPT ne cite des sources que lorsque la recherche web est activée, et de façon moins systématique. Gemini s'appuie prioritairement sur l'index Google. Claude a lancé sa propre recherche web début 2026. Chaque plateforme nécessite une approche adaptée.</p>
-
-  <h3>Quels outils permettent de mesurer sa visibilité dans ChatGPT ?</h3>
-  <p>En 2026, les principaux outils sont : Meteoria, Qwairy, Peec.ia, Botrank.ai (français), Semrush AI Toolkit, Ahrefs Brand Radar, HubSpot AEO et Profound. Pour débuter gratuitement, le HubSpot AI Search Grader et des tests manuels dans une session privée suffisent. Créez également un segment "trafic IA" dans Google Analytics 4 pour mesurer les sessions provenant de referrers comme perplexity.ai ou chatgpt.com.</p>
-
-  <h3>Combien de temps faut-il pour apparaître dans les réponses de ChatGPT ?</h3>
-  <p>Il n'existe pas de délai garanti. Les résultats dépendent de votre autorité de domaine, de la qualité de votre contenu et de la fréquence de crawl. Un plan d'action structuré sur 30 jours permet de poser les bases. Les premiers effets mesurables sur le taux de citation apparaissent généralement entre 4 et 12 semaines. La fraîcheur du contenu est un facteur critique : 95 % des citations ChatGPT proviennent de contenu mis à jour dans les 10 derniers mois.</p>
-
-  <h2 id="sources-utiles">Sources utiles</h2>
-  <ul>
-    <li><a href="https://openai.com/blog/chatgpt" rel="noopener noreferrer" target="_blank">OpenAI - Blog officiel ChatGPT</a></li>
-    <li><a href="https://platform.openai.com/docs/plugins/bot" rel="noopener noreferrer" target="_blank">OpenAI - Documentation OAI-SearchBot (crawler)</a></li>
-    <li><a href="https://schema.org/" rel="noopener noreferrer" target="_blank">Schema.org - Référence officielle des données structurées</a></li>
-    <li><a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" rel="noopener noreferrer" target="_blank">Google - Guide officiel des données structurées JSON-LD</a></li>
-    <li><a href="https://www.bing.com/webmasters/help/webmaster-guidelines-30fba23a" rel="noopener noreferrer" target="_blank">Bing Webmaster Guidelines</a></li>
-    <li><a href="https://llmstxt.org/" rel="noopener noreferrer" target="_blank">llmstxt.org - Spécification officielle du fichier llms.txt</a></li>
-    <li><a href="https://seranking.com/fr/blog/comment-se-referencer-sur-chatgpt/" rel="noopener noreferrer" target="_blank">SE Ranking - Étude sur les facteurs de citation ChatGPT (janvier 2026)</a></li>
-    <li><a href="https://support.google.com/webmasters/answer/1061943" rel="noopener noreferrer" target="_blank">Google Search Console - Contrôle des extraits et crawl</a></li>
-    <li><a href="https://www.ibm.com/think/topics/retrieval-augmented-generation" rel="noopener noreferrer" target="_blank">IBM - Guide complet sur le RAG (Retrieval-Augmented Generation)</a></li>
-  </ul>`;
+  const htmlContent = `<h1>Comment être cité par ChatGPT en 2026 : le guide complet</h1><p><em>Publié le 4 mai 2026 - Mis à jour le 7 juillet 2026 (mise à jour : nouvelle section « Comment être référencé sur ChatGPT ? » et FAQ enrichie).</em></p><h2>TL;DR</h2><p>Être cité par ChatGPT, ça ne s'improvise pas. D'après l'étude SE Ranking menée sur <strong>129 000 domaines et 216 524 pages</strong> dans 20 secteurs, le facteur qui pèse le plus lourd reste l'autorité de domaine : dépasser <strong>32 000 domaines référents</strong> multiplie par <strong>3,5</strong> les chances d'être cité par rapport à un site qui en compte moins de 200. Juste derrière : la capacité d'un contenu à répondre directement à la question posée (le <strong>Content-Answer Fit</strong>), les données structurées Schema.org, l'accès technique des crawlers IA, la reconnaissance de votre marque comme entité, les avis clients sur des plateformes tierces et, de plus en plus, le contenu multimodal. Le fichier <strong>llms.txt</strong>, lui, n'a quasiment aucun effet mesurable. On détaille les 7 facteurs qui comptent vraiment, on compare ChatGPT à Perplexity, Claude et Gemini, et on propose un plan d'action sur 30 jours.</p><h2>Pourquoi être cité par ChatGPT est devenu un enjeu SEO majeur</h2><p>Depuis que ChatGPT Search s'est généralisé et que l'assistant répond directement à des requêtes commerciales et informationnelles, une partie du trafic qui passait autrefois par une liste de liens bleus se joue désormais dans une synthèse générée. Poser la question « quelle est la meilleure agence SEO à Lyon » ou « comment choisir un CRM pour une PME » à ChatGPT déclenche une réponse rédigée, avec (ou sans) sources citées en bas de page.</p><p>Selon la plus vaste étude française sur le sujet, menée par <strong>Mikaël Priol</strong>, fondateur du groupe Internet Factory (Netlinking, SEO.fr), sur <strong>300 000 questions</strong>, <strong>3,5 millions de pages</strong> et <strong>680 000 marques</strong> analysées : « <em>Aujourd'hui, 90 % des sites sont totalement invisibles dans ChatGPT</em> ». Et parmi les 10 % restants, la visibilité reste souvent marginale : « <em>90 % du temps, ils sont cités sur moins de 10 requêtes</em> ». Autre constat qui pique : plus d'un quart des sites cités par ChatGPT en France sont des sites en langue étrangère.</p><p>Ne pas apparaître dans ces réponses, c'est perdre un canal d'acquisition qui pèse déjà plusieurs points de trafic pour beaucoup de sites B2B et e-commerce. Comme le résume Priol, l'enjeu n'est pas forcément le clic immédiat : « <em>le but, ce n'est pas le clic, c'est d'être mentionné</em> » - la citation agit comme un signal de légitimité, avec un impact cognitif et mémoriel avant d'être un impact trafic. C'est tout le principe du <strong>GEO</strong> (Generative Engine Optimization) : adapter sa stratégie de contenu pour être repéré, compris et cité par les moteurs génératifs.</p><h2>Comment ChatGPT sélectionne ses sources : mode mémoire et RAG</h2><p>Il faut distinguer deux mécanismes bien différents. La <strong>mémoire</strong> de ChatGPT (renforcée en 2026 avec l'architecture « Dreaming ») retient et synthétise vos échanges passés avec l'assistant : elle personnalise la conversation mais ne sert pas à sourcer une réponse factuelle sur le web.</p><p>Le <strong>RAG</strong> (Retrieval-Augmented Generation), lui, est le mécanisme qui permet réellement à ChatGPT d'aller chercher des sources fraîches avant de rédiger sa réponse, sans réentraîner le modèle. Le processus suit toujours la même séquence :</p><ul><li><p><strong>Indexation</strong> : les crawlers (GPTBot, OAI-SearchBot) parcourent le web et découpent chaque page en « chunks » de quelques centaines de tokens, transformés en embeddings vectoriels.</p></li><li><p><strong>Retrieval</strong> : la question de l'utilisateur est convertie en vecteur, et le système cherche les chunks les plus proches sémantiquement.</p></li><li><p><strong>Sélection</strong> : entre 5 et 50 chunks candidats sont remontés, classés par pertinence et par autorité du domaine d'origine.</p></li><li><p><strong>Génération</strong> : le modèle ne voit pas votre page entière, seulement ces extraits, et rédige sa réponse en s'appuyant dessus - d'où l'importance qu'un passage isolé soit compréhensible tout seul.</p></li></ul><p>Concrètement : ce n'est pas votre page qui est citée, c'est un chunk de votre page. D'où l'intérêt de rendre chaque section autonome, factuelle et facilement découpable.</p><h2>Facteur n°1 : le Content-Answer Fit, le facteur qui pèse le plus sur le contenu</h2><p>C'est le facteur qui explique la majorité des écarts de citation entre deux pages traitant pourtant du même sujet, avec un poids estimé à environ <strong>55 %</strong> côté qualité de contenu. ChatGPT privilégie les passages qui répondent <strong>directement, précisément et de façon autonome</strong> à la question posée, sans obliger le modèle à aller chercher le contexte ailleurs sur la page.</p><ul><li><p><strong>Premier paragraphe court</strong> : moins de 50 mots, réponse posée avant l'explication.</p></li><li><p><strong>Ton affirmatif</strong> : les formulations tranchées (« X est… ») sont citées bien plus souvent que les tournures évasives (« il semblerait que… »).</p></li><li><p><strong>Sections de 120 à 180 mots</strong> : selon SE Ranking, cette longueur de section génère en moyenne <strong>4,6 citations</strong>, contre 2,7 pour des sections de moins de 50 mots - soit environ 70 % de citations en plus.</p></li><li><p><strong>Contenu approfondi</strong> : les articles de plus de 2 900 mots obtiennent en moyenne 5,1 citations contre 3,2 pour ceux de moins de 800 mots.</p></li></ul><h2>Facteur n°2 : l'autorité de domaine, le signal le plus prédictif</h2><p>C'est, chiffres à l'appui, le facteur numéro un. L'étude SE Ranking, menée sur 129 000 domaines uniques et 216 524 pages réparties dans 20 niches, montre que les sites comptant plus de <strong>32 000 domaines référents</strong> ont <strong>3,5 fois plus de chances</strong> d'être cités par ChatGPT que ceux qui en comptent jusqu'à 200. Le saut le plus net se produit précisément au franchissement de ce seuil : la moyenne de citations passe de 2,9 à 5,6.</p><p>Même logique du côté de la confiance de domaine (Domain Trust) : les domaines dont le score dépasse 90 obtiennent près de <strong>4 fois plus de citations</strong> que les domaines dont le score est inférieur à 43. Le trafic organique de la page d'accueil compte aussi : au-delà de 7 900 visiteurs organiques mensuels sur la home, les chances d'être cité doublent quasiment.</p><p>Autre enseignement à contre-courant des idées reçues : les noms de domaine en .gov ou .edu n'ont aucun avantage automatique (3,2 citations en moyenne, contre 4,0 pour les domaines classiques). Ce qui compte, c'est la diversité et la qualité des domaines référents, pas le suffixe.</p><h2>Facteur n°3 : les données structurées Schema.org, un plus mais pas un déclencheur</h2><p>Contrairement à une idée très répandue, le balisage FAQPage n'a qu'un impact limité selon SE Ranking : les pages avec schéma FAQ obtiennent en moyenne <strong>3,6 citations</strong>, contre <strong>4,2</strong> pour celles qui n'en ont pas. Le schéma seul n'augmente donc pas significativement la probabilité de citation.</p><p>Ce qui reste utile, en revanche :</p><ul><li><p>Le balisage <strong>Article</strong>, <strong>Organization</strong>, <strong>Product</strong> ou <strong>LocalBusiness</strong> pour contextualiser instantanément le type de page.</p></li><li><p>Des signaux d'auteur vérifiables : bio, photo, lien LinkedIn, propriété <code>sameAs</code> pointant vers les profils officiels.</p></li><li><p>Une structure claire en titres H2/H3, même sans balisage technique - c'est la structuration de l'information qui prime sur son marquage.</p></li></ul><h2>Facteur n°4 : le fichier llms.txt, une fausse bonne idée</h2><p>C'est sans doute la conclusion la plus contre-intuitive de l'étude SE Ranking : le fichier <strong>llms.txt</strong>, présenté par de nombreux acteurs comme indispensable pour être compris et cité par les IA, n'a <strong>aucun impact positif mesurable</strong>. Pire : sa présence a même légèrement réduit la précision du modèle prédictif utilisé dans l'étude, et sa suppression a amélioré les résultats.</p><p>Concrètement : ne perdez pas de temps à en faire une priorité. Concentrez vos ressources sur l'autorité de domaine, la qualité du contenu et l'accès effectif des crawlers via un <code>robots.txt</code> correctement configuré (voir plus bas).</p><h2>Facteur n°5 : l'E-E-A-T et la reconnaissance de votre marque comme entité</h2><p>ChatGPT évalue la cohérence thématique d'un domaine avant de le citer. Un site qui traite en profondeur un sujet précis construit une <strong>empreinte sémantique</strong> : le nom de la marque finit par être associé à une niche précise dans les représentations internes du modèle, ce qui la fait exister comme une <strong>entité reconnue</strong> plutôt que comme une simple page parmi d'autres.</p><ul><li><p>Des citations d'experts dans le contenu : les pages qui en contiennent obtiennent en moyenne <strong>4,1 citations</strong>, contre 2,4 pour celles qui n'en ont pas.</p></li><li><p>Des données statistiques sourcées : au-delà de 19 points de données par page, la moyenne grimpe à <strong>5,4 citations</strong> contre 2,8 pour un contenu pauvre en chiffres.</p></li><li><p>Une fraîcheur entretenue : un contenu mis à jour dans les trois derniers mois obtient <strong>6,0 citations</strong> en moyenne, contre 3,1 pour un contenu qui traîne sans retouche.</p></li></ul><h2>Facteur n°6 : les avis clients et la présence sur les plateformes tierces</h2><p>ChatGPT ne se contente pas de votre propre site pour vous citer : il croise les signaux avec des plateformes qu'il considère déjà fiables. Selon SE Ranking, les domaines présents sur des plateformes d'avis comme <strong>Trustpilot, G2, Capterra, Sitejabber ou Yelp</strong> ont <strong>trois fois plus de chances</strong> d'être choisis comme source que les sites absents de ces plateformes (jusqu'à 6,3 citations contre 1,8).</p><p>Même logique pour les forums et réseaux sociaux : une présence massive sur Reddit ou Quora peut faire grimper les citations de 1,7-1,8 à plus de 7 en moyenne. Pour les entreprises locales, réclamer et entretenir sa fiche Google Business Profile ainsi que ses avis clients géolocalisés joue le même rôle de preuve sociale que les grandes plateformes B2B pour les sites plus établis.</p><h2>Facteur n°7 : le contenu multimodal, la nouvelle frontière</h2><p>Avec l'intégration croissante de la recherche par image, de la lecture de vidéos et des réponses vocales dans ChatGPT, le contenu purement textuel n'est plus la seule matière première des citations. Des transcriptions vidéo bien structurées, des images correctement légendées (attribut <code>alt</code>, légendes descriptives) et des podcasts retranscrits en texte augmentent la surface d'extraction disponible pour le modèle.</p><p>Ce n'est pas encore le facteur le plus lourd dans la balance, mais il progresse vite : les marques qui documentent leur expertise sous plusieurs formats (texte, vidéo, audio) élargissent mécaniquement leurs chances d'être repérées, quel que soit le format de requête posé à l'IA.</p><h2>Comparatif : ChatGPT vs Perplexity vs Claude vs Gemini</h2><p>Toutes les IA génératives ne fonctionnent pas de la même façon. Voici ce qui change concrètement pour votre stratégie de contenu :</p><table style="min-width: 125px;"><colgroup><col style="min-width: 25px;"><col style="min-width: 25px;"><col style="min-width: 25px;"><col style="min-width: 25px;"><col style="min-width: 25px;"></colgroup><tbody><tr><th colspan="1" rowspan="1"><p>Plateforme</p></th><th colspan="1" rowspan="1"><p>Source des données</p></th><th colspan="1" rowspan="1"><p>Format de citation</p></th><th colspan="1" rowspan="1"><p>Bot à autoriser</p></th><th colspan="1" rowspan="1"><p>Signal dominant</p></th></tr><tr><td colspan="1" rowspan="1"><p>ChatGPT (Search)</p></td><td colspan="1" rowspan="1"><p>Index propriétaire + RAG temps réel</p></td><td colspan="1" rowspan="1"><p>Liens en note de bas de réponse</p></td><td colspan="1" rowspan="1"><p>OAI-SearchBot</p></td><td colspan="1" rowspan="1"><p>Autorité de domaine + Content-Answer Fit</p></td></tr><tr><td colspan="1" rowspan="1"><p>Perplexity</p></td><td colspan="1" rowspan="1"><p>Crawl web en temps réel</p></td><td colspan="1" rowspan="1"><p>Numéros de citation intégrés au texte</p></td><td colspan="1" rowspan="1"><p>PerplexityBot</p></td><td colspan="1" rowspan="1"><p>Fraîcheur du contenu + faits chiffrés</p></td></tr><tr><td colspan="1" rowspan="1"><p>Claude (Anthropic)</p></td><td colspan="1" rowspan="1"><p>Recherche web + documents fournis par l'utilisateur</p></td><td colspan="1" rowspan="1"><p>Sources listées en fin de réponse</p></td><td colspan="1" rowspan="1"><p>ClaudeBot</p></td><td colspan="1" rowspan="1"><p>Précision factuelle + cohérence des sources</p></td></tr><tr><td colspan="1" rowspan="1"><p>Google Gemini / AI Overview</p></td><td colspan="1" rowspan="1"><p>Index Google classique</p></td><td colspan="1" rowspan="1"><p>Cartes de sources cliquables</p></td><td colspan="1" rowspan="1"><p>Googlebot</p></td><td colspan="1" rowspan="1"><p>Autorité de domaine + E-E-A-T</p></td></tr></tbody></table><h2>Mesurer son Share of Voice sur les IA génératives</h2><p>Impossible de piloter ce qu'on ne mesure pas. Le <strong>Share of Voice</strong> (part de voix) sur les IA génératives correspond au pourcentage de citations obtenues par votre marque par rapport à vos concurrents, sur un panier de prompts représentatifs de votre secteur. Mikaël Priol a d'ailleurs développé un indicateur dédié, le <strong>GPT-REACH</strong>, pour estimer statistiquement la probabilité qu'un contenu soit repris et cité dans ChatGPT.</p><p>Plusieurs outils, français et internationaux, permettent aujourd'hui de suivre ce Share of Voice :</p><table style="min-width: 100px;"><colgroup><col style="min-width: 25px;"><col style="min-width: 25px;"><col style="min-width: 25px;"><col style="min-width: 25px;"></colgroup><tbody><tr><th colspan="1" rowspan="1"><p>Outil</p></th><th colspan="1" rowspan="1"><p>Origine</p></th><th colspan="1" rowspan="1"><p>Ce qu'il mesure</p></th><th colspan="1" rowspan="1"><p>Point fort</p></th></tr><tr><td colspan="1" rowspan="1"><p>Meteoria</p></td><td colspan="1" rowspan="1"><p>France</p></td><td colspan="1" rowspan="1"><p>Visibilité IA (ChatGPT, Perplexity, Gemini, Mistral) via scraping UI quotidien</p></td><td colspan="1" rowspan="1"><p>Traduit les signaux GEO en priorités SEO concrètes</p></td></tr><tr><td colspan="1" rowspan="1"><p>Botrank</p></td><td colspan="1" rowspan="1"><p>France</p></td><td colspan="1" rowspan="1"><p>Suivi quotidien de la visibilité LLM sur ChatGPT, Perplexity, AI Overview, Gemini</p></td><td colspan="1" rowspan="1"><p>Accompagnement et équipe réactive</p></td></tr><tr><td colspan="1" rowspan="1"><p>Qwairy</p></td><td colspan="1" rowspan="1"><p>France</p></td><td colspan="1" rowspan="1"><p>Visibilité IA sur 10+ moteurs, avec recommandations contenu et backlinks</p></td><td colspan="1" rowspan="1"><p>Approche prescriptive : du signal à l'action</p></td></tr><tr><td colspan="1" rowspan="1"><p>Peec.ai</p></td><td colspan="1" rowspan="1"><p>France</p></td><td colspan="1" rowspan="1"><p>Position, citations et sentiment de marque sur 3 moteurs principaux + add-ons</p></td><td colspan="1" rowspan="1"><p>Dashboard simple, rapide à prendre en main</p></td></tr><tr><td colspan="1" rowspan="1"><p>Semrush</p></td><td colspan="1" rowspan="1"><p>International</p></td><td colspan="1" rowspan="1"><p>Module AI Overview/AI visibility intégré à la suite SEO existante</p></td><td colspan="1" rowspan="1"><p>Connecté aux données SEO classiques déjà en place</p></td></tr><tr><td colspan="1" rowspan="1"><p>HubSpot</p></td><td colspan="1" rowspan="1"><p>International</p></td><td colspan="1" rowspan="1"><p>Suivi des mentions de marque dans les réponses IA côté marketing</p></td><td colspan="1" rowspan="1"><p>Intégration native au CRM et au reporting marketing</p></td></tr><tr><td colspan="1" rowspan="1"><p>Ahrefs</p></td><td colspan="1" rowspan="1"><p>International</p></td><td colspan="1" rowspan="1"><p>Brand Radar et suivi des citations IA couplé aux données de backlinks</p></td><td colspan="1" rowspan="1"><p>Croise autorité de domaine et visibilité IA dans un même outil</p></td></tr></tbody></table><h2>Plan d'action sur 30 jours</h2><h3>Semaine 1 - Audit technique et sémantique</h3><ul><li><p>Vérifier le <code>robots.txt</code> pour GPTBot, OAI-SearchBot et ChatGPT-User.</p></li><li><p>Tester 10 requêtes clés directement dans ChatGPT, Perplexity et Claude pour voir si votre marque apparaît.</p></li><li><p>Auditer la structure des pages stratégiques (premier paragraphe, longueur des sections, titres).</p></li></ul><h3>Semaine 2 - Contenu et Content-Answer Fit</h3><ul><li><p>Réécrire les premiers paragraphes des pages prioritaires en réponse directe (moins de 50 mots).</p></li><li><p>Ajouter des chiffres, dates et sources vérifiables dans chaque section clé.</p></li><li><p>Restructurer les sections trop courtes ou trop longues autour de 120 à 180 mots.</p></li></ul><h3>Semaine 3 - Données structurées et autorité d'entité</h3><ul><li><p>Déployer le balisage Schema.org (Article, Organization, LocalBusiness selon les pages) sans en attendre de miracle sur les citations.</p></li><li><p>Renforcer la page auteur : bio, photo, lien LinkedIn, propriété <code>sameAs</code>.</p></li><li><p>Réclamer et compléter les profils sur les plateformes d'avis pertinentes pour votre secteur.</p></li></ul><h3>Semaine 4 - Autorité de domaine et mesure</h3><ul><li><p>Identifier 5 à 10 sites tiers pertinents (annuaires, presse spécialisée, forums) pour obtenir des mentions et des liens.</p></li><li><p>Mettre en place un suivi du Share of Voice avec un outil dédié (Meteoria, Botrank, Qwairy, Peec.ai ou un module intégré à Semrush/Ahrefs).</p></li><li><p>Relancer le test des 10 requêtes clés et comparer les résultats au jour 1.</p></li></ul><h2>Comment être référencé sur ChatGPT ?</h2><p>Être référencé sur ChatGPT tient à la combinaison de deux choses : un accès technique sans friction pour les crawlers, et un contenu capable de répondre seul, sans contexte externe, à la question posée. L'étude SE Ranking le confirme : ce ne sont pas les astuces à la mode qui font la différence, mais des fondamentaux solides déjà connus du SEO classique.</p><p>En pratique, ça se joue sur un nombre restreint de leviers, à traiter dans cet ordre de priorité :</p><ul><li><p>Un <strong>contenu qui répond directement</strong> à la question dès les premières lignes (Content-Answer Fit), avec un ton affirmatif et des sections de 120 à 180 mots.</p></li><li><p>Un balisage <strong>Schema.org</strong> cohérent (Article, Organization, LocalBusiness) pour contextualiser vos pages, sans attendre de miracle du seul balisage FAQ.</p></li><li><p>Une <strong>autorité de domaine</strong> réelle, portée par des domaines référents diversifiés - le seuil des 32 000 domaines référents change tout, mais chaque backlink de qualité compte avant ça.</p></li><li><p>Un fichier <strong>robots.txt</strong> qui autorise explicitement les crawlers IA (GPTBot, OAI-SearchBot) plutôt que de les bloquer par erreur.</p></li><li><p>Une présence d'<strong>entité reconnue</strong> : mentions cohérentes de votre marque sur des sites tiers fiables, avis clients sur des plateformes comme Trustpilot ou G2, et empreinte sémantique claire autour de votre niche.</p></li></ul><p>Sans ces bases, même un contenu très complet reste invisible aux yeux du modèle : ChatGPT ne récompense pas la quantité, il récompense l'autorité, la clarté et la vérifiabilité.</p><h2>FAQ</h2><h3>Comment être référencé sur ChatGPT ?</h3><p>En autorisant les robots d'OpenAI (OAI-SearchBot, GPTBot) dans le <code>robots.txt</code>, en structurant chaque page autour d'une réponse directe et vérifiable, en ajoutant du balisage Schema.org sur les pages stratégiques, et en construisant une autorité de domaine réelle via des domaines référents diversifiés. C'est la combinaison de l'accès technique et de la clarté du contenu qui fait la différence.</p><h3>Comment être cité par ChatGPT ?</h3><p>En travaillant en priorité le Content-Answer Fit : répondre à la question posée dès les premières lignes, de façon autonome et factuelle. Les facteurs secondaires (autorité de domaine, données structurées, avis clients, présence tierce) viennent ensuite renforcer ce socle - et selon SE Ranking, l'autorité de domaine reste statistiquement le facteur le plus déterminant.</p><h3>Faut-il utiliser le fichier llms.txt pour être mieux référencé sur ChatGPT ?</h3><p>Non, ou en tout cas pas en priorité. L'étude SE Ranking, menée sur 129 000 domaines et 216 524 pages, montre que la présence d'un fichier llms.txt n'a pratiquement aucun impact sur la probabilité de citation - sa suppression a même amélioré la précision du modèle prédictif utilisé dans l'étude.</p><h3>Faut-il bloquer GPTBot pour protéger son contenu ?</h3><p>Bloquer GPTBot empêche l'entraînement des modèles sur votre contenu, mais n'a pas d'impact direct sur votre présence dans les résultats de ChatGPT Search, qui dépend surtout d'OAI-SearchBot. Bloquer les deux revient à disparaître complètement des réponses de ChatGPT.</p><h3>Combien de temps faut-il pour apparaître dans les réponses de ChatGPT ?</h3><p>Les premiers effets sont souvent visibles en 2 à 4 semaines sur des requêtes peu concurrentielles, notamment après une réécriture des premiers paragraphes. Sur des sujets très disputés, comptez plutôt 2 à 3 mois, le temps que l'autorité de domaine et les mentions tierces se construisent.</p><h3>Le SEO classique sert-il encore à quelque chose ?</h3><p>Oui, et c'est même un pré-requis : d'après Mikaël Priol, 90 % des sites restent totalement invisibles dans ChatGPT, souvent faute d'autorité de domaine suffisante. Le GEO s'ajoute au SEO, il ne le remplace pas.</p><h2>Sources utiles</h2><ul><li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://seranking.com/fr/blog/comment-se-referencer-sur-chatgpt/">SE Ranking - Étude sur les 20 facteurs influençant les citations ChatGPT (129 000 domaines, 216 524 pages)</a></p></li><li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.seo.fr/blog/etre-visible-sur-chatgpt">SEO.fr - Étude de Mikaël Priol sur la visibilité des marques dans ChatGPT (300 000 questions, 680 000 marques)</a></p></li><li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://arxiv.org/abs/2311.09735">Aggarwal et al., « GEO: Generative Engine Optimization », arXiv, 2311.09735 (SIGKDD 2024)</a></p></li><li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://developers.openai.com/api/docs/bots">OpenAI - Documentation officielle des bots (GPTBot, OAI-SearchBot, ChatGPT-User)</a></p></li><li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://platform.openai.com/robots.txt">OpenAI - robots.txt de référence</a></p></li><li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://schema.org/">Schema.org - vocabulaire de données structurées</a></p></li></ul><p></p>`;
 
   return (
     <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
       <SEO 
-        title="Comment être cité par ChatGPT ? Le guide complet 2026" 
+        title="Comment être cité par ChatGPT en 2026 : le guide complet" 
         description="Référencement ChatGPT : les 7 facteurs clés pour être cité en 2026, mesurer votre Share of Voice et optimiser votre site pour les LLM."
         keywords="ChatGPT, SEO, GEO, IA, LLM, optimisation, Share of Voice, RAG, Perplexity, Claude, Gemini"
         schema={breadcrumbSchema}
-        ogTitle="Comment être cité par ChatGPT ? Le guide complet 2026"
+        ogTitle="Comment être cité par ChatGPT en 2026 : le guide complet"
         ogDescription="Découvrez les 7 facteurs clés pour être cité par ChatGPT et les LLM en 2026."
         image="https://images.unsplash.com/photo-1674027444485-cec3da58eef4?auto=format&fit=crop&q=80&w=1200"
         type="article"
@@ -521,24 +160,10 @@ export const EtreCiteParChatGpt: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             
             {/* Sidebar / Table of Contents (Desktop) */}
-            <aside className="hidden lg:block lg:col-span-3">
-                <div className="sticky top-32 space-y-4">
-                    <h3 className="font-display font-bold text-slate-900 uppercase tracking-widest text-sm mb-4">Sommaire</h3>
-                    <nav className="flex flex-col space-y-3 text-sm font-medium text-slate-500">
-                        <a href="#enjeu" className="hover:text-blue-600 transition-colors">Pourquoi un enjeu SEO</a>
-                        <a href="#sources" className="hover:text-blue-600 transition-colors">Comment ChatGPT sélectionne</a>
-                        <a href="#facteurs" className="hover:text-blue-600 transition-colors">Les 7 facteurs clés</a>
-                        <a href="#comparatif" className="hover:text-blue-600 transition-colors">ChatGPT vs autres LLM</a>
-                        <a href="#mesurer" className="hover:text-blue-600 transition-colors">Mesurer le taux de citation</a>
-                        <a href="#plan" className="hover:text-blue-600 transition-colors">Plan d'action 30 jours</a>
-                        <a href="#faq" className="hover:text-blue-600 transition-colors">FAQ</a>
-                        <a href="#sources-utiles" className="hover:text-blue-600 transition-colors">Sources utiles</a>
-                    </nav>
-                </div>
-            </aside>
+            
 
             {/* Main Content */}
-            <article className="lg:col-span-9 prose prose-lg xl:prose-xl prose-slate max-w-none font-sans prose-headings:font-display prose-headings:font-bold prose-a:text-blue-600 prose-h1:hidden" dangerouslySetInnerHTML={{ __html: htmlContent }} />
+            <article className="lg:col-span-12 max-w-4xl mx-auto prose prose-lg xl:prose-xl prose-slate max-w-none font-sans prose-headings:font-display prose-headings:font-bold prose-a:text-blue-600 prose-h1:hidden" dangerouslySetInnerHTML={{ __html: htmlContent }} />
         </div>
 
         {/* Share / Footer */}

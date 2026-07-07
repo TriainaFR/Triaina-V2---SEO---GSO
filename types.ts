@@ -58,6 +58,8 @@ export type Page =
   | 'agence-seo-angers-2026'
   | 'agence-seo-vannes-2026'
   | 'agence-seo-avignon-2026'
+  | 'agence-seo-toulon-2026'
+  | 'agence-seo-la-rochelle-2026'
   | '404';
 
 export interface NavLink {

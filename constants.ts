@@ -58,7 +58,9 @@ export const PAGE_TO_URL: Record<string, string> = {
   'referencement-gemini-2026': '/blog/referencement-gemini-2026',
   'agence-seo-angers-2026': '/blog/agence-seo-angers-2026',
   'agence-seo-vannes-2026': '/blog/agence-seo-vannes-2026',
-  'agence-seo-avignon-2026': '/blog/agence-seo-avignon-2026'
+  'agence-seo-avignon-2026': '/blog/agence-seo-avignon-2026',
+  'agence-seo-toulon-2026': '/blog/agence-seo-toulon-2026',
+  'agence-seo-la-rochelle-2026': '/blog/agence-seo-la-rochelle-2026'
 };
 
 export const ROUTES: Record<string, Page> = {
@@ -104,6 +106,8 @@ export const ROUTES: Record<string, Page> = {
   '/blog/agence-seo-angers-2026': 'agence-seo-angers-2026',
   '/blog/agence-seo-vannes-2026': 'agence-seo-vannes-2026',
   '/blog/agence-seo-avignon-2026': 'agence-seo-avignon-2026',
+  '/blog/agence-seo-toulon-2026': 'agence-seo-toulon-2026',
+  '/blog/agence-seo-la-rochelle-2026': 'agence-seo-la-rochelle-2026',
   '/blog/strategie-contenu-ia-first': 'strategie-contenu-ia-first',
   '/blog/schema-org-donnees-structurees-gso': 'schema-org-donnees-structurees-gso-2026',
   '/blog/agence-seo-vs-agence-gso': 'agence-seo-vs-agence-gso',
@@ -415,6 +419,7 @@ export const PARTNERS_DATA: PartnerItem[] = [
 
 export const BLOG_DATA: BlogItem[] = [
   
+  
   {
     id: 'seo-vs-referencement-ia',
     source: 'Guide Comparatif',
@@ -569,17 +574,7 @@ export const BLOG_DATA: BlogItem[] = [
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
   },
-  {
-    id: 'etre-cite-par-chatgpt',
-    source: 'Guide IA',
-    logo: '',
-    date: '4 MAI 2026',
-    title: 'Comment être cité par ChatGPT ? Le guide complet 2026',
-    excerpt: 'Référencement ChatGPT : découvrez les 7 facteurs clés pour être cité par ChatGPT en 2026, mesurer votre taux de citation IA et optimiser votre site pour les LLM.',
-    url: '/blog/etre-cite-par-chatgpt',
-    image: 'https://images.unsplash.com/photo-1674027444485-cec3da58eef4?auto=format&fit=crop&q=80&w=1200',
-    tag: 'GUIDE'
-  },
+  
   {
     id: 'geo-definition-2026',
     source: 'Guide GEO',
@@ -691,17 +686,7 @@ export const BLOG_DATA: BlogItem[] = [
     image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
   },
-  {
-    id: 'top-10-agences-seo-geo-paris-2026',
-    source: 'Comparatif',
-    logo: '',
-    date: '16 JUIN 2026',
-    title: 'Top 10 des meilleures agences SEO & GEO à Paris en 2026',
-    excerpt: 'Classement des 10 meilleures agences SEO et GEO (Generative Engine Optimization) à Paris en 2026 : profils détaillés, critères de sélection, guide de décision et FAQ.',
-    url: '/blog/top-agences-seo-geo-paris',
-    image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=1200',
-    tag: 'AGENCE'
-  },
+  
   {
     id: 'agence-seo-lyon-2026',
     source: 'Comparatif',
@@ -812,17 +797,7 @@ export const BLOG_DATA: BlogItem[] = [
     image: '/images/ai-overview-ecommerce.jpg',
     tag: 'GUIDE'
   },
-  {
-    id: 'google-ai-overview-france',
-    source: 'Actualité IA',
-    logo: '',
-    date: '06 JUILLET 2026',
-    title: 'Google AI Overview en France : date de lancement, ce qui change et 7 actions à mener avant l\'échéance',
-    excerpt: 'Google a confirmé le lancement d\'AI Overview en France d\'ici le 23 septembre 2026. Découvrez les changements et l\'impact SEO attendu.',
-    url: '/blog/google-ai-overview-france',
-    image: '/images/llm-seo-guide.jpg',
-    tag: 'ACTU'
-  },
+  
   {
     id: 'agence-seo-angers-2026',
     source: 'Classement Agences',
@@ -842,7 +817,7 @@ export const BLOG_DATA: BlogItem[] = [
     title: 'Agence SEO & GEO Vannes : top 5 en 2026',
     excerpt: 'Comparatif des 5 meilleures agences SEO et GEO à Vannes en 2026. Découvrez comment choisir une agence capable de référencer votre site sur Google et les IA.',
     url: '/blog/agence-seo-vannes-2026',
-    image: 'https://images.unsplash.com/photo-1610332832560-64decebbdce0?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/6/68/Bretagne_les_remparts_de_Vannes.jpg',
     tag: 'CLASSEMENT'
   },
   {
@@ -855,6 +830,61 @@ export const BLOG_DATA: BlogItem[] = [
     url: '/blog/agence-seo-avignon-2026',
     image: 'https://upload.wikimedia.org/wikipedia/commons/8/84/Pope_palace_Avignon_by_Rosier.jpg',
     tag: 'CLASSEMENT'
+  },
+  {
+    id: 'agence-seo-toulon-2026',
+    source: 'Classement Agences',
+    logo: '',
+    date: '07 JUILLET 2026',
+    title: 'Agence SEO & GEO Toulon : top 5 en 2026',
+    excerpt: 'Comparatif des 5 meilleures agences SEO et GEO à Toulon en 2026. Découvrez comment choisir une agence capable de référencer votre site sur Google et les IA.',
+    url: '/blog/agence-seo-toulon-2026',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/c/c6/Toulon_Ouest_vue_panoramique.jpg',
+    tag: 'CLASSEMENT'
+  },
+  {
+    id: 'agence-seo-la-rochelle-2026',
+    source: 'Classement Agences',
+    logo: '',
+    date: '07 JUILLET 2026',
+    title: 'Agence SEO & GEO La Rochelle : top 5 en 2026',
+    excerpt: 'Comparatif des 5 meilleures agences SEO et GEO à La Rochelle en 2026. Découvrez comment choisir une agence capable de référencer votre site sur Google et les IA.',
+    url: '/blog/agence-seo-la-rochelle-2026',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/f/fd/La_Rochelle_mail_lanterne.jpg',
+    tag: 'CLASSEMENT'
+  },
+  {
+    id: 'etre-cite-par-chatgpt',
+    source: 'Guide IA',
+    logo: '',
+    date: '7 JUILLET 2026',
+    title: 'Comment être cité par ChatGPT en 2026 : le guide complet',
+    excerpt: 'Référencement ChatGPT : découvrez les 7 facteurs clés pour être cité par ChatGPT en 2026, mesurer votre taux de citation IA et optimiser votre site pour les LLM.',
+    url: '/blog/etre-cite-par-chatgpt',
+    image: 'https://images.unsplash.com/photo-1674027444485-cec3da58eef4?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'google-ai-overview-france',
+    source: 'Actualité IA',
+    logo: '',
+    date: '07 JUILLET 2026',
+    title: 'Comment apparaître sur Google AI Overview ? Guide pratique',
+    excerpt: 'Découvrez le guide complet et 7 actions pratiques pour optimiser votre site web pour Google AI Overview. Un tutoriel SEO et GEO de Triaina.',
+    url: '/blog/google-ai-overview-france',
+    image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'top-10-agences-seo-geo-paris-2026',
+    source: 'Comparatif',
+    logo: '',
+    date: '07 JUILLET 2026',
+    title: 'Meilleure agence GEO Paris 2026 : le classement',
+    excerpt: 'Le classement des 5 meilleures agences GEO (Generative Engine Optimization) à Paris en 2026 : Triaina, Digimood, Yumens, Stride-up, Jalousie Agency.',
+    url: '/blog/top-agences-seo-geo-paris',
+    image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=1200',
+    tag: 'AGENCE'
   },
 ];
 

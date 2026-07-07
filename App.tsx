@@ -39,6 +39,8 @@ import { GoogleAiOverviewFrance } from './views/blog/GoogleAiOverviewFrance';
 import { AgenceSeoAngers } from './views/blog/AgenceSeoAngers';
 import { AgenceSeoVannes } from './views/blog/AgenceSeoVannes';
 import { AgenceSeoAvignon } from './views/blog/AgenceSeoAvignon';
+import { AgenceSeoToulon } from './views/blog/AgenceSeoToulon';
+import { AgenceSeoLaRochelle } from './views/blog/AgenceSeoLaRochelle';
 import { StrategieContenuIaFirst } from './views/blog/StrategieContenuIaFirst';
 import { AgenceSeoVsGso2026 } from './views/blog/AgenceSeoVsGso2026';
 import { SchemaOrgGso2026 } from './views/blog/SchemaOrgGso2026';
@@ -287,6 +289,10 @@ const App: React.FC = () => {
         return <AgenceSeoAngers />;
       case 'agence-seo-vannes-2026':
         return <AgenceSeoVannes />;
+      case 'agence-seo-toulon-2026':
+        return <AgenceSeoToulon />;
+      case 'agence-seo-la-rochelle-2026':
+        return <AgenceSeoLaRochelle />;
       case 'agence-seo-avignon-2026':
         return <AgenceSeoAvignon />;
       case 'strategie-contenu-ia-first':

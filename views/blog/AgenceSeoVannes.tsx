@@ -16,7 +16,7 @@ export const AgenceSeoVannes: React.FC = () => {
       "@type": "Article",
       "headline": "Agence SEO & GEO Vannes : top 5 en 2026",
       "description": "Comparatif des 5 meilleures agences SEO et GEO à Vannes en 2026. Découvrez comment choisir une agence capable de référencer votre site sur Google et les IA génératives (ChatGPT, Perplexity).",
-      "image": "https://images.unsplash.com/photo-1610332832560-64decebbdce0?auto=format&fit=crop&q=80&w=1200",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/68/Bretagne_les_remparts_de_Vannes.jpg",
       "datePublished": "2026-07-06",
       "dateModified": "2026-07-06",
       "author": {
@@ -276,7 +276,7 @@ export const AgenceSeoVannes: React.FC = () => {
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               referrerPolicy="no-referrer"
               onError={(e) => {
-                (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1610332832560-64decebbdce0?auto=format&fit=crop&q=80&w=1200";
+                (e.target as HTMLImageElement).src = "https://upload.wikimedia.org/wikipedia/commons/6/68/Bretagne_les_remparts_de_Vannes.jpg";
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
