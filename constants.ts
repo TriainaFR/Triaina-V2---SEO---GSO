@@ -60,10 +60,16 @@ export const PAGE_TO_URL: Record<string, string> = {
   'agence-seo-vannes-2026': '/blog/agence-seo-vannes-2026',
   'agence-seo-avignon-2026': '/blog/agence-seo-avignon-2026',
   'agence-seo-toulon-2026': '/blog/agence-seo-toulon-2026',
-  'agence-seo-la-rochelle-2026': '/blog/agence-seo-la-rochelle-2026'
+  'agence-seo-la-rochelle-2026': '/blog/agence-seo-la-rochelle-2026',
+  'agence-google-ai-overview-2026': '/blog/agence-google-ai-overview',
+  'meilleure-agence-referencement-ia-france-2026': '/blog/meilleure-agence-referencement-ia-france',
+  'agence-geo-paris': '/agence-geo-paris',
 };
 
 export const ROUTES: Record<string, Page> = {
+  '/agence-geo-paris': 'agence-geo-paris',
+  '/blog/meilleure-agence-referencement-ia-france': 'meilleure-agence-referencement-ia-france-2026',
+  '/blog/agence-google-ai-overview': 'agence-google-ai-overview-2026',
   '/': 'home',
   '/agence': 'team',
   '/references': 'references',
@@ -151,7 +157,8 @@ export const NAV_LINKS: NavLink[] = [
     children: [
         { id: 'seo-paris', label: 'Agence SEO Paris' },
         { id: 'agence-referencement-ia', label: 'Agence Référencement IA' },
-        { id: 'agence-referencement-ia-paris', label: 'Agence Référencement IA Paris' }
+        { id: 'agence-referencement-ia-paris', label: 'Agence Référencement IA Paris' },
+        { id: 'agence-geo-paris', label: 'Agence GEO Paris' }
     ]
   },
   { id: 'references', label: 'RÉFÉRENCES' },
@@ -418,6 +425,10 @@ export const PARTNERS_DATA: PartnerItem[] = [
 ];
 
 export const BLOG_DATA: BlogItem[] = [
+
+  
+
+
   
   
   {
@@ -886,6 +897,30 @@ export const BLOG_DATA: BlogItem[] = [
     image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=1200',
     tag: 'AGENCE'
   },
+  {
+    id: 'agence-google-ai-overview-2026',
+    source: 'Guide',
+    logo: '',
+    date: '08 JUILLET 2026',
+    title: 'Agence Google AI Overview : comment être recommandé en 2026',
+    excerpt: 'Qu\'est-ce qu\'une agence Google AI Overview ? Découvrez les critères de choix, les stratégies E-E-A-T et comment optimiser votre site pour les aperçus IA.',
+    url: '/blog/agence-google-ai-overview',
+    image: '/images/ai_overview_agency.jpg',
+    tag: 'AGENCE GEO'
+  },
+  {
+    id: 'meilleure-agence-referencement-ia-france-2026',
+    source: 'Classement',
+    logo: '',
+    date: '08 JUILLET 2026',
+    title: 'Meilleure agence référencement IA France 2026 : le classement',
+    excerpt: 'Le classement complet 2026 des 6 meilleures agences de référencement IA en France : Triaina, Eskimoz, Archipel Marketing, SmartKeyword, Promoovoir et NOIISE.',
+    url: '/blog/meilleure-agence-referencement-ia-france',
+    image: '/images/meilleure_agence_ia_france.jpg',
+    tag: 'CLASSEMENT'
+  }
+,
+
 ];
 
 export const CAREERS_DATA: JobOffer[] = [];

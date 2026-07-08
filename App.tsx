@@ -49,6 +49,9 @@ import { PerplexitySeo2026 } from './views/blog/PerplexitySeo2026';
 import { MeilleureAgenceGeoFrance2026 } from './views/blog/MeilleureAgenceGeoFrance2026';
 import { MarqueVisibleChatgpt2026 } from './views/blog/MarqueVisibleChatgpt2026';
 import { TopAgencesSeoGeoParis2026 } from './views/blog/TopAgencesSeoGeoParis2026';
+import { AgenceGoogleAiOverview2026 } from './views/blog/AgenceGoogleAiOverview2026';
+import { AgenceGeoParis } from './views/AgenceGeoParis';
+import { MeilleureAgenceReferencementIaFrance2026 } from './views/blog/MeilleureAgenceReferencementIaFrance2026';
 import { AgenceSeoLyon2026 } from './views/blog/AgenceSeoLyon2026';
 import { AgenceSeoBordeaux2026 } from './views/blog/AgenceSeoBordeaux2026';
 import { AgenceSeoLille2026 } from './views/blog/AgenceSeoLille2026';
@@ -310,7 +313,13 @@ const App: React.FC = () => {
       case '10-conseils-marque-visible-chatgpt-2026':
         return <MarqueVisibleChatgpt2026 />;
       case 'top-10-agences-seo-geo-paris-2026':
-        return <TopAgencesSeoGeoParis2026 />;
+      return <TopAgencesSeoGeoParis2026 />;
+    case 'agence-google-ai-overview-2026':
+      return <AgenceGoogleAiOverview2026 />;
+    case 'agence-geo-paris':
+      return <AgenceGeoParis />;
+    case 'meilleure-agence-referencement-ia-france-2026':
+      return <MeilleureAgenceReferencementIaFrance2026 />;
       case 'agence-seo-lyon-2026':
         return <AgenceSeoLyon2026 />;
       case 'agence-seo-bordeaux-2026':

@@ -1,0 +1,212 @@
+import React, { useEffect } from 'react';
+import { ArrowLeft, Calendar, Clock } from 'lucide-react';
+import { PAGE_TO_URL, BLOG_DATA } from '../../constants';
+import { SEO } from '../../components/SEO';
+
+export const AgenceGoogleAiOverview2026: React.FC = () => {
+  const post = BLOG_DATA.find(p => p.id === 'agence-google-ai-overview-2026');
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://www.triaina.fr"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.triaina.fr/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Agence Google AI Overview : comment être recommandé en 2026",
+          "item": "https://www.triaina.fr/blog/agence-google-ai-overview"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "Agence Google AI Overview : comment être recommandé en 2026",
+      "description": "Qu'est-ce qu'une agence Google AI Overview ? Découvrez les critères de choix, les stratégies E-E-A-T et comment optimiser votre site pour les aperçus IA.",
+      "datePublished": "2026-07-08",
+      "dateModified": "2026-07-08",
+      "image": "https://www.triaina.fr/images/ai_overview_agency.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "L'équipe Triaina",
+        "url": "https://www.linkedin.com/company/triaina"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Triaina",
+        "url": "https://www.triaina.fr",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.triaina.fr/logo.png"
+        }
+      },
+      "inLanguage": "fr",
+      "mainEntityOfPage": "https://www.triaina.fr/blog/agence-google-ai-overview"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce qu'une agence Google AI Overview ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "C'est une agence spécialisée qui optimise la visibilité d'une marque dans les résumés générés par l'IA de Google (AI Overviews), en combinant audit de présence IA, renforcement de l'E-E-A-T, structuration de contenu, netlinking qualitatif et suivi des citations - en plus du SEO classique, qui reste un prérequis technique."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Une agence AI Overview remplace-t-elle une agence SEO classique ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Le référencement Google AI Overview s'ajoute au SEO, il ne le remplace pas. Une page doit d'abord être indexée et éligible à un extrait classique pour espérer être citée dans un résumé IA."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de temps pour voir des résultats avec une agence spécialisée AI Overview ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Comptez généralement plusieurs mois. Les modèles génératifs ne réindexent pas leurs sources aussi vite que Google Search, et la construction de citations tierces demande du temps pour produire des effets mesurables."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment vérifier le sérieux d'une agence référencement Google AI Overview ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En demandant sa méthodologie de mesure des citations, des cas clients datés et vérifiables, et la façon dont elle articule concrètement SEO et GEO plutôt que de vendre l'un ou l'autre isolément."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Peut-on suivre soi-même sa présence dans Google AI Overview sans agence ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, en testant manuellement ses requêtes cibles et via le rapport « performances IA générative » de Search Console. C'est faisable pour un petit périmètre, plus difficile à maintenir dans la durée sur un grand nombre de pages."
+          }
+        }
+      ]
+    }
+  ]
+};
+
+  const htmlBody = `<h1>Agence Google AI Overview : comment être recommandé en 2026</h1><p><em>Publié le 8 juillet 2026.</em></p><h2>TL;DR : ce qu'il faut retenir</h2><ul><li><p><strong>Une agence Google AI Overview</strong> n'est pas une agence SEO classique repeinte en « IA » : elle audite votre présence dans les réponses génératives, retravaille l'E-E-A-T de vos contenus, structure vos pages pour l'extraction, et construit des citations tierces qui font de vous une source fiable aux yeux des systèmes de Google.</p></li><li><p><strong>Le référencement Google AI Overview</strong> se joue autant hors de votre site (presse, forums, médias spécialisés, netlinking qualitatif) que sur votre site (structure, balisage, auteurs identifiés).</p></li><li><p><strong>5 critères</strong> permettent de trier le vrai savoir-faire GEO du simple argument marketing : expertise réelle, méthodologie de mesure des citations, cas clients vérifiables, complémentarité SEO+GEO, transparence tarifaire.</p></li><li><p><strong>Faire soi-même reste possible</strong> si vous avez du temps, une équipe éditoriale et de la patience - mais le suivi des citations IA et le travail des sources externes restent le point faible des équipes internes.</p></li></ul><h2>Qu'est-ce qu'une agence Google AI Overview et pourquoi en avoir besoin ?</h2><p>Une <strong>agence Google AI Overview</strong> est une structure spécialisée dans l'optimisation de la visibilité d'une marque dans les résumés générés par l'IA de Google - les blocs « Aperçus IA » qui s'affichent au-dessus des résultats organiques classiques sur certaines requêtes. Son objectif n'est plus seulement de faire grimper une page en position 1, mais de faire en sorte que cette page soit <strong>citée comme source</strong> dans la synthèse rédigée par Gemini.</p><p>C'est une nuance qui change tout. Une agence SEO classique optimise des mots-clés, du maillage interne, des Core Web Vitals et du netlinking pour obtenir un clic. Une agence spécialisée en référencement Google AI Overview ajoute une couche de travail supplémentaire : l'autorité de la marque en dehors de son propre site, la clarté sémantique de ses contenus pour un système génératif, et le suivi de ses citations dans des réponses qui, elles, ne génèrent pas toujours de clic.</p><h3>Différence avec une agence SEO généraliste</h3><ul><li><p><strong>Objectif final</strong> : une agence SEO vise le classement organique ; une agence AI Overview vise la citation dans la synthèse IA, avec ou sans clic derrière.</p></li><li><p><strong>Périmètre de travail</strong> : le SEO classique se concentre sur le site ; le GEO (Generative Engine Optimization) travaille aussi les sources tierces que l'IA consulte pour construire sa réponse - presse, forums, comparateurs, avis.</p></li><li><p><strong>Outils de mesure</strong> : positions et trafic organique d'un côté ; taux de citation, part de voix dans les réponses IA et impressions génératives de l'autre.</p></li></ul><p>Pourquoi en avoir besoin ? Parce que Google l'a confirmé lui-même dans sa documentation officielle : une page doit d'abord remplir les critères d'indexation classiques pour espérer apparaître dans un AI Overview. Le SEO reste le socle. Mais au-dessus de ce socle, la citation dépend de signaux d'expertise, de fraîcheur et d'autorité externe qu'une équipe interne, souvent focalisée sur la production de contenu, maîtrise rarement dans le détail.</p><h2>Ce que fait concrètement une agence spécialisée AI Overview</h2><p>Au-delà du discours commercial, voici les cinq chantiers qu'une agence sérieuse doit mettre en œuvre.</p><h3>1. Audit de présence IA</h3><p>Avant toute action, l'agence teste vos requêtes stratégiques sur Google en environnement contrôlé (navigation privée, plusieurs localisations si votre audience est nationale) pour savoir : quelles requêtes déclenchent un AI Overview, si votre site y est cité, et à quel rang parmi les sources. Cet audit se complète avec le rapport « performances IA générative » de Search Console, disponible progressivement depuis juin 2026, qui isole les impressions liées aux fonctionnalités génératives.</p><h3>2. Optimisation E-E-A-T</h3><p>Expérience, expertise, autorité, fiabilité : Google rappelle dans ses <em>Search Quality Rater Guidelines</em> que ces quatre signaux pèsent lourd dans l'évaluation de la qualité d'un contenu, en particulier sur les sujets qui touchent à la santé, à l'argent ou à la sécurité (YMYL). Une agence spécialisée signe les contenus avec un auteur identifiable, documente son expertise réelle, et corrige les pages anonymes ou signées « la rédaction » qui envoient un signal de confiance faible.</p><h3>3. Structuration contenu et Schema.org</h3><p>Titres reformulés en questions, réponse en tête de paragraphe, hiérarchie H2/H3 lisible pour un humain - Google précise que le balisage Schema.org (FAQPage, HowTo, Article) n'est pas une condition d'apparition dans l'AI Overview, mais il reste une bonne pratique SEO qui facilite l'éligibilité aux résultats enrichis classiques, à condition qu'il reflète fidèlement le texte visible.</p><h3>4. Netlinking pour sources citées</h3><p>C'est le chantier le moins visible et le plus décisif : obtenir des citations tierces dans la presse spécialisée, les études indépendantes, les forums experts et les comparateurs. Un modèle génératif pondère la fiabilité perçue d'une source en croisant ce que dit le site lui-même avec ce que d'autres sites fiables en disent. Une agence qui dispose d'un média propriétaire ou d'un réseau éditorial a ici un avantage structurel sur une équipe qui ne travaille que le contenu on-site.</p><h3>5. Monitoring des citations</h3><p>Un suivi mensuel documente : les requêtes qui déclenchent un AI Overview, la présence ou l'absence de votre marque, la position dans la liste de sources, et l'évolution dans le temps. Ce suivi se double idéalement d'une veille sur ChatGPT, Perplexity et Gemini, puisque les logiques de citation se recoupent partiellement d'un moteur génératif à l'autre.</p><h2>5 critères pour choisir son agence référencement Google AI Overview</h2><h3>1. Une expertise GEO réelle, pas un argument marketing</h3><p>Beaucoup d'agences SEO ont simplement ajouté « GEO » ou « IA » à leur plaquette sans changer de méthode. Demandez des exemples concrets : quelles actions ont été mises en place, sur quel type de site, avec quel résultat mesuré.</p><h3>2. Une méthodologie de mesure des citations</h3><p>Une agence sérieuse explique comment elle mesure votre présence dans les AI Overviews : requêtes suivies, fréquence de contrôle, outils utilisés, exploitation du rapport Search Console dédié. Si la réponse reste vague, c'est un signal d'alerte.</p><h3>3. Des cas clients vérifiables</h3><p>Chiffres datés, secteur d'activité comparable au vôtre, référence contactable si besoin. Une agence qui ne peut montrer aucun cas concret sur ce périmètre récent doit être interrogée sur son ancienneté réelle sur le sujet.</p><h3>4. La complémentarité SEO + GEO</h3><p>Le GEO ne remplace pas le SEO, il s'y ajoute. Une agence qui vous vend du GEO en isolation, sans base SEO technique solide (indexation, maillage, expérience de page), construit sur du sable.</p><h3>5. La transparence tarifaire</h3><p>Forfait mensuel, mission ponctuelle d'audit, ou abonnement à un outil de suivi de citations : le modèle économique doit être clair dès le premier rendez-vous, avec un périmètre de prestations écrit noir sur blanc.</p><h3>Panorama des acteurs positionnés sur le créneau</h3><p>Le marché français du GEO et de l'AI Overview s'est structuré vite depuis 2024-2025. On retrouve des agences venues du SEO pur qui ont élargi leur offre - Natural-Net (Bordeaux), qui publie régulièrement des classements et analyses sur le sujet - et des structures nées directement sur ce créneau, comme Ideopoint, centrée sur la citation par les IA génératives, ou Waisso, qui combine GEO et automatisation par agents IA. NOIISE se positionne davantage sur l'optimisation conversationnelle et vocale. À l'international, HubSpot documente ses propres recommandations GEO à destination des agences et équipes marketing, avec des métriques comme la fréquence de citation ou le score de visibilité IA. La diversité de ces approches confirme un point : il n'existe pas encore de méthode unique standardisée, ce qui renforce l'importance de vérifier la méthodologie réelle derrière chaque prestataire plutôt que le nom sur la vitrine.</p><h2>Agence spécialisée vs faire soi-même : que choisir ?</h2><div class="overflow-x-auto my-8 rounded-lg border border-slate-200"><table class="min-w-full text-sm text-left"><thead class="bg-slate-50 text-slate-700 font-bold border-b border-slate-200"><tr><th class="px-6 py-4 whitespace-nowrap">Critère</th><th class="px-6 py-4">Agence spécialisée AI Overview</th><th class="px-6 py-4">Faire soi-même en interne</th></tr></thead><tbody class="divide-y divide-slate-200"><tr class="hover:bg-slate-50 transition-colors"><td class="px-6 py-4 font-bold text-slate-900">Expertise E-E-A-T et structuration</td><td class="px-6 py-4 text-slate-600">Méthodologie éprouvée sur plusieurs clients, actualisée en continu</td><td class="px-6 py-4 text-slate-600">Dépend fortement des compétences déjà présentes dans l'équipe</td></tr><tr class="hover:bg-slate-50 transition-colors"><td class="px-6 py-4 font-bold text-slate-900">Travail des sources externes (netlinking, presse)</td><td class="px-6 py-4 text-slate-600">Réseau éditorial ou média propriétaire déjà activable</td><td class="px-6 py-4 text-slate-600">Souvent le point faible : peu de relais, peu de temps dédié</td></tr><tr class="hover:bg-slate-50 transition-colors"><td class="px-6 py-4 font-bold text-slate-900">Monitoring des citations IA</td><td class="px-6 py-4 text-slate-600">Suivi mensuel outillé, multi-moteurs (Google, Perplexity, ChatGPT)</td><td class="px-6 py-4 text-slate-600">Vérifications manuelles ponctuelles, rarement systématiques</td></tr><tr class="hover:bg-slate-50 transition-colors"><td class="px-6 py-4 font-bold text-slate-900">Coût</td><td class="px-6 py-4 text-slate-600">Budget mensuel ou mission dédiée, à négocier</td><td class="px-6 py-4 text-slate-600">Coût caché : temps interne détourné d'autres priorités</td></tr><tr class="hover:bg-slate-50 transition-colors"><td class="px-6 py-4 font-bold text-slate-900">Délai de mise en œuvre</td><td class="px-6 py-4 text-slate-600">Plan d'action structuré dès le premier mois</td><td class="px-6 py-4 text-slate-600">Apprentissage progressif, souvent plus lent</td></tr><tr class="hover:bg-slate-50 transition-colors"><td class="px-6 py-4 font-bold text-slate-900">Complémentarité avec le SEA/Paid</td><td class="px-6 py-4 text-slate-600">Possible si l'agence couvre aussi ce levier</td><td class="px-6 py-4 text-slate-600">Nécessite une coordination supplémentaire en interne</td></tr></tbody></table></div><p>Faire soi-même reste une option raisonnable pour une petite structure avec un rédacteur expérimenté, du temps et une patience de plusieurs mois. Mais dès que l'enjeu porte sur plusieurs dizaines de pages stratégiques, ou sur un secteur concurrentiel où la citation IA se joue à la marge, l'accompagnement par une agence qui mesure déjà ce périmètre fait gagner un temps que peu d'équipes internes peuvent se permettre de perdre.</p><h2>Triaina, une approche différente du référencement Google AI Overview</h2><p>Basée à Paris, Triaina est une agence SEO &amp; GEO qui combine trois leviers rarement réunis sous un même toit : un <strong>média propriétaire</strong> pour construire des citations tierces crédibles, une <strong>régie publicitaire</strong> pour activer des partenariats et des espaces que peu d'agences SEO peuvent mobiliser seules, et une <strong>expertise SEA/Paid</strong> intégrée pour sécuriser le trafic pendant que le travail SEO et GEO monte en puissance sur plusieurs mois.</p><p>Cette combinaison répond directement au chantier le plus souvent négligé par les agences généralistes : le netlinking et les sources externes que les IA génératives consultent pour décider qui citer. Un audit technique et du contenu bien structuré ne suffisent pas si personne, ailleurs sur le web, ne parle de vous de façon fiable et documentée.</p><h2>Questions fréquentes</h2><h3>Qu'est-ce qu'une agence Google AI Overview ?</h3><p>C'est une agence spécialisée qui optimise la visibilité d'une marque dans les résumés générés par l'IA de Google (AI Overviews), en combinant audit de présence IA, renforcement de l'E-E-A-T, structuration de contenu, netlinking qualitatif et suivi des citations - en plus du SEO classique, qui reste un prérequis technique.</p><h3>Une agence AI Overview remplace-t-elle une agence SEO classique ?</h3><p>Non. Le référencement Google AI Overview s'ajoute au SEO, il ne le remplace pas. Une page doit d'abord être indexée et éligible à un extrait classique pour espérer être citée dans un résumé IA.</p><h3>Combien de temps pour voir des résultats avec une agence spécialisée AI Overview ?</h3><p>Comptez généralement plusieurs mois. Les modèles génératifs ne réindexent pas leurs sources aussi vite que Google Search, et la construction de citations tierces demande du temps pour produire des effets mesurables.</p><h3>Comment vérifier le sérieux d'une agence référencement Google AI Overview ?</h3><p>En demandant sa méthodologie de mesure des citations, des cas clients datés et vérifiables, et la façon dont elle articule concrètement SEO et GEO plutôt que de vendre l'un ou l'autre isolément.</p><h3>Peut-on suivre soi-même sa présence dans Google AI Overview sans agence ?</h3><p>Oui, en testant manuellement ses requêtes cibles et via le rapport « performances IA générative » de Search Console. C'est faisable pour un petit périmètre, plus difficile à maintenir dans la durée sur un grand nombre de pages.</p><h2>Sources utiles</h2><ul><li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://developers.google.com/search/docs/appearance/ai-features">Google Search Central - AI features and your website</a></p></li><li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide">Google Search Central - Guide d'optimisation pour la recherche IA générative</a></p></li><li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://developers.google.com/search/blog/2022/12/google-raters-guidelines-e-e-a-t">Google Search Central - Search Quality Rater Guidelines et E-E-A-T</a></p></li><li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://support.google.com/websearch/answer/14901683">Google - À propos des Aperçus IA (AI Overviews)</a></p></li><li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://blog.hubspot.com/marketing/generative-engine-optimization">HubSpot - Guide du Generative Engine Optimization (GEO)</a></p></li></ul>`;
+
+  if (!post) return null;
+
+  return (
+    <>
+      <SEO 
+        title="Agence Google AI Overview : comment être recommandé en 2026 | Triaina"
+        description="Qu'est-ce qu'une agence Google AI Overview ? Découvrez les critères de choix, les stratégies E-E-A-T et comment optimiser votre site pour les aperçus IA."
+        canonicalUrl="https://www.triaina.fr/blog/agence-google-ai-overview"
+        type="article"
+        schema={schema}
+        image="/images/ai_overview_agency.jpg"
+      />
+      <div className="pt-32 pb-24 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-6 animate-fade-in-up">
+            <a 
+              href={PAGE_TO_URL['blog']}
+              onClick={(e) => {
+                e.preventDefault();
+                window.history.pushState({}, '', PAGE_TO_URL['blog']);
+                window.dispatchEvent(new PopStateEvent('popstate'));
+              }}
+              className="inline-flex items-center text-slate-600 hover:text-blue-600 transition-colors font-mono text-sm tracking-wide"
+            >
+              <ArrowLeft size={16} className="mr-2" />
+              RETOUR AU BLOG
+            </a>
+            
+            <div className="flex flex-wrap items-center gap-4 text-slate-500 font-mono text-xs tracking-wider">
+              <span className="flex items-center"><Calendar size={14} className="mr-2" />8 JUILLET 2026</span>
+              <span className="text-slate-300">|</span>
+              <span className="flex items-center"><Clock size={14} className="mr-2" />6 min de lecture</span>
+              <span className="text-slate-300">|</span>
+              <span className="text-blue-600 border border-blue-200 bg-blue-50 px-2 py-1 rounded-full">AGENCE GEO</span>
+            </div>
+          </div>
+
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 leading-tight mb-8 animate-fade-in-up md:w-4/5" style={{animationDelay: '0.1s'}}>
+            Agence Google AI Overview : comment être recommandé en 2026
+          </h1>
+
+          <p className="text-xl text-slate-600 leading-relaxed mb-12 animate-fade-in-up md:w-3/4" style={{animationDelay: '0.2s'}}>
+            Découvrez pourquoi le référencement Google AI Overview va bien au-delà du SEO classique, et comment choisir l'agence qui vous placera dans les réponses générées par Gemini.
+          </p>
+
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-20 relative animate-fade-in-up group" style={{animationDelay: '0.3s'}}>
+            <img 
+              src="/images/ai_overview_agency.jpg" 
+              alt="Agence Google AI Overview"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+          </div>
+
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
+            <article className="lg:w-2/3 prose prose-lg prose-slate max-w-none 
+                prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 
+                prose-h1:text-4xl prose-h1:mb-8
+                prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-2 prose-h2:border-b prose-h2:border-slate-200
+                prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
+                prose-p:text-slate-600 prose-p:leading-relaxed prose-p:mb-6
+                prose-a:text-blue-600 hover:prose-a:text-blue-700 prose-a:underline prose-a:font-medium
+                prose-li:text-slate-600 prose-li:marker:text-blue-500
+                prose-ul:space-y-2 prose-ol:space-y-2
+                animate-fade-in-up"
+                style={{animationDelay: '0.3s'}}
+                dangerouslySetInnerHTML={{ __html: htmlBody }}
+            />
+
+            <aside className="lg:w-1/3 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+              <div className="sticky top-32 space-y-8">
+                <div className="bg-slate-900 text-white rounded-3xl p-8 shadow-xl relative overflow-hidden">
+                  <div className="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 rounded-full bg-blue-600/20 blur-2xl"></div>
+                  
+                  <h3 className="text-xl font-display font-bold mb-4 text-white relative z-10">À la recherche d'une agence Google AI Overview ?</h3>
+                  <p className="text-slate-300 mb-6 text-sm relative z-10 leading-relaxed">
+                    Triaina allie un socle technique robuste à une régie média propriétaire pour imposer votre marque dans les réponses de Google, ChatGPT et Gemini.
+                  </p>
+                  
+                  <a 
+                    href={PAGE_TO_URL['contact']}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.history.pushState({}, '', PAGE_TO_URL['contact']);
+                      window.dispatchEvent(new PopStateEvent('popstate'));
+                    }}
+                    className="inline-flex items-center justify-center w-full bg-white text-black px-6 py-3 rounded-xl text-sm font-bold tracking-wide hover:bg-blue-50 transition-colors relative z-10"
+                  >
+                    PRENDRE RENDEZ-VOUS
+                  </a>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};

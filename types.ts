@@ -1,5 +1,8 @@
 
-export type Page = 
+export type Page =
+  | 'agence-geo-paris'
+  | 'meilleure-agence-referencement-ia-france-2026'
+  | 'agence-google-ai-overview-2026' 
   | 'home' 
   | 'references' 
   | 'faq' 
