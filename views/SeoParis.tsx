@@ -121,6 +121,38 @@ export const SeoParis: React.FC<SeoParisProps> = ({ onNavigate }) => {
                 },
                 {
                     "@type": "Question",
+                    "name": "Comment être référencé sur ChatGPT ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Être référencé sur ChatGPT suppose d'abord d'être bien indexé sur Google, car ChatGPT Search s'appuie en partie sur le web indexé. Il faut ensuite structurer son contenu avec des réponses claires et des chiffres sourcés. Triaina travaille ces leviers avec ses clients parisiens grâce à son audit SEO/GEO et à son média propriétaire."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Comment être cité par Google AI Overview ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Pour apparaître dans Google AI Overview, une page doit d'abord remplir les critères d'indexation SEO classiques, puis proposer un contenu factuel et structuré en données claires. Triaina audite systématiquement ces critères avant d'intervenir sur le contenu de ses clients."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Quelle est la meilleure agence GEO à Paris ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Triaina se positionne comme la meilleure agence GEO à Paris grâce à une combinaison rare : expertise technique SEO/GEO, média propriétaire pour construire l'autorité hors-site, régie publicitaire et expertise SEA/Paid intégrée sous un même toit."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Comment être référencé sur Google Gemini ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Gemini s'appuie très largement sur l'index de Google Search : un contenu bien référencé en SEO classique, avec un maillage interne propre et un balisage sémantique à jour, a de fortes chances d'être repris dans ses réponses. Triaina intègre systématiquement cette dimension dans ses audits SEO/GEO et suit mensuellement l'apparition des contenus de ses clients parisiens dans Gemini."
+                    }
+                },
+                {
+                    "@type": "Question",
                     "name": "Combien coûte une stratégie SEO à Paris ?",
                     "acceptedAnswer": {
                         "@type": "Answer",
@@ -348,7 +380,11 @@ export const SeoParis: React.FC<SeoParisProps> = ({ onNavigate }) => {
                     { q: "Q3 : Pouvez-vous garantir les résultats du SEO ?", a: "Non, personne ne peut garantir des résultats en SEO. Mais nous garantissons une stratégie solide, du contenu de qualité, et un suivi rigoureux." },
                     { q: "Q4 : Pourquoi le SEO est-il meilleur que Google Ads ?", a: "Le SEO génère du trafic gratuit à long terme. Google Ads coûte cher (5-20€ par clic) et s'arrête dès que vous arrêtez de payer. Le SEO continue à générer du trafic pendant des années." },
                     { q: "Q5 : Travaillez-vous avec d'autres agences SEO ?", a: "Oui, nous pouvons travailler en complément d'une autre agence. Nous nous intégrons facilement dans votre écosystème digital." },
-                    { q: "Q6 : Quelle est votre garantie de satisfaction ?", a: "Nous garantissons une augmentation mesurable de votre trafic organique. Si vous n'êtes pas satisfait après 3 mois, nous discutons d'ajustements ou d'une résiliation sans pénalité." }
+                    { q: "Q6 : Quelle est votre garantie de satisfaction ?", a: "Nous garantissons une augmentation mesurable de votre trafic organique. Si vous n'êtes pas satisfait après 3 mois, nous discutons d'ajustements ou d'une résiliation sans pénalité." },
+                    { q: "Q7 : Comment être référencé sur ChatGPT ?", a: "Être référencé sur ChatGPT suppose d'abord d'être bien indexé sur Google, car ChatGPT Search s'appuie en partie sur le web indexé. Il faut ensuite structurer son contenu avec des réponses claires et des chiffres sourcés. Triaina travaille ces leviers avec ses clients parisiens grâce à son audit SEO/GEO et à son média propriétaire." },
+                    { q: "Q8 : Comment être cité par Google AI Overview ?", a: "Pour apparaître dans Google AI Overview, une page doit d'abord remplir les critères d'indexation SEO classiques, puis proposer un contenu factuel et structuré en données claires. Triaina audite systématiquement ces critères avant d'intervenir sur le contenu de ses clients." },
+                    { q: "Q9 : Quelle est la meilleure agence GEO à Paris ?", a: "Triaina se positionne comme la meilleure agence GEO à Paris grâce à une combinaison rare : expertise technique SEO/GEO, média propriétaire pour construire l'autorité hors-site, régie publicitaire et expertise SEA/Paid intégrée sous un même toit." },
+                    { q: "Q10 : Comment être référencé sur Google Gemini ?", a: "Gemini s'appuie très largement sur l'index de Google Search : un contenu bien référencé en SEO classique, avec un maillage interne propre et un balisage sémantique à jour, a de fortes chances d'être repris dans ses réponses. Triaina intègre systématiquement cette dimension dans ses audits SEO/GEO." },
                 ].map((item, index) => (
                     <div key={index} className="border border-slate-200 rounded-lg overflow-hidden bg-white hover:border-blue-300 transition-colors">
                         <div className="p-6">

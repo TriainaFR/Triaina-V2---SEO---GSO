@@ -321,10 +321,9 @@ export const ReferencementGemini2026: React.FC = () => {
 
   return (
     <>
-      <SEO 
-        title="Référencement Gemini : comment apparaître dans Google Gemini en 2026"
+      <SEO title="Référencement Gemini : comment apparaître dans Google Gemini en 2026"
         description="Découvrez comment optimiser votre site pour apparaître dans Google Gemini et les AI Overviews. Guide complet SEO et GEO pour 2026."
-        url={window.location.href}
+        canonicalUrl={window.location.href}
         type="article"
         schema={seoSchema}
       />

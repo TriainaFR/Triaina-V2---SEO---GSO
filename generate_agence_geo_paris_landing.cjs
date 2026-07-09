@@ -1,16 +1,6 @@
-import React from 'react';
-import { PAGE_TO_URL } from '../constants';
-import { 
-  ArrowRight, Search, MapPin, BarChart3, 
-  Cpu, Globe, Database, Network, Sparkles, CheckCircle2, ChevronRight, Link2,
-  BrainCircuit, Bot, LineChart, Target
-} from 'lucide-react';
-import { SEO } from '../components/SEO';
-import { motion } from 'motion/react';
+const fs = require('fs');
 
-export const AgenceGeoParis: React.FC = () => {
-
-  const schema = {
+const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -137,6 +127,20 @@ export const AgenceGeoParis: React.FC = () => {
     }
   ]
 };
+
+const code = `import React from 'react';
+import { PAGE_TO_URL } from '../constants';
+import { 
+  ArrowRight, Search, MapPin, BarChart3, 
+  Cpu, Globe, Database, Network, Sparkles, CheckCircle2, ChevronRight, Link2,
+  BrainCircuit, Bot, LineChart, Target
+} from 'lucide-react';
+import { SEO } from '../components/SEO';
+import { motion } from 'motion/react';
+
+export const AgenceGeoParis: React.FC = () => {
+
+  const schema = ${JSON.stringify(schema, null, 2)};
 
   const handleNavigate = (path: string) => {
     window.history.pushState({}, '', path);
@@ -457,3 +461,5 @@ export const AgenceGeoParis: React.FC = () => {
     </div>
   );
 };
+`
+fs.writeFileSync('views/AgenceGeoParis.tsx', code);

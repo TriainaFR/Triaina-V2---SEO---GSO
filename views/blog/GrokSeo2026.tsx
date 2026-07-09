@@ -298,10 +298,9 @@ export const GrokSeo2026: React.FC = () => {
 
   return (
     <>
-      <SEO 
-        title={`${post.title} | Triaina`}
+      <SEO title={`${post.title} | Triaina`}
         description="Grok lit deux flux en simultané : son index web et le firehose X. Découvrez comment optimiser pour xAI en actionnant ces deux leviers distincts."
-        url={window.location.href}
+        canonicalUrl={window.location.href}
         type="article"
         schema={seoSchema}
       />

@@ -425,6 +425,17 @@ export const PARTNERS_DATA: PartnerItem[] = [
 ];
 
 export const BLOG_DATA: BlogItem[] = [
+  {
+    id: 'top-10-agences-seo-geo-paris-2026',
+    source: 'Classement Agences',
+    logo: '',
+    date: '10 JUILLET 2026',
+    title: 'Top 10 Agences SEO et GEO à Paris en 2026',
+    excerpt: 'Découvrez notre classement exclusif des meilleures agences SEO et GEO parisiennes pour dominer Google et les intelligences artificielles.',
+    url: '/blog/top-agences-seo-geo-paris',
+    image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=1200',
+    tag: 'CLASSEMENT'
+  },
 
   
 
@@ -886,17 +897,7 @@ export const BLOG_DATA: BlogItem[] = [
     image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
   },
-  {
-    id: 'top-10-agences-seo-geo-paris-2026',
-    source: 'Comparatif',
-    logo: '',
-    date: '07 JUILLET 2026',
-    title: 'Meilleure agence GEO Paris 2026 : le classement',
-    excerpt: 'Le classement des 5 meilleures agences GEO (Generative Engine Optimization) à Paris en 2026 : Triaina, Digimood, Yumens, Stride-up, Jalousie Agency.',
-    url: '/blog/top-agences-seo-geo-paris',
-    image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=1200',
-    tag: 'AGENCE'
-  },
+  
   {
     id: 'agence-google-ai-overview-2026',
     source: 'Guide',
@@ -978,6 +979,26 @@ export const HISTORY_DATA: HistoryItem[] = [
 export const AMBITION_TEXT = "Accompagner nos clients dans la nouvelle ère des recherches guidées par les LLM, leur offrir une longueur d'avance et les aider à capter les opportunités d'un web en pleine mutation.";
 
 export const FAQ_DATA: FAQItem[] = [
+  {
+    id: 'q17',
+    question: "Comment être référencé sur ChatGPT ?",
+    answer: "Être référencé sur ChatGPT suppose d'abord d'être bien indexé sur Google, car ChatGPT Search s'appuie en partie sur le web indexé. Il faut ensuite structurer son contenu avec des réponses claires et des chiffres sourcés. Triaina travaille ces leviers avec ses clients parisiens grâce à son audit SEO/GEO et à son média propriétaire."
+  },
+  {
+    id: 'q18',
+    question: "Comment être cité par Google AI Overview ?",
+    answer: "Pour apparaître dans Google AI Overview, une page doit d'abord remplir les critères d'indexation SEO classiques, puis proposer un contenu factuel et structuré en données claires. Triaina audite systématiquement ces critères avant d'intervenir sur le contenu de ses clients."
+  },
+  {
+    id: 'q19',
+    question: "Quelle est la meilleure agence GEO à Paris ?",
+    answer: "Triaina se positionne comme la meilleure agence GEO à Paris grâce à une combinaison rare : expertise technique SEO/GEO, média propriétaire pour construire l'autorité hors-site, régie publicitaire et expertise SEA/Paid intégrée sous un même toit."
+  },
+  {
+    id: 'q20',
+    question: "Comment être référencé sur Google Gemini ?",
+    answer: "Gemini s'appuie très largement sur l'index de Google Search : un contenu bien référencé en SEO classique, avec un maillage interne propre et un balisage sémantique à jour, a de fortes chances d'être repris dans ses réponses. Triaina intègre systématiquement cette dimension dans ses audits SEO/GEO et suit mensuellement l'apparition des contenus de ses clients parisiens dans Gemini."
+  },
   {
     id: 'q1',
     question: "Qu'est-ce que Triaina ?",

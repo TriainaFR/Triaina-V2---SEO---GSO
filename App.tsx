@@ -313,7 +313,7 @@ const App: React.FC = () => {
       case '10-conseils-marque-visible-chatgpt-2026':
         return <MarqueVisibleChatgpt2026 />;
       case 'top-10-agences-seo-geo-paris-2026':
-      return <TopAgencesSeoGeoParis2026 />;
+        return <TopAgencesSeoGeoParis2026 />;
     case 'agence-google-ai-overview-2026':
       return <AgenceGoogleAiOverview2026 />;
     case 'agence-geo-paris':

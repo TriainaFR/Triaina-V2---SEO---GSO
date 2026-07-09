@@ -285,10 +285,9 @@ export const MicrosoftCopilotSeo2026: React.FC = () => {
 
   return (
     <>
-      <SEO 
-        title="Microsoft Copilot SEO : être cité dans les réponses Copilot en 2026"
+      <SEO title="Microsoft Copilot SEO : être cité dans les réponses Copilot en 2026"
         description="Comment apparaître dans les réponses de Microsoft Copilot en 2026 ? Comprendre le fonctionnement de Bing Index + GPT-4o pour optimiser votre visibilité B2B."
-        url={window.location.href}
+        canonicalUrl={window.location.href}
         type="article"
         schema={seoSchema}
       />
