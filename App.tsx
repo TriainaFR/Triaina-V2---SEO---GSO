@@ -7,6 +7,7 @@ import { Home } from './views/Home';
 import { References } from './views/References';
 import { FAQ } from './views/FAQ';
 import { Contact } from './views/Contact';
+import { Annuaire } from './views/Annuaire';
 import { Blog } from './views/Blog';
 import { Team } from './views/Team';
 import { Careers } from './views/Careers'; // Import Careers
@@ -61,6 +62,8 @@ import { AuditGeo2026 } from './views/blog/AuditGeo2026';
 import { AgenceNetlinking2026 } from './views/blog/AgenceNetlinking2026';
 import { GrokSeo2026 } from './views/blog/GrokSeo2026';
 import { AiOverviewEcommerce2026 } from './views/blog/AiOverviewEcommerce2026';
+import { AgenceGeoEcommerce2026 } from './views/blog/AgenceGeoEcommerce2026';
+import { AuditEeat2026 } from './views/blog/AuditEeat2026';
 import { ReferencementGemini2026 } from './views/blog/ReferencementGemini2026';
 import { SEO } from './components/SEO';
 import { CustomCursor } from './components/CustomCursor';
@@ -226,6 +229,8 @@ const App: React.FC = () => {
         return <References />;
       case 'faq':
         return <FAQ />;
+      case 'annuaire':
+        return <Annuaire onNavigate={handleNavigation} />;
       case 'contact':
         return <Contact />;
       case 'blog':
@@ -338,6 +343,10 @@ const App: React.FC = () => {
         return <GrokSeo2026 />;
       case 'ai-overview-ecommerce-2026':
         return <AiOverviewEcommerce2026 />;
+      case 'agence-geo-ecommerce-2026':
+        return <AgenceGeoEcommerce2026 />;
+      case 'audit-eeat-2026':
+        return <AuditEeat2026 />;
       case 'referencement-gemini-2026':
         return <ReferencementGemini2026 />;
       case '404':

@@ -41,7 +41,7 @@ export const FAQ: React.FC = () => {
       
       <SEO 
         schema={faqSchema} 
-        title="FAQ - Agence SEO & GSO Triaina"
+        title="FAQ - Agence SEO & GEO Triaina"
         description="Questions fréquentes sur le SEO, le GSO et l'accompagnement par l'agence Triaina."
         canonicalUrl="https://www.triaina.fr/faq"
       />

@@ -27,7 +27,7 @@ export const Team: React.FC<{ onNavigate: (p: any) => void, initialTab?: Tab }> 
         "name": "Triaina",
         "url": "https://www.triaina.fr",
         "logo": "https://www.triaina.fr/logo.png",
-        "description": "Agence SEO & GSO spécialisée en référencement naturel et optimisation pour IA génératives",
+        "description": "Agence SEO & GEO spécialisée en référencement naturel et optimisation pour IA génératives",
         "foundingDate": "2025",
         "sameAs": [
             "https://www.linkedin.com/company/triaina",
@@ -43,7 +43,7 @@ export const Team: React.FC<{ onNavigate: (p: any) => void, initialTab?: Tab }> 
         "@type": "LocalBusiness",
         "name": "Triaina",
         "image": "https://www.triaina.fr/logo.png",
-        "description": "Agence SEO & GSO - Référencement naturel et optimisation pour IA génératives",
+        "description": "Agence SEO & GEO - Référencement naturel et optimisation pour IA génératives",
         "url": "https://www.triaina.fr",
         "telephone": "+33614916295",
         "address": {
@@ -56,7 +56,7 @@ export const Team: React.FC<{ onNavigate: (p: any) => void, initialTab?: Tab }> 
       },
       {
         "@type": "ProfessionalService",
-        "name": "Triaina - Agence SEO & GSO",
+        "name": "Triaina - Agence SEO & GEO",
         "description": "Services de référencement naturel (SEO) et optimisation pour IA génératives (GSO)",
         "url": "https://www.triaina.fr",
         "areaServed": "FR",
@@ -71,11 +71,11 @@ export const Team: React.FC<{ onNavigate: (p: any) => void, initialTab?: Tab }> 
       
       {/* Balises SEO spécifiques à cette vue */}
       <SEO 
-          title="Agence SEO & GSO | Référencement Naturel & IA Générative"
-          description="Agence SEO & GSO spécialisée en référencement naturel et optimisation pour IA génératives. 25 ans d'expertise, audit SEO complet, consultant expert. Triaina."
+          title="Agence SEO & GEO | Référencement Naturel & IA Générative"
+          description="Agence SEO & GEO spécialisée en référencement naturel et optimisation pour IA génératives. 25 ans d'expertise, audit SEO complet, consultant expert. Triaina."
           keywords="agence SEO, GSO, Generative Search Optimization, audit SEO, consultant SEO, référencement naturel, optimisation IA"
-          ogTitle="Triaina - Agence SEO & GSO | Référencement Naturel & IA"
-          ogDescription="Agence SEO & GSO : 25 ans d'expertise en référencement naturel et optimisation pour IA génératives (ChatGPT, Gemini)."
+          ogTitle="Triaina - Agence SEO & GEO | Référencement Naturel & IA"
+          ogDescription="Agence SEO & GEO : 25 ans d'expertise en référencement naturel et optimisation pour IA génératives (ChatGPT, Gemini)."
           schema={teamSchema} 
           canonicalUrl="https://www.triaina.fr/agence"
       />
@@ -83,7 +83,7 @@ export const Team: React.FC<{ onNavigate: (p: any) => void, initialTab?: Tab }> 
       {/* Header */}
       <div className="mb-12 border-b border-slate-400 pb-8 animate-fade-in-up">
         <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-2">
-            TRIAINA<span className="sr-only"> - Agence SEO & GSO | Référencement Naturel & IA Générative</span>
+            TRIAINA<span className="sr-only"> - Agence SEO & GEO | Référencement Naturel & IA Générative</span>
         </h1>
         <p className="font-mono text-blue-700 text-xs tracking-widest uppercase">
             // Intelligence Collective & Innovation
@@ -116,7 +116,7 @@ export const Team: React.FC<{ onNavigate: (p: any) => void, initialTab?: Tab }> 
              <div className="mb-24 max-w-4xl mx-auto">
                 <div className="bg-slate-50 border-l-4 border-blue-600 p-8 md:p-10 rounded-r-xl shadow-lg shadow-blue-900/5">
                     <h3 className="text-2xl font-display font-bold text-slate-900 mb-6">
-                        À Propos de Triaina : Agence SEO & GSO Spécialisée en Référencement IA
+                        À Propos de Triaina : Agence SEO & GEO Spécialisée en Référencement IA
                     </h3>
                     <p className="text-lg text-slate-700 leading-relaxed font-light">
                         Triaina est une <strong>agence SEO et GSO</strong> (Generative Search Optimization) fondée en 2025. Nous combinons <strong>25 années d'expertise en référencement naturel</strong> avec l'innovation en optimisation pour les IA génératives, pour vous offrir une stratégie de référencement complète et future-proof.
@@ -190,7 +190,7 @@ export const Team: React.FC<{ onNavigate: (p: any) => void, initialTab?: Tab }> 
                             <div className="md:w-1/2 bg-white/10 rounded-xl p-8 border border-white/10">
                                  <h3 className="font-bold text-xl mb-6 flex items-center gap-2">
                                     <Terminal size={20} className="text-blue-400" />
-                                    Ce que nous Faisons : Services SEO & GSO
+                                    Ce que nous Faisons : Services SEO & GEO
                                 </h3>
                                 <ul className="space-y-4">
                                     {[

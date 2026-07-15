@@ -1,0 +1,329 @@
+import React, { useEffect } from 'react';
+import { ArrowLeft, Clock, Calendar } from 'lucide-react';
+import { PAGE_TO_URL, BLOG_DATA } from '../../constants';
+import { SEO } from '../../components/SEO';
+
+export const AuditEeat2026: React.FC = () => {
+  const post = BLOG_DATA.find(p => p.id === 'audit-eeat-2026');
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const seoSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Audit E-E-A-T 2026 : comment préparer votre site ?",
+      "description": "L'E-E-A-T est le cadre que Google utilise pour évaluer la fiabilité d'un contenu et de son auteur. Ce guide vous aide à préparer votre site.",
+      "image": "https://www.triaina.fr/images/audit-eeat-2026.jpg",
+      "datePublished": "2026-07-16",
+      "dateModified": "2026-07-16",
+      "author": {
+        "@type": "Organization",
+        "name": "Triaina",
+        "url": "https://triaina.fr"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce que l'E-E-A-T exactement ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "L'E-E-A-T désigne quatre critères - Experience, Expertise, Authoritativeness, Trustworthiness - que Google utilise pour évaluer la crédibilité d'un contenu et de son auteur. Ce n'est pas un score algorithmique direct, mais un cadre qui influence les systèmes de classement et, de plus en plus, la sélection de sources par les IA génératives."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "L'EEAT est-il un facteur de ranking officiel ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non, Google l'a confirmé plusieurs fois : l'E-E-A-T n'est pas un signal de ranking direct mesurable dans l'algorithme. C'est un concept utilisé par les évaluateurs qualité humains pour noter des exemples de résultats, et qui inspire les mises à jour de l'algorithme (comme les Helpful Content Updates)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de temps prend un audit EEAT complet ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pour un site de taille moyenne (50 à 200 pages), comptez 2 à 3 semaines pour les phases de cadrage et d'audit, puis 1 à 3 mois pour la remédiation selon le volume de contenu à corriger. Le suivi, lui, s'étale sur 3 à 6 mois pour observer un effet mesurable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelle différence entre EEAT SEO et GEO ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "L'EEAT SEO vise la crédibilité perçue par Google pour le classement classique dans les résultats de recherche. Le GEO (Generative Engine Optimization) vise la citation dans les réponses générées par IA. Les deux s'appuient sur les mêmes fondamentaux - auteurs identifiés, sources primaires, preuves d'expérience - mais le GEO ajoute une couche de vérification supplémentaire propre aux crawlers IA."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il un auteur nommé sur chaque page pour améliorer son EEAT ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pas systématiquement pour du contenu générique, mais c'est indispensable pour les pages YMYL (santé, finance, droit, sécurité) où l'enjeu pour l'utilisateur est élevé. Sur ces pages, un auteur identifié avec des credentials vérifiables reste le signal le plus fort et le plus simple à mettre en place."
+          }
+        }
+      ]
+    }
+  ];
+
+  const htmlBody = `
+<p><strong>L'E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) est le cadre que Google utilise pour évaluer la fiabilité d'un contenu et de son auteur.</strong> Ce n'est pas un facteur de ranking direct au sens strict, mais un filtre qui conditionne de plus en plus l'accès aux positions hautes - et, depuis l'arrivée massive des réponses générées par IA (AI Overviews, ChatGPT, Perplexity), aux citations dans ces réponses. Un audit EEAT sert à mesurer où votre site se situe sur ces quatre piliers et à corriger ce qui bloque votre visibilité.</p>
+<p>Pourquoi maintenant ? Parce que 2026 change la donne. Les moteurs génératifs ne se contentent plus de classer des pages : ils sélectionnent des sources qu'ils jugent dignes de confiance pour nourrir leurs réponses. Un site sans auteurs identifiés, sans preuves d'expérience terrain ni sources primaires a statistiquement moins de chances d'être cité - que ce soit dans le SERP classique ou dans une réponse IA. C'est tout l'enjeu du GEO (Generative Engine Optimization) : il s'appuie directement sur les mêmes signaux que l'EEAT SEO traditionnel, en les poussant plus loin.</p>
+<p>Dans cet article : la définition détaillée des 4 piliers, une checklist de 52 critères prête à l'emploi, les erreurs qu'on constate le plus souvent en audit, notre méthodologie en 4 phases, et un cas client anonymisé avec des chiffres avant/après.</p>
+
+<h2>Les 4 piliers de l'E-E-A-T expliqués concrètement</h2>
+<p>Google a formalisé ce cadre dans ses <em>Search Quality Rater Guidelines</em> et dans sa documentation sur le contenu utile. Chaque pilier répond à une question précise que se pose un évaluateur humain - et de plus en plus, un modèle de langage qui doit décider s'il peut citer votre page comme source fiable.</p>
+<h3>Experience : l'expérience de première main</h3>
+<p>Ce pilier a été ajouté en décembre 2022 pour distinguer un contenu écrit par quelqu'un qui a réellement vécu ou testé le sujet d'un contenu compilé à partir d'autres sources. Un article sur un logiciel comptable rédigé par quelqu'un qui l'utilise tous les jours vaut plus, aux yeux de Google, qu'une synthèse générique sans capture d'écran ni détail vécu.</p>
+<p>Signaux concrets : photos et captures d'écran originales, chiffres internes, retours d'usage précis, anecdotes datées, mention explicite du test réalisé.</p>
+<h3>Expertise : la compétence du créateur</h3>
+<p>L'expertise se juge sur la profondeur et la justesse du traitement du sujet, pas sur un diplôme affiché en façade. Un article juridique signé par un avocat inscrit au barreau, avec un lien vers son profil professionnel, a plus de poids qu'un texte anonyme truffé d'approximations.</p>
+<p>Signaux concrets : auteur nommé avec fonction précise, page bio détaillée, cohérence thématique des publications, sourcing rigoureux des données citées.</p>
+<h3>Authoritativeness : l'autorité reconnue</h3>
+<p>L'autorité se construit de l'extérieur : ce sont les autres - médias, sites du secteur, communauté professionnelle - qui reconnaissent votre expertise. C'est la différence entre dire "je suis expert" et être cité comme tel par des tiers indépendants.</p>
+<p>Signaux concrets : backlinks depuis des sites reconnus du secteur, citations presse, mentions de marque sans lien, présence dans des bases de connaissance comme Wikidata, participation à des conférences sectorielles.</p>
+<h3>Trustworthiness : la fiabilité, le pilier central</h3>
+<p>Google le dit explicitement dans ses guidelines : la confiance (Trust) est le pilier le plus important. Un site peut avoir de l'expérience, de l'expertise et de l'autorité - s'il n'est pas fiable (informations trompeuses, absence de mentions légales, données non sourcées), tout le reste s'effondre.</p>
+<p>Signaux concrets : HTTPS, mentions légales complètes, sources primaires citées, transparence sur les partenariats, cohérence des informations sur tout le site.</p>
+
+<h2>Checklist self-audit E-E-A-T : 52 critères à vérifier</h2>
+<p>Voici la grille que nous utilisons en interne pour un premier passage rapide, avant l'audit approfondi. Pour chaque critère : la question à se poser et le signal qui indique que c'est bon.</p>
+<div class="overflow-x-auto my-8">
+<table class="min-w-full divide-y divide-slate-200 text-left text-sm text-slate-700 rounded-lg shadow-sm">
+<thead class="bg-slate-50 font-medium">
+<tr>
+<th class="px-4 py-3 border-b border-slate-200">Pilier</th>
+<th class="px-4 py-3 border-b border-slate-200">Critère</th>
+<th class="px-4 py-3 border-b border-slate-200">Question à se poser</th>
+<th class="px-4 py-3 border-b border-slate-200">Signal positif</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 bg-white">
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Test réel du produit/service</td><td class="px-4 py-3">L'auteur a-t-il utilisé concrètement ce dont il parle ?</td><td class="px-4 py-3 text-slate-500">Photos ou captures d'écran originales, retours d'usage précis</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Preuves de première main</td><td class="px-4 py-3">Y a-t-il des détails que seul quelqu'un ayant vécu la situation connaîtrait ?</td><td class="px-4 py-3 text-slate-500">Anecdotes, chiffres internes, erreurs vécues racontées</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Production du contenu</td><td class="px-4 py-3">Le texte a-t-il été relu et enrichi par un humain expert ?</td><td class="px-4 py-3 text-slate-500">Mention de la méthode de production, corrections manuelles visibles</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Études de cas maison</td><td class="px-4 py-3">Le site publie-t-il ses propres résultats clients ?</td><td class="px-4 py-3 text-slate-500">Cas chiffrés, avant/après documentés</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Preuves visuelles</td><td class="px-4 py-3">Les images sont-elles originales ou du stock générique ?</td><td class="px-4 py-3 text-slate-500">Captures d'écran datées, photos de l'équipe</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Contexte temporel</td><td class="px-4 py-3">Les exemples sont-ils récents et datés ?</td><td class="px-4 py-3 text-slate-500">Dates précises, contexte de marché mentionné</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Témoignages</td><td class="px-4 py-3">Les avis clients sont-ils vérifiables ?</td><td class="px-4 py-3 text-slate-500">Nom, entreprise, lien LinkedIn associés</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Détail du process</td><td class="px-4 py-3">L'article explique-t-il comment le travail a été réalisé ?</td><td class="px-4 py-3 text-slate-500">Étapes décrites, outils nommés</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Historique de la marque</td><td class="px-4 py-3">Depuis combien de temps l'entreprise pratique-t-elle ce métier ?</td><td class="px-4 py-3 text-slate-500">Date de création visible, portfolio consultable</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Bio auteur détaillée</td><td class="px-4 py-3">La bio précise-t-elle le nombre d'années ou de projets réalisés ?</td><td class="px-4 py-3 text-slate-500">Chiffres précis mentionnés</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Positionnement tranché</td><td class="px-4 py-3">L'auteur ose-t-il un avis argumenté issu de sa pratique ?</td><td class="px-4 py-3 text-slate-500">Prise de position claire et justifiée</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Interaction communauté</td><td class="px-4 py-3">L'auteur répond-il aux commentaires ou questions ?</td><td class="px-4 py-3 text-slate-500">Réponses datées, engagement réel</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Formats vivants</td><td class="px-4 py-3">Existe-t-il des formats où l'auteur apparaît réellement ?</td><td class="px-4 py-3 text-slate-500">Vidéo, podcast, conférence filmée</td></tr>
+
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Auteur identifié</td><td class="px-4 py-3">Chaque article a-t-il un auteur nommé ?</td><td class="px-4 py-3 text-slate-500">Nom, fonction et photo affichés</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Page auteur dédiée</td><td class="px-4 py-3">Existe-t-il une page bio par auteur ?</td><td class="px-4 py-3 text-slate-500">URL dédiée avec parcours détaillé</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Credentials vérifiables</td><td class="px-4 py-3">Les diplômes ou certifications sont-ils vérifiables ?</td><td class="px-4 py-3 text-slate-500">Lien vers l'organisme certificateur</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Cohérence thématique</td><td class="px-4 py-3">L'auteur écrit-il uniquement sur son domaine de compétence ?</td><td class="px-4 py-3 text-slate-500">Thématiques homogènes sur toutes les publications</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Profil professionnel</td><td class="px-4 py-3">Le lien LinkedIn est-il présent et cohérent avec la bio ?</td><td class="px-4 py-3 text-slate-500">Poste actuel identique à celui affiché</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Reconnaissance externe</td><td class="px-4 py-3">L'auteur est-il cité ou interviewé ailleurs ?</td><td class="px-4 py-3 text-slate-500">Articles invités, interviews, conférences</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Niveau de langage</td><td class="px-4 py-3">Le vocabulaire est-il précis sans être un jargon creux ?</td><td class="px-4 py-3 text-slate-500">Termes techniques expliqués simplement</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Sourcing des données</td><td class="px-4 py-3">Les chiffres cités proviennent-ils de sources primaires ?</td><td class="px-4 py-3 text-slate-500">Lien direct vers l'étude ou le rapport officiel</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Fraîcheur du contenu</td><td class="px-4 py-3">La date de mise à jour est-elle visible et récente ?</td><td class="px-4 py-3 text-slate-500">Date affichée, historique de modifications</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Profondeur du traitement</td><td class="px-4 py-3">Le sujet est-il traité de façon exhaustive ?</td><td class="px-4 py-3 text-slate-500">Sous-thèmes couverts, questions annexes traitées</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Relecture par les pairs</td><td class="px-4 py-3">Un second expert relit-il le contenu avant publication ?</td><td class="px-4 py-3 text-slate-500">Mention "relu par" ou "validé par"</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Régularité de publication</td><td class="px-4 py-3">L'auteur publie-t-il de façon cohérente dans la durée ?</td><td class="px-4 py-3 text-slate-500">Fréquence régulière, pas de trous suspects</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Spécialisation du site</td><td class="px-4 py-3">Le site traite-t-il un périmètre clair ?</td><td class="px-4 py-3 text-slate-500">Silo thématique cohérent, pas de dispersion</td></tr>
+
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Backlinks qualitatifs</td><td class="px-4 py-3">Qui référence votre site ?</td><td class="px-4 py-3 text-slate-500">Liens depuis médias ou sites sectoriels reconnus</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Citations presse</td><td class="px-4 py-3">La marque est-elle citée par des tiers indépendants ?</td><td class="px-4 py-3 text-slate-500">Articles de presse, mentions dans des dossiers sectoriels</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Réseaux professionnels</td><td class="px-4 py-3">L'entreprise est-elle active et reconnue sur LinkedIn ?</td><td class="px-4 py-3 text-slate-500">Followers qualifiés, taux d'engagement réel</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Reconnaissance sectorielle</td><td class="px-4 py-3">La marque intervient-elle dans des événements du secteur ?</td><td class="px-4 py-3 text-slate-500">Speakers à des conférences, tables rondes</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Base de connaissance</td><td class="px-4 py-3">L'entité existe-t-elle dans les bases de connaissance ?</td><td class="px-4 py-3 text-slate-500">Fiche Wikidata, knowledge panel Google</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Avis publics</td><td class="px-4 py-3">Combien d'avis et quelle note moyenne ?</td><td class="px-4 py-3 text-slate-500">Volume d'avis significatif et note cohérente</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Mentions sans lien</td><td class="px-4 py-3">La marque est-elle citée même sans backlink ?</td><td class="px-4 py-3 text-slate-500">Citations dans forums, réseaux sociaux, communautés</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Partenariats visibles</td><td class="px-4 py-3">Le site affiche-t-il des clients ou partenaires reconnus ?</td><td class="px-4 py-3 text-slate-500">Logos clients réels, références vérifiables</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Ancienneté du domaine</td><td class="px-4 py-3">Le domaine a-t-il un historique établi ?</td><td class="px-4 py-3 text-slate-500">Ancienneté significative, pas de changement suspect</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Cohérence NAP</td><td class="px-4 py-3">Les infos légales sont-elles cohérentes partout ?</td><td class="px-4 py-3 text-slate-500">Nom, adresse, téléphone identiques sur tous les supports</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Média propriétaire</td><td class="px-4 py-3">L'entreprise publie-t-elle une recherche ou un observatoire propre ?</td><td class="px-4 py-3 text-slate-500">Étude annuelle, baromètre sectoriel cité par d'autres</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Distinctions</td><td class="px-4 py-3">Le site a-t-il reçu des labels ou récompenses vérifiables ?</td><td class="px-4 py-3 text-slate-500">Label qualité, certification affichée et vérifiable</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Citations tierces</td><td class="px-4 py-3">Des études ou rapports tiers citent-ils vos contenus ?</td><td class="px-4 py-3 text-slate-500">Citations dans des publications sectorielles ou académiques</td></tr>
+
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Mentions légales</td><td class="px-4 py-3">Les mentions légales sont-elles complètes et à jour ?</td><td class="px-4 py-3 text-slate-500">SIRET, adresse, responsable de publication indiqués</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Politique de confidentialité</td><td class="px-4 py-3">La politique RGPD est-elle claire et accessible ?</td><td class="px-4 py-3 text-slate-500">Page dédiée, gestion des cookies conforme</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Sécurité technique</td><td class="px-4 py-3">Le site est-il en HTTPS sur toutes les pages ?</td><td class="px-4 py-3 text-slate-500">Certificat SSL valide, aucun contenu mixte</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Contact accessible</td><td class="px-4 py-3">Peut-on contacter facilement l'entreprise ?</td><td class="px-4 py-3 text-slate-500">Formulaire, téléphone, adresse physique visibles</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Sources primaires</td><td class="px-4 py-3">Les affirmations chiffrées renvoient-elles vers une source vérifiable ?</td><td class="px-4 py-3 text-slate-500">Lien direct vers l'étude ou l'organisme officiel</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Transparence publicitaire</td><td class="px-4 py-3">Les contenus sponsorisés sont-ils signalés ?</td><td class="px-4 py-3 text-slate-500">Mention explicite "partenariat" ou "contenu sponsorisé"</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Correction des erreurs</td><td class="px-4 py-3">Le site corrige-t-il ses erreurs publiquement ?</td><td class="px-4 py-3 text-slate-500">Mention de correctifs, changelog visible</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Paiement sécurisé</td><td class="px-4 py-3">Le paiement est-il sécurisé et affiché comme tel ?</td><td class="px-4 py-3 text-slate-500">Badges de sécurité, protocole de paiement reconnu</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Cohérence globale</td><td class="px-4 py-3">Les informations sont-elles identiques sur toutes les pages ?</td><td class="px-4 py-3 text-slate-500">Aucune contradiction entre pages ou supports</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Modération des avis</td><td class="px-4 py-3">Les avis négatifs sont-ils aussi visibles ?</td><td class="px-4 py-3 text-slate-500">Pas de filtrage abusif des retours clients</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Titres non trompeurs</td><td class="px-4 py-3">Les titres correspondent-ils au contenu réel ?</td><td class="px-4 py-3 text-slate-500">Pas de clickbait, promesse tenue dans le texte</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Conditions claires</td><td class="px-4 py-3">Les conditions de vente ou de retour sont-elles explicites ?</td><td class="px-4 py-3 text-slate-500">CGV accessibles et compréhensibles</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Performance technique</td><td class="px-4 py-3">Le site est-il fiable techniquement (rapide, sans erreur) ?</td><td class="px-4 py-3 text-slate-500">Bons scores Core Web Vitals, pas d'erreurs 404 en masse</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Les erreurs les plus fréquentes qu'on constate en audit</h2>
+<p>Sur les dizaines d'audits que nous avons menés, quelques erreurs reviennent presque systématiquement :</p>
+<ul>
+<li><p><strong>Zéro auteur identifié.</strong> Des articles signés "L'équipe" ou pas signés du tout, sur des sujets pourtant sensibles (santé, finance, droit).</p></li>
+<li><p><strong>Bio auteur générique.</strong> Une phrase type "passionné de marketing digital" sans année d'expérience, sans lien vérifiable, sans spécialité claire.</p></li>
+<li><p><strong>Contenu 100% IA sans retouche.</strong> Des textes produits en masse, sans preuve d'expérience terrain, sans exemple vécu - ce qui saute aux yeux d'un évaluateur humain comme d'un modèle de langage.</p></li>
+<li><p><strong>Chiffres non sourcés.</strong> Des statistiques citées sans lien vers l'étude d'origine, ou pire, recopiées d'un autre blog qui les avait déjà déformées.</p></li>
+<li><p><strong>Mentions légales bâclées.</strong> Adresse absente, responsable de publication non identifié, politique de confidentialité datée de 2018.</p></li>
+<li><p><strong>Aucun signal d'autorité externe.</strong> Pas de citation presse, pas de mention Wikidata, pas de backlink d'un site sectoriel reconnu - le site vit en vase clos.</p></li>
+<li><p><strong>Confusion entre EEAT et backlinks.</strong> Beaucoup pensent qu'acheter des liens résout le problème. Or sans expérience et sans expertise démontrées sur le contenu lui-même, l'autorité ne "prend" pas.</p></li>
+</ul>
+
+<h2>La méthodologie Triaina en 4 phases</h2>
+<p>On ne fait pas un audit EEAT comme un audit SEO classique. Un audit technique regarde des métriques ; un audit EEAT regarde la crédibilité perçue - par un humain et par un modèle d'IA. Voici notre grille de scoring, la <strong>Triaina EEAT Score</strong>, appliquée en 4 phases.</p>
+<h3>Phase 1 : Cadrage</h3>
+<p>On définit le périmètre : quelles pages sont YMYL (Your Money Your Life, donc les plus scrutées), qui sont les auteurs actuels, quels sont les objectifs business (visibilité SEO classique, citations GEO dans les réponses IA, ou les deux). On cartographie aussi la concurrence directe sur ces critères.</p>
+<h3>Phase 2 : Audit technique et éditorial</h3>
+<p>Passage de chaque page au crible des 4 piliers avec la checklist ci-dessus, mais aussi avec une couche supplémentaire propre au GEO : on vérifie si le contenu contient des "proxies d'authenticité" - des signaux que les crawlers IA utilisent pour juger si une page mérite d'être citée dans une réponse générée. Concrètement : présence d'un auteur vérifié avec identité réelle, sources primaires citées explicitement, preuves d'expérience de première main (chiffres propres, cas clients, données originales). Chaque critère est noté sur 100, par pilier et par page.</p>
+<h3>Phase 3 : Plan de remédiation</h3>
+<p>On priorise les corrections par impact et effort : pages YMYL sans auteur en premier, sources manquantes ensuite, signaux d'autorité externe en troisième. Le plan inclut des templates de bio auteur, un guide de sourcing, et une liste de leviers d'autorité externe (relations presse, Wikidata, partenariats) à activer.</p>
+<h3>Phase 4 : Suivi</h3>
+<p>On remesure le score EEAT à 30, 60 et 90 jours, en croisant avec la visibilité GEO (taux de citation dans les réponses IA sur un panel de requêtes cibles) et les positions SEO classiques. L'objectif n'est pas un audit ponctuel mais un suivi dans la durée, parce que les signaux d'autorité et de confiance se construisent sur plusieurs mois, pas en une semaine.</p>
+
+<h2>Étude de cas : d'un score EEAT faible à une visibilité GEO de 90%</h2>
+<p>Un de nos clients, un acteur B2B du secteur industriel, nous a sollicités fin 2025 avec un problème simple : zéro citation dans les réponses generées par IA sur ses requêtes cœur de métier, malgré un bon volume de trafic SEO classique.</p>
+<p><strong>Avant l'audit :</strong></p>
+<ul>
+<li><p>Articles signés "Rédaction" sans auteur identifiable</p></li>
+<li><p>Aucune page bio, aucun lien vers un profil professionnel</p></li>
+<li><p>Statistiques sectorielles citées sans source</p></li>
+<li><p>Zéro mention presse ou citation externe récente</p></li>
+<li><p>Visibilité GEO mesurée : 0% de citations sur le panel de requêtes cibles</p></li>
+</ul>
+<p><strong>Après application de la méthodologie en 4 phases (sur 3 mois) :</strong></p>
+<ul>
+<li><p>Auteurs identifiés avec pages bio détaillées et liens LinkedIn vérifiés</p></li>
+<li><p>Sourcing systématique des données avec liens vers études officielles</p></li>
+<li><p>Publication d'un baromètre sectoriel propre au client (média propriétaire), repris par 2 titres de presse spécialisée</p></li>
+<li><p>Refonte des mentions légales et de la politique de confidentialité</p></li>
+</ul>
+<p><strong>Résultats mesurés :</strong> la visibilité GEO du site est passée de 0% à 73% sur le premier lot de requêtes, puis à 90% après un second cycle de remédiation ciblant les pages produits restantes. Le trafic organique classique a progressé en parallèle de 34% sur la période, un effet secondaire logique : les mêmes signaux qui rassurent un modèle d'IA rassurent aussi Google en SERP traditionnel.</p>
+
+<h2>FAQ</h2>
+<h3>Qu'est-ce que l'E-E-A-T exactement ?</h3>
+<p>L'E-E-A-T désigne quatre critères - Experience, Expertise, Authoritativeness, Trustworthiness - que Google utilise pour évaluer la crédibilité d'un contenu et de son auteur. Ce n'est pas un score algorithmique direct, mais un cadre qui influence les systèmes de classement et, de plus en plus, la sélection de sources par les IA génératives.</p>
+
+<h3>L'EEAT est-il un facteur de ranking officiel ?</h3>
+<p>Non, Google l'a confirmé plusieurs fois : l'E-E-A-T n'est pas un signal de ranking direct mesurable dans l'algorithme. C'est un concept utilisé par les évaluateurs qualité humains pour noter des exemples de résultats, et qui inspire les mises à jour de l'algorithme (comme les Helpful Content Updates).</p>
+
+<h3>Combien de temps prend un audit EEAT complet ?</h3>
+<p>Pour un site de taille moyenne (50 à 200 pages), comptez 2 à 3 semaines pour les phases de cadrage et d'audit, puis 1 à 3 mois pour la remédiation selon le volume de contenu à corriger. Le suivi, lui, s'étale sur 3 à 6 mois pour observer un effet mesurable.</p>
+
+<h3>Quelle différence entre EEAT SEO et GEO ?</h3>
+<p>L'EEAT SEO vise la crédibilité perçue par Google pour le classement classique dans les résultats de recherche. Le GEO (Generative Engine Optimization) vise la citation dans les réponses générées par IA. Les deux s'appuient sur les mêmes fondamentaux - auteurs identifiés, sources primaires, preuves d'expérience - mais le GEO ajoute une couche de vérification supplémentaire propre aux crawlers IA.</p>
+
+<h3>Faut-il un auteur nommé sur chaque page pour améliorer son EEAT ?</h3>
+<p>Pas systématiquement pour du contenu générique, mais c'est indispensable pour les pages YMYL (santé, finance, droit, sécurité) où l'enjeu pour l'utilisateur est élevé. Sur ces pages, un auteur identifié avec des credentials vérifiables reste le signal le plus fort et le plus simple à mettre en place.</p>
+
+<h2>Sources utiles</h2>
+<ul>
+<li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content">Google Search Central - Creating helpful, reliable, people-first content</a></p></li>
+<li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://developers.google.com/search/blog/2022/12/google-raters-guidelines-e-e-a-t">Google Search Central - Blog officiel sur les Search Quality Rater Guidelines et l'E-E-A-T</a></p></li>
+<li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://guidelines.raterhub.com/searchqualityevaluatorguidelines.pdf">Search Quality Rater Guidelines - document complet (PDF)</a></p></li>
+</ul>
+  `;
+
+  if (!post) return null;
+
+  return (
+    <>
+      <SEO 
+        title={`${post.title} | Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://www.triaina.fr${post.url}`}
+        type="article"
+        schema={seoSchema}
+        image={post.image}
+      />
+      <div className="pt-32 pb-24 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-6 animate-fade-in-up">
+            <a 
+              href={PAGE_TO_URL['blog']}
+              onClick={(e) => {
+                e.preventDefault();
+                window.history.pushState({}, '', PAGE_TO_URL['blog']);
+                window.dispatchEvent(new PopStateEvent('popstate'));
+              }}
+              className="inline-flex items-center text-slate-600 hover:text-violet-600 transition-colors font-mono text-sm tracking-wide"
+            > 
+              <ArrowLeft size={16} className="mr-2" />
+              RETOUR AU BLOG
+            </a>
+            <div className="flex flex-wrap items-center gap-4 text-slate-500 font-mono text-xs tracking-wider">
+              <span className="flex items-center"><Calendar size={14} className="mr-2" />{post.date}</span>
+              <span className="text-slate-300">|</span>
+              <span className="flex items-center"><Clock size={14} className="mr-2" />6 min de lecture</span>
+              <span className="text-slate-300">|</span>
+              <span className="text-violet-600 border border-violet-200 bg-violet-50 px-2 py-1 rounded-full">{post.tag}</span>
+            </div>
+          </div>
+
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-8 animate-fade-in-up md:w-4/5" style={{animationDelay: '0.1s'}}>
+            {post.title}
+          </h1>
+          
+          <p className="text-xl text-slate-600 leading-relaxed mb-12 animate-fade-in-up md:w-3/4" style={{animationDelay: '0.2s'}}>
+            {post.excerpt}
+          </p>
+
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-20 relative animate-fade-in-up group" style={{animationDelay: '0.3s'}}>
+            <img 
+              src={post.image} 
+              alt={post.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+          </div>
+
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
+            <article className="lg:w-2/3 prose prose-lg prose-slate max-w-none 
+                prose-headings:font-bold prose-headings:text-slate-900 
+                prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-2 prose-h2:border-b prose-h2:border-slate-200
+                prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
+                prose-p:text-slate-600 prose-p:leading-relaxed prose-p:mb-6
+                prose-a:text-violet-600 hover:prose-a:text-violet-700 prose-a:underline prose-a:font-medium
+                prose-li:text-slate-600 prose-li:marker:text-violet-500
+                prose-ul:space-y-2 prose-ol:space-y-2
+                animate-fade-in-up"
+                style={{animationDelay: '0.3s'}}
+                dangerouslySetInnerHTML={{ __html: htmlBody }}
+            />
+            
+            <aside className="lg:w-1/3 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+              <div className="sticky top-32 space-y-8">
+                <div className="bg-slate-900 text-white rounded-3xl p-8 shadow-xl relative overflow-hidden">
+                  <div className="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 rounded-full bg-violet-600/20 blur-2xl"></div>
+                  <h3 className="text-xl font-bold mb-4 font-sans text-white relative z-10">Besoin d'optimiser pour l'IA ?</h3>
+                  <p className="text-slate-300 mb-6 text-sm relative z-10 leading-relaxed">
+                    Triaina accompagne les entreprises dans l'optimisation de leur visibilité sur Google et auprès des LLMs (Copilot, ChatGPT, Gemini, Perplexity).
+                  </p>
+                  <a 
+                    href={PAGE_TO_URL['contact']}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.history.pushState({}, '', PAGE_TO_URL['contact']);
+                      window.dispatchEvent(new PopStateEvent('popstate'));
+                    }}
+                    className="inline-flex items-center justify-center w-full bg-white text-black px-6 py-3 rounded-xl text-sm font-bold tracking-wide hover:bg-violet-50 transition-colors relative z-10"
+                  >
+                    PRENDRE RENDEZ-VOUS
+                  </a>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};

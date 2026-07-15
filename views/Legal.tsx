@@ -16,7 +16,7 @@ export const Legal: React.FC = () => {
     <div className="pt-32 pb-20 px-4 min-h-screen max-w-4xl mx-auto relative z-10">
       <SEO 
         title="Mentions Légales" 
-        description="Mentions légales de la société TRIAINA, agence SEO & GSO." 
+        description="Mentions légales de la société TRIAINA, Agence SEO & GEO." 
         schema={breadcrumbSchema}
         canonicalUrl="https://www.triaina.fr/mentions-legales"
       />

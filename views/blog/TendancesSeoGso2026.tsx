@@ -22,7 +22,7 @@ export const TendancesSeoGso2026: React.FC = () => {
         {
             "@type": "ListItem",
             "position": 3,
-            "name": "Tendances SEO & GSO 2026",
+            "name": "Tendances SEO & GEO 2026",
             "item": "https://www.triaina.fr/blog/tendances-seo-gso-2026"
         }
     ]
@@ -31,8 +31,8 @@ export const TendancesSeoGso2026: React.FC = () => {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Tendances SEO & GSO 2026 : Guide Complet des Changements qui Dominent le Référencement",
-    "description": "Guide complet des 10 tendances SEO & GSO 2026 : E-E-A-T, citations IA, contenu long-form, données propriétaires, netlinking, présence médiatique. Cas clients et actions immédiates.",
+    "headline": "Tendances SEO & GEO 2026 : Guide Complet des Changements qui Dominent le Référencement",
+    "description": "Guide complet des 10 tendances SEO & GEO 2026 : E-E-A-T, citations IA, contenu long-form, données propriétaires, netlinking, présence médiatique. Cas clients et actions immédiates.",
     "image": "https://picsum.photos/seed/seo-trends-2026/1200/675",
     "author": {
             "@type": "Person",
@@ -60,7 +60,7 @@ export const TendancesSeoGso2026: React.FC = () => {
     "mainEntity": [
         {
             "@type": "Question",
-            "name": "Quelles sont les 10 tendances SEO & GSO 2026 ?",
+            "name": "Quelles sont les 10 tendances SEO & GEO 2026 ?",
             "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Les 10 tendances sont : 1) E-E-A-T domine tout, 2) GSO devient plus important que SEO, 3) Contenu long-form (2 000+ mots), 4) Données propriétaires, 5) Netlinking de qualité, 6) Citations IA, 7) Présence médiatique, 8) Vitesse et mobile, 9) Contenu multimédia, 10) Contenu frais et mis à jour."
@@ -144,17 +144,17 @@ export const TendancesSeoGso2026: React.FC = () => {
   return (
     <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
       <SEO 
-        title="Tendances SEO & GSO 2026 : Guide Complet des Changements qui Dominent" 
-        description="Tendances SEO & GSO 2026 : E-E-A-T, citations IA, contenu long-form, données propriétaires, netlinking, présence médiatique. 10 tendances qui dominent le référencement en 2026."
+        title="Tendances SEO & GEO 2026 : Guide Complet des Changements qui Dominent" 
+        description="Tendances SEO & GEO 2026 : E-E-A-T, citations IA, contenu long-form, données propriétaires, netlinking, présence médiatique. 10 tendances qui dominent le référencement en 2026."
         keywords="tendances SEO 2026, tendances GSO 2026, E-E-A-T, citations IA, ChatGPT, Gemini, Perplexity, contenu long-form, données propriétaires, netlinking, présence médiatique"
         schema={[breadcrumbSchema, articleSchema, faqSchema]}
-        ogTitle="Tendances SEO & GSO 2026 : Guide Complet des Changements qui Dominent"
-        ogDescription="10 tendances SEO & GSO 2026 : E-E-A-T, citations IA, contenu long-form, données propriétaires, netlinking, présence médiatique. Cas clients et actions immédiates."
+        ogTitle="Tendances SEO & GEO 2026 : Guide Complet des Changements qui Dominent"
+        ogDescription="10 tendances SEO & GEO 2026 : E-E-A-T, citations IA, contenu long-form, données propriétaires, netlinking, présence médiatique. Cas clients et actions immédiates."
         image="https://picsum.photos/seed/seo-trends-2026/1200/675"
         type="article"
         twitterCard="summary_large_image"
-        twitterTitle="Tendances SEO & GSO 2026 : Guide Complet"
-        twitterDescription="10 tendances SEO & GSO 2026 : E-E-A-T, citations IA, contenu long-form, données propriétaires, netlinking."
+        twitterTitle="Tendances SEO & GEO 2026 : Guide Complet"
+        twitterDescription="10 tendances SEO & GEO 2026 : E-E-A-T, citations IA, contenu long-form, données propriétaires, netlinking."
         canonicalUrl="https://www.triaina.fr/blog/tendances-seo-gso-2026"
       />
 
@@ -173,7 +173,7 @@ export const TendancesSeoGso2026: React.FC = () => {
             <span className="flex items-center gap-1"><Clock size={12} /> 18 MIN</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-display font-bold text-slate-900 mb-8 leading-tight tracking-tight">
-            Tendances SEO & GSO 2026 : <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Guide Complet des Changements qui Dominent</span>
+            Tendances SEO & GEO 2026 : <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Guide Complet des Changements qui Dominent</span>
           </h1>
           <p className="text-xl text-slate-600 leading-relaxed max-w-4xl mx-auto">
             En 2026, le <strong>SEO</strong> et le <strong>GSO</strong> ne sont plus les mêmes qu'il y a 2 ans. Google a changé ses algorithmes. Les <strong>IA génératives</strong> ont explosé. Les utilisateurs cherchent différemment.
@@ -184,7 +184,7 @@ export const TendancesSeoGso2026: React.FC = () => {
         <div className="mb-16 rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-900/10 aspect-video relative group">
           <img 
             src="https://picsum.photos/seed/tendances-seo-gso-2026/1200/675" 
-            alt="Tendances SEO & GSO 2026" 
+            alt="Tendances SEO & GEO 2026" 
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             referrerPolicy="no-referrer"
           />
@@ -483,7 +483,7 @@ export const TendancesSeoGso2026: React.FC = () => {
             <section id="conclusion" className="my-20 text-center">
                 <h2 className="text-4xl font-bold mb-8">Conclusion</h2>
                 <p className="text-xl text-slate-600 mb-12 max-w-4xl mx-auto">
-                    Les tendances <strong>SEO & GSO 2026</strong> sont claires : <strong>E-E-A-T, GSO, contenu long, données propriétaires, backlinks de qualité, citations IA, présence médiatique, vitesse, contenu multimédia, contenu frais</strong>.
+                    Les tendances <strong>SEO & GEO 2026</strong> sont claires : <strong>E-E-A-T, GSO, contenu long, données propriétaires, backlinks de qualité, citations IA, présence médiatique, vitesse, contenu multimédia, contenu frais</strong>.
                 </p>
                 
                 <div className="bg-blue-600 rounded-3xl p-10 text-white text-left max-w-3xl mx-auto">

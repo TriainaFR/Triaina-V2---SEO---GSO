@@ -28,7 +28,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                             AGENCE SEO
                         </span>
                         <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-blue-600 mt-2 sm:mt-0">
-                            & GSO
+                            & GEO
                         </span>
                     </h1>
                     <p className="text-lg md:text-xl text-slate-600 max-w-3xl font-light leading-relaxed">

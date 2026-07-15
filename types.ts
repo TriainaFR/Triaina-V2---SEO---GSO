@@ -56,6 +56,8 @@ export type Page =
   | 'agence-netlinking-2026'
   | 'grok-seo-2026'
   | 'ai-overview-ecommerce-2026'
+  | 'agence-geo-ecommerce-2026'
+  | 'audit-eeat-2026'
   | 'referencement-gemini-2026'
   | 'google-ai-overview-france'
   | 'agence-seo-angers-2026'
@@ -63,6 +65,7 @@ export type Page =
   | 'agence-seo-avignon-2026'
   | 'agence-seo-toulon-2026'
   | 'agence-seo-la-rochelle-2026'
+  | 'annuaire'
   | '404';
 
 export interface NavLink {

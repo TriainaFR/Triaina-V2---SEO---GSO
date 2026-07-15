@@ -65,7 +65,7 @@ export const ReferencementIAParisGuide: React.FC = () => {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Triaina - Agence SEO & GSO Paris",
+    "name": "Triaina - Agence SEO & GEO Paris",
     "image": "https://www.triaina.fr/logo.png",
     "description": "Agence spécialisée en référencement IA et GSO pour entreprises parisiennes",
     "url": "https://www.triaina.fr",

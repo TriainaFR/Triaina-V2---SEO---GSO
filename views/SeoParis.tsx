@@ -304,7 +304,7 @@ export const SeoParis: React.FC<SeoParisProps> = ({ onNavigate }) => {
 
         {/* PROCESSUS */}
         <div className="mb-20 animate-fade-in-up" style={{animationDelay: '300ms'}}>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-slate-900 mb-12 text-center">Notre processus SEO & GSO</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-slate-900 mb-12 text-center">Notre processus SEO & GEO</h2>
             <div className="space-y-6">
                 {[
                     { title: "Phase 1 : Audit et stratégie (Semaines 1-2)", desc: "Audit SEO complet, audit GSO, analyse concurrentielle, identification des 50-100 mots-clés prioritaires, et création d'une stratégie SEO + GSO personnalisée." },

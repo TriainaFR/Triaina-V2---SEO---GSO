@@ -55,6 +55,8 @@ export const PAGE_TO_URL: Record<string, string> = {
   'agence-netlinking-2026': '/blog/agence-netlinking',
   'grok-seo-2026': '/blog/grok-seo',
   'ai-overview-ecommerce-2026': '/blog/ai-overview-ecommerce-france-2026',
+  'agence-geo-ecommerce-2026': '/blog/agence-geo-ecommerce-2026',
+  'audit-eeat-2026': '/blog/audit-eeat-2026',
   'referencement-gemini-2026': '/blog/referencement-gemini-2026',
   'agence-seo-angers-2026': '/blog/agence-seo-angers-2026',
   'agence-seo-vannes-2026': '/blog/agence-seo-vannes-2026',
@@ -64,10 +66,12 @@ export const PAGE_TO_URL: Record<string, string> = {
   'agence-google-ai-overview-2026': '/blog/agence-google-ai-overview',
   'meilleure-agence-referencement-ia-france-2026': '/blog/meilleure-agence-referencement-ia-france',
   'agence-geo-paris': '/agence-geo-paris',
+  'annuaire': '/annuaire',
 };
 
 export const ROUTES: Record<string, Page> = {
   '/agence-geo-paris': 'agence-geo-paris',
+  '/annuaire': 'annuaire',
   '/blog/meilleure-agence-referencement-ia-france': 'meilleure-agence-referencement-ia-france-2026',
   '/blog/agence-google-ai-overview': 'agence-google-ai-overview-2026',
   '/': 'home',
@@ -133,6 +137,8 @@ export const ROUTES: Record<string, Page> = {
   '/blog/agence-netlinking': 'agence-netlinking-2026',
   '/blog/grok-seo': 'grok-seo-2026',
   '/blog/ai-overview-ecommerce-france-2026': 'ai-overview-ecommerce-2026',
+  '/blog/agence-geo-ecommerce-2026': 'agence-geo-ecommerce-2026',
+  '/blog/audit-eeat-2026': 'audit-eeat-2026',
   '/blog/referencement-gemini-2026': 'referencement-gemini-2026'
 };
 
@@ -145,7 +151,7 @@ export const NAV_LINKS: NavLink[] = [
     children: [
         { id: 'expertise-seo', label: 'Expertise SEO' },
         { id: 'expertise-sea', label: 'Expertise SEA' },
-        { id: 'expertise-gso', label: 'Expertise GSO' },
+        { id: 'expertise-gso', label: 'Expertise GEO' },
         { id: 'expertise-gsa', label: 'Expertise GSA' },
         { id: 'expertise-media', label: 'Expertise Média' },
         { id: 'expertise-content', label: 'Expertise Automatisation de Contenu' }
@@ -164,6 +170,7 @@ export const NAV_LINKS: NavLink[] = [
   { id: 'references', label: 'RÉFÉRENCES' },
   { id: 'blog', label: 'BLOG' },
   { id: 'contact', label: 'CONTACT' },
+  { id: 'annuaire', label: 'ANNUAIRE' },
   { id: 'faq', label: 'FAQ' },
 ];
 
@@ -200,7 +207,7 @@ export const EXPERTISE_DATA: Record<string, ExpertiseContent> = {
   },
   'expertise-gso': {
     id: 'expertise-gso',
-    title: 'Expertise GSO',
+    title: 'Expertise GEO',
     subtitle: 'Generative Search Optimization',
     description: "La nouvelle frontière. Nous optimisons votre marque pour qu'elle soit citée, recommandée et référencée par les IA génératives (ChatGPT, Gemini, Claude, Perplexity). Ne disparaissez pas du web conversationnel.",
     details: [
@@ -369,7 +376,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
     id: 'ref_bestrestaurants',
     client: 'Best Restaurants Paris',
     title: 'Stratégie SEO & GEO',
-    summary: 'Double optimisation SEO & GSO pour le guide leader.',
+    summary: 'Double optimisation SEO & GEO pour le guide leader.',
     challenge: 'Maintenir et accroître les parts de marché face à la concurrence des agrégateurs et des recommandations directes par IA.',
     solution: '',
     results: [
@@ -425,6 +432,8 @@ export const PARTNERS_DATA: PartnerItem[] = [
 ];
 
 export const BLOG_DATA: BlogItem[] = [
+  
+
   {
     id: 'top-10-agences-seo-geo-paris-2026',
     source: 'Classement Agences',
@@ -535,8 +544,8 @@ export const BLOG_DATA: BlogItem[] = [
     source: 'Guide Stratégique',
     logo: '',
     date: '01 AVRIL 2026',
-    title: 'Tendances SEO & GSO 2026 : Guide Complet des Changements qui Dominent',
-    excerpt: 'Découvrez les 10 tendances SEO & GSO qui dominent le référencement en 2026 : E-E-A-T, citations IA, contenu long-form et données propriétaires.',
+    title: 'Tendances SEO & GEO 2026 : Guide Complet des Changements qui Dominent',
+    excerpt: 'Découvrez les 10 tendances SEO & GEO qui dominent le référencement en 2026 : E-E-A-T, citations IA, contenu long-form et données propriétaires.',
     url: '/blog/tendances-seo-gso-2026',
     image: 'https://picsum.photos/seed/tendances-seo-gso-2026/1200/675',
     tag: 'GUIDE'
@@ -922,6 +931,28 @@ export const BLOG_DATA: BlogItem[] = [
   }
 ,
 
+  {
+    id: 'agence-geo-ecommerce-2026',
+    source: 'GEO',
+    logo: '',
+    date: '15 JUILLET 2026',
+    title: 'Agence GEO e-commerce : comment choisir en 2026 ?',
+    excerpt: 'Ce guide compare les critères de sélection d\'une agence GEO spécialisée dans le commerce en ligne, présente cinq profils d\'agences et propose une matrice comparative.',
+    url: '/blog/agence-geo-ecommerce-2026',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'audit-eeat-2026',
+    source: 'E-E-A-T',
+    logo: '',
+    date: '16 JUILLET 2026',
+    title: 'Audit E-E-A-T 2026 : comment préparer votre site ?',
+    excerpt: 'L\'E-E-A-T est le cadre que Google utilise pour évaluer la fiabilité d\'un contenu et de son auteur. Ce guide vous aide à préparer votre site.',
+    url: '/blog/audit-eeat-2026',
+    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  }
 ];
 
 export const CAREERS_DATA: JobOffer[] = [];
@@ -971,8 +1002,8 @@ export const HISTORY_DATA: HistoryItem[] = [
   },
   {
     year: '2025',
-    title: 'La Genèse de Triaina - Agence SEO & GSO',
-    description: "En début 2025, notre association voit le jour et nous créons Triaina, la première agence spécialisée en SEO & GSO, intégrant une division média. Triaina est née de la conviction que le référencement naturel et l'optimisation pour les IA génératives doivent aller de pair."
+    title: 'La Genèse de Triaina - Agence SEO & GEO',
+    description: "En début 2025, notre association voit le jour et nous créons Triaina, la première agence spécialisée en SEO & GEO, intégrant une division média. Triaina est née de la conviction que le référencement naturel et l'optimisation pour les IA génératives doivent aller de pair."
   }
 ];
 
@@ -1082,7 +1113,7 @@ export const FAQ_DATA: FAQItem[] = [
 ];
 
 export const SEO_HOME_CONTENT = {
-    title: "Agence SEO & GSO à Paris : Dominez la Recherche de Demain",
+    title: "Agence SEO & GEO à Paris : Dominez la Recherche de Demain",
     intro: "Triaina redéfinit les standards du référencement en fusionnant l'expertise SEO technique traditionnelle avec la puissance émergente du GSO (Generative Search Optimization). Basée à Paris, notre agence accompagne les marques qui refusent l'invisibilité dans l'ère des assistants IA.",
     sections: [
         {
@@ -1095,7 +1126,7 @@ export const SEO_HOME_CONTENT = {
         },
         {
             subtitle: "Audit et Accompagnement sur-mesure",
-            text: "Chaque marque possède un ADN numérique unique. Nos audits SEO & GSO plongent au cœur de votre structure technique (Core Web Vitals, Schema.org) et de votre empreinte sémantique. Nous identifions les opportunités manquées où vos concurrents sont invisibles et nous déployons une roadmap précise pour capturer ce trafic qualifié, que ce soit via une recherche vocale, une requête Google ou une conversation avec une IA."
+            text: "Chaque marque possède un ADN numérique unique. Nos audits SEO & GEO plongent au cœur de votre structure technique (Core Web Vitals, Schema.org) et de votre empreinte sémantique. Nous identifions les opportunités manquées où vos concurrents sont invisibles et nous déployons une roadmap précise pour capturer ce trafic qualifié, que ce soit via une recherche vocale, une requête Google ou une conversation avec une IA."
         }
     ]
 };

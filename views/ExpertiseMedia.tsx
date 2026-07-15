@@ -29,7 +29,7 @@ export const ExpertiseMedia: React.FC<ExpertiseMediaProps> = ({ onNavigate }) =>
         "@type": "Article",
         "@id": "https://www.triaina.fr/expertise-media#article",
         "isPartOf": { "@id": "https://www.triaina.fr/expertise-media" },
-        "headline": "Expertise Média : L'Avantage Compétitif de Triaina en SEO & GSO",
+        "headline": "Expertise Média : L'Avantage Compétitif de Triaina en SEO & GEO",
         "description": "Expertise média Triaina : propriétaires de médias, nous générons des backlinks naturels, construisons l'E-E-A-T et créons une présence médiatique pour dominer le SEO et le GSO.",
         "image": {
           "@type": "ImageObject",
@@ -59,7 +59,7 @@ export const ExpertiseMedia: React.FC<ExpertiseMediaProps> = ({ onNavigate }) =>
       {
         "@type": "Product",
         "@id": "https://www.triaina.fr/expertise-media#product",
-        "name": "Expertise Média : SEO & GSO",
+        "name": "Expertise Média : SEO & GEO",
         "description": "Propriétaires de médias, nous générons des backlinks naturels, construisons l'E-E-A-T et créons une présence médiatique pour dominer le SEO et le GSO.",
         "image": "https://www.triaina.fr/images/expertise-media-og.jpg",
         "brand": {
@@ -139,7 +139,7 @@ export const ExpertiseMedia: React.FC<ExpertiseMediaProps> = ({ onNavigate }) =>
   return (
     <div className="pt-24 md:pt-32 pb-12 px-4 md:px-6 min-h-screen max-w-7xl mx-auto relative z-10 w-full overflow-hidden">
       <SEO 
-        title="Expertise Média : L'Avantage Compétitif de Triaina en SEO & GSO"
+        title="Expertise Média : L'Avantage Compétitif de Triaina en SEO & GEO"
         description="Expertise média Triaina : propriétaires de médias, nous générons des backlinks naturels, construisons l'E-E-A-T et créons une présence médiatique. +200-600% de trafic en 6 mois."
         schema={mediaSchema}
         canonicalUrl="https://www.triaina.fr/expertise-media"
@@ -155,7 +155,7 @@ export const ExpertiseMedia: React.FC<ExpertiseMediaProps> = ({ onNavigate }) =>
         <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-black text-slate-900 mb-6 leading-tight md:leading-[1.1] break-words hyphens-auto w-full">
           EXPERTISE MÉDIA : <br/>
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400 break-words">
-            L'AVANTAGE COMPÉTITIF EN SEO & GSO
+            L'AVANTAGE COMPÉTITIF EN SEO & GEO
           </span>
         </h1>
         

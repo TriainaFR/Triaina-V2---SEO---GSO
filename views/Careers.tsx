@@ -23,7 +23,7 @@ export const Careers: React.FC<CareersProps> = ({ onNavigate }) => {
     <div className="pt-32 pb-20 px-4 min-h-screen max-w-7xl mx-auto relative z-10 overflow-x-hidden">
       
       <SEO 
-          title="Recrutement Triaina | Carrière SEO & GSO"
+          title="Recrutement Triaina | Carrière SEO & GEO"
           description="Rejoignez Triaina, l'agence pionnière du GSO. Offres d'emploi SEO, développeur IA, rédacteur web et consultant marketing à Paris."
           keywords="recrutement seo, emploi gso, carrière marketing digital, offre emploi paris"
           schema={careersSchema} 
