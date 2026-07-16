@@ -47,6 +47,9 @@ export const PAGE_TO_URL: Record<string, string> = {
   '10-conseils-marque-visible-chatgpt-2026': '/blog/10-conseils-marque-visible-chatgpt',
   'top-10-agences-seo-geo-paris-2026': '/blog/top-agences-seo-geo-paris',
   'agence-seo-lyon-2026': '/blog/agence-seo-lyon',
+  'agence-seo-geo-rennes-2026': '/blog/agence-seo-geo-rennes-2026',
+  'agence-seo-geo-caen-2026': '/blog/agence-seo-geo-caen-2026',
+  'agence-seo-geo-rouen-2026': '/blog/agence-seo-geo-rouen-2026',
   'agence-seo-bordeaux-2026': '/blog/agence-seo-bordeaux',
   'agence-seo-lille-2026': '/blog/agence-seo-lille',
   'agence-seo-marseille-2026': '/blog/agence-seo-marseille',
@@ -57,6 +60,8 @@ export const PAGE_TO_URL: Record<string, string> = {
   'ai-overview-ecommerce-2026': '/blog/ai-overview-ecommerce-france-2026',
   'agence-geo-ecommerce-2026': '/blog/agence-geo-ecommerce-2026',
   'audit-eeat-2026': '/blog/audit-eeat-2026',
+  'google-ai-mode-2026': '/blog/google-ai-mode-2026',
+  'prix-tarifs-agence-seo-geo-2026': '/blog/prix-tarifs-agence-seo-geo-2026',
   'referencement-gemini-2026': '/blog/referencement-gemini-2026',
   'agence-seo-angers-2026': '/blog/agence-seo-angers-2026',
   'agence-seo-vannes-2026': '/blog/agence-seo-vannes-2026',
@@ -129,6 +134,9 @@ export const ROUTES: Record<string, Page> = {
   '/blog/10-conseils-marque-visible-chatgpt': '10-conseils-marque-visible-chatgpt-2026',
   '/blog/top-agences-seo-geo-paris': 'top-10-agences-seo-geo-paris-2026',
   '/blog/agence-seo-lyon': 'agence-seo-lyon-2026',
+  '/blog/agence-seo-geo-rennes-2026': 'agence-seo-geo-rennes-2026',
+  '/blog/agence-seo-geo-caen-2026': 'agence-seo-geo-caen-2026',
+  '/blog/agence-seo-geo-rouen-2026': 'agence-seo-geo-rouen-2026',
   '/blog/agence-seo-bordeaux': 'agence-seo-bordeaux-2026',
   '/blog/agence-seo-lille': 'agence-seo-lille-2026',
   '/blog/agence-seo-marseille': 'agence-seo-marseille-2026',
@@ -139,6 +147,8 @@ export const ROUTES: Record<string, Page> = {
   '/blog/ai-overview-ecommerce-france-2026': 'ai-overview-ecommerce-2026',
   '/blog/agence-geo-ecommerce-2026': 'agence-geo-ecommerce-2026',
   '/blog/audit-eeat-2026': 'audit-eeat-2026',
+  '/blog/google-ai-mode-2026': 'google-ai-mode-2026',
+  '/blog/prix-tarifs-agence-seo-geo-2026': 'prix-tarifs-agence-seo-geo-2026',
   '/blog/referencement-gemini-2026': 'referencement-gemini-2026'
 };
 
@@ -288,6 +298,19 @@ export const REFERENCES_DATA: ReferenceItem[] = [
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200'
   },
   {
+    id: 'ref_sunlife_group',
+    client: 'Sunlife Group',
+    title: 'Stratégie SEO & GEO',
+    summary: 'Accompagnement SEO et GEO pour les 5 hôtels et 2 golfs du groupe.',
+    challenge: 'Développer la visibilité de l\'ensemble des 5 hôtels et 2 golfs du groupe sur les moteurs de recherche traditionnels et les intelligences artificielles génératives.',
+    solution: '',
+    results: [
+        'Accompagnement SEO et GEO en cours.'
+    ],
+    tags: ['SEO', 'GEO', 'Travel', 'Luxe'],
+    image: 'https://images.unsplash.com/photo-1582610116397-edb318620f90?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
     id: 'ref_leshardis',
     client: 'Les Hardis',
     title: 'Stratégie SEO & GEO',
@@ -401,7 +424,8 @@ export const REFERENCES_DATA: ReferenceItem[] = [
     ],
     tags: ['Hotels', 'Technical SEO', 'International'],
     image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1200'
-  }
+  },
+
 ];
 
 export const PARTNERS_DATA: PartnerItem[] = [
@@ -432,19 +456,10 @@ export const PARTNERS_DATA: PartnerItem[] = [
 ];
 
 export const BLOG_DATA: BlogItem[] = [
+
   
 
-  {
-    id: 'top-10-agences-seo-geo-paris-2026',
-    source: 'Classement Agences',
-    logo: '',
-    date: '10 JUILLET 2026',
-    title: 'Top 10 Agences SEO et GEO à Paris en 2026',
-    excerpt: 'Découvrez notre classement exclusif des meilleures agences SEO et GEO parisiennes pour dominer Google et les intelligences artificielles.',
-    url: '/blog/top-agences-seo-geo-paris',
-    image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=1200',
-    tag: 'CLASSEMENT'
-  },
+
 
   
 
@@ -932,6 +947,17 @@ export const BLOG_DATA: BlogItem[] = [
 ,
 
   {
+    id: 'top-10-agences-seo-geo-paris-2026',
+    source: 'Classement Agences',
+    logo: '',
+    date: '10 JUILLET 2026',
+    title: 'Top 10 Agences SEO et GEO à Paris en 2026',
+    excerpt: 'Découvrez notre classement exclusif des meilleures agences SEO et GEO parisiennes pour dominer Google et les intelligences artificielles.',
+    url: '/blog/top-agences-seo-geo-paris',
+    image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=1200',
+    tag: 'CLASSEMENT'
+  },
+  {
     id: 'agence-geo-ecommerce-2026',
     source: 'GEO',
     logo: '',
@@ -952,6 +978,61 @@ export const BLOG_DATA: BlogItem[] = [
     url: '/blog/audit-eeat-2026',
     image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
+  },
+  {
+    id: 'google-ai-mode-2026',
+    source: 'GEO',
+    logo: '',
+    date: '16 JUILLET 2026',
+    title: 'Google AI Mode : qu\'est-ce que c\'est et comment s\'y préparer en 2026 ?',
+    excerpt: 'Google AI Mode, c\'est un onglet de recherche à part entière, distinct des AI Overviews, qui remplace la page de résultats classique par une conversation construite avec Gemini 3.',
+    url: '/blog/google-ai-mode-2026',
+    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'prix-tarifs-agence-seo-geo-2026',
+    source: 'GEO',
+    logo: '',
+    date: '16 JUILLET 2026',
+    title: 'Prix & tarifs agence SEO/GEO en 2026 : combien ça coûte ?',
+    excerpt: 'Une prestation SEO en France coûte en moyenne entre 500 € et 8 000 € par mois selon la taille du site, les objectifs et le niveau de concurrence.',
+    url: '/blog/prix-tarifs-agence-seo-geo-2026',
+    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'agence-seo-geo-rennes-2026',
+    source: 'Classement Agences',
+    logo: '',
+    date: '16 JUILLET 2026',
+    title: 'Agence SEO & GEO Rennes : top 5 en 2026',
+    excerpt: 'Comparatif détaillé des 5 profils d\'agences SEO actives sur Rennes et la Bretagne, avec une matrice tarifs/spécialités et un guide de décision selon votre taille d\'entreprise.',
+    url: '/blog/agence-seo-geo-rennes-2026',
+    image: '/rennes_classic_architecture_v2.jpg',
+    tag: 'CLASSEMENT'
+  },
+  {
+    id: 'agence-seo-geo-caen-2026',
+    source: 'Classement Agences',
+    logo: '',
+    date: '16 JUILLET 2026',
+    title: 'Agence SEO/GEO Caen : le top 5 en 2026',
+    excerpt: 'Comparatif détaillé des 5 profils d\'agences SEO/GEO actives sur Caen et la Normandie. Découvrez pourquoi le marché évolue et comment choisir le bon prestataire.',
+    url: '/blog/agence-seo-geo-caen-2026',
+    image: '/french_city_architecture.jpg',
+    tag: 'CLASSEMENT'
+  },
+  {
+    id: 'agence-seo-geo-rouen-2026',
+    source: 'Classement Agences',
+    logo: '',
+    date: '16 JUILLET 2026',
+    title: 'Agence SEO/GEO Rouen : le top 5 en 2026',
+    excerpt: 'Comparatif détaillé des 5 profils d\'agences SEO/GEO actives sur Rouen et la Seine-Maritime. Découvrez comment le marché évolue et pourquoi choisir un expert.',
+    url: '/blog/agence-seo-geo-rouen-2026',
+    image: '/rouen_architecture.jpg',
+    tag: 'CLASSEMENT'
   }
 ];
 

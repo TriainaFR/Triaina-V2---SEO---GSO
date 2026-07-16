@@ -1,27 +1,31 @@
 const fs = require('fs');
-let content = fs.readFileSync('constants.ts', 'utf8');
+let content = fs.readFileSync('constants.ts', 'utf-8');
 
-const itemRegex = /\{\s*id:\s*'etre-cite-par-chatgpt'[\s\S]*?\},/;
-const match = content.match(itemRegex);
+const blogEntryRegex = /  \{\s*id: 'agence-seo-geo-rennes-2026',[\s\S]*?tag: 'CLASSEMENT'\s*\},\n/;
+const match = content.match(blogEntryRegex);
 
 if (match) {
-    const itemStr = match[0];
-    content = content.replace(itemRegex, '');
+    // Remove it from the beginning
+    content = content.replace(match[0], '');
     
-    // Find the end of the array
-    const searchStr = "export const BLOG_DATA: BlogItem[] = [";
-    const startIdx = content.indexOf(searchStr);
-    
-    // Find the closing bracket of the array
-    // Since we know the file, we can look for "];" or similar after startIdx
-    const endIdx = content.indexOf("];\n", startIdx);
-    if (endIdx !== -1) {
-        content = content.substring(0, endIdx) + "  " + itemStr + "\n" + content.substring(endIdx);
-        fs.writeFileSync('constants.ts', content);
-        console.log("Moved to bottom of array (top of page).");
-    } else {
-        console.log("Could not find end of array.");
-    }
+    // Create the updated entry with a reindeer image
+    const newEntry = `  {
+    id: 'agence-seo-geo-rennes-2026',
+    source: 'Classement Agences',
+    logo: '',
+    date: '16 JUILLET 2026',
+    title: 'Agence SEO & GEO Rennes : top 5 en 2026',
+    excerpt: 'Comparatif détaillé des 5 profils d\\'agences SEO actives sur Rennes et la Bretagne, avec une matrice tarifs/spécialités et un guide de décision selon votre taille d\\'entreprise.',
+    url: '/blog/agence-seo-geo-rennes-2026',
+    image: 'https://images.unsplash.com/photo-1544062425-ceb8c4c3e721?auto=format&fit=crop&q=80&w=1200',
+    tag: 'CLASSEMENT'
+  }
+];`;
+
+    // Append to the end of BLOG_DATA array (which ends with '];')
+    content = content.replace(/  \}\n\];/, '  },\n' + newEntry);
+    fs.writeFileSync('constants.ts', content);
+    console.log("Moved blog entry to the end and updated image.");
 } else {
-    console.log("Item not found");
+    console.log("Blog entry not found.");
 }

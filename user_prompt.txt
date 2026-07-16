@@ -1,0 +1,3 @@
+J'ai besoin que tu crée un nouvel article de blog avec le code SEO et GEO suivant, tu rajoutes un design sympa mais tu changes rien au SEO et au GEO et tu mets bien à jour les balises shema.org avec les bonnes informations.
+Tu mets cette article de blog tout en haut, comme c'est le dernier publié (aujourd'hui le 16/07).
+...

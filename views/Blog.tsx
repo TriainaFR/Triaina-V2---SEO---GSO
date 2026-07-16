@@ -1,8 +1,8 @@
 
-import React from 'react';
-import { BLOG_DATA, PAGE_TO_URL, ROUTES } from '../constants';
+import React, { useState, useMemo } from 'react';
+import { BLOG_DATA, ROUTES } from '../constants';
 import { Page } from '../types';
-import { ArrowUpRight, Calendar, Clock, BookOpen } from 'lucide-react';
+import { ArrowUpRight, Calendar, BookOpen, Search, Filter } from 'lucide-react';
 import { SEO } from '../components/SEO';
 
 interface BlogProps {
@@ -10,6 +10,9 @@ interface BlogProps {
 }
 
 export const Blog: React.FC<BlogProps> = ({ onNavigate }) => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedTag, setSelectedTag] = useState<string>('TOUS');
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -22,12 +25,10 @@ export const Blog: React.FC<BlogProps> = ({ onNavigate }) => {
   const handleArticleClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
     e.preventDefault();
     if (onNavigate) {
-      // Find the page ID corresponding to the URL
       const pageId = ROUTES[url];
       if (pageId) {
         onNavigate(pageId);
       } else {
-        // Fallback if route not found in ROUTES mapping
         window.location.href = url;
       }
     } else {
@@ -35,18 +36,33 @@ export const Blog: React.FC<BlogProps> = ({ onNavigate }) => {
     }
   };
 
+  // Get unique tags from the blog data
+  const tags = useMemo(() => {
+    const allTags = BLOG_DATA.map(article => article.tag);
+    return ['TOUS', ...Array.from(new Set(allTags))];
+  }, []);
+
+  // Filter articles based on search and selected tag
+  const filteredArticles = useMemo(() => {
+    return BLOG_DATA.filter(article => {
+      const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                            article.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesTag = selectedTag === 'TOUS' || article.tag === selectedTag;
+      return matchesSearch && matchesTag;
+    });
+  }, [searchTerm, selectedTag]);
+
   return (
     <div className="pt-32 pb-20 min-h-screen mx-auto relative z-10 w-[95%] md:w-[90%] lg:max-w-7xl">
-      
       <SEO 
         title="Blog SEO & GEO | Actualités Triaina" 
         description="Le blog de l'agence Triaina. Découvrez nos derniers articles, guides et analyses sur le référencement naturel (SEO) et l'optimisation pour les IA (GSO)."
         schema={breadcrumbSchema}
         canonicalUrl="https://www.triaina.fr/blog"
       />
-
+      
       {/* Header */}
-      <div className="mb-20 border-b border-slate-400 pb-8 animate-fade-in-up">
+      <div className="mb-12 border-b border-slate-400 pb-8 animate-fade-in-up">
         <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-2">
             LE <span className="text-blue-700">BLOG</span>
         </h1>
@@ -55,16 +71,49 @@ export const Blog: React.FC<BlogProps> = ({ onNavigate }) => {
         </p>
       </div>
 
-      {BLOG_DATA.length > 0 ? (
+      {/* Filters and Search */}
+      <div className="flex flex-col md:flex-row gap-6 justify-between items-center mb-12 animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2 items-center w-full md:w-auto">
+          <Filter size={16} className="text-slate-400 mr-2 hidden md:block" />
+          {tags.map((tag) => (
+            <button
+              key={tag}
+              onClick={() => setSelectedTag(tag)}
+              className={`px-4 py-2 text-xs font-mono tracking-wider uppercase rounded-full transition-all duration-300 ${
+                selectedTag === tag 
+                  ? 'bg-blue-700 text-white border-blue-700 shadow-md shadow-blue-700/20' 
+                  : 'bg-white text-slate-600 border border-slate-200 hover:border-blue-300 hover:text-blue-700'
+              }`}
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
+
+        {/* Search */}
+        <div className="relative w-full md:w-72 lg:w-96">
+          <input 
+            type="text" 
+            placeholder="Rechercher un article..." 
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full pl-12 pr-4 py-3 bg-white border border-slate-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all shadow-sm"
+          />
+          <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+        </div>
+      </div>
+
+      {filteredArticles.length > 0 ? (
           /* Blog Grid */
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
-            {[...BLOG_DATA].reverse().map((article, index) => (
+            {[...filteredArticles].reverse().map((article, index) => (
                 <a 
                     key={article.id}
                     href={article.url}
                     onClick={(e) => handleArticleClick(e, article.url)}
                     className="group flex flex-col bg-white border border-slate-200 rounded-lg overflow-hidden transition-all duration-500 hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-900/10 hover:-translate-y-2 animate-fade-in-up"
-                    style={{ animationDelay: `${index * 150}ms` }}
+                    style={{ animationDelay: `${index * 50}ms` }}
                 >
                     {/* Image Container */}
                     <div className="relative h-56 overflow-hidden">
@@ -115,20 +164,21 @@ export const Blog: React.FC<BlogProps> = ({ onNavigate }) => {
             ))}
           </div>
       ) : (
-          /* Empty State / Coming Soon */
-          <div className="flex flex-col items-center justify-center py-20 animate-fade-in-up bg-slate-100/50 rounded-lg border border-slate-200 border-dashed">
+          /* Empty State / No Results */
+          <div className="flex flex-col items-center justify-center py-20 animate-fade-in-up bg-slate-50/50 rounded-2xl border border-slate-200 border-dashed">
              <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-6 border border-slate-200 shadow-lg shadow-blue-500/5">
-                <BookOpen size={32} className="text-blue-600 animate-pulse" />
+                <Search size={32} className="text-slate-400" />
              </div>
-             <h3 className="text-2xl font-display font-bold text-slate-900 mb-2">Articles à venir</h3>
+             <h3 className="text-2xl font-display font-bold text-slate-900 mb-2">Aucun article trouvé</h3>
              <p className="font-mono text-sm text-slate-500 text-center max-w-md">
-                 Nos experts rédigent actuellement les prochains articles sur le référencement IA et les stratégies SEO avancées.
+                 Aucun article ne correspond à vos critères de recherche. Essayez de modifier vos filtres ou vos mots-clés.
              </p>
-             <div className="mt-6 flex gap-2">
-                <span className="w-2 h-2 bg-slate-300 rounded-full animate-bounce"></span>
-                <span className="w-2 h-2 bg-slate-300 rounded-full animate-bounce" style={{animationDelay: '100ms'}}></span>
-                <span className="w-2 h-2 bg-slate-300 rounded-full animate-bounce" style={{animationDelay: '200ms'}}></span>
-             </div>
+             <button 
+                onClick={() => { setSearchTerm(''); setSelectedTag('TOUS'); }}
+                className="mt-8 px-6 py-3 bg-blue-700 text-white text-sm font-mono tracking-wider uppercase rounded-full hover:bg-blue-600 transition-colors shadow-lg shadow-blue-700/20"
+             >
+                Réinitialiser les filtres
+             </button>
           </div>
       )}
     </div>

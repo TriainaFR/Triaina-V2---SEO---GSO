@@ -21,7 +21,7 @@ export const Logo: React.FC<{ className?: string }> = ({ className = "" }) => {
         </span>
         <div className="mt-1">
             <span className="text-[10px] font-mono text-blue-600 tracking-widest uppercase">
-            SEO - GSO - Média
+            SEO - GEO - Média
             </span>
         </div>
       </div>

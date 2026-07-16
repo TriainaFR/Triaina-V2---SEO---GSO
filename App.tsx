@@ -54,6 +54,9 @@ import { AgenceGoogleAiOverview2026 } from './views/blog/AgenceGoogleAiOverview2
 import { AgenceGeoParis } from './views/AgenceGeoParis';
 import { MeilleureAgenceReferencementIaFrance2026 } from './views/blog/MeilleureAgenceReferencementIaFrance2026';
 import { AgenceSeoLyon2026 } from './views/blog/AgenceSeoLyon2026';
+import { AgenceSeoGeoRennes2026 } from './views/blog/AgenceSeoGeoRennes2026';
+import { AgenceSeoGeoCaen2026 } from './views/blog/AgenceSeoGeoCaen2026';
+import { AgenceSeoGeoRouen2026 } from './views/blog/AgenceSeoGeoRouen2026';
 import { AgenceSeoBordeaux2026 } from './views/blog/AgenceSeoBordeaux2026';
 import { AgenceSeoLille2026 } from './views/blog/AgenceSeoLille2026';
 import { AgenceSeoMarseille2026 } from './views/blog/AgenceSeoMarseille2026';
@@ -64,6 +67,8 @@ import { GrokSeo2026 } from './views/blog/GrokSeo2026';
 import { AiOverviewEcommerce2026 } from './views/blog/AiOverviewEcommerce2026';
 import { AgenceGeoEcommerce2026 } from './views/blog/AgenceGeoEcommerce2026';
 import { AuditEeat2026 } from './views/blog/AuditEeat2026';
+import { GoogleAiMode2026 } from './views/blog/GoogleAiMode2026';
+import { PrixTarifsAgenceSeoGeo2026 } from './views/blog/PrixTarifsAgenceSeoGeo2026';
 import { ReferencementGemini2026 } from './views/blog/ReferencementGemini2026';
 import { SEO } from './components/SEO';
 import { CustomCursor } from './components/CustomCursor';
@@ -327,6 +332,12 @@ const App: React.FC = () => {
       return <MeilleureAgenceReferencementIaFrance2026 />;
       case 'agence-seo-lyon-2026':
         return <AgenceSeoLyon2026 />;
+      case 'agence-seo-geo-rennes-2026':
+        return <AgenceSeoGeoRennes2026 />;
+      case 'agence-seo-geo-caen-2026':
+        return <AgenceSeoGeoCaen2026 />;
+      case 'agence-seo-geo-rouen-2026':
+        return <AgenceSeoGeoRouen2026 />;
       case 'agence-seo-bordeaux-2026':
         return <AgenceSeoBordeaux2026 />;
       case 'agence-seo-lille-2026':
@@ -347,6 +358,10 @@ const App: React.FC = () => {
         return <AgenceGeoEcommerce2026 />;
       case 'audit-eeat-2026':
         return <AuditEeat2026 />;
+      case 'google-ai-mode-2026':
+        return <GoogleAiMode2026 />;
+      case 'prix-tarifs-agence-seo-geo-2026':
+        return <PrixTarifsAgenceSeoGeo2026 />;
       case 'referencement-gemini-2026':
         return <ReferencementGemini2026 />;
       case '404':
@@ -388,7 +403,7 @@ const App: React.FC = () => {
                         <Logo />
                     </div>
                     <p className="text-slate-500 text-xs font-mono leading-relaxed max-w-sm mb-6">
-                        Agence spécialisée en architecture SEO, domination GSO et autorité Média. 
+                        Agence spécialisée en architecture SEO, domination GEO et autorité Média. 
                     </p>
                     <div className="flex gap-4">
                         {SOCIAL_LINKS.map((social) => (
