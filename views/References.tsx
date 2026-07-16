@@ -1,22 +1,12 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { REFERENCES_DATA } from '../constants';
 import { ArrowUpRight } from 'lucide-react';
 import { ScrambleText } from '../components/ScrambleText';
 import { SEO } from '../components/SEO';
+import { motion } from 'motion/react';
 
 export const References: React.FC = () => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  // Toggle function for mobile tap
-  const handleInteraction = (index: number) => {
-    if (hoveredIndex === index) {
-        setHoveredIndex(null);
-    } else {
-        setHoveredIndex(index);
-    }
-  };
-
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -58,81 +48,59 @@ export const References: React.FC = () => {
         </p>
       </div>
 
-      <div className="flex flex-col border-t border-slate-400">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {REFERENCES_DATA.map((item, index) => (
-            <div 
+            <motion.div 
                 key={item.id}
-                className="group relative border-b border-slate-300 py-10 transition-all duration-300 bg-slate-100/60 hover:bg-gradient-to-r hover:from-white hover:to-blue-50 hover:pl-4 cursor-pointer"
-                onClick={() => handleInteraction(index)}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: (index % 3) * 0.15 }}
+                className="group bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl hover:border-blue-300 transition-all duration-300 flex flex-col cursor-pointer"
             >
-                <div className="grid md:grid-cols-12 gap-8 items-center px-4">
-                    {/* ID */}
-                    <div className="col-span-1 font-mono text-slate-500 text-xs hidden md:block">
-                        #00{index + 1}
-                    </div>
-
-                    {/* Client Name */}
-                    <div className="col-span-4">
-                        <h3 className="text-2xl font-display font-bold text-slate-900 group-hover:text-blue-700 transition-colors flex items-center gap-2">
-                            {item.client}
-                            <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                        </h3>
-                    </div>
-
-                    {/* Summary */}
-                    <div className="col-span-4 text-slate-700 font-mono text-sm">
-                        {item.title}
-                    </div>
-
-                    {/* Tags */}
-                    <div className="col-span-3 flex justify-end gap-2">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                    <img 
+                        src={item.image} 
+                        alt={`Référence client ${item.client} - ${item.title}`} 
+                        loading="lazy"
+                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute top-4 right-4 flex flex-wrap justify-end gap-2">
                         {item.tags.slice(0, 2).map((tag, i) => (
-                            <span key={i} className="text-[10px] font-mono text-blue-700 bg-white px-2 py-1 rounded-sm border border-blue-200 uppercase shadow-sm">
+                            <span key={i} className="bg-white/90 backdrop-blur-sm px-2 py-1 text-[10px] font-mono text-blue-700 border border-white/20 rounded shadow-sm uppercase">
                                 {tag}
                             </span>
                         ))}
                     </div>
                 </div>
-
-                {/* Hover Reveal Details */}
-                <div className={`overflow-hidden transition-all duration-500 ${hoveredIndex === index ? 'max-h-[500px] opacity-100 mt-6' : 'max-h-0 opacity-0'}`}>
-                    <div className="grid md:grid-cols-12 gap-8 px-4">
-                        <div className="hidden md:block col-span-1"></div>
-                        
-                        {/* Text Content - Always Visible on Expand */}
-                        <div className="col-span-12 md:col-span-7 bg-white/95 p-6 border-l-2 border-blue-600 shadow-md backdrop-blur-sm rounded-r-md">
-                             <h4 className="font-mono text-blue-700 text-xs uppercase mb-2">Analyse d'Impact</h4>
-                             <ul className="space-y-1">
-                                {item.results.map((res, i) => (
-                                    <li key={i} className="text-slate-700 text-sm font-mono flex items-center gap-2">
-                                        <span className="min-w-[4px] h-1 bg-blue-500"></span>
-                                        {res}
-                                    </li>
-                                ))}
-                             </ul>
-                             {item.solution && (
-                                <p className="mt-4 text-xs text-slate-500 font-light italic border-t border-slate-100 pt-2">
-                                    {item.solution}
-                                </p>
-                             )}
-                        </div>
-
-                        {/* Image Content - Hidden on Mobile */}
-                        <div className="hidden md:block col-span-4 relative aspect-video border border-slate-300 overflow-hidden rounded shadow-sm">
-                             <img 
-                                src={item.image} 
-                                alt={`Référence client ${item.client} - ${item.title}`} 
-                                loading="lazy" 
-                                width="600"
-                                height="400"
-                                className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-700 grayscale hover:grayscale-0" 
-                            />
-                        </div>
+                
+                <div className="p-6 flex flex-col flex-grow">
+                    <div className="flex justify-between items-start mb-4 gap-4">
+                        <h3 className="text-2xl font-display font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
+                            {item.client}
+                        </h3>
+                        <ArrowUpRight size={24} className="text-slate-400 group-hover:text-blue-700 transition-all transform group-hover:translate-x-1 group-hover:-translate-y-1 flex-shrink-0" />
+                    </div>
+                    
+                    <p className="text-sm font-mono text-slate-600 mb-6 font-medium">
+                        {item.title}
+                    </p>
+                    
+                    <div className="mt-auto pt-6 border-t border-slate-100">
+                        <h4 className="font-mono text-blue-700 text-[10px] tracking-wider uppercase mb-3 opacity-80">
+                            Impact & Résultats
+                        </h4>
+                        <ul className="space-y-3">
+                            {item.results.slice(0, 2).map((res, i) => (
+                                <li key={i} className="text-xs text-slate-700 font-mono flex items-start gap-2.5 leading-relaxed">
+                                    <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 flex-shrink-0 shadow-sm"></span>
+                                    <span className="line-clamp-2">{res}</span>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         ))}
       </div>
     </div>
