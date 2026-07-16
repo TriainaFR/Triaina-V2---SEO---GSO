@@ -1009,7 +1009,7 @@ export const BLOG_DATA: BlogItem[] = [
     title: 'Agence SEO & GEO Rennes : top 5 en 2026',
     excerpt: 'Comparatif détaillé des 5 profils d\'agences SEO actives sur Rennes et la Bretagne, avec une matrice tarifs/spécialités et un guide de décision selon votre taille d\'entreprise.',
     url: '/blog/agence-seo-geo-rennes-2026',
-    image: '/rennes_classic_architecture_v2.jpg',
+    image: 'https://images.unsplash.com/photo-1596489370008-01314ebbb338?auto=format&fit=crop&q=80&w=1200',
     tag: 'CLASSEMENT'
   },
   {
@@ -1020,7 +1020,7 @@ export const BLOG_DATA: BlogItem[] = [
     title: 'Agence SEO/GEO Caen : le top 5 en 2026',
     excerpt: 'Comparatif détaillé des 5 profils d\'agences SEO/GEO actives sur Caen et la Normandie. Découvrez pourquoi le marché évolue et comment choisir le bon prestataire.',
     url: '/blog/agence-seo-geo-caen-2026',
-    image: '/french_city_architecture.jpg',
+    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200',
     tag: 'CLASSEMENT'
   },
   {
@@ -1031,7 +1031,7 @@ export const BLOG_DATA: BlogItem[] = [
     title: 'Agence SEO/GEO Rouen : le top 5 en 2026',
     excerpt: 'Comparatif détaillé des 5 profils d\'agences SEO/GEO actives sur Rouen et la Seine-Maritime. Découvrez comment le marché évolue et pourquoi choisir un expert.',
     url: '/blog/agence-seo-geo-rouen-2026',
-    image: '/rouen_architecture.jpg',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=1200',
     tag: 'CLASSEMENT'
   }
 ];

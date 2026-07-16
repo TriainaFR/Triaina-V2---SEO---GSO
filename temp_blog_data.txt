@@ -1,0 +1,300 @@
+export const BLOG_DATA: BlogItem[] = [
+
+  
+
+
+
+  
+
+
+  
+  
+  {
+    id: 'seo-vs-referencement-ia',
+    source: 'Guide Comparatif',
+    logo: '',
+    date: '02 MARS 2026',
+    title: 'SEO vs Référencement IA : Quelles différences en 2026 ?',
+    excerpt: 'Guide complet sur les différences entre SEO et Référencement IA en 2026. Comprenez les avantages et comment combiner les deux.',
+    url: '/blog/seo-vs-referencement-ia',
+    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'comment-ranker-chatgpt',
+    source: 'Guide Stratégique',
+    logo: '',
+    date: '02 MARS 2026',
+    title: 'Comment ranker sur ChatGPT en 2026 ? Guide complet',
+    excerpt: 'Guide complet pour ranker sur ChatGPT en 2026 : critères de ranking, stratégie de contenu, netlinking et outils.',
+    url: '/blog/ranker-chatgpt-2026',
+    image: 'https://images.unsplash.com/photo-1676299081847-824916de030a?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'referencement-ia-guide',
+    source: 'Guide Triaina',
+    logo: '',
+    date: '02 MARS 2026',
+    title: 'Référencement IA : Guide Complet 2026 (ChatGPT, Gemini, Perplexity)',
+    excerpt: 'Le référencement IA est devenu incontournable en 2026. Découvrez comment optimiser votre visibilité sur ChatGPT, Gemini et Perplexity dans ce guide complet.',
+    url: '/blog/referencement-ia-guide-complet',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'gso-2026-guide-complet',
+    source: 'Guide GSO',
+    logo: '',
+    date: '09 MARS 2026',
+    title: 'GSO 2026 : Guide Complet de Generative Search Optimization',
+    excerpt: 'Découvrez ce qu\'est le GSO (Generative Search Optimization) et comment l\'implémenter pour dominer à la fois Google et les IA génératives en 2026.',
+    url: '/blog/gso-2026-guide-complet',
+    image: 'https://picsum.photos/seed/gso-2026-guide-complet/1200/675',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'audit-seo-guide',
+    source: 'Guide SEO',
+    logo: '',
+    date: '09 MARS 2026',
+    title: 'Audit SEO : Guide Complet Étape par Étape',
+    excerpt: 'Un audit SEO est l\'analyse complète et approfondie de votre site web. Découvrez comment réaliser un audit SEO en 2026.',
+    url: '/blog/audit-seo-guide-complet',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'eeat-seo-guide',
+    source: 'Guide SEO',
+    logo: '',
+    date: '16 MARS 2026',
+    title: 'E-E-A-T SEO : Guide Complet pour Dominer Google en 2026',
+    excerpt: 'En 2026, Google classe les marques, les experts, les autorités. Découvrez comment construire et optimiser votre E-E-A-T pour dominer les résultats de recherche.',
+    url: '/blog/eeat-seo-guide-complet',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'backlinks-seo-guide',
+    source: 'Guide SEO',
+    logo: '',
+    date: '16 MARS 2026',
+    title: 'Backlinks SEO : Guide Complet pour Dominer Google en 2026',
+    excerpt: 'En 2026, les backlinks restent l\'un des facteurs de classement les plus importants de Google. Découvrez comment générer des liens de qualité sans risque.',
+    url: '/blog/backlinks-seo-guide',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'referencement-ia-paris-guide-local',
+    source: 'Guide Local',
+    logo: '',
+    date: '16 MARS 2026',
+    title: 'Référencement IA Paris : Guide Local pour Dominer ChatGPT & Gemini en 2026',
+    excerpt: 'Guide référencement IA Paris 2026 : GSO pour ChatGPT, Gemini, Perplexity. Stratégie locale, cas clients, données propriétaires. +200-300% de citations IA.',
+    url: '/blog/referencement-ia-paris-guide-local',
+    image: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'tendances-seo-gso-2026',
+    source: 'Guide Stratégique',
+    logo: '',
+    date: '01 AVRIL 2026',
+    title: 'Tendances SEO & GEO 2026 : Guide Complet des Changements qui Dominent',
+    excerpt: 'Découvrez les 10 tendances SEO & GEO qui dominent le référencement en 2026 : E-E-A-T, citations IA, contenu long-form et données propriétaires.',
+    url: '/blog/tendances-seo-gso-2026',
+    image: 'https://picsum.photos/seed/tendances-seo-gso-2026/1200/675',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'seo-technique-vs-contenu',
+    source: 'Triaina Insights',
+    logo: '',
+    date: '01 AVRIL 2026',
+    title: 'SEO Technique vs SEO Contenu : Lequel Choisir en 2026 ?',
+    excerpt: 'Analyse comparative complète : SEO technique vs SEO contenu. Impact réel, 3 cas clients, stratégie complète. Découvrez comment combiner les deux pour +250% de trafic.',
+    url: '/blog/seo-technique-vs-seo-contenu',
+    image: 'https://picsum.photos/seed/seo-technique-vs-contenu/1200/675',
+    tag: 'ANALYSE'
+  },
+  {
+    id: 'gso-definition-2026',
+    source: 'Guide GSO',
+    logo: '',
+    date: '07 AVRIL 2026',
+    title: 'GSO Définition 2026 : Guide Complet de la Generative Search Optimization',
+    excerpt: 'GSO définition 2026 : qu\'est-ce que la Generative Search Optimization ? Guide complet avec 3 cas clients réels, données propriétaires, 4 piliers, checklist et actions immédiates.',
+    url: '/blog/gso-definition-2026',
+    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'citations-ia-generatives',
+    source: 'Guide IA',
+    logo: '',
+    date: '11 AVRIL 2026',
+    title: 'Citations IA Génératives : Guide Complet pour Dominer ChatGPT, Gemini et Perplexity en 2026',
+    excerpt: 'Citations IA génératives 2026 : qu\'est-ce que c\'est ? Guide complet avec 3 cas clients réels, données propriétaires, 4 piliers, checklist et actions immédiates.',
+    url: '/blog/citations-ia-generatives',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'audit-seo-paris-2026',
+    source: 'Guide Local',
+    logo: '',
+    date: '20 AVRIL 2026',
+    title: 'Audit SEO Paris 2026 : Guide Complet + Checklist + Cas Clients',
+    excerpt: 'Audit SEO Paris 2026 : guide complet, 4 piliers, 3 cas clients réels, checklist détaillée, outils. Améliorez votre ranking à Paris. +200-300% de trafic.',
+    url: '/blog/audit-seo-paris-2026',
+    image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'seo-gso-geo-aeo-differences-2026',
+    source: 'Guide Stratégique',
+    logo: '',
+    date: '28 AVRIL 2026',
+    title: 'SEO, GSO, GEO, AEO : quelles différences en 2026 ?',
+    excerpt: 'Comprendre les différences entre SEO, GSO (Generative Search Optimization), GEO (Generative Engine Optimization) et AEO (Answer Engine Optimization) en 2026.',
+    url: '/blog/seo-gso-geo-aeo-differences-2026',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  
+  {
+    id: 'geo-definition-2026',
+    source: 'Guide GEO',
+    logo: '',
+    date: '18 MAI 2026',
+    title: 'Qu\'est-ce que le GEO (Generative Engine Optimization) ?',
+    excerpt: 'Le GEO désigne l\'optimisation pour les moteurs génératifs. Découvrez la définition, les différences avec le SEO, et les stratégies pour être cité par les IA.',
+    url: '/blog/geo-definition-2026',
+    image: '/images/geo-definition.jpg',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'optimiser-site-llm-guide-seo-complet-2026',
+    source: 'Guide IA',
+    logo: '',
+    date: '18 MAI 2026',
+    title: 'Comment optimiser son site pour les LLM ? Guide SEO complet 2026',
+    excerpt: 'Le trafic issu des LLMs a été multiplié par 26 en l\'espace de 12 mois. Ce guide détaille les mécanismes pour analyser et optimiser son site.',
+    url: '/blog/optimiser-site-llm-guide-seo-complet-2026',
+    image: '/images/llm-seo-guide.jpg',
+    tag: 'GUIDE'
+  },
+  
+  {
+    id: 'strategie-contenu-ia-first',
+    source: 'Guide IA',
+    logo: '',
+    date: '25 MAI 2026',
+    title: 'Stratégie de contenu IA-first : le guide complet 2026',
+    excerpt: 'Comment concevoir l\'architecture de votre contenu pour que les assistants IA (ChatGPT, Perplexity, Google AI Overview) puissent extraire, comprendre et citer vos pages.',
+    url: '/blog/strategie-contenu-ia-first',
+    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'agence-seo-vs-agence-gso',
+    source: 'Comparatif',
+    logo: '',
+    date: '25 MAI 2026',
+    title: 'Agence SEO vs agence GSO : comment choisir en 2026 ?',
+    excerpt: 'Le SEO optimise votre positionnement, le GSO optimise votre citation par les IA. Découvrez les différences et la stratégie (pure ou hybride) à adopter pour votre marque.',
+    url: '/blog/agence-seo-vs-agence-gso',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'schema-org-donnees-structurees-gso-2026',
+    source: 'Guide Technique',
+    logo: '',
+    date: '01 JUIN 2026',
+    title: 'Données structurées JSON-LD pour le GSO : guide complet',
+    excerpt: 'Les données structurées JSON-LD sont le signal machine le plus direct pour aider les moteurs génératifs (ChatGPT, Gemini) à comprendre, vérifier et citer votre contenu.',
+    url: '/blog/schema-org-donnees-structurees-gso',
+    image: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'seo-local-paris-2026',
+    source: 'Guide Expert',
+    logo: '',
+    date: '01 JUIN 2026',
+    title: 'SEO Local Paris 2026 : Le Guide Définitif pour Dominer sa Zone',
+    excerpt: 'Pourquoi le SEO Local à Paris est si spécifique en 2026. L\'impact du GSO sur les résultats de proximité et la stratégie d\'autorité locale.',
+    url: '/blog/seo-local-paris-2026',
+    image: 'https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'prompt-engineering-seo',
+    source: 'Guide Pratique',
+    logo: '',
+    date: '08 JUIN 2026',
+    title: 'Prompt engineering pour le SEO : le guide complet 2026',
+    excerpt: 'Maîtrisez le prompt engineering pour le SEO en 2026 : anatomie d\'un prompt efficace, 7 cas d\'usage prêts à l\'emploi et lien GSO/GEO.',
+    url: '/blog/prompt-engineering-seo',
+    image: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'perplexity-seo-2026',
+    source: 'Guide Stratégique',
+    logo: '',
+    date: '15 JUIN 2026',
+    title: 'Perplexity SEO : comment apparaître dans les réponses Perplexity en 2026',
+    excerpt: 'Le guide pour optimiser son site pour Perplexity AI : API Bing, PerplexityBot, extraction de contenu (chunking) et E-E-A-T.',
+    url: '/blog/perplexity-seo',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'meilleure-agence-geo-france-2026',
+    source: 'SEO & GEO',
+    logo: '',
+    date: '15 JUIN 2026',
+    title: 'Meilleure agence GEO France 2026 : top 5 comparatif',
+    excerpt: 'Comparatif des 5 meilleures agences GEO (Generative Engine Optimization) en France en 2026 : critères de sélection, profils détaillés et guide pour choisir selon votre besoin.',
+    url: '/blog/meilleure-agence-gso-france-2026',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
+    tag: 'AGENCE'
+  },
+  {
+    id: '10-conseils-marque-visible-chatgpt-2026',
+    source: 'Guide Stratégique',
+    logo: '',
+    date: '15 JUIN 2026',
+    title: '10 conseils pour rendre votre marque visible dans ChatGPT en 2026',
+    excerpt: 'Les 10 leviers actionnables pour améliorer votre référencement ChatGPT : Bing, structuration de contenu, médias tiers et E-E-A-T.',
+    url: '/blog/10-conseils-marque-visible-chatgpt',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  
+  {
+    id: 'agence-seo-lyon-2026',
+    source: 'Comparatif',
+    logo: '',
+    date: '22 JUIN 2026',
+    title: 'Agence SEO Lyon : top 5 SEO & GEO en 2026',
+    excerpt: 'Comparatif des 5 meilleures agences SEO à Lyon en 2026, évaluées sur le SEO classique et la capacité GEO (optimisation pour ChatGPT, Perplexity, Gemini).',
+    url: '/blog/agence-seo-lyon',
+    image: '/images/lyon-city.jpg',
+    tag: 'AGENCE'
+  },
+  {
+    id: 'agence-seo-bordeaux-2026',
+    source: 'Comparatif',
+    logo: '',
+    date: '22 JUIN 2026',
+    title: 'Agence SEO Bordeaux : top 5 SEO & GEO en 2026',
+    excerpt: 'Comparatif des 5 meilleures agences SEO à Bordeaux en 2026, évaluées sur le SEO classique et la capacité GEO (optimisation pour ChatGPT, Perplexity, Gemini).',
+    url: '/blog/agence-seo-bordeaux',
+    image: '/images/bordeaux-city.jpg',
+    tag: 'AGENCE'
+  },
