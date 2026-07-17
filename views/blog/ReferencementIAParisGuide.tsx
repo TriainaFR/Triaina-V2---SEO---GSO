@@ -1,277 +1,103 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { ArrowLeft, Calendar, MapPin, Bot, Target, Search, CheckCircle2, TrendingUp, CheckSquare, AlertTriangle, Wrench, Linkedin, Twitter, Facebook, Share2 } from 'lucide-react';
+import { BLOG_DATA } from '../../constants';
 import { SEO } from '../../components/SEO';
-import { Calendar, Clock, ArrowLeft, Bot, MapPin, Target, TrendingUp, AlertTriangle, CheckSquare, Wrench, Search, CheckCircle2 } from 'lucide-react';
 
 export const ReferencementIAParisGuide: React.FC = () => {
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-        {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Accueil",
-            "item": "https://www.triaina.fr"
-        },
-        {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Blog",
-            "item": "https://www.triaina.fr/blog"
-        },
-        {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Référencement IA Paris",
-            "item": "https://www.triaina.fr/blog/referencement-ia-paris-guide-local"
-        }
-    ]
-  };
+  const post = BLOG_DATA.find(p => p.id === 'referencement-ia-paris-guide-local');
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Référencement IA Paris : Guide Local pour Dominer ChatGPT & Gemini en 2026",
-    "description": "Guide complet référencement IA pour Paris : GSO, ChatGPT, Gemini, Perplexity. Stratégie locale, 3 cas clients réels, données propriétaires, citations IA.",
-    "image": {
-        "@type": "ImageObject",
-        "url": "https://www.triaina.fr/images/referencement-ia-paris-og.jpg",
-        "width": 1200,
-        "height": 630
-    },
-    "author": {
-            "@type": "Person",
-            "name": "Alexandre",
-            "jobTitle": "CEO & Fondateur Triaina",
-            "url": "https://www.triaina.fr",
-            "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
-        },
-    "publisher": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.triaina.fr/logo.png",
-            "width": 250,
-            "height": 60
-        }
-    },
-    "datePublished": "2026-03-16",
-    "dateModified": "2026-03-16",
-    "wordCount": 2200,
-    "articleBody": "En 2026, le référencement IA n'est plus optionnel pour les entreprises à Paris. ChatGPT, Gemini et Perplexity génèrent des réponses directement. Les utilisateurs ne cliquent plus sur Google. Pour les entreprises parisiennes, c'est crucial de dominer les IA génératives."
-  };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Triaina - Agence SEO & GEO Paris",
-    "image": "https://www.triaina.fr/logo.png",
-    "description": "Agence spécialisée en référencement IA et GSO pour entreprises parisiennes",
-    "url": "https://www.triaina.fr",
-    "telephone": "+33-1-84-80-00-00",
-    "email": "contact@triaina.fr",
-    "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "50 Quai Louis Blériot",
-        "addressLocality": "Paris",
-        "addressRegion": "Île-de-France",
-        "postalCode": "75016",
-        "addressCountry": "FR"
+  const seoSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": post?.title || '',
+      "description": post?.excerpt || '',
+      "image": post?.image || '',
+      "author": {
+        "@type": "Person",
+        "name": "Camille Rousseau",
+        "jobTitle": "Consultante Senior GEO/SEO chez Triaina",
+        "url": "https://www.triaina.fr",
+        "sameAs": "https://www.linkedin.com/in/camille-rousseau-a44488413/"
+      }
     },
-    "areaServed": {
-        "@type": "City",
-        "name": "Paris"
-    },
-    "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "ratingCount": "47"
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
+        { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
+      ]
     }
-  };
+  ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "Qu'est-ce que le référencement IA (GSO) ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Le référencement IA (GSO - Generative Search Optimization) est l'optimisation de votre contenu pour être cité par les IA génératives comme ChatGPT, Gemini et Perplexity. C'est différent du SEO traditionnel qui vise la position 1 sur Google."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Pourquoi le référencement IA est important pour Paris ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Paris est un marché très compétitif. Avec le GSO, vous avez une opportunité unique : être cité directement dans les réponses des IA. C'est mieux que la position 1 sur Google car c'est une citation de confiance."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Quelle est la différence entre GSO et SEO ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Le SEO vise la position 1 sur Google avec du contenu optimisé pour les mots-clés. Le GSO vise les citations IA avec du contenu original contenant des données propriétaires. Le GSO produit des résultats plus rapides (2-4 mois vs 3-6 mois)."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Comment créer du contenu GSO efficace ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Créez du contenu GSO en : 1) Partageant des données propriétaires (études, sondages), 2) Documentant vos cas clients réels, 3) Montrant votre E-E-A-T, 4) Gardant le contenu frais et à jour, 5) Intégrant des interviews d'experts."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Combien de temps pour voir les résultats du GSO ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Les premiers résultats (citations IA) apparaissent en 2-4 semaines. Les résultats significatifs (trafic IA, conversions) prennent 2-3 mois selon votre situation initiale et la qualité de votre contenu."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Quels sont les outils pour monitorer les citations IA ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Les outils gratuits sont : ChatGPT, Gemini, Perplexity (testez vos mots-clés directement). Les outils payants sont : SEMrush (citations IA), Ahrefs (citations IA), Google Analytics (trafic IA)."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Le GSO remplace-t-il le SEO ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Non, le GSO et le SEO sont complémentaires. Vous avez besoin des deux. Le SEO pour le trafic Google traditionnel, le GSO pour les citations IA et le trafic IA. Une bonne stratégie combine les deux."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Combien de citations IA puis-je espérer ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Cela dépend de votre secteur et de la qualité de votre contenu. En moyenne, nos clients parisiens obtiennent 8-18 citations IA pour leurs mots-clés cibles après 3 mois. Certains en obtiennent 30+."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Quel est le ROI du référencement IA ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Le ROI est excellent. Nos clients parisiens voient en moyenne +150-220% de trafic et +150-200% de conversions après 3-4 mois. Certains clients acquièrent 3-5 nouveaux clients par mois grâce aux citations IA."
-            }
-        }
-    ]
-  };
 
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Triaina",
-    "url": "https://www.triaina.fr",
-    "logo": "https://www.triaina.fr/logo.png",
-    "description": "Agence SEO et GSO spécialisée en référencement IA pour entreprises parisiennes",
-    "foundingDate": "2020",
-    "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "Customer Service",
-        "telephone": "+33-1-84-80-00-00",
-        "email": "contact@triaina.fr"
-    },
-    "sameAs": [
-        "https://www.linkedin.com/company/triaina",
-        "https://twitter.com/triaina"
-    ],
-    "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "ratingCount": "47"
-    }
-  };
 
-  const combinedSchema = [breadcrumbSchema, articleSchema, localBusinessSchema, faqSchema, organizationSchema];
+  if (!post) return null;
 
   return (
-    <div className="min-h-screen bg-slate-50 pt-32 pb-24">
+    <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
       <SEO 
-        title="Référencement IA Paris : Guide Local pour Dominer ChatGPT & Gemini en 2026"
-        description="Guide référencement IA Paris 2026 : GSO pour ChatGPT, Gemini, Perplexity. Stratégie locale, cas clients, données propriétaires. +200-300% de citations IA."
-        keywords="référencement IA Paris, GSO Paris, ChatGPT Paris, Gemini Paris, Perplexity Paris, optimisation IA, citations IA, guide local"
-        schema={combinedSchema}
-        image="https://www.triaina.fr/images/referencement-ia-paris-og.jpg"
-        type="article"
-        twitterCard="summary_large_image"
-        twitterDescription="Guide référencement IA Paris : GSO, ChatGPT, Gemini, Perplexity. Stratégie locale, cas clients."
-        twitterImage="https://www.triaina.fr/images/referencement-ia-paris-twitter.jpg"
-        canonicalUrl="https://www.triaina.fr/blog/referencement-ia-paris-guide-local"
-        exactTitle={true}
+        title={`${post.title} - Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://triaina.fr${post.url}`}
+        schema={seoSchema}
       />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <a href="/blog" className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group">
+      
+      <div className="max-w-7xl mx-auto">
+        <a 
+          href="/blog" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState({}, '', '/blog');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}
+          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
+        >
           <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
-          RETOUR AU BLOG
+          Retour aux articles
         </a>
 
-        {/* Header */}
-        <header className="mb-16 text-center max-w-5xl mx-auto relative">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-blue-400/10 blur-3xl -z-10 rounded-full"></div>
-          <div className="flex items-center justify-center gap-4 text-xs font-mono text-blue-600 mb-8 uppercase tracking-widest">
-            <span className="bg-blue-100/50 border border-blue-200 px-4 py-1.5 rounded-full font-bold shadow-sm">Guide Local</span>
-            <span className="flex items-center gap-1.5 bg-white/60 px-3 py-1.5 rounded-full border border-slate-200"><Calendar size={14} /> 16 MARS 2026</span>
-            <span className="flex items-center gap-1.5 bg-white/60 px-3 py-1.5 rounded-full border border-slate-200"><Clock size={14} /> 15 MIN</span>
+        <article className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden relative">
+          {/* Accent decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-50"></div>
+          
+          <header className="mb-12">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
+              <span className="flex items-center">
+                <Calendar size={14} className="mr-2 text-blue-500" />
+                {post.date}
+              </span>
+              <span className="text-slate-300">|</span>
+              <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">{post.tag}</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+              {post.excerpt}
+            </p>
+          </header>
+
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-16 relative group">
+            <img 
+              src={post.image} 
+              alt={post.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
           </div>
-          <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-8 leading-tight tracking-tight">
-            Référencement IA Paris : <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-600">Guide Local pour Dominer ChatGPT & Gemini en 2026</span>
-          </h1>
-          <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-medium">
-            En 2026, le <strong>référencement IA</strong> n'est plus optionnel pour les entreprises à Paris. <strong>ChatGPT, Gemini et Perplexity</strong> génèrent des réponses directement dans l'interface. Les utilisateurs ne cliquent plus sur les résultats Google. Ils lisent la réponse de l'IA et s'en vont. Pour les entreprises parisiennes, c'est catastrophique. Vous perdez du trafic vers vos sites. Vous perdez des clients potentiels.
-          </p>
-        </header>
 
-        {/* Featured Image */}
-        <div className="mb-16 rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/20 aspect-video relative">
-          <img 
-            src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&q=80&w=1200" 
-            alt="Référencement IA Paris" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
-        </div>
-
-        {/* Content Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            
-            {/* Sidebar / Table of Contents (Desktop) */}
-            <aside className="hidden lg:block lg:col-span-3">
-                <div className="sticky top-32 p-6 rounded-2xl bg-white border border-slate-100 shadow-sm space-y-4">
-                    <h3 className="font-display font-bold text-slate-900 uppercase tracking-widest text-sm mb-4 flex items-center gap-2">
-                        <Target size={16} className="text-blue-600" />
-                        Sommaire
-                    </h3>
-                    <nav className="flex flex-col space-y-3 text-sm font-medium text-slate-500">
-                        <a href="#introduction" className="hover:text-blue-600 hover:translate-x-1 transition-all">Introduction</a>
-                        <a href="#definition" className="hover:text-blue-600 hover:translate-x-1 transition-all">Qu'est-ce que le GSO ?</a>
-                        <a href="#piliers" className="hover:text-blue-600 hover:translate-x-1 transition-all">Les 4 Piliers</a>
-                        <a href="#strategie" className="hover:text-blue-600 hover:translate-x-1 transition-all">Stratégie Complète</a>
-                        <a href="#cas-clients" className="hover:text-blue-600 hover:translate-x-1 transition-all">Cas Clients</a>
-                        <a href="#erreurs" className="hover:text-blue-600 hover:translate-x-1 transition-all">Erreurs Courantes</a>
-                        <a href="#checklist" className="hover:text-blue-600 hover:translate-x-1 transition-all">Checklist</a>
-                        <a href="#outils" className="hover:text-blue-600 hover:translate-x-1 transition-all">Outils</a>
-                        <a href="#conclusion" className="hover:text-blue-600 hover:translate-x-1 transition-all">Conclusion</a>
-                    </nav>
-                </div>
-            </aside>
-
-            {/* Main Content */}
-            <article className="lg:col-span-9 prose prose-lg xl:prose-xl prose-slate max-w-none font-sans prose-headings:font-display prose-headings:font-bold prose-a:text-blue-600 prose-img:rounded-2xl prose-img:shadow-xl prose-h2:border-b prose-h2:border-slate-100 prose-h2:pb-4 prose-p:text-slate-600 prose-p:leading-relaxed prose-p:mb-6 prose-strong:text-slate-900 prose-strong:font-semibold prose-h3:text-2xl prose-h3:mt-12 prose-h3:mb-6 prose-ul:space-y-4 prose-li:marker:text-blue-500">
-            
-            <section id="introduction">
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-2xl prose-strong:text-slate-900 prose-li:marker:text-blue-500">
+<section id="introduction">
                 <h2 className="flex items-center gap-3 text-3xl mb-8">
                     <MapPin className="text-blue-600" size={32} />
                     Le Référencement IA Change Tout pour les Entreprises Parisiennes
@@ -817,7 +643,40 @@ export const ReferencementIAParisGuide: React.FC = () => {
                 </div>
             </section>
 
-            </article>
+            {/* Author Block */}
+            <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-slate-100 max-w-4xl mx-auto not-prose">
+                <h3 className="font-bold text-slate-900 mb-2 text-lg">À propos de l'auteure</h3>
+                <div className="font-bold text-slate-900 text-xl mb-1">Camille Rousseau</div>
+                <div className="text-sm text-blue-600 font-mono mb-4">Consultante Senior GEO/SEO chez Triaina</div>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    Experte en stratégies d'acquisition hybrides. Camille accompagne les marques dans l'optimisation de leur visibilité sur les moteurs de recherche traditionnels (SEO) et les interfaces d'IA génératives (GSO).
+                </p>
+                <a href="https://www.linkedin.com/in/camille-rousseau-a44488413/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors underline decoration-2 underline-offset-4">
+                    Voir son profil LinkedIn
+                </a>
+            </div>
+          </div>
+                </article>
+
+        {/* Share / Footer */}
+        <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-sm font-mono text-slate-500">
+                Partager cet article
+            </div>
+            <div className="flex gap-4">
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Linkedin size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Twitter size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Facebook size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Share2 size={20} />
+                </button>
+            </div>
         </div>
       </div>
     </div>

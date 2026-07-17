@@ -20,6 +20,7 @@ import { AgenceReferencementIA } from './views/AgenceReferencementIA'; // Import
 import { AgenceReferencementIAParis } from './views/AgenceReferencementIAParis'; // Import AgenceReferencementIAParis
 import { ReferencementIAGuide } from './views/blog/ReferencementIAGuide'; // Import ReferencementIAGuide
 import { CommentRankerChatGPT } from './views/blog/CommentRankerChatGPT'; // Import CommentRankerChatGPT
+import { LlmsTxt2026 } from './views/blog/LlmsTxt2026';
 import { SeoVsReferencementIA } from './views/blog/SeoVsReferencementIA'; // Import SeoVsReferencementIA
 import { Gso2026GuideComplet } from './views/blog/Gso2026GuideComplet'; // Import Gso2026GuideComplet
 import { AuditSeoGuide } from './views/blog/AuditSeoGuide'; // Import AuditSeoGuide
@@ -264,6 +265,8 @@ const App: React.FC = () => {
         return <ReferencementIAGuide />;
       case 'comment-ranker-chatgpt':
         return <CommentRankerChatGPT />;
+      case 'llms-txt-2026':
+        return <LlmsTxt2026 />;
       case 'seo-vs-referencement-ia':
         return <SeoVsReferencementIA />;
       case 'gso-2026-guide-complet':

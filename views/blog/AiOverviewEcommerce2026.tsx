@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, Clock, Calendar } from 'lucide-react';
-import { PAGE_TO_URL, BLOG_DATA } from '../../constants';
+import { ArrowLeft, Calendar, Linkedin, Twitter, Facebook, Share2 } from 'lucide-react';
+import { BLOG_DATA } from '../../constants';
 import { SEO } from '../../components/SEO';
 
 export const AiOverviewEcommerce2026: React.FC = () => {
@@ -14,86 +14,97 @@ export const AiOverviewEcommerce2026: React.FC = () => {
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "Google AI Overview et e-commerce : impact sur le trafic organique",
-      "description": "Google a confirmé le lancement d'AI Overview en France entre l'été et le 23 septembre 2026. Découvrez l'impact sur le SEO e-commerce et les actions à mener.",
-      "image": "https://www.triaina.fr/images/ai-overview-ecommerce.jpg",
-      "datePublished": "2026-07-06",
-      "dateModified": "2026-07-06",
+      "headline": post?.title || '',
+      "description": post?.excerpt || '',
+      "image": post?.image || '',
       "author": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "url": "https://triaina.fr"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "url": "https://triaina.fr",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://www.triaina.fr/logo.png"
-        }
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://www.triaina.fr/blog/ai-overview-ecommerce-france-2026"
+        "@type": "Person",
+        "name": "Camille Rousseau",
+        "jobTitle": "Consultante Senior GEO/SEO chez Triaina",
+        "url": "https://www.triaina.fr",
+        "sameAs": "https://www.linkedin.com/in/camille-rousseau-a44488413/"
       }
     },
     {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Quand AI Overview sera-t-il lancé en France ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Google a confirmé un déploiement entre l'été 2026 et le 23 septembre 2026 au plus tard, sans date journalière précise communiquée à ce jour."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Est-ce que tous les sites e-commerce vont perdre du trafic ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Pas uniformément. Les études américaines et britanniques montrent une baisse moyenne de CTR organique de 61 % sur les requêtes concernées, mais les sites cités dans l'AI Overview conservent un CTR nettement supérieur aux non-cités, et un trafic souvent mieux converti."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Faut-il ajouter un balisage spécial pour apparaître dans AI Overview ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Non. Google précise dans sa documentation officielle qu'il n'existe pas de balisage schema.org spécifique ni de format de fichier dédié à l'IA. Les bonnes pratiques SEO classiques (contenu utile, données structurées cohérentes, crawlabilité) restent la base."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Les annonces Shopping vont-elles disparaître au profit d'AI Overview ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Non, les deux coexistent. Les annonces Shopping continuent généralement de s'afficher au-dessus ou à côté du contenu généré, mais la concurrence pour l'attention de l'utilisateur s'intensifie."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Comment savoir si mes produits sont déjà repris par Google dans une réponse IA ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Il faut surveiller manuellement les SERP sur les requêtes prioritaires, suivre les impressions dans Google Search Central pour les nouvelles métriques liées aux fonctionnalités IA, et auditer régulièrement la qualité du flux Merchant Center et du balisage produit."
-          }
-        }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
+        { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
       ]
     }
   ];
 
-  const htmlBody = `
-<div class="bg-violet-50 p-6 md:p-8 rounded-3xl border border-violet-100 mb-10 shadow-sm relative overflow-hidden not-prose">
-  <div class="absolute top-0 left-0 w-1 h-full bg-violet-600"></div>
-  <h3 class="text-xl font-bold text-violet-900 mb-3 mt-0 flex items-center gap-2">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-violet-600"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+
+
+  if (!post) return null;
+
+  return (
+    <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
+      <SEO 
+        title={`${post.title} - Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://triaina.fr${post.url}`}
+        schema={seoSchema}
+      />
+      
+      <div className="max-w-7xl mx-auto">
+        <a 
+          href="/blog" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState({}, '', '/blog');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}
+          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
+        >
+          <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
+          Retour aux articles
+        </a>
+
+        <article className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden relative">
+          {/* Accent decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-50"></div>
+          
+          <header className="mb-12">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
+              <span className="flex items-center">
+                <Calendar size={14} className="mr-2 text-blue-500" />
+                {post.date}
+              </span>
+              <span className="text-slate-300">|</span>
+              <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">{post.tag}</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+              {post.excerpt}
+            </p>
+          </header>
+
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-16 relative group">
+            <img 
+              src={post.image} 
+              alt={post.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+          </div>
+
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-2xl prose-strong:text-slate-900 prose-li:marker:text-blue-500">
+<div dangerouslySetInnerHTML={{ __html: `
+<div class="bg-blue-50 p-6 md:p-8 rounded-3xl border border-blue-100 mb-10 shadow-sm relative overflow-hidden not-prose">
+  <div class="absolute top-0 left-0 w-1 h-full bg-blue-600"></div>
+  <h3 class="text-xl font-bold text-blue-900 mb-3 mt-0 flex items-center gap-2">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
     TL;DR
   </h3>
-  <p class="text-violet-800 m-0 leading-relaxed text-sm md:text-base">Google a confirmé le lancement d'AI Overview en France entre l'été et le 23 septembre 2026 au plus tard. Pour les sites marchands, l'enjeu est majeur : aux États-Unis et au Royaume-Uni, le CTR organique sur les requêtes concernées par AI Overview a chuté de 61 à 79 % selon les études (Seer Interactive, Ahrefs, Pew Research). Les recherches shopping sont particulièrement exposées : leur couverture par AI Overview a été multipliée par 5,6 en quatre mois début 2025. Les marchands qui optimisent leur balisage produit, leurs avis et leur fraîcheur de stock/prix restent visibles ; les autres perdent du trafic qualifié. Cet article détaille le mécanisme, les chiffres, et les actions concrètes à engager avant le rollout français.</p>
+  <p class="text-blue-800 m-0 leading-relaxed text-sm md:text-base">Google a confirmé le lancement d'AI Overview en France entre l'été et le 23 septembre 2026 au plus tard. Pour les sites marchands, l'enjeu est majeur : aux États-Unis et au Royaume-Uni, le CTR organique sur les requêtes concernées par AI Overview a chuté de 61 à 79 % selon les études (Seer Interactive, Ahrefs, Pew Research). Les recherches shopping sont particulièrement exposées : leur couverture par AI Overview a été multipliée par 5,6 en quatre mois début 2025. Les marchands qui optimisent leur balisage produit, leurs avis et leur fraîcheur de stock/prix restent visibles ; les autres perdent du trafic qualifié. Cet article détaille le mécanisme, les chiffres, et les actions concrètes à engager avant le rollout français.</p>
 </div>
 
 <h2>Introduction : la France entre dans l'ère AI Overview</h2>
@@ -177,54 +188,54 @@ export const AiOverviewEcommerce2026: React.FC = () => {
 <h2>6 actions concrètes pour les sites marchands</h2>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-10 not-prose">
-  <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative overflow-hidden group hover:border-violet-300 transition-colors">
-    <div class="absolute top-0 left-0 w-full h-1 bg-violet-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+  <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative overflow-hidden group hover:border-blue-300 transition-colors">
+    <div class="absolute top-0 left-0 w-full h-1 bg-blue-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
     <div class="text-5xl font-black text-slate-200 mb-4 tracking-tighter">01</div>
     <h3 class="text-xl font-bold text-slate-900 mb-4">Fiabiliser le product et offer schema</h3>
     <p class="text-slate-600 text-sm leading-relaxed">Le balisage <code>Product</code> et <code>Offer</code> (schema.org) doit être complet et strictement cohérent avec le flux Merchant Center : prix, devise, disponibilité, GTIN ou MPN, marque, variantes (couleur, taille, matière). Un écart entre le flux et la page produit dilue la confiance de Google dans l'entité produit, et réduit sa probabilité de citation. Google le rappelle dans son guide sur les fonctionnalités IA : la donnée structurée n'est pas obligatoire pour apparaître dans un AI Overview, mais elle reste le canal le plus fiable pour les rich results et les fonctionnalités shopping.</p>
   </div>
 
-  <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative overflow-hidden group hover:border-violet-300 transition-colors">
-    <div class="absolute top-0 left-0 w-full h-1 bg-violet-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+  <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative overflow-hidden group hover:border-blue-300 transition-colors">
+    <div class="absolute top-0 left-0 w-full h-1 bg-blue-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
     <div class="text-5xl font-black text-slate-200 mb-4 tracking-tighter">02</div>
     <h3 class="text-xl font-bold text-slate-900 mb-4">Miser sur les avis vérifiés et l'UGC</h3>
     <p class="text-slate-600 text-sm leading-relaxed">Intégrer le balisage <code>AggregateRating</code> et <code>Review</code>, collecter des avis via des plateformes tierces reconnues (Trustpilot, Avis Vérifiés), et afficher des retours clients détaillés sur la fiche produit. Plus le volume et la qualité des avis sont élevés, plus la probabilité que l'IA les cite dans son résumé augmente.</p>
   </div>
 
-  <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative overflow-hidden group hover:border-violet-300 transition-colors">
-    <div class="absolute top-0 left-0 w-full h-1 bg-violet-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+  <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative overflow-hidden group hover:border-blue-300 transition-colors">
+    <div class="absolute top-0 left-0 w-full h-1 bg-blue-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
     <div class="text-5xl font-black text-slate-200 mb-4 tracking-tighter">03</div>
     <h3 class="text-xl font-bold text-slate-900 mb-4">Garantir la fraîcheur prix et stocks</h3>
     <p class="text-slate-600 text-sm leading-relaxed">Un flux Merchant Center non synchronisé en temps réel (prix obsolète, produit indiqué disponible alors qu'il est en rupture) peut faire disparaître un produit du Shopping Graph, ou pire, générer une citation erronée qui nuit à la confiance utilisateur. La mise à jour automatisée du flux, plusieurs fois par jour, devient un prérequis technique.</p>
   </div>
 
-  <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative overflow-hidden group hover:border-violet-300 transition-colors">
-    <div class="absolute top-0 left-0 w-full h-1 bg-violet-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+  <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative overflow-hidden group hover:border-blue-300 transition-colors">
+    <div class="absolute top-0 left-0 w-full h-1 bg-blue-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
     <div class="text-5xl font-black text-slate-200 mb-4 tracking-tighter">04</div>
     <h3 class="text-xl font-bold text-slate-900 mb-4">Renforcer l'E-E-A-T</h3>
     <p class="text-slate-600 text-sm leading-relaxed">Expérience, expertise, autorité, fiabilité : ces critères qualité de Google s'appliquent aussi aux pages marchandes. Cela passe par des descriptions rédigées par de vrais experts produit (pas du contenu générique dupliqué), des mentions légales claires, une politique de retour transparente, et des pages "À propos" ou "Notre expertise" qui démontrent un savoir-faire réel sur la catégorie vendue.</p>
   </div>
 
-  <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative overflow-hidden group hover:border-violet-300 transition-colors">
-    <div class="absolute top-0 left-0 w-full h-1 bg-violet-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+  <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative overflow-hidden group hover:border-blue-300 transition-colors">
+    <div class="absolute top-0 left-0 w-full h-1 bg-blue-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
     <div class="text-5xl font-black text-slate-200 mb-4 tracking-tighter">05</div>
     <h3 class="text-xl font-bold text-slate-900 mb-4">Produire du contenu comparatif</h3>
     <p class="text-slate-600 text-sm leading-relaxed">Face à des comparateurs tiers qui captent les citations sur les requêtes "meilleur X" ou "X vs Y", les sites marchands ont intérêt à publier leurs propres guides d'achat, tableaux comparatifs et tests produits argumentés. Un contenu qui apporte un angle inédit - mesures propres, tests internes, retours clients agrégés - a davantage de chances d'être repris qu'une fiche produit standard.</p>
   </div>
 
-  <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative overflow-hidden group hover:border-violet-300 transition-colors">
-    <div class="absolute top-0 left-0 w-full h-1 bg-violet-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+  <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative overflow-hidden group hover:border-blue-300 transition-colors">
+    <div class="absolute top-0 left-0 w-full h-1 bg-blue-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
     <div class="text-5xl font-black text-slate-200 mb-4 tracking-tighter">06</div>
     <h3 class="text-xl font-bold text-slate-900 mb-4">Exploiter des données propriétaires</h3>
     <p class="text-slate-600 text-sm leading-relaxed">Statistiques de vente internes, enquêtes de satisfaction maison, données d'usage produit : ce type de contenu original, impossible à répliquer ailleurs, constitue un signal fort de valeur ajoutée. Google et les moteurs génératifs valorisent ce genre de source pour ses résumés, précisément parce qu'elle n'est pas un doublon de ce qui existe déjà ailleurs sur le web.</p>
   </div>
 </div>
 
-<div class="bg-gradient-to-br from-slate-900 to-violet-950 p-8 md:p-12 rounded-3xl text-white my-16 not-prose shadow-xl relative overflow-hidden">
-  <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-violet-500/20 blur-3xl"></div>
+<div class="bg-gradient-to-br from-slate-900 to-blue-950 p-8 md:p-12 rounded-3xl text-white my-16 not-prose shadow-xl relative overflow-hidden">
+  <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-blue-500/20 blur-3xl"></div>
   <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 rounded-full bg-blue-500/20 blur-3xl"></div>
   <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 relative z-10 flex items-center gap-3">
-    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-violet-400"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
     Étude de cas anonymisée
   </h2>
   <p class="text-slate-300 text-lg leading-relaxed relative z-10 mb-8">
@@ -232,7 +243,7 @@ export const AiOverviewEcommerce2026: React.FC = () => {
   </p>
   <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 relative z-10">
     <p class="text-white text-base leading-relaxed m-0">
-      Après un audit du flux Merchant Center et l'ajout systématique du balisage <code class="bg-black/30 px-1 py-0.5 rounded text-violet-200">Review</code> et <code class="bg-black/30 px-1 py-0.5 rounded text-violet-200">AggregateRating</code> sur 100 % des fiches produit, le site a enregistré une reprise partielle de visibilité dans les citations AI Overview sur ses requêtes prioritaires, avec un taux de conversion du trafic résiduel supérieur de <strong>42 %</strong> à la moyenne historique. Ce cas illustre une tendance observée plus largement : la quantité de trafic baisse, mais sa qualité peut compenser une partie de la perte si le site travaille ses signaux de confiance.
+      Après un audit du flux Merchant Center et l'ajout systématique du balisage <code class="bg-black/30 px-1 py-0.5 rounded text-blue-200">Review</code> et <code class="bg-black/30 px-1 py-0.5 rounded text-blue-200">AggregateRating</code> sur 100 % des fiches produit, le site a enregistré une reprise partielle de visibilité dans les citations AI Overview sur ses requêtes prioritaires, avec un taux de conversion du trafic résiduel supérieur de <strong>42 %</strong> à la moyenne historique. Ce cas illustre une tendance observée plus largement : la quantité de trafic baisse, mais sa qualité peut compenser une partie de la perte si le site travaille ses signaux de confiance.
     </p>
   </div>
 </div>
@@ -255,110 +266,53 @@ export const AiOverviewEcommerce2026: React.FC = () => {
 
 <h2>Sources utiles</h2>
 <ul>
-  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://developers.google.com/search/docs/appearance/ai-features" class="text-violet-600 hover:text-violet-700 underline font-medium">Google Search Central – AI features (documentation officielle)</a></p></li>
-  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" class="text-violet-600 hover:text-violet-700 underline font-medium">Google Search Central – Guide d'optimisation pour la recherche IA</a></p></li>
-  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.seerinteractive.com/insights/aio-impact-on-google-ctr-september-2025-update" class="text-violet-600 hover:text-violet-700 underline font-medium">Seer Interactive – AI Overviews impact on Google CTR (septembre 2025)</a></p></li>
-  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://searchengineland.com/google-ai-overviews-drive-drop-organic-paid-ctr-464212" class="text-violet-600 hover:text-violet-700 underline font-medium">Search Engine Land – Google AI Overviews drive drop in organic and paid CTR</a></p></li>
-  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://ahrefs.com/blog/ai-overviews-reduce-clicks/" class="text-violet-600 hover:text-violet-700 underline font-medium">Ahrefs – AI Overviews reduce clicks (étude sur 300 000 mots-clés)</a></p></li>
-  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.pewresearch.org/" class="text-violet-600 hover:text-violet-700 underline font-medium">Pew Research Center – études sur le comportement de recherche</a></p></li>
-  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.ouest-france.fr/high-tech/google/info-ouest-france-recherches-sur-google-la-fonctionnalite-de-resumes-ai-overviews-sera-lancee-en-france-cet-ete-2026-4d41cfa0-73bd-11f1-a0e7-4fa27dc4c816" class="text-violet-600 hover:text-violet-700 underline font-medium">Ouest-France – Confirmation du lancement d'AI Overviews en France</a></p></li>
-  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.appearonline.co.uk/blog/google-shopping-graph-explained" class="text-violet-600 hover:text-violet-700 underline font-medium">Appear Online – Google Shopping Graph expliqué</a></p></li>
+  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://developers.google.com/search/docs/appearance/ai-features" class="text-blue-600 hover:text-blue-700 underline font-medium">Google Search Central – AI features (documentation officielle)</a></p></li>
+  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" class="text-blue-600 hover:text-blue-700 underline font-medium">Google Search Central – Guide d'optimisation pour la recherche IA</a></p></li>
+  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.seerinteractive.com/insights/aio-impact-on-google-ctr-september-2025-update" class="text-blue-600 hover:text-blue-700 underline font-medium">Seer Interactive – AI Overviews impact on Google CTR (septembre 2025)</a></p></li>
+  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://searchengineland.com/google-ai-overviews-drive-drop-organic-paid-ctr-464212" class="text-blue-600 hover:text-blue-700 underline font-medium">Search Engine Land – Google AI Overviews drive drop in organic and paid CTR</a></p></li>
+  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://ahrefs.com/blog/ai-overviews-reduce-clicks/" class="text-blue-600 hover:text-blue-700 underline font-medium">Ahrefs – AI Overviews reduce clicks (étude sur 300 000 mots-clés)</a></p></li>
+  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.pewresearch.org/" class="text-blue-600 hover:text-blue-700 underline font-medium">Pew Research Center – études sur le comportement de recherche</a></p></li>
+  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.ouest-france.fr/high-tech/google/info-ouest-france-recherches-sur-google-la-fonctionnalite-de-resumes-ai-overviews-sera-lancee-en-france-cet-ete-2026-4d41cfa0-73bd-11f1-a0e7-4fa27dc4c816" class="text-blue-600 hover:text-blue-700 underline font-medium">Ouest-France – Confirmation du lancement d'AI Overviews en France</a></p></li>
+  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.appearonline.co.uk/blog/google-shopping-graph-explained" class="text-blue-600 hover:text-blue-700 underline font-medium">Appear Online – Google Shopping Graph expliqué</a></p></li>
 </ul>
-  `;
+  ` }} />
 
-  if (!post) return null;
-
-  return (
-    <>
-      <SEO 
-        title={`${post.title} | Triaina`}
-        description="Google a confirmé le lancement d'AI Overview en France entre l'été et le 23 septembre 2026. Découvrez l'impact sur le SEO e-commerce et les actions à mener."
-        canonicalUrl={`https://www.triaina.fr${post.url}`}
-        type="article"
-        schema={seoSchema}
-        image={post.image}
-      />
-      <div className="pt-32 pb-24 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-6 animate-fade-in-up">
-            <a 
-              href={PAGE_TO_URL['blog']}
-              onClick={(e) => {
-                e.preventDefault();
-                window.history.pushState({}, '', PAGE_TO_URL['blog']);
-                window.dispatchEvent(new PopStateEvent('popstate'));
-              }}
-              className="inline-flex items-center text-slate-600 hover:text-violet-600 transition-colors font-mono text-sm tracking-wide"
-            >
-               <ArrowLeft size={16} className="mr-2" />
-              RETOUR AU BLOG
-            </a>
-            <div className="flex flex-wrap items-center gap-4 text-slate-500 font-mono text-xs tracking-wider">
-              <span className="flex items-center"><Calendar size={14} className="mr-2" />{post.date}</span>
-              <span className="text-slate-300">|</span>
-              <span className="flex items-center"><Clock size={14} className="mr-2" />6 min de lecture</span>
-              <span className="text-slate-300">|</span>
-              <span className="text-violet-600 border border-violet-200 bg-violet-50 px-2 py-1 rounded-full">{post.tag}</span>
+            {/* Author Block */}
+            <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-slate-100 max-w-4xl mx-auto not-prose">
+                <h3 className="font-bold text-slate-900 mb-2 text-lg">À propos de l'auteure</h3>
+                <div className="font-bold text-slate-900 text-xl mb-1">Camille Rousseau</div>
+                <div className="text-sm text-blue-600 font-mono mb-4">Consultante Senior GEO/SEO chez Triaina</div>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    Experte en stratégies d'acquisition hybrides. Camille accompagne les marques dans l'optimisation de leur visibilité sur les moteurs de recherche traditionnels (SEO) et les interfaces d'IA génératives (GSO).
+                </p>
+                <a href="https://www.linkedin.com/in/camille-rousseau-a44488413/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors underline decoration-2 underline-offset-4">
+                    Voir son profil LinkedIn
+                </a>
             </div>
           </div>
+                </article>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-8 animate-fade-in-up md:w-4/5" style={{animationDelay: '0.1s'}}>
-            {post.title}
-          </h1>
-
-          <p className="text-xl text-slate-600 leading-relaxed mb-12 animate-fade-in-up md:w-3/4" style={{animationDelay: '0.2s'}}>
-            {post.excerpt}
-          </p>
-
-          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-20 relative animate-fade-in-up group" style={{animationDelay: '0.3s'}}>
-            <img 
-              src={post.image} 
-              alt={post.title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
-          </div>
-
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
-            <article className="lg:w-2/3 prose prose-lg prose-slate max-w-none 
-                prose-headings:font-bold prose-headings:text-slate-900 
-                prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-2 prose-h2:border-b prose-h2:border-slate-200
-                prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-                prose-p:text-slate-600 prose-p:leading-relaxed prose-p:mb-6
-                prose-a:text-violet-600 hover:prose-a:text-violet-700 prose-a:underline prose-a:font-medium
-                prose-li:text-slate-600 prose-li:marker:text-violet-500
-                prose-ul:space-y-2 prose-ol:space-y-2
-                animate-fade-in-up"
-                style={{animationDelay: '0.3s'}}
-                dangerouslySetInnerHTML={{ __html: htmlBody }}
-            />
-
-            <aside className="lg:w-1/3 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-              <div className="sticky top-32 space-y-8">
-                <div className="bg-slate-900 text-white rounded-3xl p-8 shadow-xl relative overflow-hidden">
-                  <div className="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 rounded-full bg-violet-600/20 blur-2xl"></div>
-                  <h3 className="text-xl font-bold mb-4 font-sans text-white relative z-10">Besoin d'optimiser pour l'IA ?</h3>
-                  <p className="text-slate-300 mb-6 text-sm relative z-10 leading-relaxed">
-                    Triaina accompagne les entreprises dans l'optimisation de leur visibilité sur Google et auprès des LLMs (Copilot, ChatGPT, Gemini, Perplexity).
-                  </p>
-                  <a 
-                    href={PAGE_TO_URL['contact']}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.history.pushState({}, '', PAGE_TO_URL['contact']);
-                      window.dispatchEvent(new PopStateEvent('popstate'));
-                    }}
-                    className="inline-flex items-center justify-center w-full bg-white text-black px-6 py-3 rounded-xl text-sm font-bold tracking-wide hover:bg-violet-50 transition-colors relative z-10"
-                  >
-                    PRENDRE RENDEZ-VOUS
-                  </a>
-                </div>
-              </div>
-            </aside>
-          </div>
+        {/* Share / Footer */}
+        <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-sm font-mono text-slate-500">
+                Partager cet article
+            </div>
+            <div className="flex gap-4">
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Linkedin size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Twitter size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Facebook size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Share2 size={20} />
+                </button>
+            </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, Clock, Calendar } from 'lucide-react';
-import { PAGE_TO_URL, BLOG_DATA } from '../../constants';
+import { ArrowLeft, Calendar, Linkedin, Twitter, Facebook, Share2 } from 'lucide-react';
+import { BLOG_DATA } from '../../constants';
 import { SEO } from '../../components/SEO';
 
 export const GrokSeo2026: React.FC = () => {
@@ -14,79 +14,90 @@ export const GrokSeo2026: React.FC = () => {
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "Grok SEO : comment apparaître dans les réponses de Grok (xAI) en 2026",
-      "description": "Grok lit deux flux en simultané : son index web et le firehose X. Découvrez comment optimiser pour xAI en actionnant ces deux leviers distincts.",
-      "image": "https://www.triaina.fr/images/grok-seo.jpg",
-      "datePublished": "2026-06-29",
-      "dateModified": "2026-06-29",
+      "headline": post?.title || '',
+      "description": post?.excerpt || '',
+      "image": post?.image || '',
       "author": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "url": "https://triaina.fr"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "url": "https://triaina.fr",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://www.triaina.fr/logo.png"
-        }
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://triaina.fr/blog/grok-seo"
+        "@type": "Person",
+        "name": "Camille Rousseau",
+        "jobTitle": "Consultante Senior GEO/SEO chez Triaina",
+        "url": "https://www.triaina.fr",
+        "sameAs": "https://www.linkedin.com/in/camille-rousseau-a44488413/"
       }
     },
     {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Grok utilise-t-il Google ou Bing pour ses recherches ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Non. C'est la différence fondamentale. Grok utilise un index web propriétaire xAI d'environ 14 millions de pages, indépendant de Bing et de Google. Il dispose aussi de l'outil x_search pour interroger le firehose X en temps réel. Aucune dépendance à un moteur tiers - c'est pourquoi une bonne position sur Google ne garantit pas d'apparaître dans Grok, et inversement."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Est-ce que mes posts X influencent vraiment les réponses de Grok ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oui, directement. Grok lit environ 68 millions de posts publics en anglais par jour via le firehose X. Les posts de comptes publics mentionnant votre marque ou votre domaine d'expertise alimentent la génération de réponses en temps réel. La nuance : ce sont les mentions de comptes crédibles qui pèsent le plus - pas le volume brut. 10 mentions de journalistes ou d'experts reconnus valent plus que 500 mentions de comptes sans audience réelle."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Combien de temps faut-il pour apparaître dans Grok après une optimisation ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Pour le levier web : comptez environ 15 jours après la mise à jour de votre contenu pour que Grok détecte le changement. Pour les nouvelles pages ou domaines, le délai peut être plus long selon votre autorité. Pour le levier X : l'impact est quasi immédiat - un post public peut être lu par Grok dans les minutes qui suivent sa publication. C'est pourquoi la présence X est le levier le plus rapide pour apparaître dans Grok."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Faut-il un compte X vérifié (badge bleu) pour être cité par Grok ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Le badge bleu aide, mais n'est pas indispensable. Ce qui compte davantage, c'est la crédibilité perçue du compte : ancienneté, cohérence des posts, engagement authentique, mentions par d'autres comptes reconnus. Un compte non vérifié mais activement cité par des journalistes et des experts de votre secteur aura plus de poids qu'un compte vérifié sans engagement réel. Cela dit, la vérification reste un signal de confiance positif."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Grok est-il accessible en France ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oui. Grok est accessible en France via grok.com et l'application X sur iOS et Android. L'accès complet (DeepSearch, mode Think) nécessite un abonnement SuperGrok ou X Premium+. Note importante pour les marques françaises : suite aux procédures du DPC irlandais (GDPR), xAI a arrêté d'utiliser les données personnelles des utilisateurs européens pour entraîner Grok. Cela concerne la formation du modèle, pas la lecture des posts publics pour les réponses en temps réel."
-          }
-        }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
+        { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
       ]
     }
   ];
 
-  const htmlBody = `
+
+
+  if (!post) return null;
+
+  return (
+    <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
+      <SEO 
+        title={`${post.title} - Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://triaina.fr${post.url}`}
+        schema={seoSchema}
+      />
+      
+      <div className="max-w-7xl mx-auto">
+        <a 
+          href="/blog" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState({}, '', '/blog');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}
+          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
+        >
+          <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
+          Retour aux articles
+        </a>
+
+        <article className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden relative">
+          {/* Accent decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-50"></div>
+          
+          <header className="mb-12">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
+              <span className="flex items-center">
+                <Calendar size={14} className="mr-2 text-blue-500" />
+                {post.date}
+              </span>
+              <span className="text-slate-300">|</span>
+              <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">{post.tag}</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+              {post.excerpt}
+            </p>
+          </header>
+
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-16 relative group">
+            <img 
+              src={post.image} 
+              alt={post.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+          </div>
+
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-2xl prose-strong:text-slate-900 prose-li:marker:text-blue-500">
+<div dangerouslySetInnerHTML={{ __html: `
 <p><strong>TL;DR - Ce qu'il faut retenir</strong></p>
 <ul>
   <li><p>Grok est le <strong>seul LLM majeur à lire deux flux en simultané</strong> : un index web propriétaire (~14M pages, indépendant de Bing et Google) ET le firehose X en temps réel (~68M posts/jour).</p></li>
@@ -95,7 +106,7 @@ export const GrokSeo2026: React.FC = () => {
 </ul>
 
 <h2>Qu'est-ce que Grok et comment sélectionne-t-il ses sources ?</h2>
-<p>Grok est un grand modèle de langage développé par xAI, fondé par Elon Musk en 2023. Il est intégré nativement à la plateforme X et accessible via <a target="_blank" rel="noopener noreferrer nofollow" href="https://grok.com" class="text-violet-600 hover:text-violet-700 underline font-medium">grok.com</a>, l'application mobile X, et l'API xAI. Sa version actuelle - Grok 4 - tourne sur une architecture multi-agents avec un cutoff de connaissance fixé à <strong>novembre 2024</strong>. Mais ce cutoff est court-circuité dès que la recherche en direct est activée.</p>
+<p>Grok est un grand modèle de langage développé par xAI, fondé par Elon Musk en 2023. Il est intégré nativement à la plateforme X et accessible via <a target="_blank" rel="noopener noreferrer nofollow" href="https://grok.com" class="text-blue-600 hover:text-blue-700 underline font-medium">grok.com</a>, l'application mobile X, et l'API xAI. Sa version actuelle - Grok 4 - tourne sur une architecture multi-agents avec un cutoff de connaissance fixé à <strong>novembre 2024</strong>. Mais ce cutoff est court-circuité dès que la recherche en direct est activée.</p>
 <p>Ce qui rend Grok fondamentalement différent, c'est son <strong>architecture double flux</strong> :</p>
 <ul>
   <li><p><strong>L'outil </strong><code>web_search</code> : interroge un index propriétaire xAI d'environ 14 millions de pages, construit et maintenu indépendamment de Bing ou de Google. Cet index est pré-traité (full-text + embeddings vectoriels), pas crawlé en direct à chaque requête.</p></li>
@@ -169,7 +180,7 @@ export const GrokSeo2026: React.FC = () => {
 <h3>Données structurées et entités</h3>
 <p>Grok raisonne par entités, pas par URLs. Implémenter les schémas <strong>Article, FAQPage, Person et Organization</strong> de Schema.org aide Grok à reconnaître et consolider votre entité de marque. Le schéma <code>sameAs</code> liant votre site à votre profil X est particulièrement pertinent ici - il crée un pont explicite entre vos deux leviers d'optimisation.</p>
 <p>Assurez aussi la cohérence de vos données NAP (Nom, Adresse, Téléphone) sur l'ensemble du web. Si Grok trouve des informations contradictoires sur votre marque selon les sources, il hésite à vous citer - ou choisit la version la plus répandue, pas forcément la vôtre.</p>
-<p>Pour comprendre comment ces mêmes principes s'appliquent à un autre LLM majeur, consultez <a target="_blank" rel="noopener noreferrer" href="/blog/perplexity-seo" class="text-violet-600 hover:text-violet-700 underline font-medium">notre guide Perplexity SEO</a> - les mécaniques d'indexation diffèrent, mais les signaux d'autorité se recoupent.</p>
+<p>Pour comprendre comment ces mêmes principes s'appliquent à un autre LLM majeur, consultez <a target="_blank" rel="noopener noreferrer" href="/blog/perplexity-seo" class="text-blue-600 hover:text-blue-700 underline font-medium">notre guide Perplexity SEO</a> - les mécaniques d'indexation diffèrent, mais les signaux d'autorité se recoupent.</p>
 
 <h2>Levier 2 - Optimiser votre présence sur X (Twitter)</h2>
 <p>C'est la section que vous ne trouverez pas dans les articles concurrents en français. Et c'est pourtant ce qui rend le <strong>Grok SEO</strong> fondamentalement différent de tout ce que vous avez fait jusqu'ici.</p>
@@ -282,136 +293,54 @@ export const GrokSeo2026: React.FC = () => {
 <p>Le badge bleu aide, mais n'est pas indispensable. Ce qui compte davantage, c'est la <strong>crédibilité perçue du compte</strong> : ancienneté, cohérence des posts, engagement authentique, mentions par d'autres comptes reconnus. Un compte non vérifié mais activement cité par des journalistes et des experts de votre secteur aura plus de poids qu'un compte vérifié sans engagement réel. Cela dit, la vérification reste un signal de confiance positif.</p>
 
 <h3>Grok est-il accessible en France ?</h3>
-<p>Oui. Grok est accessible en France via <a target="_blank" rel="noopener noreferrer nofollow" href="https://grok.com" class="text-violet-600 hover:text-violet-700 underline font-medium">grok.com</a> et l'application X sur iOS et Android. L'accès complet (DeepSearch, mode Think) nécessite un abonnement SuperGrok ou X Premium+. Note importante pour les marques françaises : suite aux procédures du DPC irlandais (GDPR), xAI a arrêté d'utiliser les données personnelles des utilisateurs européens pour entraîner Grok. Cela concerne la formation du modèle, pas la lecture des posts publics pour les réponses en temps réel.</p>
+<p>Oui. Grok est accessible en France via <a target="_blank" rel="noopener noreferrer nofollow" href="https://grok.com" class="text-blue-600 hover:text-blue-700 underline font-medium">grok.com</a> et l'application X sur iOS et Android. L'accès complet (DeepSearch, mode Think) nécessite un abonnement SuperGrok ou X Premium+. Note importante pour les marques françaises : suite aux procédures du DPC irlandais (GDPR), xAI a arrêté d'utiliser les données personnelles des utilisateurs européens pour entraîner Grok. Cela concerne la formation du modèle, pas la lecture des posts publics pour les réponses en temps réel.</p>
 
 <h2>Sources utiles</h2>
 <ul>
-  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://docs.x.ai/developers/tools/web-search" class="text-violet-600 hover:text-violet-700 underline font-medium">xAI Docs - Web Search tool (documentation officielle)</a></p></li>
-  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://docs.x.ai/developers/tools/x-search" class="text-violet-600 hover:text-violet-700 underline font-medium">xAI Docs - X Search tool (documentation officielle)</a></p></li>
-  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://docs.x.ai/developers/models" class="text-violet-600 hover:text-violet-700 underline font-medium">xAI Docs - Modèles Grok (cutoff, capacités)</a></p></li>
-  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://zeo.org/resources/blog/seo-observations-on-grok-web-searches" class="text-violet-600 hover:text-violet-700 underline font-medium">Zeo.org - SEO Observations on Grok Web Searches (données techniques : lag, redirects, meta)</a></p></li>
-  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://muckrack.com/blog/what-is-ai-reading-may-2026" class="text-violet-600 hover:text-violet-700 underline font-medium">Muck Rack - What Is AI Reading? (mai 2026) - 84% des citations IA pointent vers des earned media</a></p></li>
+  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://docs.x.ai/developers/tools/web-search" class="text-blue-600 hover:text-blue-700 underline font-medium">xAI Docs - Web Search tool (documentation officielle)</a></p></li>
+  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://docs.x.ai/developers/tools/x-search" class="text-blue-600 hover:text-blue-700 underline font-medium">xAI Docs - X Search tool (documentation officielle)</a></p></li>
+  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://docs.x.ai/developers/models" class="text-blue-600 hover:text-blue-700 underline font-medium">xAI Docs - Modèles Grok (cutoff, capacités)</a></p></li>
+  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://zeo.org/resources/blog/seo-observations-on-grok-web-searches" class="text-blue-600 hover:text-blue-700 underline font-medium">Zeo.org - SEO Observations on Grok Web Searches (données techniques : lag, redirects, meta)</a></p></li>
+  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://muckrack.com/blog/what-is-ai-reading-may-2026" class="text-blue-600 hover:text-blue-700 underline font-medium">Muck Rack - What Is AI Reading? (mai 2026) - 84% des citations IA pointent vers des earned media</a></p></li>
 </ul>
-  `;
+  ` }} />
 
-  if (!post) return null;
-
-  return (
-    <>
-      <SEO title={`${post.title} | Triaina`}
-        description="Grok lit deux flux en simultané : son index web et le firehose X. Découvrez comment optimiser pour xAI en actionnant ces deux leviers distincts."
-        canonicalUrl={window.location.href}
-        type="article"
-        schema={seoSchema}
-      />
-      <div className="pt-32 pb-24 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-6 animate-fade-in-up">
-            <a 
-              href={PAGE_TO_URL['blog']}
-              onClick={(e) => {
-                e.preventDefault();
-                window.history.pushState({}, '', PAGE_TO_URL['blog']);
-                window.dispatchEvent(new PopStateEvent('popstate'));
-              }}
-              className="inline-flex items-center text-slate-600 hover:text-violet-600 transition-colors font-mono text-sm tracking-wide"
-            >
-               <ArrowLeft size={16} className="mr-2" />
-              RETOUR AU BLOG
-            </a>
-            <div className="flex flex-wrap items-center gap-4 text-slate-500 font-mono text-xs tracking-wider">
-              <span className="flex items-center"><Calendar size={14} className="mr-2" />{post.date}</span>
-              <span className="text-slate-300">|</span>
-              <span className="flex items-center"><Clock size={14} className="mr-2" />5 min de lecture</span>
-              <span className="text-slate-300">|</span>
-              <span className="text-violet-600 border border-violet-200 bg-violet-50 px-2 py-1 rounded-full">{post.tag}</span>
+            {/* Author Block */}
+            <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-slate-100 max-w-4xl mx-auto not-prose">
+                <h3 className="font-bold text-slate-900 mb-2 text-lg">À propos de l'auteure</h3>
+                <div className="font-bold text-slate-900 text-xl mb-1">Camille Rousseau</div>
+                <div className="text-sm text-blue-600 font-mono mb-4">Consultante Senior GEO/SEO chez Triaina</div>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    Experte en stratégies d'acquisition hybrides. Camille accompagne les marques dans l'optimisation de leur visibilité sur les moteurs de recherche traditionnels (SEO) et les interfaces d'IA génératives (GSO).
+                </p>
+                <a href="https://www.linkedin.com/in/camille-rousseau-a44488413/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors underline decoration-2 underline-offset-4">
+                    Voir son profil LinkedIn
+                </a>
             </div>
           </div>
+                </article>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-8 animate-fade-in-up md:w-4/5" style={{animationDelay: '0.1s'}}>
-            {post.title}
-          </h1>
-
-          <p className="text-xl text-slate-600 leading-relaxed mb-12 animate-fade-in-up md:w-3/4" style={{animationDelay: '0.2s'}}>
-            {post.excerpt}
-          </p>
-
-          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-20 relative animate-fade-in-up group" style={{animationDelay: '0.3s'}}>
-            <img 
-              src={post.image} 
-              alt={post.title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
-          </div>
-
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
-            <article className="lg:w-2/3 prose prose-lg prose-slate max-w-none 
-                prose-headings:font-bold prose-headings:text-slate-900 
-                prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-2 prose-h2:border-b prose-h2:border-slate-200
-                prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-                prose-p:text-slate-600 prose-p:leading-relaxed prose-p:mb-6
-                prose-a:text-violet-600 hover:prose-a:text-violet-700 prose-a:underline prose-a:font-medium
-                prose-li:text-slate-600 prose-li:marker:text-violet-500
-                prose-ul:space-y-2 prose-ol:space-y-2
-                animate-fade-in-up"
-                style={{animationDelay: '0.3s'}}
-                dangerouslySetInnerHTML={{ __html: htmlBody }}
-            />
-
-            <aside className="lg:w-1/3 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-              <div className="sticky top-32 space-y-8">
-                <div className="bg-slate-900 text-white rounded-3xl p-8">
-                  <h3 className="text-xl font-bold mb-4 font-sans text-white">Besoin d'optimiser pour l'IA ?</h3>
-                  <p className="text-slate-300 mb-6 text-sm">
-                    Triaina accompagne les entreprises dans l'optimisation de leur visibilité sur Google et auprès des LLMs (Copilot, ChatGPT, Gemini, Perplexity).
-                  </p>
-                  <a 
-                    href={PAGE_TO_URL['contact']}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.history.pushState({}, '', PAGE_TO_URL['contact']);
-                      window.dispatchEvent(new PopStateEvent('popstate'));
-                    }}
-                    className="inline-flex items-center justify-center w-full bg-white text-black px-6 py-3 rounded-full text-sm font-bold tracking-wide hover:bg-slate-100 transition-colors"
-                  >
-                    PRENDRE RENDEZ-VOUS
-                  </a>
-                </div>
-
-                <div className="border border-slate-200 rounded-3xl p-8">
-                  <h3 className="text-lg font-bold mb-4 text-slate-900">À propos de l'auteur</h3>
-                  <div className="flex items-center gap-4 mb-4">
-                    <img 
-                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150" 
-                      alt="Julien M." 
-                      className="w-16 h-16 rounded-full object-cover"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div>
-                      <div className="font-bold text-slate-900">Julien M.</div>
-                      <div className="text-sm text-slate-500">Directeur Média & Contenu</div>
-                    </div>
-                  </div>
-                  <p className="text-sm text-slate-600 mb-4">
-                    Expert en stratégies d'acquisition hybrides SEO/GEO, Julien décrypte l'impact des LLMs sur la visibilité des marques.
-                  </p>
-                  <a 
-                    href="https://www.linkedin.com/company/triaina" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-sm text-violet-600 hover:text-violet-700 font-medium inline-flex items-center"
-                  >
-                    Suivre sur LinkedIn
-                    <ArrowLeft size={14} className="ml-1 rotate-135" />
-                  </a>
-                </div>
-              </div>
-            </aside>
-          </div>
+        {/* Share / Footer */}
+        <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-sm font-mono text-slate-500">
+                Partager cet article
+            </div>
+            <div className="flex gap-4">
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Linkedin size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Twitter size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Facebook size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Share2 size={20} />
+                </button>
+            </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };

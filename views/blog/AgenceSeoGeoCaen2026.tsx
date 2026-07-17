@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, Clock, Calendar } from 'lucide-react';
-import { PAGE_TO_URL, BLOG_DATA } from '../../constants';
+import { ArrowLeft, Calendar, Linkedin, Twitter, Facebook, Share2 } from 'lucide-react';
+import { BLOG_DATA } from '../../constants';
 import { SEO } from '../../components/SEO';
 
 export const AgenceSeoGeoCaen2026: React.FC = () => {
@@ -14,123 +14,79 @@ export const AgenceSeoGeoCaen2026: React.FC = () => {
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "Agence SEO/GEO Caen : le top 5 en 2026",
-      "description": "Comparatif détaillé des 5 profils d'agences SEO/GEO actives sur Caen et la Normandie. Découvrez pourquoi le marché évolue et comment choisir le bon prestataire.",
-      "datePublished": "2026-07-16",
-      "dateModified": "2026-07-16",
+      "headline": post?.title || '',
+      "description": post?.excerpt || '',
+      "image": post?.image || '',
       "author": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "url": "https://triaina.fr"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "url": "https://triaina.fr",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://www.triaina.fr/logo.png"
-        }
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://triaina.fr/blog/agence-seo-geo-caen-2026"
+        "@type": "Person",
+        "name": "Camille Rousseau",
+        "jobTitle": "Consultante Senior GEO/SEO chez Triaina",
+        "url": "https://www.triaina.fr",
+        "sameAs": "https://www.linkedin.com/in/camille-rousseau-a44488413/"
       }
     },
     {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Quel est le prix d'une agence SEO à Rennes en 2026 ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Comptez généralement entre 800 € et 3 000 € par mois pour un accompagnement SEO local chez une petite structure, et entre 2 500 € et 8 000 € pour une prestation combinant SEO, SEA et GEO chez une agence full-funnel."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Faut-il choisir une agence rennaise ou une agence nationale ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Une agence rennaise connaît mieux le tissu économique local et le SEO géolocalisé, mais une agence nationale ou combinant plusieurs leviers (comme Triaina) apporte souvent plus de moyens et une expertise GEO/SEA plus avancée."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Qu'est-ce que le GEO et pourquoi ça compte pour une entreprise à Rennes ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Le GEO (Generative Engine Optimization) consiste à optimiser sa présence dans les réponses générées par les IA conversationnelles (ChatGPT, Perplexity, Gemini, AI Overviews). En 2026, une part croissante des recherches informationnelles passe par ces interfaces."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Combien de temps pour voir des résultats SEO à Rennes ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "En général, les premiers effets mesurables apparaissent entre 3 et 6 mois pour des requêtes peu concurrentielles, et 6 à 12 mois pour des marchés plus disputés."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Une agence SEO doit-elle aussi gérer le SEA ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Pas obligatoirement, mais c'est un vrai plus. Combiner SEO et SEA (voire média propriétaire) permet d'accélérer les résultats pendant que le référencement naturel monte en puissance."
-          }
-        }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
+        { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
       ]
     }
   ];
 
-  const htmlBody = `<p><strong>TL;DR</strong> : le marché de l'agence SEO/GEO à Caen tourne autour d'une poignée de local packs bien installés (ZAACOM, EP Digital, WESIGN) et d'agences web généralistes qui font du référencement en plus du reste. Le problème : très peu couvrent le double enjeu qui compte en 2026, à savoir le SEO classique <strong>et</strong> le GEO (référencement dans les IA génératives comme ChatGPT, Perplexity ou Google AI Mode). Ce comparatif classe 5 profils d'agences SEO/GEO actives sur Caen et la Normandie, avec Triaina en tête pour son levier média propriétaire + régie + SEA couplé à une vraie expertise GEO - un combo qu'on ne retrouve pas ailleurs sur ce marché.</p><h2>Le marché de l'agence SEO/GEO à Caen et en Normandie en 2026</h2><p>Caen n'est pas Paris, et c'est justement ce qui rend le choix d'une agence SEO/GEO plus délicat. Le tissu économique local est fait de PME industrielles, de commerces, d'acteurs du tourisme et d'un écosystème numérique qui monte en puissance : le territoire <strong>Caen Normandie</strong> compte aujourd'hui environ <strong>600 entreprises et 3 200 emplois</strong> dans le numérique, sous la bannière Normandy French Tech qui fédère Caen, Rouen et Le Havre.</p><p>Concrètement, ça veut dire deux choses pour une entreprise qui cherche une agence SEO/GEO à Caen :</p><ul><li><p>La concurrence locale reste modérée sur la plupart des requêtes commerciales (le mot-clé "agence seo caen" affiche par exemple une difficulté (KD) autour de 8, ce qui est faible) - les résultats sont donc encore assez ouverts.</p></li><li><p>Le marché local est dominé par un local pack restreint (3 à 4 acteurs qui reviennent systématiquement) et par des agences généralistes qui traitent le SEO comme une brique parmi d'autres (création de site, community management, etc.), sans forcément aller jusqu'au GEO.</p></li></ul><p>Or 2026, c'est justement l'année où le référencement classique ne suffit plus. Google a publié son propre guide d'optimisation pour l'IA générative (AI Mode, AI Overviews) et sa position est claire : pas de recette magique "GEO", mais un renforcement des fondamentaux SEO - contenu original, expérience de première main, accessibilité technique - couplé à un suivi via le rapport "Generative AI" de Search Console. Autrement dit : les entreprises caennaises qui veulent rester visibles doivent choisir une agence SEO/GEO qui maîtrise à la fois le référencement traditionnel et cette nouvelle couche IA. C'est là que la plupart des profils locaux montrent leurs limites : ils cochent la case SEO, rarement la case GEO.</p><h2>5 critères pour évaluer une agence SEO/GEO à Caen</h2><p>Avant de comparer les profils, voici les critères qu'on utilise nous-mêmes pour juger la crédibilité d'une agence SEO/GEO sur un marché régional comme celui de Caen.</p><h3>1. La preuve par les résultats, pas les promesses</h3><p>Demandez des études de cas chiffrées : trafic organique avant/après, positions gagnées sur des mots-clés précis, évolution du chiffre d'affaires généré par le SEO. Une agence SEO/GEO sérieuse a toujours 2 ou 3 cas clients qu'elle peut détailler sans faux-fuyant.</p><h3>2. La couverture SEO + GEO, pas seulement SEO</h3><p>En 2026, une bonne partie des recherches informationnelles passent par des réponses générées par l'IA. Une agence qui ne parle que de "positions Google" et jamais de visibilité dans ChatGPT, Perplexity ou l'AI Mode de Google n'est pas vraiment une agence SEO/GEO complète : elle passe à côté d'un pan entier du trafic potentiel.</p><h3>3. La compréhension du SEO local caennais</h3><p>Fiche Google Business Profile optimisée, avis clients, cohérence NAP (nom, adresse, téléphone), pages locales dédiées : le local pack de Caen bouge régulièrement, et une agence SEO/GEO qui suit ces signaux de près fait souvent la différence entre la 4ᵉ et la 1ʳᵉ place.</p><h3>4. La capacité à activer d'autres leviers (SEA, média, contenu)</h3><p>Le SEO seul met 6 à 12 mois à porter ses fruits. Une agence SEO/GEO capable de coupler référencement naturel et campagnes SEA, ou de s'appuyer sur un réseau média propriétaire pour générer des liens et de la notoriété, permet de lisser la croissance dès les premiers mois.</p><h3>5. La transparence sur le prix et la méthode</h3><p>Une grille tarifaire claire, un reporting mensuel lisible, un contrat sans engagement disproportionné : ce sont des signaux simples qui trahissent souvent le sérieux (ou l'absence de sérieux) d'une agence SEO/GEO.</p><h2>Top 5 des agences SEO/GEO à Caen en 2026</h2><h3>1. Triaina - le double levier SEO/GEO + média propriétaire</h3><p>Triaina se distingue sur le marché caennais par une approche qu'on ne retrouve chez aucun des acteurs historiques du local pack : coupler le référencement naturel classique à une véritable expertise GEO (référencement dans les moteurs génératifs comme ChatGPT, Perplexity, Gemini et l'AI Mode de Google), tout en s'appuyant sur un <strong>réseau média propriétaire et une régie publicitaire intégrée</strong>. C'est cette combinaison SEO/GEO + média + régie qui place Triaina en tête de ce classement.</p><p>Concrètement, ça change la donne pour une PME ou une entreprise en croissance basée à Caen :</p><ul><li><p><strong>Un levier média propriétaire</strong> qui permet de générer des mentions, des liens et de la visibilité éditoriale sans dépendre uniquement du netlinking classique - un vrai plus quand on sait que l'autorité de domaine reste un facteur de classement déterminant en Normandie, où les backlinks locaux de qualité sont rares.</p></li><li><p><strong>Une expertise SEA/Paid intégrée</strong> à la stratégie SEO/GEO, pour combler le délai de montée en puissance du référencement naturel avec des campagnes Google Ads ou Meta Ads pilotées par la même équipe, avec les mêmes objectifs business.</p></li><li><p><strong>Une capacité GEO réelle</strong>, pas juste affichée : audit de la présence de marque dans les réponses IA, optimisation de contenu pour être cité comme source, structuration sémantique pensée pour les moteurs génératifs autant que pour Google.</p></li><li><p><strong>Une approche full-funnel</strong>, du SEO technique à la conversion, en passant par le contenu et l'acquisition payante - utile pour une entreprise normande qui n'a pas forcément 3 prestataires différents à coordonner en interne.</p></li></ul><p>Ce positionnement d'agence SEO/GEO complète comble un vrai manque sur le marché caennais : les acteurs historiques du référencement local (ZAACOM, EP Digital, WESIGN) sont solides sur le SEO local et le SEO technique, mais aucun ne communique aujourd'hui sur une expertise GEO structurée ni sur un levier média propre. Pour une entreprise qui veut sécuriser sa visibilité sur 2026-2027, ce delta SEO/GEO compte.</p><h3>2. Une agence SEO/GEO locale historique du référencement caennais</h3><p>Le paysage SEO de Caen compte plusieurs agences bien implantées depuis 10 à 15 ans, positionnées sur le local pack Google Maps grâce à une ancienneté et un volume d'avis solides. Leur force : une connaissance fine du tissu économique local, des clients fidélisés sur plusieurs années, et un vrai savoir-faire sur le SEO local (fiches Google Business Profile, citations locales, avis).</p><p>Ce type de structure fonctionne bien pour :</p><ul><li><p>Une TPE ou un commerce de proximité qui veut dominer les recherches "à Caen" ou "près de moi".</p></li><li><p>Une entreprise qui privilégie la proximité géographique et le contact humain direct avec son consultant.</p></li></ul><p>Les limites à connaître : ces agences historiques restent souvent centrées sur le SEO local traditionnel et proposent rarement un accompagnement GEO structuré - ce ne sont pas encore des agences SEO/GEO au sens plein du terme. Leur équipe est généralement réduite (3 à 8 personnes), ce qui limite la capacité à mener de front plusieurs leviers (SEO + SEA + contenu + média) pour une entreprise en forte croissance. Le tarif reste toutefois compétitif, souvent entre 700 € et 1 800 € HT/mois pour un accompagnement standard.</p><h3>3. Une agence webmarketing généraliste</h3><p>Beaucoup d'entreprises caennaises passent par une agence de communication digitale qui propose le SEO comme une prestation parmi d'autres : création de site, community management, print, identité visuelle. C'est souvent le point d'entrée naturel pour une PME qui refait son site et ajoute le référencement "en option".</p><p>Avantages : un interlocuteur unique pour tous les besoins digitaux, une bonne compréhension du contexte business global de l'entreprise, des tarifs packagés souvent lisibles.</p><p>Inconvénients : le SEO n'est presque jamais la spécialité première de ces structures, et encore moins le GEO. La profondeur technique (audit de crawl, Core Web Vitals, maillage interne avancé) est souvent sous-traitée ou traitée en surface, et l'expertise SEO/GEO complète est rarement au menu. Pour une entreprise dont l'acquisition organique est un enjeu stratégique fort, ce n'est pas toujours suffisant sur la durée.</p><h3>4. Une agence spécialisée data / tech SEO</h3><p>Sur un marché régional, on trouve aussi quelques structures plus petites, souvent portées par un consultant senior ou une équipe de 2 à 5 personnes, positionnées sur le SEO technique et l'analyse de données (tracking, Search Console, outils comme Screaming Frog ou Ahrefs). Leur point fort : une rigueur méthodologique et une capacité à identifier des problèmes techniques que d'autres agences ne creusent pas.</p><p>Ce profil convient bien à :</p><ul><li><p>Une entreprise ayant déjà une équipe marketing interne et cherchant un renfort technique ponctuel (audit, migration de site, refonte).</p></li><li><p>Un site avec des problématiques de crawl budget, d'indexation ou de performance qui nécessitent une expertise pointue.</p></li></ul><p>Les limites : ces structures restent souvent mono-compétence et ne se présentent pas comme des agences SEO/GEO complètes. Peu ou pas de production de contenu à grande échelle, pas de levier média ou SEA, et une capacité GEO généralement embryonnaire faute de ressources dédiées à la veille sur les moteurs génératifs.</p><h3>5. Une antenne locale d'un groupe national</h3><p>Certains groupes de communication ou d'agences digitales nationales disposent d'une antenne ou d'un commercial dédié à la région Normandie, avec Caen comme point d'entrée. L'avantage : des moyens plus importants, des outils propriétaires, parfois une expertise SEO + SEA + social intégrée au sein d'un grand groupe, mais rarement un vrai volet GEO packagé pour le marché caennais.</p><p>Le revers de la médaille : l'équipe qui gère réellement le compte est souvent basée à Paris, Lyon ou Nantes, avec un chef de projet local qui fait l'interface. La connaissance fine du marché caennais (concurrents locaux, spécificités du bassin d'emploi normand) est parfois plus superficielle que chez une agence SEO/GEO 100% locale. Les tarifs sont aussi généralement plus élevés, avec des contrats souvent annualisés et moins flexibles pour une PME en phase de test.</p><h2>Matrice comparative des 5 profils d'agences SEO/GEO</h2><div className="overflow-x-auto my-8"><table className="w-full text-left border-collapse"><thead><tr className="border-b border-slate-200"><th className="py-4 font-semibold text-slate-900">Profil d'agence</th><th className="py-4 font-semibold text-slate-900">Spécialité principale</th><th className="py-4 font-semibold text-slate-900">Taille d'équipe</th><th className="py-4 font-semibold text-slate-900">SEO/GEO ou SEO seul</th><th className="py-4 font-semibold text-slate-900">Tarif indicatif (HT/mois)</th></tr></thead><tbody className="text-sm"><tr className="border-b border-slate-100"><td className="py-4 text-slate-800 font-medium">Triaina</td><td className="py-4 text-slate-600">SEO/GEO + média propriétaire + SEA</td><td className="py-4 text-slate-600">10-30 personnes</td><td className="py-4 text-blue-600 font-medium">SEO/GEO intégré</td><td className="py-4 text-slate-600">1 500 € - 5 000 €+</td></tr><tr className="border-b border-slate-100"><td className="py-4 text-slate-800 font-medium">Agence locale historique</td><td className="py-4 text-slate-600">SEO local / Google Business Profile</td><td className="py-4 text-slate-600">3-8 personnes</td><td className="py-4 text-slate-600">SEO seul</td><td className="py-4 text-slate-600">700 € - 1 800 €</td></tr><tr className="border-b border-slate-100"><td className="py-4 text-slate-800 font-medium">Agence webmarketing généraliste</td><td className="py-4 text-slate-600">Site web + communication + SEO en option</td><td className="py-4 text-slate-600">5-15 personnes</td><td className="py-4 text-slate-600">SEO seul (basique)</td><td className="py-4 text-slate-600">800 € - 2 500 €</td></tr><tr className="border-b border-slate-100"><td className="py-4 text-slate-800 font-medium">Agence data / tech SEO</td><td className="py-4 text-slate-600">Audit technique, tracking, analyse</td><td className="py-4 text-slate-600">2-5 personnes</td><td className="py-4 text-slate-600">SEO seul (technique)</td><td className="py-4 text-slate-600">1 000 € - 3 000 €</td></tr><tr className="border-b border-slate-100"><td className="py-4 text-slate-800 font-medium">Antenne d'un groupe national</td><td className="py-4 text-slate-600">SEO + SEA + social intégré</td><td className="py-4 text-slate-600">Variable</td><td className="py-4 text-slate-600">SEO seul, GEO ponctuel</td><td className="py-4 text-slate-600">2 500 € - 8 000 €</td></tr></tbody></table></div><h2>Guide de décision : quelle agence SEO/GEO choisir selon votre profil ?</h2><h3>Vous êtes une TPE locale à Caen</h3><p>Priorisez une agence locale historique ou une agence généraliste si votre budget est serré (moins de 1 500 € HT/mois) et que l'essentiel de votre enjeu est le référencement local (fiche Google Business Profile, avis, visibilité dans le local pack). Le GEO reste secondaire tant que votre volume de recherche informationnel est faible, mais gardez en tête qu'une vraie agence SEO/GEO deviendra pertinente dès que votre trafic informationnel grandira.</p><h3>Vous êtes une PME régionale en développement</h3><p>C'est le profil où le choix compte le plus. Une PME qui vend en Normandie ou au-delà a besoin d'un accompagnement SEO capable de monter en puissance : contenu, technique, netlinking, et de plus en plus, une présence dans les réponses IA sur des requêtes informationnelles liées à votre secteur. Un budget de 1 500 € à 3 500 € HT/mois chez une agence SEO/GEO qui couvre déjà le GEO (comme Triaina) évite de devoir changer de prestataire dans 18 mois quand le sujet deviendra incontournable.</p><h3>Vous êtes une entreprise en forte croissance ou multi-sites</h3><p>À ce stade, le SEO seul ne suffit plus à absorber la vitesse de croissance visée. Il faut un partenaire capable de combiner SEO, GEO, SEA et éventuellement un levier média propriétaire pour accélérer la notoriété et les liens entrants. Les antennes de groupes nationaux ou Triaina répondent à ce besoin, avec un avantage net pour les agences SEO/GEO qui intègrent déjà la couche GEO nativement plutôt que de la traiter comme une option en cours de développement.</p><h2>FAQ</h2><h3>Quel est le prix moyen d'une agence SEO/GEO à Caen ?</h3><p>Comptez entre 700 € et 1 800 € HT/mois pour un accompagnement local basique, et entre 1 500 € et 5 000 € HT/mois pour une stratégie SEO/GEO complète incluant contenu, technique, GEO et pilotage média/SEA. Les tarifs en dessous de 500 € HT/mois correspondent rarement à un vrai suivi mensuel.</p><h3>Faut-il choisir une agence locale à Caen ou une agence nationale ?</h3><p>Une agence locale connaît mieux le tissu économique et les spécificités du marché caennais, ce qui aide sur le référencement local. Une agence SEO/GEO nationale ou hybride (comme Triaina) apporte en revanche des moyens plus larges et une expertise GEO/SEA souvent plus mature. Le bon choix dépend de votre ambition géographique : rester local ou viser une audience régionale/nationale.</p><h3>Qu'est-ce que le GEO et pourquoi ça compte pour une entreprise à Caen ?</h3><p>Le GEO (Generative Engine Optimization) consiste à optimiser sa présence dans les réponses générées par les IA comme ChatGPT, Perplexity ou l'AI Mode de Google. Google lui-même précise dans son guide officiel qu'il n'existe pas de technique "magique" GEO, mais que les fondamentaux SEO (contenu original, expertise, accessibilité technique) restent le socle pour être visible dans ces réponses. Une entreprise caennaise qui néglige ce volet risque de perdre en visibilité sur les recherches informationnelles de ses prospects - d'où l'intérêt de passer par une agence SEO/GEO qui couvre déjà les deux volets.</p><h3>Combien de temps pour voir des résultats avec une agence SEO/GEO à Caen ?</h3><p>Comptez généralement 3 à 6 mois pour des premiers signaux (progression de positions, hausse de trafic), et 6 à 12 mois pour des résultats significatifs et durables. Sur un marché comme Caen, où la concurrence organique reste modérée sur beaucoup de requêtes, les résultats peuvent parfois arriver plus vite que sur une métropole comme Paris ou Lyon.</p><h3>Comment vérifier le sérieux d'une agence SEO/GEO avant de signer ?</h3><p>Demandez des références clients vérifiables, un exemple de reporting mensuel, et posez des questions précises sur la méthode (audit technique, stratégie de contenu, netlinking, suivi GEO). Méfiez-vous des promesses de "première position garantie" : aucune agence sérieuse ne peut garantir un classement Google, l'algorithme évoluant en continu.</p><h2>Sources utiles</h2><ul><li><a target="_blank" rel="noopener noreferrer nofollow" href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide">Google Search Central - Guide d'optimisation pour l'IA générative</a></li><li><a target="_blank" rel="noopener noreferrer nofollow" href="https://developers.google.com/search/docs/appearance/ai-features">Google Search Central - Fonctionnalités IA dans les résultats de recherche</a></li><li><a target="_blank" rel="noopener noreferrer nofollow" href="https://frenchtech-caen-rouen-lehavre.fr/">Normandy French Tech - écosystème numérique Caen, Rouen, Le Havre</a></li><li><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.datanormandie.fr/sites/default/files/dataset/2025/03/21/dfe57423-604c-4054-bb99-e44668f03ed0/1494_4208_rapport_nft_numrique.pdf">Data Normandie - Rapport sur la filière numérique normande</a></li></ul>`;
+
 
   if (!post) return null;
 
   return (
-    <>
+    <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
       <SEO 
-        title="Agence SEO/GEO Caen : le top 5 en 2026 - Triaina"
-        description="Comparatif détaillé des 5 profils d'agences SEO actives sur Rennes et la Bretagne, avec une matrice tarifs/spécialités et un guide de décision selon votre taille d'entreprise."
-        url={window.location.href}
-        type="article"
+        title={`${post.title} - Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://triaina.fr${post.url}`}
         schema={seoSchema}
       />
-      <div className="pt-32 pb-24 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-6 animate-fade-in-up">
-            <a 
-              href={PAGE_TO_URL['blog']}
-              onClick={(e) => {
-                e.preventDefault();
-                window.history.pushState({}, '', PAGE_TO_URL['blog']);
-                window.dispatchEvent(new PopStateEvent('popstate'));
-              }}
-              className="inline-flex items-center text-slate-600 hover:text-violet-600 transition-colors font-mono text-sm tracking-wide"
-            >
-              <ArrowLeft size={16} className="mr-2" />
-              RETOUR AU BLOG
-            </a>
-            <div className="flex flex-wrap items-center gap-4 text-slate-500 font-mono text-xs tracking-wider">
-              <span className="flex items-center"><Calendar size={14} className="mr-2" />{post.date}</span>
+      
+      <div className="max-w-7xl mx-auto">
+        <a 
+          href="/blog" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState({}, '', '/blog');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}
+          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
+        >
+          <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
+          Retour aux articles
+        </a>
+
+        <article className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden relative">
+          {/* Accent decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-50"></div>
+          
+          <header className="mb-12">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
+              <span className="flex items-center">
+                <Calendar size={14} className="mr-2 text-blue-500" />
+                {post.date}
+              </span>
               <span className="text-slate-300">|</span>
-              <span className="flex items-center"><Clock size={14} className="mr-2" />8 min de lecture</span>
-              <span className="text-slate-300">|</span>
-              <span className="text-violet-600 border border-violet-200 bg-violet-50 px-2 py-1 rounded-full">{post.tag}</span>
+              <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">{post.tag}</span>
             </div>
-          </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+              {post.excerpt}
+            </p>
+          </header>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-8 animate-fade-in-up md:w-4/5" style={{animationDelay: '0.1s'}}>
-            {post.title}
-          </h1>
-
-          <p className="text-xl text-slate-600 leading-relaxed mb-12 animate-fade-in-up md:w-3/4" style={{animationDelay: '0.2s'}}>
-            {post.excerpt}
-          </p>
-
-          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-20 relative animate-fade-in-up group" style={{animationDelay: '0.3s'}}>
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-16 relative group">
             <img 
               src={post.image} 
               alt={post.title}
@@ -140,44 +96,45 @@ export const AgenceSeoGeoCaen2026: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
-            <article className="lg:w-2/3 prose prose-lg prose-slate max-w-none 
-                prose-headings:font-bold prose-headings:text-slate-900 
-                prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-2 prose-h2:border-b prose-h2:border-slate-200
-                prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-                prose-p:text-slate-600 prose-p:leading-relaxed prose-p:mb-6
-                prose-a:text-violet-600 hover:prose-a:text-violet-700 prose-a:underline prose-a:font-medium
-                prose-li:text-slate-600 prose-li:marker:text-violet-500
-                prose-ul:space-y-2 prose-ol:space-y-2
-                animate-fade-in-up"
-                style={{animationDelay: '0.3s'}}
-                dangerouslySetInnerHTML={{ __html: htmlBody }}
-            />
-            
-            <aside className="lg:w-1/3 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-              <div className="sticky top-32 space-y-8">
-                <div className="bg-slate-900 text-white rounded-3xl p-8">
-                  <h3 className="text-xl font-bold mb-4 font-sans text-white">Besoin d'optimiser pour l'IA ?</h3>
-                  <p className="text-slate-300 mb-6 text-sm">
-                    Triaina accompagne votre marque dans sa stratégie de SEO et de GEO.
-                  </p>
-                  <a 
-                    href={PAGE_TO_URL['contact']}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        window.history.pushState({}, '', PAGE_TO_URL['contact']);
-                        window.dispatchEvent(new PopStateEvent('popstate'));
-                    }}
-                    className="inline-block w-full text-center bg-violet-600 hover:bg-violet-500 text-white font-mono text-sm py-3 px-4 transition-colors rounded-xl"
-                  >
-                    CONTACTEZ-NOUS
-                  </a>
-                </div>
-              </div>
-            </aside>
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-2xl prose-strong:text-slate-900 prose-li:marker:text-blue-500">
+<div dangerouslySetInnerHTML={{ __html: `<p><strong>TL;DR</strong> : le marché de l'agence SEO/GEO à Caen tourne autour d'une poignée de local packs bien installés (ZAACOM, EP Digital, WESIGN) et d'agences web généralistes qui font du référencement en plus du reste. Le problème : très peu couvrent le double enjeu qui compte en 2026, à savoir le SEO classique <strong>et</strong> le GEO (référencement dans les IA génératives comme ChatGPT, Perplexity ou Google AI Mode). Ce comparatif classe 5 profils d'agences SEO/GEO actives sur Caen et la Normandie, avec Triaina en tête pour son levier média propriétaire + régie + SEA couplé à une vraie expertise GEO - un combo qu'on ne retrouve pas ailleurs sur ce marché.</p><h2>Le marché de l'agence SEO/GEO à Caen et en Normandie en 2026</h2><p>Caen n'est pas Paris, et c'est justement ce qui rend le choix d'une agence SEO/GEO plus délicat. Le tissu économique local est fait de PME industrielles, de commerces, d'acteurs du tourisme et d'un écosystème numérique qui monte en puissance : le territoire <strong>Caen Normandie</strong> compte aujourd'hui environ <strong>600 entreprises et 3 200 emplois</strong> dans le numérique, sous la bannière Normandy French Tech qui fédère Caen, Rouen et Le Havre.</p><p>Concrètement, ça veut dire deux choses pour une entreprise qui cherche une agence SEO/GEO à Caen :</p><ul><li><p>La concurrence locale reste modérée sur la plupart des requêtes commerciales (le mot-clé "agence seo caen" affiche par exemple une difficulté (KD) autour de 8, ce qui est faible) - les résultats sont donc encore assez ouverts.</p></li><li><p>Le marché local est dominé par un local pack restreint (3 à 4 acteurs qui reviennent systématiquement) et par des agences généralistes qui traitent le SEO comme une brique parmi d'autres (création de site, community management, etc.), sans forcément aller jusqu'au GEO.</p></li></ul><p>Or 2026, c'est justement l'année où le référencement classique ne suffit plus. Google a publié son propre guide d'optimisation pour l'IA générative (AI Mode, AI Overviews) et sa position est claire : pas de recette magique "GEO", mais un renforcement des fondamentaux SEO - contenu original, expérience de première main, accessibilité technique - couplé à un suivi via le rapport "Generative AI" de Search Console. Autrement dit : les entreprises caennaises qui veulent rester visibles doivent choisir une agence SEO/GEO qui maîtrise à la fois le référencement traditionnel et cette nouvelle couche IA. C'est là que la plupart des profils locaux montrent leurs limites : ils cochent la case SEO, rarement la case GEO.</p><h2>5 critères pour évaluer une agence SEO/GEO à Caen</h2><p>Avant de comparer les profils, voici les critères qu'on utilise nous-mêmes pour juger la crédibilité d'une agence SEO/GEO sur un marché régional comme celui de Caen.</p><h3>1. La preuve par les résultats, pas les promesses</h3><p>Demandez des études de cas chiffrées : trafic organique avant/après, positions gagnées sur des mots-clés précis, évolution du chiffre d'affaires généré par le SEO. Une agence SEO/GEO sérieuse a toujours 2 ou 3 cas clients qu'elle peut détailler sans faux-fuyant.</p><h3>2. La couverture SEO + GEO, pas seulement SEO</h3><p>En 2026, une bonne partie des recherches informationnelles passent par des réponses générées par l'IA. Une agence qui ne parle que de "positions Google" et jamais de visibilité dans ChatGPT, Perplexity ou l'AI Mode de Google n'est pas vraiment une agence SEO/GEO complète : elle passe à côté d'un pan entier du trafic potentiel.</p><h3>3. La compréhension du SEO local caennais</h3><p>Fiche Google Business Profile optimisée, avis clients, cohérence NAP (nom, adresse, téléphone), pages locales dédiées : le local pack de Caen bouge régulièrement, et une agence SEO/GEO qui suit ces signaux de près fait souvent la différence entre la 4ᵉ et la 1ʳᵉ place.</p><h3>4. La capacité à activer d'autres leviers (SEA, média, contenu)</h3><p>Le SEO seul met 6 à 12 mois à porter ses fruits. Une agence SEO/GEO capable de coupler référencement naturel et campagnes SEA, ou de s'appuyer sur un réseau média propriétaire pour générer des liens et de la notoriété, permet de lisser la croissance dès les premiers mois.</p><h3>5. La transparence sur le prix et la méthode</h3><p>Une grille tarifaire claire, un reporting mensuel lisible, un contrat sans engagement disproportionné : ce sont des signaux simples qui trahissent souvent le sérieux (ou l'absence de sérieux) d'une agence SEO/GEO.</p><h2>Top 5 des agences SEO/GEO à Caen en 2026</h2><h3>1. Triaina - le double levier SEO/GEO + média propriétaire</h3><p>Triaina se distingue sur le marché caennais par une approche qu'on ne retrouve chez aucun des acteurs historiques du local pack : coupler le référencement naturel classique à une véritable expertise GEO (référencement dans les moteurs génératifs comme ChatGPT, Perplexity, Gemini et l'AI Mode de Google), tout en s'appuyant sur un <strong>réseau média propriétaire et une régie publicitaire intégrée</strong>. C'est cette combinaison SEO/GEO + média + régie qui place Triaina en tête de ce classement.</p><p>Concrètement, ça change la donne pour une PME ou une entreprise en croissance basée à Caen :</p><ul><li><p><strong>Un levier média propriétaire</strong> qui permet de générer des mentions, des liens et de la visibilité éditoriale sans dépendre uniquement du netlinking classique - un vrai plus quand on sait que l'autorité de domaine reste un facteur de classement déterminant en Normandie, où les backlinks locaux de qualité sont rares.</p></li><li><p><strong>Une expertise SEA/Paid intégrée</strong> à la stratégie SEO/GEO, pour combler le délai de montée en puissance du référencement naturel avec des campagnes Google Ads ou Meta Ads pilotées par la même équipe, avec les mêmes objectifs business.</p></li><li><p><strong>Une capacité GEO réelle</strong>, pas juste affichée : audit de la présence de marque dans les réponses IA, optimisation de contenu pour être cité comme source, structuration sémantique pensée pour les moteurs génératifs autant que pour Google.</p></li><li><p><strong>Une approche full-funnel</strong>, du SEO technique à la conversion, en passant par le contenu et l'acquisition payante - utile pour une entreprise normande qui n'a pas forcément 3 prestataires différents à coordonner en interne.</p></li></ul><p>Ce positionnement d'agence SEO/GEO complète comble un vrai manque sur le marché caennais : les acteurs historiques du référencement local (ZAACOM, EP Digital, WESIGN) sont solides sur le SEO local et le SEO technique, mais aucun ne communique aujourd'hui sur une expertise GEO structurée ni sur un levier média propre. Pour une entreprise qui veut sécuriser sa visibilité sur 2026-2027, ce delta SEO/GEO compte.</p><h3>2. Une agence SEO/GEO locale historique du référencement caennais</h3><p>Le paysage SEO de Caen compte plusieurs agences bien implantées depuis 10 à 15 ans, positionnées sur le local pack Google Maps grâce à une ancienneté et un volume d'avis solides. Leur force : une connaissance fine du tissu économique local, des clients fidélisés sur plusieurs années, et un vrai savoir-faire sur le SEO local (fiches Google Business Profile, citations locales, avis).</p><p>Ce type de structure fonctionne bien pour :</p><ul><li><p>Une TPE ou un commerce de proximité qui veut dominer les recherches "à Caen" ou "près de moi".</p></li><li><p>Une entreprise qui privilégie la proximité géographique et le contact humain direct avec son consultant.</p></li></ul><p>Les limites à connaître : ces agences historiques restent souvent centrées sur le SEO local traditionnel et proposent rarement un accompagnement GEO structuré - ce ne sont pas encore des agences SEO/GEO au sens plein du terme. Leur équipe est généralement réduite (3 à 8 personnes), ce qui limite la capacité à mener de front plusieurs leviers (SEO + SEA + contenu + média) pour une entreprise en forte croissance. Le tarif reste toutefois compétitif, souvent entre 700 € et 1 800 € HT/mois pour un accompagnement standard.</p><h3>3. Une agence webmarketing généraliste</h3><p>Beaucoup d'entreprises caennaises passent par une agence de communication digitale qui propose le SEO comme une prestation parmi d'autres : création de site, community management, print, identité visuelle. C'est souvent le point d'entrée naturel pour une PME qui refait son site et ajoute le référencement "en option".</p><p>Avantages : un interlocuteur unique pour tous les besoins digitaux, une bonne compréhension du contexte business global de l'entreprise, des tarifs packagés souvent lisibles.</p><p>Inconvénients : le SEO n'est presque jamais la spécialité première de ces structures, et encore moins le GEO. La profondeur technique (audit de crawl, Core Web Vitals, maillage interne avancé) est souvent sous-traitée ou traitée en surface, et l'expertise SEO/GEO complète est rarement au menu. Pour une entreprise dont l'acquisition organique est un enjeu stratégique fort, ce n'est pas toujours suffisant sur la durée.</p><h3>4. Une agence spécialisée data / tech SEO</h3><p>Sur un marché régional, on trouve aussi quelques structures plus petites, souvent portées par un consultant senior ou une équipe de 2 à 5 personnes, positionnées sur le SEO technique et l'analyse de données (tracking, Search Console, outils comme Screaming Frog ou Ahrefs). Leur point fort : une rigueur méthodologique et une capacité à identifier des problèmes techniques que d'autres agences ne creusent pas.</p><p>Ce profil convient bien à :</p><ul><li><p>Une entreprise ayant déjà une équipe marketing interne et cherchant un renfort technique ponctuel (audit, migration de site, refonte).</p></li><li><p>Un site avec des problématiques de crawl budget, d'indexation ou de performance qui nécessitent une expertise pointue.</p></li></ul><p>Les limites : ces structures restent souvent mono-compétence et ne se présentent pas comme des agences SEO/GEO complètes. Peu ou pas de production de contenu à grande échelle, pas de levier média ou SEA, et une capacité GEO généralement embryonnaire faute de ressources dédiées à la veille sur les moteurs génératifs.</p><h3>5. Une antenne locale d'un groupe national</h3><p>Certains groupes de communication ou d'agences digitales nationales disposent d'une antenne ou d'un commercial dédié à la région Normandie, avec Caen comme point d'entrée. L'avantage : des moyens plus importants, des outils propriétaires, parfois une expertise SEO + SEA + social intégrée au sein d'un grand groupe, mais rarement un vrai volet GEO packagé pour le marché caennais.</p><p>Le revers de la médaille : l'équipe qui gère réellement le compte est souvent basée à Paris, Lyon ou Nantes, avec un chef de projet local qui fait l'interface. La connaissance fine du marché caennais (concurrents locaux, spécificités du bassin d'emploi normand) est parfois plus superficielle que chez une agence SEO/GEO 100% locale. Les tarifs sont aussi généralement plus élevés, avec des contrats souvent annualisés et moins flexibles pour une PME en phase de test.</p><h2>Matrice comparative des 5 profils d'agences SEO/GEO</h2><div className="overflow-x-auto my-8"><table className="w-full text-left border-collapse"><thead><tr className="border-b border-slate-200"><th className="py-4 font-semibold text-slate-900">Profil d'agence</th><th className="py-4 font-semibold text-slate-900">Spécialité principale</th><th className="py-4 font-semibold text-slate-900">Taille d'équipe</th><th className="py-4 font-semibold text-slate-900">SEO/GEO ou SEO seul</th><th className="py-4 font-semibold text-slate-900">Tarif indicatif (HT/mois)</th></tr></thead><tbody className="text-sm"><tr className="border-b border-slate-100"><td className="py-4 text-slate-800 font-medium">Triaina</td><td className="py-4 text-slate-600">SEO/GEO + média propriétaire + SEA</td><td className="py-4 text-slate-600">10-30 personnes</td><td className="py-4 text-blue-600 font-medium">SEO/GEO intégré</td><td className="py-4 text-slate-600">1 500 € - 5 000 €+</td></tr><tr className="border-b border-slate-100"><td className="py-4 text-slate-800 font-medium">Agence locale historique</td><td className="py-4 text-slate-600">SEO local / Google Business Profile</td><td className="py-4 text-slate-600">3-8 personnes</td><td className="py-4 text-slate-600">SEO seul</td><td className="py-4 text-slate-600">700 € - 1 800 €</td></tr><tr className="border-b border-slate-100"><td className="py-4 text-slate-800 font-medium">Agence webmarketing généraliste</td><td className="py-4 text-slate-600">Site web + communication + SEO en option</td><td className="py-4 text-slate-600">5-15 personnes</td><td className="py-4 text-slate-600">SEO seul (basique)</td><td className="py-4 text-slate-600">800 € - 2 500 €</td></tr><tr className="border-b border-slate-100"><td className="py-4 text-slate-800 font-medium">Agence data / tech SEO</td><td className="py-4 text-slate-600">Audit technique, tracking, analyse</td><td className="py-4 text-slate-600">2-5 personnes</td><td className="py-4 text-slate-600">SEO seul (technique)</td><td className="py-4 text-slate-600">1 000 € - 3 000 €</td></tr><tr className="border-b border-slate-100"><td className="py-4 text-slate-800 font-medium">Antenne d'un groupe national</td><td className="py-4 text-slate-600">SEO + SEA + social intégré</td><td className="py-4 text-slate-600">Variable</td><td className="py-4 text-slate-600">SEO seul, GEO ponctuel</td><td className="py-4 text-slate-600">2 500 € - 8 000 €</td></tr></tbody></table></div><h2>Guide de décision : quelle agence SEO/GEO choisir selon votre profil ?</h2><h3>Vous êtes une TPE locale à Caen</h3><p>Priorisez une agence locale historique ou une agence généraliste si votre budget est serré (moins de 1 500 € HT/mois) et que l'essentiel de votre enjeu est le référencement local (fiche Google Business Profile, avis, visibilité dans le local pack). Le GEO reste secondaire tant que votre volume de recherche informationnel est faible, mais gardez en tête qu'une vraie agence SEO/GEO deviendra pertinente dès que votre trafic informationnel grandira.</p><h3>Vous êtes une PME régionale en développement</h3><p>C'est le profil où le choix compte le plus. Une PME qui vend en Normandie ou au-delà a besoin d'un accompagnement SEO capable de monter en puissance : contenu, technique, netlinking, et de plus en plus, une présence dans les réponses IA sur des requêtes informationnelles liées à votre secteur. Un budget de 1 500 € à 3 500 € HT/mois chez une agence SEO/GEO qui couvre déjà le GEO (comme Triaina) évite de devoir changer de prestataire dans 18 mois quand le sujet deviendra incontournable.</p><h3>Vous êtes une entreprise en forte croissance ou multi-sites</h3><p>À ce stade, le SEO seul ne suffit plus à absorber la vitesse de croissance visée. Il faut un partenaire capable de combiner SEO, GEO, SEA et éventuellement un levier média propriétaire pour accélérer la notoriété et les liens entrants. Les antennes de groupes nationaux ou Triaina répondent à ce besoin, avec un avantage net pour les agences SEO/GEO qui intègrent déjà la couche GEO nativement plutôt que de la traiter comme une option en cours de développement.</p><h2>FAQ</h2><h3>Quel est le prix moyen d'une agence SEO/GEO à Caen ?</h3><p>Comptez entre 700 € et 1 800 € HT/mois pour un accompagnement local basique, et entre 1 500 € et 5 000 € HT/mois pour une stratégie SEO/GEO complète incluant contenu, technique, GEO et pilotage média/SEA. Les tarifs en dessous de 500 € HT/mois correspondent rarement à un vrai suivi mensuel.</p><h3>Faut-il choisir une agence locale à Caen ou une agence nationale ?</h3><p>Une agence locale connaît mieux le tissu économique et les spécificités du marché caennais, ce qui aide sur le référencement local. Une agence SEO/GEO nationale ou hybride (comme Triaina) apporte en revanche des moyens plus larges et une expertise GEO/SEA souvent plus mature. Le bon choix dépend de votre ambition géographique : rester local ou viser une audience régionale/nationale.</p><h3>Qu'est-ce que le GEO et pourquoi ça compte pour une entreprise à Caen ?</h3><p>Le GEO (Generative Engine Optimization) consiste à optimiser sa présence dans les réponses générées par les IA comme ChatGPT, Perplexity ou l'AI Mode de Google. Google lui-même précise dans son guide officiel qu'il n'existe pas de technique "magique" GEO, mais que les fondamentaux SEO (contenu original, expertise, accessibilité technique) restent le socle pour être visible dans ces réponses. Une entreprise caennaise qui néglige ce volet risque de perdre en visibilité sur les recherches informationnelles de ses prospects - d'où l'intérêt de passer par une agence SEO/GEO qui couvre déjà les deux volets.</p><h3>Combien de temps pour voir des résultats avec une agence SEO/GEO à Caen ?</h3><p>Comptez généralement 3 à 6 mois pour des premiers signaux (progression de positions, hausse de trafic), et 6 à 12 mois pour des résultats significatifs et durables. Sur un marché comme Caen, où la concurrence organique reste modérée sur beaucoup de requêtes, les résultats peuvent parfois arriver plus vite que sur une métropole comme Paris ou Lyon.</p><h3>Comment vérifier le sérieux d'une agence SEO/GEO avant de signer ?</h3><p>Demandez des références clients vérifiables, un exemple de reporting mensuel, et posez des questions précises sur la méthode (audit technique, stratégie de contenu, netlinking, suivi GEO). Méfiez-vous des promesses de "première position garantie" : aucune agence sérieuse ne peut garantir un classement Google, l'algorithme évoluant en continu.</p><h2>Sources utiles</h2><ul><li><a target="_blank" rel="noopener noreferrer nofollow" href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide">Google Search Central - Guide d'optimisation pour l'IA générative</a></li><li><a target="_blank" rel="noopener noreferrer nofollow" href="https://developers.google.com/search/docs/appearance/ai-features">Google Search Central - Fonctionnalités IA dans les résultats de recherche</a></li><li><a target="_blank" rel="noopener noreferrer nofollow" href="https://frenchtech-caen-rouen-lehavre.fr/">Normandy French Tech - écosystème numérique Caen, Rouen, Le Havre</a></li><li><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.datanormandie.fr/sites/default/files/dataset/2025/03/21/dfe57423-604c-4054-bb99-e44668f03ed0/1494_4208_rapport_nft_numrique.pdf">Data Normandie - Rapport sur la filière numérique normande</a></li></ul>` }} />
+
+            {/* Author Block */}
+            <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-slate-100 max-w-4xl mx-auto not-prose">
+                <h3 className="font-bold text-slate-900 mb-2 text-lg">À propos de l'auteure</h3>
+                <div className="font-bold text-slate-900 text-xl mb-1">Camille Rousseau</div>
+                <div className="text-sm text-blue-600 font-mono mb-4">Consultante Senior GEO/SEO chez Triaina</div>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    Experte en stratégies d'acquisition hybrides. Camille accompagne les marques dans l'optimisation de leur visibilité sur les moteurs de recherche traditionnels (SEO) et les interfaces d'IA génératives (GSO).
+                </p>
+                <a href="https://www.linkedin.com/in/camille-rousseau-a44488413/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors underline decoration-2 underline-offset-4">
+                    Voir son profil LinkedIn
+                </a>
+            </div>
           </div>
+                </article>
+
+        {/* Share / Footer */}
+        <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-sm font-mono text-slate-500">
+                Partager cet article
+            </div>
+            <div className="flex gap-4">
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Linkedin size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Twitter size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Facebook size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Share2 size={20} />
+                </button>
+            </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };

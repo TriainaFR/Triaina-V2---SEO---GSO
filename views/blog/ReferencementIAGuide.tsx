@@ -1,211 +1,103 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { ArrowLeft, Calendar, Bot, TrendingUp, BarChart3, Target, Trophy, Zap, CheckCircle2, Linkedin, Twitter, Facebook, Share2 } from 'lucide-react';
+import { BLOG_DATA } from '../../constants';
 import { SEO } from '../../components/SEO';
-import { Calendar, Clock, ArrowLeft, Share2, Linkedin, Twitter, Facebook, CheckCircle2, Bot, Search, Zap, BarChart3, Globe, Cpu, Target, Trophy, TrendingUp } from 'lucide-react';
 
 export const ReferencementIAGuide: React.FC = () => {
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-        {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Accueil",
-            "item": "https://www.triaina.fr"
-        },
-        {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Blog",
-            "item": "https://www.triaina.fr/blog"
-        },
-        {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Référencement IA : Guide Complet 2026",
-            "item": "https://www.triaina.fr/blog/referencement-ia-guide-complet"
-        }
-    ]
-  };
+  const post = BLOG_DATA.find(p => p.id === 'referencement-ia-guide');
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Référencement IA : Guide Complet 2026 (ChatGPT, Gemini, Perplexity)",
-    "description": "Guide complet du référencement IA 2026 : optimisation ChatGPT, Gemini, Perplexity, stratégie 5 étapes, outils, cas clients.",
-    "image": "https://www.triaina.fr/images/referencement-ia-guide-complet.jpg",
-    "author": {
-      "@type": "Person",
-      "name": "Alexandre",
-      "jobTitle": "CEO & Fondateur Triaina",
-      "url": "https://www.triaina.fr",
-      "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.triaina.fr/logo.png"
-        },
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "50 Quai Louis Blériot",
-            "addressLocality": "Paris",
-            "postalCode": "75016",
-            "addressCountry": "FR"
-        }
-    },
-    "datePublished": "2026-03-02",
-    "dateModified": "2026-03-02",
-    "wordCount": 2400,
-    "articleBody": "Le référencement IA est devenu incontournable en 2026..."
-  };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "Combien de temps pour voir les résultats en référencement IA ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Les premiers résultats (citations dans les IA génératives) peuvent apparaître en 6-8 semaines. Les résultats plus significatifs (trafic, conversions) prennent généralement 3-6 mois."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Le référencement IA remplace-t-il le SEO ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Non. Le SEO et le référencement IA sont complémentaires. Google reste la source principale de trafic organique, mais les IA génératives gagnent rapidement du terrain."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Faut-il choisir entre SEO et Référencement IA ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Absolument pas. Une approche SEO + GSO hybride est plus efficace et plus rentable qu'une approche cloisonnée."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Quels sont les critères de ranking des IA génératives ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Les critères varient selon l'IA, mais incluent généralement : autorité du domaine, fraîcheur du contenu, E-E-A-T, contenu structuré, et pertinence thématique."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Comment tester si mon contenu est cité par les IA ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Allez sur ChatGPT, Gemini ou Perplexity et posez une question liée à votre secteur. Vérifiez si votre site est cité dans la réponse."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Quel est le coût du référencement IA ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Un audit référencement IA coûte à partir de 3 500€. Un accompagnement démarre à partir de 1 000€/mois selon votre stratégie."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Pouvez-vous garantir des résultats ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Nous ne garantissons pas de résultats spécifiques, mais nous visons des objectifs mesurables. Nos clients obtiennent généralement une augmentation de 30-50% du trafic organique en 6 mois."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Quelle est la meilleure IA générative à optimiser ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Cela dépend de votre audience. ChatGPT est la plus populaire, Gemini est intégrée à Google, Perplexity privilégie les sources originales. Une stratégie complète optimise pour les trois."
-            }
-        }
-    ]
-  };
+  const seoSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": post?.title || '',
+      "description": post?.excerpt || '',
+      "image": post?.image || '',
+      "author": {
+        "@type": "Person",
+        "name": "Camille Rousseau",
+        "jobTitle": "Consultante Senior GEO/SEO chez Triaina",
+        "url": "https://www.triaina.fr",
+        "sameAs": "https://www.linkedin.com/in/camille-rousseau-a44488413/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
+        { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
+      ]
+    }
+  ];
+
+
+
+  if (!post) return null;
 
   return (
     <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
       <SEO 
-        title="Référencement IA : Guide Complet 2026 (ChatGPT, Gemini, Perplexity)" 
-        description="Guide complet du référencement IA 2026 : optimisation ChatGPT, Gemini, Perplexity. Stratégie 5 étapes, outils, cas clients, FAQ. Tout ce que vous devez savoir."
-        keywords="référencement IA, GSO, optimisation ChatGPT, optimisation Gemini, optimisation Perplexity, guide référencement IA 2026"
-        schema={[breadcrumbSchema, articleSchema, faqSchema]}
-        ogTitle="Référencement IA : Guide Complet 2026 (ChatGPT, Gemini, Perplexity)"
-        ogDescription="Guide complet du référencement IA : stratégie, outils, cas clients. Optimisez votre présence auprès des IA génératives."
-        image="https://www.triaina.fr/images/referencement-ia-guide-complet.jpg"
-        type="article"
-        twitterCard="summary_large_image"
-        canonicalUrl="https://www.triaina.fr/blog/referencement-ia-guide-complet"
+        title={`${post.title} - Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://triaina.fr${post.url}`}
+        schema={seoSchema}
       />
-
+      
       <div className="max-w-7xl mx-auto">
-        {/* Back Button */}
-        <a href="/blog" className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group">
+        <a 
+          href="/blog" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState({}, '', '/blog');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}
+          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
+        >
           <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
-          RETOUR AU BLOG
+          Retour aux articles
         </a>
 
-        {/* Header */}
-        <header className="mb-12 text-center max-w-5xl mx-auto">
-          <div className="flex items-center justify-center gap-4 text-xs font-mono text-blue-600 mb-6 uppercase tracking-widest">
-            <span className="bg-blue-50 px-3 py-1 rounded-full font-bold">Guide Expert</span>
-            <span className="flex items-center gap-1"><Calendar size={12} /> 02 MARS 2026</span>
-            <span className="flex items-center gap-1"><Clock size={12} /> 20 MIN</span>
+        <article className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden relative">
+          {/* Accent decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-50"></div>
+          
+          <header className="mb-12">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
+              <span className="flex items-center">
+                <Calendar size={14} className="mr-2 text-blue-500" />
+                {post.date}
+              </span>
+              <span className="text-slate-300">|</span>
+              <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">{post.tag}</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+              {post.excerpt}
+            </p>
+          </header>
+
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-16 relative group">
+            <img 
+              src={post.image} 
+              alt={post.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
           </div>
-          <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-8 leading-tight">
-            Référencement IA : <br/><span className="text-blue-700">Guide Complet 2026</span>
-          </h1>
-          <p className="text-xl text-slate-600 leading-relaxed">
-            (ChatGPT, Gemini, Perplexity)
-          </p>
-        </header>
 
-        {/* Featured Image */}
-        <div className="mb-16 rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/20 aspect-video relative">
-          <img 
-            src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200" 
-            alt="Référencement IA et GSO" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
-        </div>
-
-        {/* Content Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            
-            {/* Sidebar / Table of Contents (Desktop) */}
-            <aside className="hidden lg:block lg:col-span-3">
-                <div className="sticky top-32 space-y-4">
-                    <h3 className="font-display font-bold text-slate-900 uppercase tracking-widest text-sm mb-4">Sommaire</h3>
-                    <nav className="flex flex-col space-y-3 text-sm font-medium text-slate-500">
-                        <a href="#introduction" className="hover:text-blue-600 transition-colors">Introduction</a>
-                        <a href="#definition" className="hover:text-blue-600 transition-colors">Qu'est-ce que le GSO ?</a>
-                        <a href="#pourquoi" className="hover:text-blue-600 transition-colors">Pourquoi c'est crucial</a>
-                        <a href="#chatgpt" className="hover:text-blue-600 transition-colors">Optimisation ChatGPT</a>
-                        <a href="#gemini" className="hover:text-blue-600 transition-colors">Optimisation Gemini</a>
-                        <a href="#perplexity" className="hover:text-blue-600 transition-colors">Optimisation Perplexity</a>
-                        <a href="#strategie" className="hover:text-blue-600 transition-colors">Stratégie en 5 Étapes</a>
-                        <a href="#outils" className="hover:text-blue-600 transition-colors">Outils</a>
-                        <a href="#cas-clients" className="hover:text-blue-600 transition-colors">Cas Clients</a>
-                        <a href="#faq" className="hover:text-blue-600 transition-colors">FAQ</a>
-                    </nav>
-                </div>
-            </aside>
-
-            {/* Main Content */}
-            <article className="lg:col-span-9 prose prose-lg xl:prose-xl prose-slate max-w-none font-sans prose-headings:font-display prose-headings:font-bold prose-a:text-blue-600">
-            
-            <section id="introduction">
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-2xl prose-strong:text-slate-900 prose-li:marker:text-blue-500">
+<section id="introduction">
                 <p>Le <strong>référencement IA</strong> est devenu incontournable en 2026. Alors que les IA génératives comme ChatGPT, Gemini et Perplexity transforment la façon dont les utilisateurs cherchent de l'information, les entreprises doivent adapter leur stratégie de visibilité. Le SEO traditionnel ne suffit plus : il faut optimiser pour les IA génératives.</p>
                 <p>Ce guide complet vous explique tout ce que vous devez savoir sur le <strong>référencement IA</strong> en 2026. Vous découvrirez comment fonctionnent les IA génératives, pourquoi le référencement IA est crucial, comment optimiser pour ChatGPT, Gemini et Perplexity, et comment mettre en place une stratégie efficace.</p>
                 <p>Que vous soyez entrepreneur, responsable marketing ou spécialiste SEO, ce guide vous donnera les outils pour dominer le paysage du référencement IA.</p>
@@ -696,13 +588,25 @@ export const ReferencementIAGuide: React.FC = () => {
                 </div>
             </section>
 
-            </article>
-        </div>
+            {/* Author Block */}
+            <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-slate-100 max-w-4xl mx-auto not-prose">
+                <h3 className="font-bold text-slate-900 mb-2 text-lg">À propos de l'auteure</h3>
+                <div className="font-bold text-slate-900 text-xl mb-1">Camille Rousseau</div>
+                <div className="text-sm text-blue-600 font-mono mb-4">Consultante Senior GEO/SEO chez Triaina</div>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    Experte en stratégies d'acquisition hybrides. Camille accompagne les marques dans l'optimisation de leur visibilité sur les moteurs de recherche traditionnels (SEO) et les interfaces d'IA génératives (GSO).
+                </p>
+                <a href="https://www.linkedin.com/in/camille-rousseau-a44488413/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors underline decoration-2 underline-offset-4">
+                    Voir son profil LinkedIn
+                </a>
+            </div>
+          </div>
+                </article>
 
         {/* Share / Footer */}
         <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-sm font-mono text-slate-500">
-                Partager ce guide
+                Partager cet article
             </div>
             <div className="flex gap-4">
                 <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">

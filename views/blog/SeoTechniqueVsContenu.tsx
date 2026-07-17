@@ -1,221 +1,103 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { ArrowLeft, Calendar, Settings, Search, Layout, Gauge, Zap, FileText, CheckCircle2, AlertTriangle, ListChecks, Linkedin, Twitter, Facebook, Share2 } from 'lucide-react';
+import { BLOG_DATA } from '../../constants';
 import { SEO } from '../../components/SEO';
-import { Calendar, Clock, ArrowLeft, Share2, Linkedin, Twitter, Facebook, CheckCircle2, Bot, Search, Zap, BarChart3, Globe, Cpu, Target, Trophy, TrendingUp, Link as LinkIcon, FileText, RefreshCw, Layers, Scale, AlertTriangle, ListChecks, Settings, Layout, Gauge } from 'lucide-react';
 
 export const SeoTechniqueVsContenu: React.FC = () => {
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-        {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Accueil",
-            "item": "https://www.triaina.fr"
-        },
-        {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Blog",
-            "item": "https://www.triaina.fr/blog"
-        },
-        {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "SEO Technique vs SEO Contenu",
-            "item": "https://www.triaina.fr/blog/seo-technique-vs-seo-contenu"
-        }
-    ]
-  };
+  const post = BLOG_DATA.find(p => p.id === 'seo-technique-vs-contenu');
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "SEO Technique vs SEO Contenu : Lequel Choisir en 2026 ?",
-    "description": "Analyse comparative complète : SEO technique vs SEO contenu. Impact réel, 3 cas clients, stratégie complète. Découvrez comment combiner les deux pour +250% de trafic.",
-    "image": "https://picsum.photos/seed/seo-tech-content/1200/675",
-    "author": {
-            "@type": "Person",
-            "name": "Alexandre",
-            "jobTitle": "CEO & Fondateur Triaina",
-            "url": "https://www.triaina.fr",
-            "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
-        },
-    "publisher": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.triaina.fr/logo.png"
-        }
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const seoSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": post?.title || '',
+      "description": post?.excerpt || '',
+      "image": post?.image || '',
+      "author": {
+        "@type": "Person",
+        "name": "Camille Rousseau",
+        "jobTitle": "Consultante Senior GEO/SEO chez Triaina",
+        "url": "https://www.triaina.fr",
+        "sameAs": "https://www.linkedin.com/in/camille-rousseau-a44488413/"
+      }
     },
-    "datePublished": "2026-04-01",
-    "dateModified": "2026-04-01",
-    "wordCount": 2200
-  };
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
+        { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
+      ]
+    }
+  ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "Qu'est-ce que le SEO technique ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Le SEO technique est l'ensemble des optimisations qui permettent à Google de crawler, indexer et classer votre site correctement. Cela inclut la crawlabilité, l'indexabilité, les Core Web Vitals, la performance et l'architecture du site."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Qu'est-ce que le SEO contenu ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Le SEO contenu est l'ensemble des optimisations qui permettent à votre contenu de ranker pour les mots-clés que vos clients recherchent. Cela inclut la recherche de mots-clés, le contenu long-form, l'optimisation on-page, l'E-E-A-T et la fraîcheur du contenu."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Lequel est plus important : SEO technique ou SEO contenu ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Les deux sont importants et complémentaires. Le SEO technique seul génère +20% de trafic. Le SEO contenu seul génère +80% de trafic. Mais ensemble, ils génèrent +250% de trafic. La combinaison est exponentielle."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Quel est l'impact réel du SEO technique ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Selon notre étude de 500 sites, le SEO technique seul améliore le classement de +15%, le trafic de +20% et les conversions de +5%. Mais combiné avec le contenu, l'impact est 10x plus important."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Quel est l'impact réel du SEO contenu ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Selon notre étude de 500 sites, le SEO contenu seul améliore le classement de +45%, le trafic de +80% et les conversions de +35%. C'est 3x plus puissant que la technique seule."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Combien de temps pour voir les résultats ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Les corrections techniques ont un impact en 2-4 semaines. Le contenu a un impact en 4-8 semaines. Les résultats significatifs (rankings, trafic) prennent 3-6 mois avec une stratégie combinée."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Qu'est-ce que les Core Web Vitals ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Les Core Web Vitals sont 3 métriques de performance : LCP (Largest Contentful Paint) < 2.5s, FID (First Input Delay) < 100ms, CLS (Cumulative Layout Shift) < 0.1. Ils affectent le classement et le taux de clic."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Quelle est la longueur idéale du contenu SEO ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Le contenu long-form (2 000+ mots) rank 3x mieux que le contenu court. Mais la qualité prime sur la quantité. Un article de 2 000 mots original vaut mieux qu'un article de 5 000 mots générique."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Comment combiner SEO technique et SEO contenu ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Commencez par un audit technique (semaines 1-2), corrigez les problèmes critiques (semaines 3-4), puis lancez votre stratégie contenu (mois 2-3). La technique doit être solide avant de créer du contenu."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Quel est le ROI du SEO technique vs contenu ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Le SEO technique seul génère un ROI de +20%. Le SEO contenu seul génère un ROI de +80%. Combinés, ils génèrent un ROI de +250%. La combinaison est la plus rentable."
-            }
-        }
-    ]
-  };
+
+
+  if (!post) return null;
 
   return (
     <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
       <SEO 
-        title="SEO Technique vs SEO Contenu : Lequel Choisir en 2026 ?" 
-        description="SEO technique vs SEO contenu 2026 : analyse comparative, impact réel, 3 cas clients, stratégie complète. Découvrez comment combiner les deux pour +250% de trafic."
-        keywords="SEO technique, SEO contenu, audit technique, optimisation on-page, crawlabilité, indexabilité, Core Web Vitals, vitesse site, contenu SEO, mots-clés, E-E-A-T, stratégie SEO"
-        schema={[breadcrumbSchema, articleSchema, faqSchema]}
-        ogTitle="SEO Technique vs SEO Contenu : Lequel Choisir en 2026 ?"
-        ogDescription="Analyse comparative : SEO technique vs SEO contenu. 3 cas clients, stratégie complète. +250% de trafic avec la bonne approche."
-        image="https://picsum.photos/seed/seo-tech-content/1200/675"
-        type="article"
-        twitterCard="summary_large_image"
-        twitterTitle="SEO Technique vs SEO Contenu : Lequel Choisir en 2026 ?"
-        twitterDescription="Analyse comparative : SEO technique vs SEO contenu. 3 cas clients, stratégie complète."
-        canonicalUrl="https://www.triaina.fr/blog/seo-technique-vs-seo-contenu"
+        title={`${post.title} - Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://triaina.fr${post.url}`}
+        schema={seoSchema}
       />
-
+      
       <div className="max-w-7xl mx-auto">
-        {/* Back Button */}
-        <a href="/blog" className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group">
+        <a 
+          href="/blog" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState({}, '', '/blog');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}
+          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
+        >
           <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
-          RETOUR AU BLOG
+          Retour aux articles
         </a>
 
-        {/* Header */}
-        <header className="mb-12 text-center max-w-5xl mx-auto">
-          <div className="flex items-center justify-center gap-4 text-xs font-mono text-blue-600 mb-6 uppercase tracking-widest">
-            <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">Analyse SEO</span>
-            <span className="flex items-center gap-1"><Calendar size={12} /> 01 AVRIL 2026</span>
-            <span className="flex items-center gap-1"><Clock size={12} /> 20 MIN</span>
+        <article className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden relative">
+          {/* Accent decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-50"></div>
+          
+          <header className="mb-12">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
+              <span className="flex items-center">
+                <Calendar size={14} className="mr-2 text-blue-500" />
+                {post.date}
+              </span>
+              <span className="text-slate-300">|</span>
+              <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">{post.tag}</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+              {post.excerpt}
+            </p>
+          </header>
+
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-16 relative group">
+            <img 
+              src={post.image} 
+              alt={post.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-slate-900 mb-8 leading-tight tracking-tight">
-            SEO Technique vs SEO Contenu : <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Lequel Choisir en 2026 ?</span>
-          </h1>
-          <p className="text-xl text-slate-600 leading-relaxed max-w-4xl mx-auto">
-            En 2026, le débat persiste : faut-il privilégier la <strong>technique</strong> ou le <strong>contenu</strong> ? Voici la vérité : ils ne sont pas en compétition, ils sont complémentaires.
-          </p>
-        </header>
 
-        {/* Featured Image */}
-        <div className="mb-16 rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-900/10 aspect-video relative group">
-          <img 
-            src="https://picsum.photos/seed/seo-technique-vs-contenu/1200/675" 
-            alt="SEO Technique vs SEO Contenu" 
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/20 to-transparent"></div>
-        </div>
-
-        {/* Content Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            
-            {/* Sidebar / Table of Contents (Desktop) */}
-            <aside className="hidden lg:block lg:col-span-3">
-                <div className="sticky top-32 space-y-4">
-                    <h3 className="font-display font-bold text-slate-900 uppercase tracking-widest text-sm mb-4">Sommaire</h3>
-                    <nav className="flex flex-col space-y-3 text-sm font-medium text-slate-500">
-                        <a href="#introduction" className="hover:text-blue-600 transition-colors">Introduction</a>
-                        <a href="#seo-technique" className="hover:text-blue-600 transition-colors">Le SEO Technique</a>
-                        <a href="#seo-contenu" className="hover:text-blue-600 transition-colors">Le SEO Contenu</a>
-                        <a href="#analyse-comparative" className="hover:text-blue-600 transition-colors">Analyse Comparative</a>
-                        <a href="#cas-clients" className="hover:text-blue-600 transition-colors">Cas Clients</a>
-                        <a href="#strategie" className="hover:text-blue-600 transition-colors">Stratégie Complète</a>
-                        <a href="#erreurs" className="hover:text-blue-600 transition-colors">Erreurs à éviter</a>
-                        <a href="#checklist" className="hover:text-blue-600 transition-colors">Checklist SEO</a>
-                        <a href="#outils" className="hover:text-blue-600 transition-colors">Outils Essentiels</a>
-                    </nav>
-                </div>
-            </aside>
-
-            {/* Main Content */}
-            <article className="lg:col-span-9 prose prose-lg xl:prose-xl prose-slate max-w-none font-sans prose-headings:font-display prose-headings:font-bold prose-a:text-blue-600">
-            
-            <section id="introduction">
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-2xl prose-strong:text-slate-900 prose-li:marker:text-blue-500">
+<section id="introduction">
                 <h2>Le Faux Débat : SEO Technique vs SEO Contenu</h2>
                 <p>Chez Triaina, nous avons analysé 500+ sites en 2026. Nous avons mesuré l'impact exact du <strong>SEO technique</strong> vs <strong>SEO contenu</strong>. Et les résultats sont clairs.</p>
                 <p>Si vous en négligez un, vous perdrez des clients et du trafic.</p>
@@ -498,13 +380,25 @@ export const SeoTechniqueVsContenu: React.FC = () => {
                 </p>
             </section>
 
-            </article>
-        </div>
+            {/* Author Block */}
+            <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-slate-100 max-w-4xl mx-auto not-prose">
+                <h3 className="font-bold text-slate-900 mb-2 text-lg">À propos de l'auteure</h3>
+                <div className="font-bold text-slate-900 text-xl mb-1">Camille Rousseau</div>
+                <div className="text-sm text-blue-600 font-mono mb-4">Consultante Senior GEO/SEO chez Triaina</div>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    Experte en stratégies d'acquisition hybrides. Camille accompagne les marques dans l'optimisation de leur visibilité sur les moteurs de recherche traditionnels (SEO) et les interfaces d'IA génératives (GSO).
+                </p>
+                <a href="https://www.linkedin.com/in/camille-rousseau-a44488413/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors underline decoration-2 underline-offset-4">
+                    Voir son profil LinkedIn
+                </a>
+            </div>
+          </div>
+                </article>
 
         {/* Share / Footer */}
         <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-sm font-mono text-slate-500">
-                Partager ce guide
+                Partager cet article
             </div>
             <div className="flex gap-4">
                 <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, Clock, Calendar } from 'lucide-react';
-import { PAGE_TO_URL, BLOG_DATA } from '../../constants';
+import { ArrowLeft, Calendar, Linkedin, Twitter, Facebook, Share2 } from 'lucide-react';
+import { BLOG_DATA } from '../../constants';
 import { SEO } from '../../components/SEO';
 
 export const MicrosoftCopilotSeo2026: React.FC = () => {
@@ -14,79 +14,90 @@ export const MicrosoftCopilotSeo2026: React.FC = () => {
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "Microsoft Copilot SEO : être cité dans les réponses Copilot en 2026",
-      "description": "Comment apparaître dans les réponses de Microsoft Copilot en 2026 ? Comprendre le fonctionnement de Bing Index + GPT-4o pour optimiser votre visibilité B2B.",
-      "image": "https://www.triaina.fr/images/copilot-seo.jpg",
-      "datePublished": "2026-06-29",
-      "dateModified": "2026-06-29",
+      "headline": post?.title || '',
+      "description": post?.excerpt || '',
+      "image": post?.image || '',
       "author": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "url": "https://triaina.fr"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "url": "https://triaina.fr",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://www.triaina.fr/logo.png"
-        }
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://triaina.fr/blog/microsoft-copilot-seo"
+        "@type": "Person",
+        "name": "Camille Rousseau",
+        "jobTitle": "Consultante Senior GEO/SEO chez Triaina",
+        "url": "https://www.triaina.fr",
+        "sameAs": "https://www.linkedin.com/in/camille-rousseau-a44488413/"
       }
     },
     {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Copilot utilise-t-il le même index que Google ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Non. Copilot s'appuie sur l'index Bing, qui est distinct de l'index Google. Une page bien positionnée sur Google peut être absente de Bing - et donc invisible pour Copilot. Optimiser pour Bing est une démarche technique séparée, qui commence par Bing Webmaster Tools et IndexNow."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Si j'optimise pour Perplexity, suis-je automatiquement visible dans Copilot ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "En grande partie oui, puisque Copilot et Perplexity utilisent tous deux l'index Bing comme source principale. Mais les requêtes B2B Copilot sont plus longues, plus sectorielles et plus décisionnelles que les requêtes Perplexity typiques. Il faut adapter le contenu à ces patterns spécifiques - pas seulement s'appuyer sur une optimisation Perplexity générique."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Bing Webmaster Tools est-il vraiment utile pour le SEO Copilot ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oui, c'est l'interface directe et officielle pour contrôler votre indexation Bing - et donc votre éligibilité aux citations Copilot. Depuis février 2026, le tableau de bord \"AI Performance\" vous montre exactement quelles pages sont citées, avec quelle fréquence et sur quelles requêtes. C'est le seul outil natif de GEO pour Copilot disponible à ce jour."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Faut-il un compte Microsoft pour apparaître dans Copilot ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Non. Copilot cite des sources web publiques indexées par Bing. Votre site n'a pas besoin d'être hébergé sur une infrastructure Microsoft, ni d'avoir un quelconque lien avec l'écosystème Microsoft 365. La seule condition : être crawlé et indexé par Bingbot, avec un robots.txt qui ne bloque pas l'accès."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Quelle différence entre Copilot for Microsoft 365 et Copilot web ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Copilot for Microsoft 365 (version entreprise payante) accède aux données internes de l'organisation - emails Outlook, documents Teams, fichiers SharePoint. Copilot web (copilot.microsoft.com, Edge, Bing) fait des recherches Bing publiques et cite des pages web. C'est la version web qui cite vos pages - et c'est elle que vous pouvez influencer via le SEO. En pratique, même les utilisateurs M365 posent des questions web à Copilot : les deux modes coexistent dans le même outil."
-          }
-        }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
+        { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
       ]
     }
   ];
 
-  const htmlBody = `
+
+
+  if (!post) return null;
+
+  return (
+    <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
+      <SEO 
+        title={`${post.title} - Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://triaina.fr${post.url}`}
+        schema={seoSchema}
+      />
+      
+      <div className="max-w-7xl mx-auto">
+        <a 
+          href="/blog" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState({}, '', '/blog');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}
+          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
+        >
+          <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
+          Retour aux articles
+        </a>
+
+        <article className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden relative">
+          {/* Accent decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-50"></div>
+          
+          <header className="mb-12">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
+              <span className="flex items-center">
+                <Calendar size={14} className="mr-2 text-blue-500" />
+                {post.date}
+              </span>
+              <span className="text-slate-300">|</span>
+              <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">{post.tag}</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+              {post.excerpt}
+            </p>
+          </header>
+
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-16 relative group">
+            <img 
+              src={post.image} 
+              alt={post.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+          </div>
+
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-2xl prose-strong:text-slate-900 prose-li:marker:text-blue-500">
+<div dangerouslySetInnerHTML={{ __html: `
 <p><strong>TL;DR - Ce qu'il faut retenir</strong></p>
 <ul>
   <li><p>Microsoft Copilot est alimenté par <strong>Bing Index + GPT-4o</strong> : être indexé dans Bing est la condition sine qua non pour apparaître dans ses réponses.</p></li>
@@ -123,10 +134,10 @@ export const MicrosoftCopilotSeo2026: React.FC = () => {
   <table class="w-full text-left border-collapse">
     <thead>
       <tr>
-        <th class="bg-violet-50 p-3 border border-slate-200 font-bold text-slate-900">Critère</th>
-        <th class="bg-violet-50 p-3 border border-slate-200 font-bold text-slate-900">Microsoft Copilot</th>
-        <th class="bg-violet-50 p-3 border border-slate-200 font-bold text-slate-900">Perplexity</th>
-        <th class="bg-violet-50 p-3 border border-slate-200 font-bold text-slate-900">ChatGPT (avec Search)</th>
+        <th class="bg-blue-50 p-3 border border-slate-200 font-bold text-slate-900">Critère</th>
+        <th class="bg-blue-50 p-3 border border-slate-200 font-bold text-slate-900">Microsoft Copilot</th>
+        <th class="bg-blue-50 p-3 border border-slate-200 font-bold text-slate-900">Perplexity</th>
+        <th class="bg-blue-50 p-3 border border-slate-200 font-bold text-slate-900">ChatGPT (avec Search)</th>
       </tr>
     </thead>
     <tbody>
@@ -164,22 +175,22 @@ export const MicrosoftCopilotSeo2026: React.FC = () => {
   </table>
 </div>
 
-<p>L'insight clé : Copilot et Perplexity partagent Bing comme index principal. En pratique, une bonne <a target="_blank" rel="noopener noreferrer" href="/blog/perplexity-seo" class="text-violet-600 hover:text-violet-700 underline font-medium">optimisation pour Perplexity</a> améliore mécaniquement votre visibilité dans Copilot - et vice versa. Mais attention à une différence fondamentale : les requêtes B2B Copilot sont <strong>plus longues, plus précises, plus décisionnelles</strong>. Un utilisateur Perplexity tape "meilleur CRM" ; un utilisateur Copilot dans Teams tape "quel CRM pour une PME industrielle de 80 personnes avec intégration ERP SAP 2026". Ce n'est pas la même chose.</p>
-<p>De même, si vous avez déjà travaillé sur <a target="_blank" rel="noopener noreferrer" href="/blog/etre-cite-par-chatgpt" class="text-violet-600 hover:text-violet-700 underline font-medium">être cité par ChatGPT</a>, les fondamentaux E-E-A-T et de structuration du contenu sont transférables - mais l'index Bing reste une couche technique distincte à adresser spécifiquement.</p>
+<p>L'insight clé : Copilot et Perplexity partagent Bing comme index principal. En pratique, une bonne <a target="_blank" rel="noopener noreferrer" href="/blog/perplexity-seo" class="text-blue-600 hover:text-blue-700 underline font-medium">optimisation pour Perplexity</a> améliore mécaniquement votre visibilité dans Copilot - et vice versa. Mais attention à une différence fondamentale : les requêtes B2B Copilot sont <strong>plus longues, plus précises, plus décisionnelles</strong>. Un utilisateur Perplexity tape "meilleur CRM" ; un utilisateur Copilot dans Teams tape "quel CRM pour une PME industrielle de 80 personnes avec intégration ERP SAP 2026". Ce n'est pas la même chose.</p>
+<p>De même, si vous avez déjà travaillé sur <a target="_blank" rel="noopener noreferrer" href="/blog/etre-cite-par-chatgpt" class="text-blue-600 hover:text-blue-700 underline font-medium">être cité par ChatGPT</a>, les fondamentaux E-E-A-T et de structuration du contenu sont transférables - mais l'index Bing reste une couche technique distincte à adresser spécifiquement.</p>
 
 <h2>5 actions concrètes pour apparaître dans les réponses Copilot</h2>
-<p>Voici les cinq leviers à activer, dans l'ordre de priorité. Une <strong>stratégie GSO</strong> efficace sur Copilot commence toujours par la base technique avant de monter vers le contenu et l'autorité. Pour une approche structurée de bout en bout, notre <a target="_blank" rel="noopener noreferrer" href="/expertise-gso" class="text-violet-600 hover:text-violet-700 underline font-medium">expertise GSO</a> couvre l'ensemble de ces dimensions.</p>
+<p>Voici les cinq leviers à activer, dans l'ordre de priorité. Une <strong>stratégie GSO</strong> efficace sur Copilot commence toujours par la base technique avant de monter vers le contenu et l'autorité. Pour une approche structurée de bout en bout, notre <a target="_blank" rel="noopener noreferrer" href="/expertise-gso" class="text-blue-600 hover:text-blue-700 underline font-medium">expertise GSO</a> couvre l'ensemble de ces dimensions.</p>
 
 <h3>1. Indexer et optimiser votre site dans Bing Webmaster Tools</h3>
 <p>Bing Webmaster Tools (BWT) est l'équivalent de Google Search Console pour l'écosystème Bing/Copilot. C'est votre interface de contrôle directe. Si vous n'y êtes pas encore, c'est votre première action - avant même de toucher au contenu.</p>
 <p>Concrètement :</p>
 <ul>
-  <li><p><strong>Vérifier votre domaine</strong> sur <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.bing.com/webmasters" class="text-violet-600 hover:text-violet-700 underline font-medium">bing.com/webmasters</a> (vous pouvez importer la vérification depuis Google Search Console en quelques clics).</p></li>
+  <li><p><strong>Vérifier votre domaine</strong> sur <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.bing.com/webmasters" class="text-blue-600 hover:text-blue-700 underline font-medium">bing.com/webmasters</a> (vous pouvez importer la vérification depuis Google Search Console en quelques clics).</p></li>
   <li><p><strong>Soumettre votre sitemap XML</strong> : Bing est plus lent que Google pour découvrir les URLs organiquement - la soumission explicite est indispensable.</p></li>
   <li><p><strong>Vérifier l'indexation de vos pages stratégiques</strong> : tapez <code>site:votredomaine.com</code> dans Bing et comparez avec votre sitemap. Toute page absente de Bing est invisible pour Copilot.</p></li>
 </ul>
 <p>Depuis <strong>février 2026</strong>, Bing Webmaster Tools intègre un tableau de bord <strong>"AI Performance"</strong> en préversion publique. Il affiche le nombre total de citations dans les réponses IA, les pages les plus citées, les "grounding queries" (les formulations exactes qui ont déclenché la citation de vos pages), et l'évolution dans le temps. C'est le premier outil natif de GEO pour Copilot - utilisez-le.</p>
-<p>Implémentez également <strong>IndexNow</strong> (<a target="_blank" rel="noopener noreferrer nofollow" href="https://www.indexnow.org" class="text-violet-600 hover:text-violet-700 underline font-medium">indexnow.org</a>), le protocole de notification instantanée co-développé par Microsoft. Là où Google attend le prochain passage de Googlebot, IndexNow notifie Bing en quelques minutes après chaque publication ou mise à jour. Sur WordPress, les plugins Rank Math et Yoast SEO Premium l'intègrent nativement. Sur d'autres CMS, l'implémentation via API est documentée sur indexnow.org. Résultat concret : vos nouvelles pages deviennent éligibles aux citations Copilot dans l'heure qui suit leur publication, contre plusieurs jours sans IndexNow.</p>
+<p>Implémentez également <strong>IndexNow</strong> (<a target="_blank" rel="noopener noreferrer nofollow" href="https://www.indexnow.org" class="text-blue-600 hover:text-blue-700 underline font-medium">indexnow.org</a>), le protocole de notification instantanée co-développé par Microsoft. Là où Google attend le prochain passage de Googlebot, IndexNow notifie Bing en quelques minutes après chaque publication ou mise à jour. Sur WordPress, les plugins Rank Math et Yoast SEO Premium l'intègrent nativement. Sur d'autres CMS, l'implémentation via API est documentée sur indexnow.org. Résultat concret : vos nouvelles pages deviennent éligibles aux citations Copilot dans l'heure qui suit leur publication, contre plusieurs jours sans IndexNow.</p>
 
 <h3>2. Cibler les requêtes B2B longue traîne à intention décisionnelle</h3>
 <p>Copilot n'est pas utilisé pour des recherches génériques. Dans un contexte Teams ou Outlook, les requêtes ressemblent à ça :</p>
@@ -219,7 +230,7 @@ export const MicrosoftCopilotSeo2026: React.FC = () => {
 <p>Copilot ne vit pas en silo. Il s'appuie sur l'ensemble de l'écosystème Microsoft/Bing. Votre présence dans cet écosystème amplifie directement votre visibilité dans les réponses.</p>
 <ul>
   <li><p><strong>LinkedIn</strong> : Microsoft possède LinkedIn, et Bing l'indexe en priorité. Publier régulièrement sur LinkedIn avec vos mots-clés cibles crée des signaux d'autorité directement lisibles par Bing. Un article LinkedIn bien structuré peut apparaître dans les citations Copilot.</p></li>
-  <li><p><strong>Bing Places for Business</strong> : l'équivalent de Google Business Profile pour Bing. Créez ou revendiquez votre fiche sur <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.bingplaces.com" class="text-violet-600 hover:text-violet-700 underline font-medium">bingplaces.com</a>. Pour les requêtes locales ou sectorielles, c'est un signal de confiance direct.</p></li>
+  <li><p><strong>Bing Places for Business</strong> : l'équivalent de Google Business Profile pour Bing. Créez ou revendiquez votre fiche sur <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.bingplaces.com" class="text-blue-600 hover:text-blue-700 underline font-medium">bingplaces.com</a>. Pour les requêtes locales ou sectorielles, c'est un signal de confiance direct.</p></li>
   <li><p><strong>Backlinks depuis des domaines bien indexés dans Bing</strong> : vérifiez la qualité de votre profil de liens via Bing Webmaster Tools &gt; Backlinks. Les domaines qui ont une forte présence Bing (médias B2B, associations professionnelles, universités) transmettent plus d'autorité que des annuaires génériques.</p></li>
   <li><p><strong>Présence sur les communautés que Bing indexe bien</strong> : Reddit, Quora, Stack Overflow. Une réponse experte sur Quora dans votre domaine peut être citée par Copilot avant même votre propre site.</p></li>
 </ul>
@@ -272,105 +283,51 @@ export const MicrosoftCopilotSeo2026: React.FC = () => {
 
 <h2>Sources utiles</h2>
 <ul>
-  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.bing.com/webmasters" class="text-violet-600 hover:text-violet-700 underline font-medium">Bing Webmaster Tools</a> - bing.com/webmasters</p></li>
-  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.indexnow.org" class="text-violet-600 hover:text-violet-700 underline font-medium">IndexNow</a> - protocole de notification instantanée pour Bing</p></li>
-  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://copilot.microsoft.com" class="text-violet-600 hover:text-violet-700 underline font-medium">Microsoft Copilot</a> - copilot.microsoft.com</p></li>
-  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview" class="text-violet-600 hover:text-violet-700 underline font-medium">Introducing AI Performance in Bing Webmaster Tools</a> - Blog officiel Bing, février 2026</p></li>
-  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://about.ads.microsoft.com/en/blog/post/october-2025/optimizing-your-content-for-inclusion-in-ai-search-answers" class="text-violet-600 hover:text-violet-700 underline font-medium">Optimizing Your Content for Inclusion in AI Search Answers</a> - Microsoft Ads Blog, octobre 2025</p></li>
-  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.bingplaces.com" class="text-violet-600 hover:text-violet-700 underline font-medium">Bing Places for Business</a> - bingplaces.com</p></li>
+  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.bing.com/webmasters" class="text-blue-600 hover:text-blue-700 underline font-medium">Bing Webmaster Tools</a> - bing.com/webmasters</p></li>
+  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.indexnow.org" class="text-blue-600 hover:text-blue-700 underline font-medium">IndexNow</a> - protocole de notification instantanée pour Bing</p></li>
+  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://copilot.microsoft.com" class="text-blue-600 hover:text-blue-700 underline font-medium">Microsoft Copilot</a> - copilot.microsoft.com</p></li>
+  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview" class="text-blue-600 hover:text-blue-700 underline font-medium">Introducing AI Performance in Bing Webmaster Tools</a> - Blog officiel Bing, février 2026</p></li>
+  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://about.ads.microsoft.com/en/blog/post/october-2025/optimizing-your-content-for-inclusion-in-ai-search-answers" class="text-blue-600 hover:text-blue-700 underline font-medium">Optimizing Your Content for Inclusion in AI Search Answers</a> - Microsoft Ads Blog, octobre 2025</p></li>
+  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.bingplaces.com" class="text-blue-600 hover:text-blue-700 underline font-medium">Bing Places for Business</a> - bingplaces.com</p></li>
 </ul>
-  `;
+  ` }} />
 
-  if (!post) return null;
-
-  return (
-    <>
-      <SEO title="Microsoft Copilot SEO : être cité dans les réponses Copilot en 2026"
-        description="Comment apparaître dans les réponses de Microsoft Copilot en 2026 ? Comprendre le fonctionnement de Bing Index + GPT-4o pour optimiser votre visibilité B2B."
-        canonicalUrl={window.location.href}
-        type="article"
-        schema={seoSchema}
-      />
-      <div className="pt-32 pb-24 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-6 animate-fade-in-up">
-            <a 
-              href={PAGE_TO_URL['blog']}
-              onClick={(e) => {
-                e.preventDefault();
-                window.history.pushState({}, '', PAGE_TO_URL['blog']);
-                window.dispatchEvent(new PopStateEvent('popstate'));
-              }}
-              className="inline-flex items-center text-slate-600 hover:text-violet-600 transition-colors font-mono text-sm tracking-wide"
-            >
-               <ArrowLeft size={16} className="mr-2" />
-              RETOUR AU BLOG
-            </a>
-            <div className="flex flex-wrap items-center gap-4 text-slate-500 font-mono text-xs tracking-wider">
-              <span className="flex items-center"><Calendar size={14} className="mr-2" />{post.date}</span>
-              <span className="text-slate-300">|</span>
-              <span className="flex items-center"><Clock size={14} className="mr-2" />6 min de lecture</span>
-              <span className="text-slate-300">|</span>
-              <span className="text-violet-600 border border-violet-200 bg-violet-50 px-2 py-1 rounded-full">{post.tag}</span>
+            {/* Author Block */}
+            <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-slate-100 max-w-4xl mx-auto not-prose">
+                <h3 className="font-bold text-slate-900 mb-2 text-lg">À propos de l'auteure</h3>
+                <div className="font-bold text-slate-900 text-xl mb-1">Camille Rousseau</div>
+                <div className="text-sm text-blue-600 font-mono mb-4">Consultante Senior GEO/SEO chez Triaina</div>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    Experte en stratégies d'acquisition hybrides. Camille accompagne les marques dans l'optimisation de leur visibilité sur les moteurs de recherche traditionnels (SEO) et les interfaces d'IA génératives (GSO).
+                </p>
+                <a href="https://www.linkedin.com/in/camille-rousseau-a44488413/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors underline decoration-2 underline-offset-4">
+                    Voir son profil LinkedIn
+                </a>
             </div>
           </div>
+                </article>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-8 animate-fade-in-up md:w-4/5" style={{animationDelay: '0.1s'}}>
-            {post.title}
-          </h1>
-
-          <p className="text-xl text-slate-600 leading-relaxed mb-12 animate-fade-in-up md:w-3/4" style={{animationDelay: '0.2s'}}>
-            {post.excerpt}
-          </p>
-
-          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-20 relative animate-fade-in-up group" style={{animationDelay: '0.3s'}}>
-            <img 
-              src={post.image} 
-              alt={post.title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
-          </div>
-
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
-            <article className="lg:w-2/3 prose prose-lg prose-slate max-w-none 
-                prose-headings:font-bold prose-headings:text-slate-900 
-                prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-2 prose-h2:border-b prose-h2:border-slate-200
-                prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-                prose-p:text-slate-600 prose-p:leading-relaxed prose-p:mb-6
-                prose-a:text-violet-600 hover:prose-a:text-violet-700 prose-a:underline prose-a:font-medium
-                prose-li:text-slate-600 prose-li:marker:text-violet-500
-                prose-ul:space-y-2 prose-ol:space-y-2
-                animate-fade-in-up"
-                style={{animationDelay: '0.3s'}}
-                dangerouslySetInnerHTML={{ __html: htmlBody }}
-            />
-
-            <aside className="lg:w-1/3 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-              <div className="sticky top-32 space-y-8">
-                <div className="bg-slate-900 text-white rounded-3xl p-8">
-                  <h3 className="text-xl font-bold mb-4 font-sans text-white">Besoin d'optimiser pour l'IA ?</h3>
-                  <p className="text-slate-300 mb-6 text-sm">
-                    Triaina accompagne les entreprises dans l'optimisation de leur visibilité sur Google et auprès des LLMs (Copilot, ChatGPT, Gemini).
-                  </p>
-                  <a 
-                    href={PAGE_TO_URL['contact']}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        window.history.pushState({}, '', PAGE_TO_URL['contact']);
-                        window.dispatchEvent(new PopStateEvent('popstate'));
-                    }}
-                    className="inline-block w-full text-center bg-violet-600 hover:bg-violet-500 text-white font-mono text-sm py-3 px-4 transition-colors rounded-xl"
-                  >
-                    NOUS CONTACTER
-                  </a>
-                </div>
-              </div>
-            </aside>
-          </div>
+        {/* Share / Footer */}
+        <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-sm font-mono text-slate-500">
+                Partager cet article
+            </div>
+            <div className="flex gap-4">
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Linkedin size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Twitter size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Facebook size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Share2 size={20} />
+                </button>
+            </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };

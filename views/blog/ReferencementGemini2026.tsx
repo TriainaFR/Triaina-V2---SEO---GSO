@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, Clock, Calendar } from 'lucide-react';
-import { PAGE_TO_URL, BLOG_DATA } from '../../constants';
+import { ArrowLeft, Calendar, Linkedin, Twitter, Facebook, Share2 } from 'lucide-react';
+import { BLOG_DATA } from '../../constants';
 import { SEO } from '../../components/SEO';
 
 export const ReferencementGemini2026: React.FC = () => {
@@ -14,79 +14,90 @@ export const ReferencementGemini2026: React.FC = () => {
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "Référencement Gemini : comment apparaître dans Google Gemini en 2026",
-      "description": "Découvrez comment optimiser votre site pour apparaître dans Google Gemini et les AI Overviews. Guide complet SEO et GEO pour 2026.",
-      "image": "https://www.triaina.fr/images/gemini-seo.jpg",
-      "datePublished": "2026-06-22",
-      "dateModified": "2026-06-22",
+      "headline": post?.title || '',
+      "description": post?.excerpt || '',
+      "image": post?.image || '',
       "author": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "url": "https://triaina.fr"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "url": "https://triaina.fr",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://www.triaina.fr/logo.png"
-        }
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://triaina.fr/blog/referencement-gemini-2026"
+        "@type": "Person",
+        "name": "Camille Rousseau",
+        "jobTitle": "Consultante Senior GEO/SEO chez Triaina",
+        "url": "https://www.triaina.fr",
+        "sameAs": "https://www.linkedin.com/in/camille-rousseau-a44488413/"
       }
     },
     {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Google Gemini utilise-t-il le même index que Google Search ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oui. Google Gemini et les AI Overviews s'appuient sur l'index web de Google Search. Une page doit être indexée et éligible aux snippets pour apparaître en source dans une réponse Gemini. Google l'a confirmé dans sa documentation officielle (Search Central, décembre 2025) : il n'existe aucune exigence technique supplémentaire au-delà des fondamentaux SEO classiques. Il n'y a pas d'index séparé pour Gemini."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Quelle différence entre Google AI Overview et Google Gemini ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Google Gemini est le modèle de langage (LLM) développé par Google DeepMind. Les AI Overviews sont la fonctionnalité de Google Search qui affiche des réponses synthétiques générées par Gemini directement dans les résultats de recherche. Gemini est le moteur ; les AI Overviews sont le point d'entrée visible dans Search. Gemini est aussi accessible directement sur gemini.google.com, indépendamment de Google Search."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Faut-il optimiser séparément pour Gemini et pour ChatGPT ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oui, les stratégies diffèrent structurellement. Gemini s'appuie sur l'index Google, le Knowledge Graph et les signaux comportementaux Search. ChatGPT s'appuie sur des fournisseurs de recherche tiers et sa mémoire d'entraînement. Les leviers prioritaires ne sont pas les mêmes : le SEO Google classique est directement corrélé à Gemini, alors que ChatGPT nécessite une stratégie de mentions sur les sources qu'il consomme (presse, forums, Reddit). Appliquer la même stratégie aux deux LLM est une erreur d'allocation de ressources."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Combien de temps pour apparaître dans les réponses de Gemini ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Il n'existe pas de délai garanti. Si votre page est déjà dans le top 10 organique Google sur une requête, elle peut apparaître dans les AI Overviews rapidement après une mise à jour de contenu. Pour les sites moins établis, le délai est celui du SEO classique : plusieurs semaines à plusieurs mois pour construire l'autorité nécessaire. La fraîcheur du contenu accélère le processus sur les sujets évolutifs."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Le SEO classique suffit-il pour être cité par Gemini ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "C'est une condition nécessaire mais pas suffisante. Environ 70 % des sources citées dans les AI Overviews proviennent du top 10 organique - le SEO classique est donc le premier levier. Mais la structuration du contenu (réponses directes, données structurées, FAQ), la solidité de l'entité Google et la qualité E-E-A-T font la différence entre un site bien positionné qui n'est jamais cité et un autre qui l'est systématiquement. Le SEO classique ouvre la porte ; l'optimisation GEO la franchit."
-          }
-        }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
+        { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
       ]
     }
   ];
 
-  const htmlBody = `
+
+
+  if (!post) return null;
+
+  return (
+    <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
+      <SEO 
+        title={`${post.title} - Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://triaina.fr${post.url}`}
+        schema={seoSchema}
+      />
+      
+      <div className="max-w-7xl mx-auto">
+        <a 
+          href="/blog" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState({}, '', '/blog');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}
+          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
+        >
+          <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
+          Retour aux articles
+        </a>
+
+        <article className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden relative">
+          {/* Accent decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-50"></div>
+          
+          <header className="mb-12">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
+              <span className="flex items-center">
+                <Calendar size={14} className="mr-2 text-blue-500" />
+                {post.date}
+              </span>
+              <span className="text-slate-300">|</span>
+              <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">{post.tag}</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+              {post.excerpt}
+            </p>
+          </header>
+
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-16 relative group">
+            <img 
+              src={post.image} 
+              alt={post.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+          </div>
+
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-2xl prose-strong:text-slate-900 prose-li:marker:text-blue-500">
+<div dangerouslySetInnerHTML={{ __html: `
 <p><strong>TL;DR - Ce qu'il faut retenir en 30 secondes</strong></p>
 <p><strong>Gemini n'est pas ChatGPT.</strong> Il utilise l'index Google, pas Bing - ce qui signifie que votre SEO classique est directement corrélé à votre visibilité dans ses réponses. Environ 70 % des sources citées dans les AI Overviews proviennent du top 10 organique Google.</p>
 <p>Pour apparaître dans Google Gemini, trois leviers sont prioritaires : renforcer son autorité SEO sur Google (backlinks, indexation propre), créer une entité reconnue dans le Knowledge Graph (Google Business Profile, données structurées, Wikidata), et structurer son contenu pour les AI Overviews (réponses directes, schema FAQ, E-E-A-T).</p>
@@ -101,7 +112,7 @@ export const ReferencementGemini2026: React.FC = () => {
 </ul>
 <p>Conséquence directe : tout ce que vous faites pour améliorer votre positionnement dans Google Search améliore mécaniquement votre éligibilité dans Gemini. Ce n'est pas le cas avec ChatGPT.</p>
 
-<blockquote class="border-l-4 border-violet-500 pl-4 italic text-slate-700 my-6">
+<blockquote class="border-l-4 border-blue-500 pl-4 italic text-slate-700 my-6">
   <p><strong>Définition Triaina :</strong> Le référencement Gemini (ou <em>Google Gemini SEO</em>) désigne l'ensemble des pratiques visant à rendre un contenu éligible et prioritaire dans les réponses générées par Gemini - AI Overviews, AI Mode et Gemini.google.com. Il repose sur trois piliers : l'autorité SEO Google, la reconnaissance d'entité dans le Knowledge Graph, et la structuration du contenu pour l'extraction par les LLM.</p>
 </blockquote>
 
@@ -113,10 +124,10 @@ export const ReferencementGemini2026: React.FC = () => {
   <table class="w-full text-left border-collapse">
     <thead>
       <tr>
-        <th class="bg-violet-50 p-3 border border-slate-200 font-bold text-slate-900">LLM</th>
-        <th class="bg-violet-50 p-3 border border-slate-200 font-bold text-slate-900">Source d'index</th>
-        <th class="bg-violet-50 p-3 border border-slate-200 font-bold text-slate-900">Critères de sélection principaux</th>
-        <th class="bg-violet-50 p-3 border border-slate-200 font-bold text-slate-900">Levier prioritaire</th>
+        <th class="bg-blue-50 p-3 border border-slate-200 font-bold text-slate-900">LLM</th>
+        <th class="bg-blue-50 p-3 border border-slate-200 font-bold text-slate-900">Source d'index</th>
+        <th class="bg-blue-50 p-3 border border-slate-200 font-bold text-slate-900">Critères de sélection principaux</th>
+        <th class="bg-blue-50 p-3 border border-slate-200 font-bold text-slate-900">Levier prioritaire</th>
       </tr>
     </thead>
     <tbody>
@@ -141,7 +152,7 @@ export const ReferencementGemini2026: React.FC = () => {
     </tbody>
   </table>
 </div>
-<p>Pour aller plus loin sur les autres LLM : notre <a target="_blank" rel="noopener noreferrer" href="/blog/etre-cite-par-chatgpt" class="text-violet-600 hover:text-violet-700 underline font-medium">guide pour être cité par ChatGPT</a> et notre article sur l'<a target="_blank" rel="noopener noreferrer" href="/blog/perplexity-seo" class="text-violet-600 hover:text-violet-700 underline font-medium">optimisation pour Perplexity</a> complètent ce guide dans la série LLM de Triaina.</p>
+<p>Pour aller plus loin sur les autres LLM : notre <a target="_blank" rel="noopener noreferrer" href="/blog/etre-cite-par-chatgpt" class="text-blue-600 hover:text-blue-700 underline font-medium">guide pour être cité par ChatGPT</a> et notre article sur l'<a target="_blank" rel="noopener noreferrer" href="/blog/perplexity-seo" class="text-blue-600 hover:text-blue-700 underline font-medium">optimisation pour Perplexity</a> complètent ce guide dans la série LLM de Triaina.</p>
 
 <h2>Pourquoi votre SEO classique impacte directement votre visibilité dans Gemini</h2>
 <p>Google l'a confirmé dans sa documentation officielle (Search Central, mise à jour décembre 2025) : pour apparaître en source dans les AI Overviews ou l'AI Mode, une page doit être indexée et éligible aux snippets dans Google Search. <strong>Il n'existe aucune exigence technique supplémentaire.</strong> Ce qui signifie que les fondamentaux SEO sont le plancher minimum - et souvent le plafond pour les sites qui ne vont pas plus loin.</p>
@@ -158,7 +169,7 @@ export const ReferencementGemini2026: React.FC = () => {
 <p>Les backlinks restent un signal de confiance central. Pour le <strong>google gemini seo</strong>, les domaines avec une autorité solide (DA &gt; 40, profil de liens diversifié et qualitatif) sont surreprésentés dans les sources citées. Ce n'est pas surprenant : l'autorité de domaine est un proxy de crédibilité que Gemini hérite directement de l'index Google.</p>
 
 <h3>Données structurées et Knowledge Graph</h3>
-<p>Les données structurées Schema.org remplissent deux fonctions dans l'optimisation Gemini : elles facilitent l'extraction du contenu par le modèle (schema FAQ, HowTo, Article), et elles renforcent la reconnaissance d'entité dans le Knowledge Graph (schema Organization, Person, LocalBusiness). Les deux sont utiles - mais pour des raisons différentes. Pour en savoir plus sur les fondamentaux du GEO, consultez notre article sur <a target="_blank" rel="noopener noreferrer" href="/blog/geo-definition-2026" class="text-violet-600 hover:text-violet-700 underline font-medium">ce qu'est le GEO</a>.</p>
+<p>Les données structurées Schema.org remplissent deux fonctions dans l'optimisation Gemini : elles facilitent l'extraction du contenu par le modèle (schema FAQ, HowTo, Article), et elles renforcent la reconnaissance d'entité dans le Knowledge Graph (schema Organization, Person, LocalBusiness). Les deux sont utiles - mais pour des raisons différentes. Pour en savoir plus sur les fondamentaux du GEO, consultez notre article sur <a target="_blank" rel="noopener noreferrer" href="/blog/geo-definition-2026" class="text-blue-600 hover:text-blue-700 underline font-medium">ce qu'est le GEO</a>.</p>
 
 <h2>6 actions concrètes pour apparaître dans Google Gemini</h2>
 <p>Pour apparaître dans Google Gemini, il faut agir sur six leviers complémentaires. Voici les actions prioritaires, classées par impact décroissant pour un site déjà présent sur Google.</p>
@@ -223,10 +234,10 @@ export const ReferencementGemini2026: React.FC = () => {
   <table class="w-full text-left border-collapse">
     <thead>
       <tr>
-        <th class="bg-violet-50 p-3 border border-slate-200 font-bold text-slate-900">Dimension</th>
-        <th class="bg-violet-50 p-3 border border-slate-200 font-bold text-slate-900">Google Gemini</th>
-        <th class="bg-violet-50 p-3 border border-slate-200 font-bold text-slate-900">ChatGPT</th>
-        <th class="bg-violet-50 p-3 border border-slate-200 font-bold text-slate-900">Perplexity</th>
+        <th class="bg-blue-50 p-3 border border-slate-200 font-bold text-slate-900">Dimension</th>
+        <th class="bg-blue-50 p-3 border border-slate-200 font-bold text-slate-900">Google Gemini</th>
+        <th class="bg-blue-50 p-3 border border-slate-200 font-bold text-slate-900">ChatGPT</th>
+        <th class="bg-blue-50 p-3 border border-slate-200 font-bold text-slate-900">Perplexity</th>
       </tr>
     </thead>
     <tbody>
@@ -264,7 +275,7 @@ export const ReferencementGemini2026: React.FC = () => {
   </table>
 </div>
 <p><strong>Notre recommandation :</strong> si vous êtes déjà bien positionné sur Google (top 10 sur vos requêtes cibles), commencez par Gemini - le retour sur investissement est le plus rapide car les leviers sont déjà partiellement activés. Si vous partez de zéro, construisez d'abord l'autorité SEO Google, qui bénéficiera simultanément à Gemini et à votre trafic organique classique.</p>
-<p>L'<a target="_blank" rel="noopener noreferrer" href="/agence-referencement-ia" class="text-violet-600 hover:text-violet-700 underline font-medium">agence de référencement IA</a> Triaina accompagne ses clients sur les trois LLM avec une stratégie différenciée par plateforme - pas un template unique appliqué partout. Notre <a target="_blank" rel="noopener noreferrer" href="/expertise-gso" class="text-violet-600 hover:text-violet-700 underline font-medium">expertise GSO</a> couvre l'ensemble de l'écosystème des moteurs génératifs.</p>
+<p>L'<a target="_blank" rel="noopener noreferrer" href="/agence-referencement-ia" class="text-blue-600 hover:text-blue-700 underline font-medium">agence de référencement IA</a> Triaina accompagne ses clients sur les trois LLM avec une stratégie différenciée par plateforme - pas un template unique appliqué partout. Notre <a target="_blank" rel="noopener noreferrer" href="/expertise-gso" class="text-blue-600 hover:text-blue-700 underline font-medium">expertise GSO</a> couvre l'ensemble de l'écosystème des moteurs génératifs.</p>
 
 <h2>Comment mesurer sa visibilité dans Google Gemini</h2>
 <p>Mesurer son référencement Gemini est plus complexe que mesurer son SEO classique - mais des méthodes concrètes existent en 2026.</p>
@@ -305,108 +316,54 @@ export const ReferencementGemini2026: React.FC = () => {
 
 <h2>Besoin d'un audit de votre visibilité dans Gemini ?</h2>
 <p>Triaina réalise des audits GEO complets : analyse de votre présence actuelle dans Gemini et les AI Overviews, identification des pages éligibles, plan d'action priorisé par levier. Si vous êtes déjà bien positionné sur Google, vous avez probablement des opportunités Gemini inexploitées.</p>
-<p><strong><a target="_blank" rel="noopener noreferrer" href="/contact" class="text-violet-600 hover:text-violet-700 underline font-medium">Demander un audit GEO gratuit →</a></strong></p>
+<p><strong><a target="_blank" rel="noopener noreferrer" href="/contact" class="text-blue-600 hover:text-blue-700 underline font-medium">Demander un audit GEO gratuit →</a></strong></p>
 
 <h2>Sources</h2>
 <ul>
-  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://developers.google.com/search/docs/appearance/ai-features" class="text-violet-600 hover:text-violet-700 underline font-medium">Google Search Central - AI Features and Your Website</a> (mis à jour décembre 2025)</li>
-  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports" class="text-violet-600 hover:text-violet-700 underline font-medium">Google Search Central Blog - Generative AI Performance Reports in Search Console</a> (juin 2026)</li>
-  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://searchengineland.com/google-great-clarity-cleanup-knowledge-graph-ai-future-460836" class="text-violet-600 hover:text-violet-700 underline font-medium">Search Engine Land - Google's Great Clarity Cleanup: Knowledge Graph and AI Future</a></li>
-  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://ahrefs.com/blog/google-knowledge-graph/" class="text-violet-600 hover:text-violet-700 underline font-medium">Ahrefs - Google Knowledge Graph : guide complet</a></li>
-  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://openai.com/index/introducing-chatgpt-search/" class="text-violet-600 hover:text-violet-700 underline font-medium">OpenAI - Introducing ChatGPT Search</a> (sources d'index ChatGPT)</li>
+  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://developers.google.com/search/docs/appearance/ai-features" class="text-blue-600 hover:text-blue-700 underline font-medium">Google Search Central - AI Features and Your Website</a> (mis à jour décembre 2025)</li>
+  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports" class="text-blue-600 hover:text-blue-700 underline font-medium">Google Search Central Blog - Generative AI Performance Reports in Search Console</a> (juin 2026)</li>
+  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://searchengineland.com/google-great-clarity-cleanup-knowledge-graph-ai-future-460836" class="text-blue-600 hover:text-blue-700 underline font-medium">Search Engine Land - Google's Great Clarity Cleanup: Knowledge Graph and AI Future</a></li>
+  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://ahrefs.com/blog/google-knowledge-graph/" class="text-blue-600 hover:text-blue-700 underline font-medium">Ahrefs - Google Knowledge Graph : guide complet</a></li>
+  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://openai.com/index/introducing-chatgpt-search/" class="text-blue-600 hover:text-blue-700 underline font-medium">OpenAI - Introducing ChatGPT Search</a> (sources d'index ChatGPT)</li>
 </ul>
-  `;
+  ` }} />
 
-  if (!post) return null;
-
-  return (
-    <>
-      <SEO title="Référencement Gemini : comment apparaître dans Google Gemini en 2026"
-        description="Découvrez comment optimiser votre site pour apparaître dans Google Gemini et les AI Overviews. Guide complet SEO et GEO pour 2026."
-        canonicalUrl={window.location.href}
-        type="article"
-        schema={seoSchema}
-      />
-      <div className="pt-32 pb-24 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-6 animate-fade-in-up">
-            <a 
-              href={PAGE_TO_URL['blog']}
-              onClick={(e) => {
-                e.preventDefault();
-                window.history.pushState({}, '', PAGE_TO_URL['blog']);
-                window.dispatchEvent(new PopStateEvent('popstate'));
-              }}
-              className="inline-flex items-center text-slate-600 hover:text-violet-600 transition-colors font-mono text-sm tracking-wide"
-            >
-               <ArrowLeft size={16} className="mr-2" />
-              RETOUR AU BLOG
-            </a>
-            <div className="flex flex-wrap items-center gap-4 text-slate-500 font-mono text-xs tracking-wider">
-              <span className="flex items-center"><Calendar size={14} className="mr-2" />{post.date}</span>
-              <span className="text-slate-300">|</span>
-              <span className="flex items-center"><Clock size={14} className="mr-2" />8 min de lecture</span>
-              <span className="text-slate-300">|</span>
-              <span className="text-violet-600 border border-violet-200 bg-violet-50 px-2 py-1 rounded-full">{post.tag}</span>
+            {/* Author Block */}
+            <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-slate-100 max-w-4xl mx-auto not-prose">
+                <h3 className="font-bold text-slate-900 mb-2 text-lg">À propos de l'auteure</h3>
+                <div className="font-bold text-slate-900 text-xl mb-1">Camille Rousseau</div>
+                <div className="text-sm text-blue-600 font-mono mb-4">Consultante Senior GEO/SEO chez Triaina</div>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    Experte en stratégies d'acquisition hybrides. Camille accompagne les marques dans l'optimisation de leur visibilité sur les moteurs de recherche traditionnels (SEO) et les interfaces d'IA génératives (GSO).
+                </p>
+                <a href="https://www.linkedin.com/in/camille-rousseau-a44488413/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors underline decoration-2 underline-offset-4">
+                    Voir son profil LinkedIn
+                </a>
             </div>
           </div>
+                </article>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-8 animate-fade-in-up md:w-4/5" style={{animationDelay: '0.1s'}}>
-            {post.title}
-          </h1>
-
-          <p className="text-xl text-slate-600 leading-relaxed mb-12 animate-fade-in-up md:w-3/4" style={{animationDelay: '0.2s'}}>
-            {post.excerpt}
-          </p>
-
-          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-20 relative animate-fade-in-up group" style={{animationDelay: '0.3s'}}>
-            <img 
-              src={post.image} 
-              alt={post.title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
-          </div>
-
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
-            <article className="lg:w-2/3 prose prose-lg prose-slate max-w-none 
-                prose-headings:font-bold prose-headings:text-slate-900 
-                prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-2 prose-h2:border-b prose-h2:border-slate-200
-                prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-                prose-p:text-slate-600 prose-p:leading-relaxed prose-p:mb-6
-                prose-a:text-violet-600 hover:prose-a:text-violet-700 prose-a:underline prose-a:font-medium
-                prose-li:text-slate-600 prose-li:marker:text-violet-500
-                prose-ul:space-y-2 prose-ol:space-y-2
-                animate-fade-in-up"
-                style={{animationDelay: '0.3s'}}
-                dangerouslySetInnerHTML={{ __html: htmlBody }}
-            />
-
-            <aside className="lg:w-1/3 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-              <div className="sticky top-32 space-y-8">
-                <div className="bg-slate-900 text-white rounded-3xl p-8">
-                  <h3 className="text-xl font-bold mb-4 font-sans text-white">Besoin d'optimiser pour l'IA ?</h3>
-                  <p className="text-slate-300 mb-6 text-sm">
-                    Triaina accompagne votre marque dans sa stratégie de SEO et de GEO.
-                  </p>
-                  <a 
-                    href={PAGE_TO_URL['contact']}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        window.history.pushState({}, '', PAGE_TO_URL['contact']);
-                        window.dispatchEvent(new PopStateEvent('popstate'));
-                    }}
-                    className="inline-block w-full text-center bg-violet-600 hover:bg-violet-500 text-white font-mono text-sm py-3 px-4 transition-colors rounded-xl"
-                  >
-                    CONTACTEZ-NOUS
-                  </a>
-                </div>
-              </div>
-            </aside>
-          </div>
+        {/* Share / Footer */}
+        <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-sm font-mono text-slate-500">
+                Partager cet article
+            </div>
+            <div className="flex gap-4">
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Linkedin size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Twitter size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Facebook size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Share2 size={20} />
+                </button>
+            </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };

@@ -1,185 +1,103 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { ArrowLeft, Calendar, Search, Activity, FileText, Link, Target, MapPin, AlertCircle, TrendingUp, Layout, CheckCircle2, Linkedin, Twitter, Facebook, Share2 } from 'lucide-react';
+import { BLOG_DATA } from '../../constants';
 import { SEO } from '../../components/SEO';
-import { Calendar, Clock, ArrowLeft, Share2, Linkedin, Twitter, Facebook, Search, Activity, Link, FileText, Target, MapPin, AlertCircle, Layout, TrendingUp, CheckCircle2 } from 'lucide-react';
 
 export const AuditSeoParis2026: React.FC = () => {
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Accueil",
-        "item": "https://www.triaina.fr"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Blog",
-        "item": "https://www.triaina.fr/blog"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Audit SEO Paris",
-        "item": "https://www.triaina.fr/blog/audit-seo-paris-2026"
-      }
-    ]
-  };
+  const post = BLOG_DATA.find(p => p.id === 'audit-seo-paris-2026');
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Audit SEO Paris 2026 : Guide Complet + Checklist + Cas Clients",
-    "description": "Audit SEO Paris 2026 : guide complet, 4 piliers (technique, contenu, autorité, GSO), 3 cas clients réels, checklist détaillée, outils. Améliorez votre ranking à Paris.",
-    "image": "https://www.triaina.fr/images/audit-seo-paris-og.jpg",
-    "author": {
-      "@type": "Person",
-      "name": "Alexandre",
-      "jobTitle": "CEO & Fondateur Triaina",
-      "url": "https://www.triaina.fr",
-      "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Triaina",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.triaina.fr/logo.png"
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const seoSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": post?.title || '',
+      "description": post?.excerpt || '',
+      "image": post?.image || '',
+      "author": {
+        "@type": "Person",
+        "name": "Camille Rousseau",
+        "jobTitle": "Consultante Senior GEO/SEO chez Triaina",
+        "url": "https://www.triaina.fr",
+        "sameAs": "https://www.linkedin.com/in/camille-rousseau-a44488413/"
       }
     },
-    "datePublished": "2026-04-20",
-    "dateModified": "2026-04-20",
-    "wordCount": 2500,
-    "articleBody": "Un audit SEO Paris est l'analyse complète de votre site web pour identifier tous les problèmes qui empêchent votre ranking à Paris. En 2026, 78% des entreprises parisiennes n'ont jamais fait d'audit SEO. Résultat : elles perdent 40-60% de leur trafic potentiel."
-  };
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
+        { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
+      ]
+    }
+  ];
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Qu'est-ce qu'un audit SEO Paris ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Un audit SEO Paris est l'analyse complète de votre site web pour identifier tous les problèmes qui empêchent votre ranking à Paris. Cela inclut l'audit technique, l'analyse de contenu, l'analyse des backlinks et l'analyse de la concurrence parisienne."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Pourquoi faire un audit SEO à Paris ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Paris est le plus grand marché en France. 30% du trafic web français vient de Paris. Un audit SEO Paris vous permet d'identifier les opportunités de ranking et de générer +200-300% de trafic."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quels sont les 4 piliers d'un audit SEO Paris ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Les 4 piliers sont : 1) Audit technique (crawlabilité, indexabilité, Core Web Vitals), 2) Audit contenu (mots-clés, longueur, E-E-A-T), 3) Audit autorité (backlinks, domaine), 4) Audit GSO (citations IA, données propriétaires)."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Combien de temps dure un audit SEO Paris ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Un audit SEO complet dure 2-4 semaines selon la taille du site. Un audit rapide dure 3-5 jours. Les résultats sont livrés sous forme de rapport détaillé avec recommandations."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Combien de temps pour voir les résultats après un audit SEO ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Les corrections techniques ont un impact en 2-4 semaines. Le contenu a un impact en 4-8 semaines. Les résultats significatifs (rankings, trafic) prennent 3-6 mois."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quel est le ROI d'un audit SEO Paris ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Un audit SEO Paris génère en moyenne +200-300% de trafic en 6 mois, soit +150-250% de conversions. Le ROI est généralement 20x l'investissement initial."
-        }
-      }
-    ]
-  };
+
+
+  if (!post) return null;
 
   return (
-    <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-gradient-to-b from-slate-50 via-white to-slate-50">
+    <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
       <SEO 
-        title="Audit SEO Paris 2026 : Guide Complet + Checklist + Cas Clients" 
-        description="Audit SEO Paris 2026 : guide complet, 4 piliers, 3 cas clients réels, checklist détaillée, outils. Améliorez votre ranking à Paris. +200-300% de trafic."
-        keywords="audit SEO Paris, audit SEO, audit technique Paris, SEO Paris, agence SEO Paris, consultant SEO Paris, optimisation SEO Paris, ranking Paris, trafic organique Paris"
-        schema={[breadcrumbSchema, articleSchema, faqSchema]}
-        ogTitle="Audit SEO Paris 2026 : Guide Complet + Checklist + Cas Clients"
-        ogDescription="Audit SEO Paris : guide complet, 4 piliers, 3 cas clients réels, checklist. +200-300% de trafic organique."
-        image="https://www.triaina.fr/images/audit-seo-paris-og.jpg"
-        type="article"
-        twitterCard="summary_large_image"
-        canonicalUrl="https://www.triaina.fr/blog/audit-seo-paris-2026"
+        title={`${post.title} - Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://triaina.fr${post.url}`}
+        schema={seoSchema}
       />
-
+      
       <div className="max-w-7xl mx-auto">
-        {/* Back Button */}
-        <a href="/blog" className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group">
+        <a 
+          href="/blog" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState({}, '', '/blog');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}
+          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
+        >
           <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
-          RETOUR AU BLOG
+          Retour aux articles
         </a>
 
-        {/* Header */}
-        <header className="mb-12 text-center max-w-5xl mx-auto">
-          <div className="flex items-center justify-center gap-4 text-xs font-mono text-blue-600 mb-6 uppercase tracking-widest">
-            <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">Guide SEO Paris</span>
-            <span className="flex items-center gap-1"><Calendar size={12} /> 20 AVRIL 2026</span>
-            <span className="flex items-center gap-1"><Clock size={12} /> 12 MIN</span>
+        <article className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden relative">
+          {/* Accent decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-50"></div>
+          
+          <header className="mb-12">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
+              <span className="flex items-center">
+                <Calendar size={14} className="mr-2 text-blue-500" />
+                {post.date}
+              </span>
+              <span className="text-slate-300">|</span>
+              <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">{post.tag}</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+              {post.excerpt}
+            </p>
+          </header>
+
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-16 relative group">
+            <img 
+              src={post.image} 
+              alt={post.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-slate-900 mb-8 leading-tight tracking-tight">
-            Audit SEO Paris 2026 : <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Guide Complet + Checklist + Cas Clients</span>
-          </h1>
-        </header>
 
-        {/* Featured Image */}
-        <div className="mb-16 rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-900/10 aspect-video relative group">
-          <img 
-            src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=1200" 
-            alt="Audit SEO Paris" 
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/20 to-transparent"></div>
-        </div>
-
-        {/* Content Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            
-            {/* Sidebar / Table of Contents (Desktop) */}
-            <aside className="hidden lg:block lg:col-span-3">
-                <div className="sticky top-32 space-y-4">
-                    <h3 className="font-display font-bold text-slate-900 uppercase tracking-widest text-sm mb-4">Sommaire</h3>
-                    <nav className="flex flex-col space-y-3 text-sm font-medium text-slate-500">
-                        <a href="#definition" className="hover:text-blue-600 transition-colors">Qu'est-ce qu'un Audit SEO Paris ?</a>
-                        <a href="#importance" className="hover:text-blue-600 transition-colors">Pourquoi c'est Crucial</a>
-                        <a href="#piliers" className="hover:text-blue-600 transition-colors">Les 4 Piliers</a>
-                        <a href="#cas-clients" className="hover:text-blue-600 transition-colors">Cas Clients à Paris</a>
-                        <a href="#processus" className="hover:text-blue-600 transition-colors">Processus d'Audit</a>
-                        <a href="#erreurs" className="hover:text-blue-600 transition-colors">Erreurs Courantes</a>
-                        <a href="#checklist" className="hover:text-blue-600 transition-colors">Checklist</a>
-                        <a href="#outils" className="hover:text-blue-600 transition-colors">Outils Essentiels</a>
-                        <a href="#actions" className="hover:text-blue-600 transition-colors">Actions Immédiates</a>
-                    </nav>
-                </div>
-            </aside>
-
-            {/* Main Content */}
-            <article className="lg:col-span-9 prose prose-lg xl:prose-xl prose-slate max-w-none font-sans prose-headings:font-display prose-headings:font-bold prose-a:text-blue-600">
-            
-            <section id="introduction" className="mb-16">
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-2xl prose-strong:text-slate-900 prose-li:marker:text-blue-500">
+<section id="introduction" className="mb-16">
                 <div className="bg-blue-50 border-l-4 border-blue-600 p-6 md:p-8 rounded-r-2xl text-lg text-slate-700 leading-relaxed shadow-sm">
                     <p className="mb-4">
                         Un <strong>audit SEO Paris</strong> est l'analyse complète de votre site web pour identifier tous les problèmes qui empêchent votre ranking à Paris. En 2026, <strong>78% des entreprises parisiennes n'ont jamais fait d'audit SEO</strong>. Résultat : elles perdent 40-60% de leur trafic potentiel. Chez Triaina, nous avons réalisé 150+ audits SEO à Paris. Nous savons exactement ce qui fonctionne.
@@ -906,13 +824,25 @@ export const AuditSeoParis2026: React.FC = () => {
                 </div>
             </section>
 
-            </article>
-        </div>
+            {/* Author Block */}
+            <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-slate-100 max-w-4xl mx-auto not-prose">
+                <h3 className="font-bold text-slate-900 mb-2 text-lg">À propos de l'auteure</h3>
+                <div className="font-bold text-slate-900 text-xl mb-1">Camille Rousseau</div>
+                <div className="text-sm text-blue-600 font-mono mb-4">Consultante Senior GEO/SEO chez Triaina</div>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    Experte en stratégies d'acquisition hybrides. Camille accompagne les marques dans l'optimisation de leur visibilité sur les moteurs de recherche traditionnels (SEO) et les interfaces d'IA génératives (GSO).
+                </p>
+                <a href="https://www.linkedin.com/in/camille-rousseau-a44488413/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors underline decoration-2 underline-offset-4">
+                    Voir son profil LinkedIn
+                </a>
+            </div>
+          </div>
+                </article>
 
         {/* Share / Footer */}
         <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-sm font-mono text-slate-500">
-                Partager ce guide
+                Partager cet article
             </div>
             <div className="flex gap-4">
                 <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">

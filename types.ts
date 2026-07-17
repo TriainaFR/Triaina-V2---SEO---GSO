@@ -1,5 +1,6 @@
 
 export type Page =
+  | 'llms-txt-2026'
   | 'agence-geo-paris'
   | 'meilleure-agence-referencement-ia-france-2026'
   | 'agence-google-ai-overview-2026' 

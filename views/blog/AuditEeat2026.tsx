@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, Clock, Calendar } from 'lucide-react';
-import { PAGE_TO_URL, BLOG_DATA } from '../../constants';
+import { ArrowLeft, Calendar, Linkedin, Twitter, Facebook, Share2 } from 'lucide-react';
+import { BLOG_DATA } from '../../constants';
 import { SEO } from '../../components/SEO';
 
 export const AuditEeat2026: React.FC = () => {
@@ -14,66 +14,90 @@ export const AuditEeat2026: React.FC = () => {
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "Audit E-E-A-T 2026 : comment préparer votre site ?",
-      "description": "L'E-E-A-T est le cadre que Google utilise pour évaluer la fiabilité d'un contenu et de son auteur. Ce guide vous aide à préparer votre site.",
-      "image": "https://www.triaina.fr/images/audit-eeat-2026.jpg",
-      "datePublished": "2026-07-16",
-      "dateModified": "2026-07-16",
+      "headline": post?.title || '',
+      "description": post?.excerpt || '',
+      "image": post?.image || '',
       "author": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "url": "https://triaina.fr"
+        "@type": "Person",
+        "name": "Camille Rousseau",
+        "jobTitle": "Consultante Senior GEO/SEO chez Triaina",
+        "url": "https://www.triaina.fr",
+        "sameAs": "https://www.linkedin.com/in/camille-rousseau-a44488413/"
       }
     },
     {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Qu'est-ce que l'E-E-A-T exactement ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "L'E-E-A-T désigne quatre critères - Experience, Expertise, Authoritativeness, Trustworthiness - que Google utilise pour évaluer la crédibilité d'un contenu et de son auteur. Ce n'est pas un score algorithmique direct, mais un cadre qui influence les systèmes de classement et, de plus en plus, la sélection de sources par les IA génératives."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "L'EEAT est-il un facteur de ranking officiel ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Non, Google l'a confirmé plusieurs fois : l'E-E-A-T n'est pas un signal de ranking direct mesurable dans l'algorithme. C'est un concept utilisé par les évaluateurs qualité humains pour noter des exemples de résultats, et qui inspire les mises à jour de l'algorithme (comme les Helpful Content Updates)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Combien de temps prend un audit EEAT complet ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Pour un site de taille moyenne (50 à 200 pages), comptez 2 à 3 semaines pour les phases de cadrage et d'audit, puis 1 à 3 mois pour la remédiation selon le volume de contenu à corriger. Le suivi, lui, s'étale sur 3 à 6 mois pour observer un effet mesurable."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Quelle différence entre EEAT SEO et GEO ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "L'EEAT SEO vise la crédibilité perçue par Google pour le classement classique dans les résultats de recherche. Le GEO (Generative Engine Optimization) vise la citation dans les réponses générées par IA. Les deux s'appuient sur les mêmes fondamentaux - auteurs identifiés, sources primaires, preuves d'expérience - mais le GEO ajoute une couche de vérification supplémentaire propre aux crawlers IA."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Faut-il un auteur nommé sur chaque page pour améliorer son EEAT ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Pas systématiquement pour du contenu générique, mais c'est indispensable pour les pages YMYL (santé, finance, droit, sécurité) où l'enjeu pour l'utilisateur est élevé. Sur ces pages, un auteur identifié avec des credentials vérifiables reste le signal le plus fort et le plus simple à mettre en place."
-          }
-        }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
+        { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
       ]
     }
   ];
 
-  const htmlBody = `
+
+
+  if (!post) return null;
+
+  return (
+    <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
+      <SEO 
+        title={`${post.title} - Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://triaina.fr${post.url}`}
+        schema={seoSchema}
+      />
+      
+      <div className="max-w-7xl mx-auto">
+        <a 
+          href="/blog" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState({}, '', '/blog');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}
+          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
+        >
+          <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
+          Retour aux articles
+        </a>
+
+        <article className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden relative">
+          {/* Accent decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-50"></div>
+          
+          <header className="mb-12">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
+              <span className="flex items-center">
+                <Calendar size={14} className="mr-2 text-blue-500" />
+                {post.date}
+              </span>
+              <span className="text-slate-300">|</span>
+              <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">{post.tag}</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+              {post.excerpt}
+            </p>
+          </header>
+
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-16 relative group">
+            <img 
+              src={post.image} 
+              alt={post.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+          </div>
+
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-2xl prose-strong:text-slate-900 prose-li:marker:text-blue-500">
+<div dangerouslySetInnerHTML={{ __html: `
 <p><strong>L'E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) est le cadre que Google utilise pour évaluer la fiabilité d'un contenu et de son auteur.</strong> Ce n'est pas un facteur de ranking direct au sens strict, mais un filtre qui conditionne de plus en plus l'accès aux positions hautes - et, depuis l'arrivée massive des réponses générées par IA (AI Overviews, ChatGPT, Perplexity), aux citations dans ces réponses. Un audit EEAT sert à mesurer où votre site se situe sur ces quatre piliers et à corriger ce qui bloque votre visibilité.</p>
 <p>Pourquoi maintenant ? Parce que 2026 change la donne. Les moteurs génératifs ne se contentent plus de classer des pages : ils sélectionnent des sources qu'ils jugent dignes de confiance pour nourrir leurs réponses. Un site sans auteurs identifiés, sans preuves d'expérience terrain ni sources primaires a statistiquement moins de chances d'être cité - que ce soit dans le SERP classique ou dans une réponse IA. C'est tout l'enjeu du GEO (Generative Engine Optimization) : il s'appuie directement sur les mêmes signaux que l'EEAT SEO traditionnel, en les poussant plus loin.</p>
 <p>Dans cet article : la définition détaillée des 4 piliers, une checklist de 52 critères prête à l'emploi, les erreurs qu'on constate le plus souvent en audit, notre méthodologie en 4 phases, et un cas client anonymisé avec des chiffres avant/après.</p>
@@ -106,61 +130,61 @@ export const AuditEeat2026: React.FC = () => {
 </tr>
 </thead>
 <tbody class="divide-y divide-slate-200 bg-white">
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Test réel du produit/service</td><td class="px-4 py-3">L'auteur a-t-il utilisé concrètement ce dont il parle ?</td><td class="px-4 py-3 text-slate-500">Photos ou captures d'écran originales, retours d'usage précis</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Preuves de première main</td><td class="px-4 py-3">Y a-t-il des détails que seul quelqu'un ayant vécu la situation connaîtrait ?</td><td class="px-4 py-3 text-slate-500">Anecdotes, chiffres internes, erreurs vécues racontées</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Production du contenu</td><td class="px-4 py-3">Le texte a-t-il été relu et enrichi par un humain expert ?</td><td class="px-4 py-3 text-slate-500">Mention de la méthode de production, corrections manuelles visibles</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Études de cas maison</td><td class="px-4 py-3">Le site publie-t-il ses propres résultats clients ?</td><td class="px-4 py-3 text-slate-500">Cas chiffrés, avant/après documentés</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Preuves visuelles</td><td class="px-4 py-3">Les images sont-elles originales ou du stock générique ?</td><td class="px-4 py-3 text-slate-500">Captures d'écran datées, photos de l'équipe</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Contexte temporel</td><td class="px-4 py-3">Les exemples sont-ils récents et datés ?</td><td class="px-4 py-3 text-slate-500">Dates précises, contexte de marché mentionné</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Témoignages</td><td class="px-4 py-3">Les avis clients sont-ils vérifiables ?</td><td class="px-4 py-3 text-slate-500">Nom, entreprise, lien LinkedIn associés</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Détail du process</td><td class="px-4 py-3">L'article explique-t-il comment le travail a été réalisé ?</td><td class="px-4 py-3 text-slate-500">Étapes décrites, outils nommés</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Historique de la marque</td><td class="px-4 py-3">Depuis combien de temps l'entreprise pratique-t-elle ce métier ?</td><td class="px-4 py-3 text-slate-500">Date de création visible, portfolio consultable</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Bio auteur détaillée</td><td class="px-4 py-3">La bio précise-t-elle le nombre d'années ou de projets réalisés ?</td><td class="px-4 py-3 text-slate-500">Chiffres précis mentionnés</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Positionnement tranché</td><td class="px-4 py-3">L'auteur ose-t-il un avis argumenté issu de sa pratique ?</td><td class="px-4 py-3 text-slate-500">Prise de position claire et justifiée</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Interaction communauté</td><td class="px-4 py-3">L'auteur répond-il aux commentaires ou questions ?</td><td class="px-4 py-3 text-slate-500">Réponses datées, engagement réel</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-violet-600">Formats vivants</td><td class="px-4 py-3">Existe-t-il des formats où l'auteur apparaît réellement ?</td><td class="px-4 py-3 text-slate-500">Vidéo, podcast, conférence filmée</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-blue-600">Test réel du produit/service</td><td class="px-4 py-3">L'auteur a-t-il utilisé concrètement ce dont il parle ?</td><td class="px-4 py-3 text-slate-500">Photos ou captures d'écran originales, retours d'usage précis</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-blue-600">Preuves de première main</td><td class="px-4 py-3">Y a-t-il des détails que seul quelqu'un ayant vécu la situation connaîtrait ?</td><td class="px-4 py-3 text-slate-500">Anecdotes, chiffres internes, erreurs vécues racontées</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-blue-600">Production du contenu</td><td class="px-4 py-3">Le texte a-t-il été relu et enrichi par un humain expert ?</td><td class="px-4 py-3 text-slate-500">Mention de la méthode de production, corrections manuelles visibles</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-blue-600">Études de cas maison</td><td class="px-4 py-3">Le site publie-t-il ses propres résultats clients ?</td><td class="px-4 py-3 text-slate-500">Cas chiffrés, avant/après documentés</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-blue-600">Preuves visuelles</td><td class="px-4 py-3">Les images sont-elles originales ou du stock générique ?</td><td class="px-4 py-3 text-slate-500">Captures d'écran datées, photos de l'équipe</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-blue-600">Contexte temporel</td><td class="px-4 py-3">Les exemples sont-ils récents et datés ?</td><td class="px-4 py-3 text-slate-500">Dates précises, contexte de marché mentionné</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-blue-600">Témoignages</td><td class="px-4 py-3">Les avis clients sont-ils vérifiables ?</td><td class="px-4 py-3 text-slate-500">Nom, entreprise, lien LinkedIn associés</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-blue-600">Détail du process</td><td class="px-4 py-3">L'article explique-t-il comment le travail a été réalisé ?</td><td class="px-4 py-3 text-slate-500">Étapes décrites, outils nommés</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-blue-600">Historique de la marque</td><td class="px-4 py-3">Depuis combien de temps l'entreprise pratique-t-elle ce métier ?</td><td class="px-4 py-3 text-slate-500">Date de création visible, portfolio consultable</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-blue-600">Bio auteur détaillée</td><td class="px-4 py-3">La bio précise-t-elle le nombre d'années ou de projets réalisés ?</td><td class="px-4 py-3 text-slate-500">Chiffres précis mentionnés</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-blue-600">Positionnement tranché</td><td class="px-4 py-3">L'auteur ose-t-il un avis argumenté issu de sa pratique ?</td><td class="px-4 py-3 text-slate-500">Prise de position claire et justifiée</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-blue-600">Interaction communauté</td><td class="px-4 py-3">L'auteur répond-il aux commentaires ou questions ?</td><td class="px-4 py-3 text-slate-500">Réponses datées, engagement réel</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Experience</td><td class="px-4 py-3 font-semibold text-blue-600">Formats vivants</td><td class="px-4 py-3">Existe-t-il des formats où l'auteur apparaît réellement ?</td><td class="px-4 py-3 text-slate-500">Vidéo, podcast, conférence filmée</td></tr>
 
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Auteur identifié</td><td class="px-4 py-3">Chaque article a-t-il un auteur nommé ?</td><td class="px-4 py-3 text-slate-500">Nom, fonction et photo affichés</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Page auteur dédiée</td><td class="px-4 py-3">Existe-t-il une page bio par auteur ?</td><td class="px-4 py-3 text-slate-500">URL dédiée avec parcours détaillé</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Credentials vérifiables</td><td class="px-4 py-3">Les diplômes ou certifications sont-ils vérifiables ?</td><td class="px-4 py-3 text-slate-500">Lien vers l'organisme certificateur</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Cohérence thématique</td><td class="px-4 py-3">L'auteur écrit-il uniquement sur son domaine de compétence ?</td><td class="px-4 py-3 text-slate-500">Thématiques homogènes sur toutes les publications</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Profil professionnel</td><td class="px-4 py-3">Le lien LinkedIn est-il présent et cohérent avec la bio ?</td><td class="px-4 py-3 text-slate-500">Poste actuel identique à celui affiché</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Reconnaissance externe</td><td class="px-4 py-3">L'auteur est-il cité ou interviewé ailleurs ?</td><td class="px-4 py-3 text-slate-500">Articles invités, interviews, conférences</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Niveau de langage</td><td class="px-4 py-3">Le vocabulaire est-il précis sans être un jargon creux ?</td><td class="px-4 py-3 text-slate-500">Termes techniques expliqués simplement</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Sourcing des données</td><td class="px-4 py-3">Les chiffres cités proviennent-ils de sources primaires ?</td><td class="px-4 py-3 text-slate-500">Lien direct vers l'étude ou le rapport officiel</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Fraîcheur du contenu</td><td class="px-4 py-3">La date de mise à jour est-elle visible et récente ?</td><td class="px-4 py-3 text-slate-500">Date affichée, historique de modifications</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Profondeur du traitement</td><td class="px-4 py-3">Le sujet est-il traité de façon exhaustive ?</td><td class="px-4 py-3 text-slate-500">Sous-thèmes couverts, questions annexes traitées</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Relecture par les pairs</td><td class="px-4 py-3">Un second expert relit-il le contenu avant publication ?</td><td class="px-4 py-3 text-slate-500">Mention "relu par" ou "validé par"</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Régularité de publication</td><td class="px-4 py-3">L'auteur publie-t-il de façon cohérente dans la durée ?</td><td class="px-4 py-3 text-slate-500">Fréquence régulière, pas de trous suspects</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-violet-600">Spécialisation du site</td><td class="px-4 py-3">Le site traite-t-il un périmètre clair ?</td><td class="px-4 py-3 text-slate-500">Silo thématique cohérent, pas de dispersion</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-blue-600">Auteur identifié</td><td class="px-4 py-3">Chaque article a-t-il un auteur nommé ?</td><td class="px-4 py-3 text-slate-500">Nom, fonction et photo affichés</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-blue-600">Page auteur dédiée</td><td class="px-4 py-3">Existe-t-il une page bio par auteur ?</td><td class="px-4 py-3 text-slate-500">URL dédiée avec parcours détaillé</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-blue-600">Credentials vérifiables</td><td class="px-4 py-3">Les diplômes ou certifications sont-ils vérifiables ?</td><td class="px-4 py-3 text-slate-500">Lien vers l'organisme certificateur</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-blue-600">Cohérence thématique</td><td class="px-4 py-3">L'auteur écrit-il uniquement sur son domaine de compétence ?</td><td class="px-4 py-3 text-slate-500">Thématiques homogènes sur toutes les publications</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-blue-600">Profil professionnel</td><td class="px-4 py-3">Le lien LinkedIn est-il présent et cohérent avec la bio ?</td><td class="px-4 py-3 text-slate-500">Poste actuel identique à celui affiché</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-blue-600">Reconnaissance externe</td><td class="px-4 py-3">L'auteur est-il cité ou interviewé ailleurs ?</td><td class="px-4 py-3 text-slate-500">Articles invités, interviews, conférences</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-blue-600">Niveau de langage</td><td class="px-4 py-3">Le vocabulaire est-il précis sans être un jargon creux ?</td><td class="px-4 py-3 text-slate-500">Termes techniques expliqués simplement</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-blue-600">Sourcing des données</td><td class="px-4 py-3">Les chiffres cités proviennent-ils de sources primaires ?</td><td class="px-4 py-3 text-slate-500">Lien direct vers l'étude ou le rapport officiel</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-blue-600">Fraîcheur du contenu</td><td class="px-4 py-3">La date de mise à jour est-elle visible et récente ?</td><td class="px-4 py-3 text-slate-500">Date affichée, historique de modifications</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-blue-600">Profondeur du traitement</td><td class="px-4 py-3">Le sujet est-il traité de façon exhaustive ?</td><td class="px-4 py-3 text-slate-500">Sous-thèmes couverts, questions annexes traitées</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-blue-600">Relecture par les pairs</td><td class="px-4 py-3">Un second expert relit-il le contenu avant publication ?</td><td class="px-4 py-3 text-slate-500">Mention "relu par" ou "validé par"</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-blue-600">Régularité de publication</td><td class="px-4 py-3">L'auteur publie-t-il de façon cohérente dans la durée ?</td><td class="px-4 py-3 text-slate-500">Fréquence régulière, pas de trous suspects</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Expertise</td><td class="px-4 py-3 font-semibold text-blue-600">Spécialisation du site</td><td class="px-4 py-3">Le site traite-t-il un périmètre clair ?</td><td class="px-4 py-3 text-slate-500">Silo thématique cohérent, pas de dispersion</td></tr>
 
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Backlinks qualitatifs</td><td class="px-4 py-3">Qui référence votre site ?</td><td class="px-4 py-3 text-slate-500">Liens depuis médias ou sites sectoriels reconnus</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Citations presse</td><td class="px-4 py-3">La marque est-elle citée par des tiers indépendants ?</td><td class="px-4 py-3 text-slate-500">Articles de presse, mentions dans des dossiers sectoriels</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Réseaux professionnels</td><td class="px-4 py-3">L'entreprise est-elle active et reconnue sur LinkedIn ?</td><td class="px-4 py-3 text-slate-500">Followers qualifiés, taux d'engagement réel</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Reconnaissance sectorielle</td><td class="px-4 py-3">La marque intervient-elle dans des événements du secteur ?</td><td class="px-4 py-3 text-slate-500">Speakers à des conférences, tables rondes</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Base de connaissance</td><td class="px-4 py-3">L'entité existe-t-elle dans les bases de connaissance ?</td><td class="px-4 py-3 text-slate-500">Fiche Wikidata, knowledge panel Google</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Avis publics</td><td class="px-4 py-3">Combien d'avis et quelle note moyenne ?</td><td class="px-4 py-3 text-slate-500">Volume d'avis significatif et note cohérente</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Mentions sans lien</td><td class="px-4 py-3">La marque est-elle citée même sans backlink ?</td><td class="px-4 py-3 text-slate-500">Citations dans forums, réseaux sociaux, communautés</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Partenariats visibles</td><td class="px-4 py-3">Le site affiche-t-il des clients ou partenaires reconnus ?</td><td class="px-4 py-3 text-slate-500">Logos clients réels, références vérifiables</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Ancienneté du domaine</td><td class="px-4 py-3">Le domaine a-t-il un historique établi ?</td><td class="px-4 py-3 text-slate-500">Ancienneté significative, pas de changement suspect</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Cohérence NAP</td><td class="px-4 py-3">Les infos légales sont-elles cohérentes partout ?</td><td class="px-4 py-3 text-slate-500">Nom, adresse, téléphone identiques sur tous les supports</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Média propriétaire</td><td class="px-4 py-3">L'entreprise publie-t-elle une recherche ou un observatoire propre ?</td><td class="px-4 py-3 text-slate-500">Étude annuelle, baromètre sectoriel cité par d'autres</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Distinctions</td><td class="px-4 py-3">Le site a-t-il reçu des labels ou récompenses vérifiables ?</td><td class="px-4 py-3 text-slate-500">Label qualité, certification affichée et vérifiable</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-violet-600">Citations tierces</td><td class="px-4 py-3">Des études ou rapports tiers citent-ils vos contenus ?</td><td class="px-4 py-3 text-slate-500">Citations dans des publications sectorielles ou académiques</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-blue-600">Backlinks qualitatifs</td><td class="px-4 py-3">Qui référence votre site ?</td><td class="px-4 py-3 text-slate-500">Liens depuis médias ou sites sectoriels reconnus</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-blue-600">Citations presse</td><td class="px-4 py-3">La marque est-elle citée par des tiers indépendants ?</td><td class="px-4 py-3 text-slate-500">Articles de presse, mentions dans des dossiers sectoriels</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-blue-600">Réseaux professionnels</td><td class="px-4 py-3">L'entreprise est-elle active et reconnue sur LinkedIn ?</td><td class="px-4 py-3 text-slate-500">Followers qualifiés, taux d'engagement réel</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-blue-600">Reconnaissance sectorielle</td><td class="px-4 py-3">La marque intervient-elle dans des événements du secteur ?</td><td class="px-4 py-3 text-slate-500">Speakers à des conférences, tables rondes</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-blue-600">Base de connaissance</td><td class="px-4 py-3">L'entité existe-t-elle dans les bases de connaissance ?</td><td class="px-4 py-3 text-slate-500">Fiche Wikidata, knowledge panel Google</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-blue-600">Avis publics</td><td class="px-4 py-3">Combien d'avis et quelle note moyenne ?</td><td class="px-4 py-3 text-slate-500">Volume d'avis significatif et note cohérente</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-blue-600">Mentions sans lien</td><td class="px-4 py-3">La marque est-elle citée même sans backlink ?</td><td class="px-4 py-3 text-slate-500">Citations dans forums, réseaux sociaux, communautés</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-blue-600">Partenariats visibles</td><td class="px-4 py-3">Le site affiche-t-il des clients ou partenaires reconnus ?</td><td class="px-4 py-3 text-slate-500">Logos clients réels, références vérifiables</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-blue-600">Ancienneté du domaine</td><td class="px-4 py-3">Le domaine a-t-il un historique établi ?</td><td class="px-4 py-3 text-slate-500">Ancienneté significative, pas de changement suspect</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-blue-600">Cohérence NAP</td><td class="px-4 py-3">Les infos légales sont-elles cohérentes partout ?</td><td class="px-4 py-3 text-slate-500">Nom, adresse, téléphone identiques sur tous les supports</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-blue-600">Média propriétaire</td><td class="px-4 py-3">L'entreprise publie-t-elle une recherche ou un observatoire propre ?</td><td class="px-4 py-3 text-slate-500">Étude annuelle, baromètre sectoriel cité par d'autres</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-blue-600">Distinctions</td><td class="px-4 py-3">Le site a-t-il reçu des labels ou récompenses vérifiables ?</td><td class="px-4 py-3 text-slate-500">Label qualité, certification affichée et vérifiable</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Autorité</td><td class="px-4 py-3 font-semibold text-blue-600">Citations tierces</td><td class="px-4 py-3">Des études ou rapports tiers citent-ils vos contenus ?</td><td class="px-4 py-3 text-slate-500">Citations dans des publications sectorielles ou académiques</td></tr>
 
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Mentions légales</td><td class="px-4 py-3">Les mentions légales sont-elles complètes et à jour ?</td><td class="px-4 py-3 text-slate-500">SIRET, adresse, responsable de publication indiqués</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Politique de confidentialité</td><td class="px-4 py-3">La politique RGPD est-elle claire et accessible ?</td><td class="px-4 py-3 text-slate-500">Page dédiée, gestion des cookies conforme</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Sécurité technique</td><td class="px-4 py-3">Le site est-il en HTTPS sur toutes les pages ?</td><td class="px-4 py-3 text-slate-500">Certificat SSL valide, aucun contenu mixte</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Contact accessible</td><td class="px-4 py-3">Peut-on contacter facilement l'entreprise ?</td><td class="px-4 py-3 text-slate-500">Formulaire, téléphone, adresse physique visibles</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Sources primaires</td><td class="px-4 py-3">Les affirmations chiffrées renvoient-elles vers une source vérifiable ?</td><td class="px-4 py-3 text-slate-500">Lien direct vers l'étude ou l'organisme officiel</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Transparence publicitaire</td><td class="px-4 py-3">Les contenus sponsorisés sont-ils signalés ?</td><td class="px-4 py-3 text-slate-500">Mention explicite "partenariat" ou "contenu sponsorisé"</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Correction des erreurs</td><td class="px-4 py-3">Le site corrige-t-il ses erreurs publiquement ?</td><td class="px-4 py-3 text-slate-500">Mention de correctifs, changelog visible</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Paiement sécurisé</td><td class="px-4 py-3">Le paiement est-il sécurisé et affiché comme tel ?</td><td class="px-4 py-3 text-slate-500">Badges de sécurité, protocole de paiement reconnu</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Cohérence globale</td><td class="px-4 py-3">Les informations sont-elles identiques sur toutes les pages ?</td><td class="px-4 py-3 text-slate-500">Aucune contradiction entre pages ou supports</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Modération des avis</td><td class="px-4 py-3">Les avis négatifs sont-ils aussi visibles ?</td><td class="px-4 py-3 text-slate-500">Pas de filtrage abusif des retours clients</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Titres non trompeurs</td><td class="px-4 py-3">Les titres correspondent-ils au contenu réel ?</td><td class="px-4 py-3 text-slate-500">Pas de clickbait, promesse tenue dans le texte</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Conditions claires</td><td class="px-4 py-3">Les conditions de vente ou de retour sont-elles explicites ?</td><td class="px-4 py-3 text-slate-500">CGV accessibles et compréhensibles</td></tr>
-<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-violet-600">Performance technique</td><td class="px-4 py-3">Le site est-il fiable techniquement (rapide, sans erreur) ?</td><td class="px-4 py-3 text-slate-500">Bons scores Core Web Vitals, pas d'erreurs 404 en masse</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-blue-600">Mentions légales</td><td class="px-4 py-3">Les mentions légales sont-elles complètes et à jour ?</td><td class="px-4 py-3 text-slate-500">SIRET, adresse, responsable de publication indiqués</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-blue-600">Politique de confidentialité</td><td class="px-4 py-3">La politique RGPD est-elle claire et accessible ?</td><td class="px-4 py-3 text-slate-500">Page dédiée, gestion des cookies conforme</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-blue-600">Sécurité technique</td><td class="px-4 py-3">Le site est-il en HTTPS sur toutes les pages ?</td><td class="px-4 py-3 text-slate-500">Certificat SSL valide, aucun contenu mixte</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-blue-600">Contact accessible</td><td class="px-4 py-3">Peut-on contacter facilement l'entreprise ?</td><td class="px-4 py-3 text-slate-500">Formulaire, téléphone, adresse physique visibles</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-blue-600">Sources primaires</td><td class="px-4 py-3">Les affirmations chiffrées renvoient-elles vers une source vérifiable ?</td><td class="px-4 py-3 text-slate-500">Lien direct vers l'étude ou l'organisme officiel</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-blue-600">Transparence publicitaire</td><td class="px-4 py-3">Les contenus sponsorisés sont-ils signalés ?</td><td class="px-4 py-3 text-slate-500">Mention explicite "partenariat" ou "contenu sponsorisé"</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-blue-600">Correction des erreurs</td><td class="px-4 py-3">Le site corrige-t-il ses erreurs publiquement ?</td><td class="px-4 py-3 text-slate-500">Mention de correctifs, changelog visible</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-blue-600">Paiement sécurisé</td><td class="px-4 py-3">Le paiement est-il sécurisé et affiché comme tel ?</td><td class="px-4 py-3 text-slate-500">Badges de sécurité, protocole de paiement reconnu</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-blue-600">Cohérence globale</td><td class="px-4 py-3">Les informations sont-elles identiques sur toutes les pages ?</td><td class="px-4 py-3 text-slate-500">Aucune contradiction entre pages ou supports</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-blue-600">Modération des avis</td><td class="px-4 py-3">Les avis négatifs sont-ils aussi visibles ?</td><td class="px-4 py-3 text-slate-500">Pas de filtrage abusif des retours clients</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-blue-600">Titres non trompeurs</td><td class="px-4 py-3">Les titres correspondent-ils au contenu réel ?</td><td class="px-4 py-3 text-slate-500">Pas de clickbait, promesse tenue dans le texte</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-blue-600">Conditions claires</td><td class="px-4 py-3">Les conditions de vente ou de retour sont-elles explicites ?</td><td class="px-4 py-3 text-slate-500">CGV accessibles et compréhensibles</td></tr>
+<tr class="hover:bg-slate-50 transition-colors"><td class="px-4 py-3 font-semibold">Fiabilité</td><td class="px-4 py-3 font-semibold text-blue-600">Performance technique</td><td class="px-4 py-3">Le site est-il fiable techniquement (rapide, sans erreur) ?</td><td class="px-4 py-3 text-slate-500">Bons scores Core Web Vitals, pas d'erreurs 404 en masse</td></tr>
 </tbody>
 </table>
 </div>
@@ -229,101 +253,44 @@ export const AuditEeat2026: React.FC = () => {
 <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://developers.google.com/search/blog/2022/12/google-raters-guidelines-e-e-a-t">Google Search Central - Blog officiel sur les Search Quality Rater Guidelines et l'E-E-A-T</a></p></li>
 <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://guidelines.raterhub.com/searchqualityevaluatorguidelines.pdf">Search Quality Rater Guidelines - document complet (PDF)</a></p></li>
 </ul>
-  `;
+  ` }} />
 
-  if (!post) return null;
-
-  return (
-    <>
-      <SEO 
-        title={`${post.title} | Triaina`}
-        description={post.excerpt}
-        canonicalUrl={`https://www.triaina.fr${post.url}`}
-        type="article"
-        schema={seoSchema}
-        image={post.image}
-      />
-      <div className="pt-32 pb-24 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-6 animate-fade-in-up">
-            <a 
-              href={PAGE_TO_URL['blog']}
-              onClick={(e) => {
-                e.preventDefault();
-                window.history.pushState({}, '', PAGE_TO_URL['blog']);
-                window.dispatchEvent(new PopStateEvent('popstate'));
-              }}
-              className="inline-flex items-center text-slate-600 hover:text-violet-600 transition-colors font-mono text-sm tracking-wide"
-            > 
-              <ArrowLeft size={16} className="mr-2" />
-              RETOUR AU BLOG
-            </a>
-            <div className="flex flex-wrap items-center gap-4 text-slate-500 font-mono text-xs tracking-wider">
-              <span className="flex items-center"><Calendar size={14} className="mr-2" />{post.date}</span>
-              <span className="text-slate-300">|</span>
-              <span className="flex items-center"><Clock size={14} className="mr-2" />6 min de lecture</span>
-              <span className="text-slate-300">|</span>
-              <span className="text-violet-600 border border-violet-200 bg-violet-50 px-2 py-1 rounded-full">{post.tag}</span>
+            {/* Author Block */}
+            <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-slate-100 max-w-4xl mx-auto not-prose">
+                <h3 className="font-bold text-slate-900 mb-2 text-lg">À propos de l'auteure</h3>
+                <div className="font-bold text-slate-900 text-xl mb-1">Camille Rousseau</div>
+                <div className="text-sm text-blue-600 font-mono mb-4">Consultante Senior GEO/SEO chez Triaina</div>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    Experte en stratégies d'acquisition hybrides. Camille accompagne les marques dans l'optimisation de leur visibilité sur les moteurs de recherche traditionnels (SEO) et les interfaces d'IA génératives (GSO).
+                </p>
+                <a href="https://www.linkedin.com/in/camille-rousseau-a44488413/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors underline decoration-2 underline-offset-4">
+                    Voir son profil LinkedIn
+                </a>
             </div>
           </div>
+                </article>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-8 animate-fade-in-up md:w-4/5" style={{animationDelay: '0.1s'}}>
-            {post.title}
-          </h1>
-          
-          <p className="text-xl text-slate-600 leading-relaxed mb-12 animate-fade-in-up md:w-3/4" style={{animationDelay: '0.2s'}}>
-            {post.excerpt}
-          </p>
-
-          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-20 relative animate-fade-in-up group" style={{animationDelay: '0.3s'}}>
-            <img 
-              src={post.image} 
-              alt={post.title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
-          </div>
-
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
-            <article className="lg:w-2/3 prose prose-lg prose-slate max-w-none 
-                prose-headings:font-bold prose-headings:text-slate-900 
-                prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-2 prose-h2:border-b prose-h2:border-slate-200
-                prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-                prose-p:text-slate-600 prose-p:leading-relaxed prose-p:mb-6
-                prose-a:text-violet-600 hover:prose-a:text-violet-700 prose-a:underline prose-a:font-medium
-                prose-li:text-slate-600 prose-li:marker:text-violet-500
-                prose-ul:space-y-2 prose-ol:space-y-2
-                animate-fade-in-up"
-                style={{animationDelay: '0.3s'}}
-                dangerouslySetInnerHTML={{ __html: htmlBody }}
-            />
-            
-            <aside className="lg:w-1/3 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-              <div className="sticky top-32 space-y-8">
-                <div className="bg-slate-900 text-white rounded-3xl p-8 shadow-xl relative overflow-hidden">
-                  <div className="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 rounded-full bg-violet-600/20 blur-2xl"></div>
-                  <h3 className="text-xl font-bold mb-4 font-sans text-white relative z-10">Besoin d'optimiser pour l'IA ?</h3>
-                  <p className="text-slate-300 mb-6 text-sm relative z-10 leading-relaxed">
-                    Triaina accompagne les entreprises dans l'optimisation de leur visibilité sur Google et auprès des LLMs (Copilot, ChatGPT, Gemini, Perplexity).
-                  </p>
-                  <a 
-                    href={PAGE_TO_URL['contact']}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.history.pushState({}, '', PAGE_TO_URL['contact']);
-                      window.dispatchEvent(new PopStateEvent('popstate'));
-                    }}
-                    className="inline-flex items-center justify-center w-full bg-white text-black px-6 py-3 rounded-xl text-sm font-bold tracking-wide hover:bg-violet-50 transition-colors relative z-10"
-                  >
-                    PRENDRE RENDEZ-VOUS
-                  </a>
-                </div>
-              </div>
-            </aside>
-          </div>
+        {/* Share / Footer */}
+        <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-sm font-mono text-slate-500">
+                Partager cet article
+            </div>
+            <div className="flex gap-4">
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Linkedin size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Twitter size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Facebook size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Share2 size={20} />
+                </button>
+            </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };

@@ -1,283 +1,103 @@
 import React, { useEffect } from 'react';
+import { ArrowLeft, Calendar, Search, Activity, Layout, Link, Award, Target, Linkedin, Twitter, Facebook, Share2 } from 'lucide-react';
+import { BLOG_DATA } from '../../constants';
 import { SEO } from '../../components/SEO';
-import { Calendar, Clock, ArrowLeft, Share2, Linkedin, Twitter, Facebook, Search, Activity, Layout, Link, Award, Target } from 'lucide-react';
 
 export const EeatSeoGuide: React.FC = () => {
+  const post = BLOG_DATA.find(p => p.id === 'eeat-seo-guide');
+
   useEffect(() => {
-    const addMeta = (name: string, content: string, isProperty = false) => {
-      let meta = document.querySelector(`meta[${isProperty ? 'property' : 'name'}="${name}"]`);
-      if (!meta) {
-        meta = document.createElement('meta');
-        meta.setAttribute(isProperty ? 'property' : 'name', name);
-        document.head.appendChild(meta);
-      }
-      meta.setAttribute('content', content);
-      return meta;
-    };
-
-    const addLink = (rel: string, href: string, hreflang?: string) => {
-      let link = document.querySelector(`link[rel="${rel}"]${hreflang ? `[hreflang="${hreflang}"]` : ''}`);
-      if (!link) {
-        link = document.createElement('link');
-        link.setAttribute('rel', rel);
-        if (hreflang) link.setAttribute('hreflang', hreflang);
-        document.head.appendChild(link);
-      }
-      link.setAttribute('href', href);
-      return link;
-    };
-
-    const tags = [
-      addMeta('author', 'Triaina'),
-      addMeta('robots', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'),
-      addMeta('language', 'French'),
-      addMeta('revisit-after', '7 days'),
-      addMeta('og:image:width', '1200', true),
-      addMeta('og:image:height', '630', true),
-      addMeta('og:site_name', 'Triaina', true),
-      addMeta('og:locale', 'fr_FR', true),
-      addMeta('twitter:creator', '@triaina')
-    ];
-
-    const links = [
-      addLink('alternate', 'https://www.triaina.fr/blog/eeat-seo-guide-complet', 'fr'),
-      addLink('alternate', 'https://www.triaina.fr/blog/eeat-seo-guide-complet', 'x-default')
-    ];
-
-    return () => {
-      tags.forEach(tag => tag?.remove());
-      links.forEach(link => link?.remove());
-    };
+    window.scrollTo(0, 0);
   }, []);
 
-  const breadcrumbSchema = {
+  const seoSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": post?.title || '',
+      "description": post?.excerpt || '',
+      "image": post?.image || '',
+      "author": {
+        "@type": "Person",
+        "name": "Camille Rousseau",
+        "jobTitle": "Consultante Senior GEO/SEO chez Triaina",
+        "url": "https://www.triaina.fr",
+        "sameAs": "https://www.linkedin.com/in/camille-rousseau-a44488413/"
+      }
+    },
+    {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-          {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Accueil",
-              "item": "https://www.triaina.fr"
-          },
-          {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Blog",
-              "item": "https://www.triaina.fr/blog"
-          },
-          {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "E-E-A-T SEO : Guide Complet",
-              "item": "https://www.triaina.fr/blog/eeat-seo-guide-complet"
-          }
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
+        { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
       ]
-  };
+    }
+  ];
 
-  const articleSchema = {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "E-E-A-T SEO : Guide Complet pour Dominer Google en 2026",
-      "description": "Guide complet E-E-A-T SEO 2026 : définition, 4 piliers (expertise, expérience, autorité, fiabilité), stratégie complète, cas clients, checklist et résultats mesurables.",
-      "image": {
-          "@type": "ImageObject",
-          "url": "https://www.triaina.fr/images/e-e-a-t-seo-og.jpg",
-          "width": 1200,
-          "height": 630
-      },
-      "author": {
-            "@type": "Person",
-            "name": "Alexandre",
-            "jobTitle": "CEO & Fondateur Triaina",
-            "url": "https://www.triaina.fr",
-            "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
-        },
-      "publisher": {
-          "@type": "Organization",
-          "name": "Triaina",
-          "logo": {
-              "@type": "ImageObject",
-              "url": "https://www.triaina.fr/logo.png",
-              "width": 250,
-              "height": 60
-          }
-      },
-      "datePublished": "2026-03-16",
-      "dateModified": "2026-03-16",
-      "wordCount": 2200,
-      "articleBody": "En 2026, Google ne se contente plus de classer les pages web. Il classe les marques, les experts, les autorités. C'est le concept d'E-E-A-T qui domine tout. E-E-A-T signifie Expertise, Experience, Authority, Trustworthiness. C'est le critère le plus important de Google pour classer les sites."
-  };
 
-  const faqSchema = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-          {
-              "@type": "Question",
-              "name": "Qu'est-ce que E-E-A-T en SEO ?",
-              "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "E-E-A-T signifie Expertise, Experience, Authority, Trustworthiness. C'est un critère créé par Google pour évaluer la qualité d'un site web. Expertise = compétences, Experience = pratique réelle, Authority = reconnaissance externe, Trustworthiness = fiabilité."
-              }
-          },
-          {
-              "@type": "Question",
-              "name": "Pourquoi E-E-A-T est important pour le SEO ?",
-              "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Google utilise E-E-A-T pour éviter les contenus de mauvaise qualité. Un fort E-E-A-T signifie que Google vous reconnaît comme un expert, ce qui améliore vos rankings et votre trafic."
-              }
-          },
-          {
-              "@type": "Question",
-              "name": "Comment construire l'E-E-A-T ?",
-              "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Construisez l'E-E-A-T en : 1) Créant du contenu long et approfondi (expertise), 2) Documentant vos cas clients et résultats (expérience), 3) Générant des backlinks et mentions médiatiques (autorité), 4) Étant transparent et sécurisé (fiabilité)."
-              }
-          },
-          {
-              "@type": "Question",
-              "name": "Combien de temps pour voir les résultats E-E-A-T ?",
-              "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Les premiers résultats apparaissent en 4-8 semaines. Les résultats significatifs (rankings, trafic) prennent 3-6 mois selon votre situation initiale."
-              }
-          },
-          {
-              "@type": "Question",
-              "name": "E-E-A-T affecte-t-il le GSO ?",
-              "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Oui, absolument. Les IA génératives comme ChatGPT et Gemini cherchent des sources fiables et d'autorité. Un fort E-E-A-T signifie que vous serez cité plus souvent par les IA."
-              }
-          },
-          {
-              "@type": "Question",
-              "name": "Quelle est la différence entre E-E-A-T et EAT ?",
-              "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "EAT est l'ancienne version (Expertise, Authority, Trustworthiness). Google a ajouté le premier E (Experience) en 2023 pour montrer que l'expérience pratique est aussi importante que l'expertise théorique."
-              }
-          },
-          {
-              "@type": "Question",
-              "name": "Comment montrer mon expertise ?",
-              "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Montrez votre expertise en : 1) Créant du contenu long et approfondi, 2) Intégrant des données propriétaires, 3) Documentant vos cas clients, 4) Partageant vos recherches et études, 5) Citant vos sources."
-              }
-          },
-          {
-              "@type": "Question",
-              "name": "Comment construire l'autorité ?",
-              "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Construisez l'autorité en : 1) Générant des backlinks depuis des sites d'autorité, 2) Publiant dans des médias reconnus, 3) Étant interviewé par des experts, 4) Créant des partenariats, 5) Construisant une présence sociale forte."
-              }
-          },
-          {
-              "@type": "Question",
-              "name": "Comment inspirer la confiance (Trustworthiness) ?",
-              "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Inspirez la confiance en : 1) Étant transparent sur vos méthodes et prix, 2) Assurant la sécurité de votre site (HTTPS), 3) Collectant et affichant les avis clients, 4) Ayant une politique de confidentialité claire, 5) Étant facile à contacter."
-              }
-          }
-      ]
-  };
 
-  const organizationSchema = {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Triaina",
-      "url": "https://www.triaina.fr",
-      "logo": "https://www.triaina.fr/logo.png",
-      "description": "Agence SEO et GSO spécialisée en E-E-A-T et référencement IA",
-      "foundingDate": "2020",
-      "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "Customer Service",
-          "telephone": "+33-XXX-XXX-XXX",
-          "email": "contact@triaina.fr"
-      },
-      "sameAs": [
-          "https://www.linkedin.com/company/triaina",
-          "https://twitter.com/triaina"
-      ],
-      "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "ratingCount": "47"
-      }
-  };
+  if (!post) return null;
 
   return (
     <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
       <SEO 
-        title="E-E-A-T SEO : Guide Complet pour Dominer Google en 2026" 
-        description="Guide complet E-E-A-T SEO 2026 : définition, 4 piliers (expertise, expérience, autorité, fiabilité), stratégie, cas clients, checklist. Dominez Google et les IA génératives."
-        keywords="E-E-A-T, E-E-A-T SEO, expertise, expérience, autorité, fiabilité, Google E-E-A-T, E-E-A-T 2026, guide E-E-A-T"
-        schema={[breadcrumbSchema, articleSchema, faqSchema, organizationSchema]}
-        ogTitle="E-E-A-T SEO : Guide Complet pour Dominer Google en 2026"
-        ogDescription="Guide complet E-E-A-T : définition, 4 piliers, stratégie, cas clients, checklist. Dominez Google et les IA génératives."
-        image="https://www.triaina.fr/images/e-e-a-t-seo-og.jpg"
-        type="article"
-        twitterCard="summary_large_image"
-        canonicalUrl="https://www.triaina.fr/blog/eeat-seo-guide-complet"
+        title={`${post.title} - Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://triaina.fr${post.url}`}
+        schema={seoSchema}
       />
-
+      
       <div className="max-w-7xl mx-auto">
-        {/* Back Button */}
-        <a href="/blog" className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group">
+        <a 
+          href="/blog" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState({}, '', '/blog');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}
+          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
+        >
           <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
-          RETOUR AU BLOG
+          Retour aux articles
         </a>
 
-        {/* Header */}
-        <header className="mb-12 text-center max-w-5xl mx-auto">
-          <div className="flex items-center justify-center gap-4 text-xs font-mono text-blue-600 mb-6 uppercase tracking-widest">
-            <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">Guide SEO</span>
-            <span className="flex items-center gap-1"><Calendar size={12} /> 16 MARS 2026</span>
-            <span className="flex items-center gap-1"><Clock size={12} /> 5 MIN</span>
+        <article className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden relative">
+          {/* Accent decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-50"></div>
+          
+          <header className="mb-12">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
+              <span className="flex items-center">
+                <Calendar size={14} className="mr-2 text-blue-500" />
+                {post.date}
+              </span>
+              <span className="text-slate-300">|</span>
+              <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">{post.tag}</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+              {post.excerpt}
+            </p>
+          </header>
+
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-16 relative group">
+            <img 
+              src={post.image} 
+              alt={post.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
           </div>
-          <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-8 leading-tight tracking-tight">
-            E-E-A-T SEO : <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Guide Complet pour Dominer Google en 2026</span>
-          </h1>
-        </header>
 
-        {/* Featured Image */}
-        <div className="mb-16 rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-900/10 aspect-video relative group">
-          <img 
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200" 
-            alt="E-E-A-T SEO" 
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/20 to-transparent"></div>
-        </div>
-
-        {/* Content Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            
-            {/* Sidebar / Table of Contents (Desktop) */}
-            <aside className="hidden lg:block lg:col-span-3">
-                <div className="sticky top-32 space-y-4">
-                    <h3 className="font-display font-bold text-slate-900 uppercase tracking-widest text-sm mb-4">Sommaire</h3>
-                    <nav className="flex flex-col space-y-3 text-sm font-medium text-slate-500">
-                        <a href="#introduction" className="hover:text-blue-600 transition-colors">Introduction</a>
-                        <a href="#definition" className="hover:text-blue-600 transition-colors">Qu'est-ce que E-E-A-T ?</a>
-                        <a href="#guide-pratique" className="hover:text-blue-600 transition-colors">Le Guide Pratique</a>
-                        <a href="#erreur-fatale" className="hover:text-blue-600 transition-colors">L'IA Sans E-E-A-T</a>
-                        <a href="#conclusion" className="hover:text-blue-600 transition-colors">Conclusion</a>
-                    </nav>
-                </div>
-            </aside>
-
-            {/* Main Content */}
-            <article className="lg:col-span-9 prose prose-lg xl:prose-xl prose-slate max-w-none font-sans prose-headings:font-display prose-headings:font-bold prose-a:text-blue-600">
-            
-            <section id="introduction" className="mb-16">
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-2xl prose-strong:text-slate-900 prose-li:marker:text-blue-500">
+<section id="introduction" className="mb-16">
                 <div className="bg-blue-50 border-l-4 border-blue-600 p-6 md:p-8 rounded-r-2xl text-lg text-slate-700 leading-relaxed shadow-sm">
                     <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mt-0 mb-4">Introduction : Pourquoi E-E-A-T Change Tout en 2026</h2>
                     <p className="mb-4">
@@ -471,13 +291,25 @@ export const EeatSeoGuide: React.FC = () => {
                 </div>
             </section>
 
-            </article>
-        </div>
+            {/* Author Block */}
+            <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-slate-100 max-w-4xl mx-auto not-prose">
+                <h3 className="font-bold text-slate-900 mb-2 text-lg">À propos de l'auteure</h3>
+                <div className="font-bold text-slate-900 text-xl mb-1">Camille Rousseau</div>
+                <div className="text-sm text-blue-600 font-mono mb-4">Consultante Senior GEO/SEO chez Triaina</div>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    Experte en stratégies d'acquisition hybrides. Camille accompagne les marques dans l'optimisation de leur visibilité sur les moteurs de recherche traditionnels (SEO) et les interfaces d'IA génératives (GSO).
+                </p>
+                <a href="https://www.linkedin.com/in/camille-rousseau-a44488413/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors underline decoration-2 underline-offset-4">
+                    Voir son profil LinkedIn
+                </a>
+            </div>
+          </div>
+                </article>
 
         {/* Share / Footer */}
         <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-sm font-mono text-slate-500">
-                Partager ce guide
+                Partager cet article
             </div>
             <div className="flex gap-4">
                 <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">

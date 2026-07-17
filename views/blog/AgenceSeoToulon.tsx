@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, Clock, Calendar } from 'lucide-react';
-import { PAGE_TO_URL, BLOG_DATA } from '../../constants';
+import { ArrowLeft, Calendar, Linkedin, Twitter, Facebook, Share2 } from 'lucide-react';
+import { BLOG_DATA } from '../../constants';
 import { SEO } from '../../components/SEO';
 
 export const AgenceSeoToulon: React.FC = () => {
@@ -14,79 +14,90 @@ export const AgenceSeoToulon: React.FC = () => {
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "Agence SEO & GEO Toulon : top 5 en 2026",
-      "description": "Comparatif des 5 meilleures agences SEO et GEO à Toulon en 2026. Découvrez comment choisir une agence capable de référencer votre site sur Google et les IA génératives.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Toulon_Ouest_vue_panoramique.jpg",
-      "datePublished": "2026-07-07",
-      "dateModified": "2026-07-07",
+      "headline": post?.title || '',
+      "description": post?.excerpt || '',
+      "image": post?.image || '',
       "author": {
         "@type": "Person",
-        "name": "L'équipe Triaina",
-        "url": "https://www.linkedin.com/in/placeholder"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "url": "https://triaina.fr",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://www.triaina.fr/logo.png"
-        }
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://www.triaina.fr/blog/agence-seo-toulon-2026"
+        "name": "Camille Rousseau",
+        "jobTitle": "Consultante Senior GEO/SEO chez Triaina",
+        "url": "https://www.triaina.fr",
+        "sameAs": "https://www.linkedin.com/in/camille-rousseau-a44488413/"
       }
     },
     {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Combien coûte une agence SEO à Toulon ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Les tarifs observés sur le marché local vont d'environ 300 à 800 € HT/mois pour un forfait de SEO local à plusieurs milliers d'euros mensuels pour une stratégie SEO + GEO complète. Un audit initial démarre généralement entre 900 € et 2 500 € HT."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Quelle est la différence entre SEO et GEO ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Le SEO optimise votre site pour apparaître dans les résultats classiques de Google. Le GEO (Generative Engine Optimization) optimise votre contenu pour qu'il soit cité et repris dans les réponses générées par ChatGPT, Perplexity, Gemini ou l'AI Overview de Google."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Faut-il obligatoirement choisir une agence basée à Toulon ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Non. Plusieurs prestataires varois comme Oxoleo ou Ace Agency accompagnent eux-mêmes des clients hors de leur zone de chalandise immédiate, à distance."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Combien de temps faut-il pour voir des résultats SEO à Toulon ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Comptez généralement 3 à 6 mois pour les premiers signaux sur des requêtes peu concurrentielles, et 6 à 12 mois pour des positions durables sur des mots-clés plus disputés. Le SEO local peut produire des effets plus rapides, souvent en 60 à 90 jours."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Comment savoir si une agence maîtrise vraiment le GEO ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Demandez-lui des exemples concrets de contenus cités par une IA générative, sa méthode de suivi de la visibilité dans les réponses IA, et surtout si elle peut agir directement sur les sources que ces IA consomment."
-          }
-        }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
+        { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
       ]
     }
   ];
 
-  const htmlBody = `
+
+
+  if (!post) return null;
+
+  return (
+    <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
+      <SEO 
+        title={`${post.title} - Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://triaina.fr${post.url}`}
+        schema={seoSchema}
+      />
+      
+      <div className="max-w-7xl mx-auto">
+        <a 
+          href="/blog" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState({}, '', '/blog');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}
+          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
+        >
+          <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
+          Retour aux articles
+        </a>
+
+        <article className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden relative">
+          {/* Accent decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-50"></div>
+          
+          <header className="mb-12">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
+              <span className="flex items-center">
+                <Calendar size={14} className="mr-2 text-blue-500" />
+                {post.date}
+              </span>
+              <span className="text-slate-300">|</span>
+              <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">{post.tag}</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+              {post.excerpt}
+            </p>
+          </header>
+
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-16 relative group">
+            <img 
+              src={post.image} 
+              alt={post.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+          </div>
+
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-2xl prose-strong:text-slate-900 prose-li:marker:text-blue-500">
+<div dangerouslySetInnerHTML={{ __html: `
 <p><strong>TL;DR</strong> - À Toulon, le paysage SEO reste porté par des agences locales spécialisées dans le référencement local et le pack Google Maps, avec une poignée d'acteurs qui commencent tout juste à parler de GEO (Generative Engine Optimization). Le problème, c'est que l'AI Overview de Google et les réponses de ChatGPT, Perplexity ou Gemini captent une part croissante des recherches, y compris pour trouver un prestataire ou un artisan dans le Var. Choisir une <strong>agence SEO à Toulon</strong> qui maîtrise à la fois le référencement naturel classique et la visibilité dans les moteurs génératifs devient donc un critère de sélection central en 2026. Voici notre comparatif des 5 agences les plus pertinentes pour les entreprises toulonnaises et varoises, avec Triaina en tête grâce à sa double expertise SEO + GEO adossée à un groupe média propriétaire et une régie publicitaire.</p>
 
 <h2>Toulon, un marché SEO entre défense navale, tourisme et nautisme</h2>
@@ -224,104 +235,44 @@ export const AgenceSeoToulon: React.FC = () => {
   <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://ace-agency.io/agence-seo-toulon/">Ace Agency - Agence SEO Toulon</a></li>
   <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://seosupernova.fr/nos-agences/provence-alpes-cote-d-azur/var/toulon">SEO Supernova - Agence SEO local Toulon</a></li>
 </ul>
-  `;
+  ` }} />
 
-  if (!post) return null;
-
-  return (
-    <>
-      <SEO 
-        title={`${post.title} | Triaina`}
-        description={post.excerpt}
-        canonicalUrl={`https://www.triaina.fr${post.url}`}
-        type="article"
-        schema={seoSchema}
-        image={post.image}
-      />
-      <div className="pt-32 pb-24 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-6 animate-fade-in-up">
-            <a 
-              href={PAGE_TO_URL['blog']}
-              onClick={(e) => {
-                e.preventDefault();
-                window.history.pushState({}, '', PAGE_TO_URL['blog']);
-                window.dispatchEvent(new PopStateEvent('popstate'));
-              }}
-              className="inline-flex items-center text-slate-600 hover:text-blue-600 transition-colors font-mono text-sm tracking-wide"
-            >
-               <ArrowLeft size={16} className="mr-2" />
-              RETOUR AU BLOG
-            </a>
-            <div className="flex flex-wrap items-center gap-4 text-slate-500 font-mono text-xs tracking-wider">
-              <span className="flex items-center"><Calendar size={14} className="mr-2" />{post.date}</span>
-              <span className="text-slate-300">|</span>
-              <span className="flex items-center"><Clock size={14} className="mr-2" />6 min de lecture</span>
-              <span className="text-slate-300">|</span>
-              <span className="text-blue-600 border border-blue-200 bg-blue-50 px-2 py-1 rounded-full">{post.tag}</span>
+            {/* Author Block */}
+            <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-slate-100 max-w-4xl mx-auto not-prose">
+                <h3 className="font-bold text-slate-900 mb-2 text-lg">À propos de l'auteure</h3>
+                <div className="font-bold text-slate-900 text-xl mb-1">Camille Rousseau</div>
+                <div className="text-sm text-blue-600 font-mono mb-4">Consultante Senior GEO/SEO chez Triaina</div>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    Experte en stratégies d'acquisition hybrides. Camille accompagne les marques dans l'optimisation de leur visibilité sur les moteurs de recherche traditionnels (SEO) et les interfaces d'IA génératives (GSO).
+                </p>
+                <a href="https://www.linkedin.com/in/camille-rousseau-a44488413/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors underline decoration-2 underline-offset-4">
+                    Voir son profil LinkedIn
+                </a>
             </div>
           </div>
+                </article>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 leading-tight mb-8 animate-fade-in-up md:w-4/5" style={{animationDelay: '0.1s'}}>
-            {post.title}
-          </h1>
-
-          <p className="text-xl text-slate-600 leading-relaxed mb-12 animate-fade-in-up md:w-3/4" style={{animationDelay: '0.2s'}}>
-            {post.excerpt}
-          </p>
-
-          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-20 relative animate-fade-in-up group" style={{animationDelay: '0.3s'}}>
-            <img 
-              src={post.image} 
-              alt={post.title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              referrerPolicy="no-referrer"
-              onError={(e) => {
-                (e.target as HTMLImageElement).src = "https://upload.wikimedia.org/wikipedia/commons/c/c6/Toulon_Ouest_vue_panoramique.jpg";
-              }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
-          </div>
-
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
-            <article className="lg:w-2/3 prose prose-lg prose-slate max-w-none 
-                prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 
-                prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-2 prose-h2:border-b prose-h2:border-slate-200
-                prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-                prose-p:text-slate-600 prose-p:leading-relaxed prose-p:mb-6
-                prose-a:text-blue-600 hover:prose-a:text-blue-700 prose-a:underline prose-a:font-medium
-                prose-li:text-slate-600 prose-li:marker:text-blue-500
-                prose-ul:space-y-2 prose-ol:space-y-2
-                animate-fade-in-up"
-                style={{animationDelay: '0.3s'}}
-                dangerouslySetInnerHTML={{ __html: htmlBody }}
-            />
-
-            <aside className="lg:w-1/3 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-              <div className="sticky top-32 space-y-8">
-                <div className="bg-slate-900 text-white rounded-3xl p-8 shadow-xl relative overflow-hidden">
-                  <div className="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 rounded-full bg-blue-600/20 blur-2xl"></div>
-                  <h3 className="text-xl font-display font-bold mb-4 text-white relative z-10">Besoin d'une agence SEO/GEO à Toulon ?</h3>
-                  <p className="text-slate-300 mb-6 text-sm relative z-10 leading-relaxed">
-                    Triaina accompagne les entreprises du Var dans l'optimisation de leur visibilité sur Google et auprès des LLMs (Copilot, ChatGPT, Gemini, Perplexity).
-                  </p>
-                  <a 
-                    href={PAGE_TO_URL['contact']}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.history.pushState({}, '', PAGE_TO_URL['contact']);
-                      window.dispatchEvent(new PopStateEvent('popstate'));
-                    }}
-                    className="inline-flex items-center justify-center w-full bg-white text-black px-6 py-3 rounded-xl text-sm font-bold tracking-wide hover:bg-blue-50 transition-colors relative z-10"
-                  >
-                    PRENDRE RENDEZ-VOUS
-                  </a>
-                </div>
-              </div>
-            </aside>
-          </div>
+        {/* Share / Footer */}
+        <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-sm font-mono text-slate-500">
+                Partager cet article
+            </div>
+            <div className="flex gap-4">
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Linkedin size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Twitter size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Facebook size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Share2 size={20} />
+                </button>
+            </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, Clock, Calendar } from 'lucide-react';
-import { PAGE_TO_URL, BLOG_DATA } from '../../constants';
+import { ArrowLeft, Calendar, Linkedin, Twitter, Facebook, Share2 } from 'lucide-react';
+import { BLOG_DATA } from '../../constants';
 import { SEO } from '../../components/SEO';
 
 export const MarqueVisibleChatgpt2026: React.FC = () => {
@@ -14,81 +14,90 @@ export const MarqueVisibleChatgpt2026: React.FC = () => {
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "10 conseils pour rendre votre marque visible dans ChatGPT en 2026",
-      "datePublished": "2026-06-15",
-      "dateModified": "2026-06-15",
+      "headline": post?.title || '',
+      "description": post?.excerpt || '',
+      "image": post?.image || '',
       "author": {
         "@type": "Person",
-        "name": "Alexandre",
-        "jobTitle": "CEO & Fondateur Triaina",
+        "name": "Camille Rousseau",
+        "jobTitle": "Consultante Senior GEO/SEO chez Triaina",
         "url": "https://www.triaina.fr",
-        "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "url": "https://www.triaina.fr",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://www.triaina.fr/logo.png"
-        }
-      },
-      "description": "Les 10 leviers actionnables pour améliorer votre référencement ChatGPT : Bing, structuration de contenu, médias tiers et E-E-A-T.",
-      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=1200",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://www.triaina.fr/blog/10-conseils-marque-visible-chatgpt"
+        "sameAs": "https://www.linkedin.com/in/camille-rousseau-a44488413/"
       }
     },
     {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Combien de temps faut-il pour apparaître dans ChatGPT ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "En mode recherche web, les premiers résultats sont visibles en 4 à 12 semaines si votre SEO Bing est déjà solide et votre contenu bien structuré. En mode mémoire (données d'entraînement), le délai est incompressible : il faut attendre le prochain cycle d'entraînement du modèle, soit 6 à 18 mois minimum."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Faut-il un contenu différent pour ChatGPT et pour Google ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Pas un contenu \"pour ChatGPT\" au sens d'un format propriétaire. Mais votre contenu doit être structuré différemment d'une page SEO classique : réponse directe en tête de section, paragraphes courts, H2/H3 formulés comme des questions, données structurées JSON-LD. Un contenu bien optimisé pour l'extraction IA est aussi un meilleur contenu pour l'utilisateur humain."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "ChatGPT cite-t-il les petites marques ou seulement les grandes ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "ChatGPT cite les sources les mieux positionnées sur Bing pour la requête concernée - pas nécessairement les plus grandes marques. Une PME avec un contenu bien structuré, des mentions dans des médias spécialisés et un bon ranking Bing sur ses requêtes de niche peut tout à fait être citée avant un grand groupe."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Peut-on mesurer gratuitement ses citations dans ChatGPT ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oui, partiellement. Le tracking manuel (tester vos requêtes clés dans ChatGPT en navigation privée) est gratuit et donne une première mesure fiable. Pour un suivi automatisé, des outils comme Météoria ou PEEC-AI sont nécessaires."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Le référencement ChatGPT fonctionne-t-il aussi pour Perplexity et Gemini ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oui. Les principes de base sont identiques : SEO, E-E-A-T, contenu structuré, citations médias. Perplexity cite systématiquement ses sources avec des liens visibles. Gemini s'appuie davantage sur l'index Google."
-          }
-        }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
+        { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
       ]
     }
   ];
 
-  const htmlBody = `
+
+
+  if (!post) return null;
+
+  return (
+    <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
+      <SEO 
+        title={`${post.title} - Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://triaina.fr${post.url}`}
+        schema={seoSchema}
+      />
+      
+      <div className="max-w-7xl mx-auto">
+        <a 
+          href="/blog" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState({}, '', '/blog');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}
+          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
+        >
+          <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
+          Retour aux articles
+        </a>
+
+        <article className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden relative">
+          {/* Accent decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-50"></div>
+          
+          <header className="mb-12">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
+              <span className="flex items-center">
+                <Calendar size={14} className="mr-2 text-blue-500" />
+                {post.date}
+              </span>
+              <span className="text-slate-300">|</span>
+              <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">{post.tag}</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+              {post.excerpt}
+            </p>
+          </header>
+
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-16 relative group">
+            <img 
+              src={post.image} 
+              alt={post.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+          </div>
+
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-2xl prose-strong:text-slate-900 prose-li:marker:text-blue-500">
+<div dangerouslySetInnerHTML={{ __html: `
 <h2>L'essentiel</h2>
 <ul>
   <li><strong>Bing d'abord :</strong> 87 % des citations ChatGPT Search proviennent du top 20 Bing (Seer Interactive). Ignorer Bing, c'est se couper du principal canal d'alimentation de ChatGPT.</li>
@@ -98,7 +107,7 @@ export const MarqueVisibleChatgpt2026: React.FC = () => {
 
 <p>Le trafic issu de ChatGPT convertit à <strong>15,9 %</strong> contre <strong>1,76 %</strong> pour le trafic organique Google - soit neuf fois plus, selon une étude Seer Interactive sur données clients réelles. Les visiteurs qui arrivent via une citation IA ne cherchent plus : ils choisissent.</p>
 
-<p>Voici les 10 leviers actionnables pour améliorer votre <strong>référencement ChatGPT</strong>, classés par impact. Pas de théorie sur le fonctionnement des LLM, pas de contexte générique sur "l'essor de l'IA" - uniquement ce que vous pouvez faire cette semaine. Pour aller plus loin sur la mécanique sous-jacente, consultez notre guide sur le <a target="_blank" rel="noopener noreferrer" href="/blog/guide-complet-geo" class="text-violet-600 hover:text-violet-700 underline">Generative Engine Optimization</a> et notre article dédié à <a target="_blank" rel="noopener noreferrer" href="/blog/etre-cite-par-chatgpt" class="text-violet-600 hover:text-violet-700 underline">être cité par ChatGPT</a>.</p>
+<p>Voici les 10 leviers actionnables pour améliorer votre <strong>référencement ChatGPT</strong>, classés par impact. Pas de théorie sur le fonctionnement des LLM, pas de contexte générique sur "l'essor de l'IA" - uniquement ce que vous pouvez faire cette semaine. Pour aller plus loin sur la mécanique sous-jacente, consultez notre guide sur le <a target="_blank" rel="noopener noreferrer" href="/blog/guide-complet-geo" class="text-blue-600 hover:text-blue-700 underline">Generative Engine Optimization</a> et notre article dédié à <a target="_blank" rel="noopener noreferrer" href="/blog/etre-cite-par-chatgpt" class="text-blue-600 hover:text-blue-700 underline">être cité par ChatGPT</a>.</p>
 
 <h2>Conseil n°1 : Rankez dans le top 10 Bing - pas seulement Google</h2>
 <p>ChatGPT Search s'appuie sur l'index Bing, fruit du partenariat Microsoft-OpenAI. Seer Interactive a analysé plus de 500 citations : <strong>87 % des sources citées par ChatGPT Search figurent dans le top 20 Bing</strong>, avec une concentration forte dans le top 10. Google n'affiche que 56 % de correspondance, avec une position médiane de 17. La conclusion est nette : ranker sur Bing est le meilleur prédicteur de citation dans ChatGPT Search.</p>
@@ -116,7 +125,7 @@ export const MarqueVisibleChatgpt2026: React.FC = () => {
 <h2>Conseil n°2 : Structurez votre contenu pour qu'il soit "pioché" par les LLM</h2>
 <p>ChatGPT ne lit pas vos pages - il les <em>picore</em>. Il extrait des blocs courts et autonomes pour les paraphraser dans sa réponse. Un mur de texte sans structure ? Il passe à la source suivante.</p>
 
-<p>La règle d'or : <strong>la première phrase de chaque section doit répondre directement à la question implicite du titre</strong>. Si ce n'est pas le cas, réécrivez-la avant tout autre optimisation. Pour une checklist complète sur ce sujet, notre guide pour <a target="_blank" rel="noopener noreferrer" href="/blog/comment-optimiser-site-llm" class="text-violet-600 hover:text-violet-700 underline">optimiser votre site pour les LLM</a> détaille chaque point.</p>
+<p>La règle d'or : <strong>la première phrase de chaque section doit répondre directement à la question implicite du titre</strong>. Si ce n'est pas le cas, réécrivez-la avant tout autre optimisation. Pour une checklist complète sur ce sujet, notre guide pour <a target="_blank" rel="noopener noreferrer" href="/blog/comment-optimiser-site-llm" class="text-blue-600 hover:text-blue-700 underline">optimiser votre site pour les LLM</a> détaille chaque point.</p>
 
 <p><strong>Checklist de structure :</strong></p>
 <ul>
@@ -135,8 +144,8 @@ export const MarqueVisibleChatgpt2026: React.FC = () => {
   <table class="w-full text-left border-collapse">
     <thead>
       <tr>
-        <th class="bg-violet-50 p-3 border border-slate-200 font-bold text-slate-900">Requête conversationnelle ChatGPT</th>
-        <th class="bg-violet-50 p-3 border border-slate-200 font-bold text-slate-900">H2/H3 à créer sur votre site</th>
+        <th class="bg-blue-50 p-3 border border-slate-200 font-bold text-slate-900">Requête conversationnelle ChatGPT</th>
+        <th class="bg-blue-50 p-3 border border-slate-200 font-bold text-slate-900">H2/H3 à créer sur votre site</th>
       </tr>
     </thead>
     <tbody>
@@ -163,7 +172,7 @@ export const MarqueVisibleChatgpt2026: React.FC = () => {
 
 <p>Obtenir ces mentions, c'est le travail le plus difficile - et le plus rentable. Relations presse, guest posts, études citables, données propriétaires : tout ce qui donne aux journalistes et blogueurs une raison de vous mentionner dans un contexte éditorial authentique.</p>
 
-<p>C'est précisément là que Triaina crée un avantage structurel unique pour ses clients. En tant qu'<a target="_blank" rel="noopener noreferrer" href="/expertise-gso" class="text-violet-600 hover:text-violet-700 underline">agence de référencement IA</a>, Triaina possède des médias éditoriaux propriétaires qui publient des contenus mentionnant les clients dans des contextes authentiques - exactement les signaux de citation que les LLM recherchent. Aucune autre agence GSO française ne dispose de ce levier.</p>
+<p>C'est précisément là que Triaina crée un avantage structurel unique pour ses clients. En tant qu'<a target="_blank" rel="noopener noreferrer" href="/expertise-gso" class="text-blue-600 hover:text-blue-700 underline">agence de référencement IA</a>, Triaina possède des médias éditoriaux propriétaires qui publient des contenus mentionnant les clients dans des contextes authentiques - exactement les signaux de citation que les LLM recherchent. Aucune autre agence GSO française ne dispose de ce levier.</p>
 
 <h2>Conseil n°5 : Renforcez vos signaux E-E-A-T</h2>
 <p>L'E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) n'est pas seulement un facteur de ranking Google. Les LLM l'utilisent comme <strong>filtre de sélection</strong> : ils préfèrent citer des sources qui exhibent ces signaux. Une page anonyme sans auteur identifié, sans sources primaires, sans données propriétaires sera systématiquement déprioritisée face à une source qui les affiche clairement.</p>
@@ -195,7 +204,7 @@ export const MarqueVisibleChatgpt2026: React.FC = () => {
 <h2>Conseil n°7 : Implémentez les données structurées JSON-LD</h2>
 <p>Les données structurées rendent votre contenu <strong>lisible par les machines</strong> - exactement ce dont les LLM ont besoin pour extraire et paraphraser vos informations avec précision. Sans elles, le modèle doit inférer le contexte. Avec elles, il le lit directement.</p>
 
-<p>Format recommandé : <strong>JSON-LD</strong>, injecté dans le <code>&lt;head&gt;</code> ou en fin de <code>&lt;body&gt;</code>. C'est le format préféré de Google, de Bing, et le plus facilement parsé par les LLM. Pour une implémentation complète, notre guide sur <a target="_blank" rel="noopener noreferrer" href="/blog/comment-optimiser-site-llm" class="text-violet-600 hover:text-violet-700 underline">optimiser votre site pour les LLM</a> couvre chaque schéma en détail.</p>
+<p>Format recommandé : <strong>JSON-LD</strong>, injecté dans le <code>&lt;head&gt;</code> ou en fin de <code>&lt;body&gt;</code>. C'est le format préféré de Google, de Bing, et le plus facilement parsé par les LLM. Pour une implémentation complète, notre guide sur <a target="_blank" rel="noopener noreferrer" href="/blog/comment-optimiser-site-llm" class="text-blue-600 hover:text-blue-700 underline">optimiser votre site pour les LLM</a> couvre chaque schéma en détail.</p>
 
 <p><strong>Schémas prioritaires :</strong></p>
 <ul>
@@ -239,9 +248,9 @@ export const MarqueVisibleChatgpt2026: React.FC = () => {
   <table class="w-full text-left border-collapse">
     <thead>
       <tr>
-        <th class="bg-violet-50 p-3 border border-slate-200 font-bold text-slate-900">Signal</th>
-        <th class="bg-violet-50 p-3 border border-slate-200 font-bold text-slate-900">Outil</th>
-        <th class="bg-violet-50 p-3 border border-slate-200 font-bold text-slate-900">Fréquence</th>
+        <th class="bg-blue-50 p-3 border border-slate-200 font-bold text-slate-900">Signal</th>
+        <th class="bg-blue-50 p-3 border border-slate-200 font-bold text-slate-900">Outil</th>
+        <th class="bg-blue-50 p-3 border border-slate-200 font-bold text-slate-900">Fréquence</th>
       </tr>
     </thead>
     <tbody>
@@ -269,10 +278,10 @@ export const MarqueVisibleChatgpt2026: React.FC = () => {
   </table>
 </div>
 
-<p>Pour structurer un suivi complet, notre page <a target="_blank" rel="noopener noreferrer" href="/expertise-gso" class="text-violet-600 hover:text-violet-700 underline">stratégie GSO</a> détaille les indicateurs à piloter et les seuils de performance à viser.</p>
+<p>Pour structurer un suivi complet, notre page <a target="_blank" rel="noopener noreferrer" href="/expertise-gso" class="text-blue-600 hover:text-blue-700 underline">stratégie GSO</a> détaille les indicateurs à piloter et les seuils de performance à viser.</p>
 
 <h2>Passez à l'action avec Triaina</h2>
-<p>Ces 10 conseils forment un système - pas une liste de tâches isolées. Bing + structure de contenu + médias tiers + E-E-A-T + données structurées : chaque levier amplifie les autres. La bonne nouvelle, c'est que vous pouvez commencer dès aujourd'hui sur les conseils 1, 2 et 7 sans budget supplémentaire. Pour les leviers qui demandent une expertise ou un réseau éditorial - notamment le conseil n°4 - , notre <a target="_blank" rel="noopener noreferrer" href="/expertise-gso" class="text-violet-600 hover:text-violet-700 underline">stratégie GSO</a> est conçue pour créer cet avantage structurel pour votre marque.</p>
+<p>Ces 10 conseils forment un système - pas une liste de tâches isolées. Bing + structure de contenu + médias tiers + E-E-A-T + données structurées : chaque levier amplifie les autres. La bonne nouvelle, c'est que vous pouvez commencer dès aujourd'hui sur les conseils 1, 2 et 7 sans budget supplémentaire. Pour les leviers qui demandent une expertise ou un réseau éditorial - notamment le conseil n°4 - , notre <a target="_blank" rel="noopener noreferrer" href="/expertise-gso" class="text-blue-600 hover:text-blue-700 underline">stratégie GSO</a> est conçue pour créer cet avantage structurel pour votre marque.</p>
 
 <h2>FAQ - Référencement ChatGPT</h2>
 <h3>Combien de temps faut-il pour apparaître dans ChatGPT ?</h3>
@@ -292,103 +301,50 @@ export const MarqueVisibleChatgpt2026: React.FC = () => {
 
 <h2>Sources utiles</h2>
 <ul>
-  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.seerinteractive.com/insights/87-percent-of-searchgpt-citations-match-bings-top-results" class="text-violet-600 hover:text-violet-700 underline">Seer Interactive - 87 % des citations ChatGPT Search correspondent au top 20 Bing</a></li>
-  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.seerinteractive.com/insights/case-study-6-learnings-about-how-traffic-from-chatgpt-converts" class="text-violet-600 hover:text-violet-700 underline">Seer Interactive - Le trafic ChatGPT convertit à 15,9 % vs 1,76 % pour Google organique</a></li>
-  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://searchengineland.com/bing-ranking-chatgpt-visibility-study-473680" class="text-violet-600 hover:text-violet-700 underline">Search Engine Land - Bing ranking and ChatGPT visibility study</a></li>
-  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://openai.com/index/introducing-chatgpt-search/" class="text-violet-600 hover:text-violet-700 underline">OpenAI - Introducing ChatGPT Search (octobre 2024)</a></li>
-  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.bing.com/webmasters/" class="text-violet-600 hover:text-violet-700 underline">Bing Webmaster Tools - outil officiel Microsoft</a></li>
-  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://schema.org/" class="text-violet-600 hover:text-violet-700 underline">Schema.org - référence des données structurées</a></li>
-  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" class="text-violet-600 hover:text-violet-700 underline">Google - Directives E-E-A-T et contenu utile</a></li>
+  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.seerinteractive.com/insights/87-percent-of-searchgpt-citations-match-bings-top-results" class="text-blue-600 hover:text-blue-700 underline">Seer Interactive - 87 % des citations ChatGPT Search correspondent au top 20 Bing</a></li>
+  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.seerinteractive.com/insights/case-study-6-learnings-about-how-traffic-from-chatgpt-converts" class="text-blue-600 hover:text-blue-700 underline">Seer Interactive - Le trafic ChatGPT convertit à 15,9 % vs 1,76 % pour Google organique</a></li>
+  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://searchengineland.com/bing-ranking-chatgpt-visibility-study-473680" class="text-blue-600 hover:text-blue-700 underline">Search Engine Land - Bing ranking and ChatGPT visibility study</a></li>
+  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://openai.com/index/introducing-chatgpt-search/" class="text-blue-600 hover:text-blue-700 underline">OpenAI - Introducing ChatGPT Search (octobre 2024)</a></li>
+  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.bing.com/webmasters/" class="text-blue-600 hover:text-blue-700 underline">Bing Webmaster Tools - outil officiel Microsoft</a></li>
+  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://schema.org/" class="text-blue-600 hover:text-blue-700 underline">Schema.org - référence des données structurées</a></li>
+  <li><a target="_blank" rel="noopener noreferrer nofollow" href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" class="text-blue-600 hover:text-blue-700 underline">Google - Directives E-E-A-T et contenu utile</a></li>
 </ul>
-  `;
+  ` }} />
 
-  if (!post) return null;
-
-  return (
-    <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
-      <SEO 
-        title={post.title}
-        description={post.excerpt}
-        schema={seoSchema}
-        image={post.image}
-        canonicalUrl={`https://www.triaina.fr${post.url}`}
-      />
-      <div className="max-w-7xl mx-auto">
-        <a 
-          href={PAGE_TO_URL['blog']}
-          onClick={(e) => {
-              e.preventDefault();
-              window.history.pushState({}, '', PAGE_TO_URL['blog']);
-              window.dispatchEvent(new PopStateEvent('popstate'));
-          }}
-          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
-        >
-          <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
-          RETOUR AU BLOG
-        </a>
-
-        <header className="mb-12 md:mb-20 animate-fade-in-up">
-          <div className="flex items-center gap-4 mb-6 text-sm font-mono text-slate-500">
-            <span className="flex items-center"><Calendar size={14} className="mr-2"/> {post.date}</span>
-            <span className="flex items-center"><Clock size={14} className="mr-2"/> 8 MIN DE LECTURE</span>
-            <span className="px-2 py-1 bg-violet-100 text-violet-800 text-xs tracking-wider rounded">{post.tag}</span>
-          </div>
-          
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-sans text-slate-900 leading-tight mb-6">
-            {post.title}
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-slate-600 max-w-3xl leading-relaxed">
-            {post.excerpt}
-          </p>
-        </header>
-
-        <div className="w-full h-[400px] md:h-[600px] bg-slate-100 rounded-3xl overflow-hidden mb-16 relative group animate-fade-in-up shadow-2xl shadow-violet-900/10" style={{animationDelay: '0.2s'}}>
-          <img 
-            src={post.image} 
-            alt={post.title}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
-        </div>
-
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
-          <article className="lg:w-2/3 prose prose-lg prose-slate max-w-none 
-              prose-headings:font-bold prose-headings:text-slate-900 
-              prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-2 prose-h2:border-b prose-h2:border-slate-200
-              prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-              prose-p:text-slate-600 prose-p:leading-relaxed prose-p:mb-6
-              prose-a:text-violet-600 hover:prose-a:text-violet-700 prose-a:underline prose-a:font-medium
-              prose-li:text-slate-600 prose-li:marker:text-violet-500
-              prose-ul:space-y-2 prose-ol:space-y-2
-              animate-fade-in-up"
-              style={{animationDelay: '0.3s'}}
-              dangerouslySetInnerHTML={{ __html: htmlBody }}
-          />
-
-          <aside className="lg:w-1/3 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-            <div className="sticky top-32 space-y-8">
-              
-              <div className="bg-slate-900 text-white rounded-3xl p-8">
-                <h3 className="text-xl font-bold mb-4 font-sans text-white">Besoin d'optimiser pour l'IA ?</h3>
-                <p className="text-slate-300 mb-6 text-sm">
-                  Triaina accompagne votre marque dans sa stratégie de Prompt Engineering, de SEO et de GSO.
+            {/* Author Block */}
+            <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-slate-100 max-w-4xl mx-auto not-prose">
+                <h3 className="font-bold text-slate-900 mb-2 text-lg">À propos de l'auteure</h3>
+                <div className="font-bold text-slate-900 text-xl mb-1">Camille Rousseau</div>
+                <div className="text-sm text-blue-600 font-mono mb-4">Consultante Senior GEO/SEO chez Triaina</div>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    Experte en stratégies d'acquisition hybrides. Camille accompagne les marques dans l'optimisation de leur visibilité sur les moteurs de recherche traditionnels (SEO) et les interfaces d'IA génératives (GSO).
                 </p>
-                <a 
-                  href={PAGE_TO_URL['contact']}
-                  onClick={(e) => {
-                      e.preventDefault();
-                      window.history.pushState({}, '', PAGE_TO_URL['contact']);
-                      window.dispatchEvent(new PopStateEvent('popstate'));
-                  }}
-                  className="inline-block w-full text-center bg-violet-600 hover:bg-violet-500 text-white font-mono text-sm py-3 px-4 transition-colors rounded-xl"
-                >
-                  CONTACTEZ-NOUS
+                <a href="https://www.linkedin.com/in/camille-rousseau-a44488413/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors underline decoration-2 underline-offset-4">
+                    Voir son profil LinkedIn
                 </a>
-              </div>
             </div>
-          </aside>
+          </div>
+                </article>
+
+        {/* Share / Footer */}
+        <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-sm font-mono text-slate-500">
+                Partager cet article
+            </div>
+            <div className="flex gap-4">
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Linkedin size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Twitter size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Facebook size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Share2 size={20} />
+                </button>
+            </div>
         </div>
       </div>
     </div>

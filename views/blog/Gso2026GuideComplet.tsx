@@ -1,210 +1,103 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { ArrowLeft, Calendar, Bot, CheckCircle2, BarChart3, Target, Linkedin, Twitter, Facebook, Share2 } from 'lucide-react';
+import { BLOG_DATA } from '../../constants';
 import { SEO } from '../../components/SEO';
-import { Calendar, Clock, ArrowLeft, Share2, Linkedin, Twitter, Facebook, CheckCircle2, Bot, Search, Zap, BarChart3, Globe, Cpu, Target, Trophy, TrendingUp, Link as LinkIcon, FileText, RefreshCw, Layers, Scale } from 'lucide-react';
 
 export const Gso2026GuideComplet: React.FC = () => {
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-        {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Accueil",
-            "item": "https://www.triaina.fr"
-        },
-        {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Blog",
-            "item": "https://www.triaina.fr/blog"
-        },
-        {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "GSO 2026 : Guide Complet de Generative Search Optimization",
-            "item": "https://www.triaina.fr/blog/gso-2026-guide-complet"
-        }
-    ]
-  };
+  const post = BLOG_DATA.find(p => p.id === 'gso-2026-guide-complet');
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "GSO 2026 : Guide Complet de Generative Search Optimization",
-    "description": "Guide complet GSO 2026 : définition, fonctionnement, critères de ranking, stratégie, outils, cas clients et FAQ pour dominer Google et les IA génératives.",
-    "image": "https://picsum.photos/seed/generative-ai-search/1200/675",
-    "author": {
-      "@type": "Person",
-      "name": "Alexandre",
-      "jobTitle": "CEO & Fondateur Triaina",
-      "url": "https://www.triaina.fr",
-      "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.triaina.fr/logo.png"
-        }
-    },
-    "datePublished": "2026-03-09",
-    "dateModified": "2026-03-09",
-    "wordCount": 2200,
-    "articleBody": "En 2026, le paysage du marketing digital change radicalement. Google n'est plus le seul moteur de recherche..."
-  };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "Quelle est la différence entre GSO et SEO ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Le SEO optimise votre site pour Google. Le GSO optimise votre site pour Google ET les IA génératives. GSO = SEO + optimisation IA."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Combien de temps pour voir les résultats en GSO ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Les premiers résultats (citations IA) peuvent apparaître en 6-8 semaines. Les résultats plus significatifs (trafic, conversions) prennent généralement 3-6 mois."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Quel est le coût du GSO ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Un audit GSO coûte à partir de 3 500€. Un accompagnement démarre à partir de 1 000€/mois."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Le GSO remplace-t-il le SEO ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Non. Le GSO complète le SEO. Il combine SEO et optimisation IA en une seule stratégie cohérente."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Puis-je faire du GSO et du SEO en parallèle ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Oui. C'est même recommandé. GSO comme fondation + optimisations supplémentaires si nécessaire."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Quel est le meilleur ROI : GSO ou SEO ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Les deux ont un ROI excellent. GSO offre un ROI plus élevé car il couvre deux canaux."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Qui devrait faire du GSO ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Toutes les entreprises qui veulent une approche globale et cohérente pour dominer Google et les IA génératives."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Comment tester si je suis cité par les IA ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Allez sur ChatGPT, Gemini ou Perplexity et posez une question liée à votre secteur. Vérifiez si votre site est cité dans la réponse."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Le GSO est-il garanti ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Non. Nous ne garantissons pas de résultats spécifiques, mais nous visons des objectifs mesurables basés sur votre situation actuelle."
-            }
-        }
-    ]
-  };
+  const seoSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": post?.title || '',
+      "description": post?.excerpt || '',
+      "image": post?.image || '',
+      "author": {
+        "@type": "Person",
+        "name": "Camille Rousseau",
+        "jobTitle": "Consultante Senior GEO/SEO chez Triaina",
+        "url": "https://www.triaina.fr",
+        "sameAs": "https://www.linkedin.com/in/camille-rousseau-a44488413/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
+        { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
+      ]
+    }
+  ];
+
+
+
+  if (!post) return null;
 
   return (
     <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
       <SEO 
-        title="GSO 2026 : Guide Complet de Generative Search Optimization" 
-        description="Guide complet GSO 2026 : définition, fonctionnement, critères de ranking, stratégie, outils, cas clients et FAQ. Dominez Google et les IA génératives."
-        keywords="GSO, Generative Search Optimization, optimisation IA, GSO 2026, guide GSO"
-        schema={[breadcrumbSchema, articleSchema, faqSchema]}
-        ogTitle="GSO 2026 : Guide Complet de Generative Search Optimization"
-        ogDescription="Guide complet GSO 2026 : définition, fonctionnement, critères, stratégie, outils, cas clients et FAQ."
-        image="https://picsum.photos/seed/generative-ai-search/1200/675"
-        type="article"
-        twitterCard="summary_large_image"
-        twitterTitle="GSO 2026 : Guide Complet de Generative Search Optimization"
-        twitterDescription="Guide complet GSO 2026 : définition, fonctionnement, critères, stratégie, outils et cas clients."
-        canonicalUrl="https://www.triaina.fr/blog/gso-2026-guide-complet"
+        title={`${post.title} - Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://triaina.fr${post.url}`}
+        schema={seoSchema}
       />
-
+      
       <div className="max-w-7xl mx-auto">
-        {/* Back Button */}
-        <a href="/blog" className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group">
+        <a 
+          href="/blog" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState({}, '', '/blog');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}
+          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
+        >
           <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
-          RETOUR AU BLOG
+          Retour aux articles
         </a>
 
-        {/* Header */}
-        <header className="mb-12 text-center max-w-5xl mx-auto">
-          <div className="flex items-center justify-center gap-4 text-xs font-mono text-blue-600 mb-6 uppercase tracking-widest">
-            <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">Guide GSO</span>
-            <span className="flex items-center gap-1"><Calendar size={12} /> 09 MARS 2026</span>
-            <span className="flex items-center gap-1"><Clock size={12} /> 15 MIN</span>
+        <article className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden relative">
+          {/* Accent decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-50"></div>
+          
+          <header className="mb-12">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
+              <span className="flex items-center">
+                <Calendar size={14} className="mr-2 text-blue-500" />
+                {post.date}
+              </span>
+              <span className="text-slate-300">|</span>
+              <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">{post.tag}</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+              {post.excerpt}
+            </p>
+          </header>
+
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-16 relative group">
+            <img 
+              src={post.image} 
+              alt={post.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-slate-900 mb-8 leading-tight tracking-tight">
-            GSO 2026 : <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Guide Complet de Generative Search Optimization</span>
-          </h1>
-        </header>
 
-        {/* Featured Image */}
-        <div className="mb-16 rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-900/10 aspect-video relative group">
-          <img 
-            src="https://picsum.photos/seed/gso-2026-guide-complet/1200/675" 
-            alt="GSO 2026" 
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/20 to-transparent"></div>
-        </div>
-
-        {/* Content Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            
-            {/* Sidebar / Table of Contents (Desktop) */}
-            <aside className="hidden lg:block lg:col-span-3">
-                <div className="sticky top-32 space-y-4">
-                    <h3 className="font-display font-bold text-slate-900 uppercase tracking-widest text-sm mb-4">Sommaire</h3>
-                    <nav className="flex flex-col space-y-3 text-sm font-medium text-slate-500">
-                        <a href="#introduction" className="hover:text-blue-600 transition-colors">Introduction</a>
-                        <a href="#quest-ce-que-le-gso" className="hover:text-blue-600 transition-colors">Qu'est-ce que le GSO ?</a>
-                        <a href="#pourquoi-le-gso" className="hover:text-blue-600 transition-colors">Pourquoi le GSO est important</a>
-                        <a href="#comment-ca-marche" className="hover:text-blue-600 transition-colors">Comment fonctionne le GSO ?</a>
-                        <a href="#criteres-ranking" className="hover:text-blue-600 transition-colors">Critères de ranking GSO</a>
-                        <a href="#strategie" className="hover:text-blue-600 transition-colors">Stratégie GSO complète</a>
-                        <a href="#outils" className="hover:text-blue-600 transition-colors">Outils GSO essentiels</a>
-                        <a href="#cas-clients" className="hover:text-blue-600 transition-colors">Cas clients GSO</a>
-                        <a href="#faq" className="hover:text-blue-600 transition-colors">FAQ : GSO 2026</a>
-                    </nav>
-                </div>
-            </aside>
-
-            {/* Main Content */}
-            <article className="lg:col-span-9 prose prose-lg xl:prose-xl prose-slate max-w-none font-sans prose-headings:font-display prose-headings:font-bold prose-a:text-blue-600">
-            
-            <section id="introduction" className="text-xl text-slate-600 leading-relaxed">
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-2xl prose-strong:text-slate-900 prose-li:marker:text-blue-500">
+<section id="introduction" className="text-xl text-slate-600 leading-relaxed">
                 <p>En 2026, le paysage du marketing digital change radicalement. Google n'est plus le seul moteur de recherche. Les IA génératives comme ChatGPT, Gemini et Perplexity deviennent des sources d'information majeures pour des millions d'utilisateurs.</p>
                 <p>Face à cette transformation, une nouvelle approche émerge : le <strong>GSO</strong> (Generative Search Optimization). Mais qu'est-ce que le GSO exactement ? Comment fonctionne-t-il ? Et surtout, comment l'implémenter pour dominer à la fois Google et les IA génératives ?</p>
                 <p>Ce guide complet vous explique tout ce que vous devez savoir sur le GSO en 2026.</p>
@@ -764,13 +657,25 @@ export const Gso2026GuideComplet: React.FC = () => {
                 </div>
             </section>
 
-            </article>
-        </div>
+            {/* Author Block */}
+            <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-slate-100 max-w-4xl mx-auto not-prose">
+                <h3 className="font-bold text-slate-900 mb-2 text-lg">À propos de l'auteure</h3>
+                <div className="font-bold text-slate-900 text-xl mb-1">Camille Rousseau</div>
+                <div className="text-sm text-blue-600 font-mono mb-4">Consultante Senior GEO/SEO chez Triaina</div>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    Experte en stratégies d'acquisition hybrides. Camille accompagne les marques dans l'optimisation de leur visibilité sur les moteurs de recherche traditionnels (SEO) et les interfaces d'IA génératives (GSO).
+                </p>
+                <a href="https://www.linkedin.com/in/camille-rousseau-a44488413/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors underline decoration-2 underline-offset-4">
+                    Voir son profil LinkedIn
+                </a>
+            </div>
+          </div>
+                </article>
 
         {/* Share / Footer */}
         <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-sm font-mono text-slate-500">
-                Partager ce guide
+                Partager cet article
             </div>
             <div className="flex gap-4">
                 <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">

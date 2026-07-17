@@ -1,213 +1,103 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { ArrowLeft, Calendar, Search, Cpu, FileText, LinkIcon, Zap, Target, Bot, Trophy, RefreshCw, CheckCircle2, Linkedin, Twitter, Facebook, Share2 } from 'lucide-react';
+import { BLOG_DATA } from '../../constants';
 import { SEO } from '../../components/SEO';
-import { Calendar, Clock, ArrowLeft, Share2, Linkedin, Twitter, Facebook, CheckCircle2, Bot, Search, Zap, BarChart3, Globe, Cpu, Target, Trophy, TrendingUp, Link as LinkIcon, FileText, RefreshCw, Layers, Scale } from 'lucide-react';
 
 export const SeoVsReferencementIA: React.FC = () => {
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-        {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Accueil",
-            "item": "https://www.triaina.fr"
-        },
-        {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Blog",
-            "item": "https://www.triaina.fr/blog"
-        },
-        {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "SEO vs Référencement IA",
-            "item": "https://www.triaina.fr/blog/seo-vs-referencement-ia"
-        }
-    ]
-  };
+  const post = BLOG_DATA.find(p => p.id === 'seo-vs-referencement-ia');
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "SEO vs Référencement IA : Quelles différences en 2026 ?",
-    "description": "Guide complet comparant SEO et Référencement IA : définitions, tableau comparatif, avantages, cas clients et stratégie à choisir.",
-    "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1200",
-    "author": {
-      "@type": "Person",
-      "name": "Alexandre",
-      "jobTitle": "CEO & Fondateur Triaina",
-      "url": "https://www.triaina.fr",
-      "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.triaina.fr/logo.png"
-        }
-    },
-    "datePublished": "2026-03-02",
-    "dateModified": "2026-03-02",
-    "wordCount": 1800,
-    "articleBody": "En 2026, deux termes dominent le paysage du marketing digital : SEO et Référencement IA..."
-  };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "Quelle est la différence principale entre SEO et Référencement IA ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Le SEO optimise votre site pour Google. Le Référencement IA optimise votre contenu pour les IA génératives. Ce ne sont pas les mêmes canaux."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Dois-je choisir entre SEO et Référencement IA ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Non. La meilleure approche est de combiner les deux : SEO comme fondation + Référencement IA comme spécialisation."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Le Référencement IA remplace-t-il le SEO ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Non. Le Référencement IA complète le SEO. Les deux sont complémentaires."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Quel est le coût du SEO vs Référencement IA ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Les deux ont des coûts similaires. Un audit coûte à partir de 3 500€. Un accompagnement démarre à partir de 1 000€/mois."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Combien de temps pour voir les résultats ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "SEO : 3-6 mois pour des résultats significatifs. Référencement IA : 6-8 semaines pour les premières citations."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Puis-je faire du SEO et du Référencement IA en parallèle ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Oui. C'est même recommandé. SEO comme fondation + Référencement IA comme spécialisation."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Quel est le meilleur ROI : SEO ou Référencement IA ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Les deux ont un ROI excellent. SEO offre un ROI plus élevé long terme. Référencement IA offre un ROI plus rapide."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Qui devrait faire du SEO ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Toutes les entreprises qui veulent du trafic massif et durable de Google."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Qui devrait faire du Référencement IA ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Les entreprises avec une stratégie SEO solide qui cherchent à ajouter une source de trafic IA."
-            }
-        }
-    ]
-  };
+  const seoSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": post?.title || '',
+      "description": post?.excerpt || '',
+      "image": post?.image || '',
+      "author": {
+        "@type": "Person",
+        "name": "Camille Rousseau",
+        "jobTitle": "Consultante Senior GEO/SEO chez Triaina",
+        "url": "https://www.triaina.fr",
+        "sameAs": "https://www.linkedin.com/in/camille-rousseau-a44488413/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
+        { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
+      ]
+    }
+  ];
+
+
+
+  if (!post) return null;
 
   return (
     <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
       <SEO 
-        title="SEO vs Référencement IA : Quelles différences en 2026 ?" 
-        description="SEO vs Référencement IA : quelles différences ? Guide complet 2026 avec tableau comparatif, avantages, cas clients et FAQ. Quelle stratégie choisir ?"
-        keywords="SEO vs référencement IA, différences SEO IA, SEO 2026, référencement IA 2026, stratégie SEO IA"
-        schema={[breadcrumbSchema, articleSchema, faqSchema]}
-        ogTitle="SEO vs Référencement IA : Quelles différences en 2026 ?"
-        ogDescription="Découvrez les différences entre SEO et Référencement IA. Guide complet avec tableau comparatif, avantages et stratégie à choisir."
-        image="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1200"
-        type="article"
-        twitterCard="summary_large_image"
-        twitterTitle="SEO vs Référencement IA : Quelles différences en 2026 ?"
-        twitterDescription="Guide complet : SEO vs Référencement IA. Tableau comparatif, avantages, cas clients. Quelle stratégie choisir ?"
-        canonicalUrl="https://www.triaina.fr/blog/seo-vs-referencement-ia"
+        title={`${post.title} - Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://triaina.fr${post.url}`}
+        schema={seoSchema}
       />
-
+      
       <div className="max-w-7xl mx-auto">
-        {/* Back Button */}
-        <a href="/blog" className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group">
+        <a 
+          href="/blog" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState({}, '', '/blog');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}
+          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
+        >
           <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
-          RETOUR AU BLOG
+          Retour aux articles
         </a>
 
-        {/* Header */}
-        <header className="mb-12 text-center max-w-5xl mx-auto">
-          <div className="flex items-center justify-center gap-4 text-xs font-mono text-blue-600 mb-6 uppercase tracking-widest">
-            <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">Guide Comparatif</span>
-            <span className="flex items-center gap-1"><Calendar size={12} /> 02 MARS 2026</span>
-            <span className="flex items-center gap-1"><Clock size={12} /> 12 MIN</span>
+        <article className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden relative">
+          {/* Accent decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-50"></div>
+          
+          <header className="mb-12">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
+              <span className="flex items-center">
+                <Calendar size={14} className="mr-2 text-blue-500" />
+                {post.date}
+              </span>
+              <span className="text-slate-300">|</span>
+              <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">{post.tag}</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+              {post.excerpt}
+            </p>
+          </header>
+
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-16 relative group">
+            <img 
+              src={post.image} 
+              alt={post.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
           </div>
-          <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-8 leading-tight">
-            SEO vs <br/><span className="text-blue-600">Référencement IA</span>
-          </h1>
-          <p className="text-xl text-slate-600 leading-relaxed">
-            Quelles différences en 2026 ?
-          </p>
-        </header>
 
-        {/* Featured Image */}
-        <div className="mb-16 rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/20 aspect-video relative">
-          <img 
-            src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1200" 
-            alt="SEO vs Référencement IA" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
-        </div>
-
-        {/* Content Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            
-            {/* Sidebar / Table of Contents (Desktop) */}
-            <aside className="hidden lg:block lg:col-span-3">
-                <div className="sticky top-32 space-y-4">
-                    <h3 className="font-display font-bold text-slate-900 uppercase tracking-widest text-sm mb-4">Sommaire</h3>
-                    <nav className="flex flex-col space-y-3 text-sm font-medium text-slate-500">
-                        <a href="#introduction" className="hover:text-blue-600 transition-colors">Introduction</a>
-                        <a href="#quest-ce-que-le-seo" className="hover:text-blue-600 transition-colors">Qu'est-ce que le SEO ?</a>
-                        <a href="#avantages-seo" className="hover:text-blue-600 transition-colors">Avantages du SEO</a>
-                        <a href="#quest-ce-que-le-referencement-ia" className="hover:text-blue-600 transition-colors">Qu'est-ce que le Référencement IA ?</a>
-                        <a href="#avantages-referencement-ia" className="hover:text-blue-600 transition-colors">Avantages du Référencement IA</a>
-                        <a href="#comparatif" className="hover:text-blue-600 transition-colors">Tableau Comparatif</a>
-                        <a href="#strategie" className="hover:text-blue-600 transition-colors">Quelle stratégie choisir ?</a>
-                        <a href="#cas-clients" className="hover:text-blue-600 transition-colors">Cas Clients</a>
-                        <a href="#faq" className="hover:text-blue-600 transition-colors">FAQ</a>
-                    </nav>
-                </div>
-            </aside>
-
-            {/* Main Content */}
-            <article className="lg:col-span-9 prose prose-lg xl:prose-xl prose-slate max-w-none font-sans prose-headings:font-display prose-headings:font-bold prose-a:text-blue-600">
-            
-            <section id="introduction">
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-2xl prose-strong:text-slate-900 prose-li:marker:text-blue-500">
+<section id="introduction">
                 <p>En 2026, deux termes dominent le paysage du marketing digital : <strong>SEO (Search Engine Optimization)</strong> et <strong>Référencement IA</strong>. Beaucoup de gens pensent que ce sont la même chose. C'est une erreur courante. Bien que ces deux concepts soient étroitement liés et complémentaires, ils ont des différences importantes que vous devez comprendre pour construire une stratégie efficace.</p>
                 <p>Le SEO traditionnel optimise votre site pour Google. Le Référencement IA optimise votre contenu pour les IA génératives comme ChatGPT, Gemini et Perplexity. Ce ne sont pas les mêmes canaux, et ils ne fonctionnent pas de la même manière.</p>
                 <p>Ce guide vous explique les différences entre SEO et Référencement IA, leurs avantages respectifs, et comment choisir la bonne stratégie pour votre entreprise en 2026.</p>
@@ -772,13 +662,25 @@ export const SeoVsReferencementIA: React.FC = () => {
                 </div>
             </section>
 
-            </article>
-        </div>
+            {/* Author Block */}
+            <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-slate-100 max-w-4xl mx-auto not-prose">
+                <h3 className="font-bold text-slate-900 mb-2 text-lg">À propos de l'auteure</h3>
+                <div className="font-bold text-slate-900 text-xl mb-1">Camille Rousseau</div>
+                <div className="text-sm text-blue-600 font-mono mb-4">Consultante Senior GEO/SEO chez Triaina</div>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    Experte en stratégies d'acquisition hybrides. Camille accompagne les marques dans l'optimisation de leur visibilité sur les moteurs de recherche traditionnels (SEO) et les interfaces d'IA génératives (GSO).
+                </p>
+                <a href="https://www.linkedin.com/in/camille-rousseau-a44488413/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors underline decoration-2 underline-offset-4">
+                    Voir son profil LinkedIn
+                </a>
+            </div>
+          </div>
+                </article>
 
         {/* Share / Footer */}
         <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-sm font-mono text-slate-500">
-                Partager ce guide
+                Partager cet article
             </div>
             <div className="flex gap-4">
                 <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">

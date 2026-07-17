@@ -1,212 +1,103 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { ArrowLeft, Calendar, Zap, Cpu, Globe, Search, Trophy, RefreshCw, Target, CheckCircle2, BarChart3, Bot, FileText, Linkedin, Twitter, Facebook, Share2 } from 'lucide-react';
+import { BLOG_DATA } from '../../constants';
 import { SEO } from '../../components/SEO';
-import { Calendar, Clock, ArrowLeft, Share2, Linkedin, Twitter, Facebook, CheckCircle2, Bot, Search, Zap, BarChart3, Globe, Cpu, Target, Trophy, TrendingUp, Link as LinkIcon, FileText, RefreshCw } from 'lucide-react';
 
 export const CommentRankerChatGPT: React.FC = () => {
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-        {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Accueil",
-            "item": "https://www.triaina.fr"
-        },
-        {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Blog",
-            "item": "https://www.triaina.fr/blog"
-        },
-        {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Comment ranker sur ChatGPT en 2026",
-            "item": "https://www.triaina.fr/blog/ranker-chatgpt-2026"
-        }
-    ]
-  };
+  const post = BLOG_DATA.find(p => p.id === 'comment-ranker-chatgpt');
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Comment ranker sur ChatGPT en 2026 ? Guide complet",
-    "description": "Guide complet pour ranker sur ChatGPT : fonctionnement, critères de ranking, optimisation on-page, stratégie contenu, netlinking, outils, cas clients et FAQ.",
-    "image": "https://www.triaina.fr/images/ranker-chatgpt-2026.jpg",
-    "author": {
-      "@type": "Person",
-      "name": "Alexandre",
-      "jobTitle": "CEO & Fondateur Triaina",
-      "url": "https://www.triaina.fr",
-      "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.triaina.fr/logo.png"
-        }
-    },
-    "datePublished": "2026-03-02",
-    "dateModified": "2026-03-02",
-    "wordCount": 1850,
-    "articleBody": "ChatGPT est devenu le moteur de recherche préféré de millions de personnes..."
-  };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "Combien de temps pour voir les résultats en rangeant sur ChatGPT ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Les premiers résultats (citations dans ChatGPT) peuvent apparaître en 6-8 semaines. Les résultats plus significatifs (trafic, conversions) prennent généralement 3-6 mois."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Dois-je faire du SEO ou du Référencement ChatGPT ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Les deux ! Le SEO et le Référencement ChatGPT sont complémentaires. Une stratégie hybride maximise votre visibilité."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Quel est le coût pour ranker sur ChatGPT ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Un audit référencement IA coûte à partir de 3 500€. Un accompagnement démarre à partir de 1 000€/mois."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Comment tester si je suis cité par ChatGPT ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Allez sur ChatGPT et posez une question liée à votre secteur. Vérifiez si votre site est cité dans la réponse."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Quels sont les critères de ranking ChatGPT ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Les critères clés sont : autorité du domaine, fraîcheur du contenu, E-E-A-T, pertinence thématique, qualité du contenu et backlinks de qualité."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Puis-je garantir une citation ChatGPT ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Non. Nous ne garantissons pas de résultats spécifiques, mais nous visons des objectifs mesurables basés sur votre situation actuelle."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Combien de backlinks ai-je besoin pour ranker sur ChatGPT ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Cela dépend de votre situation actuelle. En général, 10-20 backlinks de qualité suffisent pour commencer à voir des résultats."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Quel est le meilleur contenu pour ChatGPT ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Le meilleur contenu est long (2 000+ mots), approfondi, original, bien structuré et de haute qualité."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "ChatGPT utilise-t-il Google pour chercher ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "ChatGPT a son propre système de recherche. Il peut accéder à internet via des plugins, mais ne dépend pas de Google."
-            }
-        }
-    ]
-  };
+  const seoSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": post?.title || '',
+      "description": post?.excerpt || '',
+      "image": post?.image || '',
+      "author": {
+        "@type": "Person",
+        "name": "Camille Rousseau",
+        "jobTitle": "Consultante Senior GEO/SEO chez Triaina",
+        "url": "https://www.triaina.fr",
+        "sameAs": "https://www.linkedin.com/in/camille-rousseau-a44488413/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
+        { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
+      ]
+    }
+  ];
+
+
+
+  if (!post) return null;
 
   return (
     <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
       <SEO 
-        title="Comment ranker sur ChatGPT en 2026 ? Guide complet" 
-        description="Guide complet : comment ranker sur ChatGPT en 2026. Critères de ranking, optimisation on-page, stratégie contenu, netlinking, outils, cas clients et FAQ."
-        keywords="ranker sur ChatGPT, comment ranker ChatGPT, optimisation ChatGPT, référencement ChatGPT, guide ChatGPT 2026"
-        schema={[breadcrumbSchema, articleSchema, faqSchema]}
-        ogTitle="Comment ranker sur ChatGPT en 2026 ? Guide complet"
-        ogDescription="Guide complet pour ranker sur ChatGPT : critères, optimisation, stratégie, netlinking, outils et cas clients."
-        image="https://www.triaina.fr/images/ranker-chatgpt-2026.jpg"
-        type="article"
-        twitterCard="summary_large_image"
-        canonicalUrl="https://www.triaina.fr/blog/ranker-chatgpt-2026"
+        title={`${post.title} - Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://triaina.fr${post.url}`}
+        schema={seoSchema}
       />
-
+      
       <div className="max-w-7xl mx-auto">
-        {/* Back Button */}
-        <a href="/blog" className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group">
+        <a 
+          href="/blog" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState({}, '', '/blog');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}
+          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
+        >
           <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
-          RETOUR AU BLOG
+          Retour aux articles
         </a>
 
-        {/* Header */}
-        <header className="mb-12 text-center max-w-5xl mx-auto">
-          <div className="flex items-center justify-center gap-4 text-xs font-mono text-blue-600 mb-6 uppercase tracking-widest">
-            <span className="bg-green-50 text-green-700 px-3 py-1 rounded-full font-bold">Guide Stratégique</span>
-            <span className="flex items-center gap-1"><Calendar size={12} /> 02 MARS 2026</span>
-            <span className="flex items-center gap-1"><Clock size={12} /> 15 MIN</span>
+        <article className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden relative">
+          {/* Accent decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-50"></div>
+          
+          <header className="mb-12">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
+              <span className="flex items-center">
+                <Calendar size={14} className="mr-2 text-blue-500" />
+                {post.date}
+              </span>
+              <span className="text-slate-300">|</span>
+              <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">{post.tag}</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+              {post.excerpt}
+            </p>
+          </header>
+
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-16 relative group">
+            <img 
+              src={post.image} 
+              alt={post.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
           </div>
-          <h1 className="text-4xl md:text-6xl font-display font-bold text-slate-900 mb-8 leading-tight">
-            Comment ranker sur <br/><span className="text-green-600">ChatGPT en 2026 ?</span>
-          </h1>
-          <p className="text-xl text-slate-600 leading-relaxed">
-            Guide complet
-          </p>
-        </header>
 
-        {/* Featured Image */}
-        <div className="mb-16 rounded-3xl overflow-hidden shadow-2xl shadow-green-900/20 aspect-video relative">
-          <img 
-            src="https://images.unsplash.com/photo-1676299081847-824916de030a?auto=format&fit=crop&q=80&w=1200" 
-            alt="Comment ranker sur ChatGPT" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
-        </div>
-
-        {/* Content Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            
-            {/* Sidebar / Table of Contents (Desktop) */}
-            <aside className="hidden lg:block lg:col-span-3">
-                <div className="sticky top-32 space-y-4">
-                    <h3 className="font-display font-bold text-slate-900 uppercase tracking-widest text-sm mb-4">Sommaire</h3>
-                    <nav className="flex flex-col space-y-3 text-sm font-medium text-slate-500">
-                        <a href="#tldr" className="hover:text-green-600 transition-colors">TL;DR</a>
-                        <a href="#introduction" className="hover:text-green-600 transition-colors">Introduction</a>
-                        <a href="#fonctionnement" className="hover:text-green-600 transition-colors">Fonctionnement</a>
-                        <a href="#criteres" className="hover:text-green-600 transition-colors">Critères de ranking</a>
-                        <a href="#optimisation" className="hover:text-green-600 transition-colors">Optimisation on-page</a>
-                        <a href="#strategie" className="hover:text-green-600 transition-colors">Stratégie de contenu</a>
-                        <a href="#netlinking" className="hover:text-green-600 transition-colors">Netlinking</a>
-                        <a href="#outils" className="hover:text-green-600 transition-colors">Outils</a>
-                        <a href="#cas-clients" className="hover:text-green-600 transition-colors">Cas Clients</a>
-                        <a href="#faq" className="hover:text-green-600 transition-colors">FAQ</a>
-                    </nav>
-                </div>
-            </aside>
-
-            {/* Main Content */}
-            <article className="lg:col-span-9 prose prose-lg xl:prose-xl prose-slate max-w-none font-sans prose-headings:font-display prose-headings:font-bold prose-a:text-green-600">
-            
-            <section id="tldr" className="bg-slate-50 p-8 rounded-2xl border-l-4 border-green-500 mb-12 not-prose">
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-2xl prose-strong:text-slate-900 prose-li:marker:text-blue-500">
+<section id="tldr" className="bg-slate-50 p-8 rounded-2xl border-l-4 border-green-500 mb-12 not-prose">
                 <h3 className="text-green-800 font-bold text-lg mb-2 flex items-center gap-2">
                     <Zap size={20} /> TL;DR (Résumé exécutif)
                 </h3>
@@ -814,25 +705,37 @@ export const CommentRankerChatGPT: React.FC = () => {
                 </div>
             </section>
 
-            </article>
-        </div>
+            {/* Author Block */}
+            <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-slate-100 max-w-4xl mx-auto not-prose">
+                <h3 className="font-bold text-slate-900 mb-2 text-lg">À propos de l'auteure</h3>
+                <div className="font-bold text-slate-900 text-xl mb-1">Camille Rousseau</div>
+                <div className="text-sm text-blue-600 font-mono mb-4">Consultante Senior GEO/SEO chez Triaina</div>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    Experte en stratégies d'acquisition hybrides. Camille accompagne les marques dans l'optimisation de leur visibilité sur les moteurs de recherche traditionnels (SEO) et les interfaces d'IA génératives (GSO).
+                </p>
+                <a href="https://www.linkedin.com/in/camille-rousseau-a44488413/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors underline decoration-2 underline-offset-4">
+                    Voir son profil LinkedIn
+                </a>
+            </div>
+          </div>
+                </article>
 
         {/* Share / Footer */}
         <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-sm font-mono text-slate-500">
-                Partager ce guide
+                Partager cet article
             </div>
             <div className="flex gap-4">
-                <button className="p-3 rounded-full bg-slate-50 hover:bg-green-50 text-slate-600 hover:text-green-600 transition-colors">
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
                     <Linkedin size={20} />
                 </button>
-                <button className="p-3 rounded-full bg-slate-50 hover:bg-green-50 text-slate-600 hover:text-green-600 transition-colors">
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
                     <Twitter size={20} />
                 </button>
-                <button className="p-3 rounded-full bg-slate-50 hover:bg-green-50 text-slate-600 hover:text-green-600 transition-colors">
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
                     <Facebook size={20} />
                 </button>
-                <button className="p-3 rounded-full bg-slate-50 hover:bg-green-50 text-slate-600 hover:text-green-600 transition-colors">
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
                     <Share2 size={20} />
                 </button>
             </div>

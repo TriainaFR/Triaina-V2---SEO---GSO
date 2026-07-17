@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, Clock, Calendar } from 'lucide-react';
-import { PAGE_TO_URL, BLOG_DATA } from '../../constants';
+import { ArrowLeft, Calendar, Linkedin, Twitter, Facebook, Share2 } from 'lucide-react';
+import { BLOG_DATA } from '../../constants';
 import { SEO } from '../../components/SEO';
 
 export const AgenceNetlinking2026: React.FC = () => {
@@ -14,79 +14,90 @@ export const AgenceNetlinking2026: React.FC = () => {
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "Agence netlinking : comment choisir ses backlinks en 2026 ?",
-      "description": "En 2026, un backlink sert à construire l'autorité pour les LLMs (ChatGPT, Gemini). Guide pour choisir une agence de netlinking intégrant la dimension GEO.",
-      "image": "https://www.triaina.fr/images/agence-netlinking.jpg",
-      "datePublished": "2026-06-29",
-      "dateModified": "2026-06-29",
+      "headline": post?.title || '',
+      "description": post?.excerpt || '',
+      "image": post?.image || '',
       "author": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "url": "https://triaina.fr"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "url": "https://triaina.fr",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://www.triaina.fr/logo.png"
-        }
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://triaina.fr/blog/agence-netlinking"
+        "@type": "Person",
+        "name": "Camille Rousseau",
+        "jobTitle": "Consultante Senior GEO/SEO chez Triaina",
+        "url": "https://www.triaina.fr",
+        "sameAs": "https://www.linkedin.com/in/camille-rousseau-a44488413/"
       }
     },
     {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Quelle est la différence entre netlinking et link building ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Les deux termes désignent la même pratique : l'acquisition de liens entrants (backlinks) depuis des sites tiers. \"Netlinking\" est le terme dominant en France, \"link building\" est l'équivalent anglophone utilisé internationalement. Sur le fond, aucune différence de méthode ou d'objectif."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Combien de temps faut-il pour voir les résultats d'une campagne de netlinking ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "En règle générale, comptez 3 à 6 mois avant d'observer des résultats significatifs sur les positions. Google prend environ 90 jours pour intégrer pleinement de nouveaux liens dans son algorithme. Les premiers signaux (hausse du Domain Rating, apparition de nouveaux domaines référents) sont visibles dès le premier mois - mais l'impact sur le trafic organique demande de la patience."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Le netlinking est-il risqué pour mon site ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Le netlinking mal pratiqué est risqué : PBN, liens en masse sans contexte éditorial, ancres sur-optimisées. Bien pratiqué - liens éditoriaux, domaines thématiquement pertinents, profil d'ancres diversifié - il est non seulement sûr mais indispensable. Le risque zéro n'existe pas en SEO, mais une agence sérieuse applique des méthodes conformes aux guidelines Google et documente chaque lien obtenu."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Une agence de netlinking peut-elle aussi améliorer ma visibilité dans les IA comme ChatGPT ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oui, indirectement et directement. Indirectement : en améliorant votre classement Google, vous entrez dans le corpus que les LLMs consultent via leurs recherches web en temps réel. Directement : en ciblant des domaines référents reconnus par les LLMs (médias, sites d'autorité thématique), vous renforcez votre autorité d'entité. Une agence hybride SEO/GEO intègre cette dimension dès la sélection des sites partenaires et monitore votre visibilité dans les réponses génératives."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Comment savoir si les backlinks obtenus sont de qualité ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Quatre critères non négociables : trafic organique réel du site référent (vérifiable via Ahrefs ou Semrush), pertinence thématique entre le site et votre secteur, intégration éditoriale du lien dans le corps d'un article (pas en footer ou sidebar), et indexation confirmée par Google. Un lien qui coche ces quatre cases a de la valeur. Un lien qui en rate un seul mérite d'être questionné."
-          }
-        }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
+        { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
       ]
     }
   ];
 
-  const htmlBody = `
+
+
+  if (!post) return null;
+
+  return (
+    <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
+      <SEO 
+        title={`${post.title} - Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://triaina.fr${post.url}`}
+        schema={seoSchema}
+      />
+      
+      <div className="max-w-7xl mx-auto">
+        <a 
+          href="/blog" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState({}, '', '/blog');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}
+          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
+        >
+          <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
+          Retour aux articles
+        </a>
+
+        <article className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden relative">
+          {/* Accent decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-50"></div>
+          
+          <header className="mb-12">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
+              <span className="flex items-center">
+                <Calendar size={14} className="mr-2 text-blue-500" />
+                {post.date}
+              </span>
+              <span className="text-slate-300">|</span>
+              <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">{post.tag}</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+              {post.excerpt}
+            </p>
+          </header>
+
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-16 relative group">
+            <img 
+              src={post.image} 
+              alt={post.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+          </div>
+
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-2xl prose-strong:text-slate-900 prose-li:marker:text-blue-500">
+<div dangerouslySetInnerHTML={{ __html: `
 <p><strong>TL;DR - Ce qu'il faut retenir</strong></p>
 <ul>
   <li><p>Les backlinks restent un signal de classement de premier rang sur Google en 2026, mais leur rôle s'étend désormais aux moteurs génératifs (ChatGPT, Perplexity, Gemini, Copilot).</p></li>
@@ -194,7 +205,7 @@ export const AgenceNetlinking2026: React.FC = () => {
   <li><p><strong>Trafic organique :</strong> l'objectif final. Une hausse de Domain Rating sans hausse de trafic indique un problème on-page ou de ciblage de mots-clés.</p></li>
   <li><p><strong>Citations IA (GEO monitoring) :</strong> suivez votre présence dans les réponses de ChatGPT, Perplexity et Gemini sur vos requêtes cibles. Des outils comme Brand Radar ou AuthorityTech permettent de monitorer cette visibilité génératives.</p></li>
 </ul>
-<p>Pour approfondir la mécanique des liens entrants et comprendre comment construire un profil de backlinks solide, consultez notre <a target="_blank" rel="noopener noreferrer" href="/blog/backlinks-seo-guide" class="text-violet-600 hover:text-violet-700 underline font-medium">guide complet sur les backlinks SEO</a>.</p>
+<p>Pour approfondir la mécanique des liens entrants et comprendre comment construire un profil de backlinks solide, consultez notre <a target="_blank" rel="noopener noreferrer" href="/blog/backlinks-seo-guide" class="text-blue-600 hover:text-blue-700 underline font-medium">guide complet sur les backlinks SEO</a>.</p>
 
 <h2>FAQ</h2>
 <h3>Quelle est la différence entre netlinking et link building ?</h3>
@@ -214,105 +225,50 @@ export const AgenceNetlinking2026: React.FC = () => {
 
 <h2>Sources utiles</h2>
 <ul>
-  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://ahrefs.com/blog/llm-citations/" class="text-violet-600 hover:text-violet-700 underline font-medium">Ahrefs - LLM Citations : comment les IA sélectionnent leurs sources</a></p></li>
-  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://thedigitalbloom.com/learn/2025-ai-citation-llm-visibility-report/" class="text-violet-600 hover:text-violet-700 underline font-medium">The Digital Bloom - 2025 AI Citation &amp; LLM Visibility Report</a></p></li>
-  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.codeur.com/pages/combien-coute-netlinking" class="text-violet-600 hover:text-violet-700 underline font-medium">Codeur.com - Combien coûte le netlinking en France ?</a></p></li>
-  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://searchatlas.com/blog/domain-industry-analysis-in-llm-responses/" class="text-violet-600 hover:text-violet-700 underline font-medium">SearchAtlas - Domain Authority et citations LLM : analyse sectorielle</a></p></li>
-  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://contently.com/2026/04/29/top-sources-llms-cite/" class="text-violet-600 hover:text-violet-700 underline font-medium">Contently - Top sources citées par les LLMs en 2026</a></p></li>
+  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://ahrefs.com/blog/llm-citations/" class="text-blue-600 hover:text-blue-700 underline font-medium">Ahrefs - LLM Citations : comment les IA sélectionnent leurs sources</a></p></li>
+  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://thedigitalbloom.com/learn/2025-ai-citation-llm-visibility-report/" class="text-blue-600 hover:text-blue-700 underline font-medium">The Digital Bloom - 2025 AI Citation &amp; LLM Visibility Report</a></p></li>
+  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.codeur.com/pages/combien-coute-netlinking" class="text-blue-600 hover:text-blue-700 underline font-medium">Codeur.com - Combien coûte le netlinking en France ?</a></p></li>
+  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://searchatlas.com/blog/domain-industry-analysis-in-llm-responses/" class="text-blue-600 hover:text-blue-700 underline font-medium">SearchAtlas - Domain Authority et citations LLM : analyse sectorielle</a></p></li>
+  <li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://contently.com/2026/04/29/top-sources-llms-cite/" class="text-blue-600 hover:text-blue-700 underline font-medium">Contently - Top sources citées par les LLMs en 2026</a></p></li>
 </ul>
-  `;
+  ` }} />
 
-  if (!post) return null;
-
-  return (
-    <>
-      <SEO 
-        title={`${post.title} | Triaina`}
-        description="En 2026, un backlink sert à construire l'autorité pour les LLMs (ChatGPT, Gemini). Guide pour choisir une agence de netlinking intégrant la dimension GEO."
-        url={window.location.href}
-        type="article"
-        schema={seoSchema}
-      />
-      <div className="pt-32 pb-24 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-6 animate-fade-in-up">
-            <a 
-              href={PAGE_TO_URL['blog']}
-              onClick={(e) => {
-                e.preventDefault();
-                window.history.pushState({}, '', PAGE_TO_URL['blog']);
-                window.dispatchEvent(new PopStateEvent('popstate'));
-              }}
-              className="inline-flex items-center text-slate-600 hover:text-violet-600 transition-colors font-mono text-sm tracking-wide"
-            >
-               <ArrowLeft size={16} className="mr-2" />
-              RETOUR AU BLOG
-            </a>
-            <div className="flex flex-wrap items-center gap-4 text-slate-500 font-mono text-xs tracking-wider">
-              <span className="flex items-center"><Calendar size={14} className="mr-2" />{post.date}</span>
-              <span className="text-slate-300">|</span>
-              <span className="flex items-center"><Clock size={14} className="mr-2" />6 min de lecture</span>
-              <span className="text-slate-300">|</span>
-              <span className="text-violet-600 border border-violet-200 bg-violet-50 px-2 py-1 rounded-full">{post.tag}</span>
+            {/* Author Block */}
+            <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-slate-100 max-w-4xl mx-auto not-prose">
+                <h3 className="font-bold text-slate-900 mb-2 text-lg">À propos de l'auteure</h3>
+                <div className="font-bold text-slate-900 text-xl mb-1">Camille Rousseau</div>
+                <div className="text-sm text-blue-600 font-mono mb-4">Consultante Senior GEO/SEO chez Triaina</div>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    Experte en stratégies d'acquisition hybrides. Camille accompagne les marques dans l'optimisation de leur visibilité sur les moteurs de recherche traditionnels (SEO) et les interfaces d'IA génératives (GSO).
+                </p>
+                <a href="https://www.linkedin.com/in/camille-rousseau-a44488413/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors underline decoration-2 underline-offset-4">
+                    Voir son profil LinkedIn
+                </a>
             </div>
           </div>
+                </article>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-8 animate-fade-in-up md:w-4/5" style={{animationDelay: '0.1s'}}>
-            {post.title}
-          </h1>
-
-          <p className="text-xl text-slate-600 leading-relaxed mb-12 animate-fade-in-up md:w-3/4" style={{animationDelay: '0.2s'}}>
-            {post.excerpt}
-          </p>
-
-          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-20 relative animate-fade-in-up group" style={{animationDelay: '0.3s'}}>
-            <img 
-              src={post.image} 
-              alt={post.title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
-          </div>
-
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
-            <article className="lg:w-2/3 prose prose-lg prose-slate max-w-none 
-                prose-headings:font-bold prose-headings:text-slate-900 
-                prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-2 prose-h2:border-b prose-h2:border-slate-200
-                prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-                prose-p:text-slate-600 prose-p:leading-relaxed prose-p:mb-6
-                prose-a:text-violet-600 hover:prose-a:text-violet-700 prose-a:underline prose-a:font-medium
-                prose-li:text-slate-600 prose-li:marker:text-violet-500
-                prose-ul:space-y-2 prose-ol:space-y-2
-                animate-fade-in-up"
-                style={{animationDelay: '0.3s'}}
-                dangerouslySetInnerHTML={{ __html: htmlBody }}
-            />
-
-            <aside className="lg:w-1/3 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-              <div className="sticky top-32 space-y-8">
-                <div className="bg-slate-900 text-white rounded-3xl p-8">
-                  <h3 className="text-xl font-bold mb-4 font-sans text-white">Besoin d'optimiser pour l'IA ?</h3>
-                  <p className="text-slate-300 mb-6 text-sm">
-                    Triaina accompagne les entreprises dans l'optimisation de leur visibilité sur Google et auprès des LLMs (Copilot, ChatGPT, Gemini, Perplexity).
-                  </p>
-                  <a 
-                    href={PAGE_TO_URL['contact']}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        window.history.pushState({}, '', PAGE_TO_URL['contact']);
-                        window.dispatchEvent(new PopStateEvent('popstate'));
-                    }}
-                    className="inline-block w-full text-center bg-violet-600 hover:bg-violet-500 text-white font-mono text-sm py-3 px-4 transition-colors rounded-xl"
-                  >
-                    NOUS CONTACTER
-                  </a>
-                </div>
-              </div>
-            </aside>
-          </div>
+        {/* Share / Footer */}
+        <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-sm font-mono text-slate-500">
+                Partager cet article
+            </div>
+            <div className="flex gap-4">
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Linkedin size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Twitter size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Facebook size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Share2 size={20} />
+                </button>
+            </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };

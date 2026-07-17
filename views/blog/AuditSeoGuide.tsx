@@ -1,207 +1,103 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { ArrowLeft, Calendar, Search, Activity, Layout, Link, FileText, Target, AlertCircle, EyeOff, Layers, BarChart, Zap, Linkedin, Twitter, Facebook, Share2 } from 'lucide-react';
+import { BLOG_DATA } from '../../constants';
 import { SEO } from '../../components/SEO';
-import { Calendar, Clock, ArrowLeft, Share2, Linkedin, Twitter, Facebook, Search, Activity, Link, FileText, Users, Award, AlertCircle, Target, BarChart, Zap, EyeOff, Layers, Layout } from 'lucide-react';
 
 export const AuditSeoGuide: React.FC = () => {
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-        {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Accueil",
-            "item": "https://www.triaina.fr"
-        },
-        {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Blog",
-            "item": "https://www.triaina.fr/blog"
-        },
-        {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Audit SEO : Guide Complet",
-            "item": "https://www.triaina.fr/blog/audit-seo-guide-complet"
-        }
-    ]
-  };
+  const post = BLOG_DATA.find(p => p.id === 'audit-seo-guide');
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Audit SEO : Guide Complet Étape par Étape",
-    "description": "Guide complet audit SEO : définition, processus étape par étape, outils, checklist et FAQ pour optimiser votre site et améliorer votre visibilité Google.",
-    "image": "https://www.triaina.fr/images/audit-seo-guide.jpg",
-    "author": {
-      "@type": "Person",
-      "name": "Alexandre",
-      "jobTitle": "CEO & Fondateur Triaina",
-      "url": "https://www.triaina.fr",
-      "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "Triaina",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.triaina.fr/logo.png"
-        }
-    },
-    "datePublished": "2026-04-20",
-    "dateModified": "2026-04-20",
-    "wordCount": 2200,
-    "articleBody": "Un audit SEO est l'analyse complète et approfondie de votre site web pour identifier tous les problèmes qui empêchent votre site de ranker sur Google. C'est la première étape essentielle de toute stratégie SEO efficace..."
-  };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "Combien de temps prend un audit SEO ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Un audit SEO complet prend généralement 2-4 semaines selon la taille de votre site. Un petit site (< 100 pages) prend 1-2 semaines. Un grand site (> 1 000 pages) prend 3-4 semaines."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Quel est le coût d'un audit SEO ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Un audit SEO coûte généralement entre 2 000€ et 5 000€ selon la complexité. Un petit site coûte 2 000-3 000€. Un grand site coûte 4 000-5 000€."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "À quelle fréquence faire un audit SEO ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Nous recommandons de faire un audit SEO complet une fois par an. Vous pouvez faire des audits partiels tous les 3-6 mois pour suivre les progrès."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Qui devrait faire un audit SEO ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Toutes les entreprises qui veulent améliorer leur visibilité sur Google. C'est particulièrement important si vous avez un site depuis plus de 6 mois."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Un audit SEO garantit-il des résultats ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Non. Un audit SEO identifie les problèmes, mais les résultats dépendent de la mise en œuvre des recommandations. Un bon audit + une bonne exécution = résultats."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Puis-je faire un audit SEO moi-même ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Oui, vous pouvez faire un audit SEO basique avec des outils gratuits. Mais un audit professionnel est plus complet et plus fiable."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Quel est le meilleur outil d'audit SEO ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Il n'y a pas de meilleur outil. Chaque outil a ses forces et faiblesses. Nous recommandons d'utiliser une combinaison d'outils (Google Search Console + SEMrush/Ahrefs + Screaming Frog)."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Combien de temps pour voir les résultats après un audit ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Les premiers résultats apparaissent généralement en 4-8 semaines. Les résultats plus significatifs prennent 3-6 mois."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Un audit SEO est-il nécessaire ?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Oui. Sans audit SEO, vous ne savez pas ce qui bloque votre visibilité. C'est la première étape essentielle de toute stratégie SEO."
-            }
-        }
-    ]
-  };
+  const seoSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": post?.title || '',
+      "description": post?.excerpt || '',
+      "image": post?.image || '',
+      "author": {
+        "@type": "Person",
+        "name": "Camille Rousseau",
+        "jobTitle": "Consultante Senior GEO/SEO chez Triaina",
+        "url": "https://www.triaina.fr",
+        "sameAs": "https://www.linkedin.com/in/camille-rousseau-a44488413/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
+        { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
+      ]
+    }
+  ];
+
+
+
+  if (!post) return null;
 
   return (
     <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
       <SEO 
-        title="Audit SEO : Guide Complet Étape par Étape" 
-        description="Guide complet audit SEO : définition, processus étape par étape, outils, checklist et FAQ. Optimisez votre site et améliorez votre visibilité Google."
-        keywords="audit SEO, audit technique, audit on-page, audit off-page, guide audit SEO"
-        schema={[breadcrumbSchema, articleSchema, faqSchema]}
-        ogTitle="Audit SEO : Guide Complet Étape par Étape"
-        ogDescription="Guide complet audit SEO : définition, processus, outils, checklist et FAQ pour optimiser votre site."
-        image="https://www.triaina.fr/images/audit-seo-guide.jpg"
-        type="article"
-        twitterCard="summary_large_image"
-        canonicalUrl="https://www.triaina.fr/blog/audit-seo-guide-complet"
+        title={`${post.title} - Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://triaina.fr${post.url}`}
+        schema={seoSchema}
       />
-
+      
       <div className="max-w-7xl mx-auto">
-        {/* Back Button */}
-        <a href="/blog" className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group">
+        <a 
+          href="/blog" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState({}, '', '/blog');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}
+          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
+        >
           <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
-          RETOUR AU BLOG
+          Retour aux articles
         </a>
 
-        {/* Header */}
-        <header className="mb-12 text-center max-w-5xl mx-auto">
-          <div className="flex items-center justify-center gap-4 text-xs font-mono text-blue-600 mb-6 uppercase tracking-widest">
-            <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">Guide SEO</span>
-            <span className="flex items-center gap-1"><Calendar size={12} /> 20 AVRIL 2026</span>
-            <span className="flex items-center gap-1"><Clock size={12} /> 10 MIN</span>
+        <article className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden relative">
+          {/* Accent decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-50"></div>
+          
+          <header className="mb-12">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
+              <span className="flex items-center">
+                <Calendar size={14} className="mr-2 text-blue-500" />
+                {post.date}
+              </span>
+              <span className="text-slate-300">|</span>
+              <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">{post.tag}</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+              {post.excerpt}
+            </p>
+          </header>
+
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-16 relative group">
+            <img 
+              src={post.image} 
+              alt={post.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-slate-900 mb-8 leading-tight tracking-tight">
-            Audit SEO : <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Guide Complet Étape par Étape</span>
-          </h1>
-        </header>
 
-        {/* Featured Image */}
-        <div className="mb-16 rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-900/10 aspect-video relative group">
-          <img 
-            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200" 
-            alt="Audit SEO" 
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/20 to-transparent"></div>
-        </div>
-
-        {/* Content Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            
-            {/* Sidebar / Table of Contents (Desktop) */}
-            <aside className="hidden lg:block lg:col-span-3">
-                <div className="sticky top-32 space-y-4">
-                    <h3 className="font-display font-bold text-slate-900 uppercase tracking-widest text-sm mb-4">Sommaire</h3>
-                    <nav className="flex flex-col space-y-3 text-sm font-medium text-slate-500">
-                        <a href="#introduction" className="hover:text-blue-600 transition-colors">Introduction</a>
-                        <a href="#quest-ce-que" className="hover:text-blue-600 transition-colors">Qu'est-ce qu'un Audit SEO ?</a>
-                        <a href="#processus" className="hover:text-blue-600 transition-colors">Processus d'Audit SEO Complet</a>
-                        <a href="#checklist" className="hover:text-blue-600 transition-colors">Checklist d'Audit SEO Complète</a>
-                        <a href="#outils" className="hover:text-blue-600 transition-colors">Outils d'Audit SEO Essentiels</a>
-                        <a href="#cas-clients" className="hover:text-blue-600 transition-colors">Cas Clients</a>
-                        <a href="#faq" className="hover:text-blue-600 transition-colors">FAQ</a>
-                        <a href="#conclusion" className="hover:text-blue-600 transition-colors">Conclusion</a>
-                    </nav>
-                </div>
-            </aside>
-
-            {/* Main Content */}
-            <article className="lg:col-span-9 prose prose-lg xl:prose-xl prose-slate max-w-none font-sans prose-headings:font-display prose-headings:font-bold prose-a:text-blue-600">
-            
-            <section id="introduction" className="mb-16">
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-2xl prose-strong:text-slate-900 prose-li:marker:text-blue-500">
+<section id="introduction" className="mb-16">
                 <div className="bg-blue-50 border-l-4 border-blue-600 p-6 md:p-8 rounded-r-2xl text-lg text-slate-700 leading-relaxed shadow-sm">
                     <p className="mb-4">
                         Un <strong>audit SEO</strong> est l'analyse complète et approfondie de votre site web pour identifier tous les problèmes qui empêchent votre site de ranker sur Google. C'est la première étape essentielle de toute stratégie SEO efficace.
@@ -767,13 +663,26 @@ export const AuditSeoGuide: React.FC = () => {
                     </div>
                 </div>
             </section>
-            </article>
-        </div>
+
+            {/* Author Block */}
+            <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-slate-100 max-w-4xl mx-auto not-prose">
+                <h3 className="font-bold text-slate-900 mb-2 text-lg">À propos de l'auteure</h3>
+                <div className="font-bold text-slate-900 text-xl mb-1">Camille Rousseau</div>
+                <div className="text-sm text-blue-600 font-mono mb-4">Consultante Senior GEO/SEO chez Triaina</div>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    Experte en stratégies d'acquisition hybrides. Camille accompagne les marques dans l'optimisation de leur visibilité sur les moteurs de recherche traditionnels (SEO) et les interfaces d'IA génératives (GSO).
+                </p>
+                <a href="https://www.linkedin.com/in/camille-rousseau-a44488413/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors underline decoration-2 underline-offset-4">
+                    Voir son profil LinkedIn
+                </a>
+            </div>
+          </div>
+                </article>
 
         {/* Share / Footer */}
         <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-sm font-mono text-slate-500">
-                Partager ce guide
+                Partager cet article
             </div>
             <div className="flex gap-4">
                 <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
@@ -789,10 +698,8 @@ export const AuditSeoGuide: React.FC = () => {
                     <Share2 size={20} />
                 </button>
             </div>
-          </div>
         </div>
       </div>
-    );
+    </div>
+  );
 };
-
-export default AuditSeoGuide;

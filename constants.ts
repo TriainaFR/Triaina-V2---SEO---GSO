@@ -2,6 +2,8 @@
 import { FAQItem, ReferenceItem, ChatStep, PartnerItem, BlogItem, JobOffer, TeamMember, HistoryItem, NavLink, ExpertiseContent, Page } from './types';
 
 export const PAGE_TO_URL: Record<string, string> = {
+  'llms-txt-2026': '/blog/llms-txt-faut-il-l-implementer-en-2026',
+
   'home': '/',
   'team': '/agence',
   'references': '/references',
@@ -75,6 +77,8 @@ export const PAGE_TO_URL: Record<string, string> = {
 };
 
 export const ROUTES: Record<string, Page> = {
+  '/blog/llms-txt-faut-il-l-implementer-en-2026': 'llms-txt-2026',
+
   '/agence-geo-paris': 'agence-geo-paris',
   '/annuaire': 'annuaire',
   '/blog/meilleure-agence-referencement-ia-france': 'meilleure-agence-referencement-ia-france-2026',
@@ -299,7 +303,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
   },
   {
     id: 'ref_sunlife_group',
-    client: 'Sunlife Group',
+    client: 'YourSunlife',
     title: 'Stratégie SEO & GEO',
     summary: 'Accompagnement SEO et GEO pour les 5 hôtels et 2 golfs du groupe.',
     challenge: 'Développer la visibilité de l\'ensemble des 5 hôtels et 2 golfs du groupe sur les moteurs de recherche traditionnels et les intelligences artificielles génératives.',
@@ -456,17 +460,7 @@ export const PARTNERS_DATA: PartnerItem[] = [
 ];
 
 export const BLOG_DATA: BlogItem[] = [
-
-  
-
-
-
-  
-
-
-  
-  
-  {
+{
     id: 'seo-vs-referencement-ia',
     source: 'Guide Comparatif',
     logo: '',
@@ -584,7 +578,7 @@ export const BLOG_DATA: BlogItem[] = [
     title: 'GSO Définition 2026 : Guide Complet de la Generative Search Optimization',
     excerpt: 'GSO définition 2026 : qu\'est-ce que la Generative Search Optimization ? Guide complet avec 3 cas clients réels, données propriétaires, 4 piliers, checklist et actions immédiates.',
     url: '/blog/gso-definition-2026',
-    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
   },
   {
@@ -987,7 +981,7 @@ export const BLOG_DATA: BlogItem[] = [
     title: 'Google AI Mode : qu\'est-ce que c\'est et comment s\'y préparer en 2026 ?',
     excerpt: 'Google AI Mode, c\'est un onglet de recherche à part entière, distinct des AI Overviews, qui remplace la page de résultats classique par une conversation construite avec Gemini 3.',
     url: '/blog/google-ai-mode-2026',
-    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200',
     tag: 'GUIDE'
   },
   {
@@ -1033,6 +1027,17 @@ export const BLOG_DATA: BlogItem[] = [
     url: '/blog/agence-seo-geo-rouen-2026',
     image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=1200',
     tag: 'CLASSEMENT'
+  },
+  {
+    id: 'llms-txt-2026',
+    source: 'Tech & SEO',
+    logo: '',
+    date: '17 JUILLET 2026',
+    title: "llms.txt : faut-il l'implémenter en 2026 ?",
+    excerpt: "Le fichier llms.txt, outil miracle du GEO ou simple gadget ? Syntaxe exacte, méthode d'implémentation en 5 étapes, et les pièges à éviter.",
+    url: '/blog/llms-txt-faut-il-l-implementer-en-2026',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200',
+    tag: 'TECH'
   }
 ];
 

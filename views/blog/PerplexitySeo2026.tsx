@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, Clock, Calendar } from 'lucide-react';
-import { PAGE_TO_URL, BLOG_DATA } from '../../constants';
+import { ArrowLeft, Calendar, Linkedin, Twitter, Facebook, Share2 } from 'lucide-react';
+import { BLOG_DATA } from '../../constants';
 import { SEO } from '../../components/SEO';
 
 export const PerplexitySeo2026: React.FC = () => {
@@ -10,87 +10,94 @@ export const PerplexitySeo2026: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const seoSchema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Article",
-        "headline": "Perplexity SEO : comment apparaître dans les réponses Perplexity en 2026",
-        "description": "Le guide pour optimiser son site pour Perplexity AI : API Bing, PerplexityBot, extraction de contenu (chunking) et E-E-A-T.",
-        "datePublished": "2026-06-15",
-        "dateModified": "2026-06-15",
-        "author": {
-          "@type": "Person",
-          "name": "Alexandre",
-          "jobTitle": "CEO & Fondateur Triaina",
-          "url": "https://www.triaina.fr",
-          "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Triaina",
-          "url": "https://www.triaina.fr",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.triaina.fr/logo.png"
-          }
-        },
-        "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200",
-        "inLanguage": "fr",
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": "https://www.triaina.fr/blog/perplexity-seo"
-        }
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Perplexity utilise-t-il Google ou Bing pour ses résultats ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Perplexity utilise principalement l'API Bing pour récupérer ses résultats de recherche, et non l'index Google. Il dispose également de son propre crawler, PerplexityBot, qui visite les pages en temps réel pour en extraire le contenu frais. Pour apparaître dans Perplexity, il faut donc être bien positionné sur Bing - et non uniquement sur Google."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Faut-il créer du contenu spécifique pour Perplexity ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Non. Il n'existe pas de format 'Perplexity-only'. Le contenu qui performe sur Perplexity est le même qui performe sur Google et Bing : bien structuré, répondant directement aux questions, signé par un auteur crédible et régulièrement mis à jour. L'adaptation porte sur la structure extractible (chunking, H2/H3 descriptifs, réponses directes) et les signaux E-E-A-T, pas sur un format propriétaire."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Combien de temps faut-il pour apparaître dans Perplexity ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Il n'y a pas de délai fixe. Si votre page est déjà bien positionnée sur Bing et que PerplexityBot peut la crawler, elle peut apparaître dans les réponses Perplexity dès la prochaine visite du bot - parfois en quelques jours après une mise à jour. Pour les sites peu connus de Bing, le délai est celui du SEO classique : plusieurs semaines à plusieurs mois selon l'autorité du domaine."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Perplexity peut-il crawler mon site si je bloque les bots IA ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Si votre robots.txt bloque explicitement PerplexityBot, le crawler officiel respectera cette directive et ne visitera pas vos pages. Vous dépendrez alors uniquement de l'index Bing pour apparaître dans les réponses. À noter : Cloudflare a documenté des cas où Perplexity aurait utilisé des crawlers non déclarés - mais la pratique recommandée reste d'autoriser explicitement PerplexityBot pour maximiser votre visibilité."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Quelle différence entre SEO Perplexity et SEO ChatGPT ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Les deux moteurs s'appuient sur une recherche web en temps réel, mais leurs sources d'indexation diffèrent. ChatGPT Search utilise principalement Bing via un partenariat Microsoft. Perplexity combine Bing et son propre crawler. Les signaux de citabilité sont identiques (structure, E-E-A-T, fraîcheur), mais Perplexity cite ses sources de façon systématique et visible - ce qui en fait un canal plus facilement mesurable. La stratégie d'optimisation est la même pour les deux."
-            }
-          }
-        ]
+  const seoSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": post?.title || '',
+      "description": post?.excerpt || '',
+      "image": post?.image || '',
+      "author": {
+        "@type": "Person",
+        "name": "Camille Rousseau",
+        "jobTitle": "Consultante Senior GEO/SEO chez Triaina",
+        "url": "https://www.triaina.fr",
+        "sameAs": "https://www.linkedin.com/in/camille-rousseau-a44488413/"
       }
-    ]
-  };
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
+        { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
+      ]
+    }
+  ];
 
-  const htmlBody = `
+
+
+  if (!post) return null;
+
+  return (
+    <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
+      <SEO 
+        title={`${post.title} - Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://triaina.fr${post.url}`}
+        schema={seoSchema}
+      />
+      
+      <div className="max-w-7xl mx-auto">
+        <a 
+          href="/blog" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState({}, '', '/blog');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}
+          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
+        >
+          <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
+          Retour aux articles
+        </a>
+
+        <article className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden relative">
+          {/* Accent decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-50"></div>
+          
+          <header className="mb-12">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
+              <span className="flex items-center">
+                <Calendar size={14} className="mr-2 text-blue-500" />
+                {post.date}
+              </span>
+              <span className="text-slate-300">|</span>
+              <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">{post.tag}</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+              {post.excerpt}
+            </p>
+          </header>
+
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-16 relative group">
+            <img 
+              src={post.image} 
+              alt={post.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+          </div>
+
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-2xl prose-strong:text-slate-900 prose-li:marker:text-blue-500">
+<div dangerouslySetInnerHTML={{ __html: `
 <blockquote>
   <p><strong>En résumé (TL;DR)</strong></p>
   <ul>
@@ -432,97 +439,42 @@ Disallow: /</code></pre>
   <li><a href="https://firstpagesage.com/reports/top-generative-ai-chatbots/" target="_blank" rel="noopener noreferrer nofollow">First Page Sage - Top Generative AI Chatbots Market Share (2026)</a></li>
   <li><a href="https://blog.cloudflare.com/perplexity-is-using-stealth-undeclared-crawlers-to-evade-website-no-crawl-directives/" target="_blank" rel="noopener noreferrer nofollow">Cloudflare Blog - Perplexity and undeclared crawlers</a></li>
 </ul>
-  `;
+  ` }} />
 
-  if (!post) return null;
-
-  return (
-    <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
-      <SEO 
-        title="Perplexity SEO : comment apparaître dans les réponses Perplexity en 2026"
-        description="Le guide pour optimiser son site pour Perplexity AI : API Bing, PerplexityBot, extraction de contenu (chunking) et E-E-A-T."
-        schema={seoSchema}
-        image="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200"
-        canonicalUrl={`https://www.triaina.fr${post.url}`}
-      />
-      <div className="max-w-7xl mx-auto">
-        <a 
-          href={PAGE_TO_URL['blog']}
-          onClick={(e) => {
-              e.preventDefault();
-              window.history.pushState({}, '', PAGE_TO_URL['blog']);
-              window.dispatchEvent(new PopStateEvent('popstate'));
-          }}
-          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
-        >
-          <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
-          RETOUR AU BLOG
-        </a>
-
-        <header className="mb-12 md:mb-20 animate-fade-in-up">
-          <div className="flex items-center gap-4 mb-6 text-sm font-mono text-slate-500">
-            <span className="flex items-center"><Calendar size={14} className="mr-2"/> {post.date}</span>
-            <span className="flex items-center"><Clock size={14} className="mr-2"/> 8 MIN DE LECTURE</span>
-            <span className="px-2 py-1 bg-violet-100 text-violet-800 text-xs tracking-wider rounded">{post.tag}</span>
-          </div>
-          
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-sans text-slate-900 leading-tight mb-6">
-            {post.title}
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-slate-600 max-w-3xl leading-relaxed">
-            {post.excerpt}
-          </p>
-        </header>
-
-        <div className="w-full h-[400px] md:h-[600px] bg-slate-100 rounded-2xl overflow-hidden mb-16 relative group animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-          <img 
-            src={post.image} 
-            alt={post.title}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            referrerPolicy="no-referrer"
-          />
-        </div>
-
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
-          <article className="lg:w-2/3 prose prose-lg prose-slate max-w-none 
-              prose-headings:font-bold prose-headings:text-slate-900 
-              prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-2 prose-h2:border-b prose-h2:border-slate-200
-              prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-              prose-p:text-slate-600 prose-p:leading-relaxed prose-p:mb-6
-              prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
-              prose-li:text-slate-600 prose-li:marker:text-violet-500
-              prose-blockquote:border-l-4 prose-blockquote:border-violet-500 prose-blockquote:bg-violet-50/50 prose-blockquote:p-6 prose-blockquote:rounded-r-lg prose-blockquote:not-italic prose-blockquote:text-slate-700
-              prose-strong:text-slate-900
-              prose-table:w-full prose-table:text-left prose-table:border-collapse
-              prose-th:bg-violet-50 prose-th:p-3 prose-th:border prose-th:border-slate-200 prose-th:font-bold
-              prose-td:p-3 prose-td:border prose-td:border-slate-200
-              animate-fade-in-up"
-              style={{animationDelay: '0.3s'}}
-              dangerouslySetInnerHTML={{ __html: htmlBody }}
-          />
-
-          <aside className="lg:w-1/3 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-            <div className="sticky top-32 space-y-8">
-              <div className="bg-slate-900 text-white rounded-2xl p-8">
-                <h3 className="text-xl font-bold mb-4 font-sans">Besoin d'optimiser pour l'IA ?</h3>
-                <p className="text-slate-300 mb-6 text-sm">
-                  Triaina accompagne votre marque dans sa stratégie de Prompt Engineering, de SEO et de GSO.
+            {/* Author Block */}
+            <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-slate-100 max-w-4xl mx-auto not-prose">
+                <h3 className="font-bold text-slate-900 mb-2 text-lg">À propos de l'auteure</h3>
+                <div className="font-bold text-slate-900 text-xl mb-1">Camille Rousseau</div>
+                <div className="text-sm text-blue-600 font-mono mb-4">Consultante Senior GEO/SEO chez Triaina</div>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    Experte en stratégies d'acquisition hybrides. Camille accompagne les marques dans l'optimisation de leur visibilité sur les moteurs de recherche traditionnels (SEO) et les interfaces d'IA génératives (GSO).
                 </p>
-                <a 
-                  href={PAGE_TO_URL['contact']}
-                  onClick={(e) => {
-                      e.preventDefault();
-                      window.history.pushState({}, '', PAGE_TO_URL['contact']);
-                      window.dispatchEvent(new PopStateEvent('popstate'));
-                  }}
-                  className="inline-block w-full text-center bg-violet-600 hover:bg-violet-500 text-white font-mono text-sm py-3 px-4 transition-colors"
-                >
-                  CONTACTEZ-NOUS
+                <a href="https://www.linkedin.com/in/camille-rousseau-a44488413/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors underline decoration-2 underline-offset-4">
+                    Voir son profil LinkedIn
                 </a>
-              </div>
             </div>
-          </aside>
+          </div>
+                </article>
+
+        {/* Share / Footer */}
+        <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-sm font-mono text-slate-500">
+                Partager cet article
+            </div>
+            <div className="flex gap-4">
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Linkedin size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Twitter size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Facebook size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Share2 size={20} />
+                </button>
+            </div>
         </div>
       </div>
     </div>

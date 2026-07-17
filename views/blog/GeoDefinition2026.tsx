@@ -1,271 +1,103 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, Calendar, Clock, Tag, Share2, Linkedin, Twitter, Facebook, CheckCircle2, BarChart3, Target, Bot } from 'lucide-react';
-import { PAGE_TO_URL } from '../../constants';
+import { ArrowLeft, Calendar, Linkedin, Twitter, Facebook, Share2 } from 'lucide-react';
+import { BLOG_DATA } from '../../constants';
+import { SEO } from '../../components/SEO';
 
 export const GeoDefinition2026: React.FC = () => {
+  const post = BLOG_DATA.find(p => p.id === 'geo-definition-2026');
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // EXACT SEO/GSO HTML INJECTION
-  useEffect(() => {
-    const exactHtml = `
-    <title>Qu'est-ce que le GEO (Generative Engine Optimization) ?</title>
-    <meta name="description" content="Le GEO désigne l'optimisation pour les moteurs génératifs. Découvrez la définition, les différences avec le SEO, et les stratégies pour être cité par les IA.">
-    <meta name="keywords" content="GEO, GEO définition, Generative Engine Optimization, GSO, AEO, ChatGPT, Perplexity, Google AI Overview">
-    <meta name="author" content="Triaina">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="language" content="French">
-    <meta name="revisit-after" content="7 days">
-    
-    <!-- ===== OPEN GRAPH ===== -->
-    <meta property="og:title" content="Qu'est-ce que le GEO (Generative Engine Optimization) ?">
-    <meta property="og:description" content="Le GEO désigne l'optimisation pour les moteurs génératifs. Découvrez la définition, les différences avec le SEO, et les stratégies pour être cité par les IA.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.triaina.fr/blog/geo-definition-2026">
-    <meta property="og:image" content="https://www.triaina.fr/images/geo-definition.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="Triaina">
-    <meta property="og:locale" content="fr_FR">
-    
-    <!-- ===== TWITTER CARD ===== -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Qu'est-ce que le GEO (Generative Engine Optimization) ?">
-    <meta name="twitter:description" content="Le GEO désigne l'optimisation pour les moteurs génératifs. Découvrez la définition et les stratégies pour être cité par les IA.">
-    <meta name="twitter:image" content="https://www.triaina.fr/images/geo-definition.jpg">
-    <meta name="twitter:creator" content="@triaina">
-    
-    <!-- ===== CANONICAL ===== -->
-    <link rel="canonical" href="https://www.triaina.fr/blog/geo-definition-2026">
-    
-    <!-- ===== ALTERNATE VERSIONS ===== -->
-    <link rel="alternate" hreflang="fr" href="https://www.triaina.fr/blog/geo-definition-2026">
-    <link rel="alternate" hreflang="x-default" href="https://www.triaina.fr/blog/geo-definition-2026">
-    
-    <!-- ===== SCHEMA MARKUP - BreadcrumbList ===== -->
-    <script type="application/ld+json">
+  const seoSchema = [
     {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Accueil",
-                "item": "https://www.triaina.fr"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Blog",
-                "item": "https://www.triaina.fr/blog"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "GEO Définition",
-                "item": "https://www.triaina.fr/blog/geo-definition-2026"
-            }
-        ]
-    }
-    </script>
-    
-    <!-- ===== SCHEMA MARKUP - Article ===== -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Qu'est-ce que le GEO (Generative Engine Optimization) ?",
-        "description": "Le GEO désigne l'optimisation pour les moteurs génératifs. Découvrez la définition, les différences avec le SEO, et les stratégies pour être cité par les IA.",
-        "image": {
-            "@type": "ImageObject",
-            "url": "https://www.triaina.fr/images/geo-definition.jpg",
-            "width": 1200,
-            "height": 630
-        },
-        "author": {
-            "@type": "Person",
-            "name": "Alexandre",
-            "jobTitle": "CEO & Fondateur Triaina",
-            "url": "https://www.triaina.fr",
-            "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Triaina",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.triaina.fr/logo.png",
-                "width": 250,
-                "height": 60
-            }
-        },
-        "datePublished": "2026-05-18",
-        "dateModified": "2026-05-18",
-        "wordCount": 1800,
-        "articleBody": "Le GEO (Generative Engine Optimization) désigne l'ensemble des techniques visant à faire apparaître votre contenu dans les réponses générées par les IA : ChatGPT, Perplexity, Google AI Overview, Gemini, Copilot. Il ne remplace pas le SEO mais s'y superpose."
-    }
-    </script>
-    
-    <!-- ===== SCHEMA MARKUP - FAQPage ===== -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Qu'est-ce que le GEO en SEO ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Le GEO (Generative Engine Optimization) est la discipline qui consiste à optimiser son contenu pour apparaître dans les réponses générées par les IA : ChatGPT, Perplexity, Google AI Overview, Gemini ou Copilot. C'est une extension du SEO classique, pas un remplacement."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Le GEO va-t-il remplacer le SEO ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Non. Le GEO s'appuie sur le SEO. Quand ChatGPT Search ou Perplexity effectuent une recherche web, ils récupèrent les premiers résultats Google et les synthétisent. Si vous n'êtes pas bien classé sur Google, les IA ne vous liront pas."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Comment apparaître dans les réponses de ChatGPT ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Être bien classé sur Google, avoir un contenu structuré, sourcé et factuel que le LLM peut facilement synthétiser, et afficher des signaux d'autorité clairs (auteur identifié, E-E-A-T, données propriétaires)."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Quelle est la différence entre GEO et AEO ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "L'AEO (Answer Engine Optimization) cible les réponses directes dans les moteurs classiques (featured snippets, assistants vocaux). Le GEO cible les réponses générées par les LLM."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Combien de temps faut-il pour voir des résultats en GEO ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Si votre site est déjà bien classé sur Google (top 3-5 sur vos requêtes cibles), les optimisations GEO peuvent produire des effets en quelques semaines. Si vous partez de zéro, le délai est identique au SEO : 3 à 12 mois."
-                }
-            }
-        ]
-    }
-    </script>
-    
-    <!-- ===== SCHEMA MARKUP - Organization ===== -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Triaina",
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": post?.title || '',
+      "description": post?.excerpt || '',
+      "image": post?.image || '',
+      "author": {
+        "@type": "Person",
+        "name": "Camille Rousseau",
+        "jobTitle": "Consultante Senior GEO/SEO chez Triaina",
         "url": "https://www.triaina.fr",
-        "logo": "https://www.triaina.fr/logo.png",
-        "description": "Agence SEO et GSO spécialisée en Generative Search Optimization et référencement IA",
-        "foundingDate": "2020",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "Customer Service",
-            "telephone": "+33-XXX-XXX-XXX",
-            "email": "contact@triaina.fr"
-        },
-        "sameAs": [
-            "https://www.linkedin.com/company/triaina",
-            "https://twitter.com/triaina"
-        ]
+        "sameAs": "https://www.linkedin.com/in/camille-rousseau-a44488413/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
+        { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
+      ]
     }
-    </script>
-    `;
-    const fragment = document.createRange().createContextualFragment(exactHtml);
-    const elements: Node[] = [];
-    fragment.childNodes.forEach(node => {
-        elements.push(node.cloneNode(true));
-    });
-    
-    elements.forEach(node => {
-        document.head.appendChild(node);
-    });
+  ];
 
-    return () => {
-        elements.forEach(node => {
-            if (node.parentNode) {
-                node.parentNode.removeChild(node);
-            }
-        });
-    };
-  }, []);
+
+
+  if (!post) return null;
 
   return (
     <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
+      <SEO 
+        title={`${post.title} - Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://triaina.fr${post.url}`}
+        schema={seoSchema}
+      />
+      
       <div className="max-w-7xl mx-auto">
-        {/* Back Button */}
         <a 
-          href={PAGE_TO_URL['blog']}
+          href="/blog" 
           onClick={(e) => {
-              e.preventDefault();
-              window.history.pushState({}, '', PAGE_TO_URL['blog']);
-              window.dispatchEvent(new PopStateEvent('popstate'));
+            e.preventDefault();
+            window.history.pushState({}, '', '/blog');
+            window.dispatchEvent(new PopStateEvent('popstate'));
           }}
           className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
         >
           <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
-          RETOUR AU BLOG
+          Retour aux articles
         </a>
 
-        {/* Header */}
-        <header className="mb-12 text-center max-w-5xl mx-auto">
-          <div className="flex items-center justify-center gap-4 text-xs font-mono text-blue-600 mb-6 uppercase tracking-widest">
-            <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">GUIDE</span>
-            <span className="flex items-center gap-1"><Calendar size={12} /> 18 MAI 2026</span>
-            <span className="flex items-center gap-1"><Clock size={12} /> 8 MIN</span>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-slate-900 mb-8 leading-tight tracking-tight">
-            Qu'est-ce que le GEO <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">(Generative Engine Optimization) ?</span>
-          </h1>
-        </header>
-
-        {/* Featured Image */}
-        <div className="mb-16 rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-900/10 aspect-video relative group">
-          <img 
-            src={'/images/geo-definition.jpg'}
-            alt="Qu'est-ce que le GEO ?" 
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src = "https://picsum.photos/seed/geo-definition-2026/1200/675";
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/20 to-transparent"></div>
-        </div>
-
-        {/* Content Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <article className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden relative">
+          {/* Accent decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-50"></div>
+          
+          <header className="mb-12">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
+              <span className="flex items-center">
+                <Calendar size={14} className="mr-2 text-blue-500" />
+                {post.date}
+              </span>
+              <span className="text-slate-300">|</span>
+              <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">{post.tag}</span>
+            </div>
             
-            {/* Sidebar / Table of Contents (Desktop) */}
-            <aside className="hidden lg:block lg:col-span-3">
-                <div className="sticky top-32 space-y-4">
-                    <h3 className="font-display font-bold text-slate-900 uppercase tracking-widest text-sm mb-4">Sommaire</h3>
-                    <nav className="flex flex-col space-y-3 text-sm font-medium text-slate-500">
-                        <a href="#tldr" className="hover:text-blue-600 transition-colors">En résumé (TL;DR)</a>
-                        <a href="#definition" className="hover:text-blue-600 transition-colors">Qu'est-ce que le GEO ?</a>
-                        <a href="#geo-vs-seo" className="hover:text-blue-600 transition-colors">GEO vs SEO : quelles différences ?</a>
-                        <a href="#fonctionnement" className="hover:text-blue-600 transition-colors">Comment fonctionnent les LLMs ?</a>
-                        <a href="#strategies" className="hover:text-blue-600 transition-colors">Les 8 stratégies GEO</a>
-                        <a href="#ai-overview" className="hover:text-blue-600 transition-colors">Le cas Google AI Overview</a>
-                        <a href="#mesurer" className="hover:text-blue-600 transition-colors">Mesurer sa performance</a>
-                        <a href="#acronymes" className="hover:text-blue-600 transition-colors">GEO, GSO, AEO, SEO en résumé</a>
-                    </nav>
-                </div>
-            </aside>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+              {post.excerpt}
+            </p>
+          </header>
 
-            {/* Main Content */}
-            <article className="lg:col-span-9 prose prose-lg xl:prose-xl prose-slate max-w-none font-sans prose-headings:font-display prose-headings:font-bold prose-a:text-blue-600">
-                
-                <section id="tldr">
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-16 relative group">
+            <img 
+              src={post.image} 
+              alt={post.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+          </div>
+
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-2xl prose-strong:text-slate-900 prose-li:marker:text-blue-500">
+<section id="tldr">
                   <h2>En résumé (TL;DR)</h2>
                   <ul>
                     <li><p><strong>Le GEO (Generative Engine Optimization)</strong> désigne l'ensemble des techniques visant à faire apparaître votre contenu dans les réponses générées par les IA : ChatGPT, Perplexity, Google AI Overview, Gemini, Copilot.</p></li>
@@ -570,7 +402,40 @@ export const GeoDefinition2026: React.FC = () => {
                 <h3>Combien de temps faut-il pour voir des résultats en GEO ?</h3>
                 <p>Si votre site est déjà bien classé sur Google (top 3-5 sur vos requêtes cibles), les optimisations GEO peuvent produire des effets en quelques semaines: le temps que les IA réindexent les pages mises à jour. Si vous partez de zéro, le délai est identique au SEO : 3 à 12 mois selon la concurrence. Le GEO ne court-circuite pas le SEO: il l'amplifie.</p>
 
-            </article>
+            {/* Author Block */}
+            <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-slate-100 max-w-4xl mx-auto not-prose">
+                <h3 className="font-bold text-slate-900 mb-2 text-lg">À propos de l'auteure</h3>
+                <div className="font-bold text-slate-900 text-xl mb-1">Camille Rousseau</div>
+                <div className="text-sm text-blue-600 font-mono mb-4">Consultante Senior GEO/SEO chez Triaina</div>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    Experte en stratégies d'acquisition hybrides. Camille accompagne les marques dans l'optimisation de leur visibilité sur les moteurs de recherche traditionnels (SEO) et les interfaces d'IA génératives (GSO).
+                </p>
+                <a href="https://www.linkedin.com/in/camille-rousseau-a44488413/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors underline decoration-2 underline-offset-4">
+                    Voir son profil LinkedIn
+                </a>
+            </div>
+          </div>
+                </article>
+
+        {/* Share / Footer */}
+        <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-sm font-mono text-slate-500">
+                Partager cet article
+            </div>
+            <div className="flex gap-4">
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Linkedin size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Twitter size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Facebook size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Share2 size={20} />
+                </button>
+            </div>
         </div>
       </div>
     </div>

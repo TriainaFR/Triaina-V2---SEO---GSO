@@ -1,35 +1,103 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, Clock, Share2, Calendar } from 'lucide-react';
-import { PAGE_TO_URL, BLOG_DATA } from '../../constants';
+import { ArrowLeft, Calendar, Linkedin, Twitter, Facebook, Share2 } from 'lucide-react';
+import { BLOG_DATA } from '../../constants';
 import { SEO } from '../../components/SEO';
 
 export const SeoLocalParis2026: React.FC = () => {
   const post = BLOG_DATA.find(p => p.id === 'seo-local-paris-2026');
 
-  const seoSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "SEO Local Paris 2026 : Le Guide Définitif pour Dominer sa Zone",
-    "image": "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&q=80&w=1200",
-    "datePublished": "2026-06-01",
-    "author": {
-      "@type": "Person",
-      "name": "Alexandre",
-      "jobTitle": "CEO & Fondateur Triaina",
-      "url": "https://www.triaina.fr",
-      "sameAs": "https://www.linkedin.com/in/alexandre-triaina"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Triaina",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.triaina.fr/logo.svg"
-      }
-    }
-  };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-  const htmlBody = `
+  const seoSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": post?.title || '',
+      "description": post?.excerpt || '',
+      "image": post?.image || '',
+      "author": {
+        "@type": "Person",
+        "name": "Camille Rousseau",
+        "jobTitle": "Consultante Senior GEO/SEO chez Triaina",
+        "url": "https://www.triaina.fr",
+        "sameAs": "https://www.linkedin.com/in/camille-rousseau-a44488413/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
+        { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
+      ]
+    }
+  ];
+
+
+
+  if (!post) return null;
+
+  return (
+    <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
+      <SEO 
+        title={`${post.title} - Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://triaina.fr${post.url}`}
+        schema={seoSchema}
+      />
+      
+      <div className="max-w-7xl mx-auto">
+        <a 
+          href="/blog" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState({}, '', '/blog');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}
+          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
+        >
+          <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
+          Retour aux articles
+        </a>
+
+        <article className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden relative">
+          {/* Accent decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-50"></div>
+          
+          <header className="mb-12">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
+              <span className="flex items-center">
+                <Calendar size={14} className="mr-2 text-blue-500" />
+                {post.date}
+              </span>
+              <span className="text-slate-300">|</span>
+              <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">{post.tag}</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+              {post.excerpt}
+            </p>
+          </header>
+
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-16 relative group">
+            <img 
+              src={post.image} 
+              alt={post.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+          </div>
+
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-2xl prose-strong:text-slate-900 prose-li:marker:text-blue-500">
+<div dangerouslySetInnerHTML={{ __html: `
 <blockquote><p><strong>TL;DR</strong></p><ul><li>Le <strong>SEO local à Paris</strong> en 2026 est devenu ultra-compétitif. Il ne suffit plus d'avoir une fiche Google Business Profile optimisée.</li><li>L'intégration du <strong>GSO (Generative Search Optimization)</strong> est indispensable : les IA comme ChatGPT ou Google AI Overviews tiennent désormais compte de la réputation locale et des avis vérifiés pour recommander des services parisiens.</li><li>Le maillage interne local, les citations (NAP), et l'autorité hyper-locale seront les 3 piliers différenciateurs majeurs.</li></ul></blockquote>
 
 <h2>Pourquoi le SEO Local à Paris est si spécifique en 2026</h2>
@@ -66,100 +134,42 @@ export const SeoLocalParis2026: React.FC = () => {
     <li><strong>Mois 2+ :</strong> Collecte de reviews denses et constantes.</li>
 </ul>
 <p>En couplant ces efforts locaux avec une approche technique solide, vous dominerez non seulement les packs locaux de Google, mais vous deviendrez également l'entité de référence citée par les IA.</p>
-  `;
+  ` }} />
 
-  if (!post) return null;
-
-  return (
-    <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
-      <SEO 
-        title={post.title}
-        description={post.excerpt}
-        schema={seoSchema}
-        image={post.image}
-        canonicalUrl={`https://www.triaina.fr${post.url}`}
-      />
-      <div className="max-w-7xl mx-auto">
-        {/* Back Button */}
-        <a 
-          href={PAGE_TO_URL['blog']}
-          onClick={(e) => {
-              e.preventDefault();
-              window.history.pushState({}, '', PAGE_TO_URL['blog']);
-              window.dispatchEvent(new PopStateEvent('popstate'));
-          }}
-          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
-        >
-          <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
-          RETOUR AU BLOG
-        </a>
-
-        {/* Header */}
-        <header className="mb-12 md:mb-20 animate-fade-in-up">
-          <div className="flex items-center gap-4 mb-6 text-sm font-mono text-slate-500">
-            <span className="flex items-center"><Calendar size={14} className="mr-2"/> {post.date}</span>
-            <span className="flex items-center"><Clock size={14} className="mr-2"/> 5 MIN DE LECTURE</span>
-            <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs tracking-wider rounded">{post.tag}</span>
-          </div>
-          
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-sans text-slate-900 leading-tight mb-6">
-            {post.title}
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-slate-600 max-w-3xl leading-relaxed">
-            {post.excerpt}
-          </p>
-        </header>
-
-        {/* Featured Image */}
-        <div className="w-full h-[400px] md:h-[600px] bg-slate-100 rounded-2xl overflow-hidden mb-16 relative group animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-          <img 
-            src={post.image} 
-            alt={post.title}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-          />
-        </div>
-
-        {/* Content Layout */}
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
-          {/* Main Article */}
-          <article className="lg:w-2/3 prose prose-lg prose-slate max-w-none 
-              prose-headings:font-bold prose-headings:text-slate-900 
-              prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-2 prose-h2:border-b prose-h2:border-slate-200
-              prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-              prose-p:text-slate-600 prose-p:leading-relaxed prose-p:mb-6
-              prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
-              prose-li:text-slate-600 prose-li:marker:text-blue-500
-              prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:bg-blue-50/50 prose-blockquote:p-6 prose-blockquote:rounded-r-lg prose-blockquote:not-italic prose-blockquote:text-slate-700
-              prose-strong:text-slate-900
-              animate-fade-in-up"
-              style={{animationDelay: '0.3s'}}
-              dangerouslySetInnerHTML={{ __html: htmlBody }}
-          />
-
-          {/* Sidebar */}
-          <aside className="lg:w-1/3 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-            <div className="sticky top-32 space-y-8">
-              {/* CTA */}
-              <div className="bg-slate-900 text-white rounded-2xl p-8">
-                <h3 className="text-xl font-bold mb-4 font-sans">Besoin d'aide pour votre SEO Local ?</h3>
-                <p className="text-slate-300 mb-6 text-sm">
-                  Maximisez votre présence à Paris sur Google et l'IA avec notre expertise dédiée.
+            {/* Author Block */}
+            <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-slate-100 max-w-4xl mx-auto not-prose">
+                <h3 className="font-bold text-slate-900 mb-2 text-lg">À propos de l'auteure</h3>
+                <div className="font-bold text-slate-900 text-xl mb-1">Camille Rousseau</div>
+                <div className="text-sm text-blue-600 font-mono mb-4">Consultante Senior GEO/SEO chez Triaina</div>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    Experte en stratégies d'acquisition hybrides. Camille accompagne les marques dans l'optimisation de leur visibilité sur les moteurs de recherche traditionnels (SEO) et les interfaces d'IA génératives (GSO).
                 </p>
-                <a 
-                  href={PAGE_TO_URL['contact']}
-                  onClick={(e) => {
-                      e.preventDefault();
-                      window.history.pushState({}, '', PAGE_TO_URL['contact']);
-                      window.dispatchEvent(new PopStateEvent('popstate'));
-                  }}
-                  className="inline-block w-full text-center bg-blue-600 hover:bg-blue-500 text-white font-mono text-sm py-3 px-4 transition-colors"
-                >
-                  CONTACTEZ-NOUS
+                <a href="https://www.linkedin.com/in/camille-rousseau-a44488413/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors underline decoration-2 underline-offset-4">
+                    Voir son profil LinkedIn
                 </a>
-              </div>
             </div>
-          </aside>
+          </div>
+                </article>
+
+        {/* Share / Footer */}
+        <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-sm font-mono text-slate-500">
+                Partager cet article
+            </div>
+            <div className="flex gap-4">
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Linkedin size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Twitter size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Facebook size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Share2 size={20} />
+                </button>
+            </div>
         </div>
       </div>
     </div>
