@@ -24,6 +24,10 @@ export const Blog: React.FC<BlogProps> = ({ onNavigate }) => {
 
   const handleArticleClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
     e.preventDefault();
+    if (url.includes('toulouse')) {
+        window.location.href = url;
+        return;
+    }
     if (onNavigate) {
       const pageId = ROUTES[url];
       if (pageId) {
@@ -43,13 +47,22 @@ export const Blog: React.FC<BlogProps> = ({ onNavigate }) => {
   }, []);
 
   // Filter articles based on search and selected tag
-  const filteredArticles = useMemo(() => {
-    return BLOG_DATA.filter(article => {
+    const filteredArticles = useMemo(() => {
+    let filtered = BLOG_DATA.filter(article => {
       const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                            article.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+                             article.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesTag = selectedTag === 'TOUS' || article.tag === selectedTag;
       return matchesSearch && matchesTag;
     });
+    
+    // Ensure Toulouse article is always at the top
+    filtered = filtered.reverse();
+    const toulouseIndex = filtered.findIndex(a => a.id === 'agence-seo-toulouse-2026');
+    if (toulouseIndex > -1) {
+       const toulouse = filtered.splice(toulouseIndex, 1)[0];
+       filtered.unshift(toulouse);
+    }
+    return filtered;
   }, [searchTerm, selectedTag]);
 
   return (
@@ -107,7 +120,7 @@ export const Blog: React.FC<BlogProps> = ({ onNavigate }) => {
       {filteredArticles.length > 0 ? (
           /* Blog Grid */
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
-            {[...filteredArticles].reverse().map((article, index) => (
+            {filteredArticles.map((article, index) => (
                 <a 
                     key={article.id}
                     href={article.url}

@@ -11,7 +11,7 @@ async function startServer() {
   const PORT = process.env.PORT || 3000;
 
   // Redirect old slug via 301
-  app.use('/blog/optimiser-site-llm-2026-guide-complet', (req, res) => {
+  app.use('/blog/optimiser-site-llm-2026-guide-complet', (_req, res) => {
     res.redirect(301, 'https://www.triaina.fr/blog/optimiser-site-llm-guide-seo-complet-2026');
   });
 
@@ -103,6 +103,40 @@ async function startServer() {
   });
 
   // GSO: A2A Agent Card (Discovery)
+
+  // IndexNow manual submission endpoint
+  app.get('/api/indexnow', async (_req, res) => {
+    try {
+      const urls = Object.keys(ROUTES)
+        .filter(route => !route.includes('*'))
+        .map(route => `https://www.triaina.fr${route}`);
+      
+      const payload = {
+        host: "www.triaina.fr",
+        key: "4C58C9622B2DBB31ECD9A463E3DCAF66",
+        keyLocation: "https://www.triaina.fr/4C58C9622B2DBB31ECD9A463E3DCAF66.txt",
+        urlList: urls
+      };
+
+      const response = await fetch('https://api.indexnow.org/indexnow', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (response.ok) {
+        res.json({ success: true, message: "URLs submitted to IndexNow successfully", submittedCount: urls.length });
+      } else {
+        const text = await response.text();
+        res.status(response.status).json({ success: false, message: "IndexNow submission failed", error: text });
+      }
+    } catch (err: any) {
+      res.status(500).json({ success: false, error: err.message });
+    }
+  });
+
   app.get('/.well-known/agent-card.json', (_req, res) => {
     res.json({
       name: "Triaina",

@@ -2,6 +2,7 @@
 import { FAQItem, ReferenceItem, ChatStep, PartnerItem, BlogItem, JobOffer, TeamMember, HistoryItem, NavLink, ExpertiseContent, Page } from './types';
 
 export const PAGE_TO_URL: Record<string, string> = {
+  'agence-seo-toulouse-2026': '/blog/agence-seo-geo-toulouse-2026',
   'llms-txt-2026': '/blog/llms-txt-faut-il-l-implementer-en-2026',
 
   'home': '/',
@@ -77,6 +78,7 @@ export const PAGE_TO_URL: Record<string, string> = {
 };
 
 export const ROUTES: Record<string, Page> = {
+  '/blog/agence-seo-geo-toulouse-2026': 'agence-seo-toulouse-2026',
   '/blog/llms-txt-faut-il-l-implementer-en-2026': 'llms-txt-2026',
 
   '/agence-geo-paris': 'agence-geo-paris',
@@ -1003,7 +1005,7 @@ export const BLOG_DATA: BlogItem[] = [
     title: 'Agence SEO & GEO Rennes : top 5 en 2026',
     excerpt: 'Comparatif détaillé des 5 profils d\'agences SEO actives sur Rennes et la Bretagne, avec une matrice tarifs/spécialités et un guide de décision selon votre taille d\'entreprise.',
     url: '/blog/agence-seo-geo-rennes-2026',
-    image: 'https://images.unsplash.com/photo-1596489370008-01314ebbb338?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=1200',
     tag: 'CLASSEMENT'
   },
   {
@@ -1038,6 +1040,17 @@ export const BLOG_DATA: BlogItem[] = [
     url: '/blog/llms-txt-faut-il-l-implementer-en-2026',
     image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200',
     tag: 'TECH'
+  },
+  {
+    id: 'agence-seo-toulouse-2026',
+    source: 'Comparatif',
+    logo: '',
+    date: '20 JUILLET 2026',
+    title: 'Agence SEO/GEO Toulouse : le top 5 en 2026',
+    excerpt: "Le marché de l'agence SEO/GEO à Toulouse en 2026 : spécificités du secteur aéronautique, comparatif des 5 profils d'agences et critères de choix.",
+    url: '/blog/agence-seo-geo-toulouse-2026',
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GEO'
   }
 ];
 

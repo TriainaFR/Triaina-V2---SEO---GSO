@@ -99,8 +99,10 @@ export const Annuaire: React.FC<AnnuaireProps> = ({ onNavigate }) => {
     }
   };
 
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
-    e.preventDefault();
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement> | null, path: string) => {
+    if (e) {
+      e.preventDefault();
+    }
     if (onNavigate) {
       onNavigate(path);
     } else {
@@ -309,7 +311,7 @@ export const Annuaire: React.FC<AnnuaireProps> = ({ onNavigate }) => {
               </li>
             </ul>
             <button 
-              onClick={(e) => handleLinkClick(e, 'agence-referencement-ia-paris')} 
+              onClick={() => handleLinkClick(null as any, 'agence-referencement-ia-paris')} 
               className="bg-white text-blue-700 px-6 py-3 rounded-lg font-bold hover:bg-blue-50 transition-colors w-full flex items-center justify-center gap-2"
             >
               Découvrir notre agence Parisienne

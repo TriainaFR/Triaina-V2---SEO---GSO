@@ -1,5 +1,7 @@
-
 export type Page =
+  | 'agence-seo-geo-caen-2026'
+  | 'agence-seo-geo-rouen-2026'
+  | 'agence-seo-toulouse-2026'
   | 'llms-txt-2026'
   | 'agence-geo-paris'
   | 'meilleure-agence-referencement-ia-france-2026'

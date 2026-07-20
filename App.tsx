@@ -71,6 +71,8 @@ import { AuditEeat2026 } from './views/blog/AuditEeat2026';
 import { GoogleAiMode2026 } from './views/blog/GoogleAiMode2026';
 import { PrixTarifsAgenceSeoGeo2026 } from './views/blog/PrixTarifsAgenceSeoGeo2026';
 import { ReferencementGemini2026 } from './views/blog/ReferencementGemini2026';
+import { AgenceSeoToulouse2026 } from './views/blog/AgenceSeoToulouse2026';
+
 import { SEO } from './components/SEO';
 import { CustomCursor } from './components/CustomCursor';
 import { NAV_LINKS, SOCIAL_LINKS, PAGE_TO_URL, ROUTES } from './constants';
@@ -229,6 +231,8 @@ const App: React.FC = () => {
 
   const renderPage = () => {
     switch (currentPage) {
+      case 'agence-seo-toulouse-2026':
+        return <AgenceSeoToulouse2026 />;
       case 'home':
         return <Home onNavigate={handleNavigation} />;
       case 'references':
