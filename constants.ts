@@ -934,8 +934,6 @@ export const BLOG_DATA: BlogItem[] = [
     image: '/images/ai_overview_agency.jpg',
     tag: 'AGENCE GEO'
   },
-,
-
   {
     id: 'top-10-agences-seo-geo-paris-2026',
     source: 'Classement Agences',
