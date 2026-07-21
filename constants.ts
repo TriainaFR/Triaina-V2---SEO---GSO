@@ -2,6 +2,8 @@
 import { FAQItem, ReferenceItem, ChatStep, PartnerItem, BlogItem, JobOffer, TeamMember, HistoryItem, NavLink, ExpertiseContent, Page } from './types';
 
 export const PAGE_TO_URL: Record<string, string> = {
+  'core-web-vitals-seo-2026': '/blog/core-web-vitals-seo-2026',
+  'google-business-profile-2026': '/blog/google-business-profile-2026',
   'agence-seo-toulouse-2026': '/blog/agence-seo-geo-toulouse-2026',
   'llms-txt-2026': '/blog/llms-txt-faut-il-l-implementer-en-2026',
 
@@ -14,7 +16,8 @@ export const PAGE_TO_URL: Record<string, string> = {
   'legal': '/mentions-legales',
   'expertise-seo': '/expertise-seo',
   'expertise-sea': '/expertise-sea',
-  'expertise-gso': '/expertise-gso',
+  'expertise-gso': '/expertise-geo',
+  'expertise-geo': '/expertise-geo',
   'expertise-gsa': '/expertise-gsa',
   'expertise-media': '/expertise-media',
   'expertise-content': '/expertise-contenu',
@@ -72,18 +75,18 @@ export const PAGE_TO_URL: Record<string, string> = {
   'agence-seo-toulon-2026': '/blog/agence-seo-toulon-2026',
   'agence-seo-la-rochelle-2026': '/blog/agence-seo-la-rochelle-2026',
   'agence-google-ai-overview-2026': '/blog/agence-google-ai-overview',
-  'meilleure-agence-referencement-ia-france-2026': '/blog/meilleure-agence-referencement-ia-france',
   'agence-geo-paris': '/agence-geo-paris',
   'annuaire': '/annuaire',
 };
 
 export const ROUTES: Record<string, Page> = {
+  '/blog/core-web-vitals-seo-2026': 'core-web-vitals-seo-2026',
+  '/blog/google-business-profile-2026': 'google-business-profile-2026',
   '/blog/agence-seo-geo-toulouse-2026': 'agence-seo-toulouse-2026',
   '/blog/llms-txt-faut-il-l-implementer-en-2026': 'llms-txt-2026',
 
   '/agence-geo-paris': 'agence-geo-paris',
   '/annuaire': 'annuaire',
-  '/blog/meilleure-agence-referencement-ia-france': 'meilleure-agence-referencement-ia-france-2026',
   '/blog/agence-google-ai-overview': 'agence-google-ai-overview-2026',
   '/': 'home',
   '/agence': 'team',
@@ -95,6 +98,7 @@ export const ROUTES: Record<string, Page> = {
   '/expertise-seo': 'expertise-seo',
   '/expertise-sea': 'expertise-sea',
   '/expertise-gso': 'expertise-gso',
+  '/expertise-geo': 'expertise-gso',
   '/expertise-gsa': 'expertise-gsa',
   '/expertise-media': 'expertise-media',
   '/expertise-content': 'expertise-content',
@@ -462,6 +466,7 @@ export const PARTNERS_DATA: PartnerItem[] = [
 ];
 
 export const BLOG_DATA: BlogItem[] = [
+  
 {
     id: 'seo-vs-referencement-ia',
     source: 'Guide Comparatif',
@@ -929,17 +934,6 @@ export const BLOG_DATA: BlogItem[] = [
     image: '/images/ai_overview_agency.jpg',
     tag: 'AGENCE GEO'
   },
-  {
-    id: 'meilleure-agence-referencement-ia-france-2026',
-    source: 'Classement',
-    logo: '',
-    date: '08 JUILLET 2026',
-    title: 'Meilleure agence référencement IA France 2026 : le classement',
-    excerpt: 'Le classement complet 2026 des 6 meilleures agences de référencement IA en France : Triaina, Eskimoz, Archipel Marketing, SmartKeyword, Promoovoir et NOIISE.',
-    url: '/blog/meilleure-agence-referencement-ia-france',
-    image: '/images/meilleure_agence_ia_france.jpg',
-    tag: 'CLASSEMENT'
-  }
 ,
 
   {
@@ -1051,8 +1045,30 @@ export const BLOG_DATA: BlogItem[] = [
     url: '/blog/agence-seo-geo-toulouse-2026',
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200',
     tag: 'GEO'
-  }
-];
+  },
+  {
+    id: 'core-web-vitals-seo-2026',
+    source: 'Guide Technique',
+    logo: '',
+    date: '21 JUILLET 2026',
+    title: 'Core Web Vitals et SEO Technique : Le Guide Complet pour Performer en 2026',
+    excerpt: "Les Core Web Vitals sont un signal de classement Google officiel depuis 2021, et ils le restent en 2026 - avec un poids amplifié par NavBoost. Un LCP au-dessus de 4 s, c\'est une suppression active de votre ranking.",
+    url: '/blog/core-web-vitals-seo-2026',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
+    tag: 'TECH'
+  },
+
+  {
+    id: 'google-business-profile-2026',
+    source: 'Guide Pratique',
+    logo: '',
+    date: '21 JUILLET 2026',
+    title: 'Maîtriser votre fiche Google Business Profile en 2026',
+    excerpt: "Google My Business s'appelle désormais Google Business Profile (GBP). Une fiche complète et active génère 7 fois plus de clics qu'une fiche négligée...",
+    url: '/blog/google-business-profile-2026',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1200',
+    tag: 'SEO LOCAL'
+  },];
 
 export const CAREERS_DATA: JobOffer[] = [];
 

@@ -55,13 +55,9 @@ export const Blog: React.FC<BlogProps> = ({ onNavigate }) => {
       return matchesSearch && matchesTag;
     });
     
-    // Ensure Toulouse article is always at the top
+    // Reverse so newest is first (assuming newest are at the end)
     filtered = filtered.reverse();
-    const toulouseIndex = filtered.findIndex(a => a.id === 'agence-seo-toulouse-2026');
-    if (toulouseIndex > -1) {
-       const toulouse = filtered.splice(toulouseIndex, 1)[0];
-       filtered.unshift(toulouse);
-    }
+    
     return filtered;
   }, [searchTerm, selectedTag]);
 
@@ -89,9 +85,9 @@ export const Blog: React.FC<BlogProps> = ({ onNavigate }) => {
         {/* Tags */}
         <div className="flex flex-wrap gap-2 items-center w-full md:w-auto">
           <Filter size={16} className="text-slate-400 mr-2 hidden md:block" />
-          {tags.map((tag) => (
+          {tags.map((tag, index) => (
             <button
-              key={tag}
+              key={`tag-${tag}-${index}`}
               onClick={() => setSelectedTag(tag)}
               className={`px-4 py-2 text-xs font-mono tracking-wider uppercase rounded-full transition-all duration-300 ${
                 selectedTag === tag 
@@ -122,7 +118,7 @@ export const Blog: React.FC<BlogProps> = ({ onNavigate }) => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
             {filteredArticles.map((article, index) => (
                 <a 
-                    key={article.id}
+                    key={`article-${article.id || index}-${index}`}
                     href={article.url}
                     onClick={(e) => handleArticleClick(e, article.url)}
                     className="group flex flex-col bg-white border border-slate-200 rounded-lg overflow-hidden transition-all duration-500 hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-900/10 hover:-translate-y-2 animate-fade-in-up"

@@ -1,3 +1,5 @@
+import { GoogleBusinessProfile2026 } from './views/blog/GoogleBusinessProfile2026';
+import { CoreWebVitalsSeo2026 } from './views/blog/CoreWebVitalsSeo2026';
 
 import React, { useState, useEffect } from 'react';
 import { Page } from './types';
@@ -53,7 +55,6 @@ import { MarqueVisibleChatgpt2026 } from './views/blog/MarqueVisibleChatgpt2026'
 import { TopAgencesSeoGeoParis2026 } from './views/blog/TopAgencesSeoGeoParis2026';
 import { AgenceGoogleAiOverview2026 } from './views/blog/AgenceGoogleAiOverview2026';
 import { AgenceGeoParis } from './views/AgenceGeoParis';
-import { MeilleureAgenceReferencementIaFrance2026 } from './views/blog/MeilleureAgenceReferencementIaFrance2026';
 import { AgenceSeoLyon2026 } from './views/blog/AgenceSeoLyon2026';
 import { AgenceSeoGeoRennes2026 } from './views/blog/AgenceSeoGeoRennes2026';
 import { AgenceSeoGeoCaen2026 } from './views/blog/AgenceSeoGeoCaen2026';
@@ -231,6 +232,10 @@ const App: React.FC = () => {
 
   const renderPage = () => {
     switch (currentPage) {
+      case 'google-business-profile-2026':
+        return <GoogleBusinessProfile2026 />;
+      case 'core-web-vitals-seo-2026':
+        return <CoreWebVitalsSeo2026 />;
       case 'agence-seo-toulouse-2026':
         return <AgenceSeoToulouse2026 />;
       case 'home':

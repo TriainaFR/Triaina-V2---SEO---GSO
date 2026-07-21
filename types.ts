@@ -1,4 +1,6 @@
 export type Page =
+  | 'core-web-vitals-seo-2026'
+  | 'google-business-profile-2026'
   | 'agence-seo-geo-caen-2026'
   | 'agence-seo-geo-rouen-2026'
   | 'agence-seo-toulouse-2026'

@@ -38,6 +38,7 @@ __export(constants_exports, {
 });
 module.exports = __toCommonJS(constants_exports);
 var PAGE_TO_URL = {
+  "google-business-profile-2026": "/blog/google-business-profile-2026",
   "agence-seo-toulouse-2026": "/blog/agence-seo-geo-toulouse-2026",
   "llms-txt-2026": "/blog/llms-txt-faut-il-l-implementer-en-2026",
   "home": "/",
@@ -49,7 +50,8 @@ var PAGE_TO_URL = {
   "legal": "/mentions-legales",
   "expertise-seo": "/expertise-seo",
   "expertise-sea": "/expertise-sea",
-  "expertise-gso": "/expertise-gso",
+  "expertise-gso": "/expertise-geo",
+  "expertise-geo": "/expertise-geo",
   "expertise-gsa": "/expertise-gsa",
   "expertise-media": "/expertise-media",
   "expertise-content": "/expertise-contenu",
@@ -112,6 +114,7 @@ var PAGE_TO_URL = {
   "annuaire": "/annuaire"
 };
 var ROUTES = {
+  "/blog/google-business-profile-2026": "google-business-profile-2026",
   "/blog/agence-seo-geo-toulouse-2026": "agence-seo-toulouse-2026",
   "/blog/llms-txt-faut-il-l-implementer-en-2026": "llms-txt-2026",
   "/agence-geo-paris": "agence-geo-paris",
@@ -128,6 +131,7 @@ var ROUTES = {
   "/expertise-seo": "expertise-seo",
   "/expertise-sea": "expertise-sea",
   "/expertise-gso": "expertise-gso",
+  "/expertise-geo": "expertise-gso",
   "/expertise-gsa": "expertise-gsa",
   "/expertise-media": "expertise-media",
   "/expertise-content": "expertise-content",
@@ -488,6 +492,17 @@ var PARTNERS_DATA = [
   }
 ];
 var BLOG_DATA = [
+  {
+    id: "google-business-profile-2026",
+    source: "Guide Pratique",
+    logo: "",
+    date: "21 JUILLET 2026",
+    title: "Maîtriser votre fiche Google Business Profile en 2026",
+    excerpt: "Google My Business s'appelle désormais Google Business Profile (GBP). Une fiche complète et active génère 7 fois plus de clics qu'une fiche négligée...",
+    url: "/blog/google-business-profile-2026",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1200",
+    tag: "SEO LOCAL"
+  },
   {
     id: "seo-vs-referencement-ia",
     source: "Guide Comparatif",
