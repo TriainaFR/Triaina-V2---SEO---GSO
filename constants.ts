@@ -2,6 +2,7 @@
 import { FAQItem, ReferenceItem, ChatStep, PartnerItem, BlogItem, JobOffer, TeamMember, HistoryItem, NavLink, ExpertiseContent, Page } from './types';
 
 export const PAGE_TO_URL: Record<string, string> = {
+  'ia-analyse-donnees-optimisation-seo-2026': '/blog/ia-analyse-donnees-optimisation-seo-2026',
   'core-web-vitals-seo-2026': '/blog/core-web-vitals-seo-2026',
   'google-business-profile-2026': '/blog/google-business-profile-2026',
   'agence-seo-toulouse-2026': '/blog/agence-seo-geo-toulouse-2026',
@@ -21,6 +22,7 @@ export const PAGE_TO_URL: Record<string, string> = {
   'expertise-gsa': '/expertise-gsa',
   'expertise-media': '/expertise-media',
   'expertise-content': '/expertise-contenu',
+  'expertise-ai-overview': '/expertise-ai-overview',
   'seo-paris': '/agence-seo-paris',
   'recrutement': '/recrutement',
   'agence-referencement-ia': '/agence-referencement-ia',
@@ -80,6 +82,7 @@ export const PAGE_TO_URL: Record<string, string> = {
 };
 
 export const ROUTES: Record<string, Page> = {
+  '/blog/ia-analyse-donnees-optimisation-seo-2026': 'ia-analyse-donnees-optimisation-seo-2026',
   '/blog/core-web-vitals-seo-2026': 'core-web-vitals-seo-2026',
   '/blog/google-business-profile-2026': 'google-business-profile-2026',
   '/blog/agence-seo-geo-toulouse-2026': 'agence-seo-toulouse-2026',
@@ -102,6 +105,7 @@ export const ROUTES: Record<string, Page> = {
   '/expertise-gsa': 'expertise-gsa',
   '/expertise-media': 'expertise-media',
   '/expertise-content': 'expertise-content',
+  '/expertise-ai-overview': 'expertise-ai-overview',
   '/expertise-contenu': 'expertise-content',
   '/automatisation-contenu': 'expertise-content',
   '/services': 'team',
@@ -174,7 +178,8 @@ export const NAV_LINKS: NavLink[] = [
         { id: 'expertise-gso', label: 'Expertise GEO' },
         { id: 'expertise-gsa', label: 'Expertise GSA' },
         { id: 'expertise-media', label: 'Expertise Média' },
-        { id: 'expertise-content', label: 'Expertise Automatisation de Contenu' }
+        { id: 'expertise-content', label: 'Expertise Automatisation de Contenu' },
+        { id: 'expertise-ai-overview', label: 'Google AI Overview' }
     ]
   },
   {
@@ -466,6 +471,8 @@ export const PARTNERS_DATA: PartnerItem[] = [
 ];
 
 export const BLOG_DATA: BlogItem[] = [
+  
+
   
 {
     id: 'seo-vs-referencement-ia',
@@ -1066,7 +1073,18 @@ export const BLOG_DATA: BlogItem[] = [
     url: '/blog/google-business-profile-2026',
     image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1200',
     tag: 'SEO LOCAL'
-  },];
+  },
+{
+    id: 'ia-analyse-donnees-optimisation-seo-2026',
+    source: 'Data SEO & IA',
+    logo: '',
+    date: '22 JUILLET 2026',
+    title: 'IA et Analyse de Données SEO : comment l\'intelligence artificielle redéfinit l\'optimisation en 2026',
+    excerpt: 'Comment Triaina utilise l\'IA analyse SEO pour transformer la prise de décision : signaux comportementaux, clustering sémantique, prédiction ranking. Cas concret 2026.',
+    url: '/blog/ia-analyse-donnees-optimisation-seo-2026',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200',
+    tag: 'ANALYSE'
+  }];
 
 export const CAREERS_DATA: JobOffer[] = [];
 

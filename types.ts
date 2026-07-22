@@ -21,6 +21,7 @@ export type Page =
   | 'expertise-gsa' 
   | 'expertise-media' 
   | 'expertise-content'
+  | 'expertise-ai-overview'
   | 'seo-paris'
   | 'recrutement'
   | 'agence-referencement-ia'
@@ -74,7 +75,7 @@ export type Page =
   | 'agence-seo-toulon-2026'
   | 'agence-seo-la-rochelle-2026'
   | 'annuaire'
-  | '404';
+  | 'ia-analyse-donnees-optimisation-seo-2026' | 'ia-analyse-donnees-optimisation-seo-2026' | '404';
 
 export interface NavLink {
   id: string;

@@ -1,6 +1,7 @@
 import { GoogleBusinessProfile2026 } from './views/blog/GoogleBusinessProfile2026';
 import { CoreWebVitalsSeo2026 } from './views/blog/CoreWebVitalsSeo2026';
 
+import { IAAnalyseDonnees2026 } from './views/blog/IAAnalyseDonnees2026';
 import React, { useState, useEffect } from 'react';
 import { Page } from './types';
 import ParticleBackground from './components/ParticleBackground';
@@ -15,6 +16,7 @@ import { Team } from './views/Team';
 import { Careers } from './views/Careers'; // Import Careers
 import { Expertise } from './views/Expertise';
 import { ExpertiseMedia } from './views/ExpertiseMedia';
+import { ExpertiseAIOverview } from './views/ExpertiseAIOverview';
 import { Legal } from './views/Legal';
 import { NotFound } from './views/NotFound'; // Import 404
 import { SeoParis } from './views/SeoParis'; // Import SeoParis
@@ -234,6 +236,8 @@ const App: React.FC = () => {
     switch (currentPage) {
       case 'google-business-profile-2026':
         return <GoogleBusinessProfile2026 />;
+      case 'ia-analyse-donnees-optimisation-seo-2026':
+        return <IAAnalyseDonnees2026 onNavigate={handleNavigation} />;
       case 'core-web-vitals-seo-2026':
         return <CoreWebVitalsSeo2026 />;
       case 'agence-seo-toulouse-2026':
@@ -264,6 +268,8 @@ const App: React.FC = () => {
         return <Expertise id={currentPage} onNavigate={handleNavigation} />;
       case 'expertise-media':
         return <ExpertiseMedia onNavigate={handleNavigation} />;
+      case 'expertise-ai-overview':
+        return <ExpertiseAIOverview onNavigate={handleNavigation} />;
       case 'seo-paris':
         return <SeoParis onNavigate={handleNavigation} />;
       case 'agence-referencement-ia':
