@@ -63,7 +63,7 @@ export const References: React.FC = () => {
                         src={item.image} 
                         alt={`Référence client ${item.client} - ${item.title}`} 
                         loading="lazy"
-                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                        className="w-full h-full object-contain p-8 grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                     />
                     <div className="absolute top-4 right-4 flex flex-wrap justify-end gap-2">
                         {item.tags.slice(0, 2).map((tag, i) => (

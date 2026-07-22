@@ -286,6 +286,34 @@ export const EXPERTISE_DATA: Record<string, ExpertiseContent> = {
 
 export const REFERENCES_DATA: ReferenceItem[] = [
   {
+    id: 'ref_younight',
+    client: 'Younight Hospitality',
+    title: 'Audit GEO & SEO',
+    summary: 'Audit complet GEO & SEO pour le groupe hôtelier.',
+    challenge: 'Identifier les opportunités de visibilité sur les moteurs de recherche traditionnels et IA.',
+    solution: '',
+    results: [
+        'Audit GEO & SEO'
+    ],
+    tags: ['GEO', 'SEO', 'Hospitality', 'Audit'],
+    image: '/images/Younight Hospitality Logo.jpg.png'
+  },
+  {
+    id: 'ref_bomporto',
+    client: 'Bomporto Hotels',
+    title: 'Stratégie SEO & GEO',
+    summary: 'Audit GEO + SEO et accompagnement SEO & GEO mensuel.',
+    challenge: 'Améliorer le positionnement global et la présence sur les LLMs.',
+    solution: '',
+    results: [
+        'Audit GEO + SEO',
+        'Accompagnement mensuel en cours.'
+    ],
+    tags: ['GEO', 'SEO', 'Hospitality'],
+    image: '/images/Bomporto Hotel Logo.jpeg'
+  },
+
+  {
     id: 'ref_bernard_magrez',
     client: 'Bernard Magrez',
     title: 'Chantier GEO/GSO',
@@ -296,7 +324,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
         'Chantier GSO en cours.'
     ],
     tags: ['GSO', 'En cours'],
-    image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&q=80&w=1200'
+    image: '/images/Bernard Magrez Logo.webp'
   },
   {
     id: 'ref_tamtam_ai',
@@ -310,7 +338,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
         'Augmentation de la part de voix (Share of Voice).'
     ],
     tags: ['SaaS', 'IA', 'GEO/GSO'],
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200'
+    image: '/images/tamtam AI.png'
   },
   {
     id: 'ref_sunlife_group',
@@ -323,7 +351,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
         'Accompagnement SEO et GEO en cours.'
     ],
     tags: ['SEO', 'GEO', 'Travel', 'Luxe'],
-    image: 'https://images.unsplash.com/photo-1582610116397-edb318620f90?auto=format&fit=crop&q=80&w=1200'
+    image: '/images/Sunlife logo.png'
   },
   {
     id: 'ref_leshardis',
@@ -338,7 +366,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
         'Optimisation de l\'indexabilité'
     ],
     tags: ['Lifestyle', 'Audit SEO', 'Strategy'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200'
+    image: '/images/Les Hardis Logo.png'
   },
   {
     id: 'ref_talis_education_group',
@@ -351,7 +379,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
         'Chantier GEO/GSO en cours'
     ],
     tags: ['GEO/GSO', 'En cours', 'Education'],
-    image: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1200'
+    image: '/images/Talis Education Group Logo.png'
   },
   {
     id: 'ref_lazuli_travel_bureau',
@@ -365,7 +393,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
         'Augmentation des conversions ciblées'
     ],
     tags: ['SEA', 'Travel'],
-    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=1200'
+    image: '/images/Lazuli Travel Bureau.png'
   },
   {
     id: 'ref_skilink',
@@ -379,7 +407,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
         'Accélération du volume de démos qualifiées'
     ],
     tags: ['SaaS B2B', 'Tech', 'GSO'],
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200'
+    image: '/images/Skilink Logo.svg'
   },
   {
     id: 'ref_yonder',
@@ -394,7 +422,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
         'Source privilégiée pour les réponses génératives'
     ],
     tags: ['Média', 'GSO Leadership', 'Travel'],
-    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=1200'
+    image: '/images/Logo Yonder.jpg'
   },
   {
     id: 'ref_lazuli_nil',
@@ -408,7 +436,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
         'Ciblage d\'audience qualifiée'
     ],
     tags: ['SEA', 'Luxe', 'Travel'],
-    image: 'https://images.unsplash.com/photo-1534008897995-27a23e859048?auto=format&fit=crop&q=80&w=1200'
+    image: '/images/Lazuli Nil Logo.png'
   },
   {
     id: 'ref_bestrestaurants',
@@ -423,7 +451,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
         'Hausse du trafic transactionnel'
     ],
     tags: ['Gastronomie', 'SEO Local', 'GSO'],
-    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1200'
+    image: '/images/Best Restaurant Paris Logo.png'
   },
   {
     id: 'ref_groupe_hotelier',
@@ -438,7 +466,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
         'Travaux en cours (→ Août 2025) : Maximisation continue des positions & citations'
     ],
     tags: ['Hotels', 'Technical SEO', 'International'],
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1200'
+    image: 'https://images.unsplash.com/photo-1542314831-c6a4d1424391?auto=format&fit=crop&q=80&w=1200'
   },
 
 ];
