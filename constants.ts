@@ -466,7 +466,7 @@ export const REFERENCES_DATA: ReferenceItem[] = [
         'Travaux en cours (→ Août 2025) : Maximisation continue des positions & citations'
     ],
     tags: ['Hotels', 'Technical SEO', 'International'],
-    image: 'https://images.unsplash.com/photo-1542314831-c6a4d1424391?auto=format&fit=crop&q=80&w=1200'
+    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
   },
 
 ];
