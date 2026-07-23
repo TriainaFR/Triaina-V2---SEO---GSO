@@ -2,6 +2,7 @@
 import { FAQItem, ReferenceItem, ChatStep, PartnerItem, BlogItem, JobOffer, TeamMember, HistoryItem, NavLink, ExpertiseContent, Page } from './types';
 
 export const PAGE_TO_URL: Record<string, string> = {
+  'agence-seo-france': '/blog/agence-seo-france',
   'ia-analyse-donnees-optimisation-seo-2026': '/blog/ia-analyse-donnees-optimisation-seo-2026',
   'core-web-vitals-seo-2026': '/blog/core-web-vitals-seo-2026',
   'google-business-profile-2026': '/blog/google-business-profile-2026',
@@ -82,6 +83,7 @@ export const PAGE_TO_URL: Record<string, string> = {
 };
 
 export const ROUTES: Record<string, Page> = {
+  '/blog/agence-seo-france': 'agence-seo-france',
   '/blog/ia-analyse-donnees-optimisation-seo-2026': 'ia-analyse-donnees-optimisation-seo-2026',
   '/blog/core-web-vitals-seo-2026': 'core-web-vitals-seo-2026',
   '/blog/google-business-profile-2026': 'google-business-profile-2026',
@@ -499,6 +501,8 @@ export const PARTNERS_DATA: PartnerItem[] = [
 ];
 
 export const BLOG_DATA: BlogItem[] = [
+
+  
   
 
   
@@ -1112,7 +1116,19 @@ export const BLOG_DATA: BlogItem[] = [
     url: '/blog/ia-analyse-donnees-optimisation-seo-2026',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200',
     tag: 'ANALYSE'
-  }];
+  },
+  {
+    id: 'agence-seo-france-2026',
+    source: 'Guide Agences',
+    logo: '',
+    date: '23 JUILLET 2026',
+    title: 'Agence SEO France : comment choisir en 2026 ?',
+    excerpt: "Le marché des agences SEO en France compte plusieurs centaines d'acteurs. Ce guide compare les cinq agences qui sortent du lot en 2026, avec les critères concrets pour faire le bon choix.",
+    url: '/blog/agence-seo-france',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200',
+    tag: 'AGENCES'
+  }
+];
 
 export const CAREERS_DATA: JobOffer[] = [];
 

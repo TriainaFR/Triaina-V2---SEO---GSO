@@ -1,38 +1,73 @@
 const fs = require('fs');
 
-function addArticle() {
-  let content = fs.readFileSync('constants.ts', 'utf8');
-  
-  if (!content.includes("'core-web-vitals-seo-2026'")) {
-    content = content.replace(
-      "export const PAGE_TO_URL: Record<string, string> = {",
-      "export const PAGE_TO_URL: Record<string, string> = {\n  'core-web-vitals-seo-2026': '/blog/core-web-vitals-seo-2026',"
-    );
+let content = fs.readFileSync('constants.ts', 'utf8');
 
-    content = content.replace(
-      "export const ROUTES: Record<string, Page> = {",
-      "export const ROUTES: Record<string, Page> = {\n  '/blog/core-web-vitals-seo-2026': 'core-web-vitals-seo-2026',"
-    );
-
-    const articleData = `  {
-    id: 'core-web-vitals-seo-2026',
-    source: 'Guide Technique',
-    logo: '',
-    date: '21 JUILLET 2026',
-    title: 'Core Web Vitals et SEO Technique : Le Guide Complet pour Performer en 2026',
-    excerpt: "Les Core Web Vitals sont un signal de classement Google officiel depuis 2021, et ils le restent en 2026 - avec un poids amplifié par NavBoost. Un LCP au-dessus de 4 s, c\\'est une suppression active de votre ranking.",
-    url: '/blog/core-web-vitals-seo-2026',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
-    tag: 'TECH'
-  },
-`;
-    content = content.replace(
-      "export const BLOG_DATA: BlogItem[] = [",
-      "export const BLOG_DATA: BlogItem[] = [\n" + articleData
-    );
-
-    fs.writeFileSync('constants.ts', content);
+// 1. Restore the end of the file.
+content = content.replace(
+`  {
+    id: 4,
+    botMessage: "Dernière étape.\\nDécrivez brièvement votre défi actuel (Baisse de trafic, Lancement produit, Concurrence IA...).",
+    fieldName: "project",
+    placeholder: "Décrivez votre défi...",
+    type: "textarea"
   }
-}
+{
+    id: 'agence-seo-france-2026',
+    source: 'Guide Agences',
+    logo: '',
+    date: '23 JUILLET 2026',
+    title: 'Agence SEO France : comment choisir en 2026 ?',
+    excerpt: "Le marché des agences SEO en France compte plusieurs centaines d'acteurs. Ce guide compare les cinq agences qui sortent du lot en 2026, avec les critères concrets pour faire le bon choix.",
+    url: '/blog/agence-seo-france',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200',
+    tag: 'AGENCES'
+  },
+];`,
+`  {
+    id: 4,
+    botMessage: "Dernière étape.\\nDécrivez brièvement votre défi actuel (Baisse de trafic, Lancement produit, Concurrence IA...).",
+    fieldName: "project",
+    placeholder: "Décrivez votre défi...",
+    type: "textarea"
+  }
+];`
+);
 
-addArticle();
+// Remove the item from the top of BLOG_DATA if it is still there
+const newPost = `{
+    id: 'agence-seo-france-2026',
+    source: 'Guide Agences',
+    logo: '',
+    date: '23 JUILLET 2026',
+    title: 'Agence SEO France : comment choisir en 2026 ?',
+    excerpt: "Le marché des agences SEO en France compte plusieurs centaines d'acteurs. Ce guide compare les cinq agences qui sortent du lot en 2026, avec les critères concrets pour faire le bon choix.",
+    url: '/blog/agence-seo-france',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200',
+    tag: 'AGENCES'
+  }`;
+
+// Actually let's just do a clean regex replacement for it
+content = content.replace(/\{\s*id:\s*'agence-seo-france-2026'[\s\S]*?\},/g, '');
+
+// Append it right before `];\n\nexport const CAREERS_DATA`
+content = content.replace(
+`    tag: 'ANALYSE'
+  }
+];`, 
+`    tag: 'ANALYSE'
+  },
+  {
+    id: 'agence-seo-france-2026',
+    source: 'Guide Agences',
+    logo: '',
+    date: '23 JUILLET 2026',
+    title: 'Agence SEO France : comment choisir en 2026 ?',
+    excerpt: "Le marché des agences SEO en France compte plusieurs centaines d'acteurs. Ce guide compare les cinq agences qui sortent du lot en 2026, avec les critères concrets pour faire le bon choix.",
+    url: '/blog/agence-seo-france',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200',
+    tag: 'AGENCES'
+  }
+];`);
+
+fs.writeFileSync('constants.ts', content);
+

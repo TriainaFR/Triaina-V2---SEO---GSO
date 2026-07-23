@@ -54,6 +54,7 @@ import { PromptEngineeringSeo2026 } from './views/blog/PromptEngineeringSeo2026'
 import { PerplexitySeo2026 } from './views/blog/PerplexitySeo2026';
 import { MeilleureAgenceGeoFrance2026 } from './views/blog/MeilleureAgenceGeoFrance2026';
 import { MarqueVisibleChatgpt2026 } from './views/blog/MarqueVisibleChatgpt2026';
+import { AgenceSeoFrance2026 } from './views/blog/AgenceSeoFrance2026';
 import { TopAgencesSeoGeoParis2026 } from './views/blog/TopAgencesSeoGeoParis2026';
 import { AgenceGoogleAiOverview2026 } from './views/blog/AgenceGoogleAiOverview2026';
 import { AgenceGeoParis } from './views/AgenceGeoParis';
@@ -340,6 +341,8 @@ const App: React.FC = () => {
         return <MeilleureAgenceGeoFrance2026 />;
       case '10-conseils-marque-visible-chatgpt-2026':
         return <MarqueVisibleChatgpt2026 />;
+      case 'agence-seo-france':
+        return <AgenceSeoFrance2026 />;
       case 'top-10-agences-seo-geo-paris-2026':
         return <TopAgencesSeoGeoParis2026 />;
     case 'agence-google-ai-overview-2026':
