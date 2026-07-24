@@ -33,6 +33,28 @@ export const AgenceSeoEcommerce2026: React.FC = () => {
         { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
         { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
       ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quelle est la différence entre un consultant SEO e-commerce et une agence SEO e-commerce ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un consultant travaille souvent en solo, idéal pour de petits catalogues, tandis qu'une agence apporte une équipe pluridisciplinaire et gère des projets de plus grande envergure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "L'AI Overview de Google va-t-il tuer le SEO e-commerce ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non, mais il le transforme. Les requêtes transactionnelles précises résistent mieux, et il devient nécessaire d'adopter une stratégie GEO (Generative Engine Optimization)."
+          }
+        }
+      ]
     }
   ];
 

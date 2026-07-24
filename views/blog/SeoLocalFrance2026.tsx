@@ -33,6 +33,28 @@ export const SeoLocalFrance2026: React.FC = () => {
         { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
         { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
       ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Combien de temps faut-il pour voir des résultats en SEO local ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Les premières améliorations sur Google Business Profile sont visibles en 4 à 8 semaines. Les effets sur le trafic organique prennent 3 à 6 mois."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "La fiche Google My Business est-elle toujours d'actualité en 2026 ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, renommée Google Business Profile (GBP), elle reste l'outil central et gratuit du référencement local Google et est intégrée dans les IA (Gemini, AI Overviews)."
+          }
+        }
+      ]
     }
   ];
 

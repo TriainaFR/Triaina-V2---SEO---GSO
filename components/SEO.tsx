@@ -17,6 +17,9 @@ interface SEOProps {
   twitterImage?: string;
   twitterTitle?: string;
   twitterDescription?: string;
+  geoRegion?: string;
+  geoPlacename?: string;
+  geoPosition?: string;
 }
 
 export const SEO: React.FC<SEOProps> = ({ 
@@ -34,7 +37,10 @@ export const SEO: React.FC<SEOProps> = ({
     exactTitle = false,
     twitterImage,
     twitterTitle,
-    twitterDescription
+    twitterDescription,
+    geoRegion,
+    geoPlacename,
+    geoPosition
 }) => {
   useEffect(() => {
     // 1. Title Management
@@ -59,6 +65,14 @@ export const SEO: React.FC<SEOProps> = ({
     // 2. Standard Meta Tags (Google uses 'name')
     if (description) updateMeta('meta[name="description"]', description);
     if (keywords) updateMeta('meta[name="keywords"]', keywords);
+
+    // Geo Meta Tags
+    if (geoRegion) updateMeta('meta[name="geo.region"]', geoRegion);
+    if (geoPlacename) updateMeta('meta[name="geo.placename"]', geoPlacename);
+    if (geoPosition) {
+      updateMeta('meta[name="geo.position"]', geoPosition);
+      updateMeta('meta[name="ICBM"]', geoPosition.replace(';', ', '));
+    }
 
     // 3. Open Graph (Facebook/Linkedin uses 'property')
     updateMeta('meta[property="og:title"]', ogTitle || title || '');
