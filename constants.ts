@@ -2,6 +2,8 @@
 import { FAQItem, ReferenceItem, ChatStep, PartnerItem, BlogItem, JobOffer, TeamMember, HistoryItem, NavLink, ExpertiseContent, Page } from './types';
 
 export const PAGE_TO_URL: Record<string, string> = {
+  'seo-local-france-2026': '/blog/seo-local-france',
+  'agence-seo-ecommerce-2026': '/blog/agence-seo-ecommerce',
   'agence-seo-france': '/blog/agence-seo-france',
   'ia-analyse-donnees-optimisation-seo-2026': '/blog/ia-analyse-donnees-optimisation-seo-2026',
   'core-web-vitals-seo-2026': '/blog/core-web-vitals-seo-2026',
@@ -83,6 +85,8 @@ export const PAGE_TO_URL: Record<string, string> = {
 };
 
 export const ROUTES: Record<string, Page> = {
+  '/blog/seo-local-france': 'seo-local-france-2026',
+  '/blog/agence-seo-ecommerce': 'agence-seo-ecommerce-2026',
   '/blog/agence-seo-france': 'agence-seo-france',
   '/blog/ia-analyse-donnees-optimisation-seo-2026': 'ia-analyse-donnees-optimisation-seo-2026',
   '/blog/core-web-vitals-seo-2026': 'core-web-vitals-seo-2026',
@@ -1127,6 +1131,28 @@ export const BLOG_DATA: BlogItem[] = [
     url: '/blog/agence-seo-france',
     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200',
     tag: 'AGENCES'
+  },
+  {
+    id: 'agence-seo-ecommerce-2026',
+    source: 'Guide E-commerce',
+    logo: '',
+    date: '24 JUILLET 2026',
+    title: 'Agence SEO e-commerce : comment choisir en 2026 ?',
+    excerpt: "Le référencement e-commerce n'a plus rien à voir avec le SEO d'un site vitrine. Choisir la mauvaise agence, c'est perdre six mois et un budget conséquent.",
+    url: '/blog/agence-seo-ecommerce',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1200',
+    tag: 'E-COMMERCE'
+  },
+  {
+    id: 'seo-local-france-2026',
+    source: 'Guide Local',
+    logo: '',
+    date: '25 JUILLET 2026',
+    title: 'SEO Local France : guide complet 2026',
+    excerpt: "Le SEO local, c'est l'ensemble des techniques qui font apparaître votre entreprise dans les résultats géolocalisés de Google. En 2026, c'est critique.",
+    url: '/blog/seo-local-france',
+    image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=1200',
+    tag: 'SEO LOCAL'
   }
 ];
 

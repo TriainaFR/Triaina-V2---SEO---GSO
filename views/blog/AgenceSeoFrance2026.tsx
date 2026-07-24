@@ -1,173 +1,140 @@
 import React, { useEffect } from 'react';
+import { ArrowLeft, Calendar, Linkedin, Twitter, Facebook, Share2 } from 'lucide-react';
+import { BLOG_DATA } from '../../constants';
 import { SEO } from '../../components/SEO';
-import { ArrowLeft, Share2, Search } from 'lucide-react';
-import { PAGE_TO_URL, BLOG_DATA } from '../../constants';
 
-interface AgenceSeoFrance2026Props {
-  onNavigate?: (p: any) => void;
-}
+export const AgenceSeoFrance2026: React.FC = () => {
+  const post = BLOG_DATA.find(p => p.id === 'agence-seo-france-2026');
 
-export const AgenceSeoFrance2026: React.FC<AgenceSeoFrance2026Props> = ({ onNavigate }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const post = BLOG_DATA.find(p => p.id === 'agence-seo-france-2026');
-
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Article",
-        "@id": "https://triaina.fr/blog/agence-seo-france#article",
-        "headline": post?.title || '',
-        "description": post?.excerpt || '',
-        "datePublished": "2026-07-23",
-        "dateModified": "2026-07-23",
-        "author": {
-          "@type": "Person",
-          "name": "Camille Rousseau",
-          "jobTitle": "Consultante Senior GEO/SEO",
-          "url": "https://www.linkedin.com/in/camille-rousseau-a44488413/"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Triaina",
-          "url": "https://triaina.fr"
-        },
-        "about": "Agence SEO France",
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": "https://triaina.fr/blog/agence-seo-france"
-        },
-        "image": post?.image || ''
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://triaina.fr/blog/agence-seo-france#breadcrumb",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Accueil",
-            "item": "https://triaina.fr/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Blog",
-            "item": "https://triaina.fr/blog"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": post?.title || '',
-            "item": "https://triaina.fr/blog/agence-seo-france"
-          }
-        ]
+  const seoSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": post?.title || '',
+      "description": post?.excerpt || '',
+      "image": post?.image || '',
+      "author": {
+        "@type": "Person",
+        "name": "Camille Rousseau",
+        "jobTitle": "Consultante Senior GEO/SEO chez Triaina",
+        "url": "https://www.triaina.fr",
+        "sameAs": "https://www.linkedin.com/in/camille-rousseau-a44488413/"
       }
-    ]
-  };
-
-  const handleShare = async () => {
-    try {
-      await navigator.share({
-        title: post?.title,
-        url: `https://triaina.fr${post?.url}`
-      });
-    } catch (err) {
-      console.log('Error sharing:', err);
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
+        { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
+      ]
     }
-  };
+  ];
 
-  const nav = onNavigate || (() => { window.location.href = '/blog'; });
+
+
+  if (!post) return null;
 
   return (
-    <div className="pt-24 md:pt-32 pb-12 px-4 md:px-6 min-h-screen">
+    <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
       <SEO 
-        title={`${post?.title} - Triaina`}
-        description={post?.excerpt}
-        schema={articleSchema}
-        canonicalUrl={`https://triaina.fr${post?.url}`}
+        title={`${post.title} - Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://triaina.fr${post.url}`}
+        schema={seoSchema}
       />
-
-      <div className="max-w-4xl mx-auto">
-        {/* Navigation */}
-        <button 
-          onClick={() => nav('blog')}
-          className="inline-flex items-center gap-2 text-slate-500 hover:text-blue-600 transition-colors mb-8 font-mono text-sm uppercase tracking-wider"
+      
+      <div className="max-w-7xl mx-auto">
+        <a 
+          href="/blog" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState({}, '', '/blog');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}
+          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
         >
-          <ArrowLeft size={16} />
+          <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
           Retour aux articles
-        </button>
+        </a>
 
-        {/* Header */}
-        <header className="mb-12 relative">
-          <div className="absolute -top-10 -left-10 w-32 h-32 bg-blue-100 rounded-full blur-3xl opacity-50 z-0"></div>
+        <article className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden relative">
+          {/* Accent decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-50"></div>
           
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-sm font-bold tracking-wider uppercase mb-6 border border-blue-100 relative z-10">
-            <Search size={16} />
-            {post?.tag || 'AGENCES'}
-          </div>
-          
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 leading-tight mb-8 relative z-10">
-            {post?.title}
-          </h1>
-          
-          <div className="flex flex-wrap items-center gap-6 text-sm text-slate-600 border-b border-slate-200 pb-8 relative z-10">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold">
-                CR
-              </div>
-              <div>
-                <div className="font-bold text-slate-900">Camille Rousseau</div>
-                <div>Consultante Senior GEO/SEO chez Triaina</div>
-              </div>
+          <header className="mb-12">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
+              <span className="flex items-center">
+                <Calendar size={14} className="mr-2 text-blue-500" />
+                {post.date}
+              </span>
+              <span className="text-slate-300">|</span>
+              <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">{post.tag}</span>
             </div>
-            <div className="flex items-center gap-4 ml-auto">
-              <span>{post?.date}</span>
-              <span className="w-1 h-1 rounded-full bg-slate-300"></span>
-              <span>12 min de lecture</span>
-            </div>
-          </div>
-        </header>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+              {post.excerpt}
+            </p>
+          </header>
 
-        {/* Hero Image */}
-        {post?.image && (
-          <div className="relative h-96 md:h-[500px] w-full rounded-2xl overflow-hidden mb-16 shadow-2xl animate-fade-in-up" style={{ animationDelay: '200ms' }}>
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-16 relative group">
             <img 
               src={post.image} 
               alt={post.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               referrerPolicy="no-referrer"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
           </div>
-        )}
 
-        {/* Content */}
-        <article className="prose prose-lg prose-slate max-w-none prose-headings:font-display prose-headings:font-bold prose-h2:text-3xl prose-h3:text-2xl prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-2xl" dangerouslySetInnerHTML={{ __html: `
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-2xl prose-strong:text-slate-900 prose-li:marker:text-blue-500">
+<div dangerouslySetInnerHTML={{ __html: `
 <p><strong>TL;DR - ce qu'il faut retenir en 30 secondes :</strong></p><ul><li><p>En 2026, une agence SEO sérieuse couvre à la fois le référencement naturel classique <strong>et</strong> le GEO (visibilité dans ChatGPT, Gemini, Perplexity).</p></li><li><p>Les tarifs vont de <strong>500 €/mois</strong> pour un accompagnement ciblé à <strong>8 000 €+/mois</strong> pour les grands comptes - l'audit initial est la première étape incontournable.</p></li><li><p>Cinq critères font la différence : expertise technique, maîtrise du GEO/IA, transparence des reportings, références vérifiables, et cohérence tarifaire.</p></li></ul><p>Le marché des <strong>agences SEO en France</strong> compte plusieurs centaines d'acteurs. Certains sont solides, d'autres surfent sur les mots-clés. Ce guide compare les cinq agences qui sortent du lot en 2026, avec les critères concrets pour faire le bon choix - sans superlatifs vides.</p><h2>Qu'est-ce qu'une agence SEO en 2026 ?</h2><p>Une <strong>agence SEO</strong> - ou <strong>agence de référencement</strong>, selon l'appellation que vous préférez - optimise la visibilité d'un site web dans les moteurs de recherche. Techniquement : structure du site, vitesse, balisage, contenu, maillage interne, netlinking. L'objectif final reste le même depuis vingt ans : générer du trafic qualifié sans payer chaque clic.</p><p>Ce qui a changé en 2025-2026, c'est l'apparition d'une deuxième surface de visibilité : les <strong>IA génératives</strong>. Google AI Overviews, ChatGPT, Gemini et Perplexity répondent directement aux questions des internautes, souvent sans qu'ils cliquent sur un lien. Une agence qui ignore cette réalité vous expose à une perte de trafic structurelle.</p><p>Le <strong>GEO</strong> (Generative Engine Optimization) est la discipline qui comble cet angle mort. Là où le SEO classique vise à <em>ranker</em> une page dans une liste de liens, le GEO vise à <em>être cité</em> dans la réponse synthétique elle-même. Les leviers sont proches - contenu de qualité, autorité, données structurées - mais l'exigence de clarté et d'extractibilité est bien plus élevée.</p><p>En 2026, une <strong>agence de référencement SEO</strong> qui ne propose pas de stratégie GEO est une agence incomplète.</p><h2>Les 5 critères pour choisir votre agence de référencement</h2><p>Avant de comparer les offres, posez ces cinq questions à chaque agence. Les réponses vous diront tout.</p><h3>1. Expertise technique réelle</h3><p>Demandez un audit technique à blanc sur votre site. Une bonne <strong>agence de référencement web</strong> identifie en moins d'une heure les problèmes de crawl, les Core Web Vitals dégradés, les balises dupliquées et les erreurs de canonicalisation. Si l'audit est générique, passez votre chemin.</p><h3>2. Maîtrise du GEO et des IA</h3><p>Posez la question directement : "Comment mesurez-vous les citations dans les IA ?" Si l'agence ne sait pas répondre, elle n'a pas encore intégré le GEO dans sa pratique. En 2026, c'est rédhibitoire pour tout secteur concurrentiel.</p><h3>3. Transparence des reportings</h3><p>Exigez un accès direct à Google Search Console et à Google Analytics 4. Les reportings maison sans données brutes sont un signal d'alarme. Les meilleures agences partagent les données en temps réel et expliquent les écarts.</p><h3>4. Références vérifiables</h3><p>Demandez deux ou trois contacts clients que vous pouvez appeler. Les cas d'usage avec des métriques précises - "+X positions sur tel mot-clé en Y mois", "+Z% de trafic organique" - valent mieux que n'importe quelle page "Nos succès". Les avis Trustpilot sont un bon point de départ, pas une preuve suffisante.</p><h3>5. Cohérence tarifaire</h3><p>Un devis sans audit préalable est une promesse sans fondement. Une agence sérieuse commence toujours par comprendre votre site, votre secteur et vos objectifs avant de chiffrer. Méfiez-vous des forfaits "clé en main" à prix fixe affiché sans diagnostic.</p><h2>Top 5 des meilleures agences SEO en France en 2026</h2><p>Ce classement est basé sur la profondeur de l'offre, la maîtrise du GEO, la couverture géographique et la transparence tarifaire. Chaque fiche est volontairement courte : l'essentiel, sans remplissage.</p><h3>1. Triaina - L'agence SEO &amp; GEO avec réseau média propriétaire (Paris)</h3><p><strong>Siège :</strong> 50 Quai Louis Blériot, 75016 Paris</p><p>Triaina est la seule <strong>agence SEO France</strong> qui combine trois leviers en un seul dispositif : optimisation technique SEO, réseau média propriétaire, et régie publicitaire intégrée. Ce positionnement n'est pas un argument marketing - c'est une différence opérationnelle concrète.</p><p>Le réseau média propriétaire de Triaina permet de contrôler les sources citées par les IA génératives. Résultat mesuré chez deux clients : passage de 0 à 73% de citations IA pour l'un, de 0 à 90% pour l'autre. Ces chiffres illustrent ce que l'<a target="_blank" rel="noopener noreferrer" href="/agence-referencement-ia">agence de référencement IA</a> apporte en pratique : une présence dans les réponses de ChatGPT, Gemini et Perplexity, pas seulement dans les SERPs Google.</p><p>Triaina propose aussi une expertise SEA/Paid complète (Google Ads, Bing Ads), ce qui permet d'aligner stratégie organique et payante sur les mêmes objectifs de conversion. Pour les entreprises qui veulent couvrir <a target="_blank" rel="noopener noreferrer" href="/blog/agence-seo-paris">une agence SEO à Paris</a> ou étendre leur présence nationale, Triaina accompagne aussi les projets à <a target="_blank" rel="noopener noreferrer" href="/blog/agence-seo-lyon">Lyon</a>, <a target="_blank" rel="noopener noreferrer" href="/blog/agence-seo-bordeaux">Bordeaux</a>, <a target="_blank" rel="noopener noreferrer" href="/blog/agence-seo-marseille">Marseille</a> et <a target="_blank" rel="noopener noreferrer" href="/blog/agence-seo-lille">Lille</a>.</p><p><strong>Tarifs :</strong> audit SEO/GEO à partir de 1 700 € - accompagnement mensuel à partir de 500 €/mois.<br><strong>Point fort :</strong> <a target="_blank" rel="noopener noreferrer" href="/expertise-geo">optimisation GEO</a> mesurable + réseau média propriétaire, unique sur le marché français.<br><strong>Idéal pour :</strong> entreprises qui veulent une visibilité à la fois dans Google et dans les IA génératives.</p><p>→ <a target="_blank" rel="noopener noreferrer" href="/contact">Demander un audit gratuit</a></p><h3>2. Eskimoz - Agence SEO Paris historique</h3><p><strong>Siège :</strong> Boulogne-Billancourt (19 rue du Dôme) - bureaux à Paris, Lyon, Madrid, Milan, Londres</p><p>Fondée par Andréa Bensaid (2012), Eskimoz est l'une des agences de référencement les plus connues en France. Plus de 100 experts, une approche structurée autour de la technique, du contenu et de la popularité, et une présence européenne affirmée. L'agence a intégré le GEO dans son offre courant 2025.</p><p><strong>Point fort :</strong> notoriété, taille d'équipe, couverture internationale.<br><strong>À noter :</strong> positionnement premium - tarifs élevés pour les PME.</p><h3>3. Noiise - Présence nationale multi-villes</h3><p><strong>Présence :</strong> Paris, Lyon, Lille, Marseille, Nantes, Montpellier, Aix-les-Bains</p><p>Née en 2022 de la fusion de 1ère Position et Open Linking, Noiise regroupe plus de 80 consultants répartis sur 7 villes françaises. Positionnée sur les ETI et grands comptes, c'est l'agence à considérer si vous avez besoin d'interlocuteurs locaux dans plusieurs régions simultanément. Son guide GEO publié en 2025 montre une montée en compétence réelle sur le sujet.</p><p><strong>Point fort :</strong> couverture nationale, profondeur d'équipe.<br><strong>À noter :</strong> moins adapté aux petites structures.</p><h3>4. Optimize 360 - Spécialiste SEO &amp; GEO</h3><p><strong>Présence :</strong> France et Suisse, multi-sites</p><p>Optimize 360 est l'un des pionniers du GEO en France. L'agence a structuré une offre GEO opérationnelle dès début 2025, avec une méthode propriétaire ("locomotive et wagons") et un lab dédié (10-best-of.com) conçu pour générer des citations dans les LLMs. Expertise reconnue dans l'hôtellerie et la restauration. Portefeuille de plus de 500 marques accompagnées.</p><p><strong>Point fort :</strong> antériorité GEO, méthode structurée, secteur hospitality.<br><strong>À noter :</strong> offre moins lisible pour les secteurs B2B tech.</p><h3>5. Pixalione - Agence SEO multi-bureaux</h3><p><strong>Présence :</strong> Paris (siège, 15e), Lyon, Lille, Toulouse, Bordeaux - et Londres, Bangkok</p><p>Pixalione se positionne comme une agence de Search Marketing full-service : SEO, SEA, Social Media Ads et Data. Forte de plusieurs bureaux en France et d'une présence internationale, elle convient aux entreprises qui cherchent une <strong>agence de référencement internet</strong> capable de gérer des campagnes multicanales et multi-marchés depuis un seul interlocuteur.</p><p><strong>Point fort :</strong> couverture multi-bureaux, offre Search complète.<br><strong>À noter :</strong> la dimension internationale peut diluer l'attention sur les projets mid-market français.</p><h2>Tableau comparatif des agences</h2><div className="overflow-x-auto"><table style={{minWidth: '125px'}}><colgroup><col style={{minWidth: '25px'}}/><col style={{minWidth: '25px'}}/><col style={{minWidth: '25px'}}/><col style={{minWidth: '25px'}}/><col style={{minWidth: '25px'}}/></colgroup><tbody><tr><th colspan={1} rowspan={1}><p>Agence</p></th><th colspan={1} rowspan={1}><p>Spécialité</p></th><th colspan={1} rowspan={1}><p>GEO / IA</p></th><th colspan={1} rowspan={1}><p>Villes principales</p></th><th colspan={1} rowspan={1}><p>Tarif estimé</p></th></tr><tr><td colspan={1} rowspan={1}><p><strong>Triaina</strong></p></td><td colspan={1} rowspan={1}><p>SEO technique + réseau média + SEA/Paid</p></td><td colspan={1} rowspan={1}><p>✅ Oui - réseau média propriétaire + mesure citations IA</p></td><td colspan={1} rowspan={1}><p>Paris (+ national)</p></td><td colspan={1} rowspan={1}><p>À partir de 500 €/mois - audit dès 1 700 €</p></td></tr><tr><td colspan={1} rowspan={1}><p>Eskimoz</p></td><td colspan={1} rowspan={1}><p>SEO, SEA, Content, Data</p></td><td colspan={1} rowspan={1}><p>✅ Oui - intégré depuis 2025</p></td><td colspan={1} rowspan={1}><p>Paris, Lyon, Boulogne-Billancourt</p></td><td colspan={1} rowspan={1}><p>Premium - sur devis</p></td></tr><tr><td colspan={1} rowspan={1}><p>Noiise</p></td><td colspan={1} rowspan={1}><p>SEO orienté ROI, ETI/grands comptes</p></td><td colspan={1} rowspan={1}><p>⚡ En cours d'intégration</p></td><td colspan={1} rowspan={1}><p>7 villes (Paris, Lyon, Lille, Marseille…)</p></td><td colspan={1} rowspan={1}><p>Sur devis - positionnement mid/haut de gamme</p></td></tr><tr><td colspan={1} rowspan={1}><p>Optimize 360</p></td><td colspan={1} rowspan={1}><p>SEO + GEO, hospitality</p></td><td colspan={1} rowspan={1}><p>✅ Oui - pionnier, méthode propriétaire</p></td><td colspan={1} rowspan={1}><p>France + Suisse</p></td><td colspan={1} rowspan={1}><p>Sur devis</p></td></tr><tr><td colspan={1} rowspan={1}><p>Pixalione</p></td><td colspan={1} rowspan={1}><p>Search Marketing full-service (SEO, SEA, SMA, Data)</p></td><td colspan={1} rowspan={1}><p>⚡ Offre en développement</p></td><td colspan={1} rowspan={1}><p>Paris, Lyon, Lille, Toulouse, Bordeaux</p></td><td colspan={1} rowspan={1}><p>Sur devis - multi-bureaux</p></td></tr></tbody></table></div><h2>Combien coûte une agence SEO en France ?</h2><p>La question revient dans tous les appels d'offres. Voici les fourchettes réelles du marché en 2026, sans arrondir vers le bas pour rassurer.</p><ul><li><p><strong>SEO local / petit site :</strong> 600 à 1 500 €/mois. Convient pour un commerce de proximité ou un site vitrine avec peu de pages.</p></li><li><p><strong>PME / accompagnement sérieux :</strong> 1 500 à 3 500 €/mois. C'est la fourchette de la majorité des projets avec un vrai objectif de croissance organique.</p></li><li><p><strong>E-commerce ou site volumineux :</strong> 3 000 à 8 000 €/mois. La volumétrie des pages, la gestion des facettes et le netlinking à grande échelle justifient ce budget.</p></li><li><p><strong>Grand compte / secteur très concurrentiel :</strong> 8 000 €/mois et plus. Finance, assurance, santé, immobilier - les secteurs où chaque position coûte cher à conquérir et à défendre.</p></li></ul><p>Ces fourchettes concernent l'accompagnement mensuel. L'audit initial est en général facturé séparément : comptez entre 1 500 € et 5 000 € selon la taille du site et la profondeur de l'analyse. Chez Triaina, l'audit SEO/GEO démarre à 1 700 €.</p><p>Pour une analyse complète des tarifs avec les détails par type de prestation (audit, rédaction, netlinking, GEO), consultez notre page dédiée aux <a target="_blank" rel="noopener noreferrer" href="/blog/prix-agence-seo-geo">prix d'une agence SEO</a>.</p><p>Un dernier point : le coût d'une agence SEO doit toujours être mis en regard du coût d'acquisition payant. Si vous dépensez 3 000 €/mois en Google Ads pour des mots-clés que le SEO pourrait couvrir organiquement en 6 mois, le calcul est vite fait.</p><h2>FAQ - Agence SEO France</h2><h3>Quelle est la différence entre une agence SEO et une agence de référencement ?</h3><p>Les deux termes désignent la même réalité : améliorer la visibilité d'un site dans les moteurs de recherche. "Agence de référencement" est l'appellation historique française ; "agence SEO" est le terme technique international. En 2026, les meilleures agences couvrent aussi le GEO (visibilité dans les IA génératives).</p><h3>Combien coûte une agence SEO en France en 2026 ?</h3><p>Les tarifs vont de 600 €/mois pour du SEO local basique à plus de 8 000 €/mois pour les grands comptes très concurrentiels. La majorité des PME investissent entre 1 500 € et 3 500 € HT par mois pour un accompagnement sérieux. L'audit initial est généralement facturé en sus.</p><h3>Qu'est-ce que le GEO et pourquoi est-ce important en 2026 ?</h3><p>Le GEO (Generative Engine Optimization) consiste à optimiser un contenu pour être cité dans les réponses des IA génératives : ChatGPT, Gemini, Perplexity, Google AI Overviews. En 2026, ces surfaces captent une part croissante de l'attention des internautes. Une agence qui ignore le GEO vous expose à une perte de visibilité structurelle.</p><h3>Comment vérifier les références d'une agence de référencement naturel ?</h3><p>Demandez des cas clients avec des métriques précises : évolution de positions, trafic organique avant/après, délais. Méfiez-vous des agences qui promettent la première place sur Google sans audit préalable. Les témoignages sur Trustpilot ou Google Business Profile sont un bon signal de départ, mais rien ne remplace un entretien direct avec un client référence.</p><h3>Une agence SEO peut-elle aussi gérer mes campagnes Google Ads ?</h3><p>Oui, plusieurs agences proposent une offre SEO + SEA intégrée. C'est un vrai avantage : les données de conversion des campagnes payantes alimentent la stratégie de contenu organique, et inversement. Vérifiez que l'agence dispose bien d'une équipe dédiée au Paid, pas juste d'un prestataire externalisé.</p><h2>Sources utiles</h2><ul><li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://deux.io/generative-engine-optimization-geo/">Deux.io - Qu'est-ce que le GEO ? Définition et guide pratique</a></p></li><li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://searchengineland.com/mastering-generative-engine-optimization-in-2026-full-guide-469142">Search Engine Land - Mastering GEO in 2026 (guide complet)</a></p></li><li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.lafabriquedunet.fr/agences/pages/agences-seo/tarifs">La Fabrique du Net - Tarifs agences SEO France 2026</a></p></li><li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://en.wikipedia.org/wiki/Generative_engine_optimization">Wikipedia - Generative Engine Optimization</a></p></li></ul>
 ` }} />
 
-        {/* Share Section */}
-        <div className="mt-16 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 animate-fade-in-up" style={{ animationDelay: '600ms' }}>
-          <p className="font-mono text-sm text-slate-500 uppercase tracking-wider">
-            Partager cet article
-          </p>
-          <div className="flex gap-4">
-            <button 
-              onClick={() => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://www.triaina.fr${post?.url}`)}`, '_blank')}
-              className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-blue-100 hover:text-blue-700 transition-colors"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-            </button>
-            <button 
-              onClick={handleShare}
-              className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-blue-100 hover:text-blue-700 transition-colors"
-            >
-              <Share2 size={18} />
-            </button>
+            {/* Author Block */}
+            <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-slate-100 max-w-4xl mx-auto not-prose">
+                <h3 className="font-bold text-slate-900 mb-2 text-lg">À propos de l'auteure</h3>
+                <div className="font-bold text-slate-900 text-xl mb-1">Camille Rousseau</div>
+                <div className="text-sm text-blue-600 font-mono mb-4">Consultante Senior GEO/SEO chez Triaina</div>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    Experte en stratégies d'acquisition hybrides. Camille accompagne les marques dans l'optimisation de leur visibilité sur les moteurs de recherche traditionnels (SEO) et les interfaces d'IA génératives (GSO).
+                </p>
+                <a href="https://www.linkedin.com/in/camille-rousseau-a44488413/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors underline decoration-2 underline-offset-4">
+                    Voir son profil LinkedIn
+                </a>
+            </div>
           </div>
+                </article>
+
+        {/* Share / Footer */}
+        <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-sm font-mono text-slate-500">
+                Partager cet article
+            </div>
+            <div className="flex gap-4">
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Linkedin size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Twitter size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Facebook size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Share2 size={20} />
+                </button>
+            </div>
         </div>
       </div>
     </div>

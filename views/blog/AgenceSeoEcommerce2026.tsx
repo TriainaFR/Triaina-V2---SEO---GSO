@@ -1,0 +1,225 @@
+import React, { useEffect } from 'react';
+import { ArrowLeft, Calendar, Linkedin, Twitter, Facebook, Share2 } from 'lucide-react';
+import { BLOG_DATA } from '../../constants';
+import { SEO } from '../../components/SEO';
+
+export const AgenceSeoEcommerce2026: React.FC = () => {
+  const post = BLOG_DATA.find(p => p.id === 'agence-seo-ecommerce-2026');
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const seoSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": post?.title || '',
+      "description": post?.excerpt || '',
+      "image": post?.image || '',
+      "author": {
+        "@type": "Person",
+        "name": "Camille Rousseau",
+        "jobTitle": "Consultante Senior GEO/SEO chez Triaina",
+        "url": "https://www.triaina.fr",
+        "sameAs": "https://www.linkedin.com/in/camille-rousseau-a44488413/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.triaina.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.triaina.fr/blog" },
+        { "@type": "ListItem", "position": 3, "name": post?.title || '', "item": `https://www.triaina.fr${post?.url || ''}` }
+      ]
+    }
+  ];
+
+
+
+  if (!post) return null;
+
+  return (
+    <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
+      <SEO 
+        title={`${post.title} - Triaina`}
+        description={post.excerpt}
+        canonicalUrl={`https://triaina.fr${post.url}`}
+        schema={seoSchema}
+      />
+      
+      <div className="max-w-7xl mx-auto">
+        <a 
+          href="/blog" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState({}, '', '/blog');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}
+          className="inline-flex items-center text-sm font-mono text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
+        >
+          <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
+          Retour aux articles
+        </a>
+
+        <article className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden relative">
+          {/* Accent decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-50"></div>
+          
+          <header className="mb-12">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 mb-6 uppercase tracking-wider">
+              <span className="flex items-center">
+                <Calendar size={14} className="mr-2 text-blue-500" />
+                {post.date}
+              </span>
+              <span className="text-slate-300">|</span>
+              <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold">{post.tag}</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl">
+              {post.excerpt}
+            </p>
+          </header>
+
+          <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden mb-16 relative group">
+            <img 
+              src={post.image} 
+              alt={post.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+          </div>
+
+          <div className="max-w-4xl mx-auto prose prose-lg prose-slate prose-headings:font-display prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-2xl prose-strong:text-slate-900 prose-li:marker:text-blue-500">
+<div dangerouslySetInnerHTML={{ __html: `<p>Le référencement e-commerce n'a plus rien à voir avec le SEO d'un site vitrine. Pages produits en duplicate, filtres de navigation qui génèrent des milliers d'URLs parasites, flux de données à synchroniser, et maintenant l'AI Overview de Google qui capte une partie du trafic avant même que l'internaute clique - les enjeux sont d'une autre nature. Choisir la mauvaise agence, c'est perdre six mois et un budget conséquent.</p><ul><li><p><strong>Ce que fait une agence SEO e-commerce :</strong> elle optimise l'architecture technique (CMS, facettes, canonicals), les pages catégories et produits, le maillage interne, et le contenu pour générer du trafic qualifié et des ventes - pas juste des visites.</p></li><li><p><strong>Pourquoi c'est différent du SEO classique :</strong> un site e-commerce peut compter des milliers de pages indexables, des problèmes de contenu dupliqué structurels, et une exposition directe à l'AI Overview sur les requêtes produit - ce qui change radicalement la stratégie.</p></li><li><p><strong>Comment choisir :</strong> vérifiez la maîtrise des CMS (Shopify, PrestaShop, WooCommerce), l'expertise GEO/IA, la capacité à travailler les pages catégories, la transparence du reporting, et les références sectorielles concrètes.</p></li></ul><h2>Pourquoi le SEO e-commerce est différent du SEO classique</h2>
+<p>Un site e-commerce de taille moyenne - 500 références, quelques dizaines de catégories, des filtres par couleur, taille et prix - peut générer plus de 50 000 URLs indexables sans que personne n'ait rien fait de mal. C'est le premier problème.</p>
+<p><strong>Les pages produits</strong> souffrent souvent de contenu quasi-identique : même description fabricant, mêmes attributs, seule la couleur change. Google voit du duplicate content là où le marchand voit un catalogue. Sans balises canonicals correctement posées et sans travail éditorial sur les fiches à fort potentiel, ces pages ne rankeront jamais.</p>
+<p><strong>Les pages catégories</strong> sont l'enjeu principal du référencement e-commerce. Ce sont elles qui captent les requêtes à volume - "chaussures de randonnée homme", "canapé convertible 3 places" - et qui convertissent. Une agence qui ne sait pas structurer une page catégorie avec du contenu utile, un maillage interne cohérent et des données structurées passe à côté de l'essentiel.</p>
+<p><strong>Les facettes de navigation</strong> (filtres par attribut) créent mécaniquement du contenu dupliqué et des pièges à crawl. La solution - combiner robots.txt, canonicals et parfois des URLs paramétriques - varie selon le CMS. Ce n'est pas la même chose sur PrestaShop, sur Shopify ou sur WooCommerce.</p>
+<p><strong>L'impact de l'AI Overview</strong> change la donne en 2026. Pour les requêtes de comparaison, d'avis et de "meilleur produit", Google répond désormais directement dans la SERP. Des études récentes mesurent des baisses de CTR de 20 à 50 % sur les requêtes impactées. Les fiches produits optimisées pour des intentions transactionnelles précises résistent mieux - mais ignorer ce phénomène, c'est construire une stratégie sur des projections caduques. Lire notre analyse sur l'<a target="_blank" rel="noopener noreferrer" href="/blog/ai-overview-ecommerce-france-2026">Google AI Overview et e-commerce</a> pour comprendre quelles pages sont les plus exposées.</p>
+<p>Pour aller plus loin sur la transformation du canal organique, notre article sur l'<a target="_blank" rel="noopener noreferrer" href="/blog/gso-2026-guide-complet">impact de l'IA sur le e-commerce</a> détaille les nouvelles règles du jeu.</p>
+<h2>Les 5 critères pour choisir votre agence SEO e-commerce</h2>
+<h3>1. Maîtrise des CMS e-commerce (Shopify, PrestaShop, WooCommerce, Magento)</h3>
+<p>Le SEO Shopify, le SEO PrestaShop et le SEO WooCommerce ne se pilotent pas avec les mêmes leviers. Shopify impose une structure d'URLs rigide et limite le contrôle du robots.txt - ce qui complique la gestion des variantes et des collections croisées. PrestaShop est plus flexible mais très exposé au duplicate content sur les pages filtrées si les canonicals ne sont pas configurés proprement. WooCommerce offre le plus de maîtrise technique, mais la qualité finale dépend entièrement de la configuration des plugins et de l'architecture des catégories.</p>
+<p>Posez la question directement : "Montrez-moi un cas client sur notre CMS." Une agence qui hésite ou qui sort un exemple générique n'a probablement pas l'expérience terrain qu'elle revendique.</p>
+<h3>2. Expertise GEO et AI Overview (impact sur les fiches produits)</h3>
+<p>En 2026, le référencement e-commerce ne se limite plus à Google Search. ChatGPT, Gemini, Perplexity et l'AI Overview de Google sont devenus des points de contact réels dans le parcours d'achat. Un internaute qui demande "quel vélo électrique choisir sous 1 500 €" obtient une réponse directe - avec ou sans votre marque dedans.</p>
+<p>Le GEO (Generative Engine Optimization) consiste à optimiser la présence d'une marque ou d'un produit dans ces réponses générées. C'est une compétence distincte du SEO classique, et peu d'agences la maîtrisent vraiment. Cherchez une <a target="_blank" rel="noopener noreferrer" href="/blog/agence-geo-ecommerce-2026">agence GEO e-commerce</a> capable de mesurer vos taux de citation IA avant et après intervention - pas juste de vous promettre de la "visibilité IA".</p>
+<h3>3. Capacité à travailler les pages catégories et le maillage interne</h3>
+<p>Les pages catégories sont le cœur du référencement e-commerce. Une bonne agence sait construire une architecture en silos cohérente, rédiger des introductions de catégories qui servent à la fois le lecteur et Google, et créer un maillage interne qui distribue le PageRank vers les pages produits prioritaires.</p>
+<p>Demandez à voir un exemple de plan de maillage interne livré à un client. C'est un livrable concret qui révèle le niveau de rigueur de l'agence.</p>
+<h3>4. Transparence sur les résultats et le reporting</h3>
+<p>Un bon reporting SEO e-commerce ne se limite pas aux positions. Il suit le trafic organique par type de page (catégorie, produit, blog), les conversions attribuées au canal organique, et - en 2026 - les taux de citation dans les réponses IA. Si l'agence vous propose uniquement un tableau de positions mensuelles, c'est insuffisant.</p>
+<p>Exigez un accès direct à Google Search Console et à Google Analytics 4. Toute agence qui refuse de partager ces accès a quelque chose à cacher. Pour comparer les approches, notre guide sur <a target="_blank" rel="noopener noreferrer" href="/blog/agence-seo-france">choisir une agence SEO en France</a> détaille les questions à poser avant de signer.</p>
+<h3>5. Expérience sectorielle et références clients</h3>
+<p>Le SEO d'une boutique de mode n'a pas les mêmes contraintes que celui d'un site de pièces détachées automobiles ou d'une marketplace B2B. Les volumes de pages, la saisonnalité, la concurrence sur les requêtes transactionnelles - tout diffère. Une agence qui a travaillé dans votre secteur comprend ces subtilités sans qu'on ait besoin de les lui expliquer.</p>
+<p>Vérifiez les références : noms de clients, résultats chiffrés, durée des missions. Une relation de six mois qui s'est arrêtée sans explication vaut moins qu'une collaboration de trois ans avec des résultats documentés.</p>
+<h2>Top 5 des meilleures agences SEO e-commerce en France en 2026</h2>
+<h3>1. Triaina - SEO e-commerce + GEO + réseau média propriétaire</h3>
+<p>Triaina est la seule agence française à combiner trois leviers sur un même mandat e-commerce : le SEO technique (architecture, crawl, données structurées), le GEO (optimisation pour ChatGPT, Gemini, Perplexity et l'AI Overview Google), et un réseau média propriétaire qui permet de placer des sources citées par les IA dans leurs réponses sur les produits et marques des clients.</p>
+<p>En pratique, cela signifie qu'un client Triaina peut passer de 0 % à 73 % de taux de citation IA sur ses requêtes cibles - un résultat mesuré, pas une promesse. Un autre client a atteint 90 % de citations IA post-optimisation sur son secteur. Ces chiffres illustrent ce que le <a target="_blank" rel="noopener noreferrer" href="/agence-referencement-ia">référencement IA pour e-commerce</a> peut produire quand il est piloté avec méthode.</p>
+<p>L'agence maîtrise Shopify, PrestaShop, WooCommerce et Magento, et intègre une expertise SEA/Paid (Google Shopping, Performance Max) pour les clients qui veulent couvrir l'ensemble du canal acquisition. Tarifs : audit SEO/GEO e-commerce à partir de 1 700 €, accompagnement mensuel à partir de 500 €/mois.</p>
+<p><strong>Point fort distinctif :</strong> le réseau média propriétaire, qui permet de créer des sources tierces citables par les IA - une approche que les agences SEO classiques ne proposent pas. Voir notre page <a target="_blank" rel="noopener noreferrer" href="/expertise-seo">optimisation SEO</a> pour le détail de la méthode.</p>
+<blockquote><p><strong>Insight expert - Camille Rousseau, Consultante Senior GEO/SEO chez Triaina :</strong> "La plupart des e-commerçants regardent encore leur trafic organique global et ne voient pas que leurs fiches produits perdent du CTR sur les requêtes où l'AI Overview s'est installé. En 2026, ce n'est plus une hypothèse - c'est mesurable dans Search Console dès qu'on segmente par type de requête. Le problème, c'est que beaucoup d'agences n'ont pas encore intégré cette lecture dans leur reporting. Résultat : le client pense que tout va bien parce que ses positions tiennent, alors que son trafic réel sur les pages produits baisse depuis six mois."</p></blockquote>
+<h3>2. Capsule-B - Spécialiste trafic et conversions e-commerce</h3>
+<p>Capsule-B est positionnée sur l'optimisation du trafic organique avec un angle conversion fort. L'agence travaille principalement sur des projets e-commerce mid-market et affiche des références dans le retail et la mode. Son approche combine SEO on-page et optimisation des pages catégories avec un suivi des métriques de conversion organique.</p>
+<h3>3. Yumens - Pages produits et catégories en tête de Google</h3>
+<p>Yumens est une agence multi-villes (Paris, Lyon, Bordeaux, Nantes) avec une expertise reconnue sur le SEO retail et e-commerce. Elle est particulièrement bien positionnée sur les projets qui combinent SEO, SEA et SEO local pour des enseignes avec une dimension physique. Son point fort : la structuration des pages catégories sur des catalogues volumineux.</p>
+<h3>4. WeComm - Multi-CMS (PrestaShop, Shopify, WooCommerce)</h3>
+<p>WeComm s'est construit une réputation sur les projets de migration et de refonte e-commerce. L'agence maîtrise les trois CMS principaux et intervient souvent en amont des refontes pour sécuriser le SEO pendant la transition. Un choix pertinent si votre projet implique un changement de plateforme ou une restructuration d'architecture.</p>
+<h3>5. Noiise - Agence SEO e-commerce nationale</h3>
+<p>Noiise est présente dans 7 villes françaises et couvre les projets e-commerce complexes : multi-sites, multi-marchés, catalogues de plusieurs milliers de références. L'agence propose une offre SEO/SEA intégrée et est souvent citée pour sa capacité à gérer des projets techniques de grande envergure.</p>
+<h2>Tableau comparatif des agences SEO e-commerce</h2>
+<div className="overflow-x-auto">
+<table style={{ minWidth: '125px' }}>
+<colgroup><col style={{minWidth: '25px'}}/><col style={{minWidth: '25px'}}/><col style={{minWidth: '25px'}}/><col style={{minWidth: '25px'}}/><col style={{minWidth: '25px'}}/></colgroup>
+<tbody>
+<tr><th colSpan={1} rowSpan={1}><p>Agence</p></th><th colSpan={1} rowSpan={1}><p>CMS maîtrisés</p></th><th colSpan={1} rowSpan={1}><p>GEO / IA</p></th><th colSpan={1} rowSpan={1}><p>Spécialité</p></th><th colSpan={1} rowSpan={1}><p>Tarif estimé</p></th></tr>
+<tr><td colSpan={1} rowSpan={1}><p><strong>Triaina</strong></p></td><td colSpan={1} rowSpan={1}><p>Shopify, PrestaShop, WooCommerce, Magento</p></td><td colSpan={1} rowSpan={1}><p>✅ Oui (réseau média + citations IA mesurées)</p></td><td colSpan={1} rowSpan={1}><p>SEO technique + GEO + SEA/Paid</p></td><td colSpan={1} rowSpan={1}><p>Audit dès 1 700 € · Accompagnement dès 500 €/mois</p></td></tr>
+<tr><td colSpan={1} rowSpan={1}><p><strong>Capsule-B</strong></p></td><td colSpan={1} rowSpan={1}><p>Shopify, WooCommerce</p></td><td colSpan={1} rowSpan={1}><p>Partiel</p></td><td colSpan={1} rowSpan={1}><p>Trafic organique + conversions</p></td><td colSpan={1} rowSpan={1}><p>3 000–6 000 €/mois</p></td></tr>
+<tr><td colSpan={1} rowSpan={1}><p><strong>Yumens</strong></p></td><td colSpan={1} rowSpan={1}><p>Shopify, PrestaShop, WooCommerce</p></td><td colSpan={1} rowSpan={1}><p>Partiel</p></td><td colSpan={1} rowSpan={1}><p>SEO + SEA retail multi-villes</p></td><td colSpan={1} rowSpan={1}><p>3 000–8 000 €/mois</p></td></tr>
+<tr><td colSpan={1} rowSpan={1}><p><strong>WeComm</strong></p></td><td colSpan={1} rowSpan={1}><p>PrestaShop, Shopify, WooCommerce</p></td><td colSpan={1} rowSpan={1}><p>Non</p></td><td colSpan={1} rowSpan={1}><p>Migration CMS + refonte SEO</p></td><td colSpan={1} rowSpan={1}><p>2 500–6 000 €/mois</p></td></tr>
+<tr><td colSpan={1} rowSpan={1}><p><strong>Noiise</strong></p></td><td colSpan={1} rowSpan={1}><p>Shopify, PrestaShop, WooCommerce, Magento</p></td><td colSpan={1} rowSpan={1}><p>Non</p></td><td colSpan={1} rowSpan={1}><p>Projets complexes multi-sites</p></td><td colSpan={1} rowSpan={1}><p>4 000–10 000 €/mois</p></td></tr>
+</tbody>
+</table>
+</div>
+<h2>Quel budget prévoir pour une agence SEO e-commerce ?</h2>
+<p>Le budget varie beaucoup selon la taille du catalogue, la concurrence sur les requêtes cibles et le niveau de maturité SEO du site. Voici trois fourchettes réalistes pour 2026 :</p>
+<ul>
+<li><p><strong>Petite boutique (moins de 200 références, marché de niche) :</strong> 500 à 2 000 €/mois pour un accompagnement mensuel, plus un audit initial de 1 500 à 3 000 €. À ce niveau, un consultant SEO e-commerce indépendant peut être plus adapté qu'une agence.</p></li>
+<li><p><strong>Site moyen (200 à 2 000 références, marché concurrentiel) :</strong> 2 000 à 5 000 €/mois. C'est la fourchette où la plupart des agences spécialisées interviennent. Comptez un audit de départ entre 2 000 et 5 000 € selon la complexité technique.</p></li>
+<li><p><strong>Marketplace ou gros catalogue (plus de 2 000 références, multi-marchés) :</strong> 5 000 à 15 000 €/mois, voire plus pour des projets internationaux. À ce niveau, le SEO technique et la gestion du crawl budget deviennent des enjeux critiques.</p></li>
+</ul>
+<p>Ces fourchettes ne tiennent pas compte des prestations GEO, qui s'ajoutent généralement au SEO classique. Pour une estimation précise adaptée à votre situation, consultez notre page dédiée aux <a target="_blank" rel="noopener noreferrer" href="/blog/prix-tarifs-agence-seo-geo-2026">prix d'une agence SEO e-commerce</a>.</p>
+<p>Un dernier point : le coût d'une mauvaise agence est toujours supérieur au coût d'une bonne. Six mois de travail mal orienté sur les mauvaises pages, c'est six mois de trafic et de chiffre d'affaires perdus - sans compter le temps de corriger les erreurs techniques laissées derrière.</p>
+<p>Vous hésitez encore ? <a target="_blank" rel="noopener noreferrer" href="/contact">Demandez un audit e-commerce gratuit</a> pour obtenir un diagnostic de votre situation actuelle avant de vous engager.</p>
+<h2>FAQ - Agence SEO e-commerce</h2>
+<p><strong>Quelle est la différence entre un consultant SEO e-commerce et une agence SEO e-commerce ?</strong></p>
+<p>Un consultant SEO e-commerce travaille généralement en solo ou en petite structure. Il est souvent plus réactif et moins cher, mais sa capacité de production est limitée. Une agence apporte une équipe pluridisciplinaire (technique, contenu, netlinking, data) et peut absorber des projets de plus grande envergure. Pour un site de moins de 300 références avec un budget serré, un consultant peut suffire. Au-delà, une agence spécialisée est généralement plus adaptée.</p>
+<dl>
+<dt><strong>Combien de temps faut-il pour voir des résultats en SEO e-commerce ?</strong></dt>
+<dd>Les premiers résultats visibles (amélioration des positions sur des requêtes longue traîne, correction des erreurs techniques) apparaissent généralement entre 2 et 4 mois. Un impact significatif sur le trafic organique et les conversions se mesure plutôt entre 6 et 12 mois. Les sites avec des problèmes techniques importants (duplicate content massif, crawl budget mal géré) peuvent mettre plus longtemps à décoller après correction.</dd>
+
+<dt><strong>L'AI Overview de Google va-t-il tuer le SEO e-commerce ?</strong></dt>
+<dd>Non - mais il le transforme. Les requêtes informationnelles et de comparaison perdent du CTR au profit des réponses générées. Les requêtes transactionnelles précises ("acheter [produit] [caractéristique]") résistent mieux. La bonne réponse n'est pas d'abandonner le SEO, mais d'y ajouter une stratégie GEO pour être cité dans les réponses IA - ce qui peut compenser une partie de la perte de clics directs.</dd>
+
+<dt><strong>Quelle plateforme e-commerce est la plus favorable au référencement ?</strong></dt>
+<dd>WooCommerce offre le plus de contrôle technique (URLs, canonicals, données structurées, gestion des facettes) mais demande plus de compétences pour être bien configuré. PrestaShop est solide nativement mais exposé au duplicate content sur les pages filtrées sans configuration avancée. Shopify est le plus contraint techniquement, notamment sur la structure des URLs et le robots.txt, mais reste tout à fait viable pour des catalogues de taille moyenne avec une agence qui connaît ses limites. Le meilleur CMS est celui que votre agence maîtrise vraiment.</dd>
+
+<dt><strong>Comment mesurer le ROI d'une agence SEO e-commerce ?</strong></dt>
+<dd>Le ROI se mesure en chiffre d'affaires généré par le canal organique, pas en positions. Configurez des objectifs de conversion dans Google Analytics 4 avec attribution au canal organique. Suivez le trafic organique par type de page (catégorie, produit, blog) et le taux de conversion associé. En 2026, ajoutez le suivi des taux de citation IA si votre agence propose une stratégie GEO. Un reporting mensuel sérieux doit inclure ces trois dimensions.</dd>
+</dl>
+<h2>Sources utiles</h2>
+<ul>
+<li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://novadata.io/resources/news/google-ai-overviews-ecommerce-organic-traffic-june-2026">Novadata - Google AI Overviews &amp; e-commerce organic traffic (juin 2026)</a></p></li>
+<li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.decodeur-ia.com/articles/google-ai-overviews-ai-mode-france-impact-seo-trafic-pme-2026/">Décodeur IA - Impact de l'AI Overview sur le trafic SEO des PME françaises (2026)</a></p></li>
+<li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.spacoma.fr/prestashop-woocommerce-shopify-comparatif-2026/">Spacoma - Comparatif SEO PrestaShop / WooCommerce / Shopify 2026</a></p></li>
+<li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://deux.io/tarifs-agences-seo/">Deux.io - Tarifs agences SEO en France (2026)</a></p></li>
+<li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://neuronwriter.com/ecommerce-seo-ai-answer-engines-2026/">Neuronwriter - E-commerce SEO &amp; AI answer engines (2026)</a></p></li>
+</ul>` }} />
+
+            {/* Author Block */}
+            <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-slate-100 max-w-4xl mx-auto not-prose">
+                <h3 className="font-bold text-slate-900 mb-2 text-lg">À propos de l'auteure</h3>
+                <div className="font-bold text-slate-900 text-xl mb-1">Camille Rousseau</div>
+                <div className="text-sm text-blue-600 font-mono mb-4">Consultante Senior GEO/SEO chez Triaina</div>
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    Experte en stratégies d'acquisition hybrides. Camille accompagne les marques dans l'optimisation de leur visibilité sur les moteurs de recherche traditionnels (SEO) et les interfaces d'IA génératives (GSO).
+                </p>
+                <a href="https://www.linkedin.com/in/camille-rousseau-a44488413/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors underline decoration-2 underline-offset-4">
+                    Voir son profil LinkedIn
+                </a>
+            </div>
+          </div>
+                </article>
+
+        {/* Share / Footer */}
+        <div className="mt-20 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-sm font-mono text-slate-500">
+                Partager cet article
+            </div>
+            <div className="flex gap-4">
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Linkedin size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Twitter size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Facebook size={20} />
+                </button>
+                <button className="p-3 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-blue-600 transition-colors">
+                    <Share2 size={20} />
+                </button>
+            </div>
+        </div>
+      </div>
+    </div>
+  );
+};

@@ -16,6 +16,6 @@ const newPost = `,
   }
 ];`;
 
-content = content.replace("tag: 'AGENCES'\n  }\n];", "tag: 'AGENCES'\n  }" + newPost);
+content = content.replace("tag: 'AGENCES'\n  }];", "tag: 'AGENCES'\n  }" + newPost);
 
-fs.writeFileSync('constants.ts', content);
+// Also we need to add mapping to PAGE_TO_URL and URL_TO_PAGE if needed. Wait, PAGE_TO_URL logic is manual? Let's check how PAGE_TO_URL looks.
