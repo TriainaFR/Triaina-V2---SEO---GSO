@@ -78,6 +78,9 @@ import { GoogleAiMode2026 } from './views/blog/GoogleAiMode2026';
 import { PrixTarifsAgenceSeoGeo2026 } from './views/blog/PrixTarifsAgenceSeoGeo2026';
 import { ReferencementGemini2026 } from './views/blog/ReferencementGemini2026';
 import { AgenceSeoToulouse2026 } from './views/blog/AgenceSeoToulouse2026';
+import { StrategieContenuSeo2026 } from './views/blog/StrategieContenuSeo2026';
+import { AgenceSeoNantes2026 } from './views/blog/AgenceSeoNantes2026';
+
 
 import { SEO } from './components/SEO';
 import { CustomCursor } from './components/CustomCursor';
@@ -341,14 +344,18 @@ const App: React.FC = () => {
         return <PerplexitySeo2026 />;
       case 'meilleure-agence-geo-france-2026':
         return <MeilleureAgenceGeoFrance2026 />;
+      case 'agence-seo-nantes-2026':
+        return <AgenceSeoNantes2026 />;
+      case 'strategie-contenu-seo-2026':
+        return <StrategieContenuSeo2026 />;
       case '10-conseils-marque-visible-chatgpt-2026':
         return <MarqueVisibleChatgpt2026 />;
       case 'agence-seo-france':
-        return <AgenceSeoFrance2026 onNavigate={handleNavigation} />;
+        return <AgenceSeoFrance2026 />;
       case 'seo-local-france-2026':
         return <SeoLocalFrance2026 />;
       case 'agence-seo-ecommerce-2026':
-        return <AgenceSeoEcommerce2026 onNavigate={handleNavigation} />;
+        return <AgenceSeoEcommerce2026 />;
       case 'top-10-agences-seo-geo-paris-2026':
         return <TopAgencesSeoGeoParis2026 />;
     case 'agence-google-ai-overview-2026':
@@ -356,7 +363,7 @@ const App: React.FC = () => {
     case 'agence-geo-paris':
       return <AgenceGeoParis />;
     case 'meilleure-agence-referencement-ia-france-2026':
-      return <MeilleureAgenceReferencementIaFrance2026 />;
+      return <MeilleureAgenceGeoFrance2026 />;
       case 'agence-seo-lyon-2026':
         return <AgenceSeoLyon2026 />;
       case 'agence-seo-geo-rennes-2026':

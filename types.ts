@@ -1,4 +1,6 @@
 export type Page =
+  | 'agence-seo-nantes-2026'
+  | 'strategie-contenu-seo-2026'
   | 'seo-local-france-2026'
   | 'agence-seo-ecommerce-2026'
   | 'agence-seo-france'

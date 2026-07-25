@@ -8,7 +8,7 @@ import {
 import { SEO } from '../components/SEO';
 
 interface SeoParisProps {
-  onNavigate: (p: any) => void;
+  onNavigate?: (p: any) => void;
 }
 
 export const SeoParis: React.FC<SeoParisProps> = ({ onNavigate }) => {
@@ -405,7 +405,7 @@ export const SeoParis: React.FC<SeoParisProps> = ({ onNavigate }) => {
             </p>
             <a 
                 href={PAGE_TO_URL['contact']}
-                onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                onClick={(e) => { e.preventDefault(); onNavigate?.('contact'); }}
                 className="px-8 py-4 bg-white text-blue-900 font-bold uppercase tracking-widest rounded hover:bg-blue-50 transition-colors shadow-lg inline-flex items-center justify-center gap-3"
             >
                 Demander la consultation gratuite <ArrowRight size={20} />
@@ -427,7 +427,7 @@ export const SeoParis: React.FC<SeoParisProps> = ({ onNavigate }) => {
                     <a 
                         key={i}
                         href={PAGE_TO_URL[item.link]}
-                        onClick={(e) => { e.preventDefault(); onNavigate(item.link); }}
+                        onClick={(e) => { e.preventDefault(); onNavigate?.(item.link); }}
                         className="px-6 py-3 bg-white border border-slate-200 rounded-full text-sm font-bold text-slate-700 hover:border-blue-600 hover:text-blue-600 transition-colors shadow-sm"
                     >
                         {item.label}

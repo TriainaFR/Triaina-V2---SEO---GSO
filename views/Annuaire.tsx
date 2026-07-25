@@ -104,7 +104,7 @@ export const Annuaire: React.FC<AnnuaireProps> = ({ onNavigate }) => {
       e.preventDefault();
     }
     if (onNavigate) {
-      onNavigate(path);
+      onNavigate?.(path);
     } else {
       window.location.href = path;
     }

@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 
 interface ExpertiseAIOverviewProps {
-  onNavigate: (p: any) => void;
+  onNavigate?: (p: any) => void;
 }
 
 export const ExpertiseAIOverview: React.FC<ExpertiseAIOverviewProps> = ({ onNavigate }) => {
@@ -175,7 +175,7 @@ export const ExpertiseAIOverview: React.FC<ExpertiseAIOverviewProps> = ({ onNavi
             </p>
 
             <button
-                onClick={() => onNavigate('contact')}
+                onClick={() => onNavigate?.('contact')}
                 className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
                 Démarrer votre audit AI Overview gratuit
@@ -235,7 +235,7 @@ export const ExpertiseAIOverview: React.FC<ExpertiseAIOverviewProps> = ({ onNavi
                 </table>
               </div>
 
-              <p>Pour l'<a href="#" onClick={(e) => { e.preventDefault(); onNavigate('ai-overview-ecommerce-2026'); }}>AI Overview pour l'e-commerce</a>, l'enjeu est particulièrement critique : les requêtes « meilleur produit X » et « comment choisir Y » déclenchent systématiquement des synthèses IA qui court-circuitent les fiches produits et les comparateurs.</p>
+              <p>Pour l'<a href="#" onClick={(e) => { e.preventDefault(); onNavigate?.('ai-overview-ecommerce-2026'); }}>AI Overview pour l'e-commerce</a>, l'enjeu est particulièrement critique : les requêtes « meilleur produit X » et « comment choisir Y » déclenchent systématiquement des synthèses IA qui court-circuitent les fiches produits et les comparateurs.</p>
 
               <h3>La fenêtre d'opportunité first-mover</h3>
               <p>En mai 2024, aux États-Unis, les marques qui ont investi en GEO dès le lancement d'AI Overview ont pris une avance structurelle sur leurs concurrents. Certaines ont consolidé leur position de source citée en moins de 4 mois - une position qu'il est ensuite très difficile de déloger.</p>
@@ -246,7 +246,7 @@ export const ExpertiseAIOverview: React.FC<ExpertiseAIOverviewProps> = ({ onNavi
             {/* Section 3 */}
             <section className="mb-16">
               <h2>Comment Triaina vous rend visible dans Google AI Overview</h2>
-              <p>Notre méthodologie repose sur 4 étapes séquentielles. Ce qui la distingue radicalement des autres <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('agence-google-ai-overview-2026'); }}>agences AI Overview</a> : l'étape 3. Nous n'attendons pas que Google découvre vos contenus optimisés. Nous activons des sources que Google cite déjà.</p>
+              <p>Notre méthodologie repose sur 4 étapes séquentielles. Ce qui la distingue radicalement des autres <a href="#" onClick={(e) => { e.preventDefault(); onNavigate?.('agence-google-ai-overview-2026'); }}>agences AI Overview</a> : l'étape 3. Nous n'attendons pas que Google découvre vos contenus optimisés. Nous activons des sources que Google cite déjà.</p>
 
               <div className="space-y-8 mt-8">
                 <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
@@ -259,7 +259,7 @@ export const ExpertiseAIOverview: React.FC<ExpertiseAIOverviewProps> = ({ onNavi
                     <li><strong>Analyse des signaux E-E-A-T</strong> de votre domaine vs. les sources citées</li>
                     <li><strong>Cartographie des opportunités</strong> : requêtes où vous pouvez prendre une position de source dans les 3 mois</li>
                   </ul>
-                  <p className="mb-0 mt-4 text-sm">Cet audit est le point de départ de toute mission. Il produit un rapport actionnable, pas un état des lieux théorique. Pour aller plus loin sur la méthodologie d'audit, consultez notre <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('google-ai-overview-france'); }}>guide pratique pour apparaître dans AI Overview</a>.</p>
+                  <p className="mb-0 mt-4 text-sm">Cet audit est le point de départ de toute mission. Il produit un rapport actionnable, pas un état des lieux théorique. Pour aller plus loin sur la méthodologie d'audit, consultez notre <a href="#" onClick={(e) => { e.preventDefault(); onNavigate?.('google-ai-overview-france'); }}>guide pratique pour apparaître dans AI Overview</a>.</p>
                 </div>
 
                 <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
@@ -272,7 +272,7 @@ export const ExpertiseAIOverview: React.FC<ExpertiseAIOverviewProps> = ({ onNavi
                     <li><strong>Optimisation des featured snippets</strong> : 54,5 % des citations dans AI Overview proviennent de pages déjà en featured snippet (BrightEdge) - on commence par là</li>
                     <li><strong>Accessibilité aux crawlers IA</strong> : vérification du passage de Google-Extended et GoogleOther, configuration du robots.txt, optimisation de la vitesse d'indexation</li>
                   </ul>
-                  <p className="mb-0 mt-4 text-sm">Cette étape relève de notre <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('expertise-gso'); }}>expertise GEO complète</a> et de notre approche du <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('agence-referencement-ia'); }}>référencement IA</a>. Elle est nécessaire. Mais seule, elle ne suffit pas.</p>
+                  <p className="mb-0 mt-4 text-sm">Cette étape relève de notre <a href="#" onClick={(e) => { e.preventDefault(); onNavigate?.('expertise-gso'); }}>expertise GEO complète</a> et de notre approche du <a href="#" onClick={(e) => { e.preventDefault(); onNavigate?.('agence-referencement-ia'); }}>référencement IA</a>. Elle est nécessaire. Mais seule, elle ne suffit pas.</p>
                 </div>
 
                 <div className="bg-blue-50 border border-blue-200 p-6 rounded-2xl shadow-sm relative overflow-hidden">
@@ -330,7 +330,7 @@ export const ExpertiseAIOverview: React.FC<ExpertiseAIOverviewProps> = ({ onNavi
                   <p className="text-sm mb-4"><strong className="text-slate-900">Mission Triaina :</strong> Optimisation E-E-A-T des pages catégories, structuration des contenus en réponses directes, activation du réseau médias sur verticales retail.</p>
                   <div className="pt-4 border-t border-slate-200">
                     <p className="font-bold text-blue-700 mb-0"><span className="text-3xl tracking-tighter">90%</span> de citations</p>
-                    <p className="text-xs text-slate-500 mt-1">Sur les requêtes sectorielles clés. <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('ai-overview-ecommerce-2026'); }}>En savoir plus sur l'e-commerce</a>.</p>
+                    <p className="text-xs text-slate-500 mt-1">Sur les requêtes sectorielles clés. <a href="#" onClick={(e) => { e.preventDefault(); onNavigate?.('ai-overview-ecommerce-2026'); }}>En savoir plus sur l'e-commerce</a>.</p>
                   </div>
                 </div>
               </div>
@@ -361,7 +361,7 @@ export const ExpertiseAIOverview: React.FC<ExpertiseAIOverviewProps> = ({ onNavi
                 </table>
               </div>
               <p>La différence fondamentale : une <strong>agence spécialisée Google AI Overviews</strong> qui ne fait que de l'optimisation technique attend que Google valide ses recommandations. Triaina contrôle une partie des sources que Google AI Overview consulte déjà. Ce n'est pas la même chose.</p>
-              <p>Pour comprendre comment choisir votre partenaire, lisez notre analyse détaillée : <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('agence-google-ai-overview-2026'); }}>comment choisir votre agence AI Overview</a>.</p>
+              <p>Pour comprendre comment choisir votre partenaire, lisez notre analyse détaillée : <a href="#" onClick={(e) => { e.preventDefault(); onNavigate?.('agence-google-ai-overview-2026'); }}>comment choisir votre agence AI Overview</a>.</p>
             </section>
 
             {/* Section 6 - FAQ */}
@@ -412,7 +412,7 @@ export const ExpertiseAIOverview: React.FC<ExpertiseAIOverviewProps> = ({ onNavi
                     <p className="text-white font-bold text-lg mb-8 leading-relaxed">Triaina est la seule agence en France à combiner expertise technique GEO, réseau de médias propriétaires cités par AI Overview et régie publicitaire intégrée. Ce n'est pas un positionnement marketing. C'est une architecture de service que nos résultats clients confirment.</p>
 
                     <button
-                        onClick={() => onNavigate('contact')}
+                        onClick={() => onNavigate?.('contact')}
                         className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg hover:-translate-y-1"
                     >
                         Demander votre audit AI Overview gratuit
@@ -440,22 +440,22 @@ export const ExpertiseAIOverview: React.FC<ExpertiseAIOverviewProps> = ({ onNavi
                 <h3 className="font-display font-bold text-slate-900 mb-4">Notre Expertise</h3>
                 <ul className="space-y-3">
                     <li>
-                        <button onClick={() => onNavigate('expertise-seo')} className="text-slate-600 hover:text-blue-600 transition-colors flex items-center gap-2 text-sm w-full text-left">
+                        <button onClick={() => onNavigate?.('expertise-seo')} className="text-slate-600 hover:text-blue-600 transition-colors flex items-center gap-2 text-sm w-full text-left">
                             <ArrowRight size={14} className="shrink-0" /> Expertise SEO
                         </button>
                     </li>
                     <li>
-                        <button onClick={() => onNavigate('expertise-gso')} className="text-slate-600 hover:text-blue-600 transition-colors flex items-center gap-2 text-sm w-full text-left">
+                        <button onClick={() => onNavigate?.('expertise-gso')} className="text-slate-600 hover:text-blue-600 transition-colors flex items-center gap-2 text-sm w-full text-left">
                             <ArrowRight size={14} className="shrink-0" /> Expertise GEO (GSO)
                         </button>
                     </li>
                     <li>
-                        <button onClick={() => onNavigate('expertise-sea')} className="text-slate-600 hover:text-blue-600 transition-colors flex items-center gap-2 text-sm w-full text-left">
+                        <button onClick={() => onNavigate?.('expertise-sea')} className="text-slate-600 hover:text-blue-600 transition-colors flex items-center gap-2 text-sm w-full text-left">
                             <ArrowRight size={14} className="shrink-0" /> Expertise SEA
                         </button>
                     </li>
                     <li>
-                        <button onClick={() => onNavigate('expertise-media')} className="text-slate-600 hover:text-blue-600 transition-colors flex items-center gap-2 text-sm w-full text-left">
+                        <button onClick={() => onNavigate?.('expertise-media')} className="text-slate-600 hover:text-blue-600 transition-colors flex items-center gap-2 text-sm w-full text-left">
                             <ArrowRight size={14} className="shrink-0" /> Expertise Média
                         </button>
                     </li>
@@ -470,7 +470,7 @@ export const ExpertiseAIOverview: React.FC<ExpertiseAIOverviewProps> = ({ onNavi
                         La fenêtre d'opportunité s'ouvre le 22 juillet 2026. Prenez position avant vos concurrents avec l'agence qui maîtrise les sources.
                     </p>
                     <button 
-                        onClick={() => onNavigate('contact')}
+                        onClick={() => onNavigate?.('contact')}
                         className="w-full bg-blue-500 hover:bg-blue-400 text-white px-6 py-4 rounded-xl font-bold transition-colors flex items-center justify-center gap-2"
                     >
                         Prendre contact

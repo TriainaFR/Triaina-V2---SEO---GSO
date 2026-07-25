@@ -5,7 +5,7 @@ import { SEO } from '../components/SEO';
 
 type Tab = 'history' | 'careers';
 
-export const Team: React.FC<{ onNavigate: (p: any) => void, initialTab?: Tab }> = ({ onNavigate, initialTab = 'history' }) => {
+export const Team: React.FC<{ onNavigate?: (p: any) => void, initialTab?: Tab }> = ({ onNavigate, initialTab = 'history' }) => {
   const [activeTab, setActiveTab] = useState<Tab>(initialTab);
   
   useEffect(() => {
@@ -100,7 +100,7 @@ export const Team: React.FC<{ onNavigate: (p: any) => void, initialTab?: Tab }> 
             </button>
             <a
                 href={PAGE_TO_URL['recrutement']}
-                onClick={(e) => { e.preventDefault(); onNavigate('recrutement'); }}
+                onClick={(e) => { e.preventDefault(); onNavigate?.('recrutement'); }}
                 className="px-6 py-3 rounded-md text-xs font-mono font-bold tracking-widest uppercase transition-all duration-300 border flex items-center gap-2 bg-white/50 text-slate-600 border-slate-300 hover:border-blue-400 hover:text-blue-600"
             >
                 <Briefcase size={14} />
@@ -315,14 +315,14 @@ export const Team: React.FC<{ onNavigate: (p: any) => void, initialTab?: Tab }> 
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <a 
                             href={PAGE_TO_URL['contact']}
-                            onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                            onClick={(e) => { e.preventDefault(); onNavigate?.('contact'); }}
                             className="px-8 py-4 bg-blue-600 text-white font-bold uppercase tracking-widest rounded hover:bg-slate-900 transition-colors shadow-xl shadow-blue-600/20 inline-flex items-center justify-center"
                         >
                             → Demande de Contact
                         </a>
                         <a 
                             href={PAGE_TO_URL['expertise-seo']}
-                            onClick={(e) => { e.preventDefault(); onNavigate('expertise-seo'); }}
+                            onClick={(e) => { e.preventDefault(); onNavigate?.('expertise-seo'); }}
                             className="px-8 py-4 bg-white text-slate-900 border border-slate-300 font-bold uppercase tracking-widest rounded hover:border-blue-600 hover:text-blue-600 transition-colors inline-flex items-center justify-center"
                         >
                             → Expertise SEO

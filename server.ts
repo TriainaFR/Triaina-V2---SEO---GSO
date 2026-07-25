@@ -8,7 +8,7 @@ async function startServer() {
   const app = express();
   // Trust proxy is essential behind Railway/Cloudflare edge load balancers
   app.set('trust proxy', 1);
-  const PORT = process.env.PORT || 3000;
+  const PORT = 3000;
 
   // Redirect old slug via 301
   app.use('/blog/optimiser-site-llm-2026-guide-complet', (_req, res) => {

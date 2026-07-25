@@ -4,7 +4,7 @@ import { AlertTriangle, Home, ArrowLeft } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { PAGE_TO_URL } from '../constants';
 
-export const NotFound: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate }) => {
+export const NotFound: React.FC<{ onNavigate?: (p: any) => void }> = ({ onNavigate }) => {
   return (
     <div className="pt-32 pb-20 px-4 min-h-screen max-w-7xl mx-auto relative z-10 flex flex-col items-center justify-center text-center">
       
@@ -35,7 +35,7 @@ export const NotFound: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigat
       <div className="flex flex-col sm:flex-row gap-4">
         <a 
             href={PAGE_TO_URL['home']}
-            onClick={(e) => { e.preventDefault(); onNavigate('home'); }}
+            onClick={(e) => { e.preventDefault(); onNavigate?.('home'); }}
             className="group px-8 py-4 bg-blue-600 text-white font-bold uppercase tracking-widest rounded hover:bg-slate-900 transition-all duration-300 shadow-xl shadow-blue-600/20 flex items-center gap-3 justify-center"
         >
             <Home size={18} />

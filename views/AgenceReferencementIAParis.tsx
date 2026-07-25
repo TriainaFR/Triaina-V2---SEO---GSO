@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { PAGE_TO_URL } from '../constants';
 import { SEO } from '../components/SEO';
 
-export const AgenceReferencementIAParis: React.FC<{ onNavigate: (page: any) => void }> = ({ onNavigate }) => {
+export const AgenceReferencementIAParis: React.FC<{ onNavigate?: (page: any) => void }> = ({ onNavigate }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -211,7 +211,7 @@ export const AgenceReferencementIAParis: React.FC<{ onNavigate: (page: any) => v
                     href={PAGE_TO_URL['contact']}
                     onClick={(e) => {
                       e.preventDefault();
-                      onNavigate('contact');
+                      onNavigate?.('contact');
                     }}
                     className="inline-flex items-center justify-center w-full bg-white text-black px-6 py-3 rounded-xl text-sm font-bold tracking-wide hover:bg-blue-50 transition-colors relative z-10"
                   >

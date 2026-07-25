@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { motion, useScroll, useSpring } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 
-export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate }) => {
+export const Home: React.FC<{ onNavigate?: (p: any) => void }> = ({ onNavigate }) => {
   const { scrollYProgress } = useScroll();
   const scaleY = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
@@ -38,7 +38,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
 
                 <div className="pb-2 xl:pb-8 flex flex-col items-start xl:items-end gap-4">
                     <motion.button
-                        onClick={() => onNavigate('team')}
+                        onClick={() => onNavigate?.('team')}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                         className="relative group overflow-hidden bg-slate-900 text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-bold tracking-widest uppercase flex items-center justify-center gap-3 shadow-[0_10px_40px_-10px_rgba(15,23,42,0.5)] hover:shadow-[0_20px_50px_-10px_rgba(37,99,235,0.5)] transition-all duration-500 border border-slate-800 hover:border-blue-500"
@@ -49,7 +49,7 @@ export const Home: React.FC<{ onNavigate: (p: any) => void }> = ({ onNavigate })
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
                         </span>
                     </motion.button>
-                    <button onClick={() => onNavigate('agence-referencement-ia')} className="text-sm font-semibold text-slate-500 hover:text-blue-600 uppercase tracking-wider transition-colors">
+                    <button onClick={() => onNavigate?.('agence-referencement-ia')} className="text-sm font-semibold text-slate-500 hover:text-blue-600 uppercase tracking-wider transition-colors">
                         Découvrir notre Agence de Référencement IA →
                     </button>
                 </div>

@@ -35,7 +35,7 @@ export const Careers: React.FC<CareersProps> = ({ onNavigate }) => {
          <button 
              onClick={(e) => {
                  e.preventDefault();
-                 if (onNavigate) onNavigate('team');
+                 if (onNavigate) onNavigate?.('team');
                  else window.location.href = '/agence';
              }}
              className="inline-flex items-center gap-2 text-sm font-bold font-mono text-slate-500 hover:text-blue-600 transition-colors uppercase tracking-widest mb-4 group"

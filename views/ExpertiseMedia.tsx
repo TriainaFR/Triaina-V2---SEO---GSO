@@ -7,7 +7,7 @@ import {
 import { PAGE_TO_URL } from '../constants';
 
 interface ExpertiseMediaProps {
-  onNavigate: (p: any) => void;
+  onNavigate?: (p: any) => void;
 }
 
 export const ExpertiseMedia: React.FC<ExpertiseMediaProps> = ({ onNavigate }) => {
@@ -546,7 +546,7 @@ export const ExpertiseMedia: React.FC<ExpertiseMediaProps> = ({ onNavigate }) =>
                 </ul>
               </div>
               <button 
-                onClick={() => onNavigate('contact')}
+                onClick={() => onNavigate?.('contact')}
                 className={`mt-8 w-full py-3 rounded-lg font-bold transition-colors ${pkg.highlight ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-slate-100 text-slate-900 hover:bg-slate-200'}`}
               >
                 Nous contacter
@@ -592,13 +592,13 @@ export const ExpertiseMedia: React.FC<ExpertiseMediaProps> = ({ onNavigate }) =>
             <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-blue-300" /> <strong>Générer du trafic massif</strong> en 6 mois</li>
           </ul>
           <p className="font-bold text-white text-center mt-6 text-xl">Nos résultats parlent d'eux-mêmes : <strong>+200-600% de trafic organique en 6 mois</strong>.</p>
-          <p className="text-center text-sm mt-4">Découvrez notre <a href="/expertise-seo" onClick={(e) => { e.preventDefault(); onNavigate('expertise-seo'); }} className="underline hover:text-white">expertise SEO</a>, notre <a href="/expertise-gso" onClick={(e) => { e.preventDefault(); onNavigate('expertise-gso'); }} className="underline hover:text-white">expertise GSO</a>, ou notre <a href="/agence-referencement-ia" onClick={(e) => { e.preventDefault(); onNavigate('agence-referencement-ia'); }} className="underline hover:text-white">agence référencement IA</a> pour en savoir plus sur comment nous pouvons aider votre entreprise.</p>
+          <p className="text-center text-sm mt-4">Découvrez notre <a href="/expertise-seo" onClick={(e) => { e.preventDefault(); onNavigate?.('expertise-seo'); }} className="underline hover:text-white">expertise SEO</a>, notre <a href="/expertise-gso" onClick={(e) => { e.preventDefault(); onNavigate?.('expertise-gso'); }} className="underline hover:text-white">expertise GSO</a>, ou notre <a href="/agence-referencement-ia" onClick={(e) => { e.preventDefault(); onNavigate?.('agence-referencement-ia'); }} className="underline hover:text-white">agence référencement IA</a> pour en savoir plus sur comment nous pouvons aider votre entreprise.</p>
           <p className="text-center font-bold text-white mt-2">Le moment d'agir est maintenant. Vos concurrents ne dorment pas.</p>
         </div>
         <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
           <a 
             href={PAGE_TO_URL['contact']}
-            onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+            onClick={(e) => { e.preventDefault(); onNavigate?.('contact'); }}
             className="px-8 py-4 bg-white text-blue-900 font-bold uppercase tracking-widest rounded hover:bg-blue-50 transition-colors shadow-lg inline-flex items-center justify-center text-center"
           >
             → Nous contacter

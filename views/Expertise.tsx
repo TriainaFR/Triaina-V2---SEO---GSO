@@ -11,7 +11,7 @@ import { SEO } from '../components/SEO';
 
 interface ExpertiseProps {
   id: string;
-  onNavigate: (p: any) => void;
+  onNavigate?: (p: any) => void;
 }
 
 const ICONS: Record<string, React.ElementType> = {
@@ -277,7 +277,7 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                         <a 
                             key={i} 
                             href={PAGE_TO_URL['contact']}
-                            onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                            onClick={(e) => { e.preventDefault(); onNavigate?.('contact'); }}
                             className="bg-white p-6 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all cursor-pointer group block"
                         >
                             <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors flex items-center justify-between">
@@ -299,14 +299,14 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                     <a 
                         href={PAGE_TO_URL['contact']}
-                        onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                        onClick={(e) => { e.preventDefault(); onNavigate?.('contact'); }}
                         className="px-8 py-4 bg-white text-blue-900 font-bold uppercase tracking-widest rounded hover:bg-blue-50 transition-colors shadow-lg inline-flex items-center justify-center text-center"
                     >
                         → Nous contacter
                     </a>
                     <a 
                         href={PAGE_TO_URL['faq']}
-                        onClick={(e) => { e.preventDefault(); onNavigate('faq'); }}
+                        onClick={(e) => { e.preventDefault(); onNavigate?.('faq'); }}
                         className="px-8 py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest rounded hover:bg-white/10 transition-colors inline-flex items-center justify-center"
                     >
                         FAQ
@@ -642,7 +642,7 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                     </p>
                     <a 
                         href={PAGE_TO_URL['contact']}
-                        onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                        onClick={(e) => { e.preventDefault(); onNavigate?.('contact'); }}
                         className="inline-flex items-center gap-3 px-8 py-5 bg-blue-600 text-white font-bold uppercase tracking-widest rounded-lg hover:bg-blue-500 transition-all shadow-xl shadow-blue-900/30 hover:-translate-y-1"
                     >
                         Demander la consultation gratuite <ArrowRight size={20} />
@@ -664,7 +664,7 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                         <a 
                             key={i}
                             href={PAGE_TO_URL[item.link]}
-                            onClick={(e) => { e.preventDefault(); onNavigate(item.link); }}
+                            onClick={(e) => { e.preventDefault(); onNavigate?.(item.link); }}
                             className="px-6 py-3 bg-white border border-slate-200 rounded-full text-sm font-bold text-slate-700 hover:border-blue-600 hover:text-blue-600 transition-colors shadow-sm"
                         >
                             {item.label}
@@ -994,7 +994,7 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                     </p>
                     <a 
                         href={PAGE_TO_URL['contact']}
-                        onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                        onClick={(e) => { e.preventDefault(); onNavigate?.('contact'); }}
                         className="inline-flex items-center gap-3 px-8 py-5 bg-blue-600 text-white font-bold uppercase tracking-widest rounded-lg hover:bg-blue-500 transition-all shadow-xl shadow-blue-900/30 hover:-translate-y-1"
                     >
                         Demander un audit GEO gratuit <ArrowRight size={20} />
@@ -1345,7 +1345,7 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
                 <div className="flex gap-4 w-full md:w-auto">
                      <a 
                         href={PAGE_TO_URL['contact']}
-                        onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                        onClick={(e) => { e.preventDefault(); onNavigate?.('contact'); }}
                         className="px-8 py-4 bg-blue-600 text-white font-bold uppercase tracking-widest rounded hover:bg-slate-900 transition-colors shadow-lg shadow-blue-600/20 flex items-center justify-center gap-2 w-full md:w-auto"
                      >
                          Prendre Rendez-Vous <ArrowRight size={16} />
@@ -1428,7 +1428,7 @@ export const Expertise: React.FC<ExpertiseProps> = ({ id, onNavigate }) => {
           <div className="flex gap-4 w-full md:w-auto">
                <a 
                   href={PAGE_TO_URL['contact']}
-                  onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+                  onClick={(e) => { e.preventDefault(); onNavigate?.('contact'); }}
                   className="px-8 py-4 bg-blue-600 text-white font-bold uppercase tracking-widest rounded hover:bg-slate-900 transition-colors shadow-lg shadow-blue-600/20 flex items-center justify-center gap-2 w-full md:w-auto"
                >
                    Nous contacter <ArrowRight size={16} />

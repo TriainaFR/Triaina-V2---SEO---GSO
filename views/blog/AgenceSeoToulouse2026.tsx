@@ -40,7 +40,7 @@ export const AgenceSeoToulouse2026: React.FC = () => {
   if (!post) return <div>Article not found</div>;
 
   return (
-    <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
+    <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10">
       <SEO 
         title={`${post.title} - Triaina`}
         description={post.excerpt}

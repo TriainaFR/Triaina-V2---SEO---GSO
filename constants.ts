@@ -2,6 +2,9 @@
 import { FAQItem, ReferenceItem, ChatStep, PartnerItem, BlogItem, JobOffer, TeamMember, HistoryItem, NavLink, ExpertiseContent, Page } from './types';
 
 export const PAGE_TO_URL: Record<string, string> = {
+  'agence-seo-nantes-2026': '/blog/agence-seo-nantes-2026',
+  'strategie-contenu-seo-2026': '/blog/strategie-contenu-seo-2026',
+
   'seo-local-france-2026': '/blog/seo-local-france',
   'agence-seo-ecommerce-2026': '/blog/agence-seo-ecommerce',
   'agence-seo-france': '/blog/agence-seo-france',
@@ -85,6 +88,9 @@ export const PAGE_TO_URL: Record<string, string> = {
 };
 
 export const ROUTES: Record<string, Page> = {
+  '/blog/agence-seo-nantes-2026': 'agence-seo-nantes-2026',
+  '/blog/strategie-contenu-seo-2026': 'strategie-contenu-seo-2026',
+
   '/blog/seo-local-france': 'seo-local-france-2026',
   '/blog/agence-seo-ecommerce': 'agence-seo-ecommerce-2026',
   '/blog/agence-seo-france': 'agence-seo-france',
@@ -505,6 +511,8 @@ export const PARTNERS_DATA: PartnerItem[] = [
 ];
 
 export const BLOG_DATA: BlogItem[] = [
+
+
 
   
   
@@ -1152,6 +1160,28 @@ export const BLOG_DATA: BlogItem[] = [
     excerpt: "Le SEO local, c'est l'ensemble des techniques qui font apparaître votre entreprise dans les résultats géolocalisés de Google. En 2026, c'est critique.",
     url: '/blog/seo-local-france',
     image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=1200',
+    tag: 'SEO LOCAL'
+  },
+  {
+    id: 'strategie-contenu-seo-2026',
+    source: 'Guide Stratégique',
+    logo: '',
+    date: '25 JUILLET 2026',
+    title: 'Stratégie de contenu SEO 2026 : le guide complet',
+    excerpt: 'Construisez une stratégie de contenu SEO efficace en 2026 : clusters thématiques, E-E-A-T, optimisation GEO pour ChatGPT et AI Overview.',
+    url: '/blog/strategie-contenu-seo-2026',
+    image: 'https://images.unsplash.com/photo-1542435503-956c221e7a56?auto=format&fit=crop&q=80&w=1200',
+    tag: 'GUIDE'
+  },
+  {
+    id: 'agence-seo-nantes-2026',
+    source: 'Classement',
+    logo: '',
+    date: '25 JUILLET 2026',
+    title: 'Agence SEO Nantes : top 5 SEO & GEO en 2026',
+    excerpt: 'Découvrez le top 5 des meilleures agences SEO Nantes en 2026 : SEO, GEO, tarifs et comparatif. Triaina, NOIISE, Jloo, Sortlist, CyberCité.',
+    url: '/blog/agence-seo-nantes-2026',
+    image: 'https://triaina.fr/images/agence-seo-nantes-2026.jpg',
     tag: 'SEO LOCAL'
   }
 ];

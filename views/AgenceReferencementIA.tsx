@@ -3,7 +3,7 @@ import { SEO } from '../components/SEO';
 import { CheckCircle2, Zap, Brain, Target, BarChart3, Globe, ArrowRight, Terminal, Search, TrendingUp, Shield, Users, Layout, MessageSquare } from 'lucide-react';
 import { PAGE_TO_URL } from '../constants';
 
-export const AgenceReferencementIA: React.FC<{ onNavigate: (page: any) => void }> = ({ onNavigate }) => {
+export const AgenceReferencementIA: React.FC<{ onNavigate?: (page: any) => void }> = ({ onNavigate }) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -454,7 +454,7 @@ export const AgenceReferencementIA: React.FC<{ onNavigate: (page: any) => void }
                         </li>
                     ))}
                 </ul>
-                <a href={PAGE_TO_URL['contact']} onClick={(e) => { e.preventDefault(); onNavigate('contact'); }} className="block w-full py-3 text-center border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-50 transition-colors">Choisir Starter</a>
+                <a href={PAGE_TO_URL['contact']} onClick={(e) => { e.preventDefault(); onNavigate?.('contact'); }} className="block w-full py-3 text-center border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-50 transition-colors">Choisir Starter</a>
             </div>
 
             {/* Growth */}
@@ -480,7 +480,7 @@ export const AgenceReferencementIA: React.FC<{ onNavigate: (page: any) => void }
                         </li>
                     ))}
                 </ul>
-                <a href={PAGE_TO_URL['contact']} onClick={(e) => { e.preventDefault(); onNavigate('contact'); }} className="block w-full py-3 text-center bg-blue-600 rounded-lg font-bold text-white hover:bg-blue-700 transition-colors">Choisir Growth</a>
+                <a href={PAGE_TO_URL['contact']} onClick={(e) => { e.preventDefault(); onNavigate?.('contact'); }} className="block w-full py-3 text-center bg-blue-600 rounded-lg font-bold text-white hover:bg-blue-700 transition-colors">Choisir Growth</a>
             </div>
 
             {/* Premium */}
@@ -505,7 +505,7 @@ export const AgenceReferencementIA: React.FC<{ onNavigate: (page: any) => void }
                         </li>
                     ))}
                 </ul>
-                <a href={PAGE_TO_URL['contact']} onClick={(e) => { e.preventDefault(); onNavigate('contact'); }} className="block w-full py-3 text-center border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-50 transition-colors">Choisir Premium</a>
+                <a href={PAGE_TO_URL['contact']} onClick={(e) => { e.preventDefault(); onNavigate?.('contact'); }} className="block w-full py-3 text-center border border-slate-300 rounded-lg font-bold text-slate-700 hover:bg-slate-50 transition-colors">Choisir Premium</a>
             </div>
         </div>
 
@@ -563,21 +563,21 @@ export const AgenceReferencementIA: React.FC<{ onNavigate: (page: any) => void }
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a 
               href={PAGE_TO_URL['contact']}
-              onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+              onClick={(e) => { e.preventDefault(); onNavigate?.('contact'); }}
               className="px-8 py-4 bg-white text-blue-900 font-bold uppercase tracking-widest rounded hover:bg-blue-50 transition-colors shadow-xl inline-flex items-center justify-center gap-2"
             >
               Demander un audit référencement IA gratuit <ArrowRight size={16} />
             </a>
             <a 
               href={PAGE_TO_URL['expertise-gso']}
-              onClick={(e) => { e.preventDefault(); onNavigate('expertise-gso'); }}
+              onClick={(e) => { e.preventDefault(); onNavigate?.('expertise-gso'); }}
               className="px-8 py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest rounded hover:bg-white/10 transition-colors inline-flex items-center justify-center"
             >
               Découvrir notre expertise GSO
             </a>
             <a 
               href={PAGE_TO_URL['contact']}
-              onClick={(e) => { e.preventDefault(); onNavigate('contact'); }}
+              onClick={(e) => { e.preventDefault(); onNavigate?.('contact'); }}
               className="px-8 py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest rounded hover:bg-white/10 transition-colors inline-flex items-center justify-center"
             >
               Contacter notre équipe

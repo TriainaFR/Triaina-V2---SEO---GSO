@@ -31,7 +31,7 @@ export const Blog: React.FC<BlogProps> = ({ onNavigate }) => {
     if (onNavigate) {
       const pageId = ROUTES[url];
       if (pageId) {
-        onNavigate(pageId);
+        onNavigate?.(pageId);
       } else {
         window.location.href = url;
       }

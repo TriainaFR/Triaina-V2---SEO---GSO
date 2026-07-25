@@ -41,7 +41,7 @@ export const SeoLocalParis2026: React.FC = () => {
   if (!post) return null;
 
   return (
-    <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10 bg-white">
+    <div className="pt-32 pb-20 min-h-screen w-full px-4 md:px-8 lg:px-12 relative z-10">
       <SEO 
         title={`${post.title} - Triaina`}
         description={post.excerpt}
@@ -63,7 +63,7 @@ export const SeoLocalParis2026: React.FC = () => {
           Retour aux articles
         </a>
 
-        <article className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl shadow-blue-900/5 border border-slate-100 overflow-hidden relative">
+        <article className="max-w-4xl mx-auto relative">
           {/* Accent decoration */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-bl-full -z-10 opacity-50"></div>
           

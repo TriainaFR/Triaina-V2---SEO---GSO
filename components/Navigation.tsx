@@ -7,7 +7,7 @@ import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
 
 interface NavigationProps {
   currentPage: Page;
-  onNavigate: (page: Page) => void;
+  onNavigate?: (page: Page) => void;
 }
 
 export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
@@ -60,7 +60,7 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate 
             <a 
                 href="/" 
                 className="cursor-pointer block" 
-                onClick={(e) => { e.preventDefault(); onNavigate('home'); }}
+                onClick={(e) => { e.preventDefault(); onNavigate?.('home'); }}
                 aria-label="Accueil Triaina"
             >
               <Logo />
@@ -78,7 +78,7 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate 
                         <a
                           key={link.id}
                           href={PAGE_TO_URL[link.id]}
-                          onClick={(e) => { e.preventDefault(); onNavigate(link.id as Page); }}
+                          onClick={(e) => { e.preventDefault(); onNavigate?.(link.id as Page); }}
                           className="ml-6 px-6 py-2.5 bg-slate-900 text-white rounded-full text-xs font-bold tracking-widest uppercase hover:bg-blue-600 transition-all duration-300 shadow-lg shadow-slate-900/20 hover:shadow-blue-600/30 hover:-translate-y-0.5"
                           aria-label={link.label}
                         >
@@ -122,7 +122,7 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate 
                                         href={PAGE_TO_URL[child.id]}
                                         onClick={(e) => {
                                             e.preventDefault();
-                                            onNavigate(child.id as Page);
+                                            onNavigate?.(child.id as Page);
                                             setDropdownOpen(null);
                                         }}
                                         className={`
@@ -143,7 +143,7 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate 
                     <div key={link.id} className="relative">
                         <a
                             href={PAGE_TO_URL[link.id]}
-                            onClick={(e) => { e.preventDefault(); onNavigate(link.id as Page); }}
+                            onClick={(e) => { e.preventDefault(); onNavigate?.(link.id as Page); }}
                             className={`
                                 relative px-4 py-2 text-xs font-bold tracking-widest uppercase transition-all duration-300 rounded-full flex items-center gap-1 cursor-pointer hover:bg-white/50
                                 ${isActive ? 'text-blue-600 bg-white/80 shadow-sm' : 'text-slate-600 hover:text-slate-900'}
@@ -212,7 +212,7 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate 
                                             href={PAGE_TO_URL[child.id]}
                                             onClick={(e) => {
                                                 e.preventDefault();
-                                                onNavigate(child.id as Page);
+                                                onNavigate?.(child.id as Page);
                                                 setIsMobileOpen(false);
                                             }}
                                             className={`text-lg font-mono text-left uppercase tracking-wide block ${
@@ -234,7 +234,7 @@ export const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate 
                             href={PAGE_TO_URL[link.id]}
                             onClick={(e) => {
                                 e.preventDefault();
-                                onNavigate(link.id as Page);
+                                onNavigate?.(link.id as Page);
                                 setIsMobileOpen(false);
                             }}
                             className={`w-full block text-2xl font-display font-bold text-left ${
