@@ -2,6 +2,9 @@
 import { FAQItem, ReferenceItem, ChatStep, PartnerItem, BlogItem, JobOffer, TeamMember, HistoryItem, NavLink, ExpertiseContent, Page } from './types';
 
 export const PAGE_TO_URL: Record<string, string> = {
+  'referencement-ia-ecommerce-2026': '/blog/referencement-ia-ecommerce-2026',
+  'maillage-interne-seo-2026': '/blog/maillage-interne-seo-2026',
+  'agence-seo-strasbourg-2026': '/blog/agence-seo-strasbourg-2026',
   'agence-seo-nantes-2026': '/blog/agence-seo-nantes-2026',
   'strategie-contenu-seo-2026': '/blog/strategie-contenu-seo-2026',
 
@@ -88,6 +91,9 @@ export const PAGE_TO_URL: Record<string, string> = {
 };
 
 export const ROUTES: Record<string, Page> = {
+  '/blog/referencement-ia-ecommerce-2026': 'referencement-ia-ecommerce-2026',
+  '/blog/maillage-interne-seo-2026': 'maillage-interne-seo-2026',
+  '/blog/agence-seo-strasbourg-2026': 'agence-seo-strasbourg-2026',
   '/blog/agence-seo-nantes-2026': 'agence-seo-nantes-2026',
   '/blog/strategie-contenu-seo-2026': 'strategie-contenu-seo-2026',
 
@@ -1117,7 +1123,8 @@ export const BLOG_DATA: BlogItem[] = [
     url: '/blog/google-business-profile-2026',
     image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1200',
     tag: 'SEO LOCAL'
-  },
+  }
+,
 {
     id: 'ia-analyse-donnees-optimisation-seo-2026',
     source: 'Data SEO & IA',
@@ -1182,6 +1189,39 @@ export const BLOG_DATA: BlogItem[] = [
     excerpt: 'Découvrez le top 5 des meilleures agences SEO Nantes en 2026 : SEO, GEO, tarifs et comparatif. Triaina, NOIISE, Jloo, Sortlist, CyberCité.',
     url: '/blog/agence-seo-nantes-2026',
     image: 'https://triaina.fr/images/agence-seo-nantes-2026.jpg',
+    tag: 'SEO LOCAL'
+  },
+  {
+    id: 'referencement-ia-ecommerce-2026',
+    source: 'Guide E-commerce',
+    logo: '',
+    date: '27 JUILLET 2026',
+    title: 'Référencement IA e-commerce : guide complet 2026',
+    excerpt: 'Référencement IA e-commerce en 2026 : comment optimiser vos fiches produits, catégories et contenu pour être cité par ChatGPT, Gemini et les AI Overviews. Guide complet GEO.',
+    url: '/blog/referencement-ia-ecommerce-2026',
+    image: 'https://triaina.fr/images/referencement-ia-ecommerce-2026.jpg',
+    tag: 'GEO'
+  },
+  {
+    id: 'maillage-interne-seo-2026',
+    source: 'Guide SEO',
+    logo: '',
+    date: '27 JUILLET 2026',
+    title: 'Maillage interne SEO : guide complet 2026',
+    excerpt: 'Découvrez la méthode complète pour auditer et optimiser votre maillage interne SEO en 2026 : pages orphelines, hub & spoke, ancres, impact GEO/LLM.',
+    url: '/blog/maillage-interne-seo-2026',
+    image: 'https://triaina.fr/images/maillage-interne-seo-2026.jpg',
+    tag: 'SEO'
+  },
+  {
+    id: 'agence-seo-strasbourg-2026',
+    source: 'Classement',
+    logo: '',
+    date: '27 JUILLET 2026',
+    title: 'Agence SEO Strasbourg : top 5 SEO & GEO en 2026',
+    excerpt: 'Découvrez le top 5 des agences SEO à Strasbourg en 2026 : référencement naturel, GEO et visibilité IA. Comparatif complet pour bien choisir.',
+    url: '/blog/agence-seo-strasbourg-2026',
+    image: 'https://triaina.fr/images/agence-seo-strasbourg-2026.jpg',
     tag: 'SEO LOCAL'
   }
 ];

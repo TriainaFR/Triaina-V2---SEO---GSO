@@ -1,11 +1,11 @@
 
 import React, { useEffect } from 'react';
 
-interface SEOProps {
+export interface SEOProps {
   title?: string;
   description?: string;
   keywords?: string;
-  schema?: object;
+  schema?: object | object[];
   image?: string;
   type?: string;
   noIndex?: boolean;
@@ -20,6 +20,14 @@ interface SEOProps {
   geoRegion?: string;
   geoPlacename?: string;
   geoPosition?: string;
+  topic?: string;
+  category?: string;
+  coverage?: string;
+  target?: string;
+  rating?: string;
+  revisitAfter?: string;
+  language?: string;
+  author?: string;
 }
 
 export const SEO: React.FC<SEOProps> = ({ 
@@ -40,7 +48,15 @@ export const SEO: React.FC<SEOProps> = ({
     twitterDescription,
     geoRegion,
     geoPlacename,
-    geoPosition
+    geoPosition,
+    topic,
+    category,
+    coverage,
+    target,
+    rating,
+    revisitAfter,
+    language,
+    author
 }) => {
   useEffect(() => {
     // 1. Title Management
@@ -57,6 +73,7 @@ export const SEO: React.FC<SEOProps> = ({
             // Parse selector to set attributes (basic parsing)
             if (selector.includes('name=')) element.setAttribute('name', selector.split('name="')[1].split('"')[0]);
             if (selector.includes('property=')) element.setAttribute('property', selector.split('property="')[1].split('"')[0]);
+            if (selector.includes('http-equiv=')) element.setAttribute('http-equiv', selector.split('http-equiv="')[1].split('"')[0]);
             document.head.appendChild(element);
         }
         element.setAttribute('content', content);
@@ -65,6 +82,19 @@ export const SEO: React.FC<SEOProps> = ({
     // 2. Standard Meta Tags (Google uses 'name')
     if (description) updateMeta('meta[name="description"]', description);
     if (keywords) updateMeta('meta[name="keywords"]', keywords);
+
+    // Custom LLM / SEO Meta Tags
+    if (topic) updateMeta('meta[name="topic"]', topic);
+    if (category) updateMeta('meta[name="category"]', category);
+    if (coverage) updateMeta('meta[name="coverage"]', coverage);
+    if (target) updateMeta('meta[name="target"]', target);
+    if (rating) updateMeta('meta[name="rating"]', rating);
+    if (revisitAfter) updateMeta('meta[name="revisit-after"]', revisitAfter);
+    if (author) updateMeta('meta[name="author"]', author);
+    if (language) {
+      updateMeta('meta[name="language"]', language);
+      updateMeta('meta[http-equiv="content-language"]', language);
+    }
 
     // Geo Meta Tags
     if (geoRegion) updateMeta('meta[name="geo.region"]', geoRegion);

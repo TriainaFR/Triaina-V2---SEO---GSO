@@ -1,6 +1,9 @@
 const fs = require('fs');
 let content = fs.readFileSync('constants.ts', 'utf8');
 
+const regex = /,[\s\n]*\{[\s\n]*id: 'referencement-ia-ecommerce-2026'[^}]*\}/g;
+content = content.replace(regex, '');
+
 const newBlog = `,
   {
     id: 'referencement-ia-ecommerce-2026',
@@ -13,8 +16,9 @@ const newBlog = `,
     image: 'https://triaina.fr/images/referencement-ia-ecommerce-2026.jpg',
     tag: 'GEO'
   }
-`;
+];`;
 
-content = content.replace("    tag: 'SEO LOCAL'\n  }", "    tag: 'SEO LOCAL'\n  }" + newBlog);
+content = content.replace("    tag: 'SEO LOCAL'\n  }\n];", "    tag: 'SEO LOCAL'\n  }" + newBlog);
+
 fs.writeFileSync('constants.ts', content);
-console.log("Appended successfully.");
+console.log("Fixed successfully.");

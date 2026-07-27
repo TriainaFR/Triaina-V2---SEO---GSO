@@ -80,6 +80,9 @@ import { ReferencementGemini2026 } from './views/blog/ReferencementGemini2026';
 import { AgenceSeoToulouse2026 } from './views/blog/AgenceSeoToulouse2026';
 import { StrategieContenuSeo2026 } from './views/blog/StrategieContenuSeo2026';
 import { AgenceSeoNantes2026 } from './views/blog/AgenceSeoNantes2026';
+import { ReferencementIaEcommerce2026 } from './views/blog/ReferencementIaEcommerce2026';
+import { MaillageInterneSeo2026 } from './views/blog/MaillageInterneSeo2026';
+import { AgenceSeoStrasbourg2026 } from './views/blog/AgenceSeoStrasbourg2026';
 
 
 import { SEO } from './components/SEO';
@@ -346,6 +349,12 @@ const App: React.FC = () => {
         return <MeilleureAgenceGeoFrance2026 />;
       case 'agence-seo-nantes-2026':
         return <AgenceSeoNantes2026 />;
+      case 'referencement-ia-ecommerce-2026':
+        return <ReferencementIaEcommerce2026 />;
+      case 'maillage-interne-seo-2026':
+        return <MaillageInterneSeo2026 />;
+      case 'agence-seo-strasbourg-2026':
+        return <AgenceSeoStrasbourg2026 />;
       case 'strategie-contenu-seo-2026':
         return <StrategieContenuSeo2026 />;
       case '10-conseils-marque-visible-chatgpt-2026':
