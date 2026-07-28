@@ -5,6 +5,7 @@ export const PAGE_TO_URL: Record<string, string> = {
   'referencement-ia-ecommerce-2026': '/blog/referencement-ia-ecommerce-2026',
   'maillage-interne-seo-2026': '/blog/maillage-interne-seo-2026',
   'agence-seo-strasbourg-2026': '/blog/agence-seo-strasbourg-2026',
+  'optimiser-ai-overview-2026': '/blog/optimiser-ai-overview-2026',
   'agence-seo-nantes-2026': '/blog/agence-seo-nantes-2026',
   'strategie-contenu-seo-2026': '/blog/strategie-contenu-seo-2026',
 
@@ -94,6 +95,7 @@ export const ROUTES: Record<string, Page> = {
   '/blog/referencement-ia-ecommerce-2026': 'referencement-ia-ecommerce-2026',
   '/blog/maillage-interne-seo-2026': 'maillage-interne-seo-2026',
   '/blog/agence-seo-strasbourg-2026': 'agence-seo-strasbourg-2026',
+  '/blog/optimiser-ai-overview-2026': 'optimiser-ai-overview-2026',
   '/blog/agence-seo-nantes-2026': 'agence-seo-nantes-2026',
   '/blog/strategie-contenu-seo-2026': 'strategie-contenu-seo-2026',
 
@@ -1223,6 +1225,17 @@ export const BLOG_DATA: BlogItem[] = [
     url: '/blog/agence-seo-strasbourg-2026',
     image: 'https://triaina.fr/images/agence-seo-strasbourg-2026.jpg',
     tag: 'SEO LOCAL'
+  },
+  {
+    id: 'optimiser-ai-overview-2026',
+    source: 'SEO & GEO',
+    logo: '',
+    date: '28 JUILLET 2026',
+    title: 'Optimiser pour AI Overview : stratégie complète 2026',
+    excerpt: 'Stratégie complète pour optimiser AI Overview en 2026 : RAG, E-E-A-T, schema markup, 7 leviers actionnables, e-commerce et GEO. Guide expert par Triaina.',
+    url: '/blog/optimiser-ai-overview-2026',
+    image: 'https://triaina.fr/images/blog/optimiser-ai-overview-2026.jpg',
+    tag: 'GEO'
   }
 ];
 

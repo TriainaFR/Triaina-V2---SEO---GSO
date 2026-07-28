@@ -83,6 +83,7 @@ import { AgenceSeoNantes2026 } from './views/blog/AgenceSeoNantes2026';
 import { ReferencementIaEcommerce2026 } from './views/blog/ReferencementIaEcommerce2026';
 import { MaillageInterneSeo2026 } from './views/blog/MaillageInterneSeo2026';
 import { AgenceSeoStrasbourg2026 } from './views/blog/AgenceSeoStrasbourg2026';
+import { OptimiserAiOverview2026 } from './views/blog/OptimiserAiOverview2026';
 
 
 import { SEO } from './components/SEO';
@@ -355,6 +356,8 @@ const App: React.FC = () => {
         return <MaillageInterneSeo2026 />;
       case 'agence-seo-strasbourg-2026':
         return <AgenceSeoStrasbourg2026 />;
+      case 'optimiser-ai-overview-2026':
+        return <OptimiserAiOverview2026 />;
       case 'strategie-contenu-seo-2026':
         return <StrategieContenuSeo2026 />;
       case '10-conseils-marque-visible-chatgpt-2026':

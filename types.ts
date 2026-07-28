@@ -2,6 +2,7 @@ export type Page =
   | 'referencement-ia-ecommerce-2026'
   | 'maillage-interne-seo-2026'
   | 'agence-seo-strasbourg-2026'
+  | 'optimiser-ai-overview-2026'
   | 'agence-seo-nantes-2026'
   | 'strategie-contenu-seo-2026'
   | 'seo-local-france-2026'
