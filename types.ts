@@ -3,6 +3,7 @@ export type Page =
   | 'maillage-interne-seo-2026'
   | 'agence-seo-strasbourg-2026'
   | 'optimiser-ai-overview-2026'
+  | 'agence-seo-montpellier-2026'
   | 'agence-seo-nantes-2026'
   | 'strategie-contenu-seo-2026'
   | 'seo-local-france-2026'
@@ -84,7 +85,7 @@ export type Page =
   | 'agence-seo-toulon-2026'
   | 'agence-seo-la-rochelle-2026'
   | 'annuaire'
-  | 'ia-analyse-donnees-optimisation-seo-2026' | 'ia-analyse-donnees-optimisation-seo-2026' | '404';
+  | 'ia-analyse-donnees-optimisation-seo-2026' | '404';
 
 export interface NavLink {
   id: string;

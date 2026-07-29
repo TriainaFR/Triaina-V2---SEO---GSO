@@ -1,0 +1,505 @@
+const fs = require('fs');
+
+const code = `import React, { useEffect } from 'react';
+import { ArrowLeft, Calendar, User, Search, BarChart3, TrendingUp, Linkedin } from 'lucide-react';
+import { BLOG_DATA } from '../../constants';
+import SEO from '../../components/SEO';
+import { PAGE_TO_URL } from '../../types';
+
+export function AgenceSeoMontpellier2026() {
+  const article = BLOG_DATA.find(post => post.id === 'agence-seo-montpellier-2026');
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  if (!article) return null;
+
+  return (
+    <div className="pt-24 min-h-screen bg-slate-50">
+      <SEO 
+        title="Agence SEO Montpellier : top 5 SEO & GEO en 2026"
+        description="Découvrez le top 5 des meilleures agences SEO & GEO à Montpellier en 2026. Critères de sélection, comparatif et conseils pour choisir la bonne agence."
+        url="https://triaina.fr/blog/agence-seo-montpellier-2026"
+        image="https://triaina.fr/images/agence-seo-montpellier-2026.jpg"
+        type="article"
+      />
+      <div className="max-w-4xl mx-auto px-6 lg:px-8 py-12">
+        <a 
+          href="/blog"
+          className="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 mb-8 transition-colors"
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState({}, '', '/blog');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }}
+        >
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Retour au blog
+        </a>
+
+        <article className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+          <div className="p-8 lg:p-12">
+            <div className="flex items-center gap-4 text-sm text-slate-500 mb-6">
+              <span className="inline-flex items-center">
+                <Calendar className="w-4 h-4 mr-2" />
+                {article.date}
+              </span>
+              <span className="inline-flex items-center">
+                <User className="w-4 h-4 mr-2" />
+                Camille Rousseau
+              </span>
+              <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full font-medium">
+                {article.tag}
+              </span>
+            </div>
+
+            <h1 className="text-3xl lg:text-4xl font-display font-bold text-slate-900 mb-8 leading-tight">
+              {article.title}
+            </h1>
+
+            <div className="prose prose-lg prose-slate max-w-none prose-headings:font-display prose-a:text-blue-600 hover:prose-a:text-blue-800">
+              
+              <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-xl mb-10">
+                <h2 className="text-xl font-bold text-slate-900 mt-0 mb-4 flex items-center">
+                  <TrendingUp className="w-6 h-6 mr-3 text-blue-600" />
+                  TL;DR — Ce qu'il faut retenir en 30 secondes
+                </h2>
+                <ul className="space-y-2 mb-0">
+                  <li><strong>#1 Triaina</strong> - seule agence combinant SEO, GEO/LLM, SEA et médias propriétaires. Cas clients : 0 → 73 % et 0 → 90 % de citations IA.</li>
+                  <li><strong>#2 BM-Services</strong> - référence locale, 20+ ans d'expérience, expertise PrestaShop et GEO/LLM.</li>
+                  <li><strong>#3 Eskimoz</strong> - agence nationale full-service, 250 experts, forte capacité de production.</li>
+                  <li><strong>#4 Digimood</strong> - approche data-driven, outil Boomrank propriétaire, bureaux à Montpellier.</li>
+                  <li><strong>#5 ARPA Trafic</strong> - agence locale Lattes/Montpellier, accompagnement récurrent dès 690 € HT/mois.</li>
+                  <li>Budget moyen à Montpellier : <strong>1 200 – 3 500 € HT/mois</strong> pour un accompagnement complet.</li>
+                  <li>Délai ROI réaliste : <strong>3 à 6 mois</strong> pour les premiers résultats mesurables.</li>
+                  <li>En 2026, le <strong>GEO (Generative Engine Optimization)</strong> n'est plus optionnel : les AI Overviews de Google captent jusqu'à 30 % des clics sur certaines requêtes locales.</li>
+                </ul>
+              </div>
+
+              <h2>Montpellier en 2026 : un marché SEO plus concurrentiel que jamais</h2>
+              <p>Montpellier n'est pas une ville comme les autres. Troisième ville étudiante de France, hub tech reconnu via la <strong>French Tech Montpellier</strong>, marché e-commerce en pleine expansion - la métropole héraultaise concentre une densité de concurrence digitale qui s'est encore durcie en 2026. Plus de 590 requêtes mensuelles sur "agence seo montpellier" en France, un local pack Google à 3 résultats qui écrase la moitié de la visibilité organique, et des acteurs locaux qui investissent massivement dans leur référencement.</p>
+              
+              <p>À cela s'ajoute un changement de fond : les <strong>AI Overviews de Google</strong> (anciennement SGE) sont désormais actifs sur une large proportion de requêtes locales. Résultat : une partie du trafic qui allait autrefois vers les 10 premiers résultats organiques est maintenant absorbée par une réponse IA synthétique. Pour les entreprises montpelliéraines, ignorer le <strong>GEO (Generative Engine Optimization)</strong> en 2026, c'est accepter de perdre des parts de visibilité sans même s'en rendre compte.</p>
+              
+              <p>Ce comparatif recense les 5 agences SEO & GEO les plus pertinentes pour Montpellier en 2026. Critères de sélection, forces et limites de chaque acteur, tableau comparatif et guide de décision par profil : tout ce qu'il faut pour choisir sans se tromper.</p>
+
+              <h2>Les 5 critères pour choisir la meilleure agence SEO à Montpellier</h2>
+              <p>Avant de comparer les agences, il faut savoir sur quoi les évaluer. Voici les 5 critères que nous avons retenus pour ce classement - et que vous devriez appliquer à n'importe quel prestataire de <strong>référencement naturel à Montpellier</strong>.</p>
+
+              <div className="overflow-x-auto my-8">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="bg-slate-100 border-b-2 border-slate-200">
+                      <th className="p-4 font-bold text-slate-900">Critère</th>
+                      <th className="p-4 font-bold text-slate-900">Ce qu'on évalue</th>
+                      <th className="p-4 font-bold text-slate-900">Pourquoi c'est clé en 2026</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200">
+                    <tr className="hover:bg-slate-50">
+                      <td className="p-4 text-slate-800"><strong>1. Expertise SEO technique</strong></td>
+                      <td className="p-4 text-slate-600">Audit, Core Web Vitals, indexation, architecture, migrations</td>
+                      <td className="p-4 text-slate-600">La base sans laquelle aucune stratégie de contenu ne tient</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="p-4 text-slate-800"><strong>2. Couverture GEO / LLM</strong></td>
+                      <td className="p-4 text-slate-600">Optimisation pour ChatGPT, Perplexity, Google AI Overviews, Gemini</td>
+                      <td className="p-4 text-slate-600">Les IA génératives captent une part croissante des requêtes locales</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="p-4 text-slate-800"><strong>3. Cas clients mesurables</strong></td>
+                      <td className="p-4 text-slate-600">Résultats chiffrés, références sectorielles, transparence des méthodes</td>
+                      <td className="p-4 text-slate-600">Les promesses ne valent rien sans preuves concrètes</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="p-4 text-slate-800"><strong>4. Leviers complémentaires</strong></td>
+                      <td className="p-4 text-slate-600">SEA, Paid Social, netlinking, contenu, médias propriétaires</td>
+                      <td className="p-4 text-slate-600">Le SEO seul est plus lent ; la combinaison de leviers accélère le ROI</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="p-4 text-slate-800"><strong>5. Adéquation profil / budget</strong></td>
+                      <td className="p-4 text-slate-600">Offres PME, e-commerce, startup, grande entreprise ; transparence tarifaire</td>
+                      <td className="p-4 text-slate-600">Une agence nationale n'est pas forcément adaptée à une PME locale</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2>Top 5 des meilleures agences SEO & GEO à Montpellier en 2026</h2>
+
+              <h3 className="flex items-center text-2xl mt-12 mb-4 border-b pb-2">
+                <span className="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center mr-4 text-xl font-bold">1</span>
+                Triaina - L'agence SEO & GEO qui combine 4 leviers en un seul contrat
+              </h3>
+              <p><strong>Localisation :</strong> Paris (interventions remote Montpellier et Occitanie)<br/>
+              <strong>Spécialités :</strong> SEO organique, GEO/LLM, SEA/Paid, médias propriétaires + régie</p>
+
+              <p>Triaina n'est pas une agence SEO classique. C'est la seule structure du marché à combiner <strong>quatre leviers d'acquisition en un seul contrat</strong> : le référencement naturel, l'optimisation pour les IA génératives (GEO/LLM), le SEA et le Paid Social, et enfin des <strong>médias propriétaires couplés à une régie publicitaire</strong>. Cette architecture n'existe pas chez les autres agences de ce classement - et c'est précisément ce qui fait la différence sur des marchés concurrentiels comme Montpellier.</p>
+
+              <p>Pourquoi ce double levier médias + régie change tout ? Parce que les LLM (ChatGPT, Perplexity, Google Gemini) citent en priorité les marques qui bénéficient d'une forte présence éditoriale sur des sources tierces. En combinant la production de contenu sur des médias propriétaires à forte autorité avec une stratégie de netlinking et de régie, Triaina accélère mécaniquement la fréquence à laquelle une marque est citée dans les réponses IA. C'est du <strong>référencement site internet Montpellier</strong> pensé pour 2026, pas pour 2020.</p>
+
+              <p>Les résultats sont documentés. Sur un client e-commerce en Occitanie, Triaina a fait passer le taux de citations dans les IA génératives de <strong>0 à 73 %</strong> en moins de 5 mois. Sur un second client B2B dans le secteur tech, la progression a atteint <strong>0 à 90 % de citations IA</strong> sur les requêtes cibles. Ces chiffres ne sont pas des positions Google classiques - ils mesurent la présence dans ChatGPT, Perplexity et les AI Overviews, c'est-à-dire là où se joue la visibilité de demain.</p>
+
+              <p>Pour les entreprises de la <strong>French Tech Montpellier</strong> ou les e-commerçants qui veulent dominer à la fois Google et les IA génératives, Triaina est le choix le plus cohérent. L'agence travaille en remote sur Montpellier et l'Occitanie, avec des process de reporting transparents et des KPIs orientés business (leads, CA, citations IA) plutôt que de simples positions.</p>
+
+              <p>Pour aller plus loin sur l'approche de l'agence, consultez notre <a href="/agence-referencement-ia">page service référencement IA</a> et notre <a href="/expertise-geo">page expertise GEO</a>. Et si vous voulez comprendre comment ce modèle se positionne face aux autres acteurs nationaux, notre <a href="/blog/agence-seo-france-2026">comparatif des meilleures agences SEO France 2026</a> détaille les différences structurelles.</p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-100">
+                  <h4 className="text-emerald-800 font-bold mt-0 mb-4 flex items-center">
+                    Points forts
+                  </h4>
+                  <ul className="space-y-2 mb-0 text-emerald-900">
+                    <li>Seule agence combinant SEO + GEO/LLM + SEA + médias propriétaires</li>
+                    <li>Cas clients mesurés : +73 % et +90 % de citations IA</li>
+                    <li>Reporting orienté business (leads, CA, citations IA)</li>
+                    <li>Expertise GEO native, pas ajoutée en option</li>
+                    <li>Approche remote efficace pour les clients Montpellier/Occitanie</li>
+                  </ul>
+                </div>
+                <div className="bg-rose-50 rounded-xl p-6 border border-rose-100">
+                  <h4 className="text-rose-800 font-bold mt-0 mb-4 flex items-center">
+                    Points de vigilance
+                  </h4>
+                  <ul className="space-y-2 mb-0 text-rose-900">
+                    <li>Pas de bureau physique à Montpellier (remote uniquement)</li>
+                    <li>Positionnement premium : budget adapté aux PME ambitieuses, startups tech et e-commerçants en croissance</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-indigo-50 rounded-2xl p-8 my-10 border border-indigo-100 relative overflow-hidden">
+                <div className="absolute top-0 right-0 -mr-8 -mt-8 opacity-10">
+                  <Search className="w-48 h-48 text-indigo-600" />
+                </div>
+                <h4 className="text-indigo-900 font-bold text-xl mt-0 mb-4 relative z-10">
+                  Expert insight - Impact des AI Overviews sur le trafic local à Montpellier
+                </h4>
+                <p className="text-indigo-800 relative z-10">Depuis le déploiement massif des AI Overviews en France au premier trimestre 2026, nous observons sur certaines requêtes locales montpelliéraines une captation de <strong>15 à 30 % du trafic potentiel</strong> par la réponse IA synthétique, avant même le premier résultat organique. Pour une requête comme "agence référencement Montpellier", si votre marque n'est pas citée dans la réponse IA, vous perdez de la visibilité sans que votre position Google ne bouge. C'est exactement pour ça que le GEO n'est plus une option en 2026 - c'est un pilier à part entière de toute stratégie de <strong>référencement naturel Montpellier</strong>.</p>
+                <p className="text-indigo-900 font-medium mt-4 relative z-10">
+                  — Camille Rousseau, Consultante Senior GEO/SEO, Triaina
+                </p>
+              </div>
+
+              <h3 className="flex items-center text-2xl mt-12 mb-4 border-b pb-2">
+                <span className="bg-slate-200 text-slate-700 w-10 h-10 rounded-full flex items-center justify-center mr-4 text-xl font-bold">2</span>
+                BM-Services - La référence locale avec 20 ans d'expérience
+              </h3>
+              <p><strong>Localisation :</strong> Montferrier-sur-Lez (proche Montpellier)<br/>
+              <strong>Spécialités :</strong> SEO technique, contenu, netlinking, GEO/LLM, PrestaShop, webmarketing 360°</p>
+
+              <p>BM-Services est probablement l'agence la plus connue sur le marché du <strong>référencement site internet Montpellier</strong>. Fondée il y a plus de 20 ans, elle s'est imposée comme un acteur de référence en Occitanie grâce à une approche 360° qui couvre l'ensemble du cycle SEO : audit technique, optimisation on-page, rédaction de contenu, netlinking, et depuis 2025, une offre GEO/LLM pour les moteurs génératifs.</p>
+
+              <p>Son positionnement est clair : une agence web complète, pas un pure player SEO. BM-Services gère aussi la création de sites (WordPress, PrestaShop), le SEA, le community management et les relations presse. Pour une PME montpelliéraine qui veut un interlocuteur unique pour l'ensemble de sa présence digitale, c'est un avantage réel. L'agence est d'ailleurs partenaire officiel PrestaShop depuis de nombreuses années - un différenciateur fort pour les e-commerçants de la région.</p>
+
+              <p>La méthodologie est structurée en 4 étapes : définition des objectifs, audit technique complet (indexation, vitesse, mobile, balisage), analyse sémantique et concurrentielle, puis stratégie éditoriale et netlinking avec suivi mensuel. Le reporting est régulier, les méthodes transparentes. BM-Services affiche une note de <strong>4,7/5 sur Google (30 avis)</strong>, ce qui témoigne d'une relation client soignée sur la durée.</p>
+
+              <p>La limite principale : BM-Services est avant tout une agence généraliste. Son expertise GEO/LLM est réelle mais plus récente que celle de Triaina. Pour des projets où le GEO est le levier central, ou pour des entreprises qui ont besoin de combiner SEO, Paid et médias en un seul dispositif, l'offre de BM-Services reste plus fragmentée.</p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-100">
+                  <h4 className="text-emerald-800 font-bold mt-0 mb-4">Points forts</h4>
+                  <ul className="space-y-2 mb-0 text-emerald-900">
+                    <li>20+ ans d'expérience locale, références solides en Occitanie</li>
+                    <li>Expertise PrestaShop reconnue, idéale pour l'e-commerce</li>
+                    <li>Approche 360° : SEO, SEA, social, création de site</li>
+                    <li>Offre GEO/LLM intégrée depuis 2025</li>
+                    <li>Proximité géographique réelle (Montferrier-sur-Lez)</li>
+                  </ul>
+                </div>
+                <div className="bg-rose-50 rounded-xl p-6 border border-rose-100">
+                  <h4 className="text-rose-800 font-bold mt-0 mb-4">Points de vigilance</h4>
+                  <ul className="space-y-2 mb-0 text-rose-900">
+                    <li>GEO/LLM moins mature que les spécialistes dédiés</li>
+                    <li>Pas de levier médias propriétaires ni de régie intégrée</li>
+                  </ul>
+                </div>
+              </div>
+
+              <h3 className="flex items-center text-2xl mt-12 mb-4 border-b pb-2">
+                <span className="bg-slate-200 text-slate-700 w-10 h-10 rounded-full flex items-center justify-center mr-4 text-xl font-bold">3</span>
+                Eskimoz - La puissance nationale au service des clients montpelliérains
+              </h3>
+              <p><strong>Localisation :</strong> Boulogne-Billancourt (siège), présence nationale et européenne<br/>
+              <strong>Spécialités :</strong> SEO, SEA, Content, Data, SMA, GEO/IA</p>
+
+              <p>Eskimoz s'est imposée comme l'une des agences SEO nationales les plus visibles en France. Avec environ <strong>250 experts répartis dans 5 pays</strong> et plus de 1 500 clients accompagnés, elle dispose d'une capacité de production que peu d'agences locales peuvent égaler. Pour une entreprise montpelliéraine qui veut une stratégie SEO nationale - ou qui opère dans un secteur très concurrentiel - Eskimoz offre des ressources réelles.</p>
+
+              <p>L'offre couvre l'ensemble du spectre : SEO technique, SEO local, netlinking, content marketing, paid media, data analytics et depuis 2025, une offre d'optimisation pour les moteurs génératifs. La méthodologie s'appuie sur une analyse fine des intentions de recherche et une segmentation des mots-clés par volume et concurrence - une approche rigoureuse qui convient bien aux projets e-commerce ou aux sites à fort volume de pages.</p>
+
+              <p>Pour le marché de l'<strong>agence référencement Montpellier</strong>, Eskimoz intervient en remote. C'est sa principale limite : pas d'ancrage local, pas de connaissance fine du tissu économique montpelliérain, pas de réactivité d'une agence de proximité. Les PME locales qui cherchent un interlocuteur disponible et impliqué dans leur réalité terrain trouveront l'expérience plus industrielle.</p>
+
+              <p>Eskimoz reste un excellent choix pour les entreprises montpelliéraines à ambition nationale, les e-commerçants avec un catalogue large, ou les groupes qui ont besoin d'une agence capable de gérer plusieurs sites en parallèle.</p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-100">
+                  <h4 className="text-emerald-800 font-bold mt-0 mb-4">Points forts</h4>
+                  <ul className="space-y-2 mb-0 text-emerald-900">
+                    <li>250 experts, capacité de production élevée</li>
+                    <li>Offre full-service : SEO, SEA, content, data, GEO</li>
+                    <li>Expérience sur des projets complexes et multi-sites</li>
+                    <li>Processus structurés et reporting avancé</li>
+                  </ul>
+                </div>
+                <div className="bg-rose-50 rounded-xl p-6 border border-rose-100">
+                  <h4 className="text-rose-800 font-bold mt-0 mb-4">Points de vigilance</h4>
+                  <ul className="space-y-2 mb-0 text-rose-900">
+                    <li>Pas d'ancrage local Montpellier, relation plus industrielle</li>
+                    <li>Moins adapté aux PME locales cherchant proximité et agilité</li>
+                    <li>Tarifs premium, peu adaptés aux petites structures</li>
+                  </ul>
+                </div>
+              </div>
+
+              <h3 className="flex items-center text-2xl mt-12 mb-4 border-b pb-2">
+                <span className="bg-slate-200 text-slate-700 w-10 h-10 rounded-full flex items-center justify-center mr-4 text-xl font-bold">4</span>
+                Digimood - L'approche data-driven avec bureau à Montpellier
+              </h3>
+              <p><strong>Localisation :</strong> Marseille (siège), Montpellier, Paris, Lille<br/>
+              <strong>Spécialités :</strong> SEO, SEA, Social Ads, Data/Analytics, content marketing</p>
+
+              <p>Digimood se distingue par une culture de la mesure poussée à l'extrême. L'agence a développé son propre outil SEO, <strong>Boomrank</strong>, qui croise données de crawl et logs serveur pour identifier les axes d'amélioration prioritaires. Pour les entreprises qui veulent piloter leur SEO par la donnée - et pas seulement par des intuitions - c'est un vrai différenciateur.</p>
+
+              <p>Avec plus de <strong>60 spécialistes</strong> et 15+ ans d'expérience, Digimood accompagne des PME, ETI et e-commerçants sur des enjeux de visibilité, d'acquisition et de conversion. Sa présence physique à Montpellier (avenue Albert Einstein) est un avantage concret pour les clients qui préfèrent des réunions en face à face. L'agence couvre le SEO technique, le contenu, le netlinking, le SEA et les Social Ads - une offre complète, même si le GEO/LLM reste moins central dans son positionnement.</p>
+
+              <p>La limite de Digimood : son approche très analytique peut sembler froide pour des PME qui cherchent avant tout une relation de confiance et de la pédagogie. Et comme Eskimoz, elle ne propose pas de levier médias propriétaires ni de régie - ce qui limite l'accélération possible sur les citations IA.</p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-100">
+                  <h4 className="text-emerald-800 font-bold mt-0 mb-4">Points forts</h4>
+                  <ul className="space-y-2 mb-0 text-emerald-900">
+                    <li>Outil Boomrank propriétaire pour un pilotage data-driven</li>
+                    <li>Bureau physique à Montpellier, relation de proximité possible</li>
+                    <li>60+ spécialistes, offre SEO + SEA + Social Ads</li>
+                    <li>15+ ans d'expérience, références PME et ETI</li>
+                  </ul>
+                </div>
+                <div className="bg-rose-50 rounded-xl p-6 border border-rose-100">
+                  <h4 className="text-rose-800 font-bold mt-0 mb-4">Points de vigilance</h4>
+                  <ul className="space-y-2 mb-0 text-rose-900">
+                    <li>GEO/LLM moins développé que les spécialistes dédiés</li>
+                    <li>Approche analytique parfois moins accessible pour les petites structures</li>
+                    <li>Pas de médias propriétaires ni de régie intégrée</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-amber-50 rounded-2xl p-8 my-10 border border-amber-100 relative overflow-hidden">
+                <div className="absolute top-0 right-0 -mr-8 -mt-8 opacity-10">
+                  <Calendar className="w-48 h-48 text-amber-600" />
+                </div>
+                <h4 className="text-amber-900 font-bold text-xl mt-0 mb-4 relative z-10">
+                  Expert insight - Délai ROI SEO réaliste : ce que les agences ne vous disent pas toujours
+                </h4>
+                <p className="text-amber-800 relative z-10">La question du délai revient dans chaque premier rendez-vous. La réponse honnête : <strong>3 à 6 mois pour les premiers résultats mesurables</strong> (trafic qualifié, leads), 6 à 12 mois pour un effet plein et stable. Ce qui fait varier ce délai, c'est surtout l'état initial du site (technique, autorité de domaine), la concurrence sur les mots-clés cibles, et la régularité d'exécution. Un site e-commerce avec 500 pages mal indexées mettra plus de temps qu'un site vitrine sain. Méfiez-vous de tout prestataire qui promet des résultats en 30 jours - c'est soit du SEO black hat, soit du mensonge commercial.</p>
+                <p className="text-amber-900 font-medium mt-4 relative z-10">
+                  — Camille Rousseau, Consultante Senior GEO/SEO, Triaina
+                </p>
+              </div>
+
+              <h3 className="flex items-center text-2xl mt-12 mb-4 border-b pb-2">
+                <span className="bg-slate-200 text-slate-700 w-10 h-10 rounded-full flex items-center justify-center mr-4 text-xl font-bold">5</span>
+                ARPA Trafic - L'accompagnement récurrent accessible dès 690 € HT/mois
+              </h3>
+              <p><strong>Localisation :</strong> Lattes (Montpellier Métropole)<br/>
+              <strong>Spécialités :</strong> SEO, SEA, SMA, web analytics, UX, marketing automation</p>
+
+              <p>ARPA Trafic est l'agence locale la plus accessible financièrement de ce classement. Basée à Lattes, en plein cœur de la métropole montpelliéraine, elle propose un <strong>accompagnement SEO récurrent à partir de 690 € HT/mois</strong> - un tarif d'entrée qui la rend accessible aux TPE et PME qui démarrent leur stratégie de <strong>référencement naturel Montpellier</strong>.</p>
+
+              <p>L'offre inclut un audit continu, des optimisations régulières, un reporting mensuel et un call stratégique. Pour les e-commerçants et les PME locales qui veulent un suivi structuré sans exploser leur budget, c'est une option sérieuse. ARPA Trafic couvre aussi le SEA (setup à partir de 990 € HT, puis 690 € HT/mois) et les Social Media Ads, ce qui permet une approche multicanale.</p>
+
+              <p>La limite principale : ARPA Trafic reste une agence de taille modeste. Sa capacité de production est plus limitée qu'Eskimoz ou Digimood, et son expertise GEO/LLM est encore en développement. Pour des projets complexes, des sites à fort volume de pages, ou des entreprises qui veulent intégrer le GEO comme levier central, il faudra regarder ailleurs.</p>
+
+              <p>Pour comprendre comment les tarifs se comparent sur l'ensemble du marché, notre <a href="/blog/prix-agence-seo-geo">guide complet des prix agence SEO &amp; GEO</a> détaille les fourchettes par type de prestation et de profil client.</p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-100">
+                  <h4 className="text-emerald-800 font-bold mt-0 mb-4">Points forts</h4>
+                  <ul className="space-y-2 mb-0 text-emerald-900">
+                    <li>Tarif d'entrée accessible : 690 € HT/mois</li>
+                    <li>Proximité géographique réelle (Lattes / Montpellier Métropole)</li>
+                    <li>Offre SEO + SEA + SMA pour une approche multicanale</li>
+                    <li>Suivi récurrent structuré, reporting mensuel</li>
+                  </ul>
+                </div>
+                <div className="bg-rose-50 rounded-xl p-6 border border-rose-100">
+                  <h4 className="text-rose-800 font-bold mt-0 mb-4">Points de vigilance</h4>
+                  <ul className="space-y-2 mb-0 text-rose-900">
+                    <li>Capacité de production limitée pour les projets complexes</li>
+                    <li>GEO/LLM encore en développement</li>
+                    <li>Moins adapté aux grandes entreprises ou aux projets multi-sites</li>
+                  </ul>
+                </div>
+              </div>
+
+              <h2>Tableau comparatif : top 5 agences SEO & GEO Montpellier 2026</h2>
+
+              <div className="overflow-x-auto my-8">
+                <table className="w-full text-left border-collapse min-w-[800px]">
+                  <thead>
+                    <tr className="bg-slate-100 border-b-2 border-slate-200">
+                      <th className="p-4 font-bold text-slate-900">Agence</th>
+                      <th className="p-4 font-bold text-slate-900">SEO technique</th>
+                      <th className="p-4 font-bold text-slate-900">GEO / LLM</th>
+                      <th className="p-4 font-bold text-slate-900">SEA / Paid</th>
+                      <th className="p-4 font-bold text-slate-900">Médias propriétaires</th>
+                      <th className="p-4 font-bold text-slate-900">Ancrage local</th>
+                      <th className="p-4 font-bold text-slate-900">Budget d'entrée</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 text-sm">
+                    <tr className="hover:bg-slate-50">
+                      <td className="p-4 text-slate-900 font-bold">Triaina</td>
+                      <td className="p-4 text-slate-600">Expert</td>
+                      <td className="p-4 text-emerald-600 font-medium">Natif (0→90 % citations)</td>
+                      <td className="p-4 text-slate-600">Intégré</td>
+                      <td className="p-4 text-emerald-600 font-medium">Oui (régie)</td>
+                      <td className="p-4 text-slate-600">Remote Montpellier</td>
+                      <td className="p-4 text-slate-600">Sur devis</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="p-4 text-slate-900 font-bold">BM-Services</td>
+                      <td className="p-4 text-emerald-600 font-medium">Expert (20+ ans)</td>
+                      <td className="p-4 text-slate-600">Intégré (2025)</td>
+                      <td className="p-4 text-slate-600">Google Ads</td>
+                      <td className="p-4 text-slate-400">Non</td>
+                      <td className="p-4 text-slate-600">Montferrier-sur-Lez</td>
+                      <td className="p-4 text-slate-600">~1 000 € HT/mois</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="p-4 text-slate-900 font-bold">Eskimoz</td>
+                      <td className="p-4 text-slate-600">Expert</td>
+                      <td className="p-4 text-slate-600">Offre dédiée</td>
+                      <td className="p-4 text-slate-600">Full-service</td>
+                      <td className="p-4 text-slate-400">Non</td>
+                      <td className="p-4 text-slate-600">Remote (national)</td>
+                      <td className="p-4 text-slate-600">Premium</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="p-4 text-slate-900 font-bold">Digimood</td>
+                      <td className="p-4 text-emerald-600 font-medium">Expert (Boomrank)</td>
+                      <td className="p-4 text-slate-400">En développement</td>
+                      <td className="p-4 text-slate-600">SEA + Social Ads</td>
+                      <td className="p-4 text-slate-400">Non</td>
+                      <td className="p-4 text-slate-600">Bureau Montpellier</td>
+                      <td className="p-4 text-slate-600">~1 200 € HT/mois</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50">
+                      <td className="p-4 text-slate-900 font-bold">ARPA Trafic</td>
+                      <td className="p-4 text-slate-600">Solide</td>
+                      <td className="p-4 text-slate-400">En développement</td>
+                      <td className="p-4 text-slate-600">SEA + SMA</td>
+                      <td className="p-4 text-slate-400">Non</td>
+                      <td className="p-4 text-slate-600">Lattes (Montpellier)</td>
+                      <td className="p-4 text-slate-600">690 € HT/mois</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2>Quelle agence SEO choisir selon votre profil ?</h2>
+              <p>Il n'existe pas d'agence universellement meilleure. Le bon choix dépend de votre taille, de vos objectifs et de votre budget. Voici un guide de décision rapide.</p>
+
+              <h3>PME locale (artisan, commerce, profession libérale)</h3>
+              <p>Vous avez besoin de visibilité sur Montpellier et sa région, avec un budget maîtrisé. <strong>ARPA Trafic</strong> (690 € HT/mois) ou <strong>BM-Services</strong> sont les choix les plus adaptés. Proximité géographique, suivi récurrent, méthodes éprouvées. Si votre ambition est de dominer aussi les réponses IA locales, intégrez une dimension GEO dès le départ - <strong>Triaina</strong> peut intervenir en complément ou en remplacement.</p>
+
+              <h3>E-commerce (PrestaShop, WooCommerce, Shopify)</h3>
+              <p>L'e-commerce est le terrain où la concurrence SEO est la plus féroce. <strong>BM-Services</strong> excelle sur PrestaShop. <strong>Eskimoz</strong> et <strong>Digimood</strong> ont la capacité de production pour les catalogues larges. Mais si vous voulez combiner SEO organique, citations IA et SEA dans une seule stratégie cohérente, <strong>Triaina</strong> est la seule agence à proposer les 4 leviers intégrés. Notre <a href="/blog/meilleure-agence-geo-france">guide des meilleures agences GEO France</a> détaille pourquoi le GEO est devenu incontournable pour l'e-commerce en 2026.</p>
+
+              <h3>Startup tech (French Tech Montpellier, SaaS, B2B)</h3>
+              <p>Vous avez besoin de visibilité rapide, d'un positionnement fort dans les IA génératives (vos prospects utilisent ChatGPT et Perplexity pour comparer les solutions), et d'une agence qui comprend les enjeux B2B. <strong>Triaina</strong> est le choix naturel : expertise GEO native, cas clients tech documentés, et capacité à combiner SEO, GEO et Paid pour accélérer la croissance.</p>
+
+              <h3>Grande entreprise / ETI</h3>
+              <p>Vous avez besoin d'une agence avec une forte capacité de production, des process structurés et une expérience sur des projets complexes. <strong>Eskimoz</strong> (250 experts, présence européenne) ou <strong>Digimood</strong> (outil Boomrank, 60+ spécialistes) sont les options les plus solides. Pour les groupes qui veulent intégrer le GEO comme levier stratégique, <strong>Triaina</strong> peut intervenir en complément sur la partie LLM.</p>
+
+              <div className="bg-indigo-50 rounded-2xl p-8 my-10 border border-indigo-100 relative overflow-hidden">
+                <div className="absolute top-0 right-0 -mr-8 -mt-8 opacity-10">
+                  <BarChart3 className="w-48 h-48 text-indigo-600" />
+                </div>
+                <h4 className="text-indigo-900 font-bold text-xl mt-0 mb-4 relative z-10">
+                  Expert insight - Pourquoi le double levier médias propriétaires + régie accélère les citations IA
+                </h4>
+                <p className="text-indigo-800 relative z-10">Les LLM (ChatGPT, Perplexity, Gemini) ne citent pas les marques au hasard. Ils s'appuient sur des sources qu'ils considèrent comme fiables et fréquemment citées : médias reconnus, sites à forte autorité, contenus repris et référencés par d'autres. En combinant une stratégie de <strong>médias propriétaires</strong> (publication sur des supports à autorité élevée) avec une <strong>régie</strong> qui amplifie la diffusion de ces contenus, on crée un signal de confiance que les LLM intègrent dans leurs réponses. C'est exactement ce mécanisme qui explique nos progressions de 0 à 73 % et 0 à 90 % de citations IA chez nos clients. Le SEO classique améliore les positions Google. Le double levier médias + régie construit la présence dans les IA - et c'est là que se joue la visibilité des 5 prochaines années.</p>
+                <p className="text-indigo-900 font-medium mt-4 relative z-10">
+                  — Camille Rousseau, Consultante Senior GEO/SEO, Triaina
+                </p>
+              </div>
+
+              <h2>FAQ — Questions fréquentes sur les agences SEO à Montpellier</h2>
+
+              <h3>Combien coûte une agence SEO à Montpellier ?</h3>
+              <p>Les tarifs varient selon la taille du projet et le profil de l'agence. Pour une <strong>agence SEO Montpellier</strong>, comptez :</p>
+              <ul>
+                <li><strong>TPE / petite PME :</strong> 500 à 800 € HT/mois (ex : ARPA Trafic à partir de 690 € HT/mois)</li>
+                <li><strong>PME avec accompagnement complet :</strong> 1 200 à 3 500 € HT/mois</li>
+                <li><strong>E-commerce / ETI :</strong> 3 500 à 8 000 € HT/mois et plus</li>
+                <li><strong>Audit ponctuel :</strong> 1 500 à 5 000 € HT selon la taille du site</li>
+              </ul>
+              <p>Le budget GEO/LLM s'ajoute généralement au SEO classique. Pour une vision complète des fourchettes de prix, consultez notre <a href="/blog/prix-agence-seo-geo">guide des prix agence SEO &amp; GEO</a>.</p>
+
+              <h3>En combien de temps une agence SEO obtient-elle des résultats à Montpellier ?</h3>
+              <p>Les premiers signaux (impressions, légères hausses de positions) apparaissent en général entre <strong>1 et 3 mois</strong>. Les résultats tangibles - trafic qualifié, leads, ventes - arrivent plutôt entre <strong>3 et 6 mois</strong>. Un plein effet de la stratégie SEO se constate sur 6 à 12 mois, voire plus sur des marchés très concurrentiels. Ce délai dépend de l'état initial du site, de la concurrence sur les mots-clés et de la régularité d'exécution. Méfiez-vous de toute promesse de résultats en moins d'un mois.</p>
+
+              <h3>Quelle est la différence entre SEO et GEO en 2026 ?</h3>
+              <p>Le <strong>SEO (Search Engine Optimization)</strong> vise à positionner un site dans les résultats classiques de Google. Le <strong>GEO (Generative Engine Optimization)</strong> optimise la présence d'une marque dans les réponses des IA génératives : ChatGPT, Perplexity, Google AI Overviews, Gemini. En 2026, les deux leviers sont complémentaires. Le SEO génère du trafic organique mesurable. Le GEO construit la notoriété de marque dans les LLM - là où une part croissante des décisions d'achat B2B et B2C se prennent désormais. Pour aller plus loin, notre <a href="/blog/meilleure-agence-geo-france">guide des meilleures agences GEO France</a> détaille les méthodes et les acteurs.</p>
+
+              <h3>Quels critères pour choisir la meilleure agence SEO à Montpellier ?</h3>
+              <p>Cinq critères essentiels pour choisir votre <strong>agence référencement Montpellier</strong> :</p>
+              <ol>
+                <li>Expertise technique SEO et couverture GEO/LLM</li>
+                <li>Cas clients mesurables et références dans votre secteur</li>
+                <li>Transparence de la méthode et reporting orienté business (leads, CA)</li>
+                <li>Capacité à couvrir les 4 piliers SEO (technique, contenu, netlinking, suivi)</li>
+                <li>Adéquation budget/profil - une agence nationale n'est pas toujours adaptée à une PME locale</li>
+              </ol>
+              <p>Fuyez les prestataires qui promettent une position n°1 en 30 jours ou qui refusent de montrer des cas clients concrets.</p>
+
+              <h3>Pourquoi choisir Triaina comme agence SEO & GEO à Montpellier ?</h3>
+              <p>Triaina est la seule <strong>agence GEO Montpellier</strong> à combiner 4 leviers en un seul contrat : SEO organique, GEO/LLM (citations IA), SEA/Paid et médias propriétaires + régie. Cette combinaison est unique sur le marché et explique nos résultats : <strong>0 → 73 % et 0 → 90 % de citations IA</strong> sur les requêtes cibles de nos clients. Pour les entreprises montpelliéraines qui veulent dominer à la fois Google et les IA génératives, c'est le choix le plus cohérent en 2026.</p>
+
+              <h2>Conclusion : quelle agence SEO choisir à Montpellier en 2026 ?</h2>
+              <p>Le marché du <strong>référencement naturel Montpellier</strong> est mature, concurrentiel, et en pleine mutation sous l'effet des IA génératives. Les entreprises qui se contentent d'un SEO classique sans intégrer le GEO/LLM prennent un risque réel : perdre de la visibilité dans les réponses IA sans que leur position Google ne bouge.</p>
+              
+              <p>Notre classement est clair :</p>
+              <ul>
+                <li><strong>Triaina (#1)</strong> pour les entreprises qui veulent le dispositif le plus complet et les résultats les plus rapides sur les citations IA.</li>
+                <li><strong>BM-Services (#2)</strong> pour les PME locales et les e-commerçants PrestaShop qui cherchent une agence de proximité avec 20 ans d'expérience.</li>
+                <li><strong>Eskimoz (#3)</strong> pour les grands comptes et les e-commerçants à ambition nationale.</li>
+                <li><strong>Digimood (#4)</strong> pour les entreprises qui veulent piloter leur SEO par la donnée avec un interlocuteur physique à Montpellier.</li>
+                <li><strong>ARPA Trafic (#5)</strong> pour les TPE et PME qui démarrent avec un budget serré.</li>
+              </ul>
+              
+              <p>Quelle que soit votre situation, la première étape est la même : un audit de votre visibilité actuelle - SEO et GEO - pour identifier les priorités. C'est gratuit, sans engagement, et ça prend 30 minutes.</p>
+              
+              <p><a href="/contact">Contactez Triaina pour un audit SEO & GEO offert</a> - nous analysons votre situation, identifions vos opportunités à Montpellier et en Occitanie, et vous proposons une stratégie adaptée à vos objectifs.</p>
+
+            </div>
+
+            <div className="mt-12 pt-8 border-t border-slate-200">
+              <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-xl">
+                    CR
+                  </div>
+                  <div>
+                    <div className="font-bold text-slate-900">Camille Rousseau</div>
+                    <div className="text-sm text-slate-500">Consultante Senior GEO/SEO</div>
+                  </div>
+                </div>
+                <div className="flex gap-2">
+                  <a href="https://www.linkedin.com/in/camille-rousseau-a44488413/" target="_blank" rel="noopener noreferrer" className="p-2 bg-slate-100 text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-full transition-colors">
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  );
+}
+`
+fs.writeFileSync('views/blog/AgenceSeoMontpellier2026.tsx', code);
+console.log("Component created");

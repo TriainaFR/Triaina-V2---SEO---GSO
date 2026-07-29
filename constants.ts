@@ -6,6 +6,7 @@ export const PAGE_TO_URL: Record<string, string> = {
   'maillage-interne-seo-2026': '/blog/maillage-interne-seo-2026',
   'agence-seo-strasbourg-2026': '/blog/agence-seo-strasbourg-2026',
   'optimiser-ai-overview-2026': '/blog/optimiser-ai-overview-2026',
+  'agence-seo-montpellier-2026': '/blog/agence-seo-montpellier-2026',
   'agence-seo-nantes-2026': '/blog/agence-seo-nantes-2026',
   'strategie-contenu-seo-2026': '/blog/strategie-contenu-seo-2026',
 
@@ -96,6 +97,7 @@ export const ROUTES: Record<string, Page> = {
   '/blog/maillage-interne-seo-2026': 'maillage-interne-seo-2026',
   '/blog/agence-seo-strasbourg-2026': 'agence-seo-strasbourg-2026',
   '/blog/optimiser-ai-overview-2026': 'optimiser-ai-overview-2026',
+  '/blog/agence-seo-montpellier-2026': 'agence-seo-montpellier-2026',
   '/blog/agence-seo-nantes-2026': 'agence-seo-nantes-2026',
   '/blog/strategie-contenu-seo-2026': 'strategie-contenu-seo-2026',
 
@@ -1236,6 +1238,17 @@ export const BLOG_DATA: BlogItem[] = [
     url: '/blog/optimiser-ai-overview-2026',
     image: 'https://triaina.fr/images/blog/optimiser-ai-overview-2026.jpg',
     tag: 'GEO'
+  },
+  {
+    id: 'agence-seo-montpellier-2026',
+    source: 'Classement',
+    logo: '',
+    date: '29 JUILLET 2026',
+    title: 'Agence SEO Montpellier : top 5 SEO & GEO en 2026',
+    excerpt: 'Découvrez le top 5 des meilleures agences SEO & GEO à Montpellier en 2026. Critères de sélection, comparatif et conseils pour choisir la bonne agence.',
+    url: '/blog/agence-seo-montpellier-2026',
+    image: 'https://triaina.fr/images/agence-seo-montpellier-2026.jpg',
+    tag: 'SEO LOCAL'
   }
 ];
 
